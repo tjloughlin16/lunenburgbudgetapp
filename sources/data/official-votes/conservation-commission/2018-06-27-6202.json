@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-06-27",
  "docid": "6202",
@@ -12,95 +12,369 @@
  },
  "votes": [
   {
-   "motion": "Recess until drawing is complete",
+   "motion": "Recess the 455 Townsend Harbor hearing until the drawing was complete.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion of kj and a second by bp to recess until the drawing was complete"
+   "quote": "was approved by a motion of kj and a second by bp to recess until the drawing was complete"
   },
   {
-   "motion": "Reconvene the hearing",
+   "motion": "Reconvene the 455 Townsend Harbor hearing.",
    "moved_by": "JR",
    "seconded_by": "TD",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "reconvened by a motion of jr and a second by td"
+   "quote": "the hearing was reconvened by a motion of jr and a second by td"
   },
   {
-   "motion": "Approve pergola addition with gutter drained to rain barrel at 455 Townsend Harbor",
+   "motion": "Approve the requested changes for 455 Townsend Harbor (minimal change, pergola addition).",
    "moved_by": "jr",
    "seconded_by": "KJ",
    "outcome": "passed 5-1",
    "procedural": false,
-   "quote": "motion of jr and a second by kj with a 5-1 vote to approve with rb dissenting"
+   "quote": "the changes requested were reviewed and approved by a motion of jr and a second by kj with a 5-1 vote to approve with rb dissenting"
   },
   {
-   "motion": "Recess the hearing",
+   "motion": "Recess the 426 Reservoir Road (Trainor) hearing so the applicant could amend plans.",
    "moved_by": "KJ",
    "seconded_by": "CC",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to recess by kj and a second by cc"
+   "quote": "after a motion to recess by kj and a second by cc"
   },
   {
-   "motion": "Reconvene the hearing",
+   "motion": "Reconvene the 426 Reservoir Road (Trainor) hearing.",
    "moved_by": "RB",
    "seconded_by": "KJ",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "reconvened by a motion of rb and a second by kj"
+   "quote": "the meeting was reconvened by a motion of rb and a second by kj."
   },
   {
-   "motion": "Issue an Order of Conditions for garage at 426 Reservoir Road",
+   "motion": "Issue an Order of Conditions for 426 Reservoir Road (Richard Trainor).",
    "moved_by": "JR",
    "seconded_by": "TD",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion to issue an order of conditions by jr and a second by td with a unanimous vote to approve"
+   "quote": "a motion to issue an order of conditions by jr and a second by td with a unanimous vote to approve."
   },
   {
-   "motion": "Continue hearing to July 18, 2018 due to applicant's absence",
+   "motion": "Continue the Dippin Donuts Request for a Determination at 455 Mass Ave to July 18, 2018, as the applicant failed to appear.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "continued as the applicant failed to appear by motion of kj and a second by bp to the july 18, 2018 meeting"
+   "procedural": false,
+   "quote": "this meeting was continued as the applicant failed to appear by motion of kj and a second by bp to the july 18, 2018 meeting."
   },
   {
-   "motion": "Continue hearing until July 18, 2018",
+   "motion": "Continue the Hickory Hills Association drawdown management plan Notice of Intent until July 18, 2018.",
    "moved_by": "RB",
    "seconded_by": "TD",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "continued until july 18 2018 by a motion of rb and a second by td"
+   "procedural": false,
+   "quote": "continued until july 18 2018 by a motion of rb and a second by td."
   },
   {
-   "motion": "Form an ad-hoc trails subcommittee with RB and MM to write proposal",
+   "motion": "Approve forming an ad-hoc trails subcommittee, with RB and MM to write a proposal for the town.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "approved by a motion of kj and a second by bp and a unanimous vote"
+   "quote": "this was approved by a motion of kj and a second by bp and a unanimous vote."
   },
   {
-   "motion": "Approve June 2 minutes with amendments",
+   "motion": "Approve the minutes of 6/2 with amendments.",
    "moved_by": "BP",
    "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "approved with amendments by a motion of bp and a second by kj with a unanimous vote"
+   "quote": "the minutes of 6/2 were approved with amendments by a motion of bp and a second by kj with a unanimous vote"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:35 PM.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed",
    "procedural": true,
-   "quote": "adjourned at 9:35 pm by a motion of kj and a second by bp"
+   "quote": "the meeting adjourned at 9:35 pm by a motion of kj and a second by bp."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1446695
+ "note": "Text is extracted with irregular spacing and some typos (e.g. 'sowing', 'rain bar rel'); quotes were collapsed to single spaces. Several reconvene and recess motions record no result, so their outcome is 'not stated'. Only two votes print counts (5-1 and 'unanimous'); other motions are recorded as passed where the minutes state the action was taken. Initials (RB, KJ, JR, TD, BP, CC, CL, MM) are used throughout and mapped to members from the letterhead and call to order; 'MM' is inferred as Matthew S. Marro, Conservation Administrator. The 'Public Comment' agenda heading is printed with no content. No dollar figures appear in the minutes.",
+ "cost_usd": 0.00882902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order by chairman bursch with all members in attendance except cl."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "meeting called to order by chairman bursch with all members in attendance except cl."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "meeting called to order by chairman bursch with all members in attendance except cl."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "",
+   "status": "present",
+   "quote": "meeting called to order by chairman bursch with all members in attendance except cl."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "absent",
+   "quote": "meeting called to order by chairman bursch with all members in attendance except cl."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "meeting called to order by chairman bursch with all members in attendance except cl."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "meeting called to order by chairman bursch with all members in attendance except cl."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "not stated",
+   "quote": "mm noted still progressing"
+  },
+  {
+   "name": "Jim Shearer",
+   "role": "",
+   "status": "present",
+   "quote": "jim shearer appeared before the commission and explained the proposed change."
+  },
+  {
+   "name": "Richard Trainor",
+   "role": "",
+   "status": "present",
+   "quote": "richard trainor appeared with the changes requested"
+  },
+  {
+   "name": "Paul Karapatsas",
+   "role": "applicant, Dippin Donuts addition (455 Mass Ave)",
+   "status": "absent",
+   "quote": "this meeting was continued as the applicant failed to appear"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission determined the 455 Townsend Harbor pergola was a minimal change, with the gutter drained to a rain barrel as drawn on the plans.",
+   "quote": "it was determined by the commission that it was a minimal change"
+  },
+  {
+   "decision": "The drawing changes for 426 Reservoir Road were reviewed and accepted.",
+   "quote": "the drawing changes was reviewed and accepted."
+  },
+  {
+   "decision": "The commission advised against replacing the wood chips with grass at 155 Reservoir Road for now, to reconsider after the third party survey results.",
+   "quote": "the commission advised against it at this time but will reconsider depending on the results of the third party survey."
+  },
+  {
+   "decision": "The commission promised a follow-up meeting with the Reservoir Road residents at a future date.",
+   "quote": "the commission promised a follow-up meeting at a future date."
+  },
+  {
+   "decision": "RB and MM will write a proposal for the town on the trails subcommittee.",
+   "quote": "it was decided that rb and mm would write a proposal for the town."
+  },
+  {
+   "decision": "RB will finish a letter of support to the ZBA on the Gilchrest land exchange.",
+   "quote": "rb will finish a letter of support to the zba"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "residents of the Reservoir Road development",
+   "stated_role": "",
+   "topic": "155 Reservoir Road development: wood chips and restoration",
+   "quote": "some of the residents expressed concern over the use of wood chips on the site and asked"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "455 Townsend Harbor prior request for a determination (pergola addition)",
+   "resolution": "approved 5-1 as minimal change, RB dissenting",
+   "quote": "request for approval of a minimal change - addition of a pergola on top of an existing deck",
+   "tags": [
+    "wetlands",
+    "minimal change",
+    "pergola"
+   ]
+  },
+  {
+   "topic": "426 Reservoir Road continued public hearing, Notice of Intent (Richard Trainor garage)",
+   "resolution": "Order of Conditions issued unanimously",
+   "quote": "continued public hearing on a notice of intent by richard trainor",
+   "tags": [
+    "notice of intent",
+    "order of conditions",
+    "garage"
+   ]
+  },
+  {
+   "topic": "455 Mass Ave Dippin Donuts Request for a Determination (continued)",
+   "resolution": "continued to July 18, 2018; applicant absent",
+   "quote": "this meeting was continued as the applicant failed to appear",
+   "tags": [
+    "request for determination",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Association drawdown management plan, Notice of Intent (continued)",
+   "resolution": "continued to July 18, 2018",
+   "quote": "continued until july 18 2018 by a motion of rb and a second by td.",
+   "tags": [
+    "notice of intent",
+    "drawdown",
+    "lake"
+   ]
+  },
+  {
+   "topic": "Appointment: meeting with residents of the Reservoir Road development (former 155 Reservoir Road)",
+   "resolution": "no vote; follow-up meeting promised",
+   "quote": "the commission promised a follow-up meeting at a future date.",
+   "tags": [
+    "enforcement",
+    "restoration",
+    "river front"
+   ]
+  },
+  {
+   "topic": "Current business: violations and enforcement",
+   "resolution": "no action; items kept on agenda",
+   "quote": "571 chase road (c) -no updates",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "New business: trails subcommittee formation",
+   "resolution": "ad-hoc trails subcommittee approved",
+   "quote": "this was approved by a motion of kj and a second by bp and a unanimous vote.",
+   "tags": [
+    "trails",
+    "subcommittee"
+   ]
+  },
+  {
+   "topic": "Old business: Robbs Hill, Gilchrest land exchange, certificates of compliance, extension permits",
+   "resolution": "updates noted; no action recorded on most items",
+   "quote": "rb will finish a letter of support to the zba",
+   "tags": [
+    "land exchange",
+    "certificates of compliance",
+    "extension permit"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings (6/2)",
+   "resolution": "approved with amendments",
+   "quote": "the minutes of 6/2 were approved with amendments",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report and legal updates",
+   "resolution": "no action; status updates",
+   "quote": "mm noted still progressing",
+   "tags": [
+    "legal",
+    "wetlands",
+    "Hemlock",
+    "Pleasant Street",
+    "Chase Road",
+    "Reservoir Road"
+   ]
+  },
+  {
+   "topic": "Communications, public comment and meeting schedule; adjournment",
+   "resolution": "next meeting July 18, 2018; adjourned 9:35 PM",
+   "quote": "the meeting adjourned at 9:35 pm by a motion of kj and a second by bp.",
+   "tags": [
+    "schedule",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised drawing updated by the applicant at this hearing (455 Townsend Harbor)",
+   "where": "list",
+   "quote": "documents reviewed for approval was a revised drawing updated by the applicant at this hearing"
+  },
+  {
+   "name": "Notice of Intent (Richard Trainor, 426 Reservoir Road)",
+   "where": "list",
+   "quote": "documents reviewed for approval was a notice of intent and a revised drawing updated by the applicant at this hearing"
+  },
+  {
+   "name": "Revised drawing updated by the applicant at this hearing (426 Reservoir Road, Richard Trainor)",
+   "where": "list",
+   "quote": "documents reviewed for approval was a notice of intent and a revised drawing updated by the applicant at this hearing"
+  },
+  {
+   "name": "Request for A Determination for an addition to Dippin Donuts at 455 Mass Ave (Paul Karapatsas)",
+   "where": "text",
+   "quote": "request for a determination for an addition to dippin donuts at 455 mass ave by paul karapatsas"
+  },
+  {
+   "name": "Notice of Intent, Hickory Hills Association, drawdown management plan, Hickory Hills Lake",
+   "where": "text",
+   "quote": "by hickory hills association for the approval of a drawdown management plan"
+  },
+  {
+   "name": "Order of Conditions (426 Reservoir Road, Richard Trainor)",
+   "where": "text",
+   "quote": "a motion to issue an order of conditions by jr and a second by td with a unanimous vote to approve."
+  },
+  {
+   "name": "Certificates of Compliance (UNITIL, Electric Ave, DEP 208-1085)",
+   "where": "text",
+   "quote": "certificates of compliance -unitil , electric ave dep 208-1085 continued"
+  },
+  {
+   "name": "Letter of support to the ZBA (Gilchrest land exchange)",
+   "where": "text",
+   "quote": "rb will finish a letter of support to the zba"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "order of conditions",
+  "enforcement",
+  "trails",
+  "minutes",
+  "Reservoir Road",
+  "continuances"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents reviewed for approval"
+ },
+ "dropped_unquoted_by_field": {}
 }

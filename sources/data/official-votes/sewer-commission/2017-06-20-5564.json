@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-06-20",
  "docid": "5564",
@@ -12,15 +12,151 @@
  },
  "votes": [
   {
-   "motion": "Adjourn at 8:33pm",
+   "motion": "To adjourn the meeting at 8:33pm.",
    "moved_by": "John R.",
    "seconded_by": "Joe A",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: john r. to adjourn at 8:33pm discussion: none second: joe a vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document, good quality. One procedural vote recorded: adjournment.",
- "cost_usd": 0.0867845
+ "note": "OCR of a scanned page, one page. Only one vote is recorded: the motion to adjourn at 8:33pm (unanimous). No approval of prior minutes is recorded. Names vary within the text: Troy Danieis / Troy Daniels, Dave Rodgers / Dave Rogers, and Rob Bowen/Bob/Phyllis are not clearly resolved. The signature block is garbled in the OCR. A RECEIVED & FILED stamp reads AUG 17 2017. Dollar figures are not printed.",
+ "cost_usd": 0.00372812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), john reynolds (vice-chair), joan pease, joe anderson, troy danieis, barb lefebvre (business manager)"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "vice-Chair",
+   "status": "present",
+   "quote": "john reynolds arrived at 6:57pm."
+  },
+  {
+   "name": "Joan Pease",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), john reynolds (vice-chair), joan pease, joe anderson, troy danieis, barb lefebvre (business manager)"
+  },
+  {
+   "name": "Joe Anderson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), john reynolds (vice-chair), joan pease, joe anderson, troy danieis, barb lefebvre (business manager)"
+  },
+  {
+   "name": "Troy Danieis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "troy daniels left at 8:02pm."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), john reynolds (vice-chair), joan pease, joe anderson, troy danieis, barb lefebvre (business manager)"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Guest (Highland St.)",
+   "status": "present",
+   "quote": "guests: dave rodgers (highland st.)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission decided to hold a meeting with Jack Rodriquenz and Heather Lemieux and the Commission to address the conflict.",
+   "quote": "the commission decided to have a meeting with jack rodriquenz and heather lemieux and the commission."
+  },
+  {
+   "decision": "Jamie Toale would be invited as a representative of the Selectmen.",
+   "quote": "it was determined that jamie toale would be invited as a representative of the selectmen as he'd be the more objective than bob or phyllis."
+  },
+  {
+   "decision": "The dates of 8/1 and 8/8 would be provided to the invitees.",
+   "quote": "the dates of 8/1 and 8/8 will be provided to the invitees."
+  },
+  {
+   "decision": "Joe Anderson was asked to facilitate the meeting.",
+   "quote": "joe was asked to facilitate the meeting."
+  },
+  {
+   "decision": "Troy D. would be asked whether he is interested in serving as point person to coordinate with Barb L and Counsel on the 380 Electric Ave activity.",
+   "quote": "troy d. will be asked if he would be interested in doing this."
+  },
+  {
+   "decision": "Counsel would provide an update at the 7/11 meeting on the 380 Electric Ave legal question.",
+   "quote": "there will be an update from counsel for the 7/11 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "380 Electric Ave fee assessment",
+   "what_was_recorded": "The Commission discussed the legal question and process regarding fee assessment for 380 Electric Ave, with counsel to update at the 7/11 meeting; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "380 electric ave: update on legal question and process regarding fee assessment"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "Highland St.",
+   "topic": "Commission structure and Town setup",
+   "quote": "dave rogers commented that it makes no good common sense on how the town is set up."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Charter Review Workshop: Roles & Responsibilities of the Commission and Chair",
+   "resolution": "discussed; follow-up meeting with invitees planned; Joe Anderson to facilitate",
+   "quote": "charter review workshop: roles & responsibilities of the commission and chair",
+   "tags": [
+    "charter review",
+    "roles and responsibilities",
+    "governance",
+    "conflict"
+   ]
+  },
+  {
+   "topic": "380 Electric Ave: legal question and fee assessment",
+   "resolution": "discussed; counsel update at 7/11 meeting; point person to be asked",
+   "quote": "380 electric ave: update on legal question and process regarding fee assessment",
+   "tags": [
+    "380 Electric Ave",
+    "pump station",
+    "fee assessment",
+    "legal counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Organizational chart (Commission review copy, handed out by Joan Pease)",
+   "where": "text",
+   "quote": "joan handed out an organizational chart for commission to review."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "charter review",
+  "roles and responsibilities",
+  "conflict with Selectmen",
+  "380 Electric Ave",
+  "pump station",
+  "fee assessment",
+  "workshop",
+  "2017"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "joan handed out an organizational chart for commission to review"
+ },
+ "dropped_unquoted_by_field": {}
 }

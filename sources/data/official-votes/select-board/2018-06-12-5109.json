@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-06-12",
  "docid": "5109",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the salary reserve transfer in the amount of $2032.00",
+   "motion": "Approve the salary reserve transfer in the amount of $2032.00.",
    "moved_by": "R.Ebersole",
    "seconded_by": "D.MeQuaid",
    "outcome": "passed",
@@ -20,13 +20,15 @@
    "quote": "motion: r.ebersole to approve the salary reserve transfer in the amount of $2032.00 2nd: d.mequaid vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of May 8, 2018",
+   "motion": "Approve the minutes of May 8, 2018 (recorded as approved; no motion or count printed).",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes of may 8, 2018 were approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:30 p.m.",
    "moved_by": "R. Ebersole",
    "seconded_by": "K. Adams",
    "outcome": "passed",
@@ -35,6 +37,265 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source: macOS Vision. Text quality good. Three votes recorded: one substantive (salary reserve transfer), two procedural (prior minutes approval and adjournment). Names as they appear in OCR; \"D.MeQuaid\" may be OCR error for \"McQuaid\" but captured as printed.",
- "cost_usd": 0.1062245
+ "note": "OCR text with garbled passages (page 1 date of the January 25th meeting is corrupted; a page 3 passage about an out file and communications audit is garbled; the 'Elaim. Peterson' signature is OCR-garbled). No roll call or member count is printed, so attendance status is 'present' only for those who spoke or moved. The minutes' approval of May 8, 2018 is recorded without a motion or vote count. The salary transfer vote is printed only as 'All in Favor'. McQuaid is spelled 'D.MeQuaid' in the motion and 'Mr. McQuaid' in the text. Ms. Lemieux is not labelled with a role. Warrants are recorded as presented in a sentence, so documents_list is marked printed with the warrant sentence as the opening words; this is a judgment call since no formal documents list heading is printed.",
+ "cost_usd": 0.009145919999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "",
+   "status": "present",
+   "quote": "mr. toale stated in accordance with the requirements of open meeting law this meeting was being recorded and broadcast over the lunenburg public access channel."
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "",
+   "status": "present",
+   "quote": "ms. luck reminded about the lions club pancake breakfast at eagle house senior center tomorrow from 8:00 - 10:00 a.m., $2.00 per person, takeout is available."
+  },
+  {
+   "name": "Ms. Adams",
+   "role": "",
+   "status": "present",
+   "quote": "ms. adams reported she attended the mma newly elected selectmen's training in natick this past saturday."
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "mr. ebersole noted developing a road policy or the fact is we are going to continue the five-year plan"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "mr. mcquaid stated they were partially through this goal."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "",
+   "status": "present",
+   "quote": "ms. lemieux reported this is for the library director salary due to renegotiations on her contract with the library of trustees."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "181 Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, stated she has been volunteering to record meetings for pacc over the past year."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After discussion it was decided to develop an infrastructure plan and policy for use, maintenance and capital replacement, with the Cemetery Commission and Parks Commission involved.",
+   "quote": "after discussion it was decided to develop an infrastructure plan and policy for use, maintenance and capital replacement."
+  },
+  {
+   "decision": "Thank you letters for those not renewing their annual appointments were signed by the Board.",
+   "quote": "thank you letters for those not renewing their annual appointments were signed by the board."
+  },
+  {
+   "decision": "Mr. Toale summarized the Board's proposed goals (Town assets/planning, Economic Development, Human Resource Management, Written Procurement Process); no vote recorded.",
+   "quote": "mr. toale summarized the board's proposed goals:"
+  },
+  {
+   "decision": "The Complete Streets presentation by Woodard & Curran moved to the July 10th agenda.",
+   "quote": "presentation by woodard & curran will be on the july 10th agenda."
+  },
+  {
+   "decision": "The Board will not meet on July 3rd.",
+   "quote": "the board will not be meeting on july 3rd."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Delinquent tax title liens",
+   "what_was_recorded": "Total delinquent taxes, interest and penalties on tax title properties reported as approximately $555,010; tax liens down from 28 to 20.",
+   "figures_as_printed": [
+    "$555,010"
+   ],
+   "quote": "the current total of delinquent taxes/interest/penalties accrued for these tax title properties is approximately $555,010."
+  },
+  {
+   "topic": "Library Director salary reserve transfer",
+   "what_was_recorded": "Salary reserve transfer approved for the Library Director salary due to contract renegotiations.",
+   "figures_as_printed": [
+    "$2032.00"
+   ],
+   "quote": "to approve the salary reserve transfer in the amount of $2032.00"
+  },
+  {
+   "topic": "Warrants presented",
+   "what_was_recorded": "Accounts payable, payroll and payroll deductions warrants presented.",
+   "figures_as_printed": [
+    "$411,893.16",
+    "$822,249.45",
+    "$28,267.62"
+   ],
+   "quote": "an accounts payable warrant in the amount of $411,893.16"
+  },
+  {
+   "topic": "Facilities maintenance budget",
+   "what_was_recorded": "About $40,000 placed in the budget for annual facilities maintenance, to address smaller projects.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "we put about $40,000 into the budget for facilities maintenance."
+  },
+  {
+   "topic": "Lions Club pancake breakfast price",
+   "what_was_recorded": "Public reminder of the Lions Club breakfast price per person (not a Town budget item).",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "ms. luck reminded about the lions club pancake breakfast at eagle house senior center tomorrow from 8:00 - 10:00 a.m., $2.00 per person"
+  },
+  {
+   "topic": "Taxing to the levy limit",
+   "what_was_recorded": "Goal discussed to change the mindset of taxing to the levy limit of 2.5%.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "change the mindset of taxing to the levy limit of 2.5%"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Salary reserve transfer for the Library Director salary due to contract renegotiations",
+   "outcome": "passed (All in Favor)",
+   "amount_as_printed": "$2032.00",
+   "quote": "to approve the salary reserve transfer in the amount of $2032.00"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lions Club breakfast reminder and School Superintendent selection",
+   "quote": "ms. luck reminded about the lions club pancake breakfast at eagle house senior center tomorrow from 8:00 - 10:00 a.m., $2.00 per person, takeout is available."
+  },
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "MMA Newly Elected Selectmen's Training",
+   "quote": "ms. adams reported she attended the mma newly elected selectmen's training in natick this past saturday."
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Cultural Council Arts Festival and Cruise Night",
+   "quote": "mr. toale noted the cultural council arts festival was this past weekend and it was a nice event and well attended."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "topic": "PACC policy restricting volunteer public comment while recording meetings",
+   "quote": "rhonda lisio, 181 reservoir road, stated she has been volunteering to record meetings for pacc over the past year."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Police v. citizens basketball fundraiser",
+   "quote": "ms. luck reminded all the police department v. citizens basketball fundraiser game is this thursday night."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "ms. luck reminded about the lions club pancake breakfast at eagle house senior center tomorrow from 8:00"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action; Complete Streets moved to July 10th; Town Counsel office hours noted",
+   "quote": "tax lien sale auction: as a reminder, the tax lien sale auction will be on june 13th at 1 p.m. payments"
+  },
+  {
+   "topic": "Approve salary reserve transfer",
+   "resolution": "approved",
+   "quote": "ms. lemieux reported this is for the library director salary due to renegotiations on her contract with the library of trustees."
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes approved; warrants presented; thank you letters signed",
+   "quote": "minutes of may 8, 2018 were approved."
+  },
+  {
+   "topic": "Goal setting workshop",
+   "resolution": "discussed; goals proposed and infrastructure plan direction agreed; no vote",
+   "quote": "the board of selectmen goals for the past year were:"
+  },
+  {
+   "topic": "Upcoming meeting/events schedule",
+   "resolution": "noted; no meeting July 3",
+   "quote": "the board will not be meeting on july 3rd."
+  },
+  {
+   "topic": "Public comment (closing) and adjournment",
+   "resolution": "no action; adjourned 9:30 p.m.",
+   "quote": "ms. luck reminded all the police department v. citizens basketball fundraiser game is this thursday night."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Accounts payable warrant in the amount of $411,893.16",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $411,893.16"
+  },
+  {
+   "name": "Payroll warrant in the amount of $822,249.45",
+   "where": "text",
+   "quote": "a payroll warrant in the amount of $822,249.45"
+  },
+  {
+   "name": "Payroll deductions warrant in the amount of $28,267.62",
+   "where": "text",
+   "quote": "a payroll deductions warrant in the amount of $28,267.62 were presented."
+  },
+  {
+   "name": "Minutes of May 8, 2018",
+   "where": "text",
+   "quote": "minutes of may 8, 2018 were approved."
+  },
+  {
+   "name": "Board's Appointment Policy (Section 2.07)",
+   "where": "text",
+   "quote": "mr. toale presented the board's appointment policy (section 2.07)."
+  },
+  {
+   "name": "Reappointment forms",
+   "where": "text",
+   "quote": "mr. toale stated in regards to last week's annual appointments, we had the reappointment forms that we did not"
+  },
+  {
+   "name": "Doodle Poll on Business-Town Partnership meeting time",
+   "where": "text",
+   "quote": "i have sent out a doodle poll to find out if a majority of attendees would prefer a morning meeting at 10"
+  }
+ ],
+ "tags": [
+  "salary reserve transfer",
+  "minutes",
+  "warrants",
+  "goal setting",
+  "tax title",
+  "public comment",
+  "PACC recording policy",
+  "communications policy",
+  "appointments",
+  "economic development",
+  "infrastructure plan",
+  "Complete Streets"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "an accounts payable warrant in the amount of $411,893.16"
+ },
+ "dropped_unquoted_by_field": {}
 }

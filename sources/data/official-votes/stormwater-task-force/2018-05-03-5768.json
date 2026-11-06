@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-05-03",
  "docid": "5768",
@@ -12,15 +12,220 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting at 6:55 pm",
+   "motion": "To adjourn the meeting at 6:55 pm.",
    "moved_by": "M. Allison",
    "seconded_by": "P. Luck",
    "outcome": "All in Favor",
    "procedural": true,
-   "quote": "motion: m. allison 2nd: p. luck to adjourn the meeting at 6:55 pm. vote: all in favor"
+   "quote": "motion: m. allison 2nd: p. luck to adjourn the meeting at 6:55 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0302027
+ "dropped_unquoted": 1,
+ "note": "Only one recorded vote: the motion to adjourn (All in Favor). The April 26 minutes were 'accepted' with no stated motion or vote, and the approver of the citizen alternates is not named. Adam Burney appears as 'Land Use Director Burney' in the attendance line and as 'Adam Burney' in the text; the minutes also say the meeting opened at 5:55 pm while a later item moves the start to 5:45 pm for the Candidate Debate. No public comment is recorded.",
+ "cost_usd": 0.0048892200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "with matt allison and phyllis luck; land use director burney and consultant ed"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF; Member, BOS",
+   "status": "present",
+   "quote": "with matt allison and phyllis luck; land use director burney and consultant ed"
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "Consultant; of the Massachusetts Watershed Coalition",
+   "status": "present",
+   "quote": "consultant ed himlan were also in attendance."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack rabbitt entered the meeting at 6 p.m., and exited at 6:35."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board of Selectmen approved reducing the SWTF membership to 3 members: one Conservation Commissioner, one Planning Board member, and one member of the Board of Selectmen.",
+   "quote": "the board of selectmen has approved the swtf request to reduce the membership of the swtf to 3 members"
+  },
+  {
+   "decision": "Two alternate positions for citizens on the Task Force were approved (approving body not stated).",
+   "quote": "it was suggested that the task force have 2 alternate positions for citizens, which was also approved."
+  },
+  {
+   "decision": "Minutes of the April 26, 2018 meeting accepted.",
+   "quote": "minutes of the april 26, 2018 meeting were accepted."
+  },
+  {
+   "decision": "The SWTF will meet on May 17 at 6 pm to vote on approval of the 319 grant proposal, which must be delivered to DEP in Worcester by noon on Tuesday, June 1.",
+   "quote": "the swtf will meet on may 17 at 6 pm to vote on approval of this proposal"
+  },
+  {
+   "decision": "Ed Himlan will hand carry the 319 grant proposal to DEP and also deliver it electronically.",
+   "quote": "ed himlan has agreed to hand carry it to the dep, as well as deliver this information electronically"
+  },
+  {
+   "decision": "Adam Burney will take the lead on obtaining the Town Agency support letters; Ed Himlan will assemble the package of support letters for the grant.",
+   "quote": "adam burney will take the lead on getting the town agency letters completed, ed himlan will"
+  },
+  {
+   "decision": "Phyllis Luck will send the proposed agenda for the May 17 SWTF meeting to the Town Clerk.",
+   "quote": "will be sent to the town clerk by phyllis luck."
+  },
+  {
+   "decision": "Task Force meeting start moved to 5:45 because of the Candidate Debate, and the agenda revised to reduce the number of items discussed.",
+   "quote": "the task force will move its meeting start to 5:45 and will revise the agenda to reduce the number of items to be discussed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "319 grant proposal",
+   "what_was_recorded": "Draft narrative and scope of services for the 319 grant proposal was presented; no dollar figure is printed.",
+   "quote": "presented the draft narrative and scope of services for the 319 grant proposal.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Kitchen compost buckets sale",
+   "what_was_recorded": "Kitchen compost buckets are for sale at $5 each; 25 were ordered, 8 sold, and remaining inventory and proceeds were delivered to the DPW.",
+   "quote": "the kitchen compost buckets are now available for sale, at a cost of $5 per bucket.",
+   "figures_as_printed": [
+    "$5 per bucket",
+    "25 buckets",
+    "8"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board membership and citizen alternates",
+   "resolution": "reported; BOS approved reduction to 3 members; two citizen alternates approved",
+   "quote": "the board of selectmen has approved the swtf request to reduce the membership of the swtf to 3 members",
+   "tags": [
+    "membership",
+    "alternates"
+   ]
+  },
+  {
+   "topic": "Minutes of April 26, 2018",
+   "resolution": "accepted",
+   "quote": "minutes of the april 26, 2018 meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "319 grant proposal",
+   "resolution": "presented; vote on approval set for May 17",
+   "quote": "presented the draft narrative and scope of services for the 319 grant proposal.",
+   "tags": [
+    "319 grant",
+    "DEP",
+    "watershed"
+   ]
+  },
+  {
+   "topic": "Letters of support for grant",
+   "resolution": "template given; Town Agency letters assigned to Adam Burney; package to be assembled by Ed Himlan",
+   "quote": "ed himlan gave matt allison a template for a letter of support",
+   "tags": [
+    "letters of support",
+    "grant"
+   ]
+  },
+  {
+   "topic": "BMP site visit",
+   "resolution": "reported; site visit scheduled May 11",
+   "quote": "ed himlan reported that on may 11, he, mike clark, and dpw director rodriquenz will",
+   "tags": [
+    "BMP",
+    "site visit",
+    "Conservation Commission"
+   ]
+  },
+  {
+   "topic": "MS4 Permit Annual Report",
+   "resolution": "reported as signed and submitted to DEP",
+   "quote": "the town manager has confirmed that the 2003 municipal separate storm sewer system (ms4) permit annual report",
+   "tags": [
+    "MS4",
+    "permit",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "May 17 meeting agenda",
+   "resolution": "discussed; to be sent to Town Clerk",
+   "quote": "the proposed agenda for the may 17 swtf meeting was discussed",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Kitchen compost buckets sale",
+   "resolution": "reported; buckets available for sale at DPW",
+   "quote": "the kitchen compost buckets are now available for sale, at a cost of $5 per bucket.",
+   "tags": [
+    "compost buckets",
+    "DPW",
+    "sales"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "discussed; start moved to 5:45 for May 3; future dates set",
+   "quote": "meeting schedule: it was discussed that the candidate debate is this coming thursday, may 3",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft narrative and scope of services for the 319 grant proposal",
+   "where": "text",
+   "quote": "presented the draft narrative and scope of services for the 319 grant proposal."
+  },
+  {
+   "name": "Template for a letter of support",
+   "where": "text",
+   "quote": "ed himlan gave matt allison a template for a letter of support, so that he may share"
+  },
+  {
+   "name": "2003 Municipal Separate Storm Sewer System (MS4) Permit Annual Report, Due May 1",
+   "where": "text",
+   "quote": "the 2003 municipal separate storm sewer system (ms4) permit annual report, due may 1,"
+  },
+  {
+   "name": "Proposed agenda for the May 17 SWTF meeting",
+   "where": "text",
+   "quote": "the proposed agenda for the may 17 swtf meeting was discussed"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "319 grant",
+  "MS4 permit",
+  "best management practices",
+  "Mulpus Brook",
+  "compost buckets",
+  "board membership",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

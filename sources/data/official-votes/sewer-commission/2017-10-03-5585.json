@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-10-03",
  "docid": "5585",
@@ -12,25 +12,194 @@
  },
  "votes": [
   {
-   "motion": "Approve the allocation agreement in the amount of $57,716 with monthly payments of $240.48 upon execution",
-   "moved_by": "Troy D.",
+   "motion": "Enter executive session (motion text garbled in the OCR; a roll-call fragment is visible).",
+   "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 2-1",
-   "procedural": false,
-   "quote": "motion: troy d. that we approve the agreement in the amount of $57,716 to commence monthly payments of $240.48 upon execution of the agreement. discussion: followed regarding whether we w",
-   "quote_taken_from_text": true
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "commission entered into eise session at vote on reynolds, aye, troy"
   },
   {
-   "motion": "Adjourn executive session and return to the regular open meeting",
+   "motion": "Approve the Allocation Agreement in the amount of $57,716, with monthly payments of $240.48 commencing upon execution of the agreement.",
+   "moved_by": "Troy D.",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: troy d. that we approve the agreement in the amount of $57,716 to commence monthly payments of $240.48 upon execution of the agreement."
+  },
+  {
+   "motion": "Adjourn executive session and go to the regular open meeting.",
    "moved_by": "John R.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "motion: john r. second: troy d. to adjourn executive session and go to the regular open meeting. joe has joined the executive session. vote to adjourn by roll call: john r., ",
-   "quote_taken_from_text": true
+   "quote": "motion: john r. second: troy d. to adjourn executive session and go to the regular open meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted from scanned minutes. Generally legible; some OCR artifacts present (e.g., 'eise' for 'executive', 'ottice' for 'office') but votes are clearly recorded.",
- "cost_usd": 0.1585685
+ "note": "Page 1 is OCR text with the top of the meeting missing: no call to order, attendance list, or agenda is visible, and the names in the opening vote fragment are garbled (\"Daniels\", \"Car Luck\", \"Reynolds\", \"Troy\"). The motion to enter executive session has no legible motion text, so its outcome is not stated. The seconder of the Troy D. motion is not printed. The tally on that motion (John aye, Troy aye, Carl nay) is given in the text, but the minutes say only \"Motion passed\", so the outcome is recorded as passed. The adjournment vote was by roll call, all aye. No public comment is recorded in this extract. Roles for the members are not printed in this text.",
+ "cost_usd": 0.00490552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Troy D.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote to adjourn by roll call: john r., troy d., joe a., and carl l. -all aye."
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote to adjourn by roll call: john r., troy d., joe a., and carl l. -all aye."
+  },
+  {
+   "name": "Joe A.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joe arrived 6: 19."
+  },
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote to adjourn by roll call: john r., troy d., joe a., and carl l. -all aye."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb noted that counsel also wanted to know what steps will be taken"
+  },
+  {
+   "name": "Jeff Blake",
+   "role": "KP Law",
+   "status": "not stated",
+   "quote": "commission discussed the allocation agreement draft provided by jeff blake, kp law."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The agreement is effective once fully executed (start date agreed).",
+   "quote": "discussion followed on the start date and it was agreed that it would be effective once fully executed."
+  },
+  {
+   "decision": "Commission confirmed it would give KP Law until the end of October to resolve the matter; if still in negotiations it could extend and stay with KP Law, and with no response by end of October it would go to town counsel.",
+   "quote": "commission confirmed that they would give kp law until the end of october."
+  },
+  {
+   "decision": "Barb will let Jeff Blake know to move forward and that the Commission wants it wrapped up by end of October.",
+   "quote": "barb will let jeff know to move forward and that we want it wrapped up by end of october."
+  },
+  {
+   "decision": "Barb will tell counsel the document is ready for signature and rely on counsel's recommendation on next steps if the counterparty keeps ignoring KP Law's calls.",
+   "quote": "he will let them know that we have a draft document for signature. we will rely on counsel recommendation on how to proceed."
+  },
+  {
+   "decision": "Barb could check with counsel whether this payment qualifies as one of the named fees in the recent Sewer Commission article.",
+   "quote": "barb could check with counsel that this payment qualifies as one of the named fees in the recent sewer commission article."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Allocation Agreement amount and monthly payments",
+   "what_was_recorded": "The motion sets the agreement amount and a monthly payment figure, with payments to start on execution.",
+   "figures_as_printed": [
+    "$57,716",
+    "$240.48"
+   ],
+   "quote": "that we approve the agreement in the amount of $57,716 to commence monthly payments of $240.48 upon execution of the agreement."
+  },
+  {
+   "topic": "Repayment term and payment frequency",
+   "what_was_recorded": "Discussion said everything owed is paid over 20 years; members debated monthly versus annual payments, and the monthly schedule was kept as counsel set it up.",
+   "figures_as_printed": [
+    "20 years"
+   ],
+   "quote": "troy confirmed that the agreement is that everything owed is paid over 20 years."
+  },
+  {
+   "topic": "Payment handling and sale of property",
+   "what_was_recorded": "Payments are to go to the business office, and if the property sells the full amount due becomes payable.",
+   "figures_as_printed": [],
+   "quote": "and that if the property sells, amount due would be fully payable."
+  },
+  {
+   "topic": "Possible lien for the amount owed",
+   "what_was_recorded": "If the owner does not respond, the town may be able to place a lien on the property for the amount owed.",
+   "figures_as_printed": [],
+   "quote": "if they don't respond, we may also be able to lien the property for that amount."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Allocation Agreement draft from KP Law (executive session)",
+   "resolution": "approved",
+   "quote": "that we approve the agreement in the amount of $57,716 to commence monthly payments of $240.48 upon execution of the agreement.",
+   "tags": [
+    "allocation agreement",
+    "KP Law",
+    "payments",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Counsel non-response and deadline",
+   "resolution": "no action; deadline set to end of October",
+   "quote": "commission confirmed that they would give kp law until the end of october.",
+   "tags": [
+    "deadline",
+    "counsel",
+    "lien"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "returned to open meeting",
+   "quote": "sewer commission exited executive session at 6:27pm.",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Allocation Agreement draft (provided by Jeff Blake, KP Law)",
+   "where": "text",
+   "quote": "commission discussed the allocation agreement draft provided by jeff blake, kp law."
+  },
+  {
+   "name": "Jeff Blake email of 9/26 (draft agreement and request to record at the registry of deeds)",
+   "where": "text",
+   "quote": "barb read jeff's email of 9/26"
+  },
+  {
+   "name": "Recent Sewer Commission article (named fees)",
+   "where": "text",
+   "quote": "barb could check with counsel that this payment qualifies as one of the named fees in the recent sewer commission article."
+  },
+  {
+   "name": "Municipal Modernization article",
+   "where": "text",
+   "quote": "carl also pointed out that the municipal modernization article may also be applied."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "allocation agreement",
+  "KP Law",
+  "monthly payments",
+  "executive session",
+  "counsel deadline",
+  "lien",
+  "2017"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

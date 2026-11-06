@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-07-23",
  "docid": "993",
@@ -12,55 +12,251 @@
  },
  "votes": [
   {
-   "motion": "Grant variance for 11 Peninsula Drive reducing groundwater offset from 5 feet to 4 feet",
-   "moved_by": "Pa ssios",
-   "seconded_by": "Fortin",
+   "motion": "Approve the variance for 11 Peninsula Drive (reduce groundwater offset from 5 feet to 4 feet).",
+   "moved_by": "David Passios",
+   "seconded_by": "Paul Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by pa ssios and second by fortin, the variance was approved. all in favor"
+   "quote": "after discussion and on motion by pa ssios and second by fortin, the variance was approved. all in favor."
   },
   {
-   "motion": "Approve variances at 1190 Northfield Road for groundwater offset reduction from 4 feet to 2 feet and wetlands offset reduction from 100 feet to 69 feet",
-   "moved_by": "Mayhew",
+   "motion": "Approve the variances for 1190 Northfield Road (groundwater offset 4 feet to 2 feet; wetlands offset 100 feet to 69 feet).",
+   "moved_by": "Warren Mayhew",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by mayhew and second by jewell, the variances were approved. all in favor"
+   "quote": "after much discussion and on motion by mayhew and second by jewell, the variances were approved."
   },
   {
-   "motion": "Grant variance at 157 Townsend Harbor Road for groundwater offset reduction from 4 feet to 3 feet and inlet/outlet tee reduction",
-   "moved_by": "Fortin",
-   "seconded_by": "Mayhew",
+   "motion": "Grant the variance for 157 Townsend Harbor Road (groundwater offset four feet to 3 feet; inlet and outlet tees under 12 inches).",
+   "moved_by": "Paul Fortin",
+   "seconded_by": "Warren Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by fortin and second by mayhew the variance was granted. all in favor"
+   "quote": "after discussion and on motion by fortin and second by mayhew the variance was granted."
   },
   {
-   "motion": "Approve variances at 71 Highland Street for groundwater offset reduction and inlet/outlet tee reduction",
-   "moved_by": "Passios",
-   "seconded_by": "Mayhew",
+   "motion": "Approve the variances for 71 Highland Street (groundwater offset reduction; inlet and outlet tees under 12 inches).",
+   "moved_by": "David Passios",
+   "seconded_by": "Warren Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion b y passios and second by mayhew, the variances were approved. all in favor"
+   "quote": "after discussion and on motion b y passios and second by mayhew, the variances were approved."
   },
   {
-   "motion": "Approve variances at 113 Sandy Cove Road for groundwater offset reduction from 4 feet to 3 feet and inlet/outlet tee reduction",
-   "moved_by": "Fortin",
-   "seconded_by": "Mayhew",
+   "motion": "Approve the variances for 113 Sandy Cove Road (groundwater offset 4 feet to 3 feet; inlet and outlet tees under 12 inches).",
+   "moved_by": "Paul Fortin",
+   "seconded_by": "Warren Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by fortin and second by mayhew, the variances were approved. all in favor"
+   "quote": "after discussion and on motion by fortin and second by mayhew, the variances were approved."
   },
   {
-   "motion": "Allow Lanni Orchard to proceed with Agricultural Preservation Restriction subject to future DEP subdivision determination",
-   "moved_by": "Passios",
-   "seconded_by": "Mayhew",
+   "motion": "Allow the Lanni Orchard APR to proceed, with the owners proceeding at their own risk if DEP later finds the land division falls under subdivision rules.",
+   "moved_by": "David Passios",
+   "seconded_by": "Warren Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by passios and second by mayhew, th e board voted to allow the apr to proceed"
+   "quote": "after much discussion and on motion by passios and second by mayhew, th e board voted to allow the apr to proceed"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Six votes extracted. Minutes record approval of prior minutes but do not describe a formal motion, so that is not included. Meeting adjournment is noted but not recorded as a motion.",
- "cost_usd": 0.03798490000000001
+ "note": "Minutes are clean text with no dollar figures, transfers or public comment. Votes are recorded as 'All in favor' or 'the variances were approved' with no vote counts. The seconder for 1190 Northfield Road is 'Jewell', who is not in the attendance line. No motion is recorded for the adjournment, and no motion is recorded for the minutes approval or the Title 5 and septic permit items; these are recorded as decisions, not votes.",
+ "cost_usd": 0.00455622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, paul fortin, david passios and warren mayhew"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "present: george emond, paul fortin, david passios and warren mayhew"
+  },
+  {
+   "name": "David Passios",
+   "status": "present",
+   "quote": "present: george emond, paul fortin, david passios and warren mayhew"
+  },
+  {
+   "name": "Warren Mayhew",
+   "status": "present",
+   "quote": "present: george emond, paul fortin, david passios and warren mayhew"
+  },
+  {
+   "name": "Kirk Fitzpatrick",
+   "role": "from Civil Solutions, on behalf of the owner",
+   "status": "present",
+   "quote": "kirk fitzpatrick from civil solutions met with the board of behalf of the owner."
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "neil gorman met with the board on behalf of the owner."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner. this system is currently in failure"
+  },
+  {
+   "name": "Jerry Lanni Sr.",
+   "role": "owner, Lanni Orchard",
+   "status": "present",
+   "quote": "the owners of lanni orchard , jerry lanni sr., tony lanni, mario lanni and attorney cella were present at the meeting."
+  },
+  {
+   "name": "Tony Lanni",
+   "role": "owner, Lanni Orchard",
+   "status": "present",
+   "quote": "the owners of lanni orchard , jerry lanni sr., tony lanni, mario lanni and attorney cella were present at the meeting."
+  },
+  {
+   "name": "Mario Lanni",
+   "role": "owner, Lanni Orchard",
+   "status": "present",
+   "quote": "the owners of lanni orchard , jerry lanni sr., tony lanni, mario lanni and attorney cella were present at the meeting."
+  },
+  {
+   "name": "Attorney Cella",
+   "role": "representing Lanni Orchard",
+   "status": "present",
+   "quote": "the owners of lanni orchard , jerry lanni sr., tony lanni, mario lanni and attorney cella were present at the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Title 5 inspection report for 943 Reservoir Road acknowledged.",
+   "quote": "title 5 inspection reports acknowledged: 943 reservoir road"
+  },
+  {
+   "decision": "Septic permits signed for 498 Howard Street, 2030 Mass Avenue and 331 Burrage Street.",
+   "quote": "septic permits signed: 498 howard street 2030 mass avenue 331 burrage street"
+  },
+  {
+   "decision": "Minutes of June 4, 2018 and June 25, 2018 recorded as approved, with no motion or vote recorded.",
+   "quote": "minutes approved: june 4, 2018 june 25, 2018"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (June 4 and June 25, 2018)",
+   "quote": "minutes approved: june 4, 2018 june 25, 2018",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports",
+   "resolution": "acknowledged (943 Reservoir Road)",
+   "quote": "title 5 inspection reports acknowledged: 943 reservoir road",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (three addresses)",
+   "quote": "septic permits signed: 498 howard street 2030 mass avenue 331 burrage street",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "11 Peninsula Drive septic variance",
+   "resolution": "variance approved",
+   "quote": "after discussion and on motion by pa ssios and second by fortin, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "1190 Northfield Road septic variances",
+   "resolution": "variances approved",
+   "quote": "after much discussion and on motion by mayhew and second by jewell, the variances were approved.",
+   "tags": [
+    "variance",
+    "septic",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "157 Townsend Harbor Road septic variance",
+   "resolution": "variance granted",
+   "quote": "after discussion and on motion by fortin and second by mayhew the variance was granted.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "71 Highland Street septic variances",
+   "resolution": "variances approved",
+   "quote": "after discussion and on motion b y passios and second by mayhew, the variances were approved.",
+   "tags": [
+    "variance",
+    "septic"
+   ]
+  },
+  {
+   "topic": "113 Sandy Cove Road septic variances",
+   "resolution": "variances approved",
+   "quote": "after discussion and on motion by fortin and second by mayhew, the variances were approved.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "Lanni Orchard APR and septic repair",
+   "resolution": "board allowed APR to proceed, at owners' own risk",
+   "quote": "after much discussion and on motion by passios and second by mayhew, th e board voted to allow the apr to proceed",
+   "tags": [
+    "APR",
+    "agricultural preservation",
+    "subdivision",
+    "septic"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 943 Reservoir Road",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 943 reservoir road"
+  },
+  {
+   "name": "Lanni Orchard APR plan (prepared by MDAR)",
+   "where": "text",
+   "quote": "the plan was prepared by mdar . there was an article at town meeting a nd this was approved for funding."
+  }
+ ],
+ "tags": [
+  "septic variances",
+  "Title 5",
+  "groundwater offset",
+  "Lanni Orchard",
+  "APR",
+  "septic permits",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

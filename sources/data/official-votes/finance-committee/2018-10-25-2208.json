@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-10-25",
  "docid": "2208",
@@ -12,6 +12,355 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes contain discussion, public comment, and committee updates, but no motions voted upon at this Finance Committee meeting.",
- "cost_usd": 0.0872195
+ "note": "OCR of a scanned minutes document. The minutes record no motions or votes, so the votes list is empty. Page 2 begins mid-sentence and page 3 begins mid-discussion, so the start of the warrant article discussion is missing. Page 5 is blank. Pages 6-9 are OCR'd certification tables whose columns do not align reliably, so no table figures are recorded as budget items except as printed in the narrative. Water retained earnings: the narrative prints $52,790 while the page 7 table shows 52,709; both are printed as they appear in their sources. Several names are OCR/variant-spelled in the text (Mark for Marc Luescher, Hanna for Hannah Anderson). Some discussion is garbled in the OCR (e.g., on pages 3 and 4), so a few points are unclear.",
+ "cost_usd": 0.010624020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, george martin, michelle walton, marc luescher, jay simeone"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, george martin, michelle walton, marc luescher, jay simeone"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, george martin, michelle walton, marc luescher, jay simeone"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, george martin, michelle walton, marc luescher, jay simeone"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, george martin, michelle walton, marc luescher, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, george martin, michelle walton, marc luescher, jay simeone"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "absent: hannah anderson"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guest: heather lemieux, town manager; karen brochu, town accounting director; martha moore,"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accounting Director",
+   "status": "present",
+   "quote": "guest: heather lemieux, town manager; karen brochu, town accounting director; martha moore,"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Lunenburg Library Director",
+   "status": "present",
+   "quote": "guest: heather lemieux, town manager; karen brochu, town accounting director; martha moore,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karen Brochu will revise the amended investment policy (including the 'should' to 'shall' wording and the typo fixes) and bring it back to the November 8 meeting.",
+   "quote": "karen will make changes and bring it back to the november 8 meeting."
+  },
+  {
+   "decision": "Karen Brochu will check whether the policy already requires investments to be interest-bearing.",
+   "quote": "she will take a closer look to see if it is already part of the policy."
+  },
+  {
+   "decision": "The discussion of voting procedures at town meeting was deferred to the November 8 meeting.",
+   "quote": "terri stated that this can be discussed more at the meeting on november 8th"
+  },
+  {
+   "decision": "Karen Brochu will walk the Library through the process of accessing its old trust funds when a request is needed.",
+   "quote": "she will walk martha through the process of how to access the funds at the time of their needing to be requested."
+  },
+  {
+   "decision": "Town finance will keep reviewing whether paying down debt makes sense in the future; no bonds are available for about a couple of years.",
+   "quote": "it will continued to be reviewed to see if it would make sense to pay down in the future."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library additional salary funding (special town meeting article)",
+   "what_was_recorded": "Library Director asked for an additional salary amount for the library salary line to cover staff time for school-sponsored 5th grade visits; the minutes say there is no money in the budget for it and the request was rolled into Article 1 of the town warrant.",
+   "figures_as_printed": [
+    "$7200.00"
+   ],
+   "quote": "asking for an additional $7200.00 to apply to the library's salary line budget."
+  },
+  {
+   "topic": "DPW funding article (Article three)",
+   "what_was_recorded": "The DPW funding article amount was reduced due to attrition and retirements and is to be a transfer from the salary reserve.",
+   "figures_as_printed": [
+    "$8049.80"
+   ],
+   "quote": "article three regarding the dpw funding will be less than previously stated, due to attrition and retirements, at $8049.80. this will be a transfer from the salary reserve."
+  },
+  {
+   "topic": "Salary survey",
+   "what_was_recorded": "The salary survey will be done free of charge as a pilot community, so the related article will be passed over.",
+   "figures_as_printed": [],
+   "quote": "it will be done free of charge as a pilot community so the article will be passed over."
+  },
+  {
+   "topic": "Free Cash certification",
+   "what_was_recorded": "Free cash was certified on October 17; the original estimate and the certified figure were reported.",
+   "figures_as_printed": [
+    "$1,531, 000",
+    "$1,512,483"
+   ],
+   "quote": "the original estimate was $1,531, 000. the certified figure is $1,512,483."
+  },
+  {
+   "topic": "Enterprise fund retained earnings certification",
+   "what_was_recorded": "Retained earnings of the water, sewer and trash enterprise funds were certified at the amounts stated; the trash fund is funded by sales of yellow trash bags.",
+   "figures_as_printed": [
+    "$52,790",
+    "$1,929,110",
+    "$1,086"
+   ],
+   "quote": "the retained earnings of the enterprise funds were certified at $52,790 in water, $1,929,110 in sewer, and $1,086 in trash."
+  },
+  {
+   "topic": "Debt paydown",
+   "what_was_recorded": "Prior discussion on whether to pay anything down debt was reported; no bonds are available for a couple of years, so no action now.",
+   "figures_as_printed": [],
+   "quote": "there had been previous discussion between town finance and financial planning as to whether it made sense to pay anything down."
+  },
+  {
+   "topic": "Investment diversification limit and bank balances",
+   "what_was_recorded": "The policy change would raise the single-institution limit from 10% to 25%; at fiscal year-end FY2018 the minutes give each institution's share of town cash, all said to be fully insured.",
+   "figures_as_printed": [
+    "10%",
+    "25%",
+    "10.53%",
+    "16%",
+    "22%",
+    "9%",
+    "12%",
+    "19%"
+   ],
+   "quote": "the current is that no more than 10% of the town's investment be in a single institution. the revised would be 25%."
+  },
+  {
+   "topic": "Fire engine pump repair",
+   "what_was_recorded": "Engine four had inspection issues with the pump; the repair is estimated at a cost range if the parts can be located, and a new fire engine would take about 300 days.",
+   "figures_as_printed": [
+    "$5,000-7,000"
+   ],
+   "quote": "it will cost $5,000-7,000 if they can locate the parts, as it is a 1995 engine."
+  },
+  {
+   "topic": "Library trust funds",
+   "what_was_recorded": "Library trustees asked how to access old trust funds for a funding request; Karen Brochu gave the library a report on how much is available. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "she provided her with a report on the trust funds and how much funds are available."
+  },
+  {
+   "topic": "Ham and bean supper fundraiser",
+   "what_was_recorded": "As an aside, the Town Charter update noted that the ham and bean supper at The Eagle House raised money.",
+   "figures_as_printed": [
+    "$997.00"
+   ],
+   "quote": "the ham and bean supper at the eagle house raised $997.00."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "DPW funding (Article three) to be a transfer from the salary reserve, per the minutes.",
+   "amount_as_printed": "$8049.80",
+   "outcome": "described in the minutes; no vote recorded",
+   "quote": "article three regarding the dpw funding will be less than previously stated, due to attrition and retirements, at $8049.80. this will be a transfer from the salary reserve."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Martha Moore",
+   "stated_role": "the Director of the Lunenburg Public Library",
+   "topic": "library staffing for 5th grade visits and additional salary request",
+   "quote": "martha moore, the director of the lunenburg public library, explained the library has been asked to have twice-weekly meetings"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting and call to order",
+   "resolution": "called to order at 7:00 pm; no further public comment",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "open meeting",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Public comment: library staffing request",
+   "resolution": "heard; no action; request to be explained at special town meeting",
+   "quote": "martha moore, the director of the lunenburg public library, explained the library has been asked to have twice-weekly meetings",
+   "tags": [
+    "library",
+    "salary",
+    "5th grade",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Special town meeting warrant articles",
+   "resolution": "discussed; no vote recorded",
+   "quote": "article three regarding the dpw funding will be less than previously stated, due to attrition and retirements, at $8049.80.",
+   "tags": [
+    "warrant",
+    "special town meeting",
+    "DPW",
+    "salary survey"
+   ]
+  },
+  {
+   "topic": "Discussion of voting procedures at town meeting",
+   "resolution": "discussed; deferred to November 8 meeting",
+   "quote": "discussion of voting procedures at the town meeting terri brought up that it may have happened last year",
+   "tags": [
+    "town meeting",
+    "voting",
+    "caucus"
+   ]
+  },
+  {
+   "topic": "Review of member projects",
+   "resolution": "discussed; no action",
+   "quote": "mark discussed a conversation with heather were it was discussed that the town of lunenburg was",
+   "tags": [
+    "Cleargov",
+    "dashboard",
+    "data transparency"
+   ]
+  },
+  {
+   "topic": "Financial Officer Report",
+   "resolution": "reported; no vote; debt paydown kept under review",
+   "quote": "financial officer report there was an announcement that went to terri that she will forward to the committee.",
+   "tags": [
+    "free cash",
+    "retained earnings",
+    "debt",
+    "enterprise funds"
+   ]
+  },
+  {
+   "topic": "Review of amended investment policy",
+   "resolution": "continued to November 8 meeting; no vote",
+   "quote": "review of amended investment policy: to discuss the change in the diversification policy",
+   "tags": [
+    "investment policy",
+    "banking",
+    "deposits"
+   ]
+  },
+  {
+   "topic": "Committee department updates",
+   "resolution": "reports received; no action",
+   "quote": "committee department updates: john, capital planning committee: the town manager has distributed the capital planning document",
+   "tags": [
+    "capital planning",
+    "fire department",
+    "library trustees",
+    "charter"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FREE CASH, JULY 1, 2018 certification worksheet (reviewed by Bobbi Colburn, 10/17/18)",
+   "where": "list",
+   "quote": "reviewed by: date: bobbi colburn 10/17/18 please see certification letter for director of accounts approval"
+  },
+  {
+   "name": "Retained earnings certification worksheets (water, sewer, trash), reviewed by Bobbi Colburn 10/17/18",
+   "where": "list",
+   "quote": "retained earnings - undesignated"
+  },
+  {
+   "name": "Certification letter for Director of Accounts approval",
+   "where": "text",
+   "quote": "please see certification letter for director of accounts approval"
+  },
+  {
+   "name": "Special town meeting warrant (Article 1 and Article three)",
+   "where": "text",
+   "quote": "terri explained that heather rolled the request into the article 1 of the town warrant to be explained during the special town meeting."
+  },
+  {
+   "name": "Amended investment policy",
+   "where": "text",
+   "quote": "review of amended investment policy: to discuss the change in the diversification policy"
+  },
+  {
+   "name": "Capital planning document (Google sheet)",
+   "where": "text",
+   "quote": "the town manager has distributed the capital planning document google sheet to the applicable departments."
+  },
+  {
+   "name": "Cleargov.com town data contract",
+   "where": "text",
+   "quote": "close to a contract with cleargov.com to provide town data to the public"
+  },
+  {
+   "name": "Dashboard (George Martin's charts)",
+   "where": "text",
+   "quote": "george discussed the dashboard."
+  },
+  {
+   "name": "Financial terms booklet (customized searchable PDF)",
+   "where": "text",
+   "quote": "booklet out to the committee and stated the group could review and identify what sticks out to them."
+  },
+  {
+   "name": "Library trust fund report",
+   "where": "text",
+   "quote": "she provided her with a report on the trust funds and how much funds are available."
+  },
+  {
+   "name": "Bylaws language (posted on Facebook and town website)",
+   "where": "text",
+   "quote": "the language for the bylaws is on facebook and the town website."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "library staffing",
+  "special town meeting",
+  "warrant articles",
+  "free cash",
+  "retained earnings",
+  "investment policy",
+  "debt",
+  "fire department",
+  "town charter",
+  "Cleargov",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "free cash, july 1, 2018"
+ },
+ "dropped_unquoted_by_field": {}
 }

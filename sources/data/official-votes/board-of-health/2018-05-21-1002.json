@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-05-21",
  "docid": "1002",
@@ -12,21 +12,137 @@
  },
  "votes": [
   {
-   "motion": "Approve requested variances for 7 Clifton Road",
+   "motion": "Approve the requested variances for inlet and outlet tees and less than 4 feet of pervious soil at 7 Clifton Road.",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after dis cussion and on motion by passios and second by jewell, the requested variances were approved. all in favor."
+   "quote": "on motion by passios and second by jewell, the requested variances were approved. all in favor."
   },
   {
-   "motion": "Approve annual request for use of portable facilities at Sandy Point Campground",
+   "motion": "Approve the annual request for the use of portable facilities at Sandy Point Campground.",
    "outcome": "passed",
    "procedural": false,
    "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at sandy point campground."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1016985
+ "note": "Text extract, not a scan; readable. Only two motions are recorded: the 7 Clifton Road variances and the Sandy Point portable facilities request. The minutes approval, Title 5 acknowledgement, septic permit signing and adjournment carry no recorded motion or vote count, so they are listed as decisions or topics, not votes. No mover is printed for the portable facilities request. The heading says \"Shady Point\" but the text says \"Sandy Point Campground\", printed as is. Board member roles are not printed. No dollar figures appear. No public comment section is printed; Doug Smith appeared as an applicant's representative.",
+ "cost_usd": 0.00349322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios,"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios,"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, dave passios,"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner. this system is in failure."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board acknowledged the Title 5 inspection report for 362 Townsend Harbor Road.",
+   "quote": "title 5 inspection reports acknowledged: 362 townsend harbor road"
+  },
+  {
+   "decision": "Board signed septic permits for 104 Island Road, 537 Howard Street and 7 Clifton Road.",
+   "quote": "septic permits signed: 104 island road 537 howard street 7 clifton road"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "listed as approved; no motion recorded",
+   "quote": "minutes approved: title 5 inspection reports acknowledged:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection report, 362 Townsend Harbor Road",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 362 townsend harbor road",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (no motion recorded)",
+   "quote": "septic permits signed: 104 island road 537 howard street 7 clifton road",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "7 Clifton Road septic repair variances",
+   "resolution": "approved",
+   "quote": "on motion by passios and second by jewell, the requested variances were approved. all in favor.",
+   "tags": [
+    "septic",
+    "variance"
+   ]
+  },
+  {
+   "topic": "Shady Point beach portable toilet request",
+   "resolution": "approved annual request",
+   "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at sandy point campground.",
+   "tags": [
+    "portable toilets",
+    "beach",
+    "permit"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 362 Townsend Harbor Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 362 townsend harbor road"
+  },
+  {
+   "name": "Septic permits, 104 Island Road, 537 Howard Street and 7 Clifton Road",
+   "where": "list",
+   "quote": "septic permits signed: 104 island road 537 howard street 7 clifton road"
+  },
+  {
+   "name": "Annual request for use of portable facilities at Sandy Point Campground",
+   "where": "text",
+   "quote": "the board reviewed and unanimously approved the annual request for the use of portable facilities at sandy point campground."
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variance",
+  "septic permits",
+  "portable toilets",
+  "beach",
+  "Board of Health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

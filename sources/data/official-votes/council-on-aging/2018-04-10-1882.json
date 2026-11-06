@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2018-04-10",
  "docid": "1882",
@@ -12,23 +12,224 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the March 20, 2018 meeting as amended",
+   "motion": "Approve the minutes of the March 20, 2018 meeting as amended.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Lincoln",
-   "outcome": "motion carried unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo moved to approve the minutes from the march 20, 2018 meeting as amended, mr. lincoln seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:20 a.m.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Lincoln",
-   "outcome": "motion carried unanimously",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo moved to adjourn the meeting at 10:20 a.m. mr. lincoln seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08148849999999999
+ "note": "The roll call on page 1 is OCR-garbled, so the first-name/surname splits (Diane Grant, Jane Nowa, Brian Rabbitt, Deb Guenara, Kevin McNally) are uncertain; the text also refers to Mr. Guenard, which may be the same person as Deb Guenara. Mr. Lincoln is said to have laryngitis yet is recorded speaking and seconding motions, and Mrs./Ms. Lincoln is used interchangeably. Page 2 begins mid-sentence and a gap (\"been no other information on the project.\") suggests missing text between the Montachusett Home Care and Age/Dementia items. No vote tallies beyond 'unanimously' are printed. No documents list is printed.",
+ "cost_usd": 0.006758619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Diane Grant",
+   "role": "board member (roll call)",
+   "status": "present",
+   "quote": "grant, diane nowa, jane rabbitt, brian guenara, deb lincoln, judy tarbell, kevin mcnally"
+  },
+  {
+   "name": "Jane Nowa",
+   "role": "board member (roll call)",
+   "status": "present",
+   "quote": "grant, diane nowa, jane rabbitt, brian guenara, deb lincoln, judy tarbell, kevin mcnally"
+  },
+  {
+   "name": "Brian Rabbitt",
+   "role": "board member (roll call)",
+   "status": "present",
+   "quote": "grant, diane nowa, jane rabbitt, brian guenara, deb lincoln, judy tarbell, kevin mcnally"
+  },
+  {
+   "name": "Deb Guenara",
+   "role": "board member (roll call); referred to as Mr. Guenard in the text",
+   "status": "present",
+   "quote": "grant, diane nowa, jane rabbitt, brian guenara, deb lincoln, judy tarbell, kevin mcnally"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "board member (roll call); referred to as Mr. and Mrs. Lincoln in the text",
+   "status": "present",
+   "quote": "grant, diane nowa, jane rabbitt, brian guenara, deb lincoln, judy tarbell, kevin mcnally"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "board member (roll call)",
+   "status": "present",
+   "quote": "judy tarbell commented that her name was left off the absent list of the last"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "board member (roll call)",
+   "status": "present",
+   "quote": "grant, diane nowa, jane rabbitt, brian guenara, deb lincoln, judy tarbell, kevin mcnally"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "vice chair jacquelyn dwyer would run today's meeting"
+  },
+  {
+   "name": "Ms. DiGiacomo",
+   "role": "board member",
+   "status": "present",
+   "quote": "ms. digiacomo moved to approve the minutes from the march 20, 2018 meeting as amended"
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "presenter of the Director's Report (role as printed not stated)",
+   "status": "present",
+   "quote": "ms. doherty reported that she received an update from the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Lincoln said he would check the talent bank forms at Town Hall (in connection with Mr. Guenard's term ending).",
+   "quote": "mr. lincoln said he would check the talent bank forms at town hall."
+  },
+  {
+   "decision": "Vice Chair Jacquelyn Dwyer stated she would serve on the Montachusett Home Care Board of Directors and would send her resume to Ms. Doherty.",
+   "quote": "would serve on the montachusett home care board of directors"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY19 Formula Grant scale of potential outcomes",
+   "what_was_recorded": "MCOA gave a scale of potential per-elder outcomes for the FY19 Formula Grant, rated unlikely, possible, or likely.",
+   "figures_as_printed": [
+    "$9.70 per elder",
+    "$11 per elder",
+    "$11.70 per elder",
+    "$12 per elder"
+   ],
+   "quote": "$11.70 per elder -\"likely,\" and the originally proposed $12 per elder was deemed \"possible.\""
+  },
+  {
+   "topic": "SNAP reimbursement to the town",
+   "what_was_recorded": "The town was reimbursed for the COA effort on SNAP; the program has been less popular than expected, but reimbursement rules have relaxed.",
+   "figures_as_printed": [
+    "$75.00"
+   ],
+   "quote": "ms. doherty reported that the town was reimbursed $75.00 for the coa"
+  },
+  {
+   "topic": "Montachusett Home Care donation requests marked invoice",
+   "what_was_recorded": "MHC sent donation requests marked as invoices; the COA replied that its budget would not allow a donation, and another senior center reportedly paid an invoice from its COA budget. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "stating that the coa budget wouldn't allow for a donation to the agency in the past"
+  },
+  {
+   "topic": "Furniture for Bucky's Corner / Eagle House",
+   "what_was_recorded": "New furniture picked out for the Eagle House was paid for by the Eagle House Supporters. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "which was paid for by the eagle house supporters"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; informational",
+   "tags": [
+    "announcements",
+    "furniture",
+    "Boston Post Cane"
+   ],
+   "quote": "mrs. lincoln explained that vice chair jacquelyn dwyer would run today's meeting"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. digiacomo moved to approve the minutes from the march 20, 2018 meeting as amended, mr. lincoln seconded."
+  },
+  {
+   "topic": "Yellow Dot Program",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "Yellow Dot",
+    "MOLST"
+   ],
+   "quote": "ms. doherty showed the board the materials used for the program and gave a brief description."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; no action recorded",
+   "tags": [
+    "formula grant",
+    "board terms",
+    "Montachusett Home Care",
+    "dementia friendly",
+    "SNAP",
+    "building"
+   ],
+   "quote": "current business: 1. director's report:"
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "notices and communications: none"
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action; thanks recorded",
+   "tags": [
+    "staff",
+    "Eagle House"
+   ],
+   "quote": "ms. lincoln thanked the office staff for being warm and welcoming to eagle house guests."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:20 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ms. digiacomo moved to adjourn the meeting at 10:20 a.m. mr. lincoln seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "council on aging",
+  "formula grant",
+  "Montachusett Home Care",
+  "SNAP",
+  "Yellow Dot program",
+  "board membership",
+  "Eagle House",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

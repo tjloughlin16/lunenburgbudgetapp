@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2018-08-23",
  "docid": "3284",
@@ -12,31 +12,225 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from July 26, 2018 and August 7, 2018",
-   "moved_by": "Dennis",
-   "seconded_by": "Karin",
+   "motion": "Approve the minutes of July 26, 2018 and August 7, 2018.",
+   "moved_by": "Dennis Mannone",
    "outcome": "passed 2-0",
    "procedural": true,
-   "quote": "dennis motioned and karin seconded to approve minutes from july 26, 2018 and august 7, 2018. approved 2-0."
+   "quote": "dennis motioned and karin seconded to approve minutes from july 26, 2018 and august 7, 2018. approved 2-0.",
+   "seconded_by": "Karin Menard"
   },
   {
-   "motion": "Remove turf from use forms",
-   "moved_by": "Karin",
-   "seconded_by": "Dennis",
+   "motion": "Remove turf from the park usage request forms.",
+   "moved_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "karin motioned and dennis seconded to remove turf from use forms. approved 3-0"
+   "quote": "karin motioned and dennis seconded to remove turf from use forms. approved 3-0",
+   "seconded_by": "Dennis Mannone"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Karin",
-   "seconded_by": "Dennis",
+   "motion": "Adjourn the meeting at 7:49pm.",
+   "moved_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "karin motioned and dennis seconded to adjourn at 7:49pm. approved 3-0."
+   "quote": "karin motioned and dennis seconded to adjourn at 7:49pm. approved 3-0.",
+   "seconded_by": "Dennis Mannone"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0757395
+ "note": "OCR of a two-page scan (macOS Vision). The Town Beach item (4) is garbled in the OCR from \"Susanna otta picture\" onward and cannot be read reliably, so any action it records may be missed. Items 10 and 11 are absent: page 2 opens mid-item with \"with a Long Term Vision\", so the heading for the park facilities tour is unknown. Roles are not stated in the text. Filed stamp reads APR 09 2019.",
+ "cost_usd": 0.00438782,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "status": "present",
+   "quote": "dennis called the meeting to order at 6pm. attendance: karin menard, dennis mannone and susanna jewell",
+   "role": "not stated"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "dennis called the meeting to order at 6pm. attendance: karin menard, dennis mannone and susanna jewell",
+   "role": "not stated"
+  },
+  {
+   "name": "Susanna Jewell",
+   "status": "present",
+   "quote": "dennis called the meeting to order at 6pm. attendance: karin menard, dennis mannone and susanna jewell",
+   "role": "not stated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed it would be beneficial to have Gen Nass attend an upcoming meeting for more specifics on the Summer 2018 Town Beach season; Karin to extend the invitation.",
+   "quote": "commission felt that it would be beneficial to have gen nass attend an upcoming meeting to give more specifics."
+  },
+  {
+   "decision": "Commission agreed to raise the idea of expanding Park Commission from 3 members to 3-5 with the Charter Review Committee in the upcoming months.",
+   "quote": "susanna and dennis thought that may be a viable idea and we should talk to the charter review committee in the upcoming months."
+  },
+  {
+   "decision": "Commission decided to tour park facilities on September 12 at 10:30.",
+   "quote": "commission decided on september 12 at 10:30 to tour park facilities."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Summer 2018 overdue bills",
+   "what_was_recorded": "A DPW Admin Assistant is helping collect overdue Summer 2018 bills; no amounts printed.",
+   "quote": "dpw admin assistant is assisting with collecting summer 2018 bills that are over due.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town Beach finances",
+   "what_was_recorded": "Town Beach item was headed as discussion around finances; no figures printed.",
+   "quote": "discussion around finances",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "2019 season fees",
+   "what_was_recorded": "Commission asked to look at 2019 season fees early; no figures printed.",
+   "quote": "karin asked the commission to consider looking at the 2019 season fees as soon as possible",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of minutes",
+   "resolution": "minutes of July 26 and August 7, 2018 approved 2-0",
+   "quote": "dennis motioned and karin seconded to approve minutes from july 26, 2018 and august 7, 2018. approved 2-0.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager updates",
+   "resolution": "no updates",
+   "quote": "dpw director / town manager updates - none",
+   "tags": [
+    "DPW",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Fall 2018 usage and Summer 2018 billing",
+   "resolution": "discussed, no action",
+   "quote": "karin updated the commission that little league has only a couple of teams playing this fall and their usage is",
+   "tags": [
+    "usage",
+    "billing",
+    "Little League"
+   ]
+  },
+  {
+   "topic": "Town Beach summer 2018 season and finances",
+   "resolution": "discussed; Gen Nass to be invited to an upcoming meeting",
+   "quote": "karin gave a brief break down of the summer 2018 season.",
+   "tags": [
+    "town beach",
+    "finances",
+    "season"
+   ]
+  },
+  {
+   "topic": "2019 season fees",
+   "resolution": "discussed, no action",
+   "quote": "karin asked the commission to consider looking at the 2019 season fees as soon as possible",
+   "tags": [
+    "fees",
+    "2019 season"
+   ]
+  },
+  {
+   "topic": "Update of park use forms",
+   "resolution": "turf removed from use forms, 3-0",
+   "quote": "karin let the commission know that the usage request forms needed to be updated to reflect that the turf is no longer",
+   "tags": [
+    "park use forms",
+    "turf"
+   ]
+  },
+  {
+   "topic": "Wallis Park",
+   "resolution": "no action",
+   "quote": "wallis park - general updates, policy, procedure and usage discussion / vote - none",
+   "tags": [
+    "Wallis Park"
+   ]
+  },
+  {
+   "topic": "Charter Review",
+   "resolution": "discussed; to talk with Charter Review Committee",
+   "quote": "karin commented that maybe we should consider asking to bump park commission from a 3 member board to a 3-5",
+   "tags": [
+    "charter review",
+    "board size"
+   ]
+  },
+  {
+   "topic": "Park facilities tour (heading cut off in scan)",
+   "resolution": "tour set for September 12, 2018 at 10:30",
+   "quote": "commission decided on september 12 at 10:30 to tour park facilities.",
+   "tags": [
+    "park facilities",
+    "tour",
+    "long-term vision"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "none",
+   "quote": "other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Correspondence, announcements and public and board comment",
+   "resolution": "discussed, no action",
+   "quote": "karin told the commission that the 01462 skate park organizers gave an update to the board of selectman at their",
+   "tags": [
+    "skate park",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting September 12, 2018 10:30am",
+   "quote": "upcoming meeting schedule and agenda - september 12, 2018 10:30am.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:49pm, 3-0",
+   "quote": "karin motioned and dennis seconded to adjourn at 7:49pm. approved 3-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "park commission",
+  "town beach",
+  "season fees",
+  "park use forms",
+  "turf",
+  "charter review",
+  "skate park",
+  "fall usage",
+  "billing",
+  "wallis park"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

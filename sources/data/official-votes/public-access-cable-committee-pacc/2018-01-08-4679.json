@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2018-01-08",
  "docid": "4679",
@@ -10,15 +10,112 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082018-4679",
   "doc_url": "/docs/meetings/public-access-cable-committee-pacc/2018-01-08-minutes-4679.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scan (macOS Vision) with some garbled characters (e.g., 'Feb 5*h'). The text records an approval of the minutes and an adjournment at 6:54pm but no motion, second, or vote count for either, so no votes are listed. No attendance list is printed; the people listed appear only in the report items. The clerk's signature line is dated 3/6/18, after the meeting date.",
+ "cost_usd": 0.00248422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "to approve the meeting minutes from December 4, 2017",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "review and approve meeting minutes from dec. 4, 2017. 1. committee reviewed and approved the minutes."
+   "name": "Jeffrey Bajko",
+   "role": "PACC Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted, jeffrey bajko, pacc clerk 3/6/18"
+  },
+  {
+   "name": "Jo",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jo set up a visit to the sterling-lancaster studio."
+  },
+  {
+   "name": "Steve",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "steve shared the cac minutes to the pacc committee."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; one procedural vote on approving prior minutes. No moved_by/seconded_by recorded. No other votes found.",
- "cost_usd": 0.0851905
+ "decisions": [
+  {
+   "decision": "Committee reviewed and approved the December 4, 2017 meeting minutes (no motion or vote count recorded).",
+   "quote": "1. committee reviewed and approved the minutes."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Manager's monthly report: ending budget",
+   "what_was_recorded": "The manager's report states the ending budget figure.",
+   "quote": "manager's monthly report: 1. ending budget is $127,348.64",
+   "figures_as_printed": [
+    "$127,348.64"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review and approve minutes from Dec. 4, 2017",
+   "resolution": "approved",
+   "quote": "review and approve meeting minutes from dec. 4, 2017. 1. committee reviewed and approved the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's monthly report",
+   "resolution": "received, no action recorded",
+   "quote": "manager's monthly report: 1. ending budget is $127,348.64",
+   "tags": [
+    "studio",
+    "budget",
+    "programming",
+    "underwriting"
+   ]
+  },
+  {
+   "topic": "Business and cable advisory committee update",
+   "resolution": "noted, no action recorded",
+   "quote": "business and cable advisory committee update: 1. cac met with attorney this past month.",
+   "tags": [
+    "CAC",
+    "advisory committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:54pm; next meeting Feb 5",
+   "quote": "meeting adjourned at 6:54pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Meeting minutes from Dec. 4, 2017",
+   "where": "text",
+   "quote": "review and approve meeting minutes from dec. 4, 2017."
+  },
+  {
+   "name": "CAC minutes",
+   "where": "text",
+   "quote": "steve shared the cac minutes to the pacc committee."
+  }
+ ],
+ "tags": [
+  "public access cable",
+  "studio",
+  "manager report",
+  "budget",
+  "minutes approval",
+  "CAC update",
+  "equipment upgrades"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

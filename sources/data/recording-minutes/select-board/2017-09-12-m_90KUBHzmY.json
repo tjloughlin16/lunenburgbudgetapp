@@ -1,0 +1,418 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2017-09-12",
+ "video_id": "m_90KUBHzmY",
+ "video_url": "https://www.youtube.com/watch?v=m_90KUBHzmY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2017-09-12-m_90KUBHzmY.json",
+  "sha256": "b4b62c38a57d3d2eb1c68c4a8d5adeead637e548d5a066983baadaeb2ee5cf97",
+  "caption_lines": 420,
+  "segments": 3300
+ },
+ "recording": {
+  "duration_s": 8995,
+  "duration": "2:29",
+  "spoken_chars": 119620,
+  "words_approx": 19936
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09122017-5043",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-09-12-agenda-5043.txt",
+   "path": "sources/meetings/select-board/2017-09-12-agenda-5043.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09122017-5043",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-09-12-minutes-5043.txt",
+   "path": "sources/meetings/select-board/2017-09-12-minutes-5043.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-06T00:29:28Z",
+  "cost_usd": 0.2501297
+ },
+ "minutes": {
+  "headline": "Select Board and Planning Board held an economic development workshop with no vote; another session is planned.",
+  "summary": "Public comment on town center plans and social media tone opened the night, then a joint workshop on economic development. The land use director reviewed past plans, zoning limits and infrastructure, and members and residents discussed ecotourism, farming, a business group and surveying residents. The board then approved warrants and minutes and discussed scheduling a pilot agreement hearing.",
+  "attendees": [
+   {
+    "name_as_heard": "Adam",
+    "role": "land use director / presenter"
+   },
+   {
+    "name_as_heard": "Damon",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 866,
+    "speaker_as_heard": "Heather Bowen",
+    "stated_role": "resident",
+    "topic": "Registered kitchen and local regulations hindering farm and small food businesses; Facebook as marketing venue."
+   },
+   {
+    "t": 1254,
+    "speaker_as_heard": "Marie Martin",
+    "stated_role": "retired teacher",
+    "topic": "Concern about 40R zoning in the town center; answered that 40R is specific to Tri Town Landing."
+   },
+   {
+    "t": 1565,
+    "speaker_as_heard": "Katie",
+    "topic": "Differing visions for the town center; preserve town land as open space and encourage development on private land."
+   },
+   {
+    "t": 1782,
+    "topic": "Asked what the center district bylaw intended and what the boards' visions for economic development are."
+   },
+   {
+    "t": 8112,
+    "topic": "Treatment of Stillman Country Fair versus the Unifier festival; agri-tourism."
+   },
+   {
+    "t": 8419,
+    "topic": "Parking is needed before reusing town center buildings."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "legal",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 8564,
+    "motion": "Motion to approve the minutes of August 22nd; all in favor, aye",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 8675,
+    "topic": "Payroll warrant",
+    "what_was_said": "A payroll warrant was read into the record.",
+    "figures_as_heard": [
+     "two thousand three hundred thirty six thousand sixty seven cents"
+    ]
+   },
+   {
+    "t": 8696,
+    "topic": "Accounts payable warrants",
+    "what_was_said": "Two further warrants were read, including accounts payable.",
+    "figures_as_heard": [
+     "three hundred fifty five thousand nine hundred and sixty dollars or sixty-two cents",
+     "548 thousand eight hundred $1.48"
+    ]
+   },
+   {
+    "t": 2792,
+    "topic": "Road funding",
+    "what_was_said": "The land use director said the town recently put money into local roads, with state TIP money for two roads.",
+    "figures_as_heard": [
+     "four and a half million dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 8564,
+    "decision": "Another meeting will be held with other entities involved to discuss action items; the format (charrette or workshop) was left open."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 22,
+    "t_end": 66,
+    "topic": "Texas relief announcement",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 68,
+    "t_end": 860,
+    "topic": "Public comment and board discussion of town center statements and social media",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 866,
+    "t_end": 1900,
+    "topic": "Public comment on kitchen regulations, 40R zoning, and town center visions",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1930,
+    "t_end": 4300,
+    "topic": "Economic development presentation by land use director",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4314,
+    "t_end": 8100,
+    "topic": "Boards and public discussion of economic development ideas",
+    "resolution": "no resolution",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 8112,
+    "t_end": 8560,
+    "topic": "Closing public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 8564,
+    "t_end": 8720,
+    "topic": "Minutes and warrants",
+    "resolution": "voted, count not audible",
+    "tags": []
+   },
+   {
+    "t_start": 8722,
+    "t_end": 8988,
+    "topic": "Scheduling and pilot agreement with special permit",
+    "resolution": "informational",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts and minutes motion wording unclear",
+   "Most speakers are unidentified",
+   "Stretch around 7190-7307 is garbled"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3171,
+    "about": "Whether economic development can reduce residential taxes, and the slide title.",
+    "sides": "A member against the land use director's slide wording",
+    "words_as_heard": "I would respectfully disagree with you",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6497,
+    "about": "Whether the boards themselves should do economic development.",
+    "sides": "One member against another",
+    "words_as_heard": "I have to respectfully disagree with you",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 8789,
+    "kind": "liability or legal",
+    "about": "The Planning Board cannot require a pilot agreement; a condition could be challenged.",
+    "who": "the land use director",
+    "words_as_heard": "our bylaw does not have a financial test as part of the special permit grant so the Planning Board cannot require that the applicant enter into a pilot"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1930,
+    "name_as_heard": "draft presentation",
+    "kind": "presentation",
+    "words_as_heard": "you all got a copy of my draft presentation"
+   },
+   {
+    "t": 2035,
+    "name_as_heard": "2012 priority development preservation area document",
+    "kind": "report",
+    "words_as_heard": "2012 the prior to development preservation area document"
+   },
+   {
+    "t": 2687,
+    "name_as_heard": "2014 economic development element",
+    "kind": "report",
+    "words_as_heard": "the 2014 economic development element"
+   },
+   {
+    "t": 7475,
+    "name_as_heard": "2011 open space plan",
+    "kind": "report",
+    "words_as_heard": "recommendations from the 2011 open space plan"
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "watch_next": [
+   "Another meeting with other involved entities to discuss economic development action items; format (charrette or workshop) not yet set.",
+   "A hearing on the pilot agreement with a special permit was discussed for scheduling; no date is given in the minutes."
+  ],
+  "what_happened": [
+   {
+    "line": "The Select Board and Planning Board held a joint economic development workshop and took no vote on it.",
+    "t": 4314
+   },
+   {
+    "line": "The land use director reviewed past plans, zoning limits and infrastructure, and members and residents then discussed ideas without a resolution.",
+    "t": 1930
+   },
+   {
+    "line": "The boards agreed to hold another meeting with other involved entities on action items, leaving the format, charrette or workshop, open.",
+    "t": 8564
+   },
+   {
+    "line": "Public comment covered town center plans, 40R zoning and rules affecting farm and small food businesses; 40R was said to apply only to Tri Town Landing.",
+    "t": 1254
+   },
+   {
+    "line": "The board read payroll and accounts payable warrants into the record and handled the minutes; the vote count was not audible.",
+    "t": 8675
+   }
+  ],
+  "why_it_matters": [
+   "Economic development and zoning choices for the town center and local farm and food businesses were discussed but not decided, so any change would come through later meetings and, for zoning, a vote at Town Meeting.",
+   "The warrants approved are how the town's bills and payroll are paid from the town budget, mostly taxes."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-06T00:29:34Z",
+   "cost_usd": 0.022517099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09122017-5043",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-09-12-minutes-5043.txt",
+   "path": "sources/meetings/select-board/2017-09-12-minutes-5043.pdf"
+  },
+  "official_sha256": "ccac05c9b08f3b05a260d995a8d6f4d7cc86692258e79cc629385753413d760a",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the warrant amounts once caption garbling is corrected, and both describe a follow-up workshop. Our minutes omit the Nexamp PILOT meeting decision and most attendees, and include a $4.5 million road funding figure that the official minutes never mention.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 0,
+   "only_in_ours": 1,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Payroll warrant amount",
+    "ours": "Payroll warrant: two thousand three hundred thirty six thousand sixty seven cents",
+    "official": "a school payroll warrant in the amount of $2336.67.",
+    "official_reading": "$2,336.67",
+    "note": "Captions garbled the amount ($2,336.67); same school payroll warrant.",
+    "t": 8675
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant $355,960.62",
+    "ours": "three hundred fifty five thousand nine hundred and sixty dollars or sixty-two cents",
+    "official": "they signed accounts payable warrants in the amounts of $548,801.48 and $355,960.62",
+    "official_reading": "$355,960.62",
+    "note": "Same warrant, garbled by captions.",
+    "t": 8696
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant $548,801.48",
+    "ours": "548 thousand eight hundred $1.48",
+    "official": "they signed accounts payable warrants in the amounts of $548,801.48 and $355,960.62",
+    "official_reading": "$548,801.48",
+    "note": "Same warrant, garbled by captions.",
+    "t": 8696
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Road funding figure",
+    "ours": "Road funding: four and a half million dollars",
+    "official": "",
+    "note": "Official minutes print no road funding figure; check the recording around t=2792 for context.",
+    "t": 2792
+   },
+   {
+    "kind": "agree",
+    "about": "Follow-up workshop/meeting with other entities",
+    "ours": "Another meeting will be held with other entities involved to discuss action items; the format (charrette or workshop) was left open.",
+    "official": "he would like to invite the sewer commission as well as others to the next workshop.",
+    "note": "Both describe a further meeting with other bodies invited; official names the Sewer Commission and calls it a workshop.",
+    "t": 8564
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Nexamp PILOT meeting on October 3",
+    "ours": "",
+    "official": "the board decided to meet with the nexamp representative on october 3'd to discuss a pilot agreement.",
+    "note": "A decision in the official minutes that our minutes do not record; verify in the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Approval of August 22, 2017 minutes",
+    "ours": "",
+    "official": "the board approved minutes of august 22, 2017.",
+    "note": "Official records approval without vote count; ours records no such vote. Likely procedural but check.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Damon (McQuaid) attendee",
+    "ours": "Damon (member)",
+    "official": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member",
+    "note": "Damon matches Damon McQuaid.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Adam Burney, land use director",
+    "ours": "Adam (land use director / presenter)",
+    "official": "also present: heather lemieux, town manager, adam burney, land use director",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Full attendee list",
+    "ours": "",
+    "official": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member",
+    "note": "Our minutes list only two attendees; official lists all Select Board, Planning Board members and town staff.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-06T00:30:38Z",
+   "cost_usd": 0.0400331
+  }
+ }
+}

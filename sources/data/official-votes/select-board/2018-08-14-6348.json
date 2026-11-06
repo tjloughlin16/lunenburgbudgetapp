@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-08-14",
  "docid": "6348",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "To request a 20-foot easement from Kevin Hill with path clearing under Conservation Commission requirements and to clarify that the land goes to Valley Road",
-   "moved_by": "R.Ebersole",
+   "motion": "Move to request a 20 foot easement from Kevin Hill and clarify that the land goes to Valley Road, amended to request the landowner clear 20 feet under the direction of the Conservation Commission.",
+   "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 3-1",
    "procedural": false,
    "quote": "roll call vote: ms. adams-nay, mr. ebersole-aye, mr. mequaid-aye, mr. toale-aye"
   },
   {
-   "motion": "To authorize negotiation and execution of a purchase and sale agreement with Kevin Hill for the Gilchrist Street properties, contingent on easement and clearing conditions and Valley Road entrance correction",
+   "motion": "If Mr. Hill accepts the 20 foot condition with path clearing per Conservation Commission requirements (or keeps the 15 foot easement and clears the path), move forward to negotiate a purchase and sale agreement and authorize the Chair to execute, provided the Valley Road entrance is corrected.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 3-1",
@@ -28,15 +28,110 @@
    "quote": "roll call vote: mis. adams-nay, mir. ebersole-aye, mr. mcquaid-aye, mr. toale-aye"
   },
   {
-   "motion": "To adjourn from executive session",
+   "motion": "To adjourn from Executive Session.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: r. ebersole to adjourn from executive session vote: ms. adams-aye, mr. mequaid-aye, mr. ebersole-aye, mr. toale-aye"
+   "quote": "to adjourn from executive session vote: ms. adams-aye, mr. mequaid-aye, mr. ebersole-aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR processed; readable throughout. One typo in vote 2 OCR: \"Mis.\" and \"Mir.\" instead of \"Ms.\" and \"Mr.\" quoted as printed.",
- "cost_usd": 0.1285035
+ "note": "OCR text with garbled names and marks (for example \"MeQuaid\", \"Mis.\", \"Mir.\", \"Mi. Costa\", \"2''\" for the second). Names are copied as printed, and the second mover's name is taken as D. McQuaid. The motion to enter Executive Session is not recorded in the text. The amendment to the first motion was seconded but has no separate vote. The signature block shows two names, \"Claire M Peterson\" and \"Elaine M. Peterson\", and neither is listed as taking part, so they are not recorded as attendees. No dollar figures appear; the acreage and square footage are not budget items. The \"Ms. Adams-nay\" tally is recorded as a roll call of 3-1 on each motion.",
+ "cost_usd": 0.004343619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; katey adams, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; katey adams, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; katey adams, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: phyllis luck, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Counsel Adam Costa will communicate with Mr. Hill's lawyer and advise him of the Board's vote on the proposal.",
+   "quote": "attorney costa will communicate with mr. hill's lawyer and advise him of that vote."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Gilchrist Street properties conveyance proposal",
+   "resolution": "Board voted 3-1 to request a 20 foot easement, then 3-1 to authorize negotiating a purchase and sale agreement on the revised terms if conditions are met",
+   "quote": "mr. toale believed it was important to hold this executive session to protect the board's negotiating rights",
+   "tags": [
+    "land conveyance",
+    "Gilchrist Street",
+    "easement",
+    "Conservation Commission",
+    "purchase and sale agreement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article #22 (Town Meeting warrant article on the Gilchrist Street properties)",
+   "where": "text",
+   "quote": "discussion ensued about discussing the deal in open session and then turned to the wording of article #22 and the presentation on the article at town meeting."
+  }
+ ],
+ "tags": [
+  "executive session",
+  "land conveyance",
+  "Gilchrist Street",
+  "easement",
+  "Article #22",
+  "Town Counsel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

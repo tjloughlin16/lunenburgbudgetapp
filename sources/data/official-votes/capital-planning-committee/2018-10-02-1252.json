@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2018-10-02",
  "docid": "1252",
@@ -10,17 +10,188 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10022018-1252",
   "doc_url": "/docs/meetings/capital-planning-committee/2018-10-02-minutes-1252.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Text is OCR of a scanned page with stamps and header noise. No motions or votes are recorded: the minutes approve prior minutes and the 5:33 PM adjournment without a printed motion, so no votes are listed. John Henshaw's status is unclear from the layout (his name sits between 'RECEIVED & FILED' and 'Absent:'), so it is marked not stated. Roles for most attendees are not printed. No dollar figures appear in the text.",
+ "cost_usd": 0.0041210199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Minutes of 1/9/2018 and 1/23/2018 be approved",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes approved for 1/9/2018 and 1/23/2018",
-   "moved_by": "",
-   "seconded_by": ""
+   "name": "Damon McQuaid",
+   "role": "presiding; called the meeting to order",
+   "status": "present",
+   "quote": "meeting called to order at 5:00 by mr. mcquaid"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "received & filed john henshaw absent:"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "heather lemieux, mr. passios"
+  },
+  {
+   "name": "Mr. Passios",
+   "role": "Also Present; public comment",
+   "status": "present",
+   "quote": "heather lemieux, mr. passios"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan. One procedural vote recorded: approval of prior minutes. No other motions identified as voted on.",
- "cost_usd": 0.08255849999999999
+ "decisions": [
+  {
+   "decision": "Minutes of 1/9/2018 and 1/23/2018 recorded as approved; the minutes print no motion or vote.",
+   "quote": "minutes approved for 1/9/2018 and 1/23/2018"
+  },
+  {
+   "decision": "CIP forms to be issued with capital review due dates: School Facilities Director 11/6/2018, Police and Fire 11/20/2018, DPW 11/27/2018.",
+   "quote": "school facilities director 11/6/2018 / police and fire 11/20/2018 / dpw 11/27/2018"
+  },
+  {
+   "decision": "The Google doc for the FY 2020-2024 capital planning process is to be updated within two weeks.",
+   "quote": "the google doc needs to be updated within the next two weeks."
+  },
+  {
+   "decision": "Heather Lemieux to obtain a list of questions for John Londa on the school capital plan.",
+   "quote": "heather lemieux asked for a list of questions for john londa"
+  },
+  {
+   "decision": "Heather Lemieux to send out sign-on instructions to the Team.",
+   "quote": "heather lemieux will send out sign on instructions to team."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Borrowing and Town debt",
+   "what_was_recorded": "Public comment urged limiting borrowing and paying down Town debt; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. passios expressed the need to limit borrowing and pay down town debt."
+  },
+  {
+   "topic": "Ladder Truck funding and grants",
+   "what_was_recorded": "Grant funding may cover some projects; a suggestion was made to move alternative funding amounts to the Ladder Truck to reduce debt. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "mr. passios suggested moving alternative funding amounts to the ladder truck to reduce debt."
+  },
+  {
+   "topic": "Grant dollars at Special Town Meeting",
+   "what_was_recorded": "Where to put grant dollars is to be discussed at the Special Town Meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "at the special town meeting where to put the grant dollars will be discussed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Passios",
+   "stated_role": "not stated",
+   "topic": "limit borrowing and pay down Town debt",
+   "quote": "mr. passios expressed the need to limit borrowing and pay down town debt."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "public comment - mr. passios expressed the need to limit borrowing and pay down town debt.",
+   "tags": [
+    "public comment",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Status update on FY 2019 capital plan projects",
+   "resolution": "status update; no action recorded",
+   "quote": "status update on fy 2019 capital plan projects:",
+   "tags": [
+    "police",
+    "fire",
+    "DPW",
+    "school",
+    "grants"
+   ]
+  },
+  {
+   "topic": "FY 2020-2029 capital plan for school",
+   "resolution": "discussed; questions to be prepared",
+   "quote": "discussed fy 2020-2029 capital plan for school. heather lemieux asked for a list of questions for john londa",
+   "tags": [
+    "school capital plan"
+   ]
+  },
+  {
+   "topic": "FY 2020-2024 capital planning process",
+   "resolution": "discussed; Google doc to be updated in two weeks",
+   "quote": "fy 2020-2024 capital planning process. the google doc needs to be updated within the next two weeks.",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Timeline to issue CIP forms and capital review due dates",
+   "resolution": "timeline set",
+   "quote": "timeline to issue cip forms and due dates for capital reviews:",
+   "tags": [
+    "CIP forms",
+    "deadlines"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved for 1/9/2018 and 1/23/2018; no vote recorded",
+   "quote": "minutes approved for 1/9/2018 and 1/23/2018",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Google doc (FY 2020-2024 capital planning process)",
+   "where": "text",
+   "quote": "the google doc needs to be updated within the next two weeks."
+  },
+  {
+   "name": "CIP forms",
+   "where": "text",
+   "quote": "timeline to issue cip forms and due dates for capital reviews:"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "school capital plan",
+  "FY 2019 projects",
+  "debt",
+  "ladder truck",
+  "grants",
+  "CIP forms",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

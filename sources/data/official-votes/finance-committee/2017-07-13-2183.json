@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-07-13",
  "docid": "2183",
@@ -12,15 +12,254 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John",
    "seconded_by": "Mark",
    "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "john made a motion to adjourn. mark seconded the motion. the committee approved the motion 6-0"
+   "quote": "john made a motion to adjourn. mark seconded the motion. the committee approved the motion 6-0 at 7:30 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08961150000000001
+ "note": "OCR of a scanned page set; labels are out of order (Present/Absent/Guest are printed in a block, so attendance was assigned by the order of names: Hannah Anderson absent, Jamie Toale, Dawn-Marie Ayles and Karen Brochu listed as guests). Several words are garbled: 'S347K' is probably $347K and was recorded as printed; 'Nu Action' read as no action; 'Teri' is Terri Burchfield. The BOS vote not to sign the warrant and the SBC approval are other bodies' actions reported in passing and are not recorded as votes of this committee. Only one vote by this committee (adjournment) is in the text.",
+ "cost_usd": 0.006747319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, george martin, cindy testa hannah anderson"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "jamie toale - selectmen, dawn-marie ayles - school committee liaison, karen brochu - town finance director"
+  },
+  {
+   "name": "Dawn-Marie Ayles",
+   "role": "School Committee Liaison",
+   "status": "present",
+   "quote": "jamie toale - selectmen, dawn-marie ayles - school committee liaison, karen brochu - town finance director"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Finance Director",
+   "status": "present",
+   "quote": "jamie toale - selectmen, dawn-marie ayles - school committee liaison, karen brochu - town finance director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "George to follow up with the Chief on whether funds spent to rebuild the Truck 4 pump would extend the life of the truck.",
+   "quote": "george to follow up with the chief"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Insurance: Police/Fire injured on duty (IOD) bid for FY18",
+   "what_was_recorded": "The Town Manager reported that going out to bid for IOD insurance for FY18 produced savings of about $7K.",
+   "figures_as_printed": [
+    "$7K"
+   ],
+   "quote": "went out to bid for police/fire injured on duty (iod) insurance for fy18. savings of about $7k"
+  },
+  {
+   "topic": "Chapter 40S state reimbursement (FY17)",
+   "what_was_recorded": "The Town Accountant said the Town is still waiting for a $119K 40S reimbursement for FY17 from the State; the DOR has not responded; it will be posted as revenue if received and has no effect on FY18.",
+   "figures_as_printed": [
+    "$119K"
+   ],
+   "quote": "still waiting for the 40s reimbursement of $119k for fy17 from the state, karen"
+  },
+  {
+   "topic": "Debt policy and enterprise funds",
+   "what_was_recorded": "Discussion of whether Sewer and Water enterprise fund debt is part of the debt policy limits; the Town would be financially responsible if those departments fail to cover their debt; the Town Manager recommended explicit language excluding enterprise funds from the debt limits.",
+   "figures_as_printed": [],
+   "quote": "should the sewer or water dept. fail to cover their debt, the town would be financial responsible."
+  },
+  {
+   "topic": "Fire Dept. Truck 4 pump rebuild",
+   "what_was_recorded": "The Chief is soliciting bids to rebuild the pump on Truck 4; a question was asked whether spending funds on the rebuild would extend the truck's life. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the chief is soliciting bids to rebuild the pump on truck 4. question was asked if funds are expended to rebuild the pump, would this extend the life of the truck?"
+  },
+  {
+   "topic": "School Building Committee monthly invoice",
+   "what_was_recorded": "A monthly invoice of S347K is being approved outside of a meeting; the minutes say the Board of Selectmen (BOS) voted not to sign the warrant for it and asked for an explanation.",
+   "figures_as_printed": [
+    "S347K"
+   ],
+   "quote": "this month invoice is s347k and is being approved outside of a meeting."
+  },
+  {
+   "topic": "Projector stabilizers bill",
+   "what_was_recorded": "A $9600 bill for stabilizers for the projectors was questioned by the BOS; the School Building Committee approved the bill; the BOS felt it should be the responsibility of the vendor or contractor.",
+   "figures_as_printed": [
+    "$9600"
+   ],
+   "quote": "a $9600 bill for stabilizers for the projectors was question by the bos."
+  },
+  {
+   "topic": "Pavement Management Plan funding from excise tax",
+   "what_was_recorded": "The additional $50K a year from excise tax is to go into the PMP budget for road maintenance alongside Chapter 90 funds; $50K for 10 years adds $500K to the plan, plus an additional $250K the Town adds.",
+   "figures_as_printed": [
+    "$50K",
+    "$500K",
+    "$250K"
+   ],
+   "quote": "$50k for 10 years adds an additional $500k to the plan. plus the additional $250k the town adds"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting called to order at 7:00 pm",
+   "quote": "chairman called the meeting to order at 7:00 pm. not televised",
+   "tags": [
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Comments (public and new communications)",
+   "resolution": "no public comment; Planning Board hearing noted",
+   "quote": "public: none b. new communications: planning board hearing, town hall, july 24 @ 6:35 pm. 40 pioneer dr.",
+   "tags": [
+    "public comment",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Town Manager / Financial Director report",
+   "resolution": "reported; no action",
+   "quote": "went out to bid for police/fire injured on duty (iod) insurance for fy18. savings of about $7k",
+   "tags": [
+    "insurance",
+    "state reimbursement",
+    "FY17 revenue"
+   ]
+  },
+  {
+   "topic": "Budget goals: financial policy for managing debt service",
+   "resolution": "discussed; no action",
+   "quote": "the bos discussed the debt policy and reviewed the draft that john sent.",
+   "tags": [
+    "debt policy",
+    "enterprise funds"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "none",
+   "quote": "5. review of minutes: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reported; George to follow up with Fire Chief",
+   "quote": "engine 4 has been repaired and is back in service.",
+   "tags": [
+    "fire truck",
+    "school building committee",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Ongoing business: Pavement Management Plan, contract commitments, surplus property sales",
+   "resolution": "discussed; no action",
+   "quote": "the chair commented the bos asked about making sure the additional $50k from excise tax is",
+   "tags": [
+    "pavement management",
+    "excise tax",
+    "surplus property"
+   ]
+  },
+  {
+   "topic": "Next meeting dates",
+   "resolution": "dates listed",
+   "quote": "8. next meeting: august 10, 2017",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 7:30 pm",
+   "quote": "john made a motion to adjourn. mark seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft debt policy (sent by John)",
+   "where": "text",
+   "quote": "reviewed the draft that john sent."
+  },
+  {
+   "name": "New Communications: Planning Board Hearing, Town Hall, July 24 @ 6:35 pm, 40 Pioneer Dr.",
+   "where": "text",
+   "quote": "public: none b. new communications: planning board hearing, town hall, july 24 @ 6:35 pm. 40 pioneer dr."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "debt policy",
+  "enterprise funds",
+  "insurance",
+  "fire truck",
+  "school invoices",
+  "pavement management",
+  "excise tax",
+  "state reimbursement",
+  "FY18 budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

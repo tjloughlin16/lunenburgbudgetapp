@@ -58,12 +58,12 @@ Read `column_meaning` before reading a value.
 | `report-expenditure-history.csv` | 10 | 1971–1971 | 8 checked / 0 failed / 2 no check | yes | shared | **no** |
 | `report-expenditure-shares.csv` | 104 | 1960–1983 | 0 checked / 0 failed / 104 no check | yes | shared | **no** |
 | `report-fee-schedule.csv` | 218 | 1964–2004 | 8 checked / 0 failed / 210 no check | yes | shared | **no** |
-| `report-filing.csv` | 119 | — | — | yes | shared | yes |
+| `report-filing.csv` | 109 | — | — | yes | shared | yes |
 | `report-financial-performance.csv` | 19 | 1979–1979 | 11 checked / 3 failed / 5 no check | yes | shared | **no** |
 | `report-fund-balance-sheets.csv` | 3,720 | 1959–1986 | 2,275 checked / 0 failed / 1,445 no check | yes | shared | **no** |
 | `report-gross-wages.csv` | 11,512 | 1995–2025 | 7,965 checked / 0 failed / 3,547 no check | yes | shared | yes |
 | `report-highway-accounts.csv` | 18 | 1995–1995 | 18 checked / 0 failed / 0 no check | yes | shared | **no** |
-| `report-index.csv` | 698 | 2011–2025 | — | yes | shared | yes |
+| `report-index.csv` | 702 | 2011–2025 | — | yes | shared | yes |
 | `report-library-service-values.csv` | 10 | 2004–2004 | 10 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-monty-tech.csv` | 79 | 1966–2017 | 2 checked / 0 failed / 77 no check | yes | shared | yes |
 | `report-office-budget-cuts.csv` | 4 | 1983–1983 | 4 checked / 0 failed / 0 no check | yes | shared | **no** |

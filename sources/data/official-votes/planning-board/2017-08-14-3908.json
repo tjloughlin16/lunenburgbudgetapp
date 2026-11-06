@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-08-14",
  "docid": "3908",
@@ -12,30 +12,278 @@
  },
  "votes": [
   {
-   "motion": "approve the Special Permit for 675 Reservoir Road contingent upon the Applicant providing payment to the Town for the outstanding taxes",
+   "motion": "Approve the special permit for 675 Reservoir Road, contingent on the applicant paying the Town the outstanding taxes.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, m. jeffreys, to approve the special permit contingent upon the applicant providing payment to the town for the outstanding taxes, second, d. prokowiew, all aye."
   },
   {
-   "motion": "approve the prior meeting minutes",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "all minutes accepted."
+   "motion": "Nominate M. Jeffreys as the Board's representative to the Charter Review Committee.",
+   "moved_by": "D. Prokowiew",
+   "seconded_by": "K. Chenis",
+   "outcome": "passed, all aye",
+   "procedural": false,
+   "quote": "motion, d. prokowiew, to nominate m. jeffreys as the board's representative to the charter review committee, second, k. chenis, all aye."
   },
   {
-   "motion": "initiate a permit review for 5 & 9 Electric Avenue to take place on September 11, 2017",
+   "motion": "Initiate a permit review for 5 & 9 Electric Avenue to take place on September 11, 2017 (motion as modified).",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion modified, d. prokowiew, to initiate a permit review for 5 & 9 electric avenue to take place on september 11, 2017, second, m. jeffreys, roll call vote, m. jeffrey s, ay e; d. prokowiew, aye; m. allison, aye; g. bittner, aye k. chenis, nay. motion passed 4-1. ",
-   "quote_taken_from_text": true
+   "quote": "motion modified, d. prokowiew, to initiate a permit review for 5 & 9 electric avenue to take place on september 11, 2017, second, m. jeffreys, roll call vote"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1505705
+ "dropped_unquoted": 0,
+ "note": "Text is a clean extraction, not a scan. The minutes record no motion on accepting minutes or adjourning, and the ANR endorsements have no recorded motion; these are listed as decisions. The 40 Pioneer Drive hearing refers to separate minutes and is not summarized here. The Electric Avenue motion was modified before the vote; the modified motion and its roll-call result (4-1) are recorded. Per the minutes, K. Chenis cast the one nay. No dollar figures are printed.",
+ "cost_usd": 0.00647802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "absent",
+   "quote": "absent: adam r. burney"
+  },
+  {
+   "name": "Gregory Roy",
+   "role": "Ducharme & Dillis (plan presenter, 380, 390 and 400 Electric Avenue)",
+   "status": "present",
+   "quote": "plan presented by gregory roy, ducharme & dillis."
+  },
+  {
+   "name": "Frank Preston",
+   "role": "Whitman & Bingham Associates (plan presenter, 53 Prospect Street)",
+   "status": "present",
+   "quote": "plan presented by frank preston, whitman & bingham associates."
+  },
+  {
+   "name": "Daniel & Jean Proctor",
+   "role": "owners, 380, 390 and 400 Electric Avenue",
+   "status": "not stated",
+   "quote": "380, 390 and 400 electric avenue, daniel & jean proctor - plan presented by gregory roy"
+  },
+  {
+   "name": "Amy Ricciuti",
+   "role": "owner, 53 Prospect Street",
+   "status": "not stated",
+   "quote": "53 prospect street, amy ricciuti - plan presented by frank preston"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board endorsed the ANR plans for 380, 390 and 400 Electric Avenue and for 53 Prospect Street; no motion is recorded.",
+   "quote": "plan endorsed by the board."
+  },
+  {
+   "decision": "All minutes were accepted (07/24/17 and 07/24/17, 40 Pioneer Drive & 98 Leominster Shirley Road); no motion is recorded.",
+   "quote": "all minutes accepted."
+  },
+  {
+   "decision": "The property owner at 5 & 9 Electric Avenue will be invited to the Board meeting to address issues; if a Site Plan Approval Application is submitted before the September 11 meeting, the Board will forego the review.",
+   "quote": "the property owner will be invited to the board meeting to address any issues."
+  },
+  {
+   "decision": "Definitions and Use Table was tabled.",
+   "quote": "definitions and use table- tabled"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Outstanding taxes at 675 Reservoir Road",
+   "what_was_recorded": "The special permit approval was made contingent on the applicant paying the Town outstanding taxes; the minutes print no amount.",
+   "figures_as_printed": [],
+   "quote": "contingent upon the applicant providing payment to the town for the outstanding taxes"
+  },
+  {
+   "topic": "Stormwater Task Force money issues",
+   "what_was_recorded": "The Stormwater Task Force met and held discussion about presenting money issues to the Board of Selectmen; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "held discussion as to presenting money issues to the board of selectmen."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "G. Bittner",
+   "topic": "Pay-As-You-Throw trash bag survey",
+   "quote": "g. bittner noted a pay-as-you-throw trash bag survey on the town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; survey noted",
+   "quote": "public comment: g. bittner noted a pay-as-you-throw trash bag survey on the town",
+   "tags": [
+    "public comment",
+    "trash"
+   ]
+  },
+  {
+   "topic": "ANR plans",
+   "resolution": "two plans endorsed by the Board",
+   "quote": "plan endorsed by the board.",
+   "tags": [
+    "ANR",
+    "lot consolidation",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Public hearings: 675 Reservoir Road and 40 Pioneer Drive & 98 Leominster Shirley Road",
+   "resolution": "675 Reservoir Road special permit approved with tax condition; 40 Pioneer Drive see separate minutes",
+   "quote": "motion, m. jeffreys, to approve the special permit contingent upon the applicant providing payment",
+   "tags": [
+    "special permit",
+    "public hearing",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "minutes accepted",
+   "quote": "minutes approval: all minutes accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "stormwater task force- met june 27th. held discussion as to presenting money issues",
+   "tags": [
+    "committees",
+    "stormwater",
+    "MRPC",
+    "MJTC"
+   ]
+  },
+  {
+   "topic": "Director's items: Charter Review Committee and Definitions and Use Table",
+   "resolution": "M. Jeffreys nominated to Charter Review Committee; Definitions and Use Table tabled",
+   "quote": "motion, d. prokowiew, to nominate m. jeffreys as the board's representative to the charter review committee",
+   "tags": [
+    "charter review",
+    "zoning",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "august 28- 40 pioneer drive, public hearing (continuation)",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items: Complete Streets",
+   "resolution": "listed; no action recorded",
+   "quote": "ongoing items: complete streets",
+   "tags": [
+    "complete streets"
+   ]
+  },
+  {
+   "topic": "Board comment: 5 & 9 Electric Avenue parking",
+   "resolution": "permit review initiated for September 11, 2017, passed 4-1",
+   "quote": "motion modified, d. prokowiew, to initiate a permit review for 5 & 9 electric avenue to take place on september",
+   "tags": [
+    "permit review",
+    "parking",
+    "enforcement",
+    "Electric Avenue"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45 pm; no motion recorded",
+   "quote": "adjournment: 8:45 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plans 380, 390 & 400 Electric Avenue",
+   "where": "list",
+   "quote": "anr plans 380, 390 & 400 electric avenue"
+  },
+  {
+   "name": "ANR Plans 53 Prospect Street",
+   "where": "list",
+   "quote": "anr plans 380, 390 & 400 electric avenue 53 prospect street"
+  },
+  {
+   "name": "Minutes 07/24/17",
+   "where": "list",
+   "quote": "minutes 07/24/17 07/24/17, 40 pioneer drive & 98 leominster shirley road"
+  },
+  {
+   "name": "Minutes 07/24/17, 40 Pioneer Drive & 98 Leominster Shirley Road",
+   "where": "list",
+   "quote": "minutes 07/24/17 07/24/17, 40 pioneer drive & 98 leominster shirley road"
+  },
+  {
+   "name": "Charter Review Committee Notice",
+   "where": "list",
+   "quote": "charter review committee notice"
+  },
+  {
+   "name": "994 Northfield Road Public Hearing Notice",
+   "where": "list",
+   "quote": "994 northfield road public hearing notice"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "special permit",
+  "public hearing",
+  "Electric Avenue parking",
+  "permit review",
+  "charter review",
+  "committee reports",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

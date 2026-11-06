@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2018-06-12",
  "docid": "1884",
@@ -12,31 +12,333 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the May 14, 2018 meeting",
+   "motion": "Approve the minutes of the May 14, 2018 meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Dwyer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. digiacomo moved to approve the minutes from the may 14, 2018 meeting, ms. dwyer seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Nominate Pete Lincoln as Chairperson and Jacquelyn Dwyer as Vice Chairperson for a term of one year",
+   "motion": "Nominate Pete Lincoln as Chairperson and Jacquelyn Dwyer as Vice Chairperson for FY 19, for a term of one year.",
    "moved_by": "Ms. Lincoln",
    "seconded_by": "Ms. Grant",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "ms. lincoln moved to nominate pete lincoln as chairperson, and jacquelyn dwyer as vice chairperson for a term of one year. ms. grant seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:53 a.m.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Dwyer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. digiacomo motioned to adjourn the meeting, ms. dwyer seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1021245
+ "dropped_unquoted": 1,
+ "note": "Plain extracted text, not a scan; all votes are legible. Page 1 has an unrelated stamp printed mid-paragraph (\"Unanimously approved by COA at August 14, 2018 meeting.\"), so the text there is interrupted. The minutes write \"Ms. Lincoln\" and \"Mr. Lincoln\" without first names for the mover of the officer nomination and the Eagle House liaison; Deb Lincoln is inferred from context, not stated. No transfers, no public comment, and no documents list or exhibits are printed.",
+ "cost_usd": 0.00647412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, sarah grant"
+  },
+  {
+   "name": "Deb Lincoln",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, sarah grant"
+  },
+  {
+   "name": "Kevin McNally",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, sarah grant"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, sarah grant"
+  },
+  {
+   "name": "Sarah Grant",
+   "status": "present",
+   "quote": "jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, sarah grant"
+  },
+  {
+   "name": "Brian Guenard",
+   "status": "absent",
+   "quote": "absent: brian guenard"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectman liaison",
+   "status": "present",
+   "quote": "guests: board of selectman liaison jamie toale"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to support Ms. Doherty however she decides to deal with the patron complaint about Senior Center scheduling.",
+   "quote": "the board agreed they would support ms. doherty however she decides to deal with the complaint"
+  },
+  {
+   "decision": "The COA, as a whole, welcomed Mr. Toale to return and serve as Selectmen liaison for the upcoming fiscal year.",
+   "quote": "the coa, as a whole, welcomed mr. toale to come back and serve as liaison for the upcoming fiscal year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Formula Grant FY 18 spent",
+   "what_was_recorded": "Ms. Doherty reported the FY 18 Formula Grant money has all been spent, and that unclaimed mileage money will be returned to the town.",
+   "figures_as_printed": [],
+   "quote": "the grant money for fy 18 has all been spent, according to ms. doherty."
+  },
+  {
+   "topic": "Formula Grant FY 19 projection",
+   "what_was_recorded": "The FY 19 Formula Grant has been projected at $11.00 per elder, a raise over last year, but the state budget is not yet signed so the figure could change.",
+   "figures_as_printed": [
+    "$11.00"
+   ],
+   "quote": "the formula grant for fy 19 has been projected for $11.00 per elder"
+  },
+  {
+   "topic": "Mileage money returned to town",
+   "what_was_recorded": "Mileage money not collected by Meals on Wheels drivers will be turned back to the town.",
+   "figures_as_printed": [],
+   "quote": "any mileage money not collected by meals on wheels drivers will be turned back to the town."
+  },
+  {
+   "topic": "Meal site assistant pay",
+   "what_was_recorded": "Two meal site assistants are paid out of the Formula Grant.",
+   "figures_as_printed": [],
+   "quote": "pointed out that two meal site assistants are paid out of the formula grant."
+  },
+  {
+   "topic": "Porch furniture purchase",
+   "what_was_recorded": "Ms. Doherty bought new porch furniture paid for with Formula Grant funds; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty purchased new porch furniture with formula grant funds."
+  },
+  {
+   "topic": "State Capital Plan 25K for Eagle House HVAC",
+   "what_was_recorded": "Senator Dean Tran designated state capital funds to repair the HVAC system in the older part of the Eagle House.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "senator dean tran advocated for the eagle house and designated $25,000 to repair the hvac system in the older part of the building."
+  },
+  {
+   "topic": "SNAP reimbursement",
+   "what_was_recorded": "Ms. Doherty received $71.00 from the first quarter of SNAP reporting; second and third quarter reports have not been heard back on.",
+   "figures_as_printed": [
+    "$71.00"
+   ],
+   "quote": "ms. doherty reported she received $71.00 from the first quarter"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements and liaison feedback",
+   "resolution": "no action",
+   "tags": [
+    "liaison",
+    "volunteers"
+   ],
+   "quote": "mr. toale thanked the board for the opportunity to serve as liaison between the board of selectmen and the council on aging"
+  },
+  {
+   "topic": "Eagle House Supporters liaison report",
+   "resolution": "no action; COA discussed supporting a liaison report request",
+   "tags": [
+    "Eagle House",
+    "liaison"
+   ],
+   "quote": "ms. lincoln asked the coa to support her by making a request that the eagle house supporters inc. include on their agenda"
+  },
+  {
+   "topic": "Minutes of May 14, 2018",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. digiacomo moved to approve the minutes from the may 14, 2018 meeting"
+  },
+  {
+   "topic": "Director's report: patron complaint about scheduling",
+   "resolution": "no action; board supported the director",
+   "tags": [
+    "Senior Center",
+    "scheduling",
+    "complaint"
+   ],
+   "quote": "mr. lincoln determined the person has a personal problem"
+  },
+  {
+   "topic": "Director's report: meal site manager position",
+   "resolution": "reported",
+   "tags": [
+    "meals",
+    "staffing"
+   ],
+   "quote": "meals on wheels driver sandra ricci was hired."
+  },
+  {
+   "topic": "Director's report: Formula Grant",
+   "resolution": "reported",
+   "tags": [
+    "Formula Grant",
+    "budget"
+   ],
+   "quote": "the grant money for fy 18 has all been spent, according to ms. doherty."
+  },
+  {
+   "topic": "State Capital Plan 25K for Eagle House HVAC",
+   "resolution": "reported",
+   "tags": [
+    "Eagle House",
+    "capital",
+    "HVAC"
+   ],
+   "quote": "senator dean tran advocated for the eagle house and designated $25,000"
+  },
+  {
+   "topic": "Election of COA officers for FY 19",
+   "resolution": "approved; Pete Lincoln as Chairperson, Jacquelyn Dwyer as Vice Chairperson",
+   "tags": [
+    "elections",
+    "officers"
+   ],
+   "quote": "ms. lincoln moved to nominate pete lincoln as chairperson"
+  },
+  {
+   "topic": "Recommendation to Selectmen to reappoint Deb Lincoln and Betty DiGiacomo",
+   "resolution": "reported; Selectmen had already reappointed them",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "the selectmen already reappointed ms. lincoln and ms. digiacomo to the coa"
+  },
+  {
+   "topic": "Bridges Together program",
+   "resolution": "reported",
+   "tags": [
+    "volunteers",
+    "intergenerational"
+   ],
+   "quote": "ms. nowd reported that the program was successful"
+  },
+  {
+   "topic": "Tri Town Landing proposed senior housing",
+   "resolution": "reported",
+   "tags": [
+    "housing",
+    "Planning Board"
+   ],
+   "quote": "the tri-town senior housing project was recently approved by the lunenburg planning board"
+  },
+  {
+   "topic": "Age/Dementia Friendly Community",
+   "resolution": "reported",
+   "tags": [
+    "dementia",
+    "community"
+   ],
+   "quote": "ms. doherty and ms. rabbitt attended a seminar on dementia friendly communities"
+  },
+  {
+   "topic": "SNAP program",
+   "resolution": "reported; director considering leaving UMass program",
+   "tags": [
+    "SNAP",
+    "UMass"
+   ],
+   "quote": "ms. doherty expressed her frustration due to the lack of communication from umass"
+  },
+  {
+   "topic": "Building report",
+   "resolution": "reported",
+   "tags": [
+    "building",
+    "accessibility"
+   ],
+   "quote": "the side door of the main entrance now has an accessible push-button door"
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "tags": [],
+   "quote": "notices and communications: none"
+  },
+  {
+   "topic": "Board comment and public comment",
+   "resolution": "no action; none recorded",
+   "tags": [],
+   "quote": "public comment: none"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:53 a.m.",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "ms. digiacomo motioned to adjourn the meeting, ms. dwyer seconded."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "Eagle House",
+  "Formula Grant",
+  "officer elections",
+  "liaison",
+  "dementia friendly",
+  "annual meeting",
+  "SNAP",
+  "HVAC"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

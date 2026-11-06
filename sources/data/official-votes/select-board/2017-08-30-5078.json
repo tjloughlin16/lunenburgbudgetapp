@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-08-30",
  "docid": "5078",
@@ -12,63 +12,211 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to discuss strategy with respect to litigation",
+   "motion": "Enter Executive Session to discuss litigation strategy (O'Brien Homes) if an open meeting would harm the government's litigating position.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Bertram",
-   "procedural": true,
    "outcome": "passed 5-0",
-   "quote": "motion: b. ebersole 2\": p. bertram to enter executive session to discuss strategy with respect to litigation if an open meeting would have a detrimental effect of the government's litigating position and the chair declares so vote: ms. luck-aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale - aye"
+   "procedural": true,
+   "quote": "motion: b. ebersole 2\": p. bertram to enter executive session to discuss strategy with respect to litigation if an open meeting would have a detrimental effect"
   },
   {
-   "motion": "Enter Executive Session to discuss strategy with respect to litigation and not return to open meeting (Planning Board)",
+   "motion": "Enter Executive Session to discuss litigation strategy and not return to open meeting.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
-   "procedural": true,
    "outcome": "passed 5-0",
-   "quote": "motion: d. prokowiew 2nd. k. chenis to enter executive session to discuss strategy with respect to litigation if an open meeting would have a detrimental effect of the government's litigating position and the chair declares so and to not return to open meeting vote: mr. allison-aye, mr. jeffreys- aye, mr. prokowiew-aye, mr. bittner-aye, mr. chenis- aye"
+   "procedural": true,
+   "quote": "motion: d. prokowiew 2nd. k. chenis to enter executive session to discuss strategy with respect to litigation"
   },
   {
-   "motion": "Adjourn from Executive Session and not return to the open meeting",
+   "motion": "Amend the motion to state the board would adjourn from Executive Session and not return to the open meeting.",
    "moved_by": "Mr. Ebersole",
    "seconded_by": "Ms. Bertram",
-   "procedural": true,
    "outcome": "passed 5-0",
-   "quote": "mr. ebersole amended his motion to state they would adjourn from executive session and not return to the open meeting. seconded by ms. bertram vote: ms. luck- aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale - aye"
+   "procedural": true,
+   "quote": "mr. ebersole amended his motion to state they would adjourn from executive session and not return to the open meeting. seconded by ms. bertram"
   },
   {
-   "motion": "Not approve the settlement agreement and proceed with the lawsuit (Select Board)",
+   "motion": "Not approve the settlement agreement and proceed with the lawsuit.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "procedural": false,
    "outcome": "passed 4-1",
-   "quote": "motion: r. ebersole 2nd: p. bertram to not approve the settlement agreement and proceed with the lawsuit mr. ebersole-aye, ms. bertram - aye, mr. mcquaid- aye, ms. luck- nay, mr. toale- aye"
+   "procedural": false,
+   "quote": "motion: r. ebersole 2nd: p. bertram to not approve the settlement agreement and proceed with the lawsuit"
   },
   {
-   "motion": "Not approve the settlement agreement and proceed with the lawsuit (Planning Board)",
+   "motion": "Not approve the settlement agreement and proceed with the lawsuit.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
-   "procedural": false,
    "outcome": "passed 4-1",
-   "quote": "motion: m. jeffreys to not approve the settlement agreement and proceed with the lawsuit mr. allison- aye, mr. jeffreys -aye, mr. prokowiew-aye, mr. chenis- nay, mr. bittner-aye 2n: d. prokowiew"
+   "procedural": false,
+   "quote": "motion: m. jeffreys to not approve the settlement agreement and proceed with the lawsuit"
   },
   {
-   "motion": "Adjourn the meeting (Select Board)",
+   "motion": "Adjourn the executive session meeting (Select Board/Ebersole motion).",
    "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
-   "procedural": true,
    "outcome": "passed 5-0",
-   "quote": "motion: r. ebersole to adjourn the meeting vote: ms. luck- aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale -aye 2\"°: p. bertram"
+   "procedural": true,
+   "quote": "motion: r. ebersole to adjourn the meeting vote: ms. luck- aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale -aye"
   },
   {
-   "motion": "Adjourn the meeting (Planning Board)",
+   "motion": "Adjourn the meeting (Planning Board members' session).",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
-   "procedural": true,
    "outcome": "passed 5-0",
-   "quote": "motion: k. chenis 2\"°: m. allison to adjourn the meeting vote: mr. allison-aye, mr. jeffreys-aye, mr. prokowiew-aye, mr. bittner-aye, mr. chenis-aye"
+   "procedural": true,
+   "quote": "to adjourn the meeting vote: mr. allison-aye, mr. jeffreys-aye, mr. prokowiew-aye, mr. bittner-aye, mr. chenis-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text with minor character recognition artifacts (e.g., '2\"°:' for '2nd:'); all vote records are legible and complete",
- "cost_usd": 0.1426325
+ "note": "OCR text (macOS Vision) of two pages with gaps: page 1 ends mid-sentence (\"grade 100 feet of roadway just to\") and page 2 opens mid-sentence (\"minimum of two town representatives...\"), so text between the pages is missing. The header says Select Board, but the body refers to Planning Board members and Planning Board Chairman Bittner; the voting members named (Luck, McQuaid, Bertram, Ebersole, Toale) have no printed role. Seconder for the first adjournment motion is not clearly printed (OCR order places a 'P. Bertram' seconder line after that vote). Several motion lines are OCR-garbled (e.g., '2n:' and '2\"°:'). The settlement votes appear within the executive session section, though the minutes do not say whether they were taken in open session. Elaine M. Peterson signed the minutes; her attendance is not stated.",
+ "cost_usd": 0.006928119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. toale read aloud the reason for entering executive session."
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. luck-aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale - aye"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. luck-aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale - aye"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. luck-aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale - aye"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. luck-aye, mr. mcquaid-aye, ms. bertram- aye, mr. ebersole-aye, mr. toale - aye"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Attorney, KP Law, PC",
+   "status": "present",
+   "quote": "also present: attorney joel bard of kp law, pc; lunenburg planning board members greg bittner, matthew"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Planning Board Chairman",
+   "status": "present",
+   "quote": "planning board chairman bittner announced the reason for entering executive session."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Lunenburg Planning Board member",
+   "status": "present",
+   "quote": "matthew allison, ken chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "Lunenburg Planning Board member",
+   "status": "present",
+   "quote": "matthew allison, ken chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Lunenburg Planning Board member",
+   "status": "present",
+   "quote": "matthew allison, ken chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Lunenburg Planning Board member",
+   "status": "present",
+   "quote": "matthew allison, ken chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A straw poll was taken on which direction to go on the O'Brien Homes matter; the minutes do not print its result.",
+   "quote": "a straw poll was taken on which direction to go."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: O'Brien Homes litigation (Land Court)",
+   "resolution": "entered executive session; board did not return to open meeting",
+   "quote": "executive session m.g.l. c.30a, 821; to discuss strategy with respect to collective bargaining or",
+   "tags": [
+    "executive session",
+    "litigation",
+    "O'Brien Homes",
+    "Land Court"
+   ]
+  },
+  {
+   "topic": "Draft settlement agreement with O'Brien Homes",
+   "resolution": "voted not to approve settlement; proceed with lawsuit",
+   "quote": "motion: m. jeffreys to not approve the settlement agreement and proceed with the lawsuit",
+   "tags": [
+    "settlement",
+    "lawsuit",
+    "subdivision",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:06 p.m.",
+   "quote": "the meeting adjourned at 8:06 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft settlement agreement (O'Brien Homes)",
+   "where": "text",
+   "quote": "several changes to the draft agreement were discussed, specifically notice and timing of site inspections"
+  },
+  {
+   "name": "Zoning bylaw section 5.6",
+   "where": "text",
+   "quote": "zoning bylaw section 5.6 which says you cannot subdivide greater"
+  },
+  {
+   "name": "Planning Board subdivision rule and regulation",
+   "where": "text",
+   "quote": "there is a planning board subdivision rule and regulation that says you can't build a"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "O'Brien Homes",
+  "settlement agreement",
+  "subdivision",
+  "zoning bylaw 5.6",
+  "Planning Board",
+  "Land Court"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

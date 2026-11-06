@@ -28,7 +28,7 @@ These are not identical measures — a named roster, a career count plus the low
 
 **change** is measured over each department’s own record, and those records do not line up: the Schools record spans 24 years and the Board of Assessors’s 2, so +12 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2019, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
 
-A year whose count reads under half the year before it, or more than 40% above the years on both sides, is dropped as a misread rather than published as a cut or a hiring: Police Department FY2014, 26 between 17 and 14. The dropped year stays in the series, marked, and the change is measured between the years that remain.
+A year whose count reads under half the year before it, or more than 40% above the years on both sides, is dropped as a misread rather than published as a cut or a hiring: Fire Department FY2013, 42 against 1,700 the year before; Fire Department FY2012, 1,700 between 36 and 42; Police Department FY2014, 26 between 17 and 14. The dropped year stays in the series, marked, and the change is measured between the years that remain.
 
 ## Headcount over time
 
@@ -38,7 +38,7 @@ On one scale the relation is plain, and it is the one the panels below deliberat
 
 ![Eight small panels, one per part of the town that publishes a staff count, each showing headcount year by year on its own scale. A hollow point marks a year dropped as a misreading.](charts/town-personnel-counts.svg)
 
-Schools moves between 153 and 272 across 25 published years; Fire Department moves between 36 and 48 across 15 published years; Police Department moves between 13 and 33 across 13 published years. Library and Board of Assessors publish too few years to show a trend at all.
+Schools moves between 153 and 272 across 25 published years; Fire Department moves between 36 and 48 across 13 published years; Police Department moves between 13 and 33 across 13 published years. Library and Board of Assessors publish too few years to show a trend at all.
 
 ## The schools, in detail
 

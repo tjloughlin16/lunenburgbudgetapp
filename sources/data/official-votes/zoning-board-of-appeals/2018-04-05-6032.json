@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "zoning-board-of-appeals",
  "meeting_date": "2018-04-05",
  "docid": "6032",
@@ -12,16 +12,137 @@
  },
  "votes": [
   {
-   "motion": "Grant a Special Permit for Dimensional Variation to Jacob R.J. & Catherine A. Proctor for construction of two decks at 173 Hemlock Drive",
+   "motion": "Grant the Special Permit for Dimensional Variation as requested, in accordance with the plans on file, with the condition that the engineer plans remain with the file.",
    "moved_by": "James Besarkarski",
    "seconded_by": "David Blatt",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "james besarkarski made a motion to grant the special permit for dimensional variation as requested in accordance with the plans submitted and subsequently on file with the zoning board of appeals and with the condition that the engineer plans remain with the file. the motion was based on the find",
-   "quote_taken_from_text": true
+   "quote": "james besarkarski made a motion to grant the special permit for dimensional variation as requested in accordance with the plans submitted"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.026999499999999996
+ "note": "OCR text. Page 2 opens mid-sentence and page 3 opens mid-list (\\\"c. Ihe granting...\\\"), so some text is missing. The signature line is garbled ('Abbed Travelle 4/5118'); the signer is printed as Alfred Gravelle, Chairman. The text is the certified decision combined with the hearing record; there is no separate public comment section. The petitioners' presence is not explicitly stated; 'Mr. Proctor' spoke, and his first name is not printed in the discussion. Documents list: no heading or labelled list appears, so documents are recorded only as referenced in sentences (text).",
+ "cost_usd": 0.00426962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alfred Gravelle",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board members present: alfred gravelle, chairman, james besarkarski, hans wentrup, david blatt and robert cadle."
+  },
+  {
+   "name": "James Besarkarski",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: alfred gravelle, chairman, james besarkarski, hans wentrup, david blatt and robert cadle."
+  },
+  {
+   "name": "Hans Wentrup",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: alfred gravelle, chairman, james besarkarski, hans wentrup, david blatt and robert cadle."
+  },
+  {
+   "name": "David Blatt",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: alfred gravelle, chairman, james besarkarski, hans wentrup, david blatt and robert cadle."
+  },
+  {
+   "name": "Robert Cadle",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board members present: alfred gravelle, chairman, james besarkarski, hans wentrup, david blatt and robert cadle."
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Board member, not voting",
+   "status": "present",
+   "quote": "paul doherty present but not voting."
+  },
+  {
+   "name": "Mr. Proctor",
+   "role": "petitioner",
+   "status": "present",
+   "quote": "mr. proctor explained that the setback to the rear property line would be"
+  },
+  {
+   "name": "Matthew Proctor",
+   "role": "father of the petitioner",
+   "status": "present",
+   "quote": "matthew proctor, 1431 massachusetts avenue (father of the petitioner) explained that he met"
+  },
+  {
+   "name": "Catherine A. Proctor",
+   "role": "petitioner (named in decision)",
+   "status": "not stated",
+   "quote": "special permit for dimensional variation was granted to jacob r.j. & catherine a. proctor,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed that granting the special permit would not adversely affect the neighborhood (finding made in discussion, before the vote).",
+   "quote": "the board members agreed that the granting of a special permit would not adversely affect the neighborhood."
+  },
+  {
+   "decision": "Paul Doherty requested that the engineered plans be included in the decision if granted.",
+   "quote": "paul doherty requested that the engineered plans be included in the decision if granted."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Special Permit for Dimensional Variation, 173 Hemlock Drive (Proctor), two cantilevered decks with rear yard setback relief",
+   "resolution": "granted 5-0",
+   "quote": "the petitioners were seeking a special permit for dimensional variation to allow for the construction of two decks to be added to the existing home",
+   "tags": [
+    "zoning",
+    "special permit",
+    "dimensional variance",
+    "rear setback",
+    "decks",
+    "Hemlock Drive"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plans submitted with the petition (dated November 17, 2017, per the decision)",
+   "where": "text",
+   "quote": "as described in plans submitted with the petition."
+  },
+  {
+   "name": "Engineered plans submitted to the building department",
+   "where": "text",
+   "quote": "that he has submitted the engineered plans to the building department."
+  },
+  {
+   "name": "Building permit to demo the interior of the home",
+   "where": "text",
+   "quote": "he currently has a building permit to demo the interior of the home"
+  },
+  {
+   "name": "Engineered plans available for Board review (structural engineer's plans)",
+   "where": "text",
+   "quote": "that the plans were available for the board to review."
+  }
+ ],
+ "tags": [
+  "zoning",
+  "special permit",
+  "dimensional variance",
+  "decks",
+  "rear setback",
+  "Hemlock Drive",
+  "Proctor"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

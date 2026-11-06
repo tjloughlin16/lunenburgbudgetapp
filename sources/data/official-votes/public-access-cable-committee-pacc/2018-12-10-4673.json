@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2018-12-10",
  "docid": "4673",
@@ -12,25 +12,191 @@
  },
  "votes": [
   {
-   "motion": "to approve the meeting minutes from Nov. 5th, 2018",
+   "motion": "Approve the minutes of the Nov. 5, 2018 meeting.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": true,
    "quote": "committee reviewed and approved the minutes."
   },
   {
-   "motion": "that Peter Lincoln joins the PACC",
+   "motion": "PACC moves to the board that Peter Lincoln join the PACC.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": false,
-   "quote": "pacc makes a motion to the board that peter lincoln joins the pacc. the board accepted the motion."
+   "quote": "pacc makes a motion to the board that peter lincoln joins the pacc."
   },
   {
-   "motion": "that Steve Archambault join the PACC",
+   "motion": "PACC moves to the board that Steve Archambault join the PACC.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": false,
-   "quote": "pacc makes a motion to the board that steve archambault join the pacc. the board accepted the motion."
+   "quote": "pacc makes a motion to the board that steve archambault join the pacc."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. Motions to add members (Peter Lincoln and Steve Archambault) do not name a mover or seconder in the minutes. Outcomes are stated as \"approved\" and \"accepted\" but without numerical vote counts.",
- "cost_usd": 0.0863665
+ "note": "Scanned-style text, readable. No vote tallies or mover/seconder names are printed; the approval of minutes and the two board-accepted motions are recorded without counts. Adjournment is recorded without a motion. The \"Public Comments\" section contains the chair's own updates, not statements from members of the public, so public_comment is empty. The chair is not named. The clerk signature gives 1/11/19 and the next meeting is printed as \"Jan 7th\" with no year. No documents or exhibits are listed or named.",
+ "cost_usd": 0.00367292,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member (also signed as PACC Clerk)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo Mclaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members jo mclaughlin, peter lincoln, and steve archambault."
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members jo mclaughlin, peter lincoln, and steve archambault."
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members jo mclaughlin, peter lincoln, and steve archambault."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Budget and policies will be placed on the agenda for the next meeting.",
+   "quote": "budget and policies will be placed on the agenda for the next meeting."
+  },
+  {
+   "decision": "Interest for children's birthday parties at the studio was tabled for future discussion.",
+   "quote": "will be tabled for future discussion."
+  },
+  {
+   "decision": "Jo Mclaughlin and Steve Archambault will look for TV screens for town hall to broadcast meetings.",
+   "quote": "jo and steve will start to look for tv screens for town hall to broadcast meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Balances at end of November",
+   "what_was_recorded": "The November ending balance and the undesignated fund balance were reported.",
+   "figures_as_printed": [
+    "$165,940.28",
+    "$124,796.01"
+   ],
+   "quote": "november ending balance was $165,940.28 and the undesignated fund was $124,796.01."
+  },
+  {
+   "topic": "Undesignated capital fund for the PAC",
+   "what_was_recorded": "An undesignated fund for capital spending for the PAC was discovered; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "an undesignated fund was discovered for capital spending for the pac."
+  },
+  {
+   "topic": "Revenue fund transfer to enterprise fund",
+   "what_was_recorded": "The revenue fund expires in May and is to be transferred to an enterprise fund, subject to a town vote; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the revenue fund expires in may and will be transferred to an enterprise fund based on town vote at the meeting."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Revenue fund to enterprise fund transfer (expires in May)",
+   "amount_as_printed": "not printed",
+   "outcome": "pending town vote at the meeting; no result recorded",
+   "quote": "the revenue fund expires in may and will be transferred to an enterprise fund based on town vote at the meeting."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and call to order",
+   "resolution": "called to order 6:05pm",
+   "tags": [
+    "roll call",
+    "quorum"
+   ],
+   "quote": "meeting called to order at 6:05pm."
+  },
+  {
+   "topic": "Public comments (chair's updates)",
+   "resolution": "no action; reported",
+   "tags": [
+    "studio space",
+    "revenue fund",
+    "capital fund"
+   ],
+   "quote": "the chairman spoke with the town clerk; (heather) about studio space and it will be about two years."
+  },
+  {
+   "topic": "Approve minutes of Nov. 5, 2018",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received; no action recorded",
+   "tags": [
+    "videographers",
+    "town hall TV screens",
+    "programming",
+    "studio",
+    "balances"
+   ],
+   "quote": "two videographers were lost in october."
+  },
+  {
+   "topic": "Talent discussion",
+   "resolution": "two motions sent to the board, accepted",
+   "tags": [
+    "membership",
+    "talent"
+   ],
+   "quote": "pacc makes a motion to the board that peter lincoln joins the pacc."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:05pm; next meeting Jan 7th",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 7:05pm."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "budget balances",
+  "fund transfer",
+  "talent membership",
+  "studio",
+  "town hall broadcasting",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

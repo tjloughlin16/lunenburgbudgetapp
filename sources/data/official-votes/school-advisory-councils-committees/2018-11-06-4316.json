@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2018-11-06",
  "docid": "4316",
@@ -12,19 +12,140 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from October 2, 2018 as presented",
+   "motion": "Accept the minutes of October 2, 2018 as presented.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "minutes for october 2, 2018 were accepted as presented."
+   "quote": "minutes for october 2, 2018 were accepted as presented.",
+   "seconded_by": ""
   },
   {
-   "motion": "Approve basketball booster club fundraising event (cash calendar, December 10-21)",
+   "motion": "Approve the basketball booster club's December cash calendar fundraiser (10th-21st), with each player asked to sell 10 calendar spots at $10 each.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "basketball booster club requested approval of fundraising event: cash calendar over 2 weeks in december (10th-21st). it is not mandatory for any student to participate in sales. each player is requested to sell 10 calendar spots at $10 each - if more are sold, there's a money-grab incentive. family cap is to in place and funds will be used for banquet, awards, acknowledgements. winners will be notified by email. - approved (quorum achieved at this point)"
+   "quote": "winners will be notified by email. - approved (quorum achieved at this point)",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1059675
+ "note": "The board name supplied for this record is \"School Advisory Councils Committees\", but the minutes are titled \"Lunenburg Public Schools Athletic Advisory Council Meeting Minutes\". The \"Members Present\" list is blank, with a clerk's note asking for the list, so attendance is not recorded. No vote counts are printed, and no mover or seconder is named for any motion. The minutes-acceptance entry is recorded as passed although the minutes state only that the minutes were \"accepted as presented\". Adjournment at 7:43PM was not put as a motion. Public comment was \"None\". Text is a plain-text extraction of a single page.",
+ "cost_usd": 0.0032532200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chair",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order at 6:36pm by chair."
+  },
+  {
+   "name": "Dr. Burnham",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dr. burnham shared current information about the concession stand and being able to use it."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Boosters' request that the Superintendent proceed with gathering information on making the concession stand kitchen usable, with a rental fee and hired kitchen staff, was directed.",
+   "quote": "boosters felt that reasonable and requested superintendent proceed with gathering information."
+  },
+  {
+   "decision": "Discussion of scheduling activities over vacation breaks was moved to the next month's meeting due to lack of quorum.",
+   "quote": "further discussion moved to next month due to lack of quorum"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Basketball booster calendar fundraiser pricing",
+   "what_was_recorded": "Each player is asked to sell 10 calendar spots at $10 each, with a money-grab incentive if more are sold.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "each player is requested to sell 10 calendar spots at $10 each"
+  },
+  {
+   "topic": "Concession stand kitchen use cost",
+   "what_was_recorded": "Making the kitchen like any other school kitchen would carry a cost/rental fee and require hiring kitchen staff, assumed at $26 per hour; the boosters found this reasonable.",
+   "figures_as_printed": [
+    "$26/hour"
+   ],
+   "quote": "kitchen staff would have to be hired (assumed at $26/hour)"
+  },
+  {
+   "topic": "Admission fees",
+   "what_was_recorded": "Admission fees were mentioned as being inconsistently collected; the group did not discuss further. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "it was mentioned that these fees are inconsistently collected"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "New Business: scheduling activities over vacation breaks",
+   "resolution": "continued to next month (lack of quorum)",
+   "tags": [
+    "scheduling",
+    "vacation breaks",
+    "students"
+   ],
+   "quote": "scheduling activities over vacation breaks - members present discussed whether this was an issue."
+  },
+  {
+   "topic": "Old Business: Fundraising (basketball booster calendar)",
+   "resolution": "approved",
+   "tags": [
+    "fundraising",
+    "basketball",
+    "booster club"
+   ],
+   "quote": "basketball booster club requested approval of fundraising event: cash calendar over 2 weeks in december"
+  },
+  {
+   "topic": "Old Business: Concession Stand",
+   "resolution": "Superintendent to gather information",
+   "tags": [
+    "concession stand",
+    "kitchen",
+    "boosters"
+   ],
+   "quote": "the group discussed making the kitchen like any other kitchen in the school"
+  },
+  {
+   "topic": "Old Business: Community Service",
+   "resolution": "no action",
+   "tags": [
+    "community service"
+   ],
+   "quote": "currently looking at sleep in heavenly peace."
+  },
+  {
+   "topic": "Old Business: Admission Fees",
+   "resolution": "no action; no further discussion",
+   "tags": [
+    "admission fees"
+   ],
+   "quote": "it was mentioned that these fees are inconsistently collected, however group didn't feel it necessary to discuss further."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "athletics",
+  "fundraising",
+  "booster club",
+  "basketball",
+  "concession stand",
+  "kitchen",
+  "community service",
+  "admission fees",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

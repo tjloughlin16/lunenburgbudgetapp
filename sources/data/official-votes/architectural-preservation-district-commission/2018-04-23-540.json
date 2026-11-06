@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2018-04-23",
  "docid": "540",
@@ -12,24 +12,119 @@
  },
  "votes": [
   {
-   "motion": "APDC does not recommend approval of Article 20 regarding the Brooks House",
+   "motion": "Recommend that the APDC not approve Warrant Article 20 (allowing the sale of the Brooks House).",
    "moved_by": "LaVeck",
    "seconded_by": "McGrath",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "laveck motioned for the apdc to not recommend approval. mcgrath seconded the motion and it carried unanimously."
   },
   {
-   "motion": "APDC does not recommend approval of Article 24 regarding demolition of the old Primary School",
+   "motion": "Recommend that the APDC not approve Warrant Article 24 (demolition of the old Primary School).",
    "moved_by": "Corcoran",
    "seconded_by": "McGrath",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "corcoran made a motion that the apdc not rec- ommend approval. mcgrath seconded the motion and it carried unanimousl",
-   "quote_taken_from_text": true
+   "quote": "mcgrath seconded the motion and it carried unanimously. next meeting: scheduled for may 8th."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR read via macOS Vision. Two substantive votes on warrant articles; no procedural votes recorded.",
- "cost_usd": 0.0822875
+ "note": "Text is OCR from a scanned page with visible errors (e.g., \\\"Selecimen\\\", \\\"aCTA\\\", \\\"Milion\\\"); figures and names are as printed. Both votes are recorded as carried unanimously with no numeric count printed. No review of minutes was done, and no public comment is recorded. The minutes state the meeting was a special meeting and that the next meeting is May 8th (year not printed).",
+ "cost_usd": 0.00280582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "LaVeck",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Corcoran",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "land use director adam burney had explained to mcgrath that it was to"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Warrant Article 24 - old Primary School demolition and renovation costs",
+   "what_was_recorded": "A consultant called Vertex reviewed the cost of renovating town properties and found the old Primary School would be the most expensive, at about $1 million (printed as OCR text).",
+   "figures_as_printed": [
+    "$1 Milion"
+   ],
+   "quote": "found that this building would be the most expensive: about $1 milion."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Warrant Article 20 - Brooks House sale and removal from the APD",
+   "resolution": "recommended against approval (passed unanimously)",
+   "tags": [
+    "warrant article",
+    "Brooks House",
+    "town meeting"
+   ],
+   "quote": "the commission convened in a special meeting to discuss warrant articles 20 and 24 to be voted on at the"
+  },
+  {
+   "topic": "Warrant Article 24 - demolition of old Primary School",
+   "resolution": "recommended against approval (passed unanimously)",
+   "tags": [
+    "warrant article",
+    "Primary School",
+    "demolition",
+    "town meeting"
+   ],
+   "quote": "the commission convened in a special meeting to discuss warrant articles 20 and 24 to be voted on at the"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Warrant Article 20 (Town Meeting, May 5th, 2018)",
+   "where": "text",
+   "quote": "the commission convened in a special meeting to discuss warrant articles 20 and 24 to be voted on at the"
+  },
+  {
+   "name": "Warrant Article 24 (Town Meeting, May 5th, 2018)",
+   "where": "text",
+   "quote": "the commission convened in a special meeting to discuss warrant articles 20 and 24 to be voted on at the"
+  }
+ ],
+ "tags": [
+  "warrant articles",
+  "town meeting",
+  "Brooks House",
+  "Primary School demolition",
+  "historic preservation",
+  "APD",
+  "special meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

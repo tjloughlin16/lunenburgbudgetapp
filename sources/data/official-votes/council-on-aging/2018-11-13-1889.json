@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2018-11-13",
  "docid": "1889",
@@ -12,23 +12,261 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the October 9, 2018 meeting",
-   "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Ms. Nowd",
+   "motion": "Approve the minutes of the October 9, 2018 meeting.",
+   "moved_by": "Betty DiGiacomo",
+   "seconded_by": "Diane Nowd",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo motioned to approve the minutes from the october 9, 2018 meeting, ms. nowd seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Ms. DiGiacomo",
-   "seconded_by": "Ms. Grant",
+   "motion": "Adjourn the meeting (at 10:30 a.m.).",
+   "moved_by": "Betty DiGiacomo",
+   "seconded_by": "Sarah Grant",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo motioned to adjourn, ms. grant seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08234050000000001
+ "note": "The minutes carry a stamp reading 'Unanimously approved by COA at December 11, 2018 meeting.' Two members share the surname Lincoln (Pete and Deb); the minutes refer to 'Ms. Lincoln' in the Eagle House Supporters Report and Board Comment without a first name, so those attributions are ambiguous. Several people are named only as subjects of the Director's Report (e.g., Keith Lanzilotti, Pastor Ernie Farrar, Kathleen Burnham, Karen Weller, Brad McNamara, Pat Aubuchon, Pauline Roy) and are not recorded as attendees. The Eagle House Supporters' vote on three new members is not a COA vote and is not recorded as one. The minutes were not a scan; text was readable.",
+ "cost_usd": 0.00568532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, and barbara brown"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, and barbara brown"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, and barbara brown"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, and barbara brown"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, and barbara brown"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: kevin mcnally, jacquelyn dwyer"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: kevin mcnally, jacquelyn dwyer"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "selectman jamie toale, eagle house supporters liaison marie burchfield"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "selectman jamie toale, eagle house supporters liaison marie burchfield"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Memory Café grants",
+   "what_was_recorded": "Director reported the Memory Café has been awarded several grants, with amounts printed for three of them, plus COA Gift Fund designations and Formula Grant funds (no amounts printed).",
+   "figures_as_printed": [
+    "$500",
+    "$500",
+    "$1,000",
+    "$3,000"
+   ],
+   "quote": "$500 from the massachusetts councils on aging, $500 from the friends of nashoba hospital, $1,000 from the lunenburg turkey hill family lions club"
+  },
+  {
+   "topic": "Memory Café grant not awarded",
+   "what_was_recorded": "The Memory Café was not awarded a grant from Blue Cross Blue Shield; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the memory café was not awarded a grant from blue cross blue shield."
+  },
+  {
+   "topic": "Pending grant application",
+   "what_was_recorded": "Director said she has applied for a grant from the North Central Massachusetts Community Foundation; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty reported she has also applied for a grant from the north central massachusetts community foundation."
+  },
+  {
+   "topic": "Ham and Bean Supper proceeds",
+   "what_was_recorded": "Eagle House Supporters liaison said $326 was collected at the door on the night of the homecoming game.",
+   "figures_as_printed": [
+    "$326"
+   ],
+   "quote": "announced that $326 was collected at the door that night."
+  },
+  {
+   "topic": "Ham and Bean Supper total",
+   "what_was_recorded": "The supper raised a total of $1,000 for the Eagle House Supporters.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "the supper raised a total of $1,000 for the eagle house supporters."
+  },
+  {
+   "topic": "2020 Capital Plan request",
+   "what_was_recorded": "Director submitted a request to the 2020 Capital Plan, via the DPW, to reconfigure the roof over the main entrance; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty submitted to the 2020 capital plan via the dpw to reconfigure the roof over the main entrance of the eagle house."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "Selectman",
+   "topic": "Town Meeting announcement",
+   "quote": "mr. toale echoed ms. doherty's announcement about town meeting scheduled for that night at 7 p.m."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted; no action",
+   "tags": [
+    "Town Meeting"
+   ],
+   "quote": "ms. doherty reminded the board that town meeting is scheduled for 7 p.m. on november 13, 2018."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of October 9, 2018",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. digiacomo motioned to approve the minutes from the october 9, 2018 meeting, ms. nowd seconded. on vote, motion carried unanimously."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action",
+   "tags": [
+    "dementia",
+    "Memory Café",
+    "grants",
+    "building repairs",
+    "capital plan"
+   ],
+   "quote": "dementia friendly community: ms. rabbitt reported that the second meeting of the dementia friendly focus group went well."
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "received; no action",
+   "tags": [
+    "Eagle House",
+    "fundraising"
+   ],
+   "quote": "eagle house supporters report: ms. lincoln reported that there is still no one available to fix the unfinished shuffle board court."
+  },
+  {
+   "topic": "Notices and Communications",
+   "resolution": "none",
+   "tags": [],
+   "quote": "notices and communications: none"
+  },
+  {
+   "topic": "Board Comment",
+   "resolution": "no action",
+   "tags": [
+    "Eagle House",
+    "road signs"
+   ],
+   "quote": "ms. lincoln thanked ms. tarbell and ms. doherty for their work on getting the road signs for the eagle house posted"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "tags": [
+    "Town Meeting"
+   ],
+   "quote": "mr. toale echoed ms. doherty's announcement about town meeting scheduled for that night at 7 p.m."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:30 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ms. digiacomo motioned to adjourn, ms. grant seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2020 Capital Plan",
+   "where": "text",
+   "quote": "ms. doherty submitted to the 2020 capital plan via the dpw to reconfigure the roof over the main entrance of the eagle house."
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "Eagle House",
+  "Memory Café",
+  "dementia",
+  "grants",
+  "building repairs",
+  "capital plan",
+  "Town Meeting",
+  "fundraising"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-10-09",
  "docid": "5614",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "The Sewer Commission does not participate in the new electronic permitting system.",
+   "motion": "That the Sewer Commission does not participate in the new electronic permitting system.",
    "moved_by": "John R.",
    "seconded_by": "Joan P.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: john r. that the sewer commission does not participate in the new electronic permitting system. second: joan p. vote: unanimous"
   },
   {
-   "motion": "Approve one night's lodging and $180 registration fee for Carl to attend the MMA conference.",
+   "motion": "To approve one nights lodging and $ 180 registration fee for Carl to attend the MMA conference.",
    "moved_by": "Ryan S.",
    "seconded_by": "Carl L.",
    "outcome": "passed 4-1",
@@ -28,31 +28,344 @@
    "quote": "motion: ryan s. second: carl l. to approve one nights lodging and $ 180 registration fee for carl to attend. vote: aye-- ryan s., joe a., john r. and carl l. oppose-- joan p."
   },
   {
-   "motion": "Accept the minutes of 9/18/18.",
+   "motion": "To accept the minutes of 9/18/18.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3-0-2",
    "procedural": true,
    "quote": "motion: carl l. to accept the minutes of 9/18/18. second: ryan s. vote: aye-joe a., carl l. and ryan s. abstain- joan p. and john r."
   },
   {
-   "motion": "Accept the minutes of 9/25/18.",
+   "motion": "To accept the minutes of 9/25/18.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: carl l. to accept the minutes of 9/25/18. second: ryan s. vote: unanimous"
   },
   {
-   "motion": "Enter into Executive Session and not return to the regular meeting upon conclusion.",
-   "moved_by": "Joan P.",
+   "motion": "To enter into Executive Session and not return to the regular meeting upon conclusion.",
+   "moved_by": "Joan P",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: joan p second: john r. to enter into executive session and not return to the regular meeting upon conclusion vote: carl l.-aye, ryan s.-aye, joe a.- aye, john r.- aye, joan p.- aye"
+   "quote": "to enter into executive session and not return to the regular meeting upon conclusion vote: carl l.-aye, ryan s.-aye, joe a.- aye, john r.- aye, joan p.- aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. One motion to include a waiver clause was moved by Joan but not seconded, so it is not counted as a vote.",
- "cost_usd": 0.0920155
+ "note": "OCR of a scanned two-page document (macOS Vision). Page 1 begins mid-sentence and page 2 ends mid-sentence (\"import the meter\"), so the opening I/I discussion and the billing item are incomplete. OCR errors include \"lan Mead\" (likely Ian Mead) and \"November 13t\". Five votes recorded, all with printed results; the adjournment is stated without a vote. A Joan motion to include the Sewer Use Regulations waiver was not seconded and has no recorded vote. Joe A. is recorded as arriving during the meeting. Executive session minutes are separate and not included.",
+ "cost_usd": 0.008667919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "lan Mead",
+   "role": "Tighe & Bond",
+   "status": "present",
+   "quote": "lan mead, tighe & bond - focuses in the northeast, primarily with water resources and dams."
+  },
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl handed out the most recent i/l engineering data review & evaluation request for bid and said that this meeting would be a discussion."
+  },
+  {
+   "name": "Joe A.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "(joe a. arrived) carl handed out the most recent i/l engineering data review & evaluation request for bid"
+  },
+  {
+   "name": "Ryan S.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ryan asked what else could be done and scott suggested that homeowners could have laterals inspected when they sell a house."
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "public comment - joan asked about holding the november 13t commission meeting with the special town meeting scheduled for that same night."
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: john r. that the sewer commission does not participate in the new electronic permitting system."
+  },
+  {
+   "name": "Scott",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "scott suggested that homeowners could have laterals inspected when they sell a house."
+  },
+  {
+   "name": "Justin",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "justin suggested making sure that the data and methodology is accurate."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "adam burney presented information on the new e-permit system that the town has implemented for applying and collecting permit fees online."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb reported munis replied that there will be no charge if the required format is used."
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Carl asked the company representatives to come up with a scope of work or a proposal for how to proceed on the I/I review.",
+   "quote": "carl asked the company reps to come up with a scope of work or a proposal for how to proceed."
+  },
+  {
+   "decision": "The Commission agreed to refer to the waiver-related policy as written by Town Counsel as the Single Meter policy, and not as sub-meters or manual meters.",
+   "quote": "decided to refer to it as written by town counsel as single meter policy."
+  },
+  {
+   "decision": "The Commissioners will present the policy changes at the October 30 public hearing.",
+   "quote": "the commissioners will present the changes at the hearing."
+  },
+  {
+   "decision": "The Commission confirmed the hearing schedule for October 30 at 6:30pm.",
+   "quote": "commission confirmed the hearing schedule for october 30 at 6:30pm."
+  },
+  {
+   "decision": "Carl was asked to ask the Conservation Commission whether it can cover the MMA conference cost this year.",
+   "quote": "requested that carl ask the conservation commission if they can cover the cost this year."
+  },
+  {
+   "decision": "Barb was suggested to send a copy of the meeting recording to the other engineering firm that could not attend.",
+   "quote": "the commission suggested that barb could send a copy of meeting recording to them."
+  },
+  {
+   "decision": "Barb will swap out approximately 900 meter IDs in Munis in the next bill run, with January as the first attempt at importing the meter data.",
+   "quote": "so barb will have to swap out approximately 900 meter id's in munis in the next bill run."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "I/I review cost concerns",
+   "what_was_recorded": "Commissioners raised concerns about the cost of the I/I work and possible increases to ratepayers; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "commissioners brought up concerns about costs of work, increases to rate payers, the dana street pump station and houses with clay pipes."
+  },
+  {
+   "topic": "Possible rate adjustment",
+   "what_was_recorded": "Company representatives suggested adjusting rates if the cost of finding the cause of I/I is too high; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "suggested that the commission might need to look at adjusting the rates, if the cost of finding the cause is too high"
+  },
+  {
+   "topic": "E-permitting 5% technology fee",
+   "what_was_recorded": "A 5% technology fee would be added to all permits to offset costs, and the Commission discussed concerns about fees added on top of permit costs.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "a 5% technology fee would be added to all permits to offset costs."
+  },
+  {
+   "topic": "Permit fee revenue",
+   "what_was_recorded": "Asked where the e-permit fee revenues would go; Barb said into the general fund. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "joan asked where the fee revenues would go and barb said into the general fund."
+  },
+  {
+   "topic": "MMA conference lodging and registration",
+   "what_was_recorded": "Approval of one night's lodging and a registration fee for Carl to attend the MMA conference January 18-19, 2019.",
+   "figures_as_printed": [
+    "$ 180"
+   ],
+   "quote": "to approve one nights lodging and $ 180 registration fee for carl to attend."
+  },
+  {
+   "topic": "Billing outsourcing cost",
+   "what_was_recorded": "Munis will not charge if the required format is used; NDS upfront cost and ongoing annual maintenance cost were reported.",
+   "figures_as_printed": [
+    "$2,989",
+    "$489"
+   ],
+   "quote": "the cost from nds upfront is $2,989 and $489 per year ongoing for maintenance."
+  },
+  {
+   "topic": "Munis billing format charge",
+   "what_was_recorded": "Munis replied that there will be no charge if the required format is used; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb reported munis replied that there will be no charge if the required format is used."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joan",
+   "stated_role": "not stated",
+   "topic": "Nov 13 meeting and Special Town Meeting",
+   "quote": "joan asked about holding the november 13t commission meeting with the special town meeting scheduled for that same night."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Third-party review of I/I work (Tighe & Bond and other firms)",
+   "resolution": "discussed; company reps asked to propose a scope of work",
+   "quote": "carl asked the company reps to come up with a scope of work or a proposal for how to proceed.",
+   "tags": [
+    "I/I",
+    "engineering",
+    "sewer data"
+   ]
+  },
+  {
+   "topic": "Public comment (Joan, Nov 13 meeting)",
+   "resolution": "discussed; commission to address later in meeting",
+   "quote": "joan asked about holding the november 13t commission meeting with the special town meeting scheduled for that same night.",
+   "tags": [
+    "public comment",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "E-permitting system policy",
+   "resolution": "Sewer Commission does not participate in the e-permit system (unanimous)",
+   "quote": "motion: john r. that the sewer commission does not participate in the new electronic permitting system.",
+   "tags": [
+    "e-permitting",
+    "permit fees"
+   ]
+  },
+  {
+   "topic": "Policy discussions for public hearings 10/30 and 11/27",
+   "resolution": "hearing confirmed for 10/30 at 6:30pm; changes to be presented",
+   "quote": "commission confirmed the hearing schedule for october 30 at 6:30pm.",
+   "tags": [
+    "public hearing",
+    "policies",
+    "sewer use regulations"
+   ]
+  },
+  {
+   "topic": "MMA January 18-19, 2019 approval",
+   "resolution": "approved lodging and registration for Carl (4-1)",
+   "quote": "to approve one nights lodging and $ 180 registration fee for carl to attend.",
+   "tags": [
+    "MMA",
+    "budget",
+    "travel"
+   ]
+  },
+  {
+   "topic": "Billing outsourcing update",
+   "resolution": "update; no action recorded",
+   "quote": "barb reported munis replied that there will be no charge if the required format is used.",
+   "tags": [
+    "billing",
+    "Munis",
+    "meter IDs"
+   ]
+  },
+  {
+   "topic": "Approval of minutes 9/18/18",
+   "resolution": "accepted 3-0-2",
+   "quote": "motion: carl l. to accept the minutes of 9/18/18. second: ryan s. vote: aye-joe a., carl l. and ryan s. abstain- joan p. and john r.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Approval of minutes 9/25/18",
+   "resolution": "accepted unanimously",
+   "quote": "motion: carl l. to accept the minutes of 9/25/18. second: ryan s. vote: unanimous",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "discussed; recording to be sent to another engineering firm",
+   "quote": "member agenda inputs for future meetings: public hearing on 10/30.",
+   "tags": [
+    "agenda",
+    "I/I",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Public comment (commissioner remarks)",
+   "resolution": "no action",
+   "quote": "public comment - barb advised that she'll be working on billing in the next couple weeks.",
+   "tags": [
+    "billing",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session (Allocation Agreement, Robert A. Leverone Lunenburg Nominee Trust)",
+   "resolution": "entered executive session, not returning to open meeting",
+   "quote": "executive session mgl chapter 30a, section 21a(3); to discuss strategy with respect to litigation if an open meeting may",
+   "tags": [
+    "executive session",
+    "litigation",
+    "allocation agreement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "open meeting adjourned at 8:52pm",
+   "quote": "open meeting adjourned at 8:52pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "I/l Engineering Data Review & Evaluation Request for Bid (most recent)",
+   "where": "list",
+   "quote": "carl handed out the most recent i/l engineering data review & evaluation request for bid and said that this meeting"
+  },
+  {
+   "name": "Policies: Irrigation Meters, Sub-Meters, Grease Trap Rules & Regulations, Connection Charge Policy, Sewer Use Regulations Waiver clause, Permit fee policy",
+   "where": "text",
+   "quote": "policies-irrigation meters, sub-meters, grease trap rules & regulations, connection charge policy, sewer"
+  },
+  {
+   "name": "Allocation Agreement with Robert A. Leverone Lunenburg Nominee Trust (LNT)",
+   "where": "text",
+   "quote": "allocation agreement with robert a. leverone lunenburg nominee trust (lnt))"
+  },
+  {
+   "name": "Draw down tests done by Weston Sampson",
+   "where": "text",
+   "quote": "the group discussed the draw down tests done by weston sampson, flow assessments and water department data."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "I/I inflow and infiltration",
+  "engineering review",
+  "e-permitting",
+  "public hearings",
+  "MMA conference",
+  "billing outsourcing",
+  "Munis",
+  "minutes approval",
+  "executive session",
+  "litigation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "carl handed out the most recent i/l engineering data review & evaluation request for bid"
+ },
+ "dropped_unquoted_by_field": {}
 }

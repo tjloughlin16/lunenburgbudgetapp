@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-building-committee-meeting",
  "meeting_date": "2018-01-03",
  "docid": "4574",
@@ -12,31 +12,303 @@
  },
  "votes": [
   {
-   "motion": "Approve Heather Sroka as School Committee Representative to NEASC Accreditation Sub-Committee",
-   "moved_by": "Wendy Bertrand",
-   "seconded_by": "Jim La Veck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "ms. bertrand made a motion to approve heather sroka as the school committee representative to neasc accreditation sub-committee. mr. laveck seconded. vote: unanimous"
-  },
-  {
-   "motion": "Accept Capital Plan change to upgrade the phone system, with the dollar amount of $29,500 for Fiscal Year 2019, total capital plan $159,500",
-   "moved_by": "Jim La Veck",
-   "seconded_by": "Meredith Weiss",
-   "outcome": "passed",
+   "motion": "Approve Heather Sroka as the School Committee Representative to the NEASC Accreditation Sub-Committee.",
+   "moved_by": "Ms. Bertrand",
+   "seconded_by": "Mr. LaVeck",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "mr. laveck moved the motion to accept the capital plan change to upgrade the new phone system and change the dollar amount to a total of $29,500 for fiscal year 2019 to $159,500. ms. weiss seconded the motion. vote: unanimous"
+   "quote": "ms. bertrand made a motion to approve heather sroka as the school committee representative to neasc accreditation sub-committee. mr. laveck seconded. vote:"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Wendy Bertrand",
-   "seconded_by": "Jim La Veck",
-   "outcome": "passed",
+   "motion": "Accept the FY19 Revised Capital Plan change to upgrade the phone system, reducing the amount to $29,500 and the total to $159,500 for Fiscal Year 2019.",
+   "moved_by": "Mr. LaVeck",
+   "seconded_by": "Ms. Weiss",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "mr. laveck moved the motion to accept the capital plan change to upgrade the new phone system and change the dollar amount to a total of $29,500 for fiscal year 2019 to $159,500."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:20 p.m.",
+   "moved_by": "Ms. Bertrand",
+   "seconded_by": "Mr. LaVeck",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "ms. bertrand made a motion to adjourn at 8:20 p.m. mr. laveck seconded the motion. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted from scan",
- "cost_usd": 0.0989305
+ "note": "The header says School Building Committee, but the minutes are of a School Committee meeting (Chair Heather Sroka; 'School Committee Representative'). OCR text is incomplete: page 2 begins mid-sentence in the banner discussion, so the heading for item 7 and its part a is missing; the Superintendent's report is cut off mid-sentence; item 9 has no heading and the calendar discussion appears on page 3. Some figures carry OCR spacing ('$20, 883,265', '$159, 500'). Attendance for Brendan Tobin and Sue Cavaoli is listed under Guests without a stated status. The warrants were placed on the table for signature with no vote recorded. Only three motions are recorded, all with outcome 'Unanimous'; no tallies are printed.",
+ "cost_usd": 0.007869919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Sroka",
+   "role": "Chair",
+   "status": "present",
+   "quote": "heather sroka called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "wendy bertrand, vice chair-present"
+  },
+  {
+   "name": "Dawn-Marie Ayles",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "dawn-marie ayles, secretary-absent"
+  },
+  {
+   "name": "Meredith Weiss",
+   "status": "present",
+   "quote": "meredith weiss-present"
+  },
+  {
+   "name": "Jim La Veck",
+   "status": "present",
+   "quote": "jim la veck-present business manager/ hr director"
+  },
+  {
+   "name": "Michael Cassidy",
+   "status": "absent",
+   "quote": "michael cassidy-absent"
+  },
+  {
+   "name": "Christine Hladky",
+   "role": "Recording Secretary",
+   "status": "absent",
+   "quote": "christine hladky-absent"
+  },
+  {
+   "name": "Alizah Raboin",
+   "role": "Student Representative",
+   "status": "present",
+   "quote": "alizah raboin-present"
+  },
+  {
+   "name": "Superintendent Calmes",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "superintendent calmes introduced mr. londa to discuss building operations."
+  },
+  {
+   "name": "Mr. Londa",
+   "status": "present",
+   "quote": "superintendent calmes introduced mr. londa to discuss building operations."
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck stated the professional development day in september falls on a thursday"
+  },
+  {
+   "name": "Brendan Tobin",
+   "role": "President Class 2017",
+   "status": "not stated",
+   "quote": "brendan tobin, president class 2017, sue cavaoli"
+  },
+  {
+   "name": "Sue Cavaoli",
+   "role": "Guest",
+   "status": "not stated",
+   "quote": "brendan tobin, president class 2017, sue cavaoli"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Superintendent Calmes will continue to evaluate the 2018-2019 school calendar.",
+   "quote": "superintendent calmes stated she will continue to evaluate the calendar."
+  },
+  {
+   "decision": "An Athletic Council presentation is to be added to the agenda in March.",
+   "quote": "mr. laveck stated the athletic council will have a presentation to add to the agenda in march."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY19 Revised Capital Plan - phone system upgrade",
+   "what_was_recorded": "The $35,000 initially requested to update the Lunenburg Primary School phone system through Signet was reduced to $29,500, bringing the total to $159,500.",
+   "figures_as_printed": [
+    "$35,000",
+    "$29,500",
+    "$159, 500",
+    "$159,500"
+   ],
+   "quote": "$35,000 was initially requested to update the lunenburg primary schools phone system through signet."
+  },
+  {
+   "topic": "FY19 Superintendent's Recommended Budget",
+   "what_was_recorded": "The total overall budget request is $20,883,265, a 5.5% increase.",
+   "figures_as_printed": [
+    "$20, 883,265",
+    "5.5%"
+   ],
+   "quote": "total overall budget request is $20, 883,265. represents a 5.5% increase."
+  },
+  {
+   "topic": "Banner project costs",
+   "what_was_recorded": "Discussion of the costs and sustainability of banners and whether additional funds will be required to install them; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. bertrand discussed evaluating the hours required to install the banners and if additional funds will be required."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 p.m.",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "1. call to order-heather sroka called the meeting to order at 7:00 p.m."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "2. public comment-no public comment."
+  },
+  {
+   "topic": "Chair's Report",
+   "resolution": "no action",
+   "tags": [
+    "chair report"
+   ],
+   "quote": "3. chair's report -ms. sroka welcomed everyone back and a happy new year."
+  },
+  {
+   "topic": "Review and Approve Warrants & Line Item Transfers",
+   "resolution": "warrants on table for signature; no line items present",
+   "tags": [
+    "warrants",
+    "transfers"
+   ],
+   "quote": "4. review and approve warrants & line item transfers- warrants were on the table for signature."
+  },
+  {
+   "topic": "Superintendent's Report - building operations",
+   "resolution": "discussed heating problems; no action",
+   "tags": [
+    "building operations",
+    "heating"
+   ],
+   "quote": "5. superintendent's report-superintendent calmes introduced mr. londa to discuss building operations."
+  },
+  {
+   "topic": "Student Representative Report",
+   "resolution": "reported; no action",
+   "tags": [
+    "students"
+   ],
+   "quote": "6. student representative report-ms. raboin discussed the continuation of class plays and winter sports."
+  },
+  {
+   "topic": "Banner project (item 7, partly missing from text)",
+   "resolution": "discussed; no action",
+   "tags": [
+    "banners"
+   ],
+   "quote": "ms. bertrand discussed evaluating the hours required to install the banners and if additional funds will be required."
+  },
+  {
+   "topic": "NEASC Accreditation Sub-Committee representative",
+   "resolution": "approved Heather Sroka as representative, unanimous",
+   "tags": [
+    "NEASC",
+    "accreditation",
+    "appointment"
+   ],
+   "quote": "ms. bertrand made a motion to approve heather sroka as the school committee representative to neasc accreditation sub-committee. mr. laveck seconded. vote:"
+  },
+  {
+   "topic": "FY19 Revised Capital Plan",
+   "resolution": "change approved, unanimous",
+   "tags": [
+    "capital plan",
+    "phone system"
+   ],
+   "quote": "a. fy19 revised capital plan-mr. londa discussed the capital plan."
+  },
+  {
+   "topic": "2018-2019 School Calendar",
+   "resolution": "discussed; superintendent to continue evaluating",
+   "tags": [
+    "school calendar"
+   ],
+   "quote": "c. 2018-2019 school calendar-superintendent calmes discussed updates of the 2018/2019 school calendar."
+  },
+  {
+   "topic": "FY19 Superintendent's Recommended Budget",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "budget"
+   ],
+   "quote": "b. fy19 superintendent's recommended budget- superintendent calmes discussed the updated"
+  },
+  {
+   "topic": "Topics for Future Discussion",
+   "resolution": "discussed; items noted for future agendas",
+   "tags": [
+    "future agendas"
+   ],
+   "quote": "10. topics for future discussion- ms. sroka evaluated the topics for future discussion including the"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "11. adjournment-ms. sroka entertained a motion to adjourn."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY19 Revised Capital Plan",
+   "where": "text",
+   "quote": "a. fy19 revised capital plan-mr. londa discussed the capital plan."
+  },
+  {
+   "name": "2018/2019 School Calendar",
+   "where": "text",
+   "quote": "c. 2018-2019 school calendar-superintendent calmes discussed updates of the 2018/2019 school"
+  },
+  {
+   "name": "FY19 Superintendent's Recommended Budget",
+   "where": "text",
+   "quote": "b. fy19 superintendent's recommended budget- superintendent calmes discussed the updated"
+  },
+  {
+   "name": "Community Learning Program report",
+   "where": "text",
+   "quote": "ms. bertrand inquired about evaluating the community learning program report by spring to consider"
+  },
+  {
+   "name": "Warrants",
+   "where": "text",
+   "quote": "4. review and approve warrants & line item transfers- warrants were on the table for signature."
+  }
+ ],
+ "tags": [
+  "school committee",
+  "capital plan",
+  "phone system",
+  "FY19 budget",
+  "school calendar",
+  "building heating",
+  "banners",
+  "NEASC accreditation",
+  "student representative",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-02-08",
  "docid": "5776",
@@ -12,23 +12,234 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the 10/12/17 SWTF meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the 10/12/17 swtf meeting were accepted."
-  },
-  {
-   "motion": "End the meeting at 8:20 p.m.",
+   "motion": "To end the meeting at 8:20 p.m.",
    "moved_by": "Matt Allison",
-   "seconded_by": "Jack Rodriquenz",
-   "outcome": "passed",
+   "outcome": "passed, all voting in favor",
    "procedural": true,
-   "quote": "there was a motion to end the meeting at 8:20 p.m., made by matt allison, seconded by jack rodriquenz, all voted in favor."
+   "quote": "there was a motion to end the meeting at 8:20 p.m., made by matt allison, seconded by jack rodriquenz, all voted in favor.",
+   "seconded_by": "Jack Rodriquenz"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision); minutes are readable. No votes on substantive matters recorded; only procedural votes (acceptance of prior minutes and adjournment).",
- "cost_usd": 0.016762700000000002
+ "note": "OCR text of a scanned minutes packet. No attendance roll; attendance is inferred from speaking, presenting, and voting roles, so most statuses are 'present' or 'not stated'. The map pages (4-10) are OCR-garbled, and the BMP cost table prints no dollar signs. The minutes accepting the 10/12/17 meeting record no motion or vote count. The adjournment vote is recorded only as 'all voted in favor', with no numeric count.",
+ "cost_usd": 0.00665972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "SWTF Chair; Member, Board of Selectmen",
+   "status": "present",
+   "quote": "phyllis luck announced that the state stormwater coalition, which lunenburg is a part of"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "there was a motion to end the meeting at 8:20 p.m., made by matt allison, seconded by jack rodriquenz"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "there was a motion to end the meeting at 8:20 p.m., made by matt allison, seconded by jack rodriquenz"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack rabbitt also asked about the amount of sand/salt that is used on"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "land use director adam burney volunteered to be that point person."
+  },
+  {
+   "name": "DCI",
+   "role": "consultant (Design Consultants Inc.)",
+   "status": "present",
+   "quote": "dci gave an update on the progress of their community compact grant award project"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the 10/12/17 SWTF meeting accepted (no motion recorded).",
+   "quote": "minutes of the 10/12/17 swtf meeting were accepted."
+  },
+  {
+   "decision": "Adam Burney to post the 10/17/17 PowerPoint presentation to the BOS on the SWTF webpage.",
+   "quote": "adam burney will now put the 10/17/17 power point presentation to the bos on the swtf webpage."
+  },
+  {
+   "decision": "Land Use Director Adam Burney volunteered to serve as the single point person for all stormwater records and documentation under the MS4 Permit.",
+   "quote": "land use director adam burney volunteered to be that point person."
+  },
+  {
+   "decision": "Jack Rabbitt to forward an agenda item on sand/salt use on Lunenburg roadways for a future agenda.",
+   "quote": "he will forward an agenda item to be placed on a future agenda to discuss this topic further."
+  },
+  {
+   "decision": "Task Force members to review and finalize the suggested outfall ranking at the March 1 SWTF meeting.",
+   "quote": "task force members will review and finalize the suggested ranking at the next swtf meeting to be held on march 1."
+  },
+  {
+   "decision": "Several agenda items moved to the March 1 meeting because the predetermined end of meeting time was drawing near.",
+   "quote": "several agenda items were moved to the next meeting on march 1, as the predetermined end of meeting time was drawing near."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State stormwater education and outreach grant",
+   "what_was_recorded": "The State Stormwater Coalition received a grant to create an education and outreach program for the State.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "has received a $200,000 grant to create an education and outreach program for the state."
+  },
+  {
+   "topic": "BMP cost estimates in the outfall priority tables",
+   "what_was_recorded": "The outfall priority tables list approximate BMP cost figures for individual outfalls, with some entries marked TBD; the scan does not print dollar signs.",
+   "figures_as_printed": [
+    "5,000 - 10,000",
+    "10,000",
+    "TBD",
+    "15,000",
+    "20,000",
+    "20-25,000"
+   ],
+   "quote": "existing wetland 5,000 - 10,000 tbd"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "State education and outreach grant announcement",
+   "resolution": "informational, no action",
+   "quote": "phyllis luck announced that the state stormwater coalition, which lunenburg is a part of",
+   "tags": [
+    "education",
+    "outreach",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Precipitation conference report and sand/salt question",
+   "resolution": "no action; agenda item to be requested",
+   "quote": "jack rabbitt also asked about the amount of sand/salt that is used on",
+   "tags": [
+    "precipitation",
+    "road salt"
+   ]
+  },
+  {
+   "topic": "Approval of 10/12/17 minutes",
+   "resolution": "accepted",
+   "quote": "minutes of the 10/12/17 swtf meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DCI outfall prioritization update",
+   "resolution": "informational; maps distributed",
+   "quote": "dci gave an update on the progress of their community compact grant award project",
+   "tags": [
+    "outfalls",
+    "BMP",
+    "MS4 permit",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Next steps for outfall ranking and 319 grant",
+   "resolution": "informational; ranking to be finalized March 1",
+   "quote": "it is projected that the tasks identified will be completed over the next 10 years.",
+   "tags": [
+    "319 grant",
+    "outfalls"
+   ]
+  },
+  {
+   "topic": "MS4 record keeping and point person",
+   "resolution": "Adam Burney volunteered as point person",
+   "quote": "land use director adam burney volunteered to be that point person.",
+   "tags": [
+    "MS4 permit",
+    "record keeping"
+   ]
+  },
+  {
+   "topic": "Westford Living Lab education visit",
+   "resolution": "informational, no action",
+   "quote": "in october, phyllis luck had visited an educational program offered in the westford public",
+   "tags": [
+    "education",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Agenda items deferred",
+   "resolution": "moved to March 1 meeting",
+   "quote": "several agenda items were moved to the next meeting on march 1, as the predetermined end of meeting time was drawing near.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "informational",
+   "quote": "the next meeting will be held on march 1; if a second meeting in march is",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:20 p.m.",
+   "quote": "there was a motion to end the meeting at 8:20 p.m., made by matt allison, seconded by jack rodriquenz",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Sub-Basin maps (Catacunemaug Brook, Easter Brook, Hickory Hills Lake, Lake Shirley, Upper Mulpus Brook), DCI, dated 01.25.18",
+   "where": "text",
+   "quote": "dci presented individual maps of 5 sub-basins in lunenburg, comprising approximately 75%"
+  },
+  {
+   "name": "Priority BMP's Draft Summary map of the Town of Lunenburg",
+   "where": "text",
+   "quote": "also included was a priority bmp's"
+  },
+  {
+   "name": "10/17/17 Power Point presentation on MS4 Permits",
+   "where": "text",
+   "quote": "adam burney will now put the 10/17/17 power point presentation to the bos on the swtf webpage."
+  },
+  {
+   "name": "319 Grant Pre-Request for Proposal (RFP)",
+   "where": "text",
+   "quote": "there is a 319 grant pre-request for proposal (rfp) meeting to be"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "outfalls",
+  "319 grant",
+  "education outreach",
+  "record keeping",
+  "BMP",
+  "road salt"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "members were given 8 ½ x 11 inch copies of the maps"
+ },
+ "dropped_unquoted_by_field": {}
 }

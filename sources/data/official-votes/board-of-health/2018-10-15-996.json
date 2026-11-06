@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-10-15",
  "docid": "996",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Septic system variances for 34 Charlton Street approved (groundwater reduction from 4 feet to 3 feet and offset from tank to cellar wall from 10 feet to 6 feet)",
+   "motion": "Approve the variances requested for 34 Charlton Street (reduce groundwater separation from 4 feet to 3 feet and tank-to-cellar-wall offset from 10 feet to 6 feet).",
    "moved_by": "Mayhew",
    "seconded_by": "Passios",
    "outcome": "passed",
@@ -20,15 +20,123 @@
    "quote": "after discussion and on motion by mayhew and second by passios, the variances were approved. all in favor."
   },
   {
-   "motion": "Current owner or prospective purchaser may determine whether well or septic system at 748 Page Street is to be replaced; property cannot be re-occupied until replacement is made",
+   "motion": "Decide that either the current owner or a prospective purchaser may determine whether the well or the septic system at 748 Page Street is replaced; the vacated property cannot be re-occupied until one is replaced.",
    "moved_by": "Jewell",
    "seconded_by": "Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion, and on motion by jewell and second by mayhew, it was decided that either the current owner or a prospective purchaser could make the determination as to which is to be replaced, the well or the septic system. once this property is vacated, it cannot be re-occupied until either the well or the septic system was replaced. all in favor."
+   "quote": "on motion by jewell and second by mayhew, it was decided that either the current owner or a prospective purchaser could make the determination as to which is to be replaced,",
+   "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Minutes acknowledge title 5 reports and septic permits signed but record no motion or vote for those. Two substantive votes on variances and property occupancy. Meeting adjournment noted but not voted.",
- "cost_usd": 0.0823325
+ "note": "Scanned page read by OCR; some words are garbled (e.g., 'teet', 'board of behalf'). The minutes text prints no meeting date and no attendance roll, so attendance is inferred from the named board members in motions. 'MINUTES APPROVED:' and 'Meeting adjourned' appear with no motion or result recorded, so they are not recorded as votes. No dollar figures appear in the text.",
+ "cost_usd": 0.00382392,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jack Maloney",
+   "role": "on behalf of the owner (presenter, 34 Charlton Street)",
+   "status": "present",
+   "quote": "jack maloney met with the board of behalf of the owner. this system is in failure."
+  },
+  {
+   "name": "Mayhew",
+   "role": "board member (made motion; seconded)",
+   "status": "present",
+   "quote": "after discussion and on motion by mayhew and second by passios, the variances were approved. all in favor."
+  },
+  {
+   "name": "Passios",
+   "role": "board member (seconded motion)",
+   "status": "present",
+   "quote": "after discussion and on motion by mayhew and second by passios, the variances were approved. all in favor."
+  },
+  {
+   "name": "Jewell",
+   "role": "board member (made motion)",
+   "status": "present",
+   "quote": "after discussion, and on motion by jewell and second by mayhew, it was decided that either the current owner or a prospective purchaser could make the determination as to which is to be replaced"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Received and filed the Title 5 inspection report for 132 Robbs Hill Road.",
+   "quote": "132 robbs hill road received & filed"
+  },
+  {
+   "decision": "Septic permits were signed for 34 Charlton Street and 24 Kingman Street.",
+   "quote": "septic permits signed: 34 charlton street 24 kingman street"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection report, 132 Robbs Hill Road",
+   "resolution": "received and filed",
+   "quote": "132 robbs hill road received & filed",
+   "tags": [
+    "Title 5",
+    "inspection report"
+   ]
+  },
+  {
+   "topic": "Septic permits, 34 Charlton Street and 24 Kingman Street",
+   "resolution": "signed",
+   "quote": "septic permits signed: 34 charlton street 24 kingman street",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Variance requests, 34 Charlton Street",
+   "resolution": "variances approved",
+   "quote": "variances being requested are reduction in groundwater from 4 feet to 3 feet and offset from tank to cellar wall from 10 teet to 6 feet.",
+   "tags": [
+    "variances",
+    "septic",
+    "failed system"
+   ]
+  },
+  {
+   "topic": "748 Page Street failed Title 5 (well and septic proximity)",
+   "resolution": "decided which of well or septic is replaced; no reoccupancy until replaced",
+   "quote": "the property failed title 5 due to the proximity of the existing well to the septic system.",
+   "tags": [
+    "Title 5",
+    "well",
+    "septic",
+    "property transfer"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 132 Robbs Hill Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 132 robbs hill road received & filed"
+  },
+  {
+   "name": "Septic permits, 34 Charlton Street and 24 Kingman Street",
+   "where": "list",
+   "quote": "septic permits signed: 34 charlton street 24 kingman street"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "Title 5",
+  "septic",
+  "variances",
+  "well and septic",
+  "permits"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

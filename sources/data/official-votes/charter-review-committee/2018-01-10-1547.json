@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-01-10",
  "docid": "1547",
@@ -12,6 +12,227 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are recorded in these minutes. The text lists MINUTES APPROVAL (section 4) with prior meeting dates but states no voting outcome. Section 10 lists ADJOURNMENT with no motion, outcome, or vote recorded. Section 1 mentions \"Without objection, Mr. May was asked to join the committee\" but this is a consent-based action, not a formal vote. These appear to be OCR-scanned minutes.",
- "cost_usd": 0.0811315
+ "note": "OCR text from a scanned page; no votes are recorded anywhere in the text (minutes approval, adjournment and other motions have no motion or result printed), so the votes list is empty. Page 1 ends mid-agenda and page 2 begins at item 6b, so item 6a and any text between are missing. Michael Mackin appears twice in the attendance line. Some agenda numbering is OCR-garbled (e.g. \"ili.\" for iii.). The meeting date 2018-01-10 is supplied by the request, not printed in the text. The minutes do not state whether the Board of Selectmen or other members took any action on the agenda headings listed without discussion.",
+ "cost_usd": 0.0049275199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen; presided (\"J. Toale, called the meeting to order\")",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative), mark erickson (finance committee)"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative), mark erickson (finance committee)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative), mark erickson (finance committee)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "committee), michael-ray jeffreys (planning board), michael mackin (school committee representative, terri"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee Representative / School Committee (listed twice in the minutes)",
+   "status": "present",
+   "quote": "michael mackin (school committee)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "absent",
+   "quote": "absent: bob ebersole (selectman), steve archambault (community representative)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "absent",
+   "quote": "absent: bob ebersole (selectman), steve archambault (community representative)"
+  },
+  {
+   "name": "Lance May",
+   "role": "Cemetery commission; asked to join the committee and make a recommendation",
+   "status": "present",
+   "quote": "mr. lance may (cemetery commission) - believe that the current charter is missing one word that is part of the state"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "member of the public (public comment)",
+   "status": "present",
+   "quote": "rhonda lisio - stated that she's an average member of the public and will recommend a change to the charter and feels that her opinion is just as important as everyone else's."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The town manager was asked to attend the committee's next meeting, given expected absences.",
+   "quote": "noted that due to expected absences, the town manager was asked to come to our next meeting."
+  },
+  {
+   "decision": "Mr. Lance May (Cemetery commission) was asked, without objection, to join the committee and make a recommendation.",
+   "quote": "without objection, mr. may was asked to join the committee and make a recommendation."
+  },
+  {
+   "decision": "Members are to come to the January 24 meeting with suggested questions for the Town Manager.",
+   "quote": "b. members should come on january 24 with suggested questions for town manager"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "average member of the public",
+   "topic": "recommended charter change; public opinion counts",
+   "quote": "rhonda lisio - stated that she's an average member of the public and will recommend a change to the charter and feels that her opinion is just as important as everyone else's."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order; town manager asked to attend next meeting; Mr. May asked to join and make recommendation",
+   "tags": [
+    "call to order",
+    "attendance"
+   ],
+   "quote": "j. toale, called the meeting to order and noted that due to expected absences, the town manager was asked to come"
+  },
+  {
+   "topic": "Public comment (item 2)",
+   "resolution": "listed; no comment recorded at this point",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "2. public comment 3. board announcements 4. minutes approval"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "listed for 29 November and 27 December; no vote recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "4. minutes approval 29 november 27 december"
+  },
+  {
+   "topic": "Responses from committees and boards (Cemetery commission)",
+   "resolution": "discussed; Mr. May recommended adding the word \"sole\" to Section 3-5",
+   "tags": [
+    "cemetery commission",
+    "charter sections"
+   ],
+   "quote": "mr. lance may (cemetery commission) - believe that the current charter is missing one word that is part of the state"
+  },
+  {
+   "topic": "Board of Selectmen alternative name; Town Meeting schedule and communication; elected boards with employees (accountable officers, reviews, terminations)",
+   "resolution": "listed as agenda headings; no discussion recorded",
+   "tags": [
+    "selectmen",
+    "town meeting",
+    "elected boards",
+    "employees"
+   ],
+   "quote": "b. board of selectmen i. alternative name c. town meeting i. schedule of meetings"
+  },
+  {
+   "topic": "Charter vs. bylaws for location of proposed changes (finance department detail)",
+   "resolution": "discussed; members to look into finance department detail before meeting with town manager",
+   "tags": [
+    "finance department",
+    "charter vs bylaws"
+   ],
+   "quote": "t. burchfield noted that the charter spells out very detailed information related to the duties of the finance"
+  },
+  {
+   "topic": "Director of Facilities; Town Clerk (elected or appointed)",
+   "resolution": "listed as agenda headings; no discussion recorded",
+   "tags": [
+    "facilities",
+    "town clerk"
+   ],
+   "quote": "f. director of facilities g. town clerk i. elected or appointed"
+  },
+  {
+   "topic": "Review highlights of Articles 1-4 and discuss Article 5 through end of Charter",
+   "resolution": "listed as agenda headings; no discussion recorded",
+   "tags": [
+    "charter articles"
+   ],
+   "quote": "h. review highlights of articles 1, 2, 3, & 4 i. discuss article 5 through end of charter"
+  },
+  {
+   "topic": "Public comment (item 7)",
+   "resolution": "Rhonda Lisio spoke; no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "rhonda lisio - stated that she's an average member of the public and will recommend a change to the charter and feels that her opinion is just as important as everyone else's."
+  },
+  {
+   "topic": "Board comment/concerns (item 8)",
+   "resolution": "listed; no comment recorded",
+   "tags": [
+    "board comment"
+   ],
+   "quote": "8. board comment/concerns 9. meeting schedule:"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "regular schedule and upcoming dates read into the minutes (February 7, 21, 28); no vote recorded",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "meetings are held at ritter memorial building, 7:00 pm, on the second and fourth wednesdays of the month, unless otherwise indicated."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned; no vote recorded",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "february 28 10. adjournment"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town charter (the current charter; Section 3-5 named)",
+   "where": "text",
+   "quote": "believe that the current charter is missing one word that is part of the state law governing cemeteries, the word being \"sole\" in section 3-5."
+  }
+ ],
+ "tags": [
+  "charter review",
+  "town manager",
+  "cemetery commission",
+  "finance department",
+  "town meeting",
+  "elected boards",
+  "public comment",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

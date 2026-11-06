@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-05-17",
  "docid": "5774",
@@ -12,23 +12,128 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the prior May 3 meeting",
+   "motion": "Approve the minutes of the May 3 meeting without changes.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "minutes of prior may 3 meeting was approved and accepted without changes."
+   "quote": "minutes of prior may 3 meeting was approved and accepted without changes.",
+   "seconded_by": ""
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
    "outcome": "passed unanimously",
    "procedural": true,
-   "moved_by": "",
-   "seconded_by": "",
-   "quote": "meeting adjourned: 7pm... unanimously!"
+   "quote": "meeting adjourned: 7pm... unanimously!",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; readable. Two procedural votes recorded: approval of prior minutes and adjournment. No substantive motions with recorded votes found (the 319 Grant discussion and assignments of letter-gathering tasks have no explicit vote language).",
- "cost_usd": 0.010220400000000001
+ "note": "Partial text: only page 1 of the minutes is provided and the opening sentence is cut off, so the roll call and quorum are not visible. No vote is recorded for the 319 Grant items. The minutes list no dollar figures. The minutes are stamped received and filed July 9 2018 by the Lunenburg Town Clerk. The approval of the May 3 minutes and the adjournment are recorded without a moved-by or seconded-by name.",
+ "cost_usd": 0.0030694200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "scheduled, with matt allison, land use director burney and consultant ed himlan were also in attendance."
+  },
+  {
+   "name": "Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "scheduled, with matt allison, land use director burney and consultant ed himlan were also in attendance."
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "Consultant; of the Massachusetts Watershed Coalition",
+   "status": "present",
+   "quote": "ed himlan of the massachusetts watershed coalition presented:"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "phyllis luck was unable to attend as she was out of town."
+  },
+  {
+   "name": "Adam",
+   "role": "Member",
+   "status": "present",
+   "quote": "adam: meeting minutes must be approved within 3 sessions of original meeting."
+  },
+  {
+   "name": "Jack",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "conservation commission and hickory hills = jack"
+  },
+  {
+   "name": "John Rabbitt",
+   "role": "SWTF (minutes author)",
+   "status": "not stated",
+   "quote": "respectfully submitted, john rabbitt swtf"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members agreed to chase the letters of recommendation: Selectman and Town Manager (Adam); Conservation Commission and Hickory Hills (Jack); adjoining Mulpus property owners Tanner & Daron (Matt).",
+   "quote": "letters of recommendations needed to be approved: following members agreed to chase:"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "319 Grant planned expenditure budget",
+   "what_was_recorded": "The planned expenditure budget for the 319 Grant changed as a result of the site visit; no dollar figures are printed.",
+   "quote": "planned expenditure budget has changed as a result of the site visit.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Comments from the Members",
+   "resolution": "noted; no action",
+   "quote": "comments from the members: matt: open space team meetings have begun. so far, so good!",
+   "tags": [
+    "open space",
+    "MS4 permitting",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "319 Grant",
+   "resolution": "presented; letter assignments agreed; no vote recorded",
+   "quote": "ed himlan of the massachusetts watershed coalition presented:",
+   "tags": [
+    "319 grant",
+    "watershed",
+    "grant application",
+    "milestones"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "319 Grant application",
+   "where": "text",
+   "quote": "application and wording reviewed and updated."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "319 grant",
+  "MS4 permitting",
+  "open space",
+  "letters of recommendation",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

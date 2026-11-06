@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-07-31",
  "docid": "1385",
@@ -12,6 +12,85 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a meeting at which the Cemetery Commission presented an application for demolition of a building to the Historical Commission, but contain no record of motions, seconds, or votes by the Cemetery Commission. The meeting was adjourned but no motion to adjourn is stated.",
- "cost_usd": 0.0787725
+ "note": "Text extraction only; no scan issues. The minutes record no motions or votes, so the votes list is empty. Adjournment at 8:30 PM and the call to order are stated without a recorded motion. No dollar figures, public comment, or document list appear. Lantry's first name is not printed. Chairman May's attendance is inferred from the call to order by him; the minutes do not state it separately.",
+ "cost_usd": 0.00235372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance D. May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was called to order by chairman may at 6:30 pm."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "other members present were lorraine mendoza and william tyler."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "other members present were lorraine mendoza and william tyler."
+  },
+  {
+   "name": "Lantry",
+   "role": "Historical Commission Chair",
+   "status": "present",
+   "quote": "historical commission chair lantry, after hearing the commission arguments"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Historical Commission to take the Cemetery Commission's demolition request under advisement and render a decision on whether the 6 Month Demolition Delay Protocol applies.",
+   "quote": "they would take our request under advisement and render their decision as to the applicability of the 6 month demolition delay protocol."
+  },
+  {
+   "decision": "A determination date of Tuesday, August 7, 2018 at 7:00 PM was set for the Historical Commission's decision on demolition delay.",
+   "quote": "a date of tuesday, august 7, 2018 at 7:00 pm was set for that determination."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Joint meeting with Historical Commission on demolition application for Cemetery Building on Holman St",
+   "resolution": "under advisement; determination set for August 7, 2018",
+   "quote": "discuss upcoming meeting with the historical commission concerning our application for demolition of the cemetery building on holman st",
+   "tags": [
+    "demolition",
+    "Historical Commission",
+    "Holman St",
+    "demolition delay"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for demolition of the Cemetery Building on Holman St",
+   "where": "text",
+   "quote": "our application for demolition of the cemetery building on holman st"
+  },
+  {
+   "name": "6 Month Demolition Delay Protocol",
+   "where": "text",
+   "quote": "the applicability of the 6 month demolition delay protocol"
+  }
+ ],
+ "tags": [
+  "cemetery building demolition",
+  "Historical Commission",
+  "demolition delay",
+  "Holman St",
+  "joint meeting",
+  "DPW maintenance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

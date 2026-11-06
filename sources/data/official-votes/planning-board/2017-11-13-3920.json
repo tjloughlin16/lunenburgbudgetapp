@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-11-13",
  "docid": "3920",
@@ -12,45 +12,316 @@
  },
  "votes": [
   {
-   "motion": "Deny the special permit for the project at 994 Northfield Road",
+   "motion": "Deny the special permit for the project at 994 Northfield Road.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion, m. jeffreys, to deny the special permit for the project at 994 northfield road, second, d. prokowiew, m. jeffreys, aye; d. prokowiew, aye; k. chenis, nay; m. allison, aye; g. bittner, aye"
+   "quote": "motion, m. jeffreys, to deny the special permit for the project at 994 northfield road, second, d. prokowiew, m."
   },
   {
-   "motion": "Draft a letter stating that the Planning Board reviewed the application for a shared driveway plan and does not feel it has jurisdiction to approve a common driveway for shared use exceeding 12%",
+   "motion": "Deny the proposal for site plan approval for 994 Northfield Road.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "D. Prokowiew",
+   "outcome": "passed 4-1",
+   "procedural": false,
+   "quote": "to deny the proposal for site plan approval for 994 northfield road, second, d. prokowiew"
+  },
+  {
+   "motion": "That a letter be drafted stating the Planning Board reviewed the shared driveway application and does not feel it has jurisdiction to approve a common driveway over 12% grade.",
    "moved_by": "M. Allison",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion, m. allison, that a letter be drafted stating that the planning board reviewed the application for a shared driveway plan. upon discussion, the planning board does not feel that it has the jurisdiction to approve a common driveway for a shared use existing greater than 12%, second, d. prokowiew, d. prokowiew, aye; k. chenis, abstain; m. allison, aye; g. bittner, aye; m. jeffreys, aye"
+   "quote": "motion, m. allison, that a letter be drafted stating that the planning board reviewed the application for a shared"
   },
   {
-   "motion": "Endorse the proposed change",
+   "motion": "Endorse the proposed change to the STM Warrant Articles.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
-   "outcome": "passed 5-0",
-   "procedural": false,
-   "quote": "motion, m. allison to endorse the proposed change, second, k. chenis, all aye"
-  },
-  {
-   "motion": "Approve prior meeting minutes",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "all minutes accepted"
+   "procedural": false,
+   "quote": "motion, m. allison to endorse the proposed change, second, k. chenis, all aye."
   },
   {
-   "motion": "Add Marjorie Boggio's name as Administrative Assistant to the Board's documents moving forward",
+   "motion": "That Marjorie Boggio's name (Administrative Assistant) be added to the Board's documents moving forward.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion, m. jeffreys, that marjorie boggio's name (administrative assistant), be added to the board's documents moving forward, second, d. prokowiew, all aye"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion, m. jeffreys, that marjorie boggio's name (administrative assistant),"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR'd by macOS Vision. Minor OCR artifacts present (e.g., 'I effreys' for M. Jeffreys in vote 2 tally; 'otion' at page break). All six votes clearly recorded with vote counts or unanimous outcomes.",
- "cost_usd": 0.15256150000000002
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scanned page set. Page 2 motion lines are cut off at the right margin: the special permit denial outcome sentence ends mid-word (\"denied by a\") and the site plan motion's opening word is clipped; the 4-1 tallies come from the printed roll calls. The 221 Goodrich motion to approve location was withdrawn before a vote, so it is not recorded as a vote. Adjournment has no motion recorded. The minutes print \"10/10/27\" for a workshop that is likely 10/10/17; kept as printed in the document list only. Header OCR reads \"Jeffieys\" but body text reads \"Jeffreys\"; the body spelling is used.",
+ "cost_usd": 0.007680619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Attorney Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: attorney adam costa - town counsel"
+  },
+  {
+   "name": "Attorney Bowen",
+   "role": "on behalf of the Applicant",
+   "status": "present",
+   "quote": "attorney bowen, on behalf on the applicant, stated that the applicant was not interested in withdrawing the"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "presenter for David E. Ross Associates, Inc.",
+   "status": "present",
+   "quote": "presented by rob oliva, david e. ross associates, inc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The public hearing on 994 Northfield Road remained closed; the applicant did not wish to reopen it.",
+   "quote": "stated they did not wish to reopen the public hearing."
+  },
+  {
+   "decision": "The applicant was given the opportunity to withdraw; the applicant's attorney said it was not interested in withdrawing.",
+   "quote": "attorney bowen, on behalf on the applicant, stated that the applicant was not interested in withdrawing the"
+  },
+  {
+   "decision": "Attorney Costa to prepare the written Decision for 994 Northfield Road, as the Board agreed.",
+   "quote": "attorney costa requested if the board would like him to prepare the decision; they responded affirmatively."
+  },
+  {
+   "decision": "By consensus, the applicant for 221 Goodrich Street was directed to speak to the Building Commissioner/Zoning Enforcement Officer.",
+   "quote": "consensus was that he should speak to the building commissioner/zoning enforcement officer."
+  },
+  {
+   "decision": "All minutes listed were accepted.",
+   "quote": "minutes approval: all minutes accepted."
+  },
+  {
+   "decision": "Director's item on the Definitions and Use Table was tabled.",
+   "quote": "director's items: definitions and use table- tabled"
+  },
+  {
+   "decision": "Economic Development item assigned to the Board of Selectmen to schedule a meeting.",
+   "quote": "economic development- board of selectmen to schedule meeting"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "M. Allison",
+   "stated_role": "",
+   "topic": "economic development sessions progress",
+   "quote": "public comment: m. allison noted progress being made at the economic development sessions."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "994 Northfield Road deliberation and decisions",
+   "resolution": "special permit and site plan approval denied; Attorney Costa to prepare Decision",
+   "quote": "994 northfield road- deliberation: g. bittner noted the public hearing had been closed.",
+   "tags": [
+    "special permit",
+    "site plan",
+    "solar",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Public hearings: 234 Summer Street and 5 & 9 Electric Avenue",
+   "resolution": "referred to separate minutes",
+   "quote": "234 summer street- see separate minutes",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "221 Goodrich Street common driveway appointment",
+   "resolution": "motion to approve location withdrawn; letter drafted stating no jurisdiction over grade above 12% (passed 4-0-1)",
+   "quote": "appointment: 221 goodrich street- common driveway- presented by rob oliva, david e. ross associates, inc.",
+   "tags": [
+    "common driveway",
+    "zoning",
+    "grade"
+   ]
+  },
+  {
+   "topic": "Public hearing on STM Warrant Articles",
+   "resolution": "endorsed proposed change",
+   "quote": "public hearing: stm warrant articles- see separate minutes.",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Minutes approval and Board documents",
+   "resolution": "all minutes accepted; administrative assistant name added to Board documents",
+   "quote": "minutes approval: all minutes accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received, no action",
+   "quote": "capital planning committee- meeting november 14.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Director's items: Definitions and Use Table",
+   "resolution": "tabled",
+   "quote": "director's items: definitions and use table- tabled",
+   "tags": [
+    "zoning",
+    "use table"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "november 27- public hearing for 1 main street",
+   "tags": [
+    "schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment: m. allison noted progress being made at the economic development sessions.",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "Economic Development assigned to Board of Selectmen to schedule meeting; Charter Review and Complete Streets continue",
+   "quote": "economic development- board of selectmen to schedule meeting",
+   "tags": [
+    "charter review",
+    "economic development",
+    "complete streets"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns: marijuana dispensary bylaw and student initiative",
+   "resolution": "no action; Board support requested for student initiative",
+   "quote": "code §250-4,16. registered marijuana dispensaries. he is proposing changes to the current §250-4.16.",
+   "tags": [
+    "marijuana dispensaries",
+    "bylaw",
+    "student initiative"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:30 PM",
+   "quote": "adjournment: 10:30 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Board Member's Statement regarding 994 Northfield Road",
+   "where": "list",
+   "quote": "board member's statement regarding 994 northfield road"
+  },
+  {
+   "name": "Minutes of 9/25/17, 9/25/17 (994 Northfield Road), 10/10/17 Workshop, 10/16/17 Workshop, 10/23/17, 10/23/17 (994 Northfield Road), 10/23/17 (5 & 9 Electric Avenue)",
+   "where": "list",
+   "quote": "minutes- 9/25/17 9/25/17-994 northfield road"
+  },
+  {
+   "name": "221 Goodrich Street- Request for Common Driveway",
+   "where": "list",
+   "quote": "221 goodrich street- request for common driveway"
+  },
+  {
+   "name": "Section 250-4.16. Registered Marijuana Dispensaries - DRAFT",
+   "where": "list",
+   "quote": "section 250-4.16. registered marijuana dispensaries - draft"
+  },
+  {
+   "name": "Student Initiative handout",
+   "where": "list",
+   "quote": "student initiative handout"
+  },
+  {
+   "name": "Minutes/2017/11.13.17",
+   "where": "list",
+   "quote": "minutes/2017/11.13.17"
+  },
+  {
+   "name": "Correspondence received November 9, 2017 from the Applicant's counsel",
+   "where": "text",
+   "quote": "the correspondence received on november 9, 2017 from the applicant's counsel"
+  },
+  {
+   "name": "Two-page statement read into record by D. Prokowiew",
+   "where": "text",
+   "quote": "he read a two page statement into record"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "special permit",
+  "site plan",
+  "994 Northfield Road",
+  "solar development",
+  "common driveway",
+  "221 Goodrich Street",
+  "zoning bylaw",
+  "marijuana dispensaries",
+  "town meeting warrant",
+  "committee reports",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

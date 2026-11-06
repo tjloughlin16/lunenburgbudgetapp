@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2018-11-06",
  "docid": "1254",
@@ -12,15 +12,232 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from October 16, 2018",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes from 10/16/2018 approved.",
+   "motion": "Approve the minutes of 10/16/2018.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes from 10/16/2018 approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from Town Clerk records. No other motions recorded as voted upon; discussions of capital requests and system upgrades were reviews, not motions.",
- "cost_usd": 0.0916175
+ "note": "OCR text from two pages. Page 2 spreadsheet columns are garbled, so its figures are listed as printed but not assigned to years or lines. The 'Absent:' line is blank, so no absences are recorded. John Henshaw's attendance status is not clear from the OCR. The minutes give no motion, mover, or vote count for approving the 10/16/2018 minutes, so the outcome is recorded as 'passed' from the word 'approved'. Adjournment at 5:54 has no recorded vote.",
+ "cost_usd": 0.00492222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Caroline Griffis",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "not stated",
+   "quote": "john henshaw requested the design fees for ac in the classrooms be added to the project line"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "heather lemieux, mr. passios, steve malandrinos, john londa, kate burnham"
+  },
+  {
+   "name": "Mr. Passios",
+   "status": "present",
+   "quote": "heather lemieux, mr. passios, steve malandrinos, john londa, kate burnham"
+  },
+  {
+   "name": "Steve Malandrinos",
+   "status": "present",
+   "quote": "steve malandrinos reviewed fy20 system upgrades for the school department:"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "quote": "john londa reviewed capital requests fy20-29 for the school department."
+  },
+  {
+   "name": "Kate Burnham",
+   "status": "present",
+   "quote": "heather lemieux, mr. passios, steve malandrinos, john londa, kate burnham"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board re-organization completed with no changes from last year.",
+   "quote": "completed, with no changes from last year"
+  },
+  {
+   "decision": "Cost of vehicles to be reviewed.",
+   "quote": "cost of vehicles will be reviewed."
+  },
+  {
+   "decision": "Meeting dates set: Nov 20 for Police and Fire departments, Nov 27 for DPW.",
+   "quote": "nov 20: police and fire departments"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School internet and WIFI upgrades (FY20)",
+   "what_was_recorded": "Internet and WIFI upgrades to the Elementary and Primary schools were costed, with rebates and a 3 year service plan included.",
+   "figures_as_printed": [
+    "$19600.00",
+    "$14000.00"
+   ],
+   "quote": "internet and wifi cost $19600.00 with rebates $14000.00, includes 3 year service plan."
+  },
+  {
+   "topic": "School Dept. Capital Plan FY20-FY29 spreadsheet",
+   "what_was_recorded": "A spreadsheet of school capital plan figures for FY20-FY29 was attached; OCR garbles column alignment so the figures cannot be assigned to specific years or lines.",
+   "figures_as_printed": [
+    "10,000",
+    "300,000",
+    "30,000",
+    "120,000",
+    "45,000",
+    "162,000",
+    "98,000",
+    "28,000",
+    "30,000",
+    "15,000",
+    "136,000",
+    "40,000",
+    "115,000",
+    "500,000",
+    "100,000",
+    "22,000",
+    "152,000",
+    "38,000",
+    "162,000",
+    "300,000",
+    "500,000",
+    "120,000",
+    "45,000"
+   ],
+   "quote": "school dept. capital plan fy20-fy29"
+  },
+  {
+   "topic": "Design fees for AC in classrooms",
+   "what_was_recorded": "Henshaw requested that design fees for AC in the classrooms be added to the project line; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "john henshaw requested the design fees for ac in the classrooms be added to the project line"
+  },
+  {
+   "topic": "Town debt and free cash for new fire truck",
+   "what_was_recorded": "Suggestion to reduce town debt, and a proposal to move unused state-funded appropriations to free cash, possibly for a new fire truck; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "be moved to free cash possibly for the new fire truck."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment (none)",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board re-organization",
+   "resolution": "completed, no changes from last year",
+   "quote": "completed, with no changes from last year",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "School Dept. capital requests FY20-29",
+   "resolution": "reviewed; design fee request noted; vehicle costs to be reviewed",
+   "quote": "john londa reviewed capital requests fy20-29 for the school department.",
+   "tags": [
+    "school capital",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "FY20 school system upgrades",
+   "resolution": "reviewed",
+   "quote": "steve malandrinos reviewed fy20 system upgrades for the school department:",
+   "tags": [
+    "school technology",
+    "internet"
+   ]
+  },
+  {
+   "topic": "Comments on town debt and free cash",
+   "resolution": "discussed; to be taken up at town meeting 11/13/2018",
+   "quote": "comments mr. passios suggested any opportunity to reduce town debt be taken.",
+   "tags": [
+    "town debt",
+    "free cash",
+    "fire truck"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/16/2018",
+   "resolution": "approved",
+   "quote": "minutes from 10/16/2018 approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Meeting dates set",
+   "resolution": "set for Nov 20 and Nov 27",
+   "quote": "nov 20: police and fire departments",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:54",
+   "quote": "meeting adjourned at 5:54 by mr. mcquaid",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School Dept. Capital Plan FY20-FY29 (spreadsheet)",
+   "where": "list",
+   "quote": "details and spreadsheet attached."
+  }
+ ],
+ "tags": [
+  "school capital plan",
+  "FY20-FY29",
+  "school technology",
+  "internet and WIFI",
+  "town debt",
+  "free cash",
+  "fire truck",
+  "town meeting",
+  "meeting dates",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "details and spreadsheet attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

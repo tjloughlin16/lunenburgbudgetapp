@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-07-10",
  "docid": "5608",
@@ -12,31 +12,346 @@
  },
  "votes": [
   {
-   "motion": "notify the Board of Selectmen that the Sewer Commission does not require a liaison",
+   "motion": "Notify the Board of Selectmen that the Sewer Commission does not require a liaison, as amended.",
    "moved_by": "Carl L.",
    "seconded_by": "Joe A.",
    "outcome": "passed 3-0-1",
    "procedural": false,
-   "quote": "motion: carl l. second: joe a. to notify the board of selectmen that the sewer commission does not require a liaison, as amended. vote: joe, carl, & ryan - aye, joan - abstain"
+   "quote": "to notify the board of selectmen that the sewer commission does not require a liaison, as amended. vote: joe, carl, & ryan - aye, joan - abstain"
   },
   {
-   "motion": "accept the minutes of 6/26/18 as amended",
+   "motion": "Accept the minutes of 6/26/18 as amended.",
    "moved_by": "Joan P.",
    "seconded_by": "Carl L.",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion: joan p. to accept the minutes of 6/26/18 as amended. second: carl l. vote: unanimous"
   },
   {
-   "motion": "assess the privilege fee of $11,551.47 for 63 Prospect Street",
+   "motion": "Assess the privilege fee of $ 11,551.47 for 63 Prospect Street.",
    "moved_by": "Ryan S.",
    "seconded_by": "Joe A.",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion: ryan s. to assess the privilege fee of $ 11,551.47 for 63 prospect street. second: joe a. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, minutes read clearly",
- "cost_usd": 0.1048985
+ "note": "OCR text of a scan (macOS Vision). Page 1 begins mid-sentence, so earlier pages are missing and any opening business is absent. Attendance is not stated outright; 'present' marks people who spoke, moved or voted. No public comment section is printed. Some headings are garbled by OCR (for example 'Mead Talerman Costa FY18 Legal expense'). Votes are recorded for the liaison motion (3 aye, 1 abstain), minutes approval and the privilege fee.",
+ "cost_usd": 0.008025619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe A.",
+   "role": "chair",
+   "status": "present",
+   "quote": "joe responded that the discussion was about policy and not concerning old issues."
+  },
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl added that there have been problems with reading the water meters"
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joan handed out a draft rewrite of the grease trap regulation and commission discussed"
+  },
+  {
+   "name": "Ryan S.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: ryan s. to assess the privilege fee of $ 11,551.47 for 63 prospect street."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb added that there is a proposal to increase permit by 5% to cover cost of e-permitting application."
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission will consult with town counsel on the manual meters at the Carnivale trailer park and talk to the park owner.",
+   "quote": "commission will consult with town counsel on how to proceed and talk to the park owner."
+  },
+  {
+   "decision": "Commission reviewed the Irrigation System Policy draft and made edits to the wording.",
+   "quote": "commission reviewed it and made edits in the wording."
+  },
+  {
+   "decision": "Commission was not in favor of the proposed 5% permit increase and will wait to see if it is adopted by the town.",
+   "quote": "commission discussed and was not in favor of the increase. commission will wait to see if it will be adopted by the town."
+  },
+  {
+   "decision": "All agreed to route questions through Joe as chair and to be mindful of Barb's time.",
+   "quote": "all agreed to route questions through joe, as chair, and to be mindful of barb's time."
+  },
+  {
+   "decision": "Commission will hold public hearings on policy changes during the end of September and the end of October televised meetings.",
+   "quote": "commission will hold public hearings during the end of september and the end of october televised meetings."
+  },
+  {
+   "decision": "Joan will share the references on Badger & Neptune irrigation meters at the first meeting in August.",
+   "quote": "joan will share the references on badger & neptune irrigation meters"
+  },
+  {
+   "decision": "Commission agreed to pay $1,000 left from the FY18 legal budget for the extra town counsel costs and to verify what the Commission will be responsible for going forward.",
+   "quote": "commission agreed to pay $1,000 that is left from the fy18 legal budget for the extra town counsel costs and to verify what the commission will be responsible for going forward."
+  },
+  {
+   "decision": "Commission signed off on the FY18 Encumbrances.",
+   "quote": "commission signed off on the the fy18 encumbrances."
+  },
+  {
+   "decision": "Commission signed the Commitment for the Privilege fee assessed to 5 Rogers Way, Building #3.",
+   "quote": "commission also signed the commitment for the privilege fee assessed to 5 rogers way, building #3 for monies received in fy18 per the project's zba agreement."
+  },
+  {
+   "decision": "Commission signed the EOY FY18 Commitment for Sewer Billing for $373.75.",
+   "quote": "commission signed the eoy fy18 commitment for sewer billing for $373.75."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap permit increase for E-permitting",
+   "what_was_recorded": "A proposal to increase the grease trap permit by 5% to cover the cost of an E-permitting application was raised; the Commission was not in favor.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "barb added that there is a proposal to increase permit by 5% to cover cost of e-permitting application."
+  },
+  {
+   "topic": "FY18 town counsel legal expenses",
+   "what_was_recorded": "Commission discussed FY18 legal expenses for town counsel and the amount budgeted, and agreed to pay the remaining FY18 legal budget balance toward extra costs.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "commission discussed the legal expenses for the town counsel for fy18 and amount budgeted."
+  },
+  {
+   "topic": "Privilege fee for 63 Prospect Street",
+   "what_was_recorded": "Privilege fee assessed to 63 Prospect Street.",
+   "figures_as_printed": [
+    "$ 11,551.47"
+   ],
+   "quote": "to assess the privilege fee of $ 11,551.47 for 63 prospect street."
+  },
+  {
+   "topic": "Privilege fee commitment for 5 Rogers Way",
+   "what_was_recorded": "Commission signed the privilege fee commitment for 5 Rogers Way, Building #3 for monies received in FY18; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "commission also signed the commitment for the privilege fee assessed to 5 rogers way, building #3 for monies received in fy18 per the project's zba agreement."
+  },
+  {
+   "topic": "EOY FY18 sewer billing commitment",
+   "what_was_recorded": "Commission signed the EOY FY18 Commitment for Sewer Billing.",
+   "figures_as_printed": [
+    "$373.75"
+   ],
+   "quote": "commission signed the eoy fy18 commitment for sewer billing for $373.75."
+  },
+  {
+   "topic": "FY18 encumbrances",
+   "what_was_recorded": "Commission reviewed proposed encumbrances for unfinished FY18 tasks and open purchase orders, including jetting work; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "commission reviewed proposed encumbrances for tasks that still need to be done under fy18 budget"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Use of remaining FY18 legal budget balance to pay extra town counsel costs",
+   "amount_as_printed": "$1,000",
+   "outcome": "agreed to pay; no vote recorded",
+   "quote": "commission agreed to pay $1,000 that is left from the fy18 legal budget for the extra town counsel costs and to verify what the commission will be responsible for going forward."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments",
+   "resolution": "none",
+   "quote": "appointments- none current business",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Irrigation meter policy change",
+   "resolution": "draft reviewed and edited",
+   "quote": "carl handed out a draft for the irrigation system policy.",
+   "tags": [
+    "irrigation meters",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Manual meters at Carnivale trailer park",
+   "resolution": "consult town counsel and talk to park owner",
+   "quote": "commission discussed the manual meters at the carnivale trailer park.",
+   "tags": [
+    "manual meters",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Grease trap regulation change",
+   "resolution": "draft edited; permit increase opposed; waiting on town",
+   "quote": "joan handed out a draft rewrite of the grease trap regulation and commission discussed edits.",
+   "tags": [
+    "grease trap",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Connection charge policy change",
+   "resolution": "edits discussed",
+   "quote": "commission discussed edits, including the edits from town counsel, regarding a 4:1 inflow/infiltration clause addition.",
+   "tags": [
+    "connection charge",
+    "inflow infiltration"
+   ]
+  },
+  {
+   "topic": "Communications policy update",
+   "resolution": "route questions through chair; liaison motion passed 3-0-1",
+   "quote": "commission discussed the proposed draft for the communications policy and whether they needed a written policy.",
+   "tags": [
+    "communications policy",
+    "board of selectmen liaison"
+   ]
+  },
+  {
+   "topic": "Public hearings for policy changes",
+   "resolution": "scheduled for end of September and end of October",
+   "quote": "commission will hold public hearings during the end of september and the end of october televised meetings.",
+   "tags": [
+    "hearings",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Mead Talerman Costa FY18 legal expense",
+   "resolution": "agreed to pay $1,000 from FY18 legal budget balance",
+   "quote": "commission discussed the legal expenses for the town counsel for fy18 and amount budgeted.",
+   "tags": [
+    "legal expenses",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "FY18 encumbrances",
+   "resolution": "signed off",
+   "quote": "commission signed off on the the fy18 encumbrances.",
+   "tags": [
+    "encumbrances",
+    "FY18 budget"
+   ]
+  },
+  {
+   "topic": "Grease trap annual permit compliance",
+   "resolution": "noted outstanding accounts and missing report entries",
+   "quote": "grease trap - regulation compliance-annual permits-barb has 4 accounts outstanding.",
+   "tags": [
+    "grease trap",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/26/18",
+   "resolution": "accepted as amended",
+   "quote": "minutes of 6/26/18 - commission discussed the minutes and made edits.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Privilege fee assessment for 63 Prospect St.",
+   "resolution": "assessed $ 11,551.47 (unanimous)",
+   "quote": "privilege fee assessment for 63 prospect st. - commission discussed the privilege fee.",
+   "tags": [
+    "privilege fee"
+   ]
+  },
+  {
+   "topic": "Privilege fee and sewer billing commitments",
+   "resolution": "signed",
+   "quote": "commission also signed the commitment for the privilege fee assessed to 5 rogers way, building #3",
+   "tags": [
+    "privilege fee",
+    "sewer billing"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed for future agendas",
+   "quote": "member agenda inputs for future meetings - review of recommendations for new irrigation meters",
+   "tags": [
+    "future agendas"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Irrigation System Policy draft from Carl L.",
+   "where": "list",
+   "quote": "irrigation system policy draft from carl l."
+  },
+  {
+   "name": "Grease Trap Regulation draft from Joan P.",
+   "where": "list",
+   "quote": "grease trap regulation draft from joan p."
+  },
+  {
+   "name": "Connection Charge Policy change draft",
+   "where": "text",
+   "quote": "connection charge policy change- commission discussed edits, including the edits from town counsel"
+  },
+  {
+   "name": "Communications policy draft",
+   "where": "text",
+   "quote": "commission discussed the proposed draft for the communications policy and whether they needed a written policy."
+  },
+  {
+   "name": "References on Badger & Neptune irrigation meters",
+   "where": "text",
+   "quote": "joan will share the references on badger & neptune irrigation meters"
+  },
+  {
+   "name": "Commitment for the Privilege fee assessed to 5 Rogers Way, Building #3",
+   "where": "text",
+   "quote": "commission also signed the commitment for the privilege fee assessed to 5 rogers way, building #3"
+  },
+  {
+   "name": "EOY FY18 Commitment for Sewer Billing",
+   "where": "text",
+   "quote": "commission signed the eoy fy18 commitment for sewer billing for $373.75."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "irrigation meters",
+  "grease trap",
+  "connection charge policy",
+  "communications policy",
+  "town counsel legal costs",
+  "privilege fees",
+  "FY18 encumbrances",
+  "minutes approval",
+  "policy hearings"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

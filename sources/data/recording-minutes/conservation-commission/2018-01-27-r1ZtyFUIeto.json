@@ -1,0 +1,220 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission Small Town Forest Project Walk-Through",
+ "meeting_date": "2018-01-27",
+ "video_id": "r1ZtyFUIeto",
+ "video_url": "https://www.youtube.com/watch?v=r1ZtyFUIeto",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2018-01-27-r1ZtyFUIeto.json",
+  "sha256": "0290207993a294d3f0ad9bb1cb60c6db84f254ecac8c56a1fa7fa8f43cff17b5",
+  "caption_lines": 123,
+  "segments": 873
+ },
+ "recording": {
+  "duration_s": 2722,
+  "duration": "0:45",
+  "spoken_chars": 31533,
+  "words_approx": 5255
+ },
+ "town_published": [],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T22:30:16Z",
+  "cost_usd": 0.1635063
+ },
+ "minutes": {
+  "headline": "Conservation Commission walked the town forest to review a finished timber harvest and its benefits; no votes taken.",
+  "summary": "An on-site walk of a town forest where the consulting forester explained the recent timber harvest: revenue, a new parking area, trails, hemlock infestation, wildlife habitat and boundary work. No formal votes were taken. Timber proceeds were described as going to the Conservation Commission for parking, trail markers, boundary work and other conservation projects.",
+  "attendees": [
+   {
+    "name_as_heard": "Jerome",
+    "role": "consulting forester (presenter)"
+   },
+   {
+    "name_as_heard": "Rick branch senior, Ricky and Amanda",
+    "role": "logger (Blanche flower logging), presenter/guest"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "facilities",
+   "fees",
+   "recreation",
+   "town-departments"
+  ],
+  "votes": [],
+  "budget_items": [
+   {
+    "t": 204,
+    "topic": "Timber sale revenue",
+    "what_was_said": "The high bidder bid over a stated amount for the timber, described as a financial benefit to the town.",
+    "figures_as_heard": [
+     "forty one thousand dollars"
+    ]
+   },
+   {
+    "t": 396,
+    "topic": "Use of net timber proceeds",
+    "what_was_said": "Net proceeds go into the Conservation Commission's funds to improve parking, trail markers and pollinator gardens.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2590,
+    "topic": "Forester fee percentage",
+    "what_was_said": "A percentage rate that included boundary work was mentioned, but the captions are garbled.",
+    "figures_as_heard": [
+     "20%"
+    ]
+   },
+   {
+    "t": 2656,
+    "topic": "Boundary identification funding",
+    "what_was_said": "Some sale revenue may go toward completing boundary identification on the west side of the property.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [],
+  "topics": [
+   {
+    "t_start": 12,
+    "t_end": 204,
+    "topic": "Introduction to the harvest and the forester's role",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 204,
+    "t_end": 566,
+    "topic": "Revenue, parking area, gate, landing and hemlock rationale",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 566,
+    "t_end": 1300,
+    "topic": "Walk: landing, wildlife habitat, drainage, trails and volunteer debris cleanup",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 1300,
+    "t_end": 2010,
+    "topic": "Walk: forest quality, regeneration and hemlock woolly adelgid",
+    "resolution": "informational",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 2010,
+    "t_end": 2718,
+    "topic": "Closing: harvest quality, wood products, fees, boundary work and thanks",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "recreation"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Captions around 2590-2611 about the forester's fee percentage and sale figures are garbled.",
+   "No attendee roll call; commissioners are not named."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 503,
+    "kind": "safety",
+    "about": "Dead hemlocks could create fire and safety hazards and falling trees on trails.",
+    "who": "the forester",
+    "words_as_heard": "it's just going to be a forest full of dead trees safety on trails a lot of trees starting to come down"
+   },
+   {
+    "t": 1219,
+    "kind": "safety",
+    "about": "A member asked whether trail debris piles would be a safety hazard.",
+    "who": "a member",
+    "words_as_heard": "so that's not a safety hazard"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 58,
+    "name_as_heard": "forest management plans",
+    "kind": "report",
+    "words_as_heard": "prepare forest management plans for over 2000 acres in lüneburg",
+    "shown": false
+   },
+   {
+    "t": 79,
+    "name_as_heard": "timber sale prospectus",
+    "kind": "other",
+    "words_as_heard": "send out a prospectus timber sale prospectus to prospective buyers",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "conservation-timber-fund",
+    "title": "Conservation timber fund",
+    "question": "How much did the town forest timber sale bring in and where do the proceeds go?",
+    "t": 396,
+    "words_as_heard": "the monies that become available to the town are actually going to go into the Conservation Commission coffers",
+    "data_in_play": [
+     "forty one thousand dollars",
+     "20%"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Conservation Commission walked a town forest to review a finished timber harvest; no votes were taken.",
+    "t": 12
+   },
+   {
+    "line": "The consulting forester explained the harvest, the new parking area, the gate and landing, and the reason for cutting around hemlock.",
+    "t": 204
+   },
+   {
+    "line": "Net timber proceeds were described as going into Conservation Commission funds for parking, trail markers and pollinator gardens.",
+    "t": 396
+   },
+   {
+    "line": "The forester described hemlock woolly adelgid and forest regeneration while the group walked the property.",
+    "t": 1300
+   },
+   {
+    "line": "Some sale revenue may go toward finishing boundary identification on the west side of the property.",
+    "t": 2656
+   }
+  ],
+  "why_it_matters": [
+   "Money from the town-owned timber sale goes to the Conservation Commission's funds for local trails, parking and boundary work, so it is not part of a tax-funded budget request in this meeting.",
+   "The forest's hemlock health and boundary marking affect how the land is kept and used, and any later spending of the proceeds would come before the Commission."
+  ],
+  "watch_next": [],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T22:30:25Z",
+   "cost_usd": 0.020775099999999998
+  }
+ }
+}

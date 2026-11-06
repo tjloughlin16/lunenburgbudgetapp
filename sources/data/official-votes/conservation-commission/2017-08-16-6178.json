@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-08-16",
  "docid": "6178",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing to September 6",
+   "motion": "Continue the hearing on the septic-system request for a determination (riverfront) to September 6, as the applicant had to leave.",
    "moved_by": "Ku",
    "seconded_by": "BP",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "by a motion of ku and a second by bp"
+   "quote": "meeting continued to september 6 as applicant had to leave. by a motion of ku and a second by bp"
   },
   {
-   "motion": "Approve negative determination based on revised plan",
+   "motion": "Approve the negative determination for the Celico Partnership DBA as Verizon Wireless monopole at 1079 Mass Ave, based on the revised plan.",
    "moved_by": "CL",
    "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the commission approved the negative determination based on the revised plan by a motion of cl and a second by kj and a unanimous vote approving the motion."
+   "quote": "the commission approved the negative determination based on the revised plan by a motion of cl and a second by kj and a"
   },
   {
-   "motion": "Issue negative determination",
+   "motion": "Issue a negative determination for John Harrison's driveway and single-family home portion within the buffer zone at 225 Sunset Lane.",
    "moved_by": "BP",
    "seconded_by": "CL",
    "outcome": "passed unanimously",
@@ -36,15 +36,230 @@
    "quote": "bp moved to issue a negative determination. cl seconded and the commission voted unanimously to approve."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:50 PM.",
    "moved_by": "KJ",
    "seconded_by": "CL",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "the meeting was adjourned at 7:50 pm by a motion of kj and a second by cl."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text; one member abbreviation ('Ku') may be misread from the original.",
- "cost_usd": 0.1314055
+ "note": "Text is OCR from a scanned notice/minutes page (macOS Vision) with garbled spellings. Initials (BP, CL, KJ, JR, TD) are used in the minutes for members; \"Ku\" in the continuance motion most likely means KJ but is printed as \"Ku\". The minutes do not name the applicant for the septic-system hearing, and do not record whether Celico Partnership/Verizon or its representatives appeared. The 'Documents presented' sentence does not say which hearing it belongs to. The continuance motion and adjournment record no vote count or result, so outcome is \"not stated\". No dollar figures appear in the text. The notice header and approval of prior minutes are not present in the extracted text.",
+ "cost_usd": 0.00648702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "all members in attendance except chairman bursch."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "vice chair dwyer presided."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member (initials BP in minutes)",
+   "status": "present",
+   "quote": "all members in attendance except chairman bursch. vice chair dwyer presided."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member (initials CL in minutes)",
+   "status": "present",
+   "quote": "cl reviewed the community energy portion of the project proposal."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member (initials JR in minutes)",
+   "status": "present",
+   "quote": "jr noted the school department is willing to work with the commission on educational items"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member (initials KJ in minutes)",
+   "status": "present",
+   "quote": "kj noted that at the hollis road pollinator habitat there will be"
+  },
+  {
+   "name": "John Harrison",
+   "role": "representing himself",
+   "status": "present",
+   "quote": "john harrison appeared representing himself and presented a plan with the changes the commission requested."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "from David Ross",
+   "status": "present",
+   "quote": "rob oliva from david ross came into the meeting to speak informally concerning the proposed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Enforcement matters for 183 Hemlock Dr, 48 Oak Ridge Road, 70 Oak Ridge Road and 571 Chase Road were all continued to the next meeting.",
+   "quote": "all action continued to the next meeting"
+  },
+  {
+   "decision": "Agents report action items: all actions continued to the next meeting.",
+   "quote": "agents report /action items : all actions continued to the next meeting."
+  },
+  {
+   "decision": "JR volunteered to bring a proposed definition of a structure to the next meeting on 8/30.",
+   "quote": "jr volunteered to bring to the next meeting on 8/30 a proposed definition of a structure."
+  },
+  {
+   "decision": "Rules and regulations work continued; TD noted potentially expanding a no touch zone (no vote recorded).",
+   "quote": "td noted potentially expanding a no touch zone."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rob Oliva",
+   "stated_role": "from David Ross",
+   "topic": "proposed Settlers Crossing solar field; vegetation removal",
+   "quote": "rob oliva from david ross came into the meeting to speak informally concerning the proposed"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order by Vice Chair Dwyer presiding",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "call to order by vice chair dwyer presiding"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; no action",
+   "tags": [
+    "education",
+    "pollinator habitat"
+   ],
+   "quote": "jr noted the school department is willing to work with the commission on educational items"
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "informal comment received; no action",
+   "tags": [
+    "solar",
+    "vegetation removal"
+   ],
+   "quote": "rob oliva from david ross came into the meeting to speak informally concerning the proposed"
+  },
+  {
+   "topic": "Hearing: septic grading request for a determination, riverfront",
+   "resolution": "continued to September 6",
+   "tags": [
+    "wetlands",
+    "riverfront",
+    "hearing"
+   ],
+   "quote": "work entails grading for a septic system within the riverfront at"
+  },
+  {
+   "topic": "Hearing: Verizon Wireless monopole request for a determination, 1079 Mass Ave",
+   "resolution": "negative determination approved on revised plan",
+   "tags": [
+    "wetlands",
+    "cell tower",
+    "hearing"
+   ],
+   "quote": "work entails the installation of a 75 foot monopole within the 100 foot buffer zone."
+  },
+  {
+   "topic": "Hearing: John Harrison driveway request for a determination, 225 Sunset Lane",
+   "resolution": "negative determination issued",
+   "tags": [
+    "wetlands",
+    "buffer zone",
+    "hearing"
+   ],
+   "quote": "bp moved to issue a negative determination."
+  },
+  {
+   "topic": "Current Business: Enforcement",
+   "resolution": "all continued to next meeting",
+   "tags": [
+    "enforcement"
+   ],
+   "quote": "all action continued to the next meeting"
+  },
+  {
+   "topic": "Old Business: member recruitment and rules and regulations",
+   "resolution": "discussed; rules work continued to 8/30",
+   "tags": [
+    "member recruitment",
+    "rules and regulations"
+   ],
+   "quote": "old business - update on member recruitment. - the commission discussed the recruiting of a new member."
+  },
+  {
+   "topic": "Agents Report / Action Items",
+   "resolution": "all actions continued to next meeting",
+   "tags": [
+    "enforcement",
+    "inspections"
+   ],
+   "quote": "agents report /action items : all actions continued to the next meeting."
+  },
+  {
+   "topic": "Public Comment for Meeting Close and Communications",
+   "resolution": "noted special site walk 8/26; no action",
+   "tags": [
+    "site walk"
+   ],
+   "quote": "for meeting close, td noted the special site walk 8/26 at the ritter building on 8/26/17"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting was adjourned at 7:50 pm by a motion of kj and a second by cl."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a determination and a Plan by Rosemary Chaulk, RLS, entitled \"Notice of Intent/ Wetland Plans\", 20 scale, dated May 24, 2017, revised August 2017",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination and a plan by rosemary chaulk, rls"
+  },
+  {
+   "name": "Sketch added to the plans agreeing to a silt sack in the catch basin",
+   "where": "text",
+   "quote": "he added a sketch on the plans agreeing to a silt sack in the catch basin."
+  },
+  {
+   "name": "Plan with changes requested by the commission (John Harrison, 225 Sunset Lane)",
+   "where": "text",
+   "quote": "john harrison appeared representing himself and presented a plan with the changes the commission requested."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "negative determination",
+  "request for determination",
+  "enforcement",
+  "solar field",
+  "cell tower",
+  "septic",
+  "member recruitment",
+  "public hearing",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration was"
+ },
+ "dropped_unquoted_by_field": {}
 }

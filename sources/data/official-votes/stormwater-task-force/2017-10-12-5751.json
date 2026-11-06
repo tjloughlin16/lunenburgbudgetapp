@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2017-10-12",
  "docid": "5751",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Allison",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
@@ -21,6 +21,225 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08760949999999999
+ "note": "OCR text (macOS Vision) from two pages. Page 2 begins mid-sentence, so the opening agenda item (Debt Exclusion paving) is only partly recorded. The OCR has a typo (\"conterence\"). No attendance roll call is printed, so attendance status is inferred only from who spoke or moved; the Chair is never named. The only recorded vote is the motion to adjourn (\"all concurred\", no count). No public comment section is printed.",
+ "cost_usd": 0.0061324199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "phyllis luck informed the group that the charter review committee has asked for any input"
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager lemieux has advised that she has signed the proposal submitted by design consultants, inc"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "jack rabbitt advised that the mass. department of environmental"
+  },
+  {
+   "name": "Matt Allison",
+   "status": "present",
+   "quote": "matt allison mentioned several parcels of town owned land where such efforts could be focused."
+  },
+  {
+   "name": "Brian Doherty",
+   "role": "of MRPC",
+   "status": "not stated",
+   "quote": "brian doherty of mrpc advised that they have created a tool for"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "not stated",
+   "quote": "paula bertram had suggested that the swtf reach out"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director rodriquenz requested that the chair reach out to mr. doherty"
+  },
+  {
+   "name": "Adam Burney",
+   "status": "present",
+   "quote": "adam burney shared the power point slide show created to provide an overview of the new municipal separate storm sewer system"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The topic of the Charter Review Committee's request for input will be placed on the next agenda so members can comment.",
+   "quote": "the topic will be placed on the next agenda to provide members with an opportunity to"
+  },
+  {
+   "decision": "The SWTF will ask DCI to suggest how accurate documentation within a Central Electronic Data System might be accomplished for the MS4 permit.",
+   "quote": "it was determined that the swtf will ask dci to suggest how this might be accomplished."
+  },
+  {
+   "decision": "The Chair will reach out to DCI and hopefully put the MS4 record-keeping item on the December 7 agenda.",
+   "quote": "the chair will reach out to dci and, hopefully put this on the agenda for the december 7 meeting."
+  },
+  {
+   "decision": "Jack Rabbitt will work to have some of the Conservation Commission's DEP fine money spent on stormwater mitigation in the Mulpus and Easter Brooks, and will keep the SWTF apprised.",
+   "quote": "he will keep the swtf apprised of the status of this effort."
+  },
+  {
+   "decision": "The Chair will reach out to Brian Doherty of MRPC to obtain a few dates for the SWTF review of the MRPC data collection application.",
+   "quote": "dpw director rodriquenz requested that the chair reach out to mr. doherty to obtain a few dates for the swtf review of this application, which she will do."
+  },
+  {
+   "decision": "Adam Burney will make the 2018 MS4 Permit presentation to the Board of Selectmen on October 17, 2017.",
+   "quote": "adam burney will make the presentation to the board of selectmen at the october 17, 2017 meeting"
+  },
+  {
+   "decision": "The fourth-quarter meeting schedule was confirmed: a presentation to the BOS on 10/17 at Town Hall, then regular meetings on November 9 and December 7, at 6:30 pm in the Kitter Building upper conference room unless otherwise noted.",
+   "quote": "the meeting schedule was then confirmed for the fourth quarter: a presentation to the bos on"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Compact Grant",
+   "what_was_recorded": "Brief discussion of the Community Compact Grant; the Town Manager has signed the DCI proposal and will forward it ASAP.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "there was a brief discussion on the community compact grant of $25,000."
+  },
+  {
+   "topic": "DEP fine funds for stormwater work",
+   "what_was_recorded": "DEP has given the Lunenburg Conservation Commission authority to spend about $22,000 resulting from a fine on P J Keating Company; Jack Rabbitt will work to direct some of it to stormwater mitigation.",
+   "figures_as_printed": [
+    "$22,000"
+   ],
+   "quote": "authority to spend about $22,000 that is the result of a fine bestowed on p j keating company"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Charter Review Committee input",
+   "resolution": "placed on next agenda",
+   "quote": "the topic will be placed on the next agenda to provide members with an opportunity to",
+   "tags": [
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Community Compact Grant and DCI proposal",
+   "resolution": "discussed; DCI to report December 7",
+   "quote": "there was a brief discussion on the community compact grant of $25,000.",
+   "tags": [
+    "grants",
+    "DCI"
+   ]
+  },
+  {
+   "topic": "DEP fine money for stormwater work",
+   "resolution": "Rabbitt to pursue and keep SWTF updated",
+   "quote": "jack rabbitt will work to have some of this money spent on items that will help mitigate the effects of stormwater",
+   "tags": [
+    "Conservation Commission",
+    "Mulpus Brook",
+    "Easter Brook"
+   ]
+  },
+  {
+   "topic": "MRPC data collection application",
+   "resolution": "Chair to arrange review dates with MRPC",
+   "quote": "dpw director rodriquenz requested that the chair reach out to mr. doherty to obtain a few dates",
+   "tags": [
+    "MRPC",
+    "data collection"
+   ]
+  },
+  {
+   "topic": "MS4 record keeping and reporting",
+   "resolution": "DCI to be asked for suggestion; Chair to contact DCI",
+   "quote": "it was determined that the swtf will ask dci to suggest how this might be accomplished.",
+   "tags": [
+    "MS4 permit",
+    "record keeping"
+   ]
+  },
+  {
+   "topic": "Debt Exclusion road paving and berms (partial text)",
+   "resolution": "no action; informational",
+   "quote": "off road work, which will not directly impact the paved surfaces, will be completed post paving.",
+   "tags": [
+    "paving",
+    "Debt Exclusion"
+   ]
+  },
+  {
+   "topic": "2018 MS4 Permit Notice of Intent presentation",
+   "resolution": "Adam Burney to present to BOS October 17",
+   "quote": "adam burney will make the presentation to the board of selectmen at the october 17, 2017 meeting",
+   "tags": [
+    "MS4 permit",
+    "NOI",
+    "BOS"
+   ]
+  },
+  {
+   "topic": "Utilities creation",
+   "resolution": "no action; awaiting Town attorney",
+   "quote": "matt allison is waiting for word from the town's attorney on the creation of utilities.",
+   "tags": [
+    "utilities",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Fourth-quarter meeting schedule",
+   "resolution": "confirmed",
+   "quote": "the meeting schedule was then confirmed for the fourth quarter: a presentation to the bos on",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Power point slide show on the new Municipal Separate Storm Sewer System (MS4) Permit, shared by Adam Burney",
+   "where": "list",
+   "quote": "adam burney shared the power point slide show created to provide an overview of the new municipal separate storm sewer system"
+  },
+  {
+   "name": "Proposal submitted by Design Consultants, Inc (DCI)",
+   "where": "text",
+   "quote": "town manager lemieux has advised that she has signed the proposal submitted by design consultants, inc"
+  },
+  {
+   "name": "Notice of Intent (NOI) for the 2018 MS4 Permit, prepared by DCI",
+   "where": "text",
+   "quote": "presentation of the notice of intent (noi) for the 2018 ms4 permit, which has been prepared by dci"
+  },
+  {
+   "name": "Lunenburg's MS4 permit (2003)",
+   "where": "text",
+   "quote": "after reviewing lunenburg's permit, dci had emphasized the importance of the creation of accurate documentation"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "DCI",
+  "Community Compact Grant",
+  "Conservation Commission",
+  "MRPC",
+  "charter review",
+  "meeting schedule",
+  "paving",
+  "utilities"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "adam burney shared the power point slide show"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-02-11",
  "docid": "4034",
@@ -12,63 +12,271 @@
  },
  "votes": [
   {
-   "motion": "Continue the ANR Plan for 205 Sunset Lane to the next Board meeting",
-   "outcome": "passed",
+   "motion": "Continue the ANR plan for 205 Sunset Lane to the next Board meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
+   "outcome": "passed",
    "procedural": false,
    "quote": "p. bertram made motion to continue the anr to the next board meeting, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve waiver from site plan approval for real estate office at 909 Massachusetts Avenue with use not exceeding 4,000 square feet",
-   "outcome": "passed",
+   "motion": "Approve the waiver from site plan approval for 909 Massachusetts Avenue for real estate sales management and contracting, stipulating the use does not exceed 4,000 square feet.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the waiver request from site plan approval for real estate sales management and contracting with the stipulation that the use does not exceed 4,000 square feet, t. cole seconded, all aye."
+   "quote": "p. bertram made motion to approve the waiver request from site plan approval for real estate sales management"
   },
   {
-   "motion": "Approve minutes from January 14, 2019 (190 Electric Avenue)",
-   "outcome": "passed",
+   "motion": "Approve the minutes of 01/14/19 for 190 Electric Avenue.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
+   "outcome": "passed",
    "procedural": true,
    "quote": "01/14/19, 190 electric avenue- p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve minutes from January 22, 2019",
-   "outcome": "passed",
+   "motion": "Approve the minutes of 01/22/19.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
+   "outcome": "passed",
    "procedural": true,
    "quote": "01/22/19- p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve minutes from January 28, 2019",
-   "outcome": "passed",
+   "motion": "Approve the minutes of 01/28/19.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
+   "outcome": "passed",
    "procedural": true,
    "quote": "01/28/19- p. bertram made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "Move the March 11th Board meeting to March 4th",
-   "outcome": "passed",
+   "motion": "Move the March 11 Board meeting to March 4.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "p. bertram made motion to move the march 11 th board meeting to march 4 th, t. cole, seconded, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
+   "outcome": "passed",
    "procedural": true,
    "quote": "p. bertram made motion to adjourn, t. cole seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear legible minutes, scanned document. All votes passed unanimously.",
- "cost_usd": 0.0927705
+ "note": "The minutes record motions with 'all aye' and no numeric vote counts, so outcomes are recorded as passed. No public comment section appears in the text. The minutes say the 21-day ANR clock started at submittal, but no decision on the ANR is recorded beyond continuance. Separate minutes for the public hearings are referenced but not included.",
+ "cost_usd": 0.00624352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "presenter on behalf of owner, David E. Ross Associates",
+   "status": "present",
+   "quote": "n. gorman will consult with the property owner."
+  },
+  {
+   "name": "John Kyprianos",
+   "role": "Property owner",
+   "status": "present",
+   "quote": "property owner john kyprianos requested waiver from site plan approval"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will take up restructuring/strengthening the Solar Energy Systems Bylaw in the spring.",
+   "quote": "the board will take up restructuring/strengthening the bylaw in the spring."
+  },
+  {
+   "decision": "N. Gorman will consult with the property owner on the ANR plan design before the continued hearing.",
+   "quote": "n. gorman will consult with the property owner."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan (MGL Ch. 41, Section 81D) budget line",
+   "what_was_recorded": "M. Allison opined the Master Plan should become a budget line in the Board's budget, and P. Bertram asked that the Board be involved in the office budget process going forward. No dollar figures were printed and no decision was recorded.",
+   "figures_as_printed": [],
+   "quote": "m. allison opined this should become a budget line in the board's budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan, 205 Sunset Lane",
+   "resolution": "continued to next Board meeting",
+   "tags": [
+    "ANR",
+    "access",
+    "frontage",
+    "subdivision"
+   ],
+   "quote": "p. bertram made motion to continue the anr to the next board meeting, t. cole seconded, all aye."
+  },
+  {
+   "topic": "Waiver request, 909 Massachusetts Avenue",
+   "resolution": "approved with 4,000 sq ft stipulation",
+   "tags": [
+    "site plan waiver",
+    "change of use",
+    "Village Center"
+   ],
+   "quote": "p. bertram made motion to approve the waiver request from site plan approval for real estate sales management"
+  },
+  {
+   "topic": "Public hearings (151-181 Leominster Shirley Road, 190 and 380-400 and 400 Electric Avenue)",
+   "resolution": "referred to separate minutes; solar bylaw buffer strip discussion continued, bylaw work deferred to spring",
+   "tags": [
+    "public hearing",
+    "solar bylaw",
+    "Electric Avenue"
+   ],
+   "quote": "190 electric avenue (cont'd) - see separate minutes."
+  },
+  {
+   "topic": "Minutes approval (01/14/19, 01/22/19, 01/28/19)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "01/14/19, 190 electric avenue- p. bertram made motion to approve, t. cole seconded, all aye."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; MRPC reported technical assistance requests due in March",
+   "tags": [
+    "MRPC",
+    "committees",
+    "walkability"
+   ],
+   "quote": "mrpc- requests for district local technical assistance due in march."
+  },
+  {
+   "topic": "Director's items (board vacancy, marijuana hearing notice, March meeting move)",
+   "resolution": "March 11 meeting moved to March 4",
+   "tags": [
+    "board reorganization",
+    "recreational marijuana",
+    "meeting schedule"
+   ],
+   "quote": "p. bertram made motion to move the march 11 th board meeting to march 4 th, t. cole, seconded, all aye."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "informational, no action",
+   "tags": [
+    "schedule",
+    "availability"
+   ],
+   "quote": "february 25- hearing for board warrant article"
+  },
+  {
+   "topic": "Ongoing items (Earth Removal, Master Plan, Cluster Development, Solar Energy Systems)",
+   "resolution": "no action; cluster development awaiting Town Counsel response",
+   "tags": [
+    "earth removal",
+    "master plan",
+    "cluster development",
+    "solar bylaw"
+   ],
+   "quote": "lunenburg code, section 250- 5.6., cluster development- awaiting response from town counsel."
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "discussed; thanks to departing member; possible added monthly meeting discussed, no decision",
+   "tags": [
+    "board comment",
+    "meeting frequency"
+   ],
+   "quote": "board members thanked david prokowiew for his service to the planning board."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of 01/14/19, 190 Electric Avenue",
+   "where": "list",
+   "quote": "minutes: o 01/14/19, 190 electric avenue- o 01/22/19 o 01/28/19"
+  },
+  {
+   "name": "Minutes of 01/22/19",
+   "where": "list",
+   "quote": "minutes: o 01/14/19, 190 electric avenue- o 01/22/19 o 01/28/19"
+  },
+  {
+   "name": "Minutes of 01/28/19",
+   "where": "list",
+   "quote": "minutes: o 01/14/19, 190 electric avenue- o 01/22/19 o 01/28/19"
+  },
+  {
+   "name": "ANR Plan, 205 Sunset Lane",
+   "where": "list",
+   "quote": "anr plan, 205 sunset lane"
+  },
+  {
+   "name": "Waiver Request, 909 Massachusetts Avenue",
+   "where": "list",
+   "quote": "waiver request, 909 massachusetts avenue"
+  },
+  {
+   "name": "Recreational Marijuana, Draft Bylaw",
+   "where": "text",
+   "quote": "recreational marijuana, draft bylaw- hearing is being advertised in the lunenburg ledger"
+  },
+  {
+   "name": "Solar Energy Systems Bylaw",
+   "where": "text",
+   "quote": "continued regarding the definition of buffer strip in the solar energy systems bylaw."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "site plan waiver",
+  "solar bylaw",
+  "minutes approval",
+  "meeting schedule",
+  "master plan budget",
+  "Electric Avenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2019-01-07",
  "docid": "1005",
@@ -12,15 +12,140 @@
  },
  "votes": [
   {
-   "motion": "give an extension until February 28th to complete the required repairs",
+   "motion": "Give Baker Street property owner an extension until February 28th to complete the required repairs.",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by passios and second by jewell, the board voted to give an extension until february 28th to complete the required repairs. all in favor."
+   "quote": "on motion by passios and second by jewell, the board voted to give an extension until february 28th to complete the required repairs."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0810385
+ "note": "No motion is recorded for approving the December 2, 2018 minutes, the Title 5 acknowledgments, or the adjournment at 8:30 pm, so none is logged as a vote. The Elmwood Road item has no recorded motion; the board's position is stated as a discussion outcome and logged as a decision. The Baker Street vote's printed result is 'All in favor', not a count, so outcome is recorded as passed. Minutes contain OCR-style typos (e.g., 'designe d', 'stalled'); quotes follow the text as printed.",
+ "cost_usd": 0.0029392199999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "David Passios",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Warren Mayhew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios, paul fortin, warren mayhew"
+  },
+  {
+   "name": "Kim Kriesner",
+   "role": "owner of the property",
+   "status": "present",
+   "quote": "kim kriesner, owner of the property met with the board."
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack maloney was also present."
+  },
+  {
+   "name": "Mrs. Paradis",
+   "role": "owner",
+   "status": "present",
+   "quote": "mrs. paradis, owner, met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board advised that the 395 Elmwood Road septic issue is between the owner and the septic installer, and that no variance can be given for the one-foot groundwater offset difference on new construction.",
+   "quote": "the board advised that this is an issue between the owner of the property and the installer of the septic system."
+  },
+  {
+   "decision": "Discussion of the Septic Loan Program was continued until February 18th.",
+   "quote": "discussion continued until february 18th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved: December 2, 2018",
+   "resolution": "approved (no motion recorded)",
+   "quote": "minutes approved: december 2, 2018",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports: 241 Pleasant Street and 1 Sequoia Drive",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 241 pleasant street 1 sequoia drive",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permit, 395 Elmwood Road (new construction, groundwater offset)",
+   "resolution": "no action; board stated no variance can be given",
+   "quote": "a variance cannot be given for the one foot difference in groundwater offset due to this being new construction.",
+   "tags": [
+    "septic",
+    "variance",
+    "new construction"
+   ]
+  },
+  {
+   "topic": "Baker Street repair extension",
+   "resolution": "extension granted to February 28th",
+   "quote": "on motion by passios and second by jewell, the board voted to give an extension until february 28th to complete the required repairs.",
+   "tags": [
+    "extension",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Septic Loan Program",
+   "resolution": "continued to February 18th",
+   "quote": "discussion continued until february 18th.",
+   "tags": [
+    "septic loan program"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "septic",
+  "title 5",
+  "variance",
+  "extension",
+  "repairs",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

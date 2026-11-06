@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-10-10",
  "docid": "5046",
@@ -12,15 +12,383 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session under M.G.L. c. 30A to negotiate Town Manager contract and union labor contracts, and adjourn",
+   "motion": "Enter executive session under M.G.L. c. 30A, 21(a)(2) for Town Manager contract negotiations and under 21(a)(3) for collective bargaining strategy, then adjourn afterwards.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole 2^d: p. bertram to enter executive session under m.g.l. c. 30a, 821, reason #2, to conduct contract negotiations with non-union personnel"
+   "quote": "to enter executive session under m.g.l. c. 30a, 821, reason #2, to conduct contract negotiations with non-union personnel"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes from macOS Vision. One procedural vote recorded: entry into executive session and adjournment. Vote: McQuaid-aye, Luck-aye, Bertram-aye, Ebersole-aye, Toale-aye.",
- "cost_usd": 0.13247550000000002
+ "note": "OCR text from a scanned copy (macOS Vision), so some names and roll-call text may be garbled. The only recorded motion is the executive session motion, which also covers adjourning afterwards; the roll call is printed as individual ayes, with no printed tally. No separate adjournment vote or vote approving prior minutes is recorded. The meeting adjourned at 9:11 p.m. The executive session minutes are separate and not included.",
+ "cost_usd": 0.00971042,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield (finance committee)"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "peter lincoln (council on aging)"
+  },
+  {
+   "name": "Jim La Veck",
+   "role": "APDC/School Committee",
+   "status": "present",
+   "quote": "jim la veck (apdc/school committee)"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Planning Board/ Green Community Task Force",
+   "status": "present",
+   "quote": "greg bittner (planning board/ green community task force)"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Council on Aging",
+   "status": "present",
+   "quote": "jane rabbitt (council on aging)"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "Public Access Cable Committee (PACC)/Cable Advisory Committee",
+   "status": "present",
+   "quote": "steve walker (public access cable committee (pacc)/cable advisory committee)"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "Library Trustee",
+   "status": "present",
+   "quote": "richard mailloux (library trustee)"
+  },
+  {
+   "name": "Al Gravelle",
+   "role": "Zoning Board of Appeals",
+   "status": "present",
+   "quote": "al gravelle (zoning board of appeals)"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "APDC",
+   "status": "present",
+   "quote": "brian corcoran (apdc)"
+  },
+  {
+   "name": "Hans Wentrup",
+   "role": "Zoning Board of Appeals",
+   "status": "present",
+   "quote": "hans wentrup, (zoning board of appeals)"
+  },
+  {
+   "name": "Erik Arnold",
+   "role": "Personnel Committee",
+   "status": "present",
+   "quote": "erik arnold (personnel committee)"
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "ken chenis (planning board)"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "APDC Chairman",
+   "status": "present",
+   "quote": "richard mcgrath (apdc)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Board of Assessors Chairman",
+   "status": "present",
+   "quote": "lou franco (board of assessors)"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Planning Board/Storm Water Task Force",
+   "status": "present",
+   "quote": "matthew allison (planning board/storm water task force)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board/ Charter Review Committee",
+   "status": "present",
+   "quote": "michael-ray jeffreys (planning board/ charter review committee)"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Charter Review Committee",
+   "status": "present",
+   "quote": "katey adams (charter review committee)"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee/Capital Planning",
+   "status": "present",
+   "quote": "john henshaw (finance committee/capital planning)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks Commission",
+   "status": "present",
+   "quote": "karin menard (parks commission)"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "Storm Water Task Force",
+   "status": "present",
+   "quote": "jack rodriquenz (storm water task force)"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, hoped every board and committee would hold a public comment period"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "It was decided to fill out the board overview worksheet and make it available on the website for the public.",
+   "quote": "it was decided to fill out the board overview worksheet and make it available on the website for the public."
+  },
+  {
+   "decision": "Each board was requested to submit the overview form back to the Selectmen office.",
+   "quote": "each board was requested to submit the form back to the selectmen office."
+  },
+  {
+   "decision": "The Board will meet on Monday, October 23rd instead of its regular meeting night, to attend an opioid informational forum.",
+   "quote": "the board will meet on monday, october 23rd due to them attending an opioid informational forum on their regular meeting night."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cable access fee from Comcast",
+   "what_was_recorded": "Walker said the money received from Comcast is basically a pass-through, at about $2.70 per subscriber per month, and the committee is requesting an increase in the cable fee.",
+   "figures_as_printed": [
+    "$2.70"
+   ],
+   "quote": "at this moment, it's about $2.70 per subscriber per month."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant for a stated amount.",
+   "figures_as_printed": [
+    "$518,957.94"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $518,957.94."
+  },
+  {
+   "topic": "Parks fees",
+   "what_was_recorded": "Parks Commission said fees for town beach passes and swim lessons have not increased in almost ten years and it will keep evaluating fees.",
+   "figures_as_printed": [],
+   "quote": "for almost ten years we haven't seen an increase in the fees for town beach passes and swim lessons."
+  },
+  {
+   "topic": "Parks salary plan",
+   "what_was_recorded": "Parks Commission said the town beach coordinator and lifeguard positions had to be added to the salary administration plan.",
+   "figures_as_printed": [],
+   "quote": "we found our town beach coordinator and lifeguard positions needed to be added to the salary administration plan."
+  },
+  {
+   "topic": "Assessors personal property revenue",
+   "what_was_recorded": "Board of Assessors said a contract to identify personal property valuations may uncover significant potential revenue.",
+   "figures_as_printed": [],
+   "quote": "we believe there is a lot of potential revenue out there."
+  },
+  {
+   "topic": "Senior center budget",
+   "what_was_recorded": "Council on Aging said Friday openings happened without increasing the budget, and it lists future staffing funding as a need.",
+   "figures_as_printed": [],
+   "quote": "they are now open on fridays thanks to the eagle house supporters and without increasing the budget."
+  },
+  {
+   "topic": "Town website overhaul funding",
+   "what_was_recorded": "Town Manager said the town website overhaul is being funded through a Community Compact grant.",
+   "figures_as_printed": [],
+   "quote": "we are going to be overhauling the town website through community compact grant funding."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Lions Club pancake breakfast announcement",
+   "quote": "ms. luck announced the lions club pancake breakfast tomorrow morning from 8:00 to 10:30 a.m."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Public comment at every meeting and recording meetings",
+   "quote": "dave rodgers, 82 highland street, hoped every board and committee would hold a public comment period at the beginning and end of their meetings"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and Pledge of Allegiance",
+   "resolution": "no action; public comments heard",
+   "tags": [
+    "public comment",
+    "meeting format"
+   ],
+   "quote": "the meeting commenced with the pledge of allegiance."
+  },
+  {
+   "topic": "Board of Selectmen goals",
+   "resolution": "reviewed; no action",
+   "tags": [
+    "goals",
+    "economic development",
+    "infrastructure"
+   ],
+   "quote": "mr. toale reviewed the board of selectmen goals for the current year:"
+  },
+  {
+   "topic": "Committee goals and reports",
+   "resolution": "reports received; no action",
+   "tags": [
+    "committee reports",
+    "finance",
+    "parks",
+    "cable",
+    "senior center",
+    "assessors",
+    "planning",
+    "library",
+    "zoning"
+   ],
+   "quote": "mr. toale asked those present to expand on what were their committee's goals, if any."
+  },
+  {
+   "topic": "Communication between boards and Selectmen",
+   "resolution": "discussed; overview form to be completed and posted",
+   "tags": [
+    "communication",
+    "website",
+    "liaisons"
+   ],
+   "quote": "mr. toale asked how can we increase the communication within boards, between boards and the selectmen."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "resolution": "signed",
+   "tags": [
+    "warrant",
+    "payables"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $518,957.94."
+  },
+  {
+   "topic": "October meeting schedule",
+   "resolution": "rescheduled to October 23",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "the board discussed their october meeting schedule."
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; adjourned at 9:11 p.m.",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "contract negotiations"
+   ],
+   "quote": "to enter executive session under m.g.l. c. 30a, 821, reason #2, to conduct contract negotiations with non-union personnel"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Committee overview form",
+   "where": "text",
+   "quote": "the committee overview form that was sent out to the boards is to assist the public in understanding what their committees do"
+  },
+  {
+   "name": "Board overview worksheet",
+   "where": "text",
+   "quote": "it was decided to fill out the board overview worksheet and make it available on the website for the public."
+  },
+  {
+   "name": "Architectural Preservation District guidelines",
+   "where": "text",
+   "quote": "they have been working over the past year to create the architectural preservation district guidelines with input"
+  },
+  {
+   "name": "Council on Aging monthly newsletter",
+   "where": "text",
+   "quote": "showed their monthly newsletter, noting they are now the eagle house senior community center."
+  },
+  {
+   "name": "Open Space plan",
+   "where": "text",
+   "quote": "mr. ebersole asked if the open space plan covers the park property."
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $518,957.94."
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "committee reports",
+  "public comment",
+  "town goals",
+  "communication between boards",
+  "executive session",
+  "accounts payable",
+  "cable access",
+  "parks",
+  "senior center",
+  "assessors",
+  "2017"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

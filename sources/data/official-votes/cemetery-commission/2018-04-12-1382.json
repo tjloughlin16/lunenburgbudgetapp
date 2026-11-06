@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-04-12",
  "docid": "1382",
@@ -12,23 +12,192 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from March 1, 2018",
-   "moved_by": "Lorraine Mendoza",
-   "seconded_by": "William Tyler",
+   "motion": "Accept the minutes of the March 1, 2018 meeting.",
+   "moved_by": "Comm. Mendoza",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "upon a motion by comm. mendoza, seconded by comm. tyler and with no further discussion were accepted unanimously"
+   "quote": "upon a motion by comm. mendoza, seconded by comm. tyler and with no further discussion were accepted unanimously.",
+   "seconded_by": "Comm. Tyler"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Lorraine Mendoza",
-   "seconded_by": "William Tyler",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Comm. Mendoza",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made by comm. mendoza to adjourn, seconded by comm. tyler, and with no further discussion the meeting was adjourned at 9:45 pm"
+   "quote": "a motion was made by comm. mendoza to adjourn, seconded by comm. tyler, and with no further discussion the meeting was adjourned at 9:45 pm.",
+   "seconded_by": "Comm. Tyler"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision. Both votes are procedural (prior minutes and adjournment).",
- "cost_usd": 0.1053125
+ "note": "Text is OCR (macOS Vision) of a scanned page set; the RECEIVED & FILED stamp is partly garbled. The minutes record two motions (accept March 1 minutes, adjourn) with the outcome shown as unanimous or as adjourned, and no roll-call counts. No dollar figures or transfers appear in the text.",
+ "cost_usd": 0.0041924200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting was called to order by chairman may at 7:00 pm. members present were commissioners: lance may, lorraine mendoza,"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present were commissioners: lance may, lorraine mendoza, william tyler and superintendent todd holman."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present were commissioners: lance may, lorraine mendoza, william tyler and superintendent todd holman."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "members present were commissioners: lance may, lorraine mendoza, william tyler and superintendent todd holman."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen",
+   "status": "not stated",
+   "quote": "under public comment, selectmen bob ebersole mentioned the wording added to"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Charter Review Committee member",
+   "status": "present",
+   "quote": "charter review committee member katey adams was invited to this meeting to discuss the review process"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed the current Rules and Regulations version is fine for now, with no further changes.",
+   "quote": "and it was decided the current version is fine for now."
+  },
+  {
+   "decision": "Memorial Day plans and the burial-completion schedule were carried forward; discussion to be continued at the May meeting.",
+   "quote": "discussion will be had again at our may meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Handicap Access Ramp grant at the Niche Wall, North Cemetery",
+   "what_was_recorded": "Superintendent Holman reported he is working on the grant procedure for the handicap access ramp; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "supt. holman mentioned that he is working on the grant procedure for the handicap access ramp at the niche wall at north cemetery."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "Selectmen",
+   "topic": "Charter Commission wording on the Cemetery section",
+   "quote": "under public comment, selectmen bob ebersole mentioned the wording added to the charter commissions final draft of the cemetery section"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of March 1, 2018",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "upon a motion by comm. mendoza, seconded by comm. tyler and with no further discussion were accepted unanimously."
+  },
+  {
+   "topic": "Public comment: Charter Commission wording",
+   "resolution": "no action",
+   "tags": [
+    "charter",
+    "public comment"
+   ],
+   "quote": "under public comment, selectmen bob ebersole mentioned the wording added to the charter commissions final draft"
+  },
+  {
+   "topic": "Charter Review Committee process and Minority Report",
+   "resolution": "discussed; no action",
+   "tags": [
+    "charter review",
+    "minority report"
+   ],
+   "quote": "charter review committee member katey adams was invited to this meeting to discuss the review process"
+  },
+  {
+   "topic": "Rules and Regulations",
+   "resolution": "current version kept",
+   "tags": [
+    "rules and regulations",
+    "website"
+   ],
+   "quote": "it was decided the current version is fine for now."
+  },
+  {
+   "topic": "Handicap Access Ramp grant, North Cemetery",
+   "resolution": "update; no action",
+   "tags": [
+    "grant",
+    "accessibility",
+    "north cemetery"
+   ],
+   "quote": "supt. holman mentioned that he is working on the grant procedure for the handicap access ramp"
+  },
+  {
+   "topic": "Memorial Day plans and burial schedule",
+   "resolution": "continued to May meeting",
+   "tags": [
+    "memorial day",
+    "burials",
+    "grounds"
+   ],
+   "quote": "discussion will be had again at our may meeting."
+  },
+  {
+   "topic": "Letter of appreciation from Peg Moses",
+   "resolution": "received",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "lastly a letter of appreciation was received from peg moses, commending supt. holman for his efforts"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter of appreciation from Peg Moses",
+   "where": "text",
+   "quote": "lastly a letter of appreciation was received from peg moses, commending supt. holman for his efforts on behalf of their family"
+  },
+  {
+   "name": "Recently updated Rules and Regulations (posted to the Town's website)",
+   "where": "text",
+   "quote": "the recently updated rules and regulations have been uploaded to the town's website."
+  },
+  {
+   "name": "Charter Commission final draft of the Cemetery section",
+   "where": "text",
+   "quote": "mentioned the wording added to the charter commissions final draft of the cemetery section"
+  },
+  {
+   "name": "Katey Adams Minority Report (Charter Review Committee)",
+   "where": "text",
+   "quote": "to give her thoughts on her minority report."
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "charter review",
+  "rules and regulations",
+  "memorial day",
+  "grants",
+  "accessibility",
+  "correspondence",
+  "burials"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "a letter of appreciation was received from peg moses"
+ },
+ "dropped_unquoted_by_field": {}
 }

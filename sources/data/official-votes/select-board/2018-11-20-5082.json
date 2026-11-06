@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-11-20",
  "docid": "5082",
@@ -12,88 +12,605 @@
  },
  "votes": [
   {
-   "motion": "Appoint Paula Bertram to the Planning Board until the next annual election",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
+   "motion": "Approve the minutes of October 2 and November 13, 2018.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to appoint paula bertram to the planning board until the next annual election"
+   "quote": "the board approved minutes of october 2 and november 13, 2018."
   },
   {
-   "motion": "Ratify the Town Manager appointment of William O'Neill as Heavy Equipment Operator",
+   "motion": "Appoint Paula Bertram to the Planning Board until the next annual election (joint vote with the Planning Board).",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2n°: d. mcquaid to ratify the town manager appointment of william o'neill as heavy equipment operator vote: all in favor"
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "to appoint paula bertram to the planning board until the next annual election"
   },
   {
-   "motion": "Appoint Ashly Faherty to the Cultural Council with a term to expire June 30, 2021",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to appoint paula bertram to the planning board until the next annual election mr. toale asked for a joi",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Continue the tax classification hearing to December 4th at 7:05 PM",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to continue the tax classification hearing to december 4th at 7:05 pm vote: all in favor"
-  },
-  {
-   "motion": "Follow Mr. Rhodes' recommendation and extend permit #14 until January 31, 2019 to allow time for plans to be provided",
+   "motion": "Continue the tax classification hearing to December 4th at 7:05 PM.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to follow mr. rhodes' recommendation and extend the permit until january 31, 2019 to allow time for the plans to be provided vote: all in favor"
+   "quote": "to continue the tax classification hearing to december 4th at 7:05 pm"
   },
   {
-   "motion": "Extend permit #15 until January 31, 2019 and request a closure plan including permanent monuments showing the boundary",
+   "motion": "Ratify the Town Manager appointment of William O'Neill as Heavy Equipment Operator.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 20°: d. mcquaid to extend permit#15 until january 31, 2019 and request a closure plan as well as including permanent monuments showing the boundary in the closure plan vote: all in favor"
+   "quote": "to ratify the town manager appointment of william o'neill as heavy equipment operator"
   },
   {
-   "motion": "Approve a conditional permit #16 until August 31, 2019 with the conditions as outlined",
+   "motion": "Appoint Ashly Faherty to the Cultural Council with a term to expire June 30, 2021.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to approve a conditional permit until august 31, 2019 with the conditions as outlined above vote: all in favor"
+   "quote": "to appoint ashly faherty to the cultural council with a term to expire june 30, 2021"
   },
   {
-   "motion": "Accept the closure plan for permit #32 and that the earth removal is completed",
+   "motion": "Follow Mr. Rhodes' recommendation and extend Earth Removal Permit #14 until January 31, 2019.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to accept the closure plan for permit #32 and that the earth removal is completed 2nd: d. mcquaid vote: all in favor"
+   "quote": "to follow mr. rhodes' recommendation and extend the permit until january 31, 2019 to allow"
   },
   {
-   "motion": "Accept the Declaration of Restriction and authorize the Chair of the Board of Selectmen to execute all associated documents related to the transfer of property",
+   "motion": "Extend Earth Removal Permit #15 until January 31, 2019 and request a closure plan with permanent boundary monuments.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to extend permit#15 until january 31, 2019 and request a closure plan as well as including"
+  },
+  {
+   "motion": "Approve a conditional Earth Removal Permit #16 until August 31, 2019 with the conditions outlined.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve a conditional permit until august 31, 2019 with the conditions as outlined above"
+  },
+  {
+   "motion": "Accept the closure plan for Earth Removal permit #32 and that the earth removal is completed.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to accept the closure plan for permit #32 and that the earth removal is completed"
+  },
+  {
+   "motion": "Accept the Declaration of Restriction as presented and authorize the Chair to execute associated documents for the transfer of the Gilchrest Street properties.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "motion: r. ebersole 2°c: d. mcquaid to accept the deelaration of restriction as presented and to authorize the chair of the board of selectmen to execute all associated documents related to the transfer of property back and forth vote: 3 in favor, 1 opposed (adams)"
+   "quote": "to accept the deelaration of restriction as presented and to authorize the chair of the board of"
   },
   {
-   "motion": "Enter Executive Session under M.G.L. c. 30 § 21 to discuss strategy with respect to O'Brien Homes litigation and to adjourn immediately afterwards",
+   "motion": "Enter Executive Session under M.G.L. c. 30 § 21, Reason #3 (litigation, O'Brien Homes v. Town of Lunenburg), and adjourn immediately afterwards without returning to Open Session.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to enter executive session under m.g.l. c. 30 $ 21, reason #3: to discuss strategy with respect to litigation, where an open meeting may have a detrimental effect on the government's litigating position, and the chair so declares, namely o'brien homes, inc., et al. v. town of lunenburg, et al., land court docket nos. 13 misc 477878 through 13 misc 477887, and o'brien homes, inc. v. town of lunenburg planning board, et al., appeals court docket no. 2018-p-1520 and to adjourn immediately afterwards and not return to open session vote: ms.adams-aye, mr. mcquaid- aye,mr.ebersole-aye, mr. toale-aye"
+   "quote": "to enter executive session under m.g.l. c. 30 $ 21, reason #3: to discuss strategy with respect"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; some minor artifacts (e.g., \"2n°\" for \"2nd\", \"2°C\" for \"2nd\", \"Deelaration\" for \"Declaration\"). All votes successfully transcribed with verbatim quotes. Board members present: Jamie Toale (Chairman), Robert Ebersole (Vice Chairman), Damon McQuaid (Clerk), Katey Adams (Member). Meeting adjourned at 8:38 p.m.",
- "cost_usd": 0.1527715
+ "note": "OCR text, several figures garbled (e.g., '$1,044,66.60', 'Ş119,743.47', 'Deelaration'); pavement table column alignment is unreliable so only clearly printed figures are recorded. Attachment tables (pages 15-18) are partly readable. The permit 17/27/30 recommendation has no printed motion; the minutes approval has no printed mover or count; adjournment at 8:38 p.m. has no printed motion. Exec session vote counts are individual ayes (4 listed). No transfers printed. Public comment includes an unnamed speaker on the vacancy.",
+ "cost_usd": 0.015826020000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk; katey adams, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: phyllis luck, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; jack rodriquenz, dpw director; karen brochu,"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; jack rodriquenz, dpw director; karen brochu,"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; jack rodriquenz, dpw director; karen brochu,"
+  },
+  {
+   "name": "Garry Rhodes",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "building commissioner garry rhodes presented his report."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "adam burney, land use director and i have"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "candidate for the Planning Board; also a public speaker",
+   "status": "present",
+   "quote": "paula bertram, 312 townsend harbor road, presented as a candidate for the planning board."
+  },
+  {
+   "name": "Ashly Faherty",
+   "role": "candidate for the Cultural Council",
+   "status": "present",
+   "quote": "ms. faherty stated she has lived here for four years and wants to serve the community and feels the"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "public speaker, 155 Island Road",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, stated mr. ebersole has been an inspiration for him and wished him"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public speaker, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, noted mr. ebersole's knowledge of all types of town information is"
+  },
+  {
+   "name": "Representative Hay",
+   "role": "Representative",
+   "status": "present",
+   "quote": "representative hay read the citation from the house of representatives in recognition of mr. ebersole's"
+  },
+  {
+   "name": "Kyle Schulton",
+   "role": "Senator Dean Tran's legislative aide",
+   "status": "present",
+   "quote": "kyle schulton, senator dean tran's legislative aide, reported senator tran had a prior obligation this"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Conservation Commission Chairman",
+   "status": "not stated",
+   "quote": "charman richard bursch shared these sentiments as well"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board plans to place an agenda item on the December 4th meeting to discuss the potential for a special election and the reorganization of the Board, including the assignments Mr. Ebersole held.",
+   "quote": "mr. toale stated it is their plan to have an agenda item on the december 4th meeting to discuss the potential for an election and the reorganization"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pavement management debt exclusion balance",
+   "what_was_recorded": "The DPW Director reported the pavement management debt exclusion authorization, expenditures to date, and an available balance, of which a part is not available until April 2019.",
+   "figures_as_printed": [
+    "$4,000,000.00",
+    "(2,499,815.88)",
+    "$1,500,184.12",
+    "(14,260.90)",
+    "$1,485,923.22",
+    "$1,044,66.60"
+   ],
+   "quote": "*$1,044,66.60 of the full $1,485,923.22 will not be available untill april 2019"
+  },
+  {
+   "topic": "Fire Department capital request",
+   "what_was_recorded": "Capital Planning reported the Fire Department requests for vital sign monitors, a pumper truck and an ambulance.",
+   "figures_as_printed": [
+    "$15,000",
+    "$685,000",
+    "$310,000"
+   ],
+   "quote": "the fire department is requesting $15,000 for 2 vital sign monitors for the ambulances; $685,000 for a"
+  },
+  {
+   "topic": "Police Department capital request",
+   "what_was_recorded": "Capital Planning reported the Police Department request for two cruisers.",
+   "figures_as_printed": [
+    "$116,000"
+   ],
+   "quote": "the police department is requesting $116,000 for two cruisers, one marked, one unmarked"
+  },
+  {
+   "topic": "Green Communities grant",
+   "what_was_recorded": "The Town Manager reported an award of Green Communities grant funds for energy efficiency projects.",
+   "figures_as_printed": [
+    "$198, 867"
+   ],
+   "quote": "the town was also awarded $198, 867 in green communities grant funds to perform"
+  },
+  {
+   "topic": "Town Roads account increase for pavement management",
+   "what_was_recorded": "The Town Manager said she plans to propose increasing the Town Roads account by $50,000 each year for pavement management including drainage.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "increasing the town roads account by an additional $50,000 each year for pavement"
+  },
+  {
+   "topic": "Facilities account increase",
+   "what_was_recorded": "The FY2019 approved budget includes an added amount in the Facilities account for deferred maintenance.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "the fy2019 approved budget includes an additional $40,000 in the facilities account to"
+  },
+  {
+   "topic": "Local receipts: school Medicaid reimbursement",
+   "what_was_recorded": "The Finance Director reported a school-based Medicaid reimbursement receipt that raised the departmental revenue/school percentage.",
+   "figures_as_printed": [
+    "$22,271.72"
+   ],
+   "quote": "this is mainly due to a school based medicaid reimbursement receipt in the amount of $22,271.72."
+  },
+  {
+   "topic": "Tax lien revenue",
+   "what_was_recorded": "The Finance Director reported tax lien revenue included in the tax levy collected to date.",
+   "figures_as_printed": [
+    "$42,311.08"
+   ],
+   "quote": "this includes $42,311.08 in tax lien revenue, and 25.16%"
+  },
+  {
+   "topic": "Injury Leave deficit",
+   "what_was_recorded": "The Finance Director reported an Injury Leave deficit expected to be offset by an insurance reimbursement.",
+   "figures_as_printed": [
+    "$430.84"
+   ],
+   "quote": "injury leave is showing a deficit of $430.84, but that will be adjusted"
+  },
+  {
+   "topic": "Quarterly financial report, revenues and expenditures",
+   "what_was_recorded": "The Finance Director reported percentages of FY19 revenue and expenditure estimates collected or spent through 9/30/18.",
+   "figures_as_printed": [
+    "28.3%",
+    "30.2%"
+   ],
+   "quote": "we have collected 28.3% of fy19 estimates through 9/30/18."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant.",
+   "figures_as_printed": [
+    "$220,939.43"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $220,939.43."
+  },
+  {
+   "topic": "Drainage spending at the Ritter Building",
+   "what_was_recorded": "A board member noted money was spent on the Ritter Building last year for drainage issues; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. mcquaid noted we did spend some money on the ritter last year for drainage issues."
+  },
+  {
+   "topic": "DCR forestry grant for Hollis Road property",
+   "what_was_recorded": "The Conservation Commission reported a DCR grant covering the forestry plan at no cost to the town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "there is no cost to the town for this service as a consultant will perform the work at the cost of the"
+  },
+  {
+   "topic": "Drainage project tables (attachment)",
+   "what_was_recorded": "Attached project-year paving and drainage tables list project costs and FY totals; figures are partly garbled in the text.",
+   "figures_as_printed": [
+    "$72,143.00",
+    "FY19 - $10,800.00",
+    "$77,330.29",
+    "FY18 - Ş119,743.47",
+    "$118,215.67",
+    "FY19 - $36,892.53"
+   ],
+   "quote": "project year 2018 - paving drainage"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Farewell to Selectman Ebersole",
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "dave passios, 56 whiting street, noted mr. ebersole's knowledge of all types of town information is"
+  },
+  {
+   "topic": "Farewell to Selectman Ebersole",
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Road",
+   "quote": "dave macdonald, 155 island road, stated mr. ebersole has been an inspiration for him and wished him"
+  },
+  {
+   "topic": "Farewell; citation from House of Representatives",
+   "speaker": "Representative Hay",
+   "stated_role": "Representative",
+   "quote": "representative hay read the citation from the house of representatives in recognition of mr. ebersole's"
+  },
+  {
+   "topic": "Citation from State Senate",
+   "speaker": "Kyle Schulton",
+   "stated_role": "Senator Dean Tran's legislative aide",
+   "quote": "kyle schulton, senator dean tran's legislative aide, reported senator tran had a prior obligation this"
+  },
+  {
+   "topic": "Farewell to Selectman Ebersole",
+   "speaker": "Paula Bertram",
+   "stated_role": "former Selectman, 312 Townsend Harbor Road",
+   "quote": "paula bertram, 312 townsend harbor road, former selectman, thanked mr. ebersole for all he has"
+  },
+  {
+   "topic": "Vacancy and special election timing",
+   "speaker": "not named in minutes",
+   "stated_role": "",
+   "quote": "in the absence of a citizens' petition to call a special election, when would we be hearing from this"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, announcements and farewell to Selectman Ebersole (public comment)",
+   "resolution": "no action; farewell remarks and citations",
+   "quote": "mr. toale announced tonight was selectman ebersole's last meeting as he is stepping down and moving",
+   "tags": [
+    "farewell",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Joint appointment with Planning Board for vacant seat",
+   "resolution": "appointed Paula Bertram",
+   "quote": "joint appointment with planning board for vacant planning board seat",
+   "tags": [
+    "appointments",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "DPW report on pavement management plan and drainage",
+   "resolution": "received; no action",
+   "quote": "dpw director rodriquenz provided an update on the debt exclusion for pavement management which",
+   "tags": [
+    "pavement",
+    "drainage",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Tax classification hearing (M.G.L. Ch. 40 §56)",
+   "resolution": "continued to December 4",
+   "quote": "tax classification hearing as required by m.g.l. ch. 40 $56 on the issue of allocating the local",
+   "tags": [
+    "tax classification",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Finance Director quarterly financial report",
+   "resolution": "received; no action",
+   "quote": "finance director report: quarterly financial report",
+   "tags": [
+    "finance",
+    "quarterly report"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments and re-appointments",
+   "resolution": "ratified one appointment; appointed one Cultural Council member",
+   "quote": "town manager appointment: dpw heavy equipment operator-william o'neill",
+   "tags": [
+    "appointments",
+    "cultural council"
+   ]
+  },
+  {
+   "topic": "Earth removal permits renewals (P.J. Keating)",
+   "resolution": "permits 14, 15, 16 acted on; closure plan for permit 32 accepted; permits 17, 27, 30 no motion recorded",
+   "quote": "earth removal permits) renewals:",
+   "tags": [
+    "earth removal",
+    "permits",
+    "P.J. Keating"
+   ]
+  },
+  {
+   "topic": "Confirmation of Nov 6 vote on Gilchrest Street properties",
+   "resolution": "Declaration of Restriction accepted 3-1",
+   "quote": "confirmation of the board of selectmen vote on november 6, 2018 re: sale and acquisition by the",
+   "tags": [
+    "property",
+    "conservation restriction"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; no action; vacancy list read",
+   "quote": "summer street project update from massdot:",
+   "tags": [
+    "town manager",
+    "MassDOT",
+    "RFP",
+    "dementia friendly",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Town Manager goals and objectives FY2019 status update",
+   "resolution": "reviewed; no action",
+   "quote": "fiscal year 2019 - november 20, 2018 status update",
+   "tags": [
+    "goals",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Warrants, minutes and action items",
+   "resolution": "approved minutes; signed AP warrant",
+   "quote": "warrants/minutes/action items",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Capital Planning)",
+   "resolution": "received; no action",
+   "quote": "mr. mcquaid reported capital planning met earlier with the police and fire departments.",
+   "tags": [
+    "capital planning",
+    "fire",
+    "police"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session on litigation; adjourned 8:38 p.m.",
+   "quote": "to enter executive session under m.g.l. c. 30 $ 21, reason #3: to discuss strategy with respect",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax classification hearing notice (Nov 20, 2018, 7:30 P.M.)",
+   "where": "text",
+   "quote": "mr. toale read the hearing notice aloud: the board of selectmen will hold a public hearing on"
+  },
+  {
+   "name": "Quarterly Financial Report, Expenditure/Revenue summary for Q1 FY2019",
+   "where": "text",
+   "quote": "she noted this is the expenditure/revenue summary for the 1 quarter of fiscal year 2019 ending"
+  },
+  {
+   "name": "Letter dated November 6, 2018 from S.J. Mullaney Engineering with attached plans",
+   "where": "text",
+   "quote": "the board of selectmen received the requested information from s.j. mullaney engineering by a"
+  },
+  {
+   "name": "Building Commissioner memo (Garry Rhodes) on Earth Removal permits",
+   "where": "text",
+   "quote": "addresses the questions raised in my memo."
+  },
+  {
+   "name": "Drainage chart created by administrative assistant (2016 to present)",
+   "where": "text",
+   "quote": "he provided a chart created by his administrative assistant that showed how drainage was addressed from 2016 up to the present."
+  },
+  {
+   "name": "Declaration of Restriction (Gilchrest Street)",
+   "where": "text",
+   "quote": "reviewed the declaration of restriction and had various comments that town counsel incorporated."
+  },
+  {
+   "name": "Parcel A - Deed with Easement",
+   "where": "text",
+   "quote": "there is also another document titled parcel a -deed with easement."
+  },
+  {
+   "name": "Request for Proposals for rental of classroom space at TC Passios building",
+   "where": "text",
+   "quote": "the school facilities director put together a request for proposals for rental of classroom space at"
+  },
+  {
+   "name": "Agreement for the Revolving Museum (TC Passios cafeteria space)",
+   "where": "text",
+   "quote": "town counsel has assisted with drafting an agreement for the revolving museum to enter and use"
+  },
+  {
+   "name": "DCR grant for Forestry for the Birds Stewardship Plan",
+   "where": "text",
+   "quote": "awarded to develop a forestry for the birds stewardship plan at the hollis road property."
+  },
+  {
+   "name": "Complete Streets Tier 3 application",
+   "where": "text",
+   "quote": "the submission of the complete streets tier 3"
+  },
+  {
+   "name": "Town Manager Goals and Objectives FY2019 status update",
+   "where": "text",
+   "quote": "town manager goals and objectives"
+  },
+  {
+   "name": "Economic Development Committee charge",
+   "where": "text",
+   "quote": "a charge was created and adopted by the board at the november 6t' meeting."
+  },
+  {
+   "name": "Accounts payable warrant ($220,939.43)",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $220,939.43."
+  },
+  {
+   "name": "Minutes of October 2 and November 13, 2018",
+   "where": "text",
+   "quote": "the board approved minutes of october 2 and november 13, 2018."
+  },
+  {
+   "name": "Project Year 2018 - Paving Drainage table (attachment pages)",
+   "where": "list",
+   "quote": "project year 2018 - paving drainage"
+  },
+  {
+   "name": "Project Year 2017 drainage table (attachment pages)",
+   "where": "list",
+   "quote": "project year 2017"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "farewell Ebersole",
+  "Planning Board appointment",
+  "appointments",
+  "pavement management",
+  "drainage",
+  "tax classification",
+  "quarterly finance",
+  "earth removal",
+  "conservation restriction",
+  "town manager goals",
+  "executive session litigation",
+  "capital planning"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "(see attachment)"
+ },
+ "dropped_unquoted_by_field": {}
 }

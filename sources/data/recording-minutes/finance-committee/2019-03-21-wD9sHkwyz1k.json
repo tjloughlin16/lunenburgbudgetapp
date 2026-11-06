@@ -1,0 +1,337 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2019-03-21",
+ "video_id": "wD9sHkwyz1k",
+ "video_url": "https://www.youtube.com/watch?v=wD9sHkwyz1k",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2019-03-21-wD9sHkwyz1k.json",
+  "sha256": "534f1735ffa9170e8e3db1ba5ab53fbab0dc6c3d54bc4cb262c957c1719950b0",
+  "caption_lines": 307,
+  "segments": 2151
+ },
+ "recording": {
+  "duration_s": 6630,
+  "duration": "1:50",
+  "spoken_chars": 77890,
+  "words_approx": 12981
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03212019-2170",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-03-21-agenda-2170.txt",
+   "path": "sources/meetings/finance-committee/2019-03-21-agenda-2170.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T14:10:38Z",
+  "cost_usd": 0.3177955
+ },
+ "minutes": {
+  "headline": "Finance Committee heard a bond-rating and debt briefing and reviewed administration budgets and warrant; no votes.",
+  "summary": "An adviser explained how S&P rates Lunenburg's debt and the option of redeeming bonds callable in 2020. Staff reviewed the administration and unclassified budgets, including a proposed part-time HR director/assistant town manager, and the school-town split. The warrant articles were walked through and plans for next week's joint hearing were set. No formal votes were recorded.",
+  "attendees": [
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mylène",
+    "role": "treasurer collector"
+   },
+   {
+    "name_as_heard": "David",
+    "role": "presenter (financial advisor)"
+   },
+   {
+    "name_as_heard": "John",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1983,
+    "topic": "Asked whether the OPEB liability enters the bond rating score.",
+    "speaker_as_heard": "Carl luck 50 Sunset Lane"
+   },
+   {
+    "t": 3968,
+    "topic": "Asked the full cost of the proposed HR position beyond salary, including benefits and retirement.",
+    "speaker_as_heard": "Carl luck 50 Sunset Lane"
+   },
+   {
+    "t": 4095,
+    "topic": "Questioned why retiree health insurance, mostly school-related, sits on the town side of the school/town split."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "debt",
+   "free-cash",
+   "health-insurance",
+   "hiring",
+   "public-comment",
+   "retirement",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [],
+  "budget_items": [
+   {
+    "t": 900,
+    "topic": "Net direct debt and debt service",
+    "what_was_said": "Advisor described net direct debt and debt service against S&P metrics, producing a weak debt score.",
+    "figures_as_heard": [
+     "just under 45 million dollars",
+     "three point seven million dollars"
+    ]
+   },
+   {
+    "t": 1092,
+    "topic": "Redeeming 2012 bonds callable June 2020",
+    "what_was_said": "Callable bonds could give small debt service savings; redemption is not material to ratings.",
+    "figures_as_heard": [
+     "3.4 million dollars",
+     "four hundred and thirty two thousand dollars",
+     "thirty two thousand dollars"
+    ]
+   },
+   {
+    "t": 2557,
+    "topic": "HR director / assistant town manager",
+    "what_was_said": "Part-time position proposed for FY20; selectmen voted two to one not to support it.",
+    "figures_as_heard": [
+     "60,000",
+     "67,000"
+    ]
+   },
+   {
+    "t": 2557,
+    "topic": "Administration budgets",
+    "what_was_said": "Increases in assessing software, tax title, cemetery software and general code updates; health insurance renewal down for active employees.",
+    "figures_as_heard": [
+     "thirteen thousand",
+     "fifteen thousand",
+     "8,000",
+     "two point four five percent"
+    ]
+   },
+   {
+    "t": 3209,
+    "topic": "School appropriation increase",
+    "what_was_said": "Additional amount reallocated to schools from town savings, leaving a smaller remaining gap.",
+    "figures_as_heard": [
+     "a hundred and one thousand",
+     "three hundred and thirty four thousand",
+     "two hundred and thirty three"
+    ]
+   },
+   {
+    "t": 4918,
+    "topic": "Public access articles",
+    "what_was_said": "Warrant has a Comcast capital grant transfer article.",
+    "figures_as_heard": [
+     "120,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 6286,
+    "decision": "Town manager agreed to prepare the voting grid again for next week's hearing."
+   },
+   {
+    "t": 6414,
+    "decision": "Next week's meeting moved to start at 6:15 with the public hearing at 6:30; public access presentation to be heard first."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 430,
+    "topic": "Agenda, communications, land acquisition committee, request for building master plan",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 460,
+    "t_end": 2450,
+    "topic": "S&P rating, debt scores, bond redemption, OPEB",
+    "resolution": "informational",
+    "tags": [
+     "debt",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 2494,
+    "t_end": 4740,
+    "topic": "Administration and unclassified budgets, treasurer interest, HR position, school/town split",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "hiring",
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 4742,
+    "t_end": 5860,
+    "topic": "Warrant article walkthrough and TC Passios space questions",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 5864,
+    "t_end": 6286,
+    "topic": "Fuel tank cost analysis update",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 6286,
+    "t_end": 6617,
+    "topic": "Planning next week's joint hearing",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Several mid-meeting passages are garbled; the school share percentage was uncertain.",
+   "The closing motion and vote are not captured."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 322,
+    "kind": "condition",
+    "about": "A member wants a master plan before recommending building-related warrant articles.",
+    "who": "a member",
+    "words_as_heard": "I don't know how we can make a recommendation one way or another without seeing some kind of a master plan"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 20,
+    "name_as_heard": "draft of the warrant",
+    "kind": "warrant article",
+    "words_as_heard": "we did see a draft of the warrant earlier this week"
+   },
+   {
+    "t": 642,
+    "name_as_heard": "debt presentation pages",
+    "kind": "presentation",
+    "words_as_heard": "if you go to the next page page three there are some definitions here"
+   },
+   {
+    "t": 3059,
+    "name_as_heard": "treasurer cash book spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "I have a cash book what we call for all those money that we took in"
+   },
+   {
+    "t": 6550,
+    "name_as_heard": "budget dated February 12th",
+    "kind": "budget document",
+    "words_as_heard": "the budget dated February 12th is pretty much the budget we're going with"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "school-town-budget-split",
+    "title": "School and town split",
+    "question": "What share of spending goes to schools once town-paid retiree insurance and other costs are counted?",
+    "t": 4095,
+    "words_as_heard": "it just really isn't fair to say that it's it's almost 50/50",
+    "data_in_play": [
+     "56 percent",
+     "70 percent school retirees"
+    ],
+    "existing": "topic:chapter-70-school-budget-share"
+   },
+   {
+    "slug": "assistant-town-manager-hr-position",
+    "title": "HR director position cost",
+    "question": "What would the HR director/assistant town manager position really cost with benefits?",
+    "t": 3968,
+    "words_as_heard": "it costs to town about a hundred thousand dollars for that person",
+    "data_in_play": [
+     "60,000",
+     "a hundred thousand dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "debt-capacity",
+    "title": "Debt and bond rating",
+    "question": "How does debt level affect the bond rating and should bonds be redeemed early?",
+    "t": 1092,
+    "words_as_heard": "bonds that the town issued in June of 2012 those are callable on June 1st of 2020",
+    "data_in_play": [
+     "3.4 million dollars",
+     "four hundred and thirty two thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee took no votes; it heard a briefing on how S&P rates the town's debt and on bonds that can be redeemed in 2020.",
+    "t": 900
+   },
+   {
+    "line": "Staff reviewed the administration and unclassified budgets, including a proposed part-time HR director/assistant town manager that selectmen voted two to one not to support.",
+    "t": 2557
+   },
+   {
+    "line": "Part of the school increase was reallocated from town savings, leaving a smaller remaining gap in the school-town split.",
+    "t": 3209
+   },
+   {
+    "line": "The warrant articles were walked through, including a public access transfer article funded by a Comcast capital grant.",
+    "t": 4918
+   },
+   {
+    "line": "Next week's joint hearing was moved to a 6:15 start, with the hearing at 6:30 and the public access presentation first; the town manager will prepare the voting grid again.",
+    "t": 6414
+   }
+  ],
+  "why_it_matters": [
+   "The debt rating affects what the town pays to borrow, and the budget and warrant items reviewed here, including a possible new HR position and the school-town split, shape the tax bill residents will be asked to vote on at Town Meeting."
+  ],
+  "watch_next": [
+   "Next week's joint public hearing, starting at 6:30 after a 6:15 committee start, with the public access presentation first.",
+   "The voting grid the town manager agreed to prepare for that hearing."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T14:10:44Z",
+   "cost_usd": 0.0227891
+  }
+ }
+}

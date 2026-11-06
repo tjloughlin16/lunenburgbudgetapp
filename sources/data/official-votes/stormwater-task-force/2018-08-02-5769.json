@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-08-02",
  "docid": "5769",
@@ -12,23 +12,289 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the June 28, 2018 meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the june 28, 2018 meeting were accepted."
-  },
-  {
-   "motion": "To adjourn the meeting at 8:10 pm",
+   "motion": "To adjourn the meeting at 8:10 pm.",
    "moved_by": "M. Allison",
-   "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: m. allison 2nd: p. luck to adjourn the meeting at 8:10 pm. vote: all in favor"
+   "quote": "to adjourn the meeting at 8:10 pm. vote: all in favor",
+   "seconded_by": "P. Luck"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly legible with no missing pages. Two procedural votes recorded.",
- "cost_usd": 0.0304786
+ "note": "Minutes are plain text with page markers. Only one recorded vote (adjournment, 'All in Favor'); the June 28 minutes were 'accepted' with no motion recorded. No dollar figures, transfers, public comment, or document list appear. The meeting location is given as the first floor conference room in the opening and the upper conference room in the schedule note. The NOI is a 19-page document referenced in the text, not a listed exhibit.",
+ "cost_usd": 0.005849719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and consultant ed himlan"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF; Member, BOS",
+   "status": "present",
+   "quote": "phyllis luck, chair swtf member, bos"
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "Consultant; of the Massachusetts Watershed Coalition",
+   "status": "present",
+   "quote": "ed himlan of the massachusetts watershed coalition conducted a review of the notice of intent (noi)"
+  },
+  {
+   "name": "Burney",
+   "role": "Land Use Director",
+   "status": "absent",
+   "quote": "land use director burney was not able to attend the meeting"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Conservation Commissioner",
+   "status": "absent",
+   "quote": "conservation commissioner jack rabbitt was unable to attend the meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the June 28, 2018 meeting were accepted (no motion recorded).",
+   "quote": "minutes of the june 28, 2018 meeting were accepted."
+  },
+  {
+   "decision": "A survey on the SWTF webpage and an article in the Ledger inviting community participation should be undertaken (MCM 2).",
+   "quote": "it was determined that a survey posted on the swtf webpage, as well as an article in the ledger which advertises the survey"
+  },
+  {
+   "decision": "The Stormwater Management Plan should be posted on the website.",
+   "quote": "the stormwater management plan (swmp), which should be ready by october-november, according to ed himlan, should also be posted on the website."
+  },
+  {
+   "decision": "The Storm Sewer Overflow (SSO) Inventory must be completed by June 30, 2019.",
+   "quote": "it was determined that the storm sewer overflow (sso) inventory must be completed by june 30, 2019."
+  },
+  {
+   "decision": "The stormwater bylaws are to be reviewed to ensure they are all inclusive (MCM 4).",
+   "quote": "the stormwater bylaws are in place, but need to be reviewed to insure they are all inclusive."
+  },
+  {
+   "decision": "The last two MCM 5 BMP categories (green infrastructure; street design and parking lot guidelines) should be combined.",
+   "quote": "it was determined that the last two: allow green infrastructure and street design and parking lot guidelines, should be combined."
+  },
+  {
+   "decision": "The NOI MCM 1 section is left as written for now, with further discussion on September 13.",
+   "quote": "it was determined to leave the noi as is for now, and to have further discussion on this topic at the september 13 swtf meeting."
+  },
+  {
+   "decision": "The SWTF will vote on submission of the new NOI at its September 13 meeting; a September 27 meeting is set for final tweaks if needed.",
+   "quote": "the swtf will take a vote on submission of the new noi at its september 13 meeting."
+  },
+  {
+   "decision": "The Town Manager will be asked to sign the NOI; the SWTF Chair will set up an NOI review meeting with Ms. Lemieux and have it placed on the Board of Selectmen's agenda before September 13.",
+   "quote": "manager will be asked to sign the noi; the swtf chair will set up a meeting for noi review with ms. lemieux"
+  },
+  {
+   "decision": "The SWMP BMPs for MCM 1 and MCM 2 will be reviewed at the September 13 meeting.",
+   "quote": "the stormwater management plan (swmp) bmps for mcm 1 and mcm 2 will be reviewed at the september 13 swtf meeting."
+  },
+  {
+   "decision": "Agenda items c. and d. are deferred to a future meeting because Land Use Director Burney was absent.",
+   "quote": "land use director burney was not able to attend the meeting, so agenda items c. and d. will be taken up at a future meeting."
+  },
+  {
+   "decision": "Agenda item e. is deferred to a future meeting because Conservation Commissioner Jack Rabbitt was absent.",
+   "quote": "conservation commissioner jack rabbitt was unable to attend the meeting, so agenda item e. will be taken up at a future meeting."
+  },
+  {
+   "decision": "The group will begin using the Activity Log template for Education and Outreach, with one column added, and refine it as needed.",
+   "quote": "one column of information was added; the group will begin to use this, and refine as needed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of June 28, 2018 meeting",
+   "resolution": "accepted; no motion recorded",
+   "quote": "minutes of the june 28, 2018 meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of NOI under MS4 General Permit",
+   "resolution": "reviewed; NOI due to DEP by September 29, 2018; paper vs electronic to be decided September 13",
+   "quote": "ed himlan of the massachusetts watershed coalition conducted a review of the notice of intent (noi)",
+   "tags": [
+    "NOI",
+    "MS4 permit",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "MCM 2 Public Involvement and Participation",
+   "resolution": "survey and newspaper article to be undertaken; SWMP to be posted on website",
+   "quote": "in discussing mcm 2, public involvement and participation, it was determined that a survey posted on the swtf webpage",
+   "tags": [
+    "public involvement",
+    "survey"
+   ]
+  },
+  {
+   "topic": "MCM 3 Illicit Discharge Detection and Elimination",
+   "resolution": "SSO Inventory due June 30, 2019; IDDE procedures to be written",
+   "quote": "in discussing mcm 3, illicit discharge detection and elimination (idde), it was determined",
+   "tags": [
+    "IDDE",
+    "sewer",
+    "DPW",
+    "Sewer Commission",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "MCM 4 Construction Site Stormwater Runoff Control",
+   "resolution": "BMP 4 Waste Control due by June 30, 2019; bylaws to be reviewed",
+   "quote": "in the discussion of mcm 4, construction site stormwater runoff control, it was determined",
+   "tags": [
+    "construction site",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "MCM 5 Post-Construction Stormwater Management",
+   "resolution": "last two BMP categories to be combined",
+   "quote": "the conversation moved to mcm 5, post-construction stormwater management in new development and redevelopment.",
+   "tags": [
+    "post-construction",
+    "green infrastructure"
+   ]
+  },
+  {
+   "topic": "MCM 6 Municipal Good Housekeeping and Pollution Prevention",
+   "resolution": "O&M procedures, inventory, catch basin and street sweeping, road salt, and inspections to be developed; deadlines set",
+   "quote": "the final mcm, 6, is municipal good housekeeping and pollution prevention.",
+   "tags": [
+    "housekeeping",
+    "DPW",
+    "road salt",
+    "catch basin"
+   ]
+  },
+  {
+   "topic": "MCM 1 Public Education and Outreach (returned to)",
+   "resolution": "NOI left as written; Think Blue Mass alternative to be discussed September 13",
+   "quote": "the conversation then moved back to mcm 1, public education and outreach.",
+   "tags": [
+    "public education",
+    "Think Blue Mass"
+   ]
+  },
+  {
+   "topic": "Part III Water Quality Limited Waters (Phosphorus)",
+   "resolution": "noted; Phosphorus Control Plan due by 2021",
+   "quote": "the town will need to complete a phosphorus control plan by 2021",
+   "tags": [
+    "phosphorus",
+    "Nashua River"
+   ]
+  },
+  {
+   "topic": "NOI submission, signature and schedule",
+   "resolution": "Town Manager to sign; Chair to arrange Lemieux review and Selectmen agenda; vote September 13",
+   "quote": "the swtf will take a vote on submission of the new noi at its september 13 meeting.",
+   "tags": [
+    "NOI",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Agenda items c., d. and e.",
+   "resolution": "deferred to a future meeting due to absences",
+   "quote": "land use director burney was not able to attend the meeting, so agenda items c. and d. will be taken up at a future meeting.",
+   "tags": [
+    "deferred"
+   ]
+  },
+  {
+   "topic": "Activity Log template for Education and Outreach",
+   "resolution": "presented; one column added; group to use and refine",
+   "quote": "a template for the activity log for education and outreach efforts to comply with the new",
+   "tags": [
+    "activity log",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Gardening Club workshop report",
+   "resolution": "reported by Ed Himlan; no action",
+   "quote": "ed himlan reported that the workshop with the hickory hills gardening club was a very",
+   "tags": [
+    "rain gardens",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Meeting schedule for third quarter",
+   "resolution": "set: September 13 and 27",
+   "quote": "meeting schedule for the third quarter: september 13 and 27.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:10 pm",
+   "quote": "to adjourn the meeting at 8:10 pm. vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent (NOI) for the small MS4 General Permit (19-page NOI document)",
+   "where": "text",
+   "quote": "review of the notice of intent (noi) for coverage under the small municipal separate storm sewer system (ms4) general permit"
+  },
+  {
+   "name": "Stormwater Management Plan (SWMP)",
+   "where": "text",
+   "quote": "the stormwater management plan (swmp), which should be ready by october-november, according to ed himlan"
+  },
+  {
+   "name": "Activity Log template for Education and Outreach",
+   "where": "text",
+   "quote": "a template for the activity log for education and outreach efforts to comply with the new"
+  },
+  {
+   "name": "Think Blue Mass campaign materials (MA DEP)",
+   "where": "text",
+   "quote": "more directly reflect the use of materials in the think blue mass campaign, just released by ma dep."
+  },
+  {
+   "name": "CMRSWC IDDE Plan template",
+   "where": "text",
+   "quote": "central mass regional stormwater coalition (cmrswc) has an idde plan template on their website"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "NOI",
+  "DEP",
+  "water quality",
+  "phosphorus",
+  "IDDE",
+  "construction site runoff",
+  "public education",
+  "Nashua River"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

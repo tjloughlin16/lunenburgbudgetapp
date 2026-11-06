@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2017-09-07",
  "docid": "1541",
@@ -12,31 +12,221 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of June 19, 2017, July 25, 2017, and August 22, 2017",
+   "motion": "Approve the minutes of June 19, 2017, July 25, 2017 and August 22, 2017 (printed as 2107).",
    "moved_by": "Paula",
    "seconded_by": "Tom",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "paula made a motion to approve the minutes of june 19, 2017, july 25, 2017 & august 22, 2107, tom seconded; voted unanimously."
   },
   {
-   "motion": "report out to the Board of Selectmen that negotiations have not succeeded and petition the Department of Telecommunications and Cable for a 60 day extension to begin proceedings for a preliminary letter of non-renewal",
+   "motion": "Report out to the Board of Selectmen that negotiations have not succeeded, and that the Board petition the Department of Telecommunications and Cable for a 60 day extension to begin the process of a preliminary letter of non-renewal.",
    "moved_by": "Paula",
    "seconded_by": "Steve",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "paula so moved; steve seconded. voted unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 7:50 p.m.",
    "moved_by": "Steve Walker",
    "seconded_by": "Paula",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "steve walker made a motion to adjourn at 7:50 p.m., paula seconded. voted unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan contains one typographical error: \"August 22, 2107\" should read 2017; quoted verbatim as it appears in the OCR text per instructions.",
- "cost_usd": 0.1101905
+ "note": "OCR of a scanned minutes page set with no readable header (no stated time or location, no roll call, no chair named). Page 2 opens mid-sentence and page 3 opens mid-sentence, so some discussion is missing between pages. The text has at least one truncated line (\"he has SVEN & FIELD\"). Garbled or odd tokens: \"August 22, 2107\", \"September 19t\", \"Mr. Hewig... he has SVEN & FIELD\". Votes were recorded only as \"unanimously\" with no count. Some dates are misprinted (\"2107\"). Date stamps (DEC 19 2017, received and filed) appear, but the meeting date is supplied by the request. Mike Gale (DTC attorney) is mentioned only and did not take part, so he is not listed as an attendee.",
+ "cost_usd": 0.00562822,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "respectfully submitted, paula bertram"
+  },
+  {
+   "name": "Steve Walker",
+   "status": "present",
+   "quote": "steve walker made a motion to adjourn at 7:50 p.m., paula seconded. voted unanimously."
+  },
+  {
+   "name": "Tom",
+   "status": "present",
+   "quote": "paula made a motion to approve the minutes of june 19, 2017, july 25, 2017 & august 22, 2107, tom seconded"
+  },
+  {
+   "name": "Bill Hewig",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "mr. hewig explained that the offer is way too low and we were hoping for a lot higher."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo emphasized that we need to provide the services that the citizens have requested"
+  },
+  {
+   "name": "Mr. Franks",
+   "role": "of Comcast",
+   "status": "present",
+   "quote": "at this point mr. franks of comcast joined the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Attorney Hewig agreed to provide the DTC letter in advance of the Selectmen's meeting on the 19th.",
+   "quote": "attorney hewig agreed to provide the letter in advance of the meeting on the 19*."
+  },
+  {
+   "decision": "The Town Manager will place the Comcast negotiation topic on the Selectmen's September 19 agenda.",
+   "quote": "the town manager will place this topic on the selectmen's september 19t agenda."
+  },
+  {
+   "decision": "Attorney Hewig will reach out to Mike Gale, DTC attorney, about the possibility of mediation.",
+   "quote": "attorney hewig said he will reach out the mike gale, dtc attorney about the possibility of mediation."
+  },
+  {
+   "decision": "Attorney Hewig is to write a letter to the Board of Selectmen, copying the Cable Committee Chair, on why he recommends extension and possible preliminary assessment of non-renewal (sentence is cut off in the text; wording partial).",
+   "quote": "letter to the board of selectmen and copy the cable committee chair on why he is recommending extension and"
+  },
+  {
+   "decision": "The Chair will determine a date for the next meeting after the hearing with the Selectmen on the 19th.",
+   "quote": "the chair will determine a date for the next meeting after the hearing with the selectmen on the 19th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast offer: capital grant",
+   "what_was_recorded": "The most recent Comcast offer, received the day before, included a capital grant over 10 years, which the committee said does not meet its needs.",
+   "figures_as_printed": [
+    "$130,000/10 years"
+   ],
+   "quote": "capital grant of $130,000/10 years"
+  },
+  {
+   "topic": "License fee and franchise fee structure",
+   "what_was_recorded": "The committee explained that the license fee is a percentage of gross annual revenue and the franchise fee covers all other costs, including capital.",
+   "figures_as_printed": [],
+   "quote": "the license fee is the percentage of gross annual revenue and then the franchise fee is all other costs and includes capital."
+  },
+  {
+   "topic": "Franks counter-figure on capital",
+   "what_was_recorded": "Mr. Franks said that giving $240K would require reducing the franchise fee to 1%.",
+   "figures_as_printed": [
+    "$240K",
+    "1%"
+   ],
+   "quote": "if i give you $240k i would have to reduce franchise fee to 1%"
+  },
+  {
+   "topic": "Per-subscriber capital request",
+   "what_was_recorded": "Hewig said the Town is asking to go from $.24 to $.60, a small amount.",
+   "figures_as_printed": [
+    "$.24",
+    "$.60"
+   ],
+   "quote": "we are asking to go from $.24 to $.60, which is a small amount."
+  },
+  {
+   "topic": "Increase in percentage fee over license",
+   "what_was_recorded": "Mr. Franks said the increase in the percentage fee equates to two million over the course of the license.",
+   "figures_as_printed": [
+    "two million"
+   ],
+   "quote": "the increase in the percentage fee equates to two million over the course of the license."
+  },
+  {
+   "topic": "Comcast revenue from Lunenburg subscribers",
+   "what_was_recorded": "Mr. Alonzo said Comcast is making about 32 million per year on Lunenburg subscribers.",
+   "figures_as_printed": [
+    "32 million"
+   ],
+   "quote": "comcast is making about 32 million per year on lunenburg subscribers."
+  },
+  {
+   "topic": "Gap between Town request and Comcast offer",
+   "what_was_recorded": "The committee said the difference between its request and Comcast's offer equates to $11,000 per year.",
+   "figures_as_printed": [
+    "$11,000"
+   ],
+   "quote": "the difference between what we are requesting and what comcast is offering equates to $11,000 per year."
+  },
+  {
+   "topic": "Pass-through cost to subscribers",
+   "what_was_recorded": "The pass-through cost to a subscriber is about .32 cents on a monthly bill.",
+   "figures_as_printed": [
+    ".32 cents"
+   ],
+   "quote": "the pass through cost to the subscriber is actually about .32 cents on a monthly bill."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes/Correspondence",
+   "resolution": "approved minutes of June 19, July 25 and August 22, 2017",
+   "quote": "paula made a motion to approve the minutes of june 19, 2017, july 25, 2017 & august 22, 2107, tom seconded; voted unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Negotiations with Comcast on New Cable Contract",
+   "resolution": "continued; committee voted to report to Selectmen and recommend a 60 day extension petition to DTC",
+   "quote": "negotiations with comcast on new cable contract - committee discussed the most recent offer from comcast which",
+   "tags": [
+    "Comcast",
+    "franchise renewal",
+    "negotiations",
+    "capital grant",
+    "DTC"
+   ]
+  },
+  {
+   "topic": "Plan moving forward",
+   "resolution": "no vote; Town Manager to place topic on Selectmen's September 19 agenda; Chair to set next meeting date",
+   "quote": "committee discussed plan moving forward. the town manager will place this topic on the selectmen's september 19t agenda.",
+   "tags": [
+    "Board of Selectmen",
+    "schedule",
+    "non-renewal"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50 p.m.",
+   "quote": "steve walker made a motion to adjourn at 7:50 p.m., paula seconded. voted unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter to the Department of Telecommunications and Cable (DTC) requesting extension",
+   "where": "text",
+   "quote": "paula asked if attorney hewig could have the letter to dtc prepared for the meeting on the 19*."
+  }
+ ],
+ "tags": [
+  "cable",
+  "Comcast",
+  "franchise renewal",
+  "PEG access",
+  "capital grant",
+  "DTC",
+  "negotiations",
+  "Board of Selectmen",
+  "extension",
+  "non-renewal"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

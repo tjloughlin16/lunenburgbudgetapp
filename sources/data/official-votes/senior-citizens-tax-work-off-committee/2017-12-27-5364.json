@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2017-12-27",
  "docid": "5364",
@@ -12,6 +12,108 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "The minutes describe several decisions (\"Members reviewed and approved all applications\", \"Members discussed and approved all department openings\", \"Members discussed and approved the request for an additional worker\") but do not record any formally voted motions with the language defined as a vote (no \"motion by X, seconded by Y\", no \"voted\", no \"carried/failed\", no \"unanimously approved\", no \"so voted\"). The decisions are stated as descriptions of what the members did, not as recorded vote outcomes. Additionally, there is an adjournment but no vote language recorded for it.",
- "cost_usd": 0.08364150000000001
+ "note": "OCR text of a scanned page. No formal motions or vote tallies are recorded; the approvals are stated as \"approved\" without a motion, so they are listed as decisions, not votes. The stamp on the page reads \"OCT 2 5 2018\", which is after this meeting date, and the stamp text is partly garbled. The signature reads \"Maiger\" in the OCR and is printed as Sheila Craigen. Roles are not printed for any attendee. No dollar figures appear. Adjournment at 2:30 pm is recorded without a motion.",
+ "cost_usd": 0.00298502,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "",
+   "status": "present",
+   "quote": "meeting called to order by sue doherty at 2:04 pm, at lunenburg town hall, 17 main st."
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "",
+   "status": "present",
+   "quote": "members present: nancy forest, sheila craigen and sue doherty."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "",
+   "status": "present",
+   "quote": "members present: nancy forest, sheila craigen and sue doherty."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members approved all 2018 applications (5 return workers and 1 new application).",
+   "quote": "members reviewed and approved all applications."
+  },
+  {
+   "decision": "Members approved all department openings, including the additional position at the school.",
+   "quote": "members discussed and approved all department openings, including the additional position at the school."
+  },
+  {
+   "decision": "Members approved the COA request for an additional worker at the Senior Center.",
+   "quote": "members discussed and approved the request for an additional worker at the senior center."
+  },
+  {
+   "decision": "Sue Doherty will follow up with the Selectman regarding the Property Tax Work-Off Committee vacancy.",
+   "quote": "sue will follow up with selectman regarding the property tax work-off committee vacancy."
+  },
+  {
+   "decision": "Members agreed to review the October 3, 2017 minutes at the next meeting.",
+   "quote": "members agree review of the october 3, 2017 minutes will be on the agenda for the next meeting."
+  },
+  {
+   "decision": "Members agreed to set the date for the next meeting as needed.",
+   "quote": "members agree we will set date for the next meeting as needed."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "2018 application approvals",
+   "resolution": "approved all six applications (5 return workers, 1 new)",
+   "quote": "2018 application approvals: sue doherty presented 6 applications.",
+   "tags": [
+    "applications",
+    "2018"
+   ]
+  },
+  {
+   "topic": "COA job application",
+   "resolution": "approved request for an additional worker at the Senior Center",
+   "quote": "coa job application: members discussed and approved the request for an additional worker at the senior center.",
+   "tags": [
+    "COA",
+    "Senior Center",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Property Tax Work-Off Committee vacancy",
+   "resolution": "Sue Doherty to follow up with Selectman; no vote recorded",
+   "quote": "sue will follow up with selectman regarding the property tax work-off committee vacancy.",
+   "tags": [
+    "committee vacancy"
+   ]
+  },
+  {
+   "topic": "Set date for next meeting",
+   "resolution": "meet as needed; no date set",
+   "quote": "set date for next meeting: members agree we will set date for the next meeting as needed.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "senior citizens",
+  "tax work-off",
+  "volunteer applications",
+  "COA",
+  "Senior Center staffing",
+  "committee vacancy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "received & filed"
+ },
+ "dropped_unquoted_by_field": {}
 }

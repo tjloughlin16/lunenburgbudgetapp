@@ -1,0 +1,503 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2018-10-02",
+ "video_id": "Wa2khgCtLkc",
+ "video_url": "https://www.youtube.com/watch?v=Wa2khgCtLkc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2018-10-02-Wa2khgCtLkc.json",
+  "sha256": "3fa194c5a82779d55f18d80cc9b532eaf12ea25a12b8d5fd2157fc1c682e6f0c",
+  "caption_lines": 538,
+  "segments": 4101
+ },
+ "recording": {
+  "duration_s": 11491,
+  "duration": "3:11",
+  "spoken_chars": 148577,
+  "words_approx": 24762
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10022018-5087",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-10-02-agenda-5087.txt",
+   "path": "sources/meetings/select-board/2018-10-02-agenda-5087.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10022018-5087",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-10-02-minutes-5087.txt",
+   "path": "sources/meetings/select-board/2018-10-02-minutes-5087.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T17:57:10Z",
+  "cost_usd": 0.3116611
+ },
+ "minutes": {
+  "headline": "Board leaned to the smaller TC Passios office option but kept it on the agenda; police mutual aid vote held for training info.",
+  "summary": "The board ratified two police hires and an interim building commissioner, heard the architect's cost options for consolidating town offices at TC Passios, and reviewed a draft noise bylaw and special event permit policy. It held the Middlesex mutual aid agreement pending training information, extended the special town meeting warrant closing date, and signed a DPW union contract.",
+  "attendees": [
+   {
+    "name_as_heard": "Mrs. Adams",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 84,
+    "speaker_as_heard": "Lynn Mann",
+    "topic": "Group asked for a moratorium on forest stewardship cutting, a site walk, a task force and a spot on the next agenda."
+   },
+   {
+    "t": 422,
+    "speaker_as_heard": "Ingrid Cruz Helmer",
+    "topic": "Update on the Lunenburg opiate awareness group and its November 1st event."
+   },
+   {
+    "t": 11065,
+    "topic": "Resident asked the board to let the public help craft the noise bylaw and event permit documents."
+   }
+  ],
+  "tags": [
+   "capital",
+   "contracts-and-unions",
+   "facilities",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1106,
+    "motion": "Ratify town manager appointment of two full-time police officers effective Oct 11 and Oct 12.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 9273,
+    "motion": "Change closing date of special Town Meeting warrant to October 11, 2018 at 5 p.m.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3787,
+    "motion": "Offer the town more than one conceptual pathway for the future of Town Hall.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 11483,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1297,
+    "topic": "TC Passios renovation cost estimate",
+    "what_was_said": "Architect presented per-square-foot assumptions and three option budgets.",
+    "figures_as_heard": [
+     "$11 a square foot",
+     "nine million four hundred fifty five thousand hundred fifty dollars",
+     "eight million one hundred eighty two thousand seven hundred dollars"
+    ]
+   },
+   {
+    "t": 4827,
+    "topic": "Free cash",
+    "what_was_said": "Finance director submitted the balance to be certified as free cash.",
+    "figures_as_heard": [
+     "1.3 million"
+    ]
+   },
+   {
+    "t": 9838,
+    "topic": "DPW contract first year funding",
+    "what_was_said": "Draft article transfers from salary reserve to fund the first year of the DPW agreement.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 9838,
+    "description": "From salary reserve account to fund DPW collective bargaining first year",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4124,
+    "decision": "TC Passios office consolidation kept as a regular agenda item."
+   },
+   {
+    "t": 9297,
+    "decision": "Workshop with School Committee proposed for November 7th."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 84,
+    "t_end": 800,
+    "topic": "Public comment: forest cutting and opiate awareness",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 868,
+    "t_end": 1190,
+    "topic": "Police and building commissioner appointments",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1190,
+    "t_end": 4124,
+    "topic": "TC Passios office options",
+    "resolution": "no resolution",
+    "tags": [
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 4148,
+    "t_end": 5030,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 5041,
+    "t_end": 6840,
+    "topic": "Noise bylaw and special event permit",
+    "resolution": "referred",
+    "tags": [
+     "policy",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 6836,
+    "t_end": 9188,
+    "topic": "Police mutual aid agreement",
+    "resolution": "tabled",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 9188,
+    "t_end": 10144,
+    "topic": "Warrant date, school workshop, contract, warrant articles",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 10144,
+    "t_end": 11483,
+    "topic": "Citation, minutes, warrants, reports, public comment",
+    "resolution": "voted",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote counts were not stated; most motions were followed by 'aye' with no result recorded in captions."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3491,
+    "about": "A member said she was repeatedly cut off when speaking.",
+    "sides": "a member against the chair",
+    "words_as_heard": "I am not allowed to speak up here I'm not allowed to think I'm not allowed to ask questions it's getting absurd",
+    "kind": "procedural fight"
+   },
+   {
+    "t": 3959,
+    "about": "Exchange over experience with the building reuse process.",
+    "sides": "a member and another member",
+    "words_as_heard": "you're not the king of Lunenburg",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2616,
+    "kind": "safety",
+    "about": "Mixing school and public use at TC Passios.",
+    "who": "a member",
+    "words_as_heard": "I have a lot of just confusing safety concerns of using a space partially as school partially as general public"
+   },
+   {
+    "t": 8550,
+    "kind": "condition",
+    "about": "Wants training information from a Middlesex town before voting on mutual aid.",
+    "who": "a member",
+    "words_as_heard": "before I'd be willing to vote I'd like to have some information from some town in Middlesex County about what they do for training"
+   },
+   {
+    "t": 10097,
+    "kind": "condition",
+    "about": "Wants dollar amounts before acting on warrant articles.",
+    "who": "a member",
+    "words_as_heard": "I want to see some of the dollar amounts in there"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1232,
+    "name_as_heard": "Option evaluation presentation",
+    "kind": "presentation",
+    "words_as_heard": "what is in the presentation is a an evaluation of the options written with a budget cost evaluation"
+   },
+   {
+    "t": 5667,
+    "name_as_heard": "special event draft",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "it's in the package called special event draft"
+   },
+   {
+    "t": 9725,
+    "name_as_heard": "draft warrant",
+    "kind": "warrant article",
+    "words_as_heard": "in your packet is a draft of the warrant so far"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "town-office-space",
+    "title": "Town office space",
+    "question": "What would each TC Passios office option cost?",
+    "t": 1742,
+    "words_as_heard": "nine million four hundred fifty five thousand hundred fifty dollars",
+    "data_in_play": [
+     "$168 per square foot",
+     "eight million one hundred eighty two thousand seven hundred dollars"
+    ],
+    "existing": "thread:town-offices"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The board heard the architect's cost options for consolidating town offices at TC Passios and reached no resolution, keeping it as a regular agenda item.",
+    "t": 1297
+   },
+   {
+    "line": "The board held the Middlesex police mutual aid agreement, tabling it pending training information.",
+    "t": 6836
+   },
+   {
+    "line": "The board ratified the town manager's appointment of two full-time police officers.",
+    "t": 1106
+   },
+   {
+    "line": "The board changed the closing date of the special Town Meeting warrant to October 11, 2018 at 5 p.m.",
+    "t": 9273
+   },
+   {
+    "line": "The board reviewed a draft noise bylaw and special event permit policy, and a draft article would transfer from a salary reserve to fund the first year of the DPW contract.",
+    "t": 5041
+   }
+  ],
+  "why_it_matters": [
+   "The TC Passios option the board chooses sets how much the town budget, mostly taxes, may be asked to spend on office space, and Town Meeting voters could be asked to approve it.",
+   "The noise bylaw and event permit policy would set rules for residents and event hosts, and the DPW contract's first-year funding is a transfer that the special Town Meeting warrant may ask voters to approve."
+  ],
+  "watch_next": [
+   "The special Town Meeting warrant closes October 11, 2018 at 5 p.m.",
+   "A workshop with the School Committee was proposed for November 7th."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T17:57:17Z",
+   "cost_usd": 0.0226511
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10022018-5087",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-10-02-minutes-5087.txt",
+   "path": "sources/meetings/select-board/2018-10-02-minutes-5087.pdf"
+  },
+  "official_sha256": "dd62ff5c88fe9d8189a85b11fa3926e4e46ba7901c67f191027eac350cb86b62",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the police officer ratification, the closing-date amendment, and most attendees, but our minutes miss several official votes and give a different Free Cash figure. A reader should check the Free Cash number ($1.3 million vs $1.53M) and whether the DPW transfer was voted, since the official minutes record no transfer.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 4,
+   "only_in_ours": 1,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Ratify appointment of two full-time police officers effective Oct 11 and Oct 12",
+    "ours": "Ratify town manager appointment of two full-time police officers effective Oct 11 and Oct 12. — not audible",
+    "official": "to ratify the appointment of jack wagner to full-time police officer effective october 11, 2018 and the appointment of gage russell as full-time police officer effective october 12, 2018",
+    "note": "Same item; the official minutes name the officers and record it as passed, while our record did not hear the outcome.",
+    "t": 1106
+   },
+   {
+    "kind": "agree",
+    "about": "Change of special Town Meeting warrant closing date to Oct 11, 2018 5 p.m.",
+    "ours": "Change closing date of special Town Meeting warrant to October 11, 2018 at 5 p.m. — not audible",
+    "official": "to amend the closing date of the special town meeting warrant until 5:00 p.m. on october 11, 2018 vote: all in favor",
+    "note": "Same motion; the official minutes add that it passed unanimously.",
+    "t": 9273
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Free cash figure",
+    "ours": "Free cash: 1.3 million",
+    "official": "has since submitted with a balance of $1.53m to be certified as free cash.",
+    "note": "The figures differ beyond a simple misheard digit, so check the recording and the Finance Director's report for the actual balance.",
+    "t": 4827
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Transfer from salary reserve for DPW collective bargaining",
+    "ours": "From salary reserve account to fund DPW collective bargaining first year — not stated (discussed only)",
+    "official": "",
+    "note": "Our minutes list a transfer that the official minutes do not mention, and they list TRANSFERS as none; check whether it was discussed or voted.",
+    "t": 9838
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on conceptual pathway for Town Hall",
+    "ours": "Offer the town more than one conceptual pathway for the future of Town Hall. — not audible",
+    "official": "mr. ebersole moved the question. vote: 1 in favor (adams), opposed- 4",
+    "note": "The official minutes record only a failed motion to move the question on the TC Passios discussion, not a vote on offering multiple pathways; check the recording for what was voted.",
+    "t": 3787
+   },
+   {
+    "kind": "caption_error",
+    "about": "TC Passios Option 1 construction budget total",
+    "ours": "nine million four hundred fifty five thousand hundred fifty dollars",
+    "official": "construction budget: cost $ 16,100 14,400 549,850 8,374,800 $ 500,000 $ 9,455,150",
+    "note": "Same Option 1 total, garbled by the captions.",
+    "t": 1297,
+    "official_reading": "$9,455,150"
+   },
+   {
+    "kind": "caption_error",
+    "about": "TC Passios Option 2 construction budget total",
+    "ours": "eight million one hundred eighty two thousand seven hundred dollars",
+    "official": "construction budget: cost $ 86,700 78,030 479,250 7,188,720 $ 350.000 $ 8,182,700",
+    "note": "Same Option 2 total as printed.",
+    "t": 1297,
+    "official_reading": "$8,182,700"
+   },
+   {
+    "kind": "agree",
+    "about": "Hazardous materials abatement rate of $11 per square foot",
+    "ours": "TC Passios renovation cost estimate: $11 a square foot",
+    "official": "he determined a cost of $11/square foot for the hazardous materials abatement based on the study by the vertex",
+    "note": "The $11 per square foot figure matches.",
+    "t": 1297
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Move the question on TC Passios discussion",
+    "ours": "",
+    "official": "mr. ebersole moved the question. vote: 1 in favor (adams), opposed- 4",
+    "note": "A failed vote that our minutes do not record.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Ratify Garry Rhodes as interim building commissioner",
+    "ours": "",
+    "official": "to ratify the appointment of garry rhodes as interim building commissioner vote: all in favor",
+    "note": "A passed vote that our minutes do not record.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Gilchrist Street disclosure statement vote",
+    "ours": "",
+    "official": "to authorize the chair to sign the disclosure statement for disposition of the gilchrist street property vote: 4 in favor, 1 opposed (adams)",
+    "note": "A 4-1 vote that our minutes do not record.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Union contract with Public Employees Local 39",
+    "ours": "",
+    "official": "to sign the union contract with the public employees local 39 union vote: all in favor",
+    "note": "A passed vote that our minutes do not record. It may relate to the DPW bargaining discussion, so check.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "TC Passios office consolidation and Article 13 schematic design",
+    "ours": "TC Passios office consolidation kept as a regular agenda item.",
+    "official": "it was decided to wait until annual town meeting in may 2019.",
+    "note": "The records describe different outcomes for TC Passios (a standing agenda item vs. deferring schematic design funding to May 2019); check the recording.",
+    "t": 4124
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Workshop with School Committee on November 7th",
+    "ours": "Workshop with School Committee proposed for November 7th.",
+    "official": "",
+    "note": "The official minutes do not mention this workshop.",
+    "t": 9297
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decisions on noise bylaw, special events permit, and Hazelrigg citation",
+    "ours": "",
+    "official": "this article will be placed on the special town meeting warrant.",
+    "note": "Several official decisions (noise bylaw article, Burney workshop invitation, Hazelrigg citation) are absent from our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mrs. Adams",
+    "ours": "Mrs. Adams (member)",
+    "official": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; phyllis luck, member; katey adams, member",
+    "note": "Same member, Katey Adams; the other attendees appear only in the official minutes.",
+    "t": 0,
+    "official_reading": "Katey Adams"
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T17:59:27Z",
+   "cost_usd": 0.0557131
+  }
+ }
+}

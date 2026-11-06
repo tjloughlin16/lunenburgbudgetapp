@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-01-23",
  "docid": "5092",
@@ -12,23 +12,378 @@
  },
  "votes": [
   {
-   "motion": "Accept the composite Town Manager Performance Evaluation as read and amended",
+   "motion": "Accept the composite Town Manager Performance Evaluation as read and amended.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
+   "outcome": "passed, all in favor",
+   "procedural": false,
+   "quote": "to accept the composite town manager performance evaluation as read and amended"
+  },
+  {
+   "motion": "Approve the minutes of December 19, 2017 and January 2, 2018.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion:r. ebersole to accept the composite town manager performance evaluation as read and amended 2\"d: p. bertram vote: all in favor"
+   "quote": "the board approved minutes of december 19, 2017 and january 2, 2018."
   },
   {
    "motion": "Adjourn the meeting at 8:13 p.m.",
    "moved_by": "P. Bertram",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
+   "seconded_by": "R.Ebersole",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:13 p.m. 2\"d: r.ebersole vote: all in favor"
+   "quote": "motion: p. bertram to adjourn the meeting at 8:13 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision. The minutes mention \"The Board approved minutes of December 19, 2017 and January 2, 2018\" but this is stated as approval without explicit motion language, so it is not included as a recorded vote.",
- "cost_usd": 0.09174349999999999
+ "note": "Text is OCR from scanned pages. Page 2 begins mid-sentence, so part of the appointment discussion is missing. Page 3 is partly garbled, but the evaluation text and vote are readable. The minutes print two different town-share figures: $38,809,377 in the appointment remarks and $33,809,377 in the Finance Director's bonding summary; both are recorded as printed. The minutes record \"The Board approved minutes\" without a stated motion or mover, so that item is recorded as passed with no mover. No votes were recorded on the MSBA payment requisition or the warrants; the Board signed them. Attendance is inferred from speaking or voting; the minutes do not state an attendance roll.",
+ "cost_usd": 0.009787520000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chair, Board of Selectmen",
+   "status": "present",
+   "quote": "mr. toale reported the town manager performance is evaluated annually according to her contract."
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "ms. luck stated she was proud to be a lunenburg representative at the massachusetts municipal association"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "mr. ebersole thanked executive assistant peterson for her appropriate minutes recording and responsiveness."
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "ms. bertram reported cable advisory committee and the mpo are both meeting tomorrow."
+  },
+  {
+   "name": "McQuaid",
+   "role": "Selectman",
+   "status": "not stated",
+   "quote": "from input by selectmen toale, ebersole, bertram, luck and mcquaid"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "ms. lemieux reported she and chairman toale discussed holding an agenda planning workshop in february"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  },
+  {
+   "name": "Mike Mackin",
+   "role": "Lunenburg School Building Committee Chair",
+   "status": "present",
+   "quote": "mike mackin, 26 cortland circle and lunenburg school building committee chair, reported the committee"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director karen brochu presented a summary of middle/high school construction project revenues and expenditures."
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Superintendent of Schools and resident",
+   "status": "present",
+   "quote": "loxi calmes, superintendent of schools and resident, wanted to give a big shout out to the dpw for the exemplary job"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, 40 williams drive, wondered if the town could come up with a more immediate solution for accessibility to meetings."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, questioned as a sponsor of an amendment to an article at the special town meeting last november"
+  },
+  {
+   "name": "Facilities Director Londa",
+   "role": "Facilities Director",
+   "status": "not stated",
+   "quote": "the board requested facilities director londa come in and provide more detail."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Toale will make the wording changes to the Town Manager evaluation and present it for signatures at the next meeting.",
+   "quote": "mr. toale will make the changes and present for signatures at the next meeting."
+  },
+  {
+   "decision": "An Executive Session will follow the next Board meeting to discuss any salary action for the Town Manager.",
+   "quote": "there will be an executive session following the next board meeting to discuss any salary action."
+  },
+  {
+   "decision": "Half of the February 13 meeting will be used for regular business and the other half for an agenda planning workshop.",
+   "quote": "half of the february 13 meeting will be used for regular business and the other for the agenda workshop."
+  },
+  {
+   "decision": "The Board requested Facilities Director Londa come in to provide more detail on the warranty and facility matter.",
+   "quote": "the board requested facilities director londa come in and provide more detail."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MSBA Middle/High school project total budget and cost",
+   "what_was_recorded": "The School Building Committee chair reported the project total budget, the amount expended, and that it came in about four million dollars under budget.",
+   "figures_as_printed": [
+    "$72,975,321.00",
+    "$68,106,475",
+    "four million dollars"
+   ],
+   "quote": "the total budget was $72,975,321.00. we expended $68,106,475."
+  },
+  {
+   "topic": "Estimated town share of the school project",
+   "what_was_recorded": "The School Building Committee chair said the town share will be around a stated figure, with MSBA deciding what is reimbursable.",
+   "figures_as_printed": [
+    "$38,809,377"
+   ],
+   "quote": "the town share will be around $38,809,377."
+  },
+  {
+   "topic": "MSBA reimbursements to date and total cost",
+   "what_was_recorded": "The Finance Director said the total cost was the amount expended and MSBA had reimbursed a stated amount to date.",
+   "figures_as_printed": [
+    "$68,106,475",
+    "$32,233,840"
+   ],
+   "quote": "the total cost was $68,106,475. msba has reimbursed $32,233,840 to date."
+  },
+  {
+   "topic": "MSBA balance owed and anticipated final reimbursement",
+   "what_was_recorded": "The Finance Director reported a balance owed from the last requisition, the withheld final payment, and the anticipated MSBA reimbursement.",
+   "figures_as_printed": [
+    "$241,296",
+    "$172,455.23",
+    "$167,098"
+   ],
+   "quote": "the anticipated reimbursement from the final payment of $172,455.23 that you are withholding"
+  },
+  {
+   "topic": "Total MSBA receipts and total local share",
+   "what_was_recorded": "The Finance Director projected total MSBA receipts after final reimbursement and the total local share expended.",
+   "figures_as_printed": [
+    "$32,642,234",
+    "$35,464,241"
+   ],
+   "quote": "once we have received everything from msba the total received will be $32,642,234."
+  },
+  {
+   "topic": "Bonds issued and remaining amount to bond",
+   "what_was_recorded": "The Finance Director reported bonds issued and other sources applied to the project, leaving a final balance to bond that depends on the MSBA audit.",
+   "figures_as_printed": [
+    "$33,809,377",
+    "$1,654,863"
+   ],
+   "quote": "is $33,809,377, leaving a final balance to bond at $1,654,863."
+  },
+  {
+   "topic": "Bond anticipation note and projected interest rate",
+   "what_was_recorded": "A $2,100,000 bond anticipation note will carry the project through the audit, and the financial advisor projects 4% interest on long-term bonds.",
+   "figures_as_printed": [
+    "$2,100,000",
+    "4%"
+   ],
+   "quote": "we have the $2,100,000 bond anticipation note to carry us through to the end of the project and the audit."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed accounts payable and payroll warrants in stated amounts.",
+   "figures_as_printed": [
+    "$439,019.64",
+    "$3,000",
+    "$743,605.69",
+    "$161,409.03"
+   ],
+   "quote": "they signed an accounts payable warrant in the amount of $439,019.64, an accounts payable warrant in the amount of $3,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Accessibility to Board meetings",
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "quote": "katey adams, 40 williams drive, wondered if the town could come up with a more immediate solution for accessibility to meetings."
+  },
+  {
+   "topic": "Thanks to DPW and Career Day",
+   "speaker": "Loxi Calmes",
+   "stated_role": "Superintendent of Schools and resident",
+   "quote": "loxi calmes, superintendent of schools and resident, wanted to give a big shout out to the dpw for the exemplary job"
+  },
+  {
+   "topic": "Property condition assessments for Turkey Hill and Eagle House",
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "quote": "dave passios, 56 whiting street, questioned as a sponsor of an amendment to an article at the special town meeting last november"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Appointment: MSBA MS/HS project closeout and final payment requisition",
+   "resolution": "reported; no vote recorded",
+   "quote": "meeting with school building committee chairman and superintendent to sign documents for the closeout of the msba ms/hs project",
+   "tags": [
+    "school building project",
+    "MSBA reimbursement",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; no action",
+   "quote": "information related to the complete streets program is now up on the town website under public notices.",
+   "tags": [
+    "Complete Streets",
+    "town facilities",
+    "property assessments",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Annual Town Manager performance evaluation",
+   "resolution": "composite evaluation accepted as amended",
+   "quote": "mr. toale reported the town manager performance is evaluated annually according to her contract.",
+   "tags": [
+    "personnel",
+    "town manager",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "February workshop",
+   "resolution": "agreed to split February 13 meeting between business and workshop",
+   "quote": "ms. lemieux reported she and chairman toale discussed holding an agenda planning workshop in february",
+   "tags": [
+    "agenda",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "the board approved minutes of december 19, 2017 and january 2, 2018.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Action items: zoning vote bill and social media policy",
+   "resolution": "no action recorded",
+   "quote": "ms. luck stated the state is looking to change zoning approval (via house bill #4075)",
+   "tags": [
+    "zoning",
+    "legislation",
+    "social media policy"
+   ]
+  },
+  {
+   "topic": "Board and committee reports, meeting schedule, public comment",
+   "resolution": "informational; no action",
+   "quote": "mr. toale reviewed the upcoming meeting schedule of this board.",
+   "tags": [
+    "meeting schedule",
+    "committee reports",
+    "regional planning",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:13 p.m.",
+   "quote": "motion: p. bertram to adjourn the meeting at 8:13 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Composite Town Manager Performance Evaluation - January 23, 2018",
+   "where": "text",
+   "quote": "composite town manager performance evaluation - january 23, 2018, prepared by jamie toale, chair"
+  },
+  {
+   "name": "Complete Streets Policy adopted in April 2017",
+   "where": "text",
+   "quote": "this includes the complete streets policy adopted in april 2017"
+  },
+  {
+   "name": "Meeting minutes of December 5th with town officials (Complete Streets)",
+   "where": "text",
+   "quote": "the meeting minutes of december 5th with town officials"
+  },
+  {
+   "name": "PowerPoint presentation of Woodard & Curran from the January 9th workshop on Complete Streets",
+   "where": "text",
+   "quote": "the powerpoint presentation of woodard & curran from the january 9th workshop on complete streets"
+  },
+  {
+   "name": "House Bill #4075",
+   "where": "text",
+   "quote": "the state is looking to change zoning approval (via house bill #4075) at town meetings from a"
+  },
+  {
+   "name": "Five Year Financial Forecast and Capital Planning report",
+   "where": "text",
+   "quote": "ms. lemieux will present the five year financial forecast and the capital planning report at the finance committee meeting"
+  },
+  {
+   "name": "FY19 budget presentation",
+   "where": "text",
+   "quote": "town manager will present the fy19 budget presentation"
+  },
+  {
+   "name": "Final Payment Requisition (MSBA)",
+   "where": "text",
+   "quote": "and bos sign final payment requisition"
+  }
+ ],
+ "tags": [
+  "Town Manager evaluation",
+  "school building project closeout",
+  "MSBA reimbursement",
+  "bonding",
+  "warrants",
+  "Complete Streets",
+  "public comment",
+  "meeting schedule",
+  "zoning legislation",
+  "social media policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

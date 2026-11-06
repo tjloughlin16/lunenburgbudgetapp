@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-04-18",
  "docid": "6187",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Issue negative determination for Scott Patterson's patio rehabilitation at 914 Flatt Hill Road",
+   "motion": "Issue a negative determination on the Request for a Determination for 914 Flatt Hill Road (Scott Patterson).",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
@@ -21,23 +21,15 @@
    "quote_taken_from_text": true
   },
   {
-   "motion": "Approve the recommendation to allow Marley and Ryan Dixon one more continuance for Sandy Beach determination at 307 Townsend Harbor Road",
+   "motion": "Approve the continuance of the Dixon Request for a Determination (307 Townsend Harbor road), with one more continuance allowed.",
    "moved_by": "PB",
    "seconded_by": "CC",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "it was approved with a motion by pb and a second by cc"
+   "procedural": false,
+   "quote": "approved with a motion by pb and a second by cc."
   },
   {
-   "motion": "Continue the Dixon Sandy Beach determination hearing to May 2, 2018",
-   "moved_by": "TD",
-   "seconded_by": "KJ",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the continuance was approved by a motion of td and a second of kj"
-  },
-  {
-   "motion": "Approve order of conditions for Signature Living LLC 3-family unit at 654 Mass Ave",
+   "motion": "Approve the order of conditions for the continued Notice of Intent by Signature Living LLC (654 Mass Ave).",
    "moved_by": "KJ",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
@@ -45,15 +37,15 @@
    "quote": "kj moved to approved the order of conditions. cc seconded ant the commission voted unanimously."
   },
   {
-   "motion": "Continue the Hickory Hills Association drawdown management plan hearing to May 2, 2018",
+   "motion": "Continue the Hickory Hills Association Notice of Intent (drawdown management plan) to the May 2, 2018 meeting.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "this was continued to the may 2, 2018 meeting at 960 mass ave at 7 pm by a motion of kj and a second from bp."
   },
   {
-   "motion": "Issue positive determination for David Osoff's addition to single family home at 46 Fire Road 12",
+   "motion": "Issue a positive determination on the Request for a Determination for 46 Fire Road 12 (David Osoff).",
    "moved_by": "CL",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
@@ -61,31 +53,31 @@
    "quote": "cl moved for a positive determination. bp seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue Paul Karapatsas's Dippin Donuts addition request to May 2, 2018",
+   "motion": "Continue the Dippin Donuts Request for a Determination (455 Mass Ave) to the May 2, 2018 meeting.",
    "moved_by": "BP",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "bp moved to continue to the may 2, 2018 meeting at 90 mass ave at 7 pm. cc seconded and the commission approved unanimously."
   },
   {
-   "motion": "Continue Kenneth Tully's single family home notice of intent hearing to May 2, 2018",
+   "motion": "Continue the Kenneth Tully Notice of Intent (54 Maple Parkway) to May 2 per MM's recommendation.",
    "moved_by": "KJ",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "kj moved to continue to the 2 nd of may per mm's recommendation. cc seconded and the commission approved the motion unanimously."
   },
   {
-   "motion": "Approve order of conditions for Matson Homes single family home at 63 Prospect Street with amended no-touch zone",
+   "motion": "Approve an order of conditions for the Matson Homes Notice of Intent (63 Prospect Street), with the condition that the plan be amended to change the no touch zone to 50 feet.",
    "moved_by": "CL",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the commission voted to approve an order of conditions with the condition added that the plan would be amended to include the change of the no touch zone to 50 feet by a motion of cl and a second by cc with a unanimous vote."
+   "quote": "the commission voted to approve an order of conditions with the condition added that the plan would be amended to include the change of the no touch zone to 50 feet"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:30 PM.",
    "moved_by": "CL",
    "seconded_by": "TD",
    "outcome": "passed unanimously",
@@ -94,6 +86,482 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Tim Ialeggio's addition and deck request was withdrawn by the applicant; no vote was taken. Votes are recorded for substantive determinations (negative/positive), orders of conditions, continuations, and procedural matters (adjourn).\"",
- "cost_usd": 0.1532775
+ "note": "Revised minutes, extracted text with some line breaks and spacing errors. Members are recorded only by initials in motions (RB, TD, BP, CC, CL, JR, KJ, MM); MM is taken as Matthew S. Marro, the Conservation Administrator named in the header, and member roles other than Chair and Vice-Chair are not printed. 'PB' appears once and is likely BP; it is kept as printed. The Dixon continuance approval is stated twice (motion by PB, second by CC; then motion of TD, second of KJ) and is recorded once, as the first statement. Several votes record only 'unanimously' with no count. The Public Comment heading has no speakers. The 3/21 and 4/6 minutes had amendments presented with no vote recorded. The Extension Permit heading is empty. The Dippin Donuts continuance gives 90 Mass Ave, while other items give 960 Mass Ave. Attendance for applicants is not stated except where the minutes say they appeared.",
+ "cost_usd": 0.013470020000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order- all members were in attendance."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "call to order- all members were in attendance."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order- all members were in attendance."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order- all members were in attendance."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order- all members were in attendance."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order- all members were in attendance."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order- all members were in attendance."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted that he will be in district court on may 2, 2018 for 101 pleasant"
+  },
+  {
+   "name": "Javier Marin",
+   "role": "presenter, USDA Presentation",
+   "status": "present",
+   "quote": "javier marin presented a slideshow to the commission and the general public on the emerald ash borer."
+  },
+  {
+   "name": "Chares Hadju",
+   "role": "representing Scott Patterson",
+   "status": "present",
+   "quote": "chares hadju representing scott patterson had recounted that there was more detail."
+  },
+  {
+   "name": "Scott Patterson",
+   "role": "applicant, Request for a Determination, 914 Flatt Hill Road",
+   "status": "not stated",
+   "quote": "request for a determination by scott patterson for the rehabilitation of an existing paver patio and replacement of"
+  },
+  {
+   "name": "Marley and Ryan Dixon",
+   "role": "applicant, continued Request for a Determination, 307 Townsend Harbor road",
+   "status": "not stated",
+   "quote": "a continued public meeting on a request for a determination by marley and ryan dixon for the construction of a sandy beach"
+  },
+  {
+   "name": "Gregory Roy",
+   "role": "presenter, updates approved by the planning board",
+   "status": "present",
+   "quote": "gregory roy presented the commission the updates approved by the planning board."
+  },
+  {
+   "name": "David Osoff",
+   "role": "applicant, Request for a Determination, 46 Fire Road 12",
+   "status": "not stated",
+   "quote": "a request for a determination for an addition to a single family home by david osoff at 46 fire road 12."
+  },
+  {
+   "name": "Paul Karapatsas",
+   "role": "applicant, Request for a Determination, Dippin Donuts 455 Mass Ave",
+   "status": "not stated",
+   "quote": "a request for a determination for an addition to dippin donuts at 455 mass ave by paul karapatsas."
+  },
+  {
+   "name": "Tim Ialeggio",
+   "role": "applicant, Request for a Determination, 564 page street",
+   "status": "not stated",
+   "quote": "the applicant withdrew and no vote was required for this action."
+  },
+  {
+   "name": "Kenneth Tully",
+   "role": "applicant, Notice of Intent, 54 Maple Parkway",
+   "status": "not stated",
+   "quote": "by kenneth tully for the construction of a single family home at 54 maple parkway"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "representing the applicant (Kenneth Tully)",
+   "status": "present",
+   "quote": "jack maloney appeared on behalf of the applicant and oriented the commission as to the condition of the site in question."
+  },
+  {
+   "name": "Matson Homes",
+   "role": "applicant, Notice of Intent, 63 Prospect Street",
+   "status": "not stated",
+   "quote": "a publi c meeting on a notice of intent by matson homes for the construction of a single family home at 63 prospect street."
+  },
+  {
+   "name": "Wes Flis",
+   "role": "representing the applicant (Matson Homes)",
+   "status": "present",
+   "quote": "wes flis is representing the applicant. he outlined the project and the impacts and how they are mitigated."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant to file more detailed plans for the David Osoff request (46 Fire Road 12), with more detail on both buffer zones and erosion protection and grading.",
+   "quote": "it was recommended that mr.osoff file more detailed plans"
+  },
+  {
+   "decision": "Applicant at Ialeggio (564 page street) withdrew; MM and RB recommended the engineer file a notice of intent for the work and remediation.",
+   "quote": "they recommended that the applicant withdraw the file and have his engineer file a notice of intent for the work proposed and remediation."
+  },
+  {
+   "decision": "Dippin Donuts applicant to research moving the cooler from the rear to the side of the building with building and the board of health.",
+   "quote": "they will research with building and the board of health."
+  },
+  {
+   "decision": "Hickory Hills suction harvesting information to be submitted for a future meeting (likely May 16 2018).",
+   "quote": "to be submitted for a future meeting. (likely may 16"
+  },
+  {
+   "decision": "Site inspection for the Land Exchange on Gilchrest scheduled the day after the meeting at 12:30 PM at the land use office.",
+   "quote": "a site inspection is scheduled to do a site inspection the day following the meeting at 12:30 pm at the land use office."
+  },
+  {
+   "decision": "571 Chase Road violation to remain on the agenda until restoration is completed.",
+   "quote": "571 chase road (c) -no updates : to remain on agenda until restoration is completed (grown in)"
+  },
+  {
+   "decision": "MM to hold a site meeting at Shady Point to review future work and decide whether to file an RDA, with nothing planned within the no touch zone.",
+   "quote": "mm noted he has a site meeting coming up to review the site"
+  },
+  {
+   "decision": "Dixon applicant allowed one more continuance; if no viable plan at the May 2, 2018 meeting, fines will commence.",
+   "quote": "if they do not show up with a viable plan at the may 2, 2018 meeting fines will commence"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Storm water 319 grant",
+   "what_was_recorded": "JR reported the storm water committee is pursuing a 319 grant.",
+   "figures_as_printed": [],
+   "quote": "the 319 grant being pursued by the storm water committee"
+  },
+  {
+   "topic": "Enforcement fines (307 Townsend Harbor road)",
+   "what_was_recorded": "Fines will commence if the Dixon applicant does not present a viable plan at the May 2, 2018 meeting; no amount stated.",
+   "figures_as_printed": [],
+   "quote": "if they do not show up with a viable plan at the may 2, 2018 meeting fines will commence"
+  },
+  {
+   "topic": "Small Town forest hydroseed bid",
+   "what_was_recorded": "RB wanted a future bid for hydroseed /butterfly mix for the exposed areas; no amount stated.",
+   "figures_as_printed": [],
+   "quote": "he also wanted a future bid for hydroseed /butterfly mix for the exposed areas."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and Announcements",
+   "resolution": "no action; 319 grant and MRPC meeting results reported",
+   "quote": "bp narrated the results of the meeting with mrpc.",
+   "tags": [
+    "announcements",
+    "grant",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "heading only; no comments recorded",
+   "quote": "public comment appointments/hearings -commences at 7 pm",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment: USDA Presentation (emerald ash borer)",
+   "resolution": "presented; no action",
+   "quote": "javier marin presented a slideshow to the commission and the general public on the emerald ash borer.",
+   "tags": [
+    "presentation",
+    "emerald ash borer"
+   ]
+  },
+  {
+   "topic": "Request for a Determination, 914 Flatt Hill Road (Scott Patterson)",
+   "resolution": "negative determination issued",
+   "quote": "kj moved to issue for a negative determination. bp seconded",
+   "tags": [
+    "request for determination",
+    "wetlands",
+    "patio",
+    "dock"
+   ]
+  },
+  {
+   "topic": "Continued Request for a Determination, 307 Townsend Harbor road (Dixon)",
+   "resolution": "continued; one more continuance allowed, fines if no viable plan by May 2",
+   "quote": "the applicant has requested a continuance.",
+   "tags": [
+    "request for determination",
+    "enforcement",
+    "beach",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent, 654 Mass Ave (Signature Living LLC)",
+   "resolution": "order of conditions approved",
+   "quote": "gregory roy presented the commission the updates approved by the planning board.",
+   "tags": [
+    "notice of intent",
+    "order of conditions",
+    "3 family"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent, Hickory Hills drawdown management plan",
+   "resolution": "continued to May 2, 2018",
+   "quote": "this was continued to the may 2, 2018 meeting at 960 mass ave at 7 pm",
+   "tags": [
+    "notice of intent",
+    "drawdown",
+    "lake"
+   ]
+  },
+  {
+   "topic": "Request for a Determination, 46 Fire Road 12 (David Osoff)",
+   "resolution": "positive determination; more detailed plans recommended",
+   "quote": "cl moved for a positive determination.",
+   "tags": [
+    "request for determination",
+    "retaining wall",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Request for a Determination, Dippin Donuts addition, 455 Mass Ave (Paul Karapatsas)",
+   "resolution": "continued to May 2, 2018",
+   "quote": "rb had inquired about moving the location of the cooler.",
+   "tags": [
+    "request for determination",
+    "commercial"
+   ]
+  },
+  {
+   "topic": "Request for a Determination, 564 page street (Tim Ialeggio)",
+   "resolution": "applicant withdrew; notice of intent recommended; no vote required",
+   "quote": "the applicant withdrew and no vote was required for this action.",
+   "tags": [
+    "violations",
+    "withdrawal",
+    "pond"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, 54 Maple Parkway (Kenneth Tully)",
+   "resolution": "continued to May 2, 2018",
+   "quote": "mm requested that the meeting be continued to may 2 at 7 pm at 960 mass ave",
+   "tags": [
+    "notice of intent",
+    "wetland",
+    "single family home"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, 63 Prospect Street (Matson Homes)",
+   "resolution": "order of conditions approved with added no touch zone condition",
+   "quote": "wes flis is representing the applicant. he outlined the project and the impacts and how they are mitigated.",
+   "tags": [
+    "notice of intent",
+    "culvert",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Current Business: Violations",
+   "resolution": "reported; 571 Chase Road stays on agenda; 654 Mass Ave NOI to be heard; Shady Point under review",
+   "quote": "571 chase road (c) -no updates",
+   "tags": [
+    "enforcement",
+    "violations",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "New Business: Land Exchange on Gilchrest and Hickory Hills suction harvesting",
+   "resolution": "site inspection scheduled; information deferred to a future meeting",
+   "quote": "land exchange on gilchrest- any update if available",
+   "tags": [
+    "land exchange",
+    "site inspection",
+    "Hickory Hills"
+   ]
+  },
+  {
+   "topic": "Old Business: Small Town forest update",
+   "resolution": "update; no action",
+   "quote": "small town forest update- rb met with dpw",
+   "tags": [
+    "small town forest",
+    "DPW",
+    "hydroseed"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance",
+   "resolution": "none presented",
+   "quote": "certificates of compliance - none presented for consideration",
+   "tags": [
+    "certificates of compliance"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/21 and 4/6",
+   "resolution": "amendments presented to 3/21 minutes; no vote recorded",
+   "quote": "3/21- bp presented amendments to the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report and legal updates",
+   "resolution": "reported; no action",
+   "quote": "legal updates and requests - mm noted that he will be in district court on may 2, 2018 for 101 pleasant",
+   "tags": [
+    "legal",
+    "enforcement",
+    "101 Pleasant Street",
+    "183 Hemlock",
+    "70 Oak Ridge",
+    "842R Chase Road",
+    "155 Reservoir Road",
+    "trail"
+   ]
+  },
+  {
+   "topic": "Communications and public comment: regulation review",
+   "resolution": "June 16 meeting suggested; no vote",
+   "quote": "bp suggested a meeting to finish regulation review.",
+   "tags": [
+    "regulation review"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting noted as May 2, 2018",
+   "quote": "next meeting is may 2, 2018 7:00 pm at 960 mass ave",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:30 PM",
+   "quote": "meeting was adjourned at 9:30 pm by a motion of cl and a second by td with a unanimous vote.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a Determination form and modified sketch by applicant dated April 17, 2018",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination form an d a modified sketch by applicant dated april 17, 2018"
+  },
+  {
+   "name": "Notice of Intent and a plan of land by Ducharme and Dillis dated April 12, 2018",
+   "where": "list",
+   "quote": "documents presented for consideration was a notice of intent and a plan of land by ducharme and dillis dated april 12, 2018"
+  },
+  {
+   "name": "Request for a Determination form and modified plan by the applicant dated March 2018",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination form and a modified plan by the applicant dated march 2018"
+  },
+  {
+   "name": "Request for a Determination form with a hand sketch by the applicant dated March 2018",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination form with a hand sketch by the applicant dated march 2018"
+  },
+  {
+   "name": "Notice of Intent by Kenneth Tully and a plan of land by Ducharme and Dillis",
+   "where": "list",
+   "quote": "documents presented for consideration was a notice of intent by kenneth tully and a plan of"
+  },
+  {
+   "name": "Notice of Intent by Matson Homes and a Notice of Intent plan by Whitman and Bingham Associates",
+   "where": "list",
+   "quote": "of intent plan by whitman and bingham associates."
+  },
+  {
+   "name": "Emerald ash borer slideshow (USDA presentation)",
+   "where": "text",
+   "quote": "javier marin presented a slideshow to the commission and the general public on the emerald ash borer."
+  },
+  {
+   "name": "Enforcement order (307 Townsend Harbor road, Dixon)",
+   "where": "text",
+   "quote": "after the examination of the file and the dates of the enforcement order rb"
+  },
+  {
+   "name": "Notice of Intent for drawdown management plan at Hickory Hills Lake (Hickory Hills Association)",
+   "where": "text",
+   "quote": "for the approval of a drawdown management plan at hickory hills lake at townsend harbor road"
+  },
+  {
+   "name": "Order of conditions, Signature Living LLC (654 Mass Ave)",
+   "where": "text",
+   "quote": "kj moved to approved the order of conditions. cc seconded ant the commission voted unanimously."
+  },
+  {
+   "name": "Order of conditions, Matson Homes (63 Prospect Street)",
+   "where": "text",
+   "quote": "the commission voted to approve an order of conditions with the condition added that the plan would be amended"
+  },
+  {
+   "name": "Hickory Hills information for suction harvesting",
+   "where": "text",
+   "quote": "hickory hills information for suction harvesting."
+  },
+  {
+   "name": "Land Exchange on Gilchrest",
+   "where": "text",
+   "quote": "land exchange on gilchrest- any update if available"
+  },
+  {
+   "name": "Minutes of 3/21 and 4/6",
+   "where": "text",
+   "quote": "minutes of previous meetings - review and approval of -3/21 and 4/6"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "request for determination",
+  "notice of intent",
+  "order of conditions",
+  "continuance",
+  "enforcement",
+  "violations",
+  "land exchange",
+  "emerald ash borer",
+  "storm water grant",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration was a request for a determination form an d a modified sketch by applicant dated april 17, 2018"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-11-28",
  "docid": "6211",
@@ -12,87 +12,516 @@
  },
  "votes": [
   {
-   "motion": "Approve septic system minor change at Bixby 217 Reservoir Road",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Carl Luck",
+   "motion": "Approve the Bixby 217 Reservoir Road septic plan change as a minor change.",
+   "moved_by": "TD",
+   "seconded_by": "CL",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the change ion plan was approved as a minor change by a motion of td and a second by cl with a unanimous vote to approve."
+   "quote": "approved as a minor change by a motion of td and a second by cl with a unanimous vote to approve."
   },
   {
-   "motion": "Continue meeting to December 19, 2017 at 7 PM regarding Hickory Hills Association",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "by request of the applicant the meeting was continued to december 19, 2017 at 7 pm by a motion of cc and a second by td with a unanimous vote to approve the motion."
-  },
-  {
-   "motion": "Approve Order of Conditions for Michael and Barbara Battle with conditions regarding driveway, hay bales, and deed restriction",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Todd Dwyer",
+   "motion": "Continue the Hickory Hills Association drawdown plan hearing, at the applicant's request, to December 19, 2017 at 7 PM.",
+   "moved_by": "CC",
+   "seconded_by": "TD",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion to approve the order of conditions was approved with the added condi tions that the driveway stay permanently out of the 50 foot zone, with the hay bales extended to west street and a permanent deed restriction be entered that there will be no pavement placed in the lower driveway, hence remaining gravel by cc and a second by td with a unanimous vote to approve the motion."
+   "quote": "the meeting was continued to december 19, 2017 at 7 pm by a motion of cc and a second by td with a unanimous vote to approve the motion"
   },
   {
-   "motion": "Continue meeting to December 19, 2018 at 7 PM regarding Nanci Bell retaining wall",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Todd Dwyer",
+   "motion": "Approve the Order of Conditions for Michael and Barbara Battle with added conditions (driveway kept out of the 50 foot zone, hay bales extended to West Street, deed restriction barring pavement on the lower driveway).",
+   "moved_by": "CC",
+   "seconded_by": "TD",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
+   "quote": "hence remaining gravel by cc and a second by td with a unanimous vote to approve the motion."
+  },
+  {
+   "motion": "Continue the Nanci Bell retaining wall hearing, at the applicant's request, to December 19, 2018 at 7 PM.",
+   "moved_by": "KJ",
+   "seconded_by": "TD",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "by a motion of kj and a second by td with a unanimous vote to approve."
   },
   {
-   "motion": "Issue negative determination for William Galloway garage retaining wall with condition regarding wattles",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Issue a negative determination for William Galloway's garage retaining wall at 449 Page Street, with the condition that the wattles are the limit of work.",
+   "moved_by": "TD",
+   "seconded_by": "JR",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion for a negative determination with the condition that the wattles were the limit of work was made by td and seconded by jr with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Issue negative determination for David Watt tree removal",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Issue a negative determination for David Watt's removal of 6 trees within the 100 foot buffer zone at 16 fire road 7.",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion to issue a negative determination of td and a second by kj with a unanimous vote."
   },
   {
-   "motion": "Approve Order of Conditions for Steve Bean garage and retaining wall with condition regarding erosion protection for stockpiling",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
+   "motion": "Approve the Order of Conditions for Steve Bean at 27 Fire Road 15A with the added condition that stockpiling in the buffer zone have erosion protection around it.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion for approving an order of conditons with the added condition that stockpiling in the buffer zone have erosion protection around it by td and a second by cc with a unanimous vote to approve the motion."
+   "quote": "with the added condition that stockpiling in the buffer zone have erosion protection around it by td and a second by cc with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue meeting to December 19 at 7 PM regarding Steven Powell site grading",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
+   "motion": "Continue the Steven Powell site grading hearing to December 19 at 7 PM.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "the meeting was continued to december 19 at 7 pm by a motion of td and a second by cc with a unanimous vote to approve."
   },
   {
-   "motion": "Issue certificate of compliance for 91 Gilchrest Street",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Todd Dwyer",
+   "motion": "Memorialize existing violations at 131 and 133 Leominster Shirley Road under an enforcement order (Powell Stone and Gravel).",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "that they be memorialized under an enforcement order noting they must be addressed in the future by a motion of td and a second by kj."
+  },
+  {
+   "motion": "Issue the Certificate of Compliance for 91 Gilchrest Street (208-1101).",
+   "moved_by": "JR",
+   "seconded_by": "TD",
    "outcome": "passed",
    "procedural": false,
    "quote": "jr moved to issued the certificate, td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
+   "motion": "Approve the minutes of October 3 (meeting minutes review).",
+   "moved_by": "CC",
+   "seconded_by": "TD",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "cc moved and td seconded to approve oct 3 minutes."
+  },
+  {
+   "motion": "Approve the minutes of October 19 (the minutes text reads 'approval of the minutes o f 7th').",
+   "moved_by": "TD",
+   "seconded_by": "CC",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "oct 19 minutes td moved and cc seconded for the approval of the minutes o f 7th"
+  },
+  {
+   "motion": "Adjourn the meeting at 10:25 PM.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the commission adjourned at 10:25 pm by a motion of td and second by cc with a unanimous vote to approve the motion."
+   "quote": "second by cc with a unanimous vote to approve the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1356195
+ "note": "Plain text extraction, not a scan. Several items are garbled or unresolved in the text: the Hickory Hills continuance reads 'December 19, 2017' (likely 2018); the October 19 minutes motion is cut off ('minutes o f 7th') and the minutes motions show no result; the Powell Stone motion records no outcome; the Emerald Place and Val Barros enforcement orders are recorded as ratified with no motion; the Galloway motion is recorded as 'negative determination' with no count beyond 'unanimous vote'. Votes are recorded as unanimous without a numeric count. Rabbitt recused from the Hickory Hills matter. No dollar figures appear in the minutes; the only money item is an unquantified grant.",
+ "cost_usd": 0.01632872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "called to order with all members in attendance with chairman bursch presiding."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "called to order with all members in attendance with chairman bursch presiding."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "called to order with all members in attendance with chairman bursch presiding."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioner childs reviewed the highlights of the lsic workshop."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "called to order with all members in attendance with chairman bursch presiding."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "called to order with all members in attendance with chairman bursch presiding."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "called to order with all members in attendance with chairman bursch presiding."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm examined and measured the ortho photos and the results did show that the proposed work"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "",
+   "status": "present",
+   "quote": "neil gorman appeared before the commission and outlined a change in the location of the leach field"
+  },
+  {
+   "name": "Michael Battle",
+   "role": "",
+   "status": "present",
+   "quote": "both michael and barbara battle were present for the meeting"
+  },
+  {
+   "name": "Barbara Battle",
+   "role": "",
+   "status": "present",
+   "quote": "both michael and barbara battle were present for the meeting"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "greg roy appeared before the commission representing the applicant."
+  },
+  {
+   "name": "David Watt",
+   "role": "",
+   "status": "present",
+   "quote": "david watt was present and reviewed the drawing submitted."
+  },
+  {
+   "name": "Tim Beauchmin",
+   "role": "for the applicant",
+   "status": "present",
+   "quote": "tim beauchmin was present for the applicant."
+  },
+  {
+   "name": "Christine Jordan",
+   "role": "",
+   "status": "present",
+   "quote": "christine jordan reviewed the total existing pavement and plans to pull it out."
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "",
+   "status": "present",
+   "quote": "ken chenis appeared before the commission."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representative of the applicant",
+   "status": "present",
+   "quote": "mr. marchetti continued meeting as his representative."
+  },
+  {
+   "name": "Steve Powell",
+   "role": "",
+   "status": "present",
+   "quote": "mr. po well expressed an opinion he feels the course of this hearing is being personally directed at him.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "",
+   "status": "not stated",
+   "quote": "steve marsden noted the construction on the plans that were mitigations."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant Battle agreed to reduce the proposed gravel driveway out of the 50 foot no-structure zone; plans were modified by hand and signed as the final revision date.",
+   "quote": "rb requested that the applicant reduce the proposed gravel driveway out of the 50 foot no -structure zone. the applicant agreed."
+  },
+  {
+   "decision": "Chair requested that the Jordan pavement be replaced by pavers, and the commission noted the staging should be marked temporary and removed in winter.",
+   "quote": "rb also requested that pavement be replaced by pavers."
+  },
+  {
+   "decision": "Commission noted the Jordan staging area should be noted as temporary and removed in the winter to prevent damage.",
+   "quote": "the commission also noted that the staging should be noted as temporary and removed in the winter to prevent damage."
+  },
+  {
+   "decision": "Chenis was asked to update the plan showing the 100 foot buffer zone, the relocated driveway, and loaming and seeding of the abandoned driveway area.",
+   "quote": "rb asked him to update plan showing the 100 foot buffer zone and the relocated driveway"
+  },
+  {
+   "decision": "Commission did not object to Chenis's proposal to replace one dying maple tree within the 30 foot zone; the replacement is to be shown on the plan.",
+   "quote": "the commission did not object to the proposal."
+  },
+  {
+   "decision": "Commission decided to set a meeting for 155 Reservoir Road for January 16, 2019.",
+   "quote": "it was decided to set a meeting for january 16, 2019."
+  },
+  {
+   "decision": "Commission decided that the Spring Street (EO-55) mitigation construction be placed on a plan and return to the commission.",
+   "quote": "it was decided that everything would be placed on a plan and it would come back to the commission."
+  },
+  {
+   "decision": "Commission ratified the enforcement order issued by MM for Emerald Place Beach.",
+   "quote": "eo emerald place beach - mm had issued an eo and the commission ratified"
+  },
+  {
+   "decision": "Commission ratified the enforcement order for Val Barros; MM to monitor the silt and erosion control situation.",
+   "quote": "the commission will be monitoring the situation ( having mm monitor)."
+  },
+  {
+   "decision": "Robbs Hill Conservation stewardship and maintenance plan removed from future agendas because no action is planned in the near future.",
+   "quote": "as there is no action planned in the near future this item is going to be removed for future agendas at this point."
+  },
+  {
+   "decision": "Next meeting set for December 5, 2018 at the Ritter Memorial Land Use Building.",
+   "quote": "next meeting is december 5, 2018 at the ritter"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Forest Stewardship grant (Hollis Road bird habitat stewardship plan)",
+   "what_was_recorded": "The Commission reported it received a grant to complete a stewardship plan for Hollis Road; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the commission did receive a grant to complete a stewardship plan."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "RB",
+   "stated_role": "",
+   "topic": "Previous night's meeting notice and audio posting",
+   "quote": "rb noted that the meeting the previous night was opened and advertised properly and continued after one member left going below a quorum."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order, all members present",
+   "quote": "called to order with all members in attendance with chairman bursch presiding."
+  },
+  {
+   "topic": "Announcements - LSIC workshop highlights",
+   "resolution": "reported",
+   "quote": "commissioner childs reviewed the highlights of the lsic workshop."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "noted; no public speaker recorded",
+   "quote": "rb noted that the meeting the previous night was opened and advertised properly and continued after one member left going below a quorum."
+  },
+  {
+   "topic": "Bixby, 217 Reservoir Road - minor septic plan change (DEP 208-1140)",
+   "resolution": "approved as minor change",
+   "quote": "approved as a minor change by a motion of td and a second by cl with a unanimous vote to approve."
+  },
+  {
+   "topic": "Hickory Hills Association drawdown management plan, Hickory Hills Lake (DEP 208-1133)",
+   "resolution": "continued",
+   "quote": "the meeting was continued to december 19, 2017 at 7 pm by a motion of cc and a second by td with a unanimous vote to approve the motion"
+  },
+  {
+   "topic": "Michael and Barbara Battle, 168 West Street grading and planting (DEP 208-1145)",
+   "resolution": "Order of Conditions approved with added conditions",
+   "quote": "hence remaining gravel by cc and a second by td with a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "Nanci Bell, 51 Fire Road 19 retaining wall (DEP 208-xxxx)",
+   "resolution": "continued to December 19, 2018",
+   "quote": "by a motion of kj and a second by td with a unanimous vote to approve."
+  },
+  {
+   "topic": "William Galloway, 449 Page Street garage retaining wall - request for determination",
+   "resolution": "negative determination issued",
+   "quote": "a motion for a negative determination with the condition that the wattles were the limit of work was made by td and seconded by jr with a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "David Watt, 16 Fire Road 7 - removal of 6 trees in buffer zone",
+   "resolution": "negative determination issued",
+   "quote": "a motion to issue a negative determination of td and a second by kj with a unanimous vote."
+  },
+  {
+   "topic": "Steve Bean, 27 Fire Road 15A garage and retaining wall (DEP 208-1144)",
+   "resolution": "Order of Conditions approved with added condition",
+   "quote": "with the added condition that stockpiling in the buffer zone have erosion protection around it by td and a second by cc with a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "Anthony and Kristine Jordan, 30 Laurel Lane renovation and addition (DEP 208-1146)",
+   "resolution": "discussed; no vote recorded",
+   "quote": "greg roy appeared representing the applicant. he outlined the project and the relation to the wetland resource area to the commission."
+  },
+  {
+   "topic": "Kenneth Chenis, 50 Fire Road 24 addition and road relocation (DEP 208-xxxx)",
+   "resolution": "discussed; plan update requested; no vote recorded",
+   "quote": "rb asked him to update plan showing the 100 foot buffer zone and the relocated driveway"
+  },
+  {
+   "topic": "Steven Powell, 151-181 Leominster-Shirley Road site grading (DEP 208-1147)",
+   "resolution": "continued to December 19 at 7 PM",
+   "quote": "the meeting was continued to december 19 at 7 pm by a motion of td and a second by cc with a unanimous vote to approve."
+  },
+  {
+   "topic": "Current Business - Violations and enforcement actions",
+   "resolution": "enforcement orders ratified or continued; 155 Reservoir Road meeting set for January 16, 2019",
+   "quote": "eo -101 pleasant street - update/fines - mm reported fines continued"
+  },
+  {
+   "topic": "New Business - Forest Stewardship grants and planning",
+   "resolution": "reported grant received",
+   "quote": "the commission did receive a grant to complete a stewardship plan."
+  },
+  {
+   "topic": "Old Business - Robbs Hill Conservation stewardship and maintenance plan",
+   "resolution": "removed from future agendas",
+   "quote": "as there is no action planned in the near future this item is going to be removed for future agendas at this point."
+  },
+  {
+   "topic": "Certificate of Compliance - 91 Gilchrest Street (208-1101)",
+   "resolution": "certificate issued",
+   "quote": "jr moved to issued the certificate, td seconded and the commission voted unanimously."
+  },
+  {
+   "topic": "Extension Permit - 22 Oak Ridge Road",
+   "resolution": "listed; no action recorded",
+   "quote": "extension permit - 22 oak ridge road"
+  },
+  {
+   "topic": "Minutes of previous meetings (October 3, October 19, November 7)",
+   "resolution": "review and approval; result not printed",
+   "quote": "cc moved and td seconded to approve oct 3 minutes."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no report recorded",
+   "quote": "committee reports - any updates"
+  },
+  {
+   "topic": "Agent's Report - legal updates and action items (842 Chase Road Rear, 183 Hemlock, 101 Pleasant Street, others)",
+   "resolution": "reported; no action recorded",
+   "quote": "bp spoke to 842 chase road rear that the deeds would have to be probated prior to the donation to the town moving forward."
+  },
+  {
+   "topic": "Communications, public comment and meeting schedule",
+   "resolution": "next meeting set for December 5, 2018",
+   "quote": "next meeting is december 5, 2018 at the ritter"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:25 PM",
+   "quote": "second by cc with a unanimous vote to approve the motion."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent by Michael and Barbara Battle",
+   "where": "list",
+   "quote": "documents presented for review was a notice of intent by michael and barbara battl e and a plan by michael battle with a final revised date of 11/28/18."
+  },
+  {
+   "name": "Plan by Michael Battle, final revised date 11/28/18",
+   "where": "list",
+   "quote": "a plan by michael battle with a final revised date of 11/28/18."
+  },
+  {
+   "name": "Request for a determination, 449 Page Street (William Galloway)",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination and a plan entitled"
+  },
+  {
+   "name": "Plan entitled \"Determination of Applicability 449 Page Street\", final revision date 11/13/2018",
+   "where": "list",
+   "quote": "a plan entitled \" determination of applicability 449 page street\" with a final revision date of 11/13/2018."
+  },
+  {
+   "name": "Request for a determination by David Watt",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination by david watt and a drawing by watt dated november 2018."
+  },
+  {
+   "name": "Drawing by Watt dated November 2018",
+   "where": "list",
+   "quote": "a drawing by watt dated november 2018."
+  },
+  {
+   "name": "Notice of Intent by Steve Bean",
+   "where": "list",
+   "quote": "documents presented for consideration was a notice of intent by steve bean and a plan entitled"
+  },
+  {
+   "name": "Plan entitled \"Proposed Garage and Septic As-Built for Steve Bean\" by Beauchmin Engineering, revision date 10/5/18",
+   "where": "list",
+   "quote": "a plan entitled\" proposed garage and septic as-built for steve bean\" by beauchmin engineering with a revision date of 10/5/18."
+  },
+  {
+   "name": "Notice of Intent by Hickory Hills Association, drawdown management plan, Hickory Hills Lake",
+   "where": "text",
+   "quote": "by hickory hills association for the approval of a drawdown management plan at hickory hills lake at townsend harbor road"
+  },
+  {
+   "name": "Notice of Intent by Bixby, 217 Reservoir Road, minor change of septic plan (DEP 208-1140)",
+   "where": "text",
+   "quote": "bixby 217 reservoir road- minor change of septic plan for review (dep 208-1140)"
+  },
+  {
+   "name": "Notice of Intent by Nanci Bell, retaining wall at 51 Fire Road 19",
+   "where": "text",
+   "quote": "notice of intent by nanci bell for the replacement of an existing retaining wall at 51"
+  },
+  {
+   "name": "Notice of Intent by Anthony and Kristine Jordan, 30 Laurel Lane",
+   "where": "text",
+   "quote": "notice of intent by anthony and kristine jordan for renovation"
+  },
+  {
+   "name": "Notice of Intent by Kenneth Chenis, 50 Fire Road 24",
+   "where": "text",
+   "quote": "notice of intent by kenneth chenis for an addition to a single family home"
+  },
+  {
+   "name": "Notice of Intent by Steven Powell, 151-181 Leominster-Shirley Road",
+   "where": "text",
+   "quote": "notice of intent by steven powell the site grading to prevent runoff"
+  },
+  {
+   "name": "Certificate of Compliance, 91 Gilchrest Street (208-1101)",
+   "where": "text",
+   "quote": "certificates of compliance - 91 gilchrest street - 208-1101"
+  },
+  {
+   "name": "Extension Permit, 22 Oak Ridge Road",
+   "where": "text",
+   "quote": "extension permit - 22 oak ridge road"
+  },
+  {
+   "name": "Minutes of October 3, October 19 and November 7 meetings",
+   "where": "text",
+   "quote": "minutes of previous meetings - review and approval of october 3 and october 19 and november 7"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "order of conditions",
+  "request for determination",
+  "enforcement",
+  "certificate of compliance",
+  "forest stewardship grant",
+  "minutes approval",
+  "riverfront",
+  "buffer zone",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for review"
+ },
+ "dropped_unquoted_by_field": {}
 }

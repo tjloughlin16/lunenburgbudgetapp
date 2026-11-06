@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-01-10",
  "docid": "5787",
@@ -12,23 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the November 27, 2018 meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "minutes of the november 27, 2018 meeting were reviewed and approved."
-  },
-  {
-   "motion": "write letters of support to the Commonwealth of Massachusetts Executive Office of Energy & Environmental Affairs and to the Open Space Committee",
+   "motion": "Write a letter of support, as requested by the Open Space Committee, to the Commonwealth of Massachusetts EEA Division of Conservation Services for the Open Space Committee's draft update to the Open Space and Recreation Plan.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "a vote was taken to write a letter of support, as requested by the open space committee, to the commonwealth of massachusetts executive office of energy & environmental affairs , division of conservation services . a second letter, praising the efforts of the open space committee and thanking them for their efforts, was also supported."
+   "quote": "a vote was taken to write a letter of support, as requested by the open space committee, to the commonwealth of massachusetts"
   },
   {
-   "motion": "adjourn the meeting at 7:30 pm",
+   "motion": "Adjourn the meeting at 7:30 pm.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -37,6 +29,162 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1144365
+ "note": "Text is a clean extraction of a three-member-present meeting; attachments (cost estimate sheets, DCI proposals, two signed letters) are referenced but not included in the text. The minutes give the meeting location as the 'first floor conference room' in one place and 'upper conference room' in another. No public comment is recorded. The letter-of-support vote has no mover, seconder or count printed.",
+ "cost_usd": 0.00511952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance were matt allison, phyllis luck, and jack rabbitt."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Task Force Chair",
+   "status": "present",
+   "quote": "task force chair, phyllis luck, began the discussion on the minimum control measures"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "in attendance were matt allison, phyllis luck, and jack rabbitt."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, land use director, was also in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the November 27, 2018 meeting were reviewed and approved (no motion or vote count recorded).",
+   "quote": "minutes of the november 27, 2018 meeting were reviewed and approved."
+  },
+  {
+   "decision": "Members needed more time to review the DCI year-one proposals and Cost Estimate sheets before a meaningful discussion; members agreed to review over the weekend and submit comments and questions to Adam Burney.",
+   "quote": "members agreed to review over the weekend and submit comments and questions to adam burney."
+  },
+  {
+   "decision": "The SWTF determined it was timely to schedule a meeting with the Town Manager on the proposals and Cost Estimate sheets.",
+   "quote": "the swtf determined that it was timely to schedule a meeting with the town manager to discuss the proposals and cost estimate sheets."
+  },
+  {
+   "decision": "Phyllis Luck to reach out to the Town Manager to set up the meeting and advise possible times as soon as known.",
+   "quote": "phyllis luck offered to reach out to the town manager to set up the meeting."
+  },
+  {
+   "decision": "A second letter praising the Open Space Committee and thanking them for their efforts was supported (no vote recorded for it); both letters were signed by all SWTF members.",
+   "quote": "a second letter, praising the efforts of the open space committee and thanking them for their efforts, was also supported."
+  },
+  {
+   "decision": "Any additional meetings in the first quarter of 2019 will be held on the second Thursday of the month; regular meetings at 6:30 pm in the Ritter Building, upper conference room.",
+   "quote": "should additional meetings in the first quarter of 2019 be required, they will take place on the second thursday of the month."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MS4 Permit year-one proposals and 5-year Cost Estimate sheets",
+   "what_was_recorded": "A quick look at the 5-year Cost Estimate sheets seemed to put the 5-year costs beyond the Town's budget capacity; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "a quick look at the cost estimate sheets seemed to put the 5 years costs beyond the town's budget capacity"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved (Nov 27, 2018 minutes)",
+   "quote": "minutes of the november 27, 2018 meeting were reviewed and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "MS4 Permit Minimum Control Measures, year-one DCI proposals and 5-year cost estimates",
+   "resolution": "continued; members to review and comment; meeting with Town Manager to be scheduled",
+   "quote": "all agreed that members needed additional time to actually review the documents prior to holding a meaningful discussion",
+   "tags": [
+    "MS4 permit",
+    "stormwater",
+    "consultants",
+    "budget",
+    "DCI"
+   ]
+  },
+  {
+   "topic": "Open Space and Recreation Plan draft update support letters",
+   "resolution": "letters of support approved and signed",
+   "quote": "a vote was taken to write a letter of support, as requested by the open space committee",
+   "tags": [
+    "open space",
+    "letters of support"
+   ]
+  },
+  {
+   "topic": "Water Districts status under stormwater requirements",
+   "resolution": "information gathered; no action",
+   "quote": "learned that the water districts are considered in the industrial category, and that there are no other special requirements that have to be met.",
+   "tags": [
+    "water district",
+    "regional coalition"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule set; possible Town Manager meeting date uncertain",
+   "quote": "possible meeting with town manager, date uncertain, january 29 (tuesday), february 28, and march 28.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:30 pm",
+   "quote": "motion: jack rabbitt 2nd: m. allison to adjourn the meeting at 7:30 pm. vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Cost Estimate Sheets for the first 5 years of the MS4 Permit (received by the SWTF on January 8)",
+   "where": "list",
+   "quote": "cost estimate sheets, as well as dci proposals, are attached."
+  },
+  {
+   "name": "Design Consultants Inc. (DCI) proposals for year one of the MS4 Permit",
+   "where": "list",
+   "quote": "cost estimate sheets, as well as dci proposals, are attached."
+  },
+  {
+   "name": "Two letters of support (to the Commonwealth EEA Division of Conservation Services and to the Open Space Committee), signed by all SWTF members",
+   "where": "list",
+   "quote": "both letters were signed by all swtf members, and are attached to these minutes."
+  },
+  {
+   "name": "Open Space Committee draft update to the Town's Open Space and Recreation Plan",
+   "where": "text",
+   "quote": "the open space committee's draft update to the town's open space and recreation plan."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "Open Space and Recreation Plan",
+  "consultants",
+  "budget capacity",
+  "water districts",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments!"
+ },
+ "dropped_unquoted_by_field": {}
 }

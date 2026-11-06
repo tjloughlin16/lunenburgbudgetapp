@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-12-13",
  "docid": "2207",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to support the Open Space & Recreation Plan and have Terri write a letter of support on behalf of the committee",
+   "motion": "Vote to support the process of writing a letter of support for the town's Open Space & Recreation Plan, and nominate Terri to write the letter on behalf of the finance committee.",
    "moved_by": "John",
    "seconded_by": "Jay",
    "outcome": "passed 7-0",
@@ -20,7 +20,7 @@
    "quote": "john moved to have the committee vote to support the process and nominated territo write the letter on behalf of the finance committee. jay second. 7-0 vote."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John",
    "seconded_by": "Jay",
    "outcome": "passed 7-0",
@@ -29,6 +29,338 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09658549999999999
+ "note": "OCR text of a scanned page set (macOS Vision). Some lines are garbled or truncated, notably the school and committee-report items on page 4 and the name 'Jay'. Agenda items 7-9 are not numbered in the text, so their topic titles are inferred from headings. The Charter Review budget_item carries no dollar figure; it is kept only because the minutes discuss it in a money-adjacent context, and can be dropped. Votes recorded: the 7-0 letter-of-support vote and the 7-0 adjournment vote. Public Comment item 2 reads 'None'.",
+ "cost_usd": 0.007459519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay"
+  },
+  {
+   "name": "Michelle Walton",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay"
+  },
+  {
+   "name": "Marc Luescher",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay"
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "terri and town manager answered, revolving funds that have already been written through the conservation commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Skip the member projects and budget dashboard review (item 4) to a later date.",
+   "quote": "4. review status of member projects, budget dashboard led by george martin skipped for a later date."
+  },
+  {
+   "decision": "Item 5, review of terminology and definitions for web site inclusion, was skipped.",
+   "quote": "5. review terminology and definitions for web site inclusion skipped"
+  },
+  {
+   "decision": "Add Monday evenings to the budget season calendar to free up the schedule for snow make-up dates.",
+   "quote": "the finance committee agrees to add in monday evenings."
+  },
+  {
+   "decision": "Town Manager to reach out to the LMS, LHS, and Council on Aging Center for possible rooms for weather make-up meetings.",
+   "quote": "the town manager will reach out to the lms, lhs, and council on aging center for possible rooms to use for our"
+  },
+  {
+   "decision": "Town Manager to look into dates for separating the public hearing into multiple dates (Charter Review and Planning Board).",
+   "quote": "the town manager will look into dates to help with that suggestion."
+  },
+  {
+   "decision": "The budget season calendar, with added snow days, multiple hearing days and extra budget copies for the public, was found workable for the coming season.",
+   "quote": "the finance committee came to the conclusion that with the minor changes to add in extra snow days, multiple hearing days, and extra buget copies for the"
+  },
+  {
+   "decision": "Terri to forward the School Committee budget information received from Carol Archambault to the rest of the finance committee.",
+   "quote": "terri will forward the information to the rest of the finance committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital requests tentatively approved by the Capital Planning Committee",
+   "what_was_recorded": "The committee tentatively approved nine capital requests totaling $650K, not yet formally approved, with a January 8 meeting to go through the process.",
+   "figures_as_printed": [
+    "$650K"
+   ],
+   "quote": "committee met a couple weeks ago and tentatively approved 9 capital requests for $650k."
+  },
+  {
+   "topic": "THES asbestos abatement request",
+   "what_was_recorded": "A capital request for THES asbestos abatement at $162K, a 4-5 year multi-year process nearing its end.",
+   "figures_as_printed": [
+    "$162K"
+   ],
+   "quote": "thes asbestos abatement which is $162k 4-5 multi-year process"
+  },
+  {
+   "topic": "DPW fuel tank removal request",
+   "what_was_recorded": "A capital request of $220K for removal of a DPW fuel tank.",
+   "figures_as_printed": [
+    "$220K"
+   ],
+   "quote": "$220k for the removal of a dpw fuel tank."
+  },
+  {
+   "topic": "Police cruisers request",
+   "what_was_recorded": "A capital request of $116K for two more police cruisers, tied to one additional police officer next year.",
+   "figures_as_printed": [
+    "$116K"
+   ],
+   "quote": "$116k for two more police cruisers which is"
+  },
+  {
+   "topic": "Engine 4 fire truck and Rescue 2 requests",
+   "what_was_recorded": "Two large requests not formally approved and possibly not to be: an engine 4 fire truck at $685K and Rescue 2 at around $350K.",
+   "figures_as_printed": [
+    "$685K",
+    "$350K"
+   ],
+   "quote": "an engine 4 fire truck at $685k and rescue 2 at around $350k."
+  },
+  {
+   "topic": "Engine 4 pump repair versus replacement",
+   "what_was_recorded": "Engine 4 had a pump problem; $15,500 was spent to repair the existing pump, versus an estimated $30K to replace it; the chief is wary of spending $15K more on a 24-year-old vehicle.",
+   "figures_as_printed": [
+    "$15,500",
+    "$30K",
+    "$15K"
+   ],
+   "quote": "engine 4 has had a pump problem, he spent $15,500 to repair the existing pump chief sullivan could have spent $30k to replace the pump."
+  },
+  {
+   "topic": "Five-year capital planning window",
+   "what_was_recorded": "Seven requests for FY20-FY24 total $2.9 million, averaging about $725K per year, which may be manageable given the town has funded $600K-$800K requests without borrowing.",
+   "figures_as_printed": [
+    "$2.9 million",
+    "$725K",
+    "$600K-$800K"
+   ],
+   "quote": "seven requests add up to $2.9 million but that averages to about $725k per year"
+  },
+  {
+   "topic": "Building reuse (Vertex) report immediate repairs",
+   "what_was_recorded": "Immediate repairs recommended by the study for six town properties total roughly $1.4 million, not inflated, and would be somewhat more now.",
+   "figures_as_printed": [
+    "$1.4 million"
+   ],
+   "quote": "immediate repairs recommended by the study equals out to roughly $1.4 million but that's not inflated"
+  },
+  {
+   "topic": "Clear Gov budget software subscription",
+   "what_was_recorded": "The town signed up with Clear Gov for a budget dashboard and budget software, costing $2K per year with an annual subscription.",
+   "figures_as_printed": [
+    "$2K"
+   ],
+   "quote": "costs $2k per year with an annual subscription."
+  },
+  {
+   "topic": "Free cash certification",
+   "what_was_recorded": "Free cash was certified at $1.5 million.",
+   "figures_as_printed": [
+    "$1.5 million"
+   ],
+   "quote": "free cash was certified at $1.5 million."
+  },
+  {
+   "topic": "New growth levy capacity",
+   "what_was_recorded": "New growth access levy capacity amount is $53K and the tax rate was certified.",
+   "figures_as_printed": [
+    "$53K"
+   ],
+   "quote": "new growths access levy capacity amount is $53k and tax rate was certified."
+  },
+  {
+   "topic": "Charter Review Committee",
+   "what_was_recorded": "No dollar figure printed; the charter's changes were discussed (no money recorded).",
+   "figures_as_printed": [],
+   "quote": "met last night and will have a public hearing on january 9th"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "PTO Fundraiser reading spots",
+   "speaker": "Hannah",
+   "quote": "hannah-two spots available to read at the pto fundraiser if you work for the town or"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted, no action",
+   "quote": "nothing in our mailbox but terri did mention receiving budget information",
+   "tags": [
+    "communications",
+    "school budget"
+   ]
+  },
+  {
+   "topic": "Letter of support for Open Space & Recreation Plan",
+   "resolution": "approved 7-0; Terri to write the letter",
+   "quote": "john moved to have the committee vote to support the process and nominated territo write the letter",
+   "tags": [
+    "open space",
+    "letter of support"
+   ]
+  },
+  {
+   "topic": "Member projects and budget dashboard",
+   "resolution": "skipped to a later date",
+   "quote": "4. review status of member projects, budget dashboard led by george martin skipped for a later date.",
+   "tags": [
+    "budget dashboard"
+   ]
+  },
+  {
+   "topic": "Terminology and definitions for web site",
+   "resolution": "skipped",
+   "quote": "5. review terminology and definitions for web site inclusion skipped",
+   "tags": [
+    "web site"
+   ]
+  },
+  {
+   "topic": "Budget season calendar",
+   "resolution": "approved with changes (Monday evenings, multiple hearing dates, extra budget copies)",
+   "quote": "the finance committee agrees to add in monday evenings.",
+   "tags": [
+    "budget calendar",
+    "public hearing",
+    "snow days"
+   ]
+  },
+  {
+   "topic": "Committee reports: Capital Planning, department updates",
+   "resolution": "reported, no action",
+   "quote": "committee met a couple weeks ago and tentatively approved 9 capital requests for $650k.",
+   "tags": [
+    "capital planning",
+    "capital requests",
+    "fire truck",
+    "police"
+   ]
+  },
+  {
+   "topic": "Member reports: Charter Review, schools, Monty Tech and other committees",
+   "resolution": "reported, no action",
+   "quote": "met last night and will have a public hearing on january 9th",
+   "tags": [
+    "charter review",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Budget software and certified figures",
+   "resolution": "reported, no action",
+   "quote": "the town signed up with clear gov for their budget dashboard.",
+   "tags": [
+    "clear gov",
+    "free cash",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one speaker, PTO fundraiser reading",
+   "quote": "hannah-two spots available to read at the pto fundraiser if you work for the town or",
+   "tags": [
+    "public comment",
+    "PTO"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "set dates January 10, 2019 and January 24, 2019",
+   "quote": "11. next meetings • january 10, 2019 • january 24, 2019",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7-0 at 8:09pm",
+   "quote": "the committee approved the motion 7-0 at 8:09pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Open Space & Recreation Plan (town)",
+   "where": "text",
+   "quote": "review request for letter of support for town's open space & recreation plan,"
+  },
+  {
+   "name": "Vertex report (building reuse study of six town properties)",
+   "where": "text",
+   "quote": "the building reuse or vertex report that covers 6 town properties"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "budget calendar",
+  "capital planning",
+  "capital requests",
+  "open space plan",
+  "charter review",
+  "free cash",
+  "new growth",
+  "fire department",
+  "school budget",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

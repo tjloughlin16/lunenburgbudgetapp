@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-01-10",
  "docid": "2164",
@@ -12,15 +12,340 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Marc Luescher",
-   "outcome": "passed 7-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "John",
+   "outcome": "7-0",
    "procedural": true,
-   "quote": "john made a motion to adjourn. marc seconded the motion. the committee approved the motion 7-0 at 9:08pm"
+   "quote": "john made a motion to adjourn. marc seconded the motion. the committee approved the motion 7-0 at 9:08pm",
+   "seconded_by": "Marc"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. One vote recorded: adjournment motion at end of meeting.",
- "cost_usd": 0.0830185
+ "note": "Text is OCR of the minutes (macOS Vision); layout and line breaks are garbled in places, and quotes were collapsed to single spaces. Item 5 is unnumbered. The Minutes item reads 'none'. Only one motion is recorded (adjournment, 7-0). The CPC vote is another body's and is not counted as a committee vote. Terri Burchfield's role is not printed. The consensus on the Charter Review language is not a vote. The Open Space letter read in Communications may or may not be the same as the 'LFC Support Letter(doc.)' in the attachments list; they are recorded separately.",
+ "cost_usd": 0.00790692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay simeone"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay simeone"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay simeone"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay simeone"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay simeone"
+  },
+  {
+   "name": "George Martin",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, george martin, jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "",
+   "status": "present",
+   "quote": "carol archambault, 662 page street- carol addressed how she attended a forum sponsored by 11"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "",
+   "status": "not stated",
+   "quote": "karen brochu said she would send michelle all the information"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Terri will take the committee's view back to the Charter Review Committee: a preference for registered voters, but no detriment seen from a member who is not registered.",
+   "quote": "the consensus was that terri would go back to the charter review committee and express to them"
+  },
+  {
+   "decision": "The question of one or two Town Meeting public hearings is moved from the 1.24.19 agenda to the 2.7.19 meeting to allow more time.",
+   "quote": "michelle mentioned to add it to the 2.7.19 meeting instead to give more time for the fincom to discuss"
+  },
+  {
+   "decision": "Keep the bullet-point list of highlights and changes in the Finance Committee report, as in the 2018 report.",
+   "quote": "terri said we can continue to do that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 70 school funding formula",
+   "what_was_recorded": "A public commenter said more money could come to Lunenburg under a new Chapter 70 formula if one of the pending bills passes.",
+   "figures_as_printed": [],
+   "quote": "from what carol understood, it looked like more money would be coming to lunenburg if one of those funds came through."
+  },
+  {
+   "topic": "Capital projects (CPC recommendation)",
+   "what_was_recorded": "The Community Preservation Committee voted to recommend Town Meeting approve 11 project requests totaling the amount printed.",
+   "figures_as_printed": [
+    "1,607 k"
+   ],
+   "quote": "cpc voted to recommend atm approve 11 project requests 1,607 k."
+  },
+  {
+   "topic": "Snow and Ice budget",
+   "what_was_recorded": "The DPW reported the Snow and Ice budget and the year-to-date spending as of that week.",
+   "figures_as_printed": [
+    "$257,000",
+    "$121,149"
+   ],
+   "quote": "snow & ice budget $257,000. ytd this week $121,149."
+  },
+  {
+   "topic": "Summer Street town expenses",
+   "what_was_recorded": "The DPW reported town expenses on Summer Street.",
+   "figures_as_printed": [
+    "$11,592"
+   ],
+   "quote": "summer street: town expenses: $11,592."
+  },
+  {
+   "topic": "Library trust fund (Bartholomew)",
+   "what_was_recorded": "The library board does not know how much money is available from the Bartholomew fund or how to access it; the principal is said to be non-expendable and the interest expendable.",
+   "figures_as_printed": [],
+   "quote": "struggling to understand how much money they have to spend of all of the money put into bartholomew"
+  },
+  {
+   "topic": "Fire paramedic training",
+   "what_was_recorded": "Training for one new paramedic has been partly covered so far; more funding will be needed if something else comes up.",
+   "figures_as_printed": [
+    "$17K"
+   ],
+   "quote": "so far $17k of that training has been covered but he will need more funding"
+  },
+  {
+   "topic": "Fire overtime budget",
+   "what_was_recorded": "The Chief has spent a stated share of his overtime budget as of January 1, 2019, with part of it for firefighters and the rest for EMTs.",
+   "figures_as_printed": [],
+   "quote": "as of january 1, 2019, chief sullivan has spent 60% of his overtime budget"
+  },
+  {
+   "topic": "FY20 overtime and repairs requests",
+   "what_was_recorded": "The Chief expects FY20 requests for overtime funding and repairs to be above target.",
+   "figures_as_printed": [],
+   "quote": "fy20 he is expecting to be above target request for the overtime funding and also for repairs."
+  },
+  {
+   "topic": "Public schools and senior center grant",
+   "what_was_recorded": "The Chief reported receiving a grant for public school and senior center education.",
+   "figures_as_printed": [
+    "$7500"
+   ],
+   "quote": "he did receive a grant this year for education for the public schools and senior center for $7500."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carol Archambault",
+   "stated_role": "662 Page Street",
+   "topic": "Chapter 70 school funding reform",
+   "quote": "carol addressed how she attended a forum sponsored by 11 local school superintendents (including lunenburg) describing the need for reform in the allocation of chapter 70 funds."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "called to order at 7:00 pm; not recorded or televised",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "public comment heard; Open Space and Recreation Plan letter of support read, changes invited",
+   "quote": "terri read the open space and recreation plan letter of support to the committee",
+   "tags": [
+    "communications",
+    "chapter 70",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Member projects and budget dashboard (item 3)",
+   "resolution": "skipped",
+   "quote": "3. review status of member projects, budget dashboard led by george martin skipped",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Terminology and web site definitions (item 4)",
+   "resolution": "skipped",
+   "quote": "4. review terminology and definitions for web site inclusion skipped",
+   "tags": [
+    "web site"
+   ]
+  },
+  {
+   "topic": "2018 Finance Committee Report format (unnumbered item)",
+   "resolution": "continue bullet-point highlights in the report",
+   "quote": "michelle noted that she really liked how the 2018 finance committee report listed out the",
+   "tags": [
+    "finance committee report"
+   ]
+  },
+  {
+   "topic": "Committee and department updates (item 6)",
+   "resolution": "reports received from members; CPC recommendation, capital planning, DPW, police, fire, schools, charter review",
+   "quote": "6. committee/department updates",
+   "tags": [
+    "capital planning",
+    "snow and ice",
+    "library",
+    "police",
+    "fire",
+    "charter review",
+    "monty tech",
+    "sewer",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Charter Review Committee and registered voter language",
+   "resolution": "reported; Terri to convey committee view back to Charter Review Committee",
+   "quote": "reviewed the work of the charter review committee, the public hearing, and the changes being brought forward.",
+   "tags": [
+    "charter review",
+    "finance committee appointments"
+   ]
+  },
+  {
+   "topic": "Minutes (item 7)",
+   "resolution": "none",
+   "quote": "7. minutes 8. none town manager/financial officer reports",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager/Financial Officer reports (item 8)",
+   "resolution": "reported ClearGov delay and budgets sent out; Town Meeting public hearing format moved to 2.7.19",
+   "quote": "cleargov 2018-2019 needs more adjusting for data and will not open until it is updated correctly.",
+   "tags": [
+    "clearGov",
+    "budget process",
+    "public hearing",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Town Meeting public hearing format",
+   "resolution": "moved to 2.7.19 meeting agenda",
+   "quote": "john mentioned to have it put on the agenda at the 1.24.19 meeting as to if we would have one or two public hearing meetings.",
+   "tags": [
+    "town meeting",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public comment (item 9)",
+   "resolution": "none",
+   "quote": "9. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meetings (item 10)",
+   "resolution": "next meeting set for January 24, 2019",
+   "quote": "10. next meetings • january 24, 2019",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment (item 11)",
+   "resolution": "adjourned 7-0 at 9:08pm",
+   "quote": "john made a motion to adjourn. marc seconded the motion. the committee approved the motion 7-0 at 9:08pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LFC Support Letter (doc.)",
+   "where": "list",
+   "quote": "lfc support letter(doc.)"
+  },
+  {
+   "name": "Meeting recording (video link, Lunenburg Public Access / telvue)",
+   "where": "list",
+   "quote": "https://videoplayer.telvue.com/player/yyccazpbonn3zj205qio-"
+  },
+  {
+   "name": "Open Space and Recreation Plan letter of support",
+   "where": "text",
+   "quote": "terri read the open space and recreation plan letter of support to the committee"
+  },
+  {
+   "name": "2018 Finance Committee Report",
+   "where": "text",
+   "quote": "michelle noted that she really liked how the 2018 finance committee report listed out the"
+  },
+  {
+   "name": "Collins Center scoring matrix (from Heather)",
+   "where": "text",
+   "quote": "capital priority score: collins center scoring matrix from heather"
+  },
+  {
+   "name": "Capital planning spreadsheet",
+   "where": "text",
+   "quote": "a. spreadsheet worked well"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town meeting",
+  "capital planning",
+  "snow and ice",
+  "chapter 70",
+  "charter review",
+  "public hearing",
+  "library trust",
+  "fire department",
+  "budget",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {}
 }

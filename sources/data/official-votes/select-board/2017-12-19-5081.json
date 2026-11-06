@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-12-19",
  "docid": "5081",
@@ -12,16 +12,16 @@
  },
  "votes": [
   {
-   "motion": "Reappoint Cullen Dwyer to the APDC as Historical Commission Representative",
-   "moved_by": "R. Ebersole",
+   "motion": "Reappoint Cullen Dwyer to the Architectural Preservation District Commission as Historical Commission Representative.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion: r.ebersole 2id: p. bertram to reappoint cullen dwyer to the apdc as historical commission representative vote: all in favor"
   },
   {
-   "motion": "Approve the three licenses as presented by the Town Manager (DIPPIN DONUTS, First Choice Limousine, Lakeview Driving Range)",
-   "moved_by": "R. Ebersole",
+   "motion": "Approve the three licenses as presented by the Town Manager (Dippin Donuts common victualer, First Choice Limousine limousine license, Lakeview Driving Range golf driving range base license).",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
@@ -29,6 +29,242 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document; two votes recorded. \"2id\" appears to be OCR error for \"2nd\".",
- "cost_usd": 0.0886295
+ "note": "OCR text of a scanned page set. Several passages are garbled or cut off: the Financial Forecast paragraph on page 2, the rest of the Open Meeting Law item (its response and the subject of 'The Board concurred'), and current business item 2. No roll call or attendance list appears, so attendance is inferred from speaking and moving. Vote tallies are printed only as 'All in Favor' with no count. The meeting date 2017-12-19 is not printed in the text. The complainant is named Kathryn Adams in the agenda item and Katey Adams in public comment. The minutes end with a clerk signature block, which I did not record as an attendee.",
+ "cost_usd": 0.00746642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale reviewed the upcoming meeting schedule. this board meets again on january 2nd"
+  },
+  {
+   "name": "R.Ebersole",
+   "status": "present",
+   "quote": "mr. ebersole reported the library trustees reviewed their section of the town charter at their meeting"
+  },
+  {
+   "name": "P. Bertram",
+   "status": "present",
+   "quote": "ms. bertram reported the cable advisory committee met last night."
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck reported the school committee heard non-personnel budget requests from the schools"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "status": "present",
+   "quote": "mir. mcquaid reported capital planning received requests from the police chief, the fire chief and the school"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux reported there were three licenses up for renewal tonight."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "40 Williams Drive",
+   "status": "present",
+   "quote": "katey adams, 40 williams drive, stated she heard the response to her open meeting law complaint and believed her complaint was not addressed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux to follow up on advertising the Complete Streets workshop and the Senior Citizen Public Forum on Town Buildings, after Ms. Luck encouraged more advertising (website and posters).",
+   "quote": "ms. lemieux will follow up tomorrow."
+  },
+  {
+   "decision": "The Board concurred with an item under Current Business (the text on that item is cut off, so the subject is not clear from the minutes).",
+   "quote": "specifically. the board concurred."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cleaning services contract for town buildings",
+   "what_was_recorded": "The expired cleaning contract will cost $15,000 more than originally budgeted for the rest of the year under a new contract; Special Town Meeting approved the added funding.",
+   "quote": "it will cost $15,000 more than originally budgeted for the remainder of the year under a new contract.",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Free energy audit",
+   "what_was_recorded": "Karen Chapman of Montachusett Regional Planning Commission arranged a free energy audit by Energy Source on December 27th, covering the Town Hall, Ritter Memorial Building and Public Safety Buildings.",
+   "quote": "has lined up a free energy",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "DOER grant for grant administration services",
+   "what_was_recorded": "The Town received a DOER grant for grant administration services, through which the free energy audit was arranged.",
+   "quote": "through the doer grant the town received for grant administration services",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Competitive Green Communities Funding",
+   "what_was_recorded": "A project was described as eligible if the Town wins the next round of Competitive Green Communities Funding.",
+   "quote": "awarded the next round of competitive green communities funding, this would be an eligible project.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School non-personnel budget requests",
+   "what_was_recorded": "The School Committee heard non-personnel budget requests; the Primary, Elementary, Middle and MS/HS schools requested increases of 17%, 62%, 30% and 37%.",
+   "quote": "the primary school is requesting a 17% increase, the elementary school is requesting a 62% increase",
+   "figures_as_printed": [
+    "17%",
+    "62%",
+    "30%",
+    "37%"
+   ]
+  },
+  {
+   "topic": "License renewal fees",
+   "what_was_recorded": "Three license renewals were presented with fees: Common Victualer, Limousine License and Base License for Golf Driving Range.",
+   "quote": "pk & p corporation d/b/a dippin donuts- 455 massachusetts ave.; common victualer $25.00",
+   "figures_as_printed": [
+    "$25.00",
+    "$25.00",
+    "$60.00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Salvation Army red kettle challenge",
+   "quote": "mr. toale announced the salvation army has issued a red kettle challenge to the mayors of fitchburg"
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "40 Williams Drive",
+   "topic": "Open Meeting Law complaint response",
+   "quote": "katey adams, 40 williams drive, stated she heard the response to her open meeting law complaint and believed her complaint was not addressed"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: red kettle challenge",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "community"
+   ],
+   "quote": "mr. toale announced the salvation army has issued a red kettle challenge to the mayors of fitchburg"
+  },
+  {
+   "topic": "Interviews/appointments/reappointments: Cullen Dwyer",
+   "resolution": "approved",
+   "tags": [
+    "appointments",
+    "historical commission"
+   ],
+   "quote": "cullen dwyer has requested to be reappointed. the historical commission supports the reappointment."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "tags": [
+    "town facilities",
+    "cleaning services",
+    "energy audit",
+    "COMMBUYS",
+    "complete streets"
+   ],
+   "quote": "the first public forum (a.k.a. charrette) of a series of these types of meetings on town facilities was held on thursday, december 7th at 7 p.m."
+  },
+  {
+   "topic": "Old business: Board of Selectmen goals",
+   "resolution": "no action",
+   "tags": [
+    "goals",
+    "economic development",
+    "infrastructure"
+   ],
+   "quote": "identify desire for and type of economic development for lunenburg"
+  },
+  {
+   "topic": "Old business: 2018 license renewals (cont.)",
+   "resolution": "approved",
+   "tags": [
+    "licenses",
+    "fees"
+   ],
+   "quote": "ms. lemieux reported there were three licenses up for renewal tonight."
+  },
+  {
+   "topic": "Current business: Open Meeting Law complaint response (Kathryn Adams, 12/6/17)",
+   "resolution": "Board concurred; remainder of item cut off in text",
+   "tags": [
+    "open meeting law",
+    "complaint"
+   ],
+   "quote": "review and consider response to open meeting law complaint filed by kathryn adams on 12/6/17 regarding selectmen's meeting on 11/9/17"
+  },
+  {
+   "topic": "Committee reports and meeting schedule",
+   "resolution": "no action",
+   "tags": [
+    "committee reports",
+    "charter",
+    "schools budget",
+    "transportation",
+    "cable"
+   ],
+   "quote": "mir. mcquaid reported capital planning received requests from the police chief, the fire chief and the school"
+  },
+  {
+   "topic": "Public comment: Open Meeting Law complaint",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "open meeting law"
+   ],
+   "quote": "katey adams, 40 williams drive, stated she heard the response to her open meeting law complaint and believed her complaint was not addressed"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Open Meeting Law complaint filed by Kathryn Adams on 12/6/17 regarding Selectmen's Meeting on 11/9/17",
+   "where": "text",
+   "quote": "review and consider response to open meeting law complaint filed by kathryn adams on 12/6/17 regarding selectmen's meeting on 11/9/17"
+  },
+  {
+   "name": "Town of Sutton's Financial Forecast (Division of Local Services, Community Compact Program)",
+   "where": "text",
+   "quote": "review the town of sutton's financial forecast that division of local services did through the community compact program."
+  },
+  {
+   "name": "Invitation for Bids to provide cleaning services to town buildings",
+   "where": "text",
+   "quote": "the invitation for bids to provide cleaning services to our town buildings is currently being advertised"
+  },
+  {
+   "name": "Town Charter (Library Trustees section)",
+   "where": "text",
+   "quote": "library trustees reviewed their section of the town charter at their meeting"
+  }
+ ],
+ "tags": [
+  "open meeting law",
+  "appointments",
+  "town manager report",
+  "town facilities",
+  "cleaning services",
+  "licenses",
+  "committee reports",
+  "town charter",
+  "school budgets",
+  "public comment",
+  "energy audit",
+  "cable"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

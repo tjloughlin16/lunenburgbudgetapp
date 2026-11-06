@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2019-02-14",
  "docid": "2857",
@@ -12,31 +12,167 @@
  },
  "votes": [
   {
-   "motion": "Offer Muir Haman the position of Director of the Lunenburg Public Library",
+   "motion": "Offer Muir Haman the position of Director of the Lunenburg Public Library.",
    "moved_by": "Anne Gilman",
    "seconded_by": "Donna",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously approved)",
    "procedural": false,
-   "quote": "anne gilman made the motion to offer muir haman the position of director of the lunenburg public library. the motion was seconded by donna and unanimously approved."
+   "quote": "anne gilman made the motion to offer muir haman the position of director of the lunenburg public library."
   },
   {
-   "motion": "Set Muir's salary at $70,000 per annum for the period of April 1, 2019 through June 30, 2020",
+   "motion": "Set Muir Haman's salary at $70,000 per annum for the period of April 1, 2019 to June 30, 2020.",
    "moved_by": "Harry",
    "seconded_by": "Lars",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously approved)",
    "procedural": false,
-   "quote": "harry made the motion to set muir's salary at $70,000 per annum for the period of april 1, 2019 -> june 30, 2020. the motion was seconded by lars and unanimously approved"
+   "quote": "harry made the motion to set muir's salary at $70,000 per annum for the period of april 1, 2019 -> june 30, 2020."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lars",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed (unanimously approved)",
    "procedural": true,
-   "quote": "lars made a motion to adjourn the meeting. kate seconded the motion. the motion was unanimously approved"
+   "quote": "lars made a motion to adjourn the meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0838985
+ "note": "Minutes are plain extracted text with no scan problems. Votes are recorded as unanimous approvals; Harry Kubetz attended remotely, so the minutes say votes were taken by roll call, but no individual roll-call tallies are printed. Public comment and board comments are recorded as none.",
+ "cost_usd": 0.0035450200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt special meeting was called to order at 6:28 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, bob conroy, lars widstrand,"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, bob conroy, lars widstrand,"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, bob conroy, lars widstrand,"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, bob conroy, lars widstrand,"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, donna saiia, bob conroy, lars widstrand,"
+  },
+  {
+   "name": "Nicole Piermarini",
+   "role": "Staff Representative on the Search Committee",
+   "status": "present",
+   "quote": "nicole piermarini (staff representative on the search committee)"
+  },
+  {
+   "name": "Anne Gilman",
+   "role": "Friend's Representative on the Search Committee",
+   "status": "present",
+   "quote": "friend's representative on the search committee"
+  },
+  {
+   "name": "Steve Landry",
+   "role": "Reporter from The Sentinel & Enterprise",
+   "status": "present",
+   "quote": "steve landry (reporter from the sentinel & enterprise)"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Vice-Chair, Secretary & Trustee",
+   "status": "remote",
+   "quote": "harry kubetz (remotely)"
+  },
+  {
+   "name": "Linda Verge",
+   "role": "Candidate interviewed for Library Director",
+   "status": "not stated",
+   "quote": "interviews for lunenburg public library director position"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Candidate interviewed for Library Director; offered the position",
+   "status": "not stated",
+   "quote": "interviews for lunenburg public library director position"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Director salary",
+   "what_was_recorded": "The board set the new Library Director's salary at $70,000 per annum for April 1, 2019 to June 30, 2020, by motion.",
+   "figures_as_printed": [
+    "$70,000"
+   ],
+   "quote": "set muir's salary at $70,000 per annum for the period of april 1, 2019 -> june 30, 2020."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Interviews for Lunenburg Public Library Director Position",
+   "resolution": "interviews held (candidates Linda Verge and Muir Haman); no action recorded",
+   "quote": "interviews for lunenburg public library director position"
+  },
+  {
+   "topic": "Board Discussion of Candidate Interviews",
+   "resolution": "discussed; no action",
+   "quote": "the merits of both candidates were discussed."
+  },
+  {
+   "topic": "Selection of Lunenburg Public Library Director",
+   "resolution": "approved offer of Director position to Muir Haman and set salary at $70,000",
+   "quote": "anne gilman made the motion to offer muir haman the position of director of the lunenburg public library."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "none",
+   "quote": "board comments - none"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:51 p.m.",
+   "quote": "the meeting was adjourned at 8:51 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Comparison of Director Compensation",
+   "where": "list",
+   "quote": "referenced documents: comparison of director compensation"
+  }
+ ],
+ "tags": [
+  "library director hiring",
+  "personnel",
+  "salary",
+  "search committee",
+  "special meeting",
+  "interviews"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

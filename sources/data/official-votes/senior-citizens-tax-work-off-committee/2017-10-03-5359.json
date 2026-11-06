@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "senior-citizens-tax-work-off-committee",
  "meeting_date": "2017-10-03",
  "docid": "5359",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve January 30, 2017 minutes",
+   "motion": "Approve the January 30, 2017 minutes.",
    "moved_by": "Sue Doherty",
    "seconded_by": "Myleen Mallari",
    "outcome": "passed",
@@ -21,6 +21,107 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One vote recorded: approval of prior minutes. Other items are discussion and tentative agreements, not formal motions.",
- "cost_usd": 0.0785845
+ "note": "OCR of a scanned page (single page). Minor OCR artifacts: 'Nov 1°' in the time-sheet line and 'Respectruly Submitted' appear as printed by OCR; the record stamp reads 'OCT 2 5 2018', which post-dates the October 3, 2017 meeting, so the filing year may be a stamp or OCR error. Only one motion appears in the text (approval of the January 30, 2017 minutes), and no vote is recorded for other items; the 'members agree' statements are recorded as agreements, not votes. No dollar figures, no documents named, no public comment (minutes say 'None'). Adjournment at 2:33 pm is recorded with no motion.",
+ "cost_usd": 0.00267332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "member (called meeting to order; listed among members present)",
+   "status": "present",
+   "quote": "members present: sheila craigen, myleen mallari and sue doherty."
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "member (listed among members present; signed minutes)",
+   "status": "present",
+   "quote": "members present: sheila craigen, myleen mallari and sue doherty."
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "member (listed among members present)",
+   "status": "present",
+   "quote": "members present: sheila craigen, myleen mallari and sue doherty."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members agreed that all time sheets are due Nov 1 (OCR reads 'Nov 1°').",
+   "quote": "members agree all time sheets due nov 1°."
+  },
+  {
+   "decision": "Members agreed that all work hours must be done by Nov 1, with no exceptions.",
+   "quote": "after some discussion, members agree all work hours must be done by nov 1st. no exceptions."
+  },
+  {
+   "decision": "Sue will contact departments one more time about 2018 requests.",
+   "quote": "sue stated she will contact departments one more time."
+  },
+  {
+   "decision": "Sue will notify the selectman of the Property Tax Work-Off board vacancy.",
+   "quote": "sue will notify the selectman of the vacancy."
+  },
+  {
+   "decision": "A tentative next meeting date was set.",
+   "quote": "tentative date set for dec 27, 2017 at 2:00 pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "2018 applications and programs",
+   "resolution": "discussed; departments to be contacted again; time sheets due Nov 1",
+   "quote": "members agree all time sheets due nov 1°.",
+   "tags": [
+    "2018 applications",
+    "time sheets",
+    "departments"
+   ]
+  },
+  {
+   "topic": "Town Counsel office hours",
+   "resolution": "no action; Town Counsel advised requests for proof of income are permitted",
+   "quote": "town counsel stated we can request anything we feel necessary to determine eligibility.",
+   "tags": [
+    "town counsel",
+    "proof of income",
+    "eligibility"
+   ]
+  },
+  {
+   "topic": "Property Tax Work-Off board vacancy",
+   "resolution": "Sue to notify the selectman of the vacancy",
+   "quote": "sue will notify the selectman of the vacancy.",
+   "tags": [
+    "vacancy",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Set date for next meeting",
+   "resolution": "tentative date set for Dec 27, 2017 at 2:00 pm",
+   "quote": "tentative date set for dec 27, 2017 at 2:00 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "property tax work-off",
+  "senior tax work-off",
+  "2018 applications",
+  "time sheets",
+  "town counsel",
+  "board vacancy",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

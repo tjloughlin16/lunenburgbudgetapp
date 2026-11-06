@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-08-14",
  "docid": "5610",
@@ -12,23 +12,249 @@
  },
  "votes": [
   {
-   "motion": "Cease any fining of Sean Patricks after 8/14/18",
+   "motion": "To cease any fining of Sean Patricks after 8/14/18.",
    "moved_by": "Joan P.",
-   "seconded_by": "Ryan S.",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: joan p. to cease any fining of sean patricks after 8/14/18. second: ryan s. vote: unanimous"
+   "quote": "motion: joan p. to cease any fining of sean patricks after 8/14/18.",
+   "seconded_by": "Ryan S."
   },
   {
-   "motion": "Adjourn at 7:33pm",
+   "motion": "To adjourn the meeting at 7:33pm.",
    "moved_by": "Joan P.",
-   "seconded_by": "Ryan S.",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion: joan p. to adjourn: 7:33pm. second: ryan s. vote: unanimous"
+   "quote": "motion: joan p. to adjourn: 7:33pm. second: ryan s. vote: unanimous",
+   "seconded_by": "Ryan S."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; opening section of page contains garbled text unrelated to votes. Two votes recorded, both unanimous. Discussed Communication Policy was explicitly noted as \"not a vote.\"",
- "cost_usd": 0.0246088
+ "note": "Single OCR page (PAGE 1) from a scan; the text begins mid-sentence and garbled in places (e.g. the signature line). The minutes record no attendance list, so attendees are drawn from those who acted or spoke. Votes are recorded only as \"Unanimous\" with no counts. The \"Public Comment\" heading near the end carries a remark by Joan, a board member, and the opening public comment reads \"none\"; no outside speaker is recorded, so public_comment is empty.",
+ "cost_usd": 0.00536602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: joan p. to adjourn: 7:33pm."
+  },
+  {
+   "name": "Ryan S.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "second: ryan s. vote: unanimous"
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john thanked joan for her report."
+  },
+  {
+   "name": "Sean Patricks",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sean also added that he has sold the business to mr. matta"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "respectively submitted one 4. konle jane ranley sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sean was told to have the trap pumped in 3 months (11/13/18) and to come back to a Commission meeting with the documentation for the August and November inspections.",
+   "quote": "the commission told sean to have the trap pumped in 3 months (11/13/18) and to come back to a commission meeting with the documentation for the august and november inspections."
+  },
+  {
+   "decision": "Consensus not to adopt a communication policy; the minutes state this was not a vote. Chair to suggest to Joe that the board discuss it again; board could work on group dynamics.",
+   "quote": "it was a consensus to not have a policy but not a vote."
+  },
+  {
+   "decision": "John will talk to Barb about fine letters for Bad Larry's and Kobobelicious.",
+   "quote": "john will talk to barb about fine letters for bad larry's and kobobelicious."
+  },
+  {
+   "decision": "Evaluation of past I/I work to be discussed at a future meeting with Carl.",
+   "quote": "evaluation of past inflow/infiltration (i/i) work - will be discussed at a future meeting with carl."
+  },
+  {
+   "decision": "FY 19 legal fees billing basis moved to the next meeting.",
+   "quote": "fy 19 legal fees billing basis - will be moved to the next meeting."
+  },
+  {
+   "decision": "Members asked to read the Fitchburg J.F. Highway Project material; questions to be brought to the next meeting and forwarded to Fitchburg.",
+   "quote": "john encouraged all to read it and if anyone has questions, bring them to the next meeting and forward them on to fitchburg."
+  },
+  {
+   "decision": "Minutes of 7/31/18 to be discussed at the next meeting.",
+   "quote": "minutes of 7/31/18 - will be discussed at next meeting."
+  },
+  {
+   "decision": "Commission signed Sewer Order #19 and the privilege fee for 63 Prospect St.",
+   "quote": "commission signed the sewer order #19 and the privilege fee for 63 prospect st."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Privilege fee, 63 Prospect Street",
+   "what_was_recorded": "Town counsel was checked and the privilege fee for 63 Prospect Street was reported as a set amount.",
+   "figures_as_printed": [
+    "$11,551.47"
+   ],
+   "quote": "john reported that barb checked with town counsel and the fee is $11,551.47."
+  },
+  {
+   "topic": "Sean Patricks outstanding fines",
+   "what_was_recorded": "Sean asked to resolve outstanding fines and the Commission discussed the fines and his request to cease future fining; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "sean also added that he has sold the business to mr. matta and he would like to resolve the issue of outstanding fines."
+  },
+  {
+   "topic": "FY 19 legal fees billing basis",
+   "what_was_recorded": "Legal fees billing basis for FY 19 was listed and moved to the next meeting; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "fy 19 legal fees billing basis - will be moved to the next meeting."
+  },
+  {
+   "topic": "Fitchburg J.F. Highway Project final costs and payment schedule",
+   "what_was_recorded": "Final costs and payment schedule for the Fitchburg J.F. Highway Project were listed for members to review; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "fitchburg j.f. highway project - final costs, payment schedule"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Sean Patricks trap inspection and outstanding fines",
+   "resolution": "Sean told to pump trap in 3 months; fining ceased after 8/14/18 by vote",
+   "quote": "sean also added that he has sold the business to mr. matta and he would like to resolve the issue of outstanding fines.",
+   "tags": [
+    "fines",
+    "grease trap",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Evaluation of past I/I work",
+   "resolution": "deferred to a future meeting with Carl",
+   "quote": "evaluation of past inflow/infiltration (i/i) work - will be discussed at a future meeting with carl.",
+   "tags": [
+    "inflow infiltration"
+   ]
+  },
+  {
+   "topic": "ZBA hearing, 380/390/400 Electric Ave",
+   "resolution": "discussed; no action recorded",
+   "quote": "zba hearing on 380/390/400 electric ave 8/22/18- dan proctor is going before the zba on 8/22/18 with his proposal to create 2 lots.",
+   "tags": [
+    "zoning",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Irrigation and manual meters vendor references",
+   "resolution": "Joan reported on references; John thanked her; vote on meters planned for a future meeting",
+   "quote": "irrigation/manual meters - vendor references, counsel input - stiles company references",
+   "tags": [
+    "irrigation meters",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "FY 19 legal fees billing basis",
+   "resolution": "moved to the next meeting",
+   "quote": "fy 19 legal fees billing basis - will be moved to the next meeting.",
+   "tags": [
+    "legal fees",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Fitchburg J.F. Highway Project",
+   "resolution": "members asked to review; questions to next meeting",
+   "quote": "fitchburg j.f. highway project - final costs, payment schedule",
+   "tags": [
+    "highway project",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Grease traps regulation compliance",
+   "resolution": "John to talk to Barb about fine letters",
+   "quote": "grease traps- regulation compliance - 1st tuesday report - john will talk to barb about fine letters for bad larry's and kobobelicious.",
+   "tags": [
+    "grease traps",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Minutes of 7/31/18",
+   "resolution": "deferred to next meeting",
+   "quote": "minutes of 7/31/18 - will be discussed at next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Privilege fee, 63 Prospect Street",
+   "resolution": "fee reported; Sewer Order #19 and privilege fee signed",
+   "quote": "privilege fee - 63 prospect street - john reported that barb checked with town counsel and the fee is $11,551.47.",
+   "tags": [
+    "privilege fee",
+    "sewer order"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed items for future agendas",
+   "quote": "member agenda inputs for future meetings - vote on irrigation meters, evaluation of past i/l work, legal billing, 7/31 minutes, jf highway project, zba meeting on electric ave, report on 2 grease trap violators.",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Communication policy and group dynamics",
+   "resolution": "consensus not to adopt a policy (not a vote); group dynamics to be worked on",
+   "quote": "joan would like to consider that others may be telling the commission they may need a communication policy.",
+   "tags": [
+    "communication policy",
+    "group dynamics"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sewer Order #19",
+   "where": "text",
+   "quote": "commission signed the sewer order #19 and the privilege fee for 63 prospect st."
+  },
+  {
+   "name": "Minutes of 7/31/18",
+   "where": "text",
+   "quote": "minutes of 7/31/18 - will be discussed at next meeting."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease traps",
+  "fines",
+  "irrigation meters",
+  "ZBA",
+  "privilege fee",
+  "legal fees",
+  "Fitchburg highway project",
+  "inflow infiltration",
+  "meeting minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

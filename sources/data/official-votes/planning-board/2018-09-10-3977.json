@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-09-10",
  "docid": "3977",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Take a five minute recess for the Board Chair to confer with Town Counsel",
+   "motion": "Five minute recess for the Board Chair to confer with Town Counsel.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "d. prokowiew made a motion for a five minute recess for the board chair to confer with town counsel, m. allison seconded, all aye."
   },
   {
-   "motion": "Enter into Regular Session",
+   "motion": "Enter into Regular Session.",
    "moved_by": "M. Allison",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
@@ -28,23 +28,23 @@
    "quote": "m. allison made a motion to enter into regular session, k. chenis seconded, all aye."
   },
   {
-   "motion": "Enter Executive Session pursuant to G.L. c. 30A, § 21, to discuss strategy with respect to litigation regarding Town of Lunenburg v. Settlers Solar, et al.",
+   "motion": "Enter Executive Session under G.L. c. 30A, § 21 to discuss litigation strategy (Settlers Solar), then return to Regular Session.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "k. chenis made the motion to enter executive session, seconded by d. prokowiew, roll call vote, t. cole, aye; d. prokowiew, aye; k. chenis, aye; m. allison, aye; g. bittner, aye."
+   "quote": "k. chenis made the motion to enter executive session, seconded by d. prokowiew, roll call vote, t. cole, aye"
   },
   {
-   "motion": "Take no action at this point on Settlers Solar (994 Northfield Road), reconvene at the next Board meeting, and request Town Counsel to prepare a decision",
+   "motion": "On the 994 Northfield Road (Settlers Solar) hearing: take no action at this point, reconvene at the next Board meeting, and request Town Counsel to prepare a decision.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "g. bittner requested a motio n to take no action at this point, reconvene at the next board meeting, and request town counsel to prepare a decision, k. chenis moved the motion, d. prokowiew seconded, all aye."
+   "quote": "k. chenis moved the motion, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "Continue the meeting past the allotted time",
+   "motion": "Continue the meeting past the allotted time.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "g. bittner requested a motion to continue the meeting past the allotted time, d. prokowiew moved the motion, m. allison seconded, all aye."
   },
   {
-   "motion": "Approve minutes from 8/27/18",
+   "motion": "Approve the 8/27/18 minutes.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
    "outcome": "passed 3-0",
@@ -60,7 +60,7 @@
    "quote": "d. prokowiew made a motion to approve, m. allison seconded, g. bittner abstained due to absence, motion passed 3-0."
   },
   {
-   "motion": "Approve minutes from 8/27/18 for 994 Northfield Road, Settlers Solar",
+   "motion": "Approve the 8/27/18 994 Northfield Road, Settlers Solar minutes.",
    "moved_by": "M. Allison",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed 3-0",
@@ -69,6 +69,255 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.109415
+ "note": "Text extracted with stray spaces and line breaks (e.g., 'Motio n', 'prohibite d'), quoted as printed. Several motions are recorded only as 'all aye' or a roll call without a printed tally, so outcomes are given as 'passed' where no count appears. The Settlers Solar decision and its minutes are in separate minutes, not included here. No dollar figures are printed.",
+ "cost_usd": 0.00742632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis (left at 10:05 pm), david prokowiew, tanner cole"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis (left at 10:05 pm)"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "kenneth chenis (left at 10:05 pm)"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel adam costa"
+  },
+  {
+   "name": "Kim Cole",
+   "role": "",
+   "status": "not stated",
+   "quote": "kim cole, 563 massachusetts avenue - wants prohibition."
+  },
+  {
+   "name": "David Rodgers",
+   "role": "",
+   "status": "not stated",
+   "quote": "both david rodgers, 82 highland street"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "not stated",
+   "quote": "katey adams, williams drive would like to see it prohibite d in lunenburg."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Construction hours for the Settlers Solar project were discussed, with the agreed hours recorded: Monday through Friday 8:00 AM to 5:00 PM, Saturdays 9:00 AM to 2:00 PM, no Sundays or holidays.",
+   "quote": "with the agreement being monday through friday, 8:00 am to 5:00 pm, saturdays 9:00 am to 2:00 pm, no sundays or holidays."
+  },
+  {
+   "decision": "Agenda items were taken out of order.",
+   "quote": "agenda items taken out of order."
+  },
+  {
+   "decision": "The retail recreational marijuana discussion is continued to the next Board meeting.",
+   "quote": "the retail marijuana discussion will continue at the next board meeting."
+  },
+  {
+   "decision": "Committee reports were tabled.",
+   "quote": "committee reports: tabled"
+  },
+  {
+   "decision": "Director's items were tabled.",
+   "quote": "director's items: tabled"
+  },
+  {
+   "decision": "Ongoing items were tabled.",
+   "quote": "ongoing items: tabled"
+  },
+  {
+   "decision": "Meeting schedule set: September 24 agenda to include retail recreational marijuana discussion and deliberation and vote on Settlers Solar, 994 Northfield Road; October 22 to discuss marijuana cultivation.",
+   "quote": "deliberation and vote on settlers solar, 994 northfield road"
+  },
+  {
+   "decision": "Board members would like to review the Board's decision regarding the bins in front of Wal-Mart.",
+   "quote": "board members would like to review the board's decision."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Recreational marijuana retail prohibition and buffer distance",
+   "speaker": "Kim Cole",
+   "stated_role": "",
+   "quote": "kim cole, 563 massachusetts avenue - wants prohibition."
+  },
+  {
+   "topic": "Recreational marijuana prohibition",
+   "speaker": "David Rodgers",
+   "stated_role": "",
+   "quote": "both david rodgers, 82 highland street"
+  },
+  {
+   "topic": "Recreational marijuana prohibition",
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "quote": "katey adams, williams drive would like to see it prohibite d in lunenburg."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Recess and executive session on Settlers Solar litigation",
+   "resolution": "entered executive session, returned to regular session",
+   "tags": [
+    "executive session",
+    "litigation",
+    "Settlers Solar"
+   ],
+   "quote": "board chair requested a motion to enter executive session pursuant to g.l. c. 30a, § 21"
+  },
+  {
+   "topic": "Public hearing: 994 Northfield Road, Settlers Solar",
+   "resolution": "no action; reconvene at next meeting; Town Counsel to prepare decision",
+   "tags": [
+    "public hearing",
+    "solar",
+    "construction hours"
+   ],
+   "quote": "994 northfield road, settlers solar"
+  },
+  {
+   "topic": "Recreational Marijuana Regulations - Retail",
+   "resolution": "limited discussion; continued to next meeting",
+   "tags": [
+    "recreational marijuana",
+    "zoning",
+    "public comment"
+   ],
+   "quote": "recreational marijuana regulations- retail- there was limited discussion, due to the late hour."
+  },
+  {
+   "topic": "Minutes approval (8/27/18)",
+   "resolution": "approved 3-0 (two sets of minutes)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "8/27/18- d. prokowiew made a motion to approve, m. allison seconded"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "tabled",
+   "tags": [
+    "committees"
+   ],
+   "quote": "committee reports: tabled"
+  },
+  {
+   "topic": "Director's items (Special Town Meeting, November 13, 2018)",
+   "resolution": "tabled",
+   "tags": [
+    "special town meeting",
+    "sign bylaw",
+    "solar energy systems"
+   ],
+   "quote": "special town meeting- november 13, 2018"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted for September 24 and October 22 meetings",
+   "tags": [
+    "schedule",
+    "marijuana",
+    "Settlers Solar"
+   ],
+   "quote": "october 22- discussion of marijuana cultivation"
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "tabled",
+   "tags": [
+    "ongoing items",
+    "earth removal",
+    "drainage"
+   ],
+   "quote": "ongoing items: tabled"
+  },
+  {
+   "topic": "Board comment: bins in front of Wal-Mart",
+   "resolution": "board to review its decision",
+   "tags": [
+    "board comment",
+    "Wal-Mart"
+   ],
+   "quote": "g .bittner noted the bins in front of wal-mart."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:45 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 10:45 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 8/27/18",
+   "where": "list",
+   "quote": "minutes- 8/27/18 8/27/18 994 northfield road, settlers solar"
+  },
+  {
+   "name": "8/27/18 994 Northfield Road, Settlers Solar (minutes)",
+   "where": "list",
+   "quote": "8/27/18 994 northfield road, settlers solar"
+  },
+  {
+   "name": "Special Town Meeting warrant articles: §250-6.5 Sign Bylaw and §250-4.15 Solar Energy Systems (Special Town Meeting, November 13, 2018)",
+   "where": "text",
+   "quote": "special town meeting- november 13, 2018"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "Settlers Solar",
+  "solar energy",
+  "recreational marijuana",
+  "executive session",
+  "litigation",
+  "public hearing",
+  "minutes approval",
+  "special town meeting",
+  "zoning bylaw"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

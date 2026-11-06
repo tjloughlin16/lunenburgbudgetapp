@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5084
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5100
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -852,7 +852,7 @@ Returns `label`, `fy`, `stage`, `source`, `value`, `is_kept` — for example: la
 SELECT dataset, reconciled, partial, SUM(CAST(rows AS INTEGER)) AS rows FROM dataset_document GROUP BY dataset, reconciled, partial ORDER BY rows DESC LIMIT 20
 ```
 
-Returns `dataset`, `reconciled`, `partial`, `rows` — for example: dataset=report-appropriations, reconciled=0, partial=0, rows=27764
+Returns `dataset`, `reconciled`, `partial`, `rows` — for example: dataset=report-appropriations, reconciled=0, partial=0, rows=27799
 
 **Which figures has somebody stated publicly, and on what basis?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=checked,
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=5084
+Returns `source_type`, `documents` — for example: source_type=primary, documents=5100
 
 **What basis does each document have for the figures it prints?**
 

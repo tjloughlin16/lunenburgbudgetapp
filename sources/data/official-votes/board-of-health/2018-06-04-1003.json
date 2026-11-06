@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-06-04",
  "docid": "1003",
@@ -12,24 +12,211 @@
  },
  "votes": [
   {
-   "motion": "To grant Mr. Perry until July to have all new windows installed, with Mr. Perry demonstrating completion at the first August meeting",
+   "motion": "Give Mr. Perry until July to have all new windows installed, and require him to appear at the first meeting in August showing the work was completed.",
    "moved_by": "Jewell",
    "seconded_by": "Mayhew",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "after much discussion and on motion by jewell and second by mayhew that mr. perry had until july to have all new windows installed and further that mr. perry would be at the first meeting in august showing that the work had been completed. all in favor."
+   "quote": "on motion by jewell and second by mayhew that mr. perry had until july to have all new windows installed and further that mr. perry would be at the first meeting in august"
   },
   {
-   "motion": "To appoint George Emond as Chairman, Perry Jewell as Vice-Chairman, and Paul Fortin as Secretary",
+   "motion": "Appoint George Emond as Chairman, Perry Jewell as Vice-Chairman and Paul Fortin as Secretary.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "the board of health voted unanimously to appoint george emond as chairman, perry jewell as vice- chairman and paul fortin as secretary",
    "quote_taken_from_text": true
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision scan.",
- "cost_usd": 0.0836775
+ "note": "Scanned text via OCR (macOS Vision), no page breaks lost but some OCR-level oddities. No motion is recorded for the minutes approval, the Title 5 acknowledgments, the septic permit signings, or the adjournment (\"Meeting adjourned\" has no motion, mover or vote), so none are listed as votes. Only two votes are recorded. The Perry motion is recorded as \"All in favor\" with no count. The minutes print no dollar figures at all. Appearances by Woodward, Perry and Bean are recorded as attendees, not as public comment, because the minutes have no public comment section. The Title 5 and septic permit address lists are treated as the documents list because they are headed as reports acknowledged and permits signed.",
+ "cost_usd": 0.00603572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Woodward",
+   "role": "property owner",
+   "status": "present",
+   "quote": "matthew woodward, property owner, met with the board with regard to the inconsistencies between"
+  },
+  {
+   "name": "Ed Perry",
+   "role": "owner",
+   "status": "present",
+   "quote": "ed perry, owner, met with the board."
+  },
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "george emond stated that he had spoken with agent jim garreffi and he would not object to an"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Vice-Chairman",
+   "status": "not stated",
+   "quote": "on motion by jewell and second by mayhew that mr. perry had until july to have all new windows installed"
+  },
+  {
+   "name": "Mayhew",
+   "role": "",
+   "status": "not stated",
+   "quote": "on motion by jewell and second by mayhew that mr. perry had until july to have all new windows installed"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Secretary",
+   "status": "not stated",
+   "quote": "the board of health voted unanimously to appoint george emond as chairman, perry jewell as vice- chairman and paul fortin as secretary",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Mr. Bean",
+   "role": "new owner",
+   "status": "not stated",
+   "quote": "mr. bean would like to explore his options with regard to bringing this system into compliance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 27 Fire Road 15A septic matter was continued to June 18, 2018 at 7:30 pm.",
+   "quote": "after much discussion, the matter was continued to june 18, 2018 at 7:30 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Perry window installation",
+   "what_was_recorded": "Mr. Perry said the windows were custom made and the installation had to be done in a particular manner because of the cost. No dollar figure is printed.",
+   "quote": "they were custom made and had to accomplish the installation in the manner due to the cost.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved (heading)",
+   "resolution": "heading only; no approval motion recorded",
+   "quote": "minutes approved: title 5 inspection reports acknowledged:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged; no vote recorded",
+   "quote": "title 5 inspection reports acknowledged: 537 howard street 7 clifton road 104 island road",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed; no vote recorded",
+   "quote": "septic permits signed: 498 howard street 64 arbor street",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "Woodward Title 5 vs Board of Health records",
+   "resolution": "discussed; no action recorded",
+   "quote": "matthew woodward, property owner, met with the board with regard to the inconsistencies between",
+   "tags": [
+    "Title 5",
+    "groundwater",
+    "septic tank"
+   ]
+  },
+  {
+   "topic": "Ed Perry windows extension",
+   "resolution": "extension to end of July approved; work to be reported at first August meeting",
+   "quote": "on motion by jewell and second by mayhew that mr. perry had until july to have all new windows installed",
+   "tags": [
+    "windows",
+    "violations",
+    "extension"
+   ]
+  },
+  {
+   "topic": "27 Fire Road 15A septic compliance",
+   "resolution": "continued to June 18, 2018 at 7:30 pm",
+   "quote": "after much discussion, the matter was continued to june 18, 2018 at 7:30 pm.",
+   "tags": [
+    "septic",
+    "variance",
+    "bedrooms"
+   ]
+  },
+  {
+   "topic": "Re-organization of the Board",
+   "resolution": "officers appointed unanimously",
+   "quote": "the board of health voted unanimously to appoint george emond as chairman, perry jewell as vice- chairman and paul fortin as secretary",
+   "tags": [
+    "board officers"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report: 537 Howard Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 537 howard street 7 clifton road 104 island road"
+  },
+  {
+   "name": "Title 5 inspection report: 7 Clifton Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 537 howard street 7 clifton road 104 island road"
+  },
+  {
+   "name": "Title 5 inspection report: 104 Island Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 537 howard street 7 clifton road 104 island road"
+  },
+  {
+   "name": "Septic permit: 498 Howard Street",
+   "where": "list",
+   "quote": "septic permits signed: 498 howard street 64 arbor street"
+  },
+  {
+   "name": "Septic permit: 64 Arbor Street",
+   "where": "list",
+   "quote": "septic permits signed: 498 howard street 64 arbor street"
+  },
+  {
+   "name": "Title 5 report, October 2013",
+   "where": "text",
+   "quote": "the first title 5 was completed in october of 2013 passing the system."
+  },
+  {
+   "name": "Title 5 inspection report, October 2017",
+   "where": "text",
+   "quote": "another title 5 report was done in october of 2017. this was a conditional pass requiring a new septic tank"
+  },
+  {
+   "name": "As-built plan, 27 Fire Road 15A",
+   "where": "text",
+   "quote": "mr. bean contacted the engineer who designed the system and an as-built was completed."
+  }
+ ],
+ "tags": [
+  "Title 5",
+  "septic",
+  "groundwater",
+  "septic tank replacement",
+  "windows",
+  "violation extension",
+  "27 Fire Road 15A",
+  "board officers",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

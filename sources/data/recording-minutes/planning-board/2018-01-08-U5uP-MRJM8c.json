@@ -1,0 +1,456 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board Meeting",
+ "meeting_date": "2018-01-08",
+ "video_id": "U5uP-MRJM8c",
+ "video_url": "https://www.youtube.com/watch?v=U5uP-MRJM8c",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2018-01-08-U5uP-MRJM8c.json",
+  "sha256": "a6ff028b621c9e91f5403364ab08434f8f32125b3630e8f5d47b7d921719ca3c",
+  "caption_lines": 592,
+  "segments": 4660
+ },
+ "recording": {
+  "duration_s": 12602,
+  "duration": "3:30",
+  "spoken_chars": 168814,
+  "words_approx": 28135
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01082018-3978",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2018-01-08-agenda-3978.txt",
+   "path": "sources/meetings/planning-board/2018-01-08-agenda-3978.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082018-3978",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2018-01-08-minutes-3978.txt",
+   "path": "sources/meetings/planning-board/2018-01-08-minutes-3978.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T22:47:01Z",
+  "cost_usd": 0.36520220000000003
+ },
+ "minutes": {
+  "headline": "Planning Board granted a site plan waiver and reduced a subdivision bond; Whalom overlay density rules stayed unsettled.",
+  "summary": "A resident asked the board to ease the freestanding sign process. The board granted a site plan waiver for a dealer's license use and voted on reducing the Stone Farm bond. Most of the meeting went to how to read the Whalom overlay density rules for 274 Prospect Street, a concept presentation of an over-55 development, and a read-through of draft zoning bylaw rewrite language.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Allison",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Bittner",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Adam",
+    "role": "town planner"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 43,
+    "speaker_as_heard": "tanner Cole 563 Massachusetts Avenue",
+    "stated_role": "small business owner",
+    "topic": "Asked the board to amend the sign bylaw so a small business can put a freestanding sign out front without full planning board review and engineering plans."
+   },
+   {
+    "t": 1223,
+    "speaker_as_heard": "Elaine murrow's",
+    "stated_role": "newly elected trustee, Stone Farm condominium association",
+    "topic": "Asked what incentive the developer has to finish repairs if only the estimated repair cost is held back."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "housing",
+   "legal",
+   "planning-and-zoning",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 774,
+    "motion": "Grant the waiver from site plan rules as requested.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1156,
+    "motion": "Reduce the Stone Farm bond, releasing the balance and holding back the engineer's estimate.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 12569,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 836,
+    "topic": "Stone Farm subdivision bond",
+    "what_was_said": "The engineer's estimate for punch list work replaced the earlier ballpark figure, and the bond would be cut to that estimate.",
+    "figures_as_heard": [
+     "sixty to eighty thousand dollar",
+     "$27,000"
+    ]
+   },
+   {
+    "t": 1177,
+    "topic": "Stone Farm bond release",
+    "what_was_said": "The motion stated the release amount and remaining balance.",
+    "figures_as_heard": [
+     "seven hundred and forty thousand nine hundred and eighty four dollars and twenty-five cents",
+     "$27,000"
+    ]
+   },
+   {
+    "t": 7860,
+    "topic": "Capital planning requests",
+    "what_was_said": "The capital planning committee reported department requests from police, fire, schools and DPW.",
+    "figures_as_heard": [
+     "$600,000",
+     "two million dollars",
+     "130,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 398,
+    "decision": "The sign bylaw request will go on the January 22nd workshop agenda, with input from the building inspector."
+   },
+   {
+    "t": 4695,
+    "decision": "The board will ask the zoning officer whether an applicant can seek relief from the ten-acre requirement through the Zoning Board."
+   },
+   {
+    "t": 8192,
+    "decision": "The director will write a memo saying the board is split on retaining the Prospect and Cross Street parcel."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 437,
+    "topic": "Public comment on sign bylaw",
+    "resolution": "referred to an agenda item",
+    "tags": [
+     "public-comment",
+     "planning-and-zoning",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 438,
+    "t_end": 815,
+    "topic": "Site plan waiver for dealer's license use",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 816,
+    "t_end": 1440,
+    "topic": "Stone Farm close out and bond reduction",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1441,
+    "t_end": 4694,
+    "topic": "Whalom overlay district interpretation",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning",
+     "legal",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 4695,
+    "t_end": 7600,
+    "topic": "274 Prospect Street concept presentation",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 7601,
+    "t_end": 7840,
+    "topic": "Minutes",
+    "resolution": "discussed",
+    "tags": []
+   },
+   {
+    "t_start": 7841,
+    "t_end": 8065,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "capital"
+    ]
+   },
+   {
+    "t_start": 8066,
+    "t_end": 8700,
+    "topic": "Director items: Prospect and Cross Street parcel, technical assistance, marijuana regulations",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 8701,
+    "t_end": 12400,
+    "topic": "Draft zoning bylaw rewrite review",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 12401,
+    "t_end": 12600,
+    "topic": "Notices and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The vote counts on the waiver and bond reduction were not stated.",
+   "Whether the December 11 minutes were approved is not audible."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 5442,
+    "about": "The developer's engineer argued the overlay allows higher density while board members said three units or the ten-acre limit applies.",
+    "sides": "a developer's engineer against some board members",
+    "words_as_heard": "I think I'm wasting my clients time",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 877,
+    "kind": "liability or legal",
+    "about": "Who pays for plowing and maintenance if the private road is abandoned.",
+    "who": "a member",
+    "words_as_heard": "if it was abandoned where would the funds come for like plowing and things of that"
+   },
+   {
+    "t": 5187,
+    "kind": "condition",
+    "about": "The developer's engineer will tell his client not to apply unless a special permit for the unit count is possible.",
+    "who": "the applicant's engineer",
+    "words_as_heard": "if you're not able to grant that special probe for 18 units I'm gonna tell my client don't even apply"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1507,
+    "name_as_heard": "opinions from zoning commissioner and town council",
+    "kind": "letter or email",
+    "words_as_heard": "I hope everyone received the information",
+    "shown": true
+   },
+   {
+    "t": 8294,
+    "name_as_heard": "DLTA information",
+    "kind": "report",
+    "words_as_heard": "we distributed the DL ta information",
+    "shown": true
+   },
+   {
+    "t": 8600,
+    "name_as_heard": "recreational marijuana draft regulations",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "the recreational marijuana draft regulations you all get a copy of those",
+    "shown": true
+   },
+   {
+    "t": 7601,
+    "name_as_heard": "December 11th 2017 minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "the minutes from December 11th 2017",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board voted to reduce the Stone Farm subdivision bond, releasing the balance and holding back the engineer's estimate for punch list work.",
+    "t": 1156
+   },
+   {
+    "line": "The board granted a site plan waiver as requested for a dealer's license use.",
+    "t": 774
+   },
+   {
+    "line": "Most of the meeting went to reading the Whalom overlay density rules, and the board will ask the zoning officer whether relief from the ten-acre requirement can come through the Zoning Board.",
+    "t": 4695
+   },
+   {
+    "line": "A resident asked the board to ease the freestanding sign process; the request goes on the January 22nd workshop agenda with input from the building inspector.",
+    "t": 398
+   },
+   {
+    "line": "The board continued its read-through of the draft zoning bylaw rewrite, and the director will write a memo saying the board is split on the Prospect and Cross Street parcel.",
+    "t": 8192
+   }
+  ],
+  "why_it_matters": [
+   "A bond is the money a town holds to make sure a developer finishes roads and repairs, so cutting it to the engineer's estimate leaves less in hand if the work costs more than estimated.",
+   "The Whalom overlay density reading and the zoning rewrite set how much housing can be built on nearby parcels, and the rewrite is likely to come to Town Meeting as a vote."
+  ],
+  "watch_next": [
+   "January 22nd Planning Board workshop, where the sign bylaw request is to be taken up.",
+   "The zoning officer's answer on whether the Zoning Board can grant relief from the ten-acre requirement."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T22:47:09Z",
+   "cost_usd": 0.0235391
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01082018-3978",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2018-01-08-minutes-3978.txt",
+   "path": "sources/meetings/planning-board/2018-01-08-minutes-3978.pdf"
+  },
+  "official_sha256": "21bdcede7b908564bb44dc92397c964409091485e34a3c4a7bedcf8cbdc21e5e",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes (the waiver and the Stone Farm release leaving $27,000) and on the main follow-up items; the figure differences are mostly caption garbling. The one substantive difference is the Prospect/Cross Street (Lot 5) outcome: ours says a memo that the board is split, while the official says Burney will inform the Selectmen of the purchase discussion.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Waiver vote (40 Summer Street site plan waiver)",
+    "ours": "Grant the waiver from site plan rules as requested. — passed",
+    "official": "m. jeffreys made a motion to grant the waiver as requested, seconded by d. prokowiew, all aye.",
+    "note": "Both record the waiver granted as requested; official adds the address and mover/seconder.",
+    "t": 774
+   },
+   {
+    "kind": "agree",
+    "about": "Stone Farm bond reduction vote, balance held",
+    "ours": "Reduce the Stone Farm bond, releasing the balance and holding back the engineer's estimate. — passed",
+    "official": "d. prokowiew made a motion to release $ 740,984.25 from the remaining balance of $ 767,984.25; to leave a balance of $27,000.00, seconded by m. jeffreys.",
+    "note": "Same action: release down to the engineer-suggested retained amount of $27,000.",
+    "t": 1156
+   },
+   {
+    "kind": "caption_error",
+    "about": "Stone Farm bond release amount",
+    "ours": "seven hundred and forty thousand nine hundred and eighty four dollars and twenty-five cents",
+    "official": "d. prokowiew made a motion to release $ 740,984.25 from the remaining balance of $ 767,984.25; to leave a balance of $27,000.00, seconded by m. jeffreys.",
+    "official_reading": "$740,984.25",
+    "note": "Spoken words match $740,984.25; our figure rendering is garbled but the amount is the same.",
+    "t": 1177
+   },
+   {
+    "kind": "caption_error",
+    "about": "Stone Farm bond prior balance",
+    "ours": "sixty to eighty thousand dollar",
+    "official": "d. prokowiew made a motion to release $ 740,984.25 from the remaining balance of $ 767,984.25; to leave a balance of $27,000.00, seconded by m. jeffreys.",
+    "official_reading": "$767,984.25",
+    "note": "Captions misheard the remaining balance (likely 767,984.25) as 'sixty to eighty thousand'.",
+    "t": 836
+   },
+   {
+    "kind": "agree",
+    "about": "Amount retained for Stone Farm",
+    "ours": "$27,000",
+    "official": "the suggested amount to be retained, provided by the board's reviewing engineer, was $27,000.00 based upon a 15% adjustment for prevailing wages.",
+    "note": "Both give $27,000 retained.",
+    "t": 836
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital planning requests figures",
+    "ours": "Capital planning requests: $600,000, two million dollars, 130,000",
+    "official": "",
+    "note": "Official minutes mention no capital planning figures; check the recording at this point to see whether it was discussed.",
+    "t": 7860
+   },
+   {
+    "kind": "agree",
+    "about": "Sign bylaw on January 22nd agenda",
+    "ours": "The sign bylaw request will go on the January 22nd workshop agenda, with input from the building inspector.",
+    "official": "there will be continued discussion at the board's january 22nd meeting.",
+    "note": "Both continue the sign bylaw to Jan 22; building inspector input is only in ours.",
+    "t": 398
+   },
+   {
+    "kind": "agree",
+    "about": "Ask zoning officer about relief from ten-acre requirement",
+    "ours": "The board will ask the zoning officer whether an applicant can seek relief from the ten-acre requirement through the Zoning Board.",
+    "official": "a. burney will ask the bizeo if an applicant can seek relief through the zba for the ten (10) acre requirement.",
+    "note": "Same action item; official names Burney as the one asking.",
+    "t": 4695
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Prospect/Cross Street parcel (Lot 5) outcome",
+    "ours": "The director will write a memo saying the board is split on retaining the Prospect and Cross Street parcel.",
+    "official": "a. burney will inform the board of selectmen.",
+    "note": "Ours says a memo that the board is split on retaining the parcel; official says Burney informs the Selectmen of the discussion on purchasing Lot 5. Check the recording for recipient and what is conveyed.",
+    "t": 8192
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Developer's engineer estimate",
+    "ours": "",
+    "official": "the developer's engineer submitted a cost of slightly less than $ 15,000.00.",
+    "note": "Figure of about $15,000 appears only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees missing from ours",
+    "ours": "",
+    "official": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys (left at 9:50 pm), adam r. burney",
+    "note": "Our list has Allison, Bittner and Adam only; Prokowiew and Jeffreys, who made and seconded the votes, are not listed in ours. Official also lists Chenis absent."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T22:48:14Z",
+   "cost_usd": 0.0429591
+  }
+ }
+}

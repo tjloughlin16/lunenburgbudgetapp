@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-06-25",
  "docid": "3995",
@@ -12,7 +12,23 @@
  },
  "votes": [
   {
-   "motion": "to approve the increase from 5 to 7 members to include a member from the Parks Commission and a Member-at-Large",
+   "motion": "Approve the 6/11/18 minutes for Tri Town Landing.",
+   "moved_by": "D. Prokowiew",
+   "seconded_by": "T. Cole",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "d. prokowiew made motion to approve minutes, seconded by t. cole, vote passed 4-0,"
+  },
+  {
+   "motion": "Approve the 6/11/18 minutes for 1054 Northfield Road.",
+   "moved_by": "D. Prokowiew",
+   "seconded_by": "M. Allison",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "d. prokowiew made motion to approve minutes, seconded by m. allison, vote passed 4-"
+  },
+  {
+   "motion": "Approve increasing the Ad Hoc Open Space Committee from five (5) to seven (7) members, adding a Parks Commission member and a Member-At-Large.",
    "moved_by": "M. Allison",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -20,32 +36,312 @@
    "quote": "m. allison made motion to approve the increase from 5 to 7 members to include a member from the parks commission and member-at-large, seconded by d. prokowiew, all aye."
   },
   {
-   "motion": "to approve minutes from 6/11/18 Tri Town Landing meeting",
-   "moved_by": "D. Prokowiew",
-   "seconded_by": "T. Cole",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "d. prokowiew made motion to approve minutes, seconded by t. cole, vote passed 4-0, k. chenis abstained."
-  },
-  {
-   "motion": "to approve minutes from 6/11/18 1054 Northfield Road meeting",
-   "moved_by": "D. Prokowiew",
-   "seconded_by": "M. Allison",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "d. prokowiew made motion to approve minutes, seconded by t. cole, vote passed 4-0, k. chenis abstained. 6/",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "to enter into Executive Session pursuant to G.L. c. 30A, § 21, to discuss strategy with respect to litigation, not to return to Regular Session",
+   "motion": "Enter Executive Session under G.L. c. 30A, § 21 to discuss litigation strategy (Town of Lunenburg v. Settlers Solar et al.) and not return to Regular Session.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "k. chenis made motion, seconded by d. prokowiew, roll call vote- t. cole, aye; d. prokowiew, aye; k. chenis, aye; m. allison, aye; g. bittner, aye."
+   "quote": "k. chenis made motion, seconded by d. prokowiew, roll call vote- t. cole, aye; d. prokowiew, aye;"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text, all votes readable and recorded. The ANR Plan was noted as \"endorsed by Board\" but without a formal vote motion, seconder, and result recorded, so not included as a votable motion.",
- "cost_usd": 0.0881365
+ "note": "Text is macOS Vision OCR with page breaks and some garbled words (e.g. 'Prokowiew', 'Member-Al-Large', 'sales fax', 'June 11h'); quotes were copied as printed. Two motions are recorded with no printed result beyond the count shown. The ANR endorsement and the adjournment at 9:07 PM have no recorded motion, so they are not listed as votes. No dollar figures appear anywhere in the text. Marjorie I. Boggio is listed in the header but not in the attendance line, so status is 'not stated'. Stray 'July 9 / July 23' lines on page 3 are unexplained.",
+ "cost_usd": 0.009728520000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "tanner cole, mbr. adam r. burney land use director marjorie i. boggio administrative assistant"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Marjorie I. Boggio",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "tanner cole, mbr. adam r. burney land use director marjorie i. boggio administrative assistant"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel adam costa and police chief james marino"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "also present: town counsel adam costa and police chief james marino"
+  },
+  {
+   "name": "John Baker",
+   "status": "present",
+   "quote": "john baker, 53 chase road- spoke against any commerce of marijuana in town."
+  },
+  {
+   "name": "Bil Gustus",
+   "status": "present",
+   "quote": "bil gustus, 19 burke street- requested that the board be open to the plan that will be presented during executive session."
+  },
+  {
+   "name": "Kim Cole",
+   "status": "present",
+   "quote": "kim cole, 563 massachusetts avenue- had questions regarding a host community agreement (hca)"
+  },
+  {
+   "name": "Steve Ballard",
+   "role": "plan presenter, Whitman & Bingham Associates",
+   "status": "present",
+   "quote": "anr plan: 92 cove road- plan presented by steve ballard, whitman & bingham associates."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The ANR plan for 92 Cove Road (property owner conveying .42 acres to the abutter at 82 Cove Road) was endorsed by the Board, with no recorded motion.",
+   "quote": "plan endorsed by board."
+  },
+  {
+   "decision": "A. Burney will advertise for the Member-At-Large seat on the Open Space Committee; the Planning Board can appoint that individual at its July 23 meeting.",
+   "quote": "a. burney will advertise for the member-al-large and the planning"
+  },
+  {
+   "decision": "A. Burney will bring the parking in the former driveway at Asian Imperial Restaurant, 5 Electric Avenue, to the Building Commissioner/Zoning Enforcement Officer.",
+   "quote": "this to the attention of the building commissioner/zoning enforcement officer."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marijuana sales and local taxes versus Host Community Agreement tax",
+   "what_was_recorded": "T. Cole asked whether sales tax, excise tax and an optional local tax would be in addition to the tax in the Host Community Agreement; no figures were given (the minutes print 'sales fax').",
+   "figures_as_printed": [],
+   "quote": "t. cole inquired if the sales fax, excise tax, and optional local tax are in addition to the tax in the hca."
+  },
+  {
+   "topic": "Community impact fee under a Host Community Agreement",
+   "what_was_recorded": "A. Costa said a community impact fee must be reasonably related to the cost imposed on the town and could differ widely between retail and cultivation facilities; no dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "the community impact fee must be reasonably related to the cost imposed on the town by the operation of the specific"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Baker",
+   "stated_role": "",
+   "topic": "opposition to marijuana commerce in Town",
+   "quote": "john baker, 53 chase road- spoke against any commerce of marijuana in town."
+  },
+  {
+   "speaker": "Bil Gustus",
+   "stated_role": "",
+   "topic": "request that the Board be open to the Plan in Executive Session",
+   "quote": "bil gustus, 19 burke street- requested that the board be open to the plan that will be presented during executive session."
+  },
+  {
+   "speaker": "Kim Cole",
+   "stated_role": "",
+   "topic": "questions on Host Community Agreement and buffers",
+   "quote": "kim cole, 563 massachusetts avenue- had questions regarding a host community agreement (hca)"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "two speakers heard; no action",
+   "quote": "john baker, 53 chase road- spoke against any commerce of marijuana in town.",
+   "tags": [
+    "public comment",
+    "marijuana"
+   ]
+  },
+  {
+   "topic": "ANR plan, 92 Cove Road",
+   "resolution": "endorsed by Board",
+   "quote": "anr plan: 92 cove road- plan presented by steve ballard, whitman & bingham associates.",
+   "tags": [
+    "ANR plan",
+    "land division"
+   ]
+  },
+  {
+   "topic": "Recreational marijuana bylaw, public input",
+   "resolution": "presentation and discussion; no vote",
+   "quote": "powerpoint presentation on non-medical adult use marijuana regulation given by a. burney.",
+   "tags": [
+    "marijuana bylaw",
+    "moratorium",
+    "host community agreement",
+    "prohibition"
+   ]
+  },
+  {
+   "topic": "Ad Hoc Open Space Committee composition",
+   "resolution": "approved increase from 5 to 7 members",
+   "quote": "ad hoc open space committee composition- the committee would like to increase its composition from five (5)",
+   "tags": [
+    "open space committee"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 6/11/18 minutes for Tri Town Landing and 1054 Northfield Road",
+   "quote": "6/11/18, tri town landing-d. prokowiew made motion to approve minutes, seconded by t. cole, vote passed 4-0,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "committee reports: green community task force- no report",
+   "tags": [
+    "committees",
+    "farmers market",
+    "open space",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Village at Flat Hill drainage review",
+   "resolution": "no action; awaiting Trustees' response",
+   "quote": "village at flat hill, drainage review- the board is still waiting for a response from the trustees as to a plan/schedule for the",
+   "tags": [
+    "drainage",
+    "Flat Hill Road"
+   ]
+  },
+  {
+   "topic": "Board of Appeals bylaw §250-8.3",
+   "resolution": "listed; no discussion recorded",
+   "quote": "§250-8.3. board of appeals-",
+   "tags": [
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Sign Bylaw §250-6.5",
+   "resolution": "listed; no discussion recorded",
+   "quote": "§250- 6.5. sign bylaw-",
+   "tags": [
+    "zoning bylaw",
+    "sign bylaw"
+   ]
+  },
+  {
+   "topic": "Economic Development",
+   "resolution": "reported; no action",
+   "quote": "economic development- a. burney attended a meeting this date with the business town partnership.",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Board comment: restaurant parking on former driveway",
+   "resolution": "referred to Building Commissioner/Zoning Enforcement Officer",
+   "quote": "board comment/concerns: patrons to asian imperial restaurant, 5 electric avenue, are parking in what was previously",
+   "tags": [
+    "zoning enforcement",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Executive session, litigation strategy",
+   "resolution": "entered executive session; not returning to Regular Session",
+   "quote": "g. bittner requested a motion to enter into executive session pursuant to g.l. c. 30a, § 21, to",
+   "tags": [
+    "executive session",
+    "litigation",
+    "Settlers Solar"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:07 PM; no motion recorded",
+   "quote": "adjournment: 9:07 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 92 Cove Road",
+   "where": "list",
+   "quote": "anr plan, 92 cove road 6/11/18 tri town landing"
+  },
+  {
+   "name": "6/11/18 Tri Town Landing (minutes)",
+   "where": "list",
+   "quote": "6/11/18 tri town landing 6/11/18 1054 northfield road"
+  },
+  {
+   "name": "6/11/18 1054 Northfield Road (minutes)",
+   "where": "list",
+   "quote": "6/11/18 1054 northfield road powerpoint presentation - non-medical adult use marijuana regulation"
+  },
+  {
+   "name": "PowerPoint Presentation - Non-Medical Adult Use Marijuana Regulation",
+   "where": "list",
+   "quote": "powerpoint presentation - non-medical adult use marijuana regulation"
+  },
+  {
+   "name": "Open Space and Recreation Plan (OSRP)",
+   "where": "text",
+   "quote": "currently working on updating the open space and recreation plan (osrp)."
+  },
+  {
+   "name": "Board's Decision (driveway at 5 Electric Avenue)",
+   "where": "text",
+   "quote": "the board's decision stated that this driveway was to be removed."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "recreational marijuana",
+  "marijuana bylaw",
+  "host community agreement",
+  "moratorium",
+  "prohibition",
+  "ANR plan",
+  "open space committee",
+  "minutes approval",
+  "executive session",
+  "litigation",
+  "zoning enforcement",
+  "public comment",
+  "committee reports",
+  "economic development"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

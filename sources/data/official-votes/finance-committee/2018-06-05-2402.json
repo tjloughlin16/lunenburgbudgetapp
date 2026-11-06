@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-06-05",
  "docid": "2402",
@@ -12,15 +12,135 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "John Henshaw",
+   "motion": "Adjourn the meeting",
+   "moved_by": "Mark",
+   "seconded_by": "John",
    "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0"
+   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0 at 8:55 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR from macOS Vision. One procedural vote recorded (adjournment). The rest of the meeting was discussion and presentations on EMS staffing, police staffing, and levy impacts; no other formal motions to vote on are recorded.",
- "cost_usd": 0.0791595
+ "note": "OCR text of a scan. The Absent line is blank, so no absences are recorded. Only one motion appears (adjournment, 6-0). The joint-meeting discussion records no vote or decision. No dollar figures are printed. Fire Chief, Police Chief, Town Manager (TM) and FinCom Chair are described by role only and are not named, so they are not listed as attendees. The BOS guests and members of the public are not named.",
+ "cost_usd": 0.00343862,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "George Martin",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "",
+   "status": "present",
+   "quote": "amanda moore gave an overview of the proposed budget cost for hiring officers over the next ten years."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Paramedic-level EMS staffing salary",
+   "what_was_recorded": "A projected salary expense for additional paramedic-level staffing was presented; no figure is printed.",
+   "quote": "a projected salary expense was presented showing the potential cost of additional staffing at paramedic level."
+  },
+  {
+   "topic": "Ambulance upgrade cost for paramedic-level EMS",
+   "what_was_recorded": "The cost to upgrade both ambulances was part of the paramedic-level EMS discussion; no figure is printed.",
+   "quote": "and the cost to upgrade both ambulances."
+  },
+  {
+   "topic": "Police officer hiring over ten years",
+   "what_was_recorded": "An overview of the proposed budget cost for hiring officers over the next ten years was given; no figure is printed.",
+   "quote": "amanda moore gave an overview of the proposed budget cost for hiring officers over the next ten years."
+  },
+  {
+   "topic": "Taxing to the levy limit",
+   "what_was_recorded": "The Town Manager said not taxing to the levy would hurt services and staffing levels; no dollar figure is printed.",
+   "quote": "the tm commented that not taxing to the levy will have a negative impact on services and staffing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "the chair called the meeting to order at 7:28 pm."
+  },
+  {
+   "topic": "Comments",
+   "resolution": "no public comment",
+   "quote": "2.comments: a. public: none"
+  },
+  {
+   "topic": "Joint meeting with BOS on long-term Police and Fire staffing, ALS staffing and not taxing to the levy limit",
+   "resolution": "discussed, no action",
+   "quote": "joint meeting with bos to on long term staffing for police & fire dept. als staffing and not taxing to"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 8:55 pm",
+   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0 at 8:55 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fire Chief power point on the history of Lunenburg Emergency Medical Services (EMS), present EMS staffing, and proposal for paramedic-level EMS",
+   "where": "text",
+   "quote": "the fire chief presented a power point on the history of lunenburg emergency medical services"
+  }
+ ],
+ "tags": [
+  "EMS staffing",
+  "paramedic level",
+  "police staffing",
+  "joint meeting",
+  "Board of Selectmen",
+  "levy limit",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

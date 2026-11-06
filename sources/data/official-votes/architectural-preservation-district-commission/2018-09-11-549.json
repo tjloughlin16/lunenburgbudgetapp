@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2018-09-11",
  "docid": "549",
@@ -10,21 +10,133 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09112018-549",
   "doc_url": "/docs/meetings/architectural-preservation-district-commission/2018-09-11-minutes-549.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scan (macOS Vision) with errors: \"ADPC\" and \"APDC\" both appear, \"schedule\" and \"Ispwich\" are misspelled, and the next-meeting time reads \"/pm\". Attendance is a bare name list above the call to order with no roles or present/absent marks, so status is recorded as present by inference. The minutes record no motions, seconds, or vote tallies, so no votes are listed. The acceptance of minutes and the adjournment are stated without a motion, so they are not counted as votes.",
+ "cost_usd": 0.00259532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Accept the August 2018 meeting minutes",
-   "outcome": "passed",
-   "procedural": true,
+   "name": "Richard McGrath",
+   "role": "",
+   "status": "present",
+   "quote": "richard mcgrath jim laveck brian corcoran"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "",
+   "status": "present",
+   "quote": "jim laveck made comment about the new town website and the improvements that have been implemented."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "",
+   "status": "present",
+   "quote": "richard mcgrath jim laveck brian corcoran"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The August 2018 meeting minutes were reviewed and accepted, with no recorded motion or vote.",
    "quote": "reviewed meeting minutes from august 2018 meeting and were accepted."
   },
   {
-   "motion": "Approve the hearing minutes with correction to time of closing from 8:15pm to 7:15pm",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "hearing minutes - were approved with one correction required. change was made to time of closing from 8:15pm to 7:15pm."
+   "decision": "The hearing minutes were approved with one correction: the time of closing changed from 8:15pm to 7:15pm, with no recorded motion or vote.",
+   "quote": "hearing minutes - were approved with one correction required."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes captured via OCR (macOS Vision). Moved-by and seconded-by names not recorded in minutes.",
- "cost_usd": 0.0897635
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and minutes",
+   "resolution": "August minutes accepted; hearing minutes approved with one correction",
+   "quote": "meeting called to order at 7:02 pm",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "New Ipswich workshop",
+   "resolution": "no action (discussion)",
+   "quote": "discussion from richard mcgrath regarding new ipswich workshop on friday the 21st from 10am to 12pm.",
+   "tags": [
+    "workshop",
+    "New Ipswich"
+   ]
+  },
+  {
+   "topic": "Special town meeting November 13",
+   "resolution": "noted; may require reschedule of APDC meeting",
+   "quote": "noted was a special town meeting set for november 13.",
+   "tags": [
+    "town meeting",
+    "warrant article",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Public comment methods",
+   "resolution": "discussed; no action recorded",
+   "quote": "richard mcgrath discussed methods of conducting public comment.",
+   "tags": [
+    "public comment",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "New town website",
+   "resolution": "comment only, no action",
+   "quote": "jim laveck made comment about the new town website and the improvements that have been implemented.",
+   "tags": [
+    "town website"
+   ]
+  },
+  {
+   "topic": "CTA requirement for 136 Leominster Road",
+   "resolution": "discussed; no action recorded",
+   "quote": "richard mcgrath discussed the need for christa and cortis little of, 136 leominster road, to complete a cta and attend the next adpc meeting.",
+   "tags": [
+    "CTA",
+    "136 Leominster Road",
+    "applicants"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled for October 9, 2018 (time garbled in text)",
+   "quote": "next meeting is schedule on tuesday, october 9, 2018 at /pm.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:48pm (no motion recorded)",
+   "quote": "meeting adjourned at 7:48pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "architectural preservation district",
+  "APDC",
+  "minutes",
+  "New Ipswich workshop",
+  "special town meeting",
+  "public comment",
+  "town website",
+  "CTA",
+  "136 Leominster Road"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

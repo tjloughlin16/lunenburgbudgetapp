@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-02-13",
  "docid": "758",
@@ -12,13 +12,285 @@
  },
  "votes": [
   {
-   "motion": "To meet on Wednesday, March 6, 2019 at 4:30 pm",
-   "outcome": "not stated",
+   "motion": "Approve current expense vouchers, payroll, abatements, warrants, commitments and the January 15, 2019 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatem ents, warrants, commitments and january 15, 2019 minutes."
+  },
+  {
+   "motion": "Schedule the next Board of Assessors meeting for Wednesday, March 6, 2019 at 4:30 pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "board voted to meet on wednesday, march 6, 2019 2018 at 4:30 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record informal approvals (vouchers, payroll, abatements, warrants, commitments, prior minutes) described as reviewed and approved but without explicit vote language or motion detail. Only one motion explicitly recorded as voted on.",
- "cost_usd": 0.1054255
+ "note": "Minutes record approvals (vouchers, abatements, CAI contract, minutes) without a stated motion, mover, seconder or vote count; only the vouchers/minutes approval and the March 6 scheduling are recorded as votes. The scheduling line reads 'March 6, 2019 2018' as printed. Adjournment at 6:40 pm has no recorded motion. The abatement table is partly split across the page break, showing five named abatements; the two denied applications are not itemised. Text is a two-page extraction with some odd spacing in words.",
+ "cost_usd": 0.00745402,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco, rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "One (1) V1 statutory exemption application denied because it does not support five years of Massachusetts residency before July 2018; Louise to mail the denial letter to the applicant.",
+   "quote": "one (1) v1 application reviewed and denied. application does not support five years of residency in massachusetts prior to july 2018."
+  },
+  {
+   "decision": "Of seven real estate abatement applications presented by Joshua, five were approved and two were denied.",
+   "quote": "five (5) real estate applications were approved and two (2) re applications were denied."
+  },
+  {
+   "decision": "FY20 CAI Technologies Map / GIS Maintenance Contract reviewed and approved by the BOA at $2,800 for fiscal year 2020.",
+   "quote": "reviewed and approved by the boa in the amount of $2,800 for fiscal year 2020."
+  },
+  {
+   "decision": "Louise to contact Vision Government Solutions to set up a demonstration of replacement assessment software; the BOA recommends this happen as soon as possible.",
+   "quote": "louise will reach out to them to set up a time for a demonstration of the software."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY20 Sewer Privilege Orders",
+   "what_was_recorded": "Two sewer privilege orders were listed with amounts committed.",
+   "figures_as_printed": [
+    "$6,998.74",
+    "$199,340.08"
+   ],
+   "quote": "77 upland ave - 078-062 / amount committed: $6,998.74"
+  },
+  {
+   "topic": "FY20 CAI Technologies Map / GIS Maintenance Contract",
+   "what_was_recorded": "Contract reviewed and approved by the BOA for fiscal year 2020.",
+   "figures_as_printed": [
+    "$2,800"
+   ],
+   "quote": "reviewed and approved by the boa in the amount of $2,800 for fiscal year 2020."
+  },
+  {
+   "topic": "Committed amounts",
+   "what_was_recorded": "Committed amounts reported for the 2019-01 and 2018-07 commitments.",
+   "figures_as_printed": [
+    "$1,394,108.75",
+    "$11,265.41"
+   ],
+   "quote": "2019-01 - 11,760 bills = $1,394,108.75"
+  },
+  {
+   "topic": "Real estate and personal property abatements granted",
+   "what_was_recorded": "Five abatements granted with personal property, real estate and total abated amounts listed by name.",
+   "figures_as_printed": [
+    "$1,008.72",
+    "$689.29",
+    "$183.06",
+    "$37.36",
+    "$91.53"
+   ],
+   "quote": "12 johnson st. 136-010 $689.29 $689.29"
+  },
+  {
+   "topic": "Tax Increment Financing request for 40 Pioneer Drive",
+   "what_was_recorded": "Explained that TIF gives a developer upfront tax relief that helps pay construction costs; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "property owner of 40 pioneer drive who is seeking tax increment financing."
+  },
+  {
+   "topic": "New growth projection",
+   "what_was_recorded": "DOR regional associate assessor's new growth projection based on historical numbers and building permits.",
+   "figures_as_printed": [
+    "300K"
+   ],
+   "quote": "it appears 300k would be a new growth projection at this time."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Expense vouchers, payroll, abatements, warrants, commitments and January 15, 2019 minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatem ents, warrants, commitments and january 15, 2019 minutes.",
+   "tags": [
+    "vouchers",
+    "minutes",
+    "approvals"
+   ]
+  },
+  {
+   "topic": "FY 20 Sewer Privilege Orders",
+   "resolution": "no action",
+   "quote": "1. 77 upland ave - 078-062 / amount committed: $6,998.74",
+   "tags": [
+    "sewer",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Statutory exemptions (V1 application)",
+   "resolution": "denied",
+   "quote": "one (1) v1 application reviewed and denied.",
+   "tags": [
+    "exemptions",
+    "residency"
+   ]
+  },
+  {
+   "topic": "FY20 CAI Technologies Map / GIS Maintenance Contract",
+   "resolution": "approved",
+   "quote": "reviewed and approved by the boa in the amount of $2,800 for fiscal year 2020.",
+   "tags": [
+    "GIS",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Motor vehicle excise tax",
+   "resolution": "no action",
+   "quote": "and the bills will be issued on february 19, 2019.",
+   "tags": [
+    "excise",
+    "motor vehicle"
+   ]
+  },
+  {
+   "topic": "Committed amounts",
+   "resolution": "no action",
+   "quote": "2019-01 - 11,760 bills = $1,394,108.75",
+   "tags": [
+    "commitments",
+    "bills"
+   ]
+  },
+  {
+   "topic": "Abatement applications",
+   "resolution": "five approved, two denied",
+   "quote": "five (5) real estate applications were approved and two (2) re applications were denied.",
+   "tags": [
+    "abatements",
+    "real estate",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "RE assessment software replacement",
+   "resolution": "Vision demonstration to be arranged",
+   "quote": "louise will reach out to them to set up a time for a demonstration of the software.",
+   "tags": [
+    "software",
+    "CAMA",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Registry of Motor Vehicles software upgrade (Atlas)",
+   "resolution": "no action",
+   "quote": "they plan the first run for bills on december 16, 2019.",
+   "tags": [
+    "RMV",
+    "Atlas",
+    "software"
+   ]
+  },
+  {
+   "topic": "Report by Assessor: Tax Increment Financing request, 40 Pioneer Drive",
+   "resolution": "no action; to go to Selectmen then Town Meeting",
+   "quote": "property owner of 40 pioneer drive who is seeking tax increment financing.",
+   "tags": [
+    "TIF",
+    "economic development",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "New growth",
+   "resolution": "no action",
+   "quote": "it appears 300k would be a new growth projection at this time.",
+   "tags": [
+    "new growth",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled March 6, 2019 at 4:30 pm",
+   "quote": "board voted to meet on wednesday, march 6, 2019 2018 at 4:30 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from RRG's Regional Associate Assessor Diane Peterson regarding new growth",
+   "where": "text",
+   "quote": "she received an email from rrg's regional associate assessor diane peterson in regards to new growth."
+  },
+  {
+   "name": "V1 statutory exemption application",
+   "where": "text",
+   "quote": "one (1) v1 application reviewed and denied."
+  },
+  {
+   "name": "Thirty-one abatement applications (five personal property, twenty-six real estate)",
+   "where": "text",
+   "quote": "louise reported that we are in receipt of thirty-one (31) abatement applications"
+  }
+ ],
+ "tags": [
+  "abatements",
+  "assessments",
+  "sewer privilege",
+  "commitments",
+  "software",
+  "tax increment financing",
+  "new growth",
+  "motor vehicle excise",
+  "exemptions",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-05-10",
  "docid": "1436",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from April 12, 2018 and May 4, 2018 as written",
+   "motion": "Accept the minutes of the April 12, 2018 meeting and the May 4, 2018 site visit to North Cemetery as written.",
    "moved_by": "Comm. Mendoza",
    "seconded_by": "Comm. May",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "a motion was made by comm. mendoza to accept the minutes as written. seconded by comm. may, and with no further discussion, motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Comm. Mendoza",
    "seconded_by": "Comm. Tyler",
    "outcome": "passed",
@@ -29,6 +29,185 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR macOS Vision scan. All other decisions in the minutes are described as made but with no formal motion recorded (e.g., server upgrade agreement, Mission Statement formulation, Facebook page pursuit).",
- "cost_usd": 0.0812175
+ "note": "OCR text of a scanned page set (Vision OCR). Text is cut off mid-sentence at the page 1 to page 2 break (\"It was decided that the Commission would invite the\" ... \"during the week of May 14-18\"), so the topic on the old Holman St. building and the start of the maintenance/cleanup item are incomplete. Votes are recorded as printed; no roll-call tallies are printed for the two motions. Filed stamp reads JUN 25 2018.",
+ "cost_usd": 0.00594802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice chairman lorraine mendoza, clerk william tyler and superintendent todd holman."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice chairman lorraine mendoza, clerk william tyler and superintendent todd holman."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice chairman lorraine mendoza, clerk william tyler and superintendent todd holman."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice chairman lorraine mendoza, clerk william tyler and superintendent todd holman."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios was present and wanted to give the commission an update concerning one of the wells at north cemetery."
+  },
+  {
+   "name": "Robin Burch",
+   "role": "",
+   "status": "not stated",
+   "quote": "robin burch informed the supt. that the memorial fund donated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission decided to formulate a Mission Statement addressing growth and to establish a 5 year plan for the Town's Cemeteries.",
+   "quote": "formulate a mission statement that would address this growth and establish a 5 year plan that would address the town's cemeteries for the future."
+  },
+  {
+   "decision": "The Commission decided to invite the Town to discuss the old Cemetery building on Holman St. (the minutes are cut off at this point; the full decision text is not printed).",
+   "quote": "it was decided that the commission would invite the"
+  },
+  {
+   "decision": "The Commission decided to pursue a Facebook page for the Commission with the Town Manager's input before proceeding.",
+   "quote": "it was decided to pursue this with the town manager to get her input before we proceed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cloud-based back-up server upgrade: Commission share this year",
+   "what_was_recorded": "The Commission would pay $350.00 toward the cost of the server upgrade this year, with IT paying the remainder.",
+   "figures_as_printed": [
+    "$350.00"
+   ],
+   "quote": "the cemetery commission would pay $350.00 toward the cost this year with it paying the remainder."
+  },
+  {
+   "topic": "Cloud-based back-up server upgrade: annual fee",
+   "what_was_recorded": "Next year IT would pick up the total cost of the upgrade, and the Commission would be responsible for an annual fee.",
+   "figures_as_printed": [
+    "$1200.00"
+   ],
+   "quote": "next year it would pick up the total cost of the upgrade with the cemetery commission responsible for the annual $1200.00 fee."
+  },
+  {
+   "topic": "Memorial Fund donation for spruce tree",
+   "what_was_recorded": "The Memorial Fund donated $100.00 toward the purchase of a new spruce tree.",
+   "figures_as_printed": [
+    "$100.00"
+   ],
+   "quote": "robin burch informed the supt. that the memorial fund donated $100.00 towards the purchase of a new spruce tree."
+  },
+  {
+   "topic": "Town Meeting appropriation use",
+   "what_was_recorded": "The Town Manager wrote about the Commission's use of the appropriation requested at Town Meeting; the Commission was informed it was for the annual operation budget along with other improvements. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "correspondence received from the town manager concerning our use of the appropriation requested at town meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "well at North Cemetery with sand and gravel",
+   "quote": "dave passios was present and wanted to give the commission an update concerning one of the wells at north cemetery."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "quote": "minutes from the april 12, 2018 meeting were read as well as the minutes from the may 4, 2018 site visit to north cemetery."
+  },
+  {
+   "topic": "Public comment: North Cemetery well update (Dave Passios)",
+   "resolution": "informational; Passios to work on well with Fire Dept.",
+   "quote": "dave passios was present and wanted to give the commission an update concerning one of the wells at north cemetery."
+  },
+  {
+   "topic": "Town Manager correspondence on appropriation",
+   "resolution": "received; informed Town Manager of use of appropriation",
+   "quote": "correspondence received from the town manager concerning our use of the appropriation requested at town meeting."
+  },
+  {
+   "topic": "Back-up server cloud upgrade",
+   "resolution": "agreement noted; Commission to pay $350.00 this year",
+   "quote": "an agreement was made between the it director and ramaker associates for an upgrade to a cloud based system."
+  },
+  {
+   "topic": "Rules and Regulations",
+   "resolution": "no action",
+   "quote": "a short discussion was had concerning our current rules and regulations, no action was taken."
+  },
+  {
+   "topic": "Future growth and planning",
+   "resolution": "Mission Statement and 5 year plan to be formulated; Holman St. building discussed",
+   "quote": "formulate a mission statement that would address this growth and establish a 5 year plan"
+  },
+  {
+   "topic": "Superintendent maintenance update",
+   "resolution": "informational; police report filed on stolen chain",
+   "quote": "he reported that a chain was stolen from the north cemetery that blocks entrance into the new area."
+  },
+  {
+   "topic": "Facebook page proposal",
+   "resolution": "to pursue with Town Manager's input",
+   "quote": "comm. tyler informed the commission of his idea to start a face book page for the commission."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:05 pm",
+   "quote": "meeting was adjourned at 10:05 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Correspondence from the Town Manager concerning use of the Town Meeting appropriation",
+   "where": "text",
+   "quote": "correspondence received from the town manager concerning our use of the appropriation requested at town meeting."
+  },
+  {
+   "name": "Minutes of the April 12, 2018 meeting and the May 4, 2018 site visit to North Cemetery",
+   "where": "text",
+   "quote": "minutes from the april 12, 2018 meeting were read as well as the minutes from the may 4, 2018 site visit to north cemetery."
+  },
+  {
+   "name": "Warrant article (appropriation at Town Meeting)",
+   "where": "text",
+   "quote": "our warrant article passed at town meeting with no discussion."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "North Cemetery",
+  "wells",
+  "back-up server",
+  "cloud upgrade",
+  "IT",
+  "appropriation",
+  "Town Manager",
+  "social media",
+  "planning",
+  "maintenance",
+  "minutes approval",
+  "Memorial Fund"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence received from the town manager"
+ },
+ "dropped_unquoted_by_field": {}
 }

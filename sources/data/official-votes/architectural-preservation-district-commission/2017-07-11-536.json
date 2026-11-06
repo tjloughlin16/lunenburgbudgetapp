@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2017-07-11",
  "docid": "536",
@@ -12,19 +12,123 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from the regular meeting on 5-16-17",
+   "motion": "Approve the minutes of the regular meeting of 5-16-17.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the minutes were read and approved by a majority (la veck did not vote because he was absent)."
   },
   {
-   "motion": "Approve minutes from the regular meeting on 6-20-17",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the regular meeting of 6-20-17.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 4-0",
    "procedural": true,
    "quote": "minutes from the regular meeting on 6-20-17 were also read and approved unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1014195
+ "note": "Plain text minutes, no scan issues. No motion wording, mover, seconder or formal vote count for the minutes approvals beyond what is printed; the 5-16-17 approval records only \"a majority\". No public comment section and no dollar figures. Adjournment at 7:25 has no recorded vote. Elaine Peterson, A Burney and Katherine Adams are mentioned but did not take part, so they are not listed as attendees.",
+ "cost_usd": 0.00289232,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, corcoran, laveck and dwyer"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "jim laveck, vice-chair"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "cullen dwyer, clerk."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "brian corcoran, member."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The APDC decided not to change the guidelines again after reviewing edits prompted by A Burney's commentary.",
+   "quote": "the apdc did not see any reason to change the guidelines again."
+  },
+  {
+   "decision": "Dwyer proposed that APDC members draft mock proposals for review at future meetings to practice procedures and how proposals would be evaluated; no recorded vote on the proposal.",
+   "quote": "dwyer proposed that the apdc members draft mock proposals for review at future meetings, in order to practice our procedures"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved minutes of 5-16-17 and 6-20-17",
+   "quote": "minutes from the regular meeting on 6-20-17 were also read and approved unanimously.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "no action; vacancy advertisement and guideline mailing noted",
+   "quote": "she is also running an advertisement in the lunenburg ledger seeking to fill the vacancy in the apdc.",
+   "tags": [
+    "vacancy",
+    "guidelines outreach",
+    "communications"
+   ]
+  },
+  {
+   "topic": "New Business: guidelines edits and mock proposals",
+   "resolution": "no change to guidelines; mock-proposal practice proposed",
+   "quote": "the apdc did not see any reason to change the guidelines again.",
+   "tags": [
+    "guidelines",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "scheduled August 1st joint session with BoS and August 15th regular meeting",
+   "quote": "next meeting: august 1st, with bos, 7:20pm",
+   "tags": [
+    "scheduling",
+    "Board of Selectmen"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "APD guidelines (new draft)",
+   "where": "text",
+   "quote": "as soon as the new draft of the guidelines was ready"
+  }
+ ],
+ "tags": [
+  "architectural preservation district",
+  "APD guidelines",
+  "minutes approval",
+  "board vacancy",
+  "Board of Selectmen joint meeting",
+  "Ritter Building"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2018-05-08",
  "docid": "542",
@@ -12,19 +12,157 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior meeting minutes",
+   "motion": "Approve the minutes of the prior meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "review of minutes: approved"
   },
   {
-   "motion": "Waive further requirements and approve the CTA application for 99 Lancaster Avenue",
+   "motion": "Waive any further requirements and approve the CTA application for a re-roof of the garage at 99 Lancaster Avenue.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "the apdc voted to waive any further requirements and approve the application."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR source (macOS Vision); readable quality. No votes recorded with counts. No mover or seconder names recorded for either motion.",
- "cost_usd": 0.031481800000000004
+ "note": "OCR text from a macOS Vision scan. The CTA vote records no mover, seconder, or tally, and the minutes do not record an adjournment motion. The minutes text marks them \"Adjourned: 8:15 PM\" only. The received stamp reads JUN 25 2018. Some words are split across lines (for example \"appli-cation\") and were read as whole words.",
+ "cost_usd": 0.00327852,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Vice-Chairman LaVeck",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Corcoran",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "who is running for planning board",
+   "status": "present",
+   "quote": "also: tanner cole, who is running for planning board, attended."
+  },
+  {
+   "name": "Representative of 99 Lancaster Avenue (unnamed)",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "a representative of 99 lancaster avenue appeared to submit the $25 filing fee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dwyer will begin a register of CTA applications with serial numbers for easy reference, after confusion over the serial number to assign to the application.",
+   "quote": "dwyer said he would begin a register of cta applications with serial numbers for easy reference."
+  },
+  {
+   "decision": "Dwyer volunteered to organize efforts to clear the vegetation on and around 53 Lancaster.",
+   "quote": "dwyer volunteered to organize efforts to clear the vegetation."
+  },
+  {
+   "decision": "Next meeting scheduled for Tuesday, June 12th.",
+   "quote": "next meeting: scheduled for tuesday, june 12th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "CTA filing fee, 99 Lancaster Avenue",
+   "what_was_recorded": "The applicant's representative appeared to submit the filing fee for the CTA application.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "a representative of 99 lancaster avenue appeared to submit the $25 filing fee"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review of minutes: approved"
+  },
+  {
+   "topic": "CTA Applications review (99 Lancaster Avenue garage re-roof)",
+   "resolution": "approved",
+   "tags": [
+    "CTA application",
+    "re-roof",
+    "serial numbers"
+   ],
+   "quote": "the alteration is a re-roof of the garage."
+  },
+  {
+   "topic": "New Business: Articles 20 and 24 at town meeting (Brooks House and Old Primary School)",
+   "resolution": "no action; discussed APDC redevelopment plan suggestion",
+   "tags": [
+    "town meeting",
+    "Brooks House",
+    "Old Primary School",
+    "redevelopment"
+   ],
+   "quote": "laveck reported that at town meeting the town had voted to postpone a vote on articles 20 and 24 regarding the"
+  },
+  {
+   "topic": "Old Business: 53 Lancaster",
+   "resolution": "discussed; immediate measures recommended; vegetation clearing volunteered",
+   "tags": [
+    "53 Lancaster",
+    "basement water",
+    "decay",
+    "vegetation"
+   ],
+   "quote": "53 lancaster: dwyer reported on his efforts to pump water out of the basement."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "CTA application, 99 Lancaster Avenue (garage re-roof)",
+   "where": "text",
+   "quote": "a representative of 99 lancaster avenue appeared to submit the $25 filing fee"
+  },
+  {
+   "name": "Articles 20 and 24 (town meeting warrant articles on removal of the Brooks House and Old Primary School)",
+   "where": "text",
+   "quote": "laveck reported that at town meeting the town had voted to postpone a vote on articles 20 and 24 regarding the"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "CTA applications",
+  "Architectural Preservation District",
+  "53 Lancaster",
+  "Primary School",
+  "Brooks House",
+  "town meeting articles"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

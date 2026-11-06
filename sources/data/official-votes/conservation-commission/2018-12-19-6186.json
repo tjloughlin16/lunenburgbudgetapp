@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-12-19",
  "docid": "6186",
@@ -11,7 +11,164 @@
   "doc_url": "/docs/meetings/conservation-commission/2018-12-19-minutes-6186.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "This document is a Notice of Meeting and Agenda for the December 19, 2018 Conservation Commission meeting, not minutes recording actions taken or votes cast. It lists scheduled hearings and business items but contains no voting records—no motions, seconds, outcomes, or vote counts. No actual meeting minutes appear in the provided text.",
- "cost_usd": 0.0825915
+ "dropped_unquoted": 2,
+ "note": "The text is the notice and agenda only (pages 1-3). It records no motions, votes, discussion, outcomes, public comments, or dollar figures. Attendance is not marked; names appear only in the letterhead roster, so status is \"not stated\". The applicants named in the hearing notices (Steven Violette, Joseph Nowlan, Mark Rood, Nanci Bell, Kenneth Chenis, Hickory Hills Association, Steven Powell) are not recorded as appearing, so they are not listed as attendees. The notices refer generically to \"Application and supporting documents\" available for review; no document list is printed and no specific exhibits are named.",
+ "cost_usd": 0.0043684200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "richard bursch, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "todd dwyer, vice-chair 960 massachusetts ave."
+  },
+  {
+   "name": "Bob Pease",
+   "status": "not stated",
+   "quote": "bob pease lunenburg, ma 01462"
+  },
+  {
+   "name": "Catie Childs",
+   "status": "not stated",
+   "quote": "catie childs carl luck"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "catie childs carl luck"
+  },
+  {
+   "name": "Kenneth Jones",
+   "status": "not stated",
+   "quote": "kenneth jones conservation administrator"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and Announcements",
+   "resolution": "agenda listed; no outcome recorded",
+   "quote": "call to order announcements",
+   "tags": [
+    "agenda",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "agenda listed; no comments recorded",
+   "quote": "public comment appointments/hearings",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Notice of Intent hearings (seven items)",
+   "resolution": "agenda listed; no hearing outcomes recorded",
+   "quote": "notice of intent by steven violette for repairs of a roadway and reconstruction of a bridge deck at 181 kilburn street",
+   "tags": [
+    "wetlands",
+    "notice of intent",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Violations (enforcement actions and administrative hearings)",
+   "resolution": "agenda listed; no outcome recorded",
+   "quote": "violations (enforcement actions and administrative hearings).",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Open Space Plan review and letter (new business)",
+   "resolution": "agenda listed; no outcome recorded",
+   "quote": "open space plan review and letter",
+   "tags": [
+    "open space"
+   ]
+  },
+  {
+   "topic": "Old business: Gilchrest land exchange, Small Town Forest, 123 Hollis Road forest stewardship",
+   "resolution": "agenda listed; updates if any; no outcome recorded",
+   "quote": "land exchange on gilchrest -updates",
+   "tags": [
+    "open space",
+    "land management"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance",
+   "resolution": "agenda listed; no outcome recorded",
+   "quote": "sunshine nominee trust, 554 lancaster ave, dep 208-0966, unitil",
+   "tags": [
+    "certificate of compliance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (November 19, 27, 28 and December 5)",
+   "resolution": "agenda listed; no vote recorded",
+   "quote": "minutes of previous meetings - review and approval of november",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "agenda listed; no outcome recorded",
+   "quote": "committee reports - any updates",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "agenda listed; no outcome recorded",
+   "quote": "agents report /action items",
+   "tags": [
+    "agent report",
+    "enforcement",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Communications, public comment and meeting schedule",
+   "resolution": "agenda listed; next meeting set for January 2nd, 2019 on the agenda",
+   "quote": "next meeting is january 2nd, 2019 at the ritter",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "public hearings",
+  "enforcement",
+  "open space",
+  "minutes",
+  "certificates of compliance",
+  "agenda only"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 2
+ }
 }

@@ -1,0 +1,334 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2017-10-25",
+ "video_id": "i3itvcmQbHQ",
+ "video_url": "https://www.youtube.com/watch?v=i3itvcmQbHQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2017-10-25-i3itvcmQbHQ.json",
+  "sha256": "6fc0e132cd2a16c34c9ca144a87fc594dc6dc122a23be5567df5e2b5da17f004",
+  "caption_lines": 25,
+  "segments": 156
+ },
+ "recording": {
+  "duration_s": 533,
+  "duration": "0:08",
+  "spoken_chars": 5425,
+  "words_approx": 904
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10252017-5049",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-10-25-agenda-5049.txt",
+   "path": "sources/meetings/select-board/2017-10-25-agenda-5049.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10252017-5049",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-10-25-minutes-5049.txt",
+   "path": "sources/meetings/select-board/2017-10-25-minutes-5049.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T23:43:33Z",
+  "cost_usd": 0.1507329
+ },
+ "minutes": {
+  "headline": "Select Board reviewed and moved to sign the special town meeting warrant; stormwater bylaw move raised concerns.",
+  "summary": "The Select Board reviewed the special town meeting warrant, including a deed-in-lieu article for conservation land and a concern about moving stormwater provisions from zoning to the general bylaws. A motion to sign the warrant was made, a Council on Aging outreach coordinator appointment was moved for ratification, and the November schedule was set.",
+  "attendees": [],
+  "public_comment": [
+   {
+    "t": 8,
+    "topic": "Asked what article number the citizen petition moratorium is and whether it stays fixed; told it is article 11."
+   }
+  ],
+  "tags": [
+   "hiring",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "seniors",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 355,
+    "motion": "Sign the special Town Meeting warrant as presented.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 438,
+    "motion": "Ratify the town manager's appointment of the Council on Aging outreach coordinator.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 522,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 499,
+    "decision": "The November 7 meeting will start at 6:30."
+   },
+   {
+    "t": 29,
+    "decision": "The citizen petition moratorium stays as article 11 on the warrant."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 8,
+    "t_end": 75,
+    "topic": "Public comment on article number for the moratorium petition",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 75,
+    "t_end": 355,
+    "topic": "Special town meeting warrant review: deed in lieu article, stormwater bylaw transfer",
+    "resolution": "referred to town counsel for more information",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 355,
+    "t_end": 417,
+    "topic": "Motion to sign the warrant; minutes signing",
+    "resolution": "motion made; result not audible",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 417,
+    "t_end": 478,
+    "topic": "Town manager appointment: Council on Aging outreach coordinator",
+    "resolution": "motion made; result not audible",
+    "tags": [
+     "hiring",
+     "seniors",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 478,
+    "t_end": 535,
+    "topic": "Upcoming schedule and adjournment",
+    "resolution": "informational",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote outcomes were not stated in the captions.",
+   "Speaker names largely garbled; several stretches of the warrant discussion are unclear."
+  ],
+  "confidence": "low",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 185,
+    "kind": "liability or legal",
+    "about": "Moving stormwater rules from zoning to general bylaws removes the Zoning Board of Appeals route and could send enforcement disputes to court.",
+    "who": "a member",
+    "words_as_heard": "it goes from the building inspector the Zoning Board of Appeals when it's the general bylaw that process is no longer there you'd have to go to here in court"
+   },
+   {
+    "t": 227,
+    "kind": "liability or legal",
+    "about": "Grandfathering of existing zoning uses may not carry over under the general bylaws.",
+    "who": "a member",
+    "words_as_heard": "the grandfathering may or may not be in place under the general bylaws"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 75,
+    "name_as_heard": "the warrant",
+    "kind": "warrant article",
+    "words_as_heard": "before us the warrant warrant closed at 5 p.m. today",
+    "shown": true
+   },
+   {
+    "t": 101,
+    "name_as_heard": "article 10",
+    "kind": "warrant article",
+    "words_as_heard": "article 10 is the article that the board voted to incorporate is the warrant on Monday night",
+    "shown": true
+   },
+   {
+    "t": 396,
+    "name_as_heard": "minutes from October 3rd",
+    "kind": "prior minutes",
+    "words_as_heard": "minutes from October 3rd 2007 and what's what else in here these these need to be signed",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stormwater-bylaw-move",
+    "title": "Stormwater bylaw placement",
+    "question": "What changes in enforcement and appeals if stormwater rules move from zoning to the general bylaws?",
+    "t": 164,
+    "words_as_heard": "my only comment on the transfer from zoning to the general bylaws on the stormwater",
+    "data_in_play": [],
+    "existing": "thread:stormwater-fee"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "A motion to sign the special Town Meeting warrant as presented was made; the result is not audible in the recording.",
+    "t": 355
+   },
+   {
+    "line": "The board reviewed the warrant, including a deed-in-lieu article for conservation land and a proposal to move stormwater provisions from zoning to the general bylaws.",
+    "t": 75
+   },
+   {
+    "line": "The stormwater move raised concerns and was referred to town counsel for more information.",
+    "t": 75
+   },
+   {
+    "line": "A motion to ratify the town manager's appointment of a Council on Aging outreach coordinator was made; the result is not audible.",
+    "t": 438
+   },
+   {
+    "line": "The citizen petition moratorium stays as article 11, and the November 7 meeting will start at 6:30.",
+    "t": 29
+   }
+  ],
+  "why_it_matters": [
+   "The warrant lists the articles voters will be asked to act on at the special Town Meeting, so the deed-in-lieu article and the stormwater bylaw move shape what residents decide there.",
+   "Moving stormwater rules from zoning to the general bylaws can change which vote threshold and which process apply to them, which is why town counsel was asked to weigh in."
+  ],
+  "watch_next": [
+   "The November 7 Select Board meeting, which will start at 6:30.",
+   "Town counsel's answer on moving stormwater provisions from zoning to the general bylaws."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T23:43:39Z",
+   "cost_usd": 0.0213311
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10252017-5049",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2017-10-25-minutes-5049.txt",
+   "path": "sources/meetings/select-board/2017-10-25-minutes-5049.pdf"
+  },
+  "official_sha256": "3e9c0343ae0f2615762f1bcea25e8e137219349f5fa50293067fbe883ae01a7c",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the warrant signing and on the moratorium petition being article 11, but ours is thin: no attendees, no figures, and no outcomes for either vote. The main thing to check is the outreach worker ratification, where the job title differs and our outcome is inaudible, along with the November 7 start time that only ours records.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 0,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to sign the special Town Meeting warrant",
+    "ours": "Sign the special Town Meeting warrant as presented. — not audible",
+    "official": "to sign the november 28, 2017 special town meeting warrant as presented",
+    "note": "Same motion in both; ours did not catch the outcome, official records it as passed, and the official gives the meeting date (November 28, 2017).",
+    "t": 355
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ratify appointment of Council on Aging / Senior Center outreach worker",
+    "ours": "Ratify the town manager's appointment of the Council on Aging outreach coordinator. — not audible",
+    "official": "to ratify the appointment of pauline roy as senior center outreach worker with an effective date of",
+    "note": "Same appointment likely, but the title differs (Council on Aging outreach coordinator vs Senior Center Outreach Worker) and the outcome is not audible in ours; check the recording for the title and the result.",
+    "t": 438
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Date of next meeting",
+    "ours": "The November 7 meeting will start at 6:30.",
+    "official": "",
+    "note": "Our minutes record a decision about the November 7 meeting start time that the official minutes do not mention; check the recording at this point.",
+    "t": 499
+   },
+   {
+    "kind": "agree",
+    "about": "Moratorium petition stays as article 11",
+    "ours": "The citizen petition moratorium stays as article 11 on the warrant.",
+    "official": "ms. lemieux stated it will be article #11 and it will",
+    "note": "Both say the petition on the moratorium is article 11.",
+    "t": 29
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Accounts Payable warrant",
+    "ours": "",
+    "official": "the board signed an accounts payable warrant in the amount of $486,280.22.",
+    "note": "Official records a $486,280.22 warrant signing; ours has no figures or mention of it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Signing of October 3, 2017 minutes",
+    "ours": "",
+    "official": "the board signed minutes of october 3, 2017.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Stormwater bylaw question forwarded to Land Use Director",
+    "ours": "",
+    "official": "ms. lemieux has forwarded this on to land use director adam burney for more",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees and absence",
+    "ours": "",
+    "official": "not present: paula bertram, clerk",
+    "note": "Our minutes list no attendees; official lists Ms. Lemieux, Mr. Toale, R. Ebersole, P. Luck present and Paula Bertram absent."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Katey Adams",
+    "ours": "",
+    "official": "katey adams, 70 williams drive, asked what number the citizens' petition for the moratorium on the sale of",
+    "note": "Our minutes have the answer (article 11) but not the question or speaker."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T23:44:18Z",
+   "cost_usd": 0.0306711
+  }
+ }
+}

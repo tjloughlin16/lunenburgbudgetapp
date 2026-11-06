@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2017-10-05",
  "docid": "506",
@@ -12,23 +12,174 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from June 15, 2017 and July 20, 2017",
-   "outcome": "approved",
-   "procedural": true,
+   "motion": "Approve the minutes of June 15, 2017 and July 20, 2017, with corrections.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "meeting minutes for june 15, 2017 and july 20, 2017 were approved with corrections."
   },
   {
-   "motion": "elect A. Steele as Clerk",
-   "outcome": "unanimously elected",
-   "procedural": true,
+   "motion": "Elect A. Steele as Clerk, on the nomination of M. Dupuis.",
    "moved_by": "M. Dupuis",
    "seconded_by": "R. Stober",
-   "quote": "m. dupuis' nomination of a. steele as clerk, r. stober seconded, and a. steele was unanimously elected."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "jeff accepted the m. dupuis' nomination of a. steele as clerk, r. stober seconded, and a. steele was unanimously elected."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Page 2 is blank.",
- "cost_usd": 0.0860635
+ "note": "OCR text from a Mac Vision scan, with garbled or truncated passages: the first discussion sentence ends at \"partnership with\", \"wit respect\" and \"venders\" are misspelled as printed, and a fragment \"of Clerk vacant\" appears before the Clerk election with the Jeff reference unclear about his role. Page 2 has no text. No vote counts are printed for the minutes approval or the Clerk election, and no mover is printed for the minutes approval. No dollar figures appear. No document list is printed.",
+ "cost_usd": 0.00437112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "J. Mendoza",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the meeting was called to order at 7:00pm by chairman mendoza."
+  },
+  {
+   "name": "R. Stober",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: j. mendoza, r. stober, a. snow, m. dupuis, a. steele"
+  },
+  {
+   "name": "A. Snow",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: j. mendoza, r. stober, a. snow, m. dupuis, a. steele"
+  },
+  {
+   "name": "M. Dupuis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: j. mendoza, r. stober, a. snow, m. dupuis, a. steele"
+  },
+  {
+   "name": "A. Steele",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: j. mendoza, r. stober, a. snow, m. dupuis, a. steele"
+  },
+  {
+   "name": "Jeff",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jeff accepted the m. dupuis' nomination of a. steele as clerk"
+  },
+  {
+   "name": "Heather Bowen",
+   "role": "public comment speaker",
+   "status": "present",
+   "quote": "heather bowen announced community kitchen in bolton."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "public comment speaker",
+   "status": "present",
+   "quote": "matthew allison reported a special town meeting november 28, 2017, at 7pm in the high school auditorium."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Mendoza is to schedule a meeting with Town Counsel about administering the Right to Farm Bylaw.",
+   "quote": "chairman mendoza is to schedule a meeting with town counsel."
+  },
+  {
+   "decision": "Family Market Day assignments: M. Dupuis brings hay bales for seating; A. Steele brings a wooden sign and sells waters; R. Stober brings a tractor; J. Mendoza plays music and sets up instruments for children.",
+   "quote": "m. dupuis confirmed that she will bring hay bales for seating of vegetable circus at 11:30am."
+  },
+  {
+   "decision": "Next year the band concert will add food and water.",
+   "quote": "next year we will add food and water."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Heather Bowen",
+   "stated_role": "not stated",
+   "topic": "Community Kitchen in Bolton",
+   "quote": "heather bowen announced community kitchen in bolton. working to get community kitchen at old elementary school- t.c. passios."
+  },
+  {
+   "speaker": "Matthew Allison",
+   "stated_role": "not stated",
+   "topic": "Special Town Meeting and town property moratorium petition",
+   "quote": "matthew allison reported a special town meeting november 28, 2017, at 7pm in the high school auditorium."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Partnership discussion",
+   "resolution": "discussed; no action recorded",
+   "quote": "the meeting was called to order at 7:00pm by chairman mendoza. a discussion began about our partnership with"
+  },
+  {
+   "topic": "Family Market Day setup and vendor logistics",
+   "resolution": "logistics confirmed; assignments given",
+   "quote": "it was confirmed that setup would begin at 8am and that venders would park along edges and across the street."
+  },
+  {
+   "topic": "Approval of minutes of June 15 and July 20, 2017",
+   "resolution": "approved with corrections",
+   "quote": "meeting minutes for june 15, 2017 and july 20, 2017 were approved with corrections."
+  },
+  {
+   "topic": "Band concert recap",
+   "resolution": "recap; plan to add food and water next year",
+   "quote": "the recap of the band concert was that it was very successful as the second year."
+  },
+  {
+   "topic": "Chase road complaint",
+   "resolution": "discussed; no action recorded",
+   "quote": "j. mendoza mentioned the chase road complaint has not shown up after us moving our meeting 2 times."
+  },
+  {
+   "topic": "Commission role and Right to Farm Bylaw",
+   "resolution": "discussed; chair to meet Town Counsel",
+   "quote": "we need to continue to discuss with town counsel the administration of the right to farm bylaw wit respect to"
+  },
+  {
+   "topic": "Election of Clerk",
+   "resolution": "A. Steele elected Clerk, unanimously",
+   "quote": "jeff accepted the m. dupuis' nomination of a. steele as clerk, r. stober seconded, and a. steele was unanimously elected."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action recorded",
+   "quote": "public comment- heather bowen announced community kitchen in bolton."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Map of vendor setup for Family Market Day",
+   "where": "text",
+   "quote": "a map was provided to visualize the vendor setup for family market day."
+  },
+  {
+   "name": "Right to Farm Bylaw",
+   "where": "text",
+   "quote": "we need to continue to discuss with town counsel the administration of the right to farm bylaw wit respect to"
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "family market day",
+  "right to farm bylaw",
+  "town counsel",
+  "clerk election",
+  "public comment",
+  "band concert",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

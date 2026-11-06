@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-04-12",
  "docid": "5765",
@@ -12,15 +12,224 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting at 7:50 pm",
+   "motion": "To adjourn the meeting at 7:50 pm.",
    "moved_by": "M. Allison",
-   "seconded_by": "J. Rabbitt",
-   "outcome": "passed",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion: m. allison to adjourn the meeting at 7:50 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are OCR-scanned minutes. One procedural vote recorded: adjournment. The minutes contain extensive discussion and task planning but no other formal motions or votes.",
- "cost_usd": 0.0863785
+ "note": "Text is a single OCR'd page (PAGE 1 only) that opens mid-sentence; call to order, roll call, prior minutes and earlier agenda items are not in the text. Only one motion appears: M. Allison's motion to adjourn at 7:50 pm, with no result printed. A 'Vote: All in Favor' line with '2nd. J. Rabbitt' sits beside a town clerk 'RECEIVED & FILED' stamp dated APR 30 2018; it reads as the clerk's filing stamp rather than a board vote on a motion, so it is not recorded as a vote. No public comment and no dollar figures are printed.",
+ "cost_usd": 0.00503652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF; Member, BOS",
+   "status": "not stated",
+   "quote": "phyllis luck, chair swtf member, bos"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "adam burney provided an update of the stormwater workshop at the cptc conference, held 3/17/18 at holy cross"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "SWTF member (will Chair the May 17 meeting)",
+   "status": "present",
+   "quote": "motion: m. allison to adjourn the meeting at 7:50 pm."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "SWTF member (responsible for minutes, May 17)",
+   "status": "not stated",
+   "quote": "meeting schedule for second quarter: may 3, may 17 (matt allison will chair, jack rabbitt will be responsible for minutes), june 14."
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "DCI representative",
+   "status": "not stated",
+   "quote": "dci representatives mike clark and ed himlan will set up a time to visit the proposed healthy watersheds sites"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "DCI representative",
+   "status": "not stated",
+   "quote": "dci representatives mike clark and ed himlan will set up a time to visit the proposed healthy watersheds sites"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "as director rodriquenz was absent, and since all other members have already attended"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ed Himlan will forward sample letters of support that may be used as models.",
+   "quote": "ed himlan will forward sample letters that may be used as models."
+  },
+  {
+   "decision": "Adam Burney will take on signing of Grant application documents by Town Officials.",
+   "quote": "documents relating to the grant application will need to be signed by town officials; adam burney will take on that"
+  },
+  {
+   "decision": "Mike Clark and Ed Himlan will set up a time to visit the proposed Healthy watersheds sites with DPW Director Rodriquenz and determine BMPs; conceptual designs needed.",
+   "quote": "mike clark and ed himlan will set up a time to visit the proposed healthy watersheds sites"
+  },
+  {
+   "decision": "Mike Clark will send a proposal for the Riparian Protection and Greenway Plans work to Adam Burney, who will discuss it with the Town Manager on her return from vacation.",
+   "quote": "mike clark will send a proposal for this work to adam burney, who will discuss it with the town manager upon her return"
+  },
+  {
+   "decision": "Ed Himlan will email a draft narrative and scope of services to SWTF members on May 2, ahead of the May 3 meeting.",
+   "quote": "ed himlan will email a draft narrative and scope of services to swtf members on may 2, in advance of the may 3 swtf"
+  },
+  {
+   "decision": "Phyllis Luck will reach out to the DPW Director about the MS4 annual report and tell him DCI has offered help if he needs it.",
+   "quote": "phyllis luck offered to reach out to him on this issue."
+  },
+  {
+   "decision": "Adam Burney will look into the State initiative on Municipal Vulnerability Preparedness Assessments.",
+   "quote": "adam will look into this further."
+  },
+  {
+   "decision": "Jack Rabbitt will bring a compost bin and rain barrel to the Earth Day event; Phyllis Luck will borrow the CMRSWC's Enviroscape and bring printed materials.",
+   "quote": "jack rabbitt will bring a compost bin and rain barrel to the event."
+  },
+  {
+   "decision": "The MRPC data collection and cataloging application agenda item was skipped because no new information was available.",
+   "quote": "thus, this agenda item was skipped."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "319 Grant application",
+   "what_was_recorded": "Many tasks were listed to get the 319 Grant application into DEP on time, including letters of support, signatures, conceptual designs and plans; no dollar figures were printed.",
+   "quote": "there are many tasks that need to be undertaken to get the 319 grant application into dep on time.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Municipal Vulnerability Preparedness grant funding",
+   "what_was_recorded": "Adam Burney reported that towns in the state initiative can access grant funding once the assessment is complete; no amounts were printed.",
+   "quote": "towns involved have the opportunity to access grant funding, and are also better positioned",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "319 Grant application and RPR meeting",
+   "resolution": "discussed; tasks assigned",
+   "quote": "there are many tasks that need to be undertaken to get the 319 grant application into dep on time.",
+   "tags": [
+    "319 grant",
+    "DEP",
+    "grant application"
+   ]
+  },
+  {
+   "topic": "MS4 Permit annual report",
+   "resolution": "discussed; DPW Director to be contacted",
+   "quote": "there was also discussion around submittal of the annual report for the municipal separate storm sewer system (ms4) permit, due may 1, which needs to be signed by the town manager.",
+   "tags": [
+    "MS4 permit",
+    "stormwater reporting"
+   ]
+  },
+  {
+   "topic": "CPTC stormwater workshop update and MVP initiative",
+   "resolution": "update received; Adam Burney to look into state initiative",
+   "quote": "adam burney provided an update of the stormwater workshop at the cptc conference, held 3/17/18 at holy cross",
+   "tags": [
+    "workshop",
+    "state grants",
+    "vulnerability assessment"
+   ]
+  },
+  {
+   "topic": "Earth Day event",
+   "resolution": "discussed; members invited to participate",
+   "quote": "there was a brief discussion of the earth day event, sponsored by the 4h club of lunenburg, on sunday, april 22, from 1 - 4, at",
+   "tags": [
+    "Earth Day",
+    "outreach",
+    "watershed"
+   ]
+  },
+  {
+   "topic": "MRPC data collection and cataloging application",
+   "resolution": "skipped; no new information",
+   "quote": "thus, this agenda item was skipped.",
+   "tags": [
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Meeting schedule for second and third quarter",
+   "resolution": "schedule set",
+   "quote": "meeting schedule for second quarter: may 3, may 17 (matt allison will chair, jack rabbitt will be responsible for minutes), june 14.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "319 Grant application",
+   "where": "text",
+   "quote": "there are many tasks that need to be undertaken to get the 319 grant application into dep on time."
+  },
+  {
+   "name": "Annual Report for the Municipal Separate Storm Sewer System (MS4) Permit",
+   "where": "text",
+   "quote": "there was also discussion around submittal of the annual report for the municipal separate storm sewer system (ms4) permit, due may 1"
+  },
+  {
+   "name": "Sample letters of support",
+   "where": "text",
+   "quote": "ed himlan will forward sample letters that may be used as models."
+  },
+  {
+   "name": "Riparian Protection and Greenway Plans",
+   "where": "text",
+   "quote": "there will need to be riparian protection and greenway plans submitted with the grant application."
+  },
+  {
+   "name": "Draft narrative and scope of services",
+   "where": "text",
+   "quote": "ed himlan will email a draft narrative and scope of services to swtf members on may 2, in advance of the may 3 swtf"
+  },
+  {
+   "name": "CMRSWC report on 2017 activities",
+   "where": "text",
+   "quote": "a report on cmrs wc activities for 2017, which will be very helpful in preparing this report"
+  },
+  {
+   "name": "MRPC data collection and cataloging application",
+   "where": "text",
+   "quote": "the mrpc data collection and cataloging application and are waiting for the dpw director"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "319 grant",
+  "MS4 permit",
+  "watershed",
+  "Earth Day",
+  "DEP",
+  "meeting schedule",
+  "grant funding"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

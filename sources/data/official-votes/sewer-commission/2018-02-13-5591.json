@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-02-13",
  "docid": "5591",
@@ -12,48 +12,383 @@
  },
  "votes": [
   {
-   "motion": "Submit a Warrant Article to add Tilton Ave area back into Sewer Service Area",
+   "motion": "To submit a warrant article to add the Tilton Ave area back into the Sewer Service Area.",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion: carl l. second: john r. to submit a warrant article to add area on tilton ave, back into sewer service area, vote: unanimous"
   },
   {
-   "motion": "Approve the break-even budget including a capital fund amount of $22,000 to be set aside",
-   "moved_by": "",
+   "motion": "To approve the break-even budget including a capital fund amount of $ 22,000 to be set aside.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "to approve the break-even budget including a capital fund amount of $ 22,000 to be set aside. vote: unanimous"
   },
   {
-   "motion": "Notify the owner that they are now responsible for the fine they levied on the Ugly Omelet",
+   "motion": "To notify the owner that they are now responsible for the fine levied on the Ugly Omelet.",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion: carl l. second: john r. to notify the owner that they are now responsible for the fine they levied on the ugly omelet. vote: unanimous"
   },
   {
-   "motion": "Accept minutes of 12/5/17 as edited",
+   "motion": "To accept the minutes of 12/5/17 as edited.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion: john r. to accept minutes of 12/5/17 as edited. motion: john r. second: joe a.",
-   "quote_taken_from_text": true
+   "quote": "motion: john r. to accept minutes of 12/5/17 as edited. motion: john r. second: joe a. vote: unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "To adjourn at 8:59pm.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion: john r. second: carl l. to adjourn: 8:59pm vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text; one budget motion lacks explicit mover in recorded minutes (seconded by John R.)",
- "cost_usd": 0.0847942
+ "note": "OCR text from macOS Vision, not a clean transcript; several OCR errors (e.g., \"Car\" for Cari, \"Ine\" for The, \"ail\" for all, \"20h\" for 20th, \"-800\" for 800). The minutes print no roll call or attendance list, so attendance status is inferred from who spoke or acted; no one is marked absent. The break-even budget motion has a second but no printed mover. The 12/5/17 minutes vote has a stray \"Second: Carl L.\" line. Public comment reads \"none\". Page 2 ends with a received-and-filed stamp and a partly illegible block. Quoted text is collapsed to single spaces across line breaks.",
+ "cost_usd": 0.00829452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "not stated (appears as \"Carl L.\" in motions)",
+   "status": "present",
+   "quote": "review document with attachments prepared by carl luck:"
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john supports presenting it to the town and asked about dimensions of the lot."
+  },
+  {
+   "name": "Joe A.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joe suggested having swss come to next meeting to discuss the parts list."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated (staff; reports to the Commission)",
+   "status": "present",
+   "quote": "barb reported that the preliminary figures were given to heather."
+  },
+  {
+   "name": "Cari",
+   "role": "not stated",
+   "status": "present",
+   "quote": "cari suggested looking at buying compatible parts, so they don't have to"
+  },
+  {
+   "name": "Audra",
+   "role": "not stated",
+   "status": "present",
+   "quote": "audra asked for the survey to be done, since only 2 people on the street have fairly new septic systems"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley (sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed that the minutes should not contain opinions; Carl stated opinions voiced at the meeting are acceptable in the minutes.",
+   "quote": "commission discussed and agreed to not have opinions in the minutes."
+  },
+  {
+   "decision": "Minutes of 1/30/18 moved to the next meeting so all can read them.",
+   "quote": "minutes of 1/30/18 will be moved to the next meeting so ail can read them."
+  },
+  {
+   "decision": "Commission decided counsel would not attend the communications workshop, given billable time.",
+   "quote": "the sewer commission discussed whether counsel would need to be there and decided against it"
+  },
+  {
+   "decision": "Commission advised the Spragues that a private extension is straightforward; a betterment route would require a resident survey and a warrant article for May Town Meeting.",
+   "quote": "the commission advised the spragues that a private extension is straight forward"
+  },
+  {
+   "decision": "Barb will prepare a letter to the Spragues for Commission review.",
+   "quote": "barb will put together a letter and send to the commission for review."
+  },
+  {
+   "decision": "Commission agreed to further discuss irrigation meter fees and problems at a future meeting.",
+   "quote": "the commission agreed to further discuss irrigation meters fees and problems at a future meeting."
+  },
+  {
+   "decision": "Commission agreed the Sewer Commission should not forgive the non-compliance fee and would pursue it through the property owner, LTN Realty Trust; the Commission would send LTN a letter that fees are outstanding.",
+   "quote": "it was determined that the commission would send ltn a letter that fees are still outstanding"
+  },
+  {
+   "decision": "Barb will begin the process for her 2 non-compliant accounts from the 1st Tuesday reports.",
+   "quote": "1st tuesday reports - barb has 2 non-compliant accounts and will begin the process."
+  },
+  {
+   "decision": "Thursday, March 20 suggested for a special process plan workshop; Barb to send invitation to check availability.",
+   "quote": "thursday, march 20h was suggested and barb will send the invitation out to check everyone's availability."
+  },
+  {
+   "decision": "Barb will invite Flow Assessment and have SWSS's irrigation rep attend the March 13 meeting.",
+   "quote": "barb will have swss and confirmed that they have the irrigation rep come to the march 13 meeting."
+  },
+  {
+   "decision": "Barb will send out SWSS spare-parts information and the Commission will look at buying compatible parts.",
+   "quote": "cari suggested looking at buying compatible parts, so they don't have to"
+  },
+  {
+   "decision": "Commission agreed to pursue looking at the cost and time of billing outsourcing.",
+   "quote": "the sewer commission will still pursue looking at the"
+  },
+  {
+   "decision": "Barb to send the FY17 Annual report to Elaine Peterson (BOS) for the February 15 deadline.",
+   "quote": "fy17 annual report - barb asked if everyone had reviewed it and that she will be sending it in to elaine peterson (bos) for the"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tilton Ave consultant analysis",
+   "what_was_recorded": "Wright Pierce said they could do another analysis for a stated range, but it was not necessary.",
+   "figures_as_printed": [
+    "$5,000 to $7,000"
+   ],
+   "quote": "they said they could do another analysis for $5,000 to $7,000 but it was not necessary. john supports presenting"
+  },
+  {
+   "topic": "FY19 budget",
+   "what_was_recorded": "Carl wants the budget to break even and to put something into capital reserve; no dollar amount beyond the capital reserve figure is printed.",
+   "figures_as_printed": [],
+   "quote": "carl would like the budget to break even and be able to put"
+  },
+  {
+   "topic": "FY19 capital reserve transfer",
+   "what_was_recorded": "Line items were adjusted to balance the budget, including a Capital Reserve transfer of $22,000.",
+   "figures_as_printed": [
+    "$22,000",
+    "$ 22,000"
+   ],
+   "quote": "which included the capital reserve transfer of $22,000."
+  },
+  {
+   "topic": "Fitchburg and Leominster rate increases",
+   "what_was_recorded": "John noted Fitchburg and Leominster costs are rising and asked about raising rates; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "john pointed out that fitchburg and leominster costs are going up and asked about the process if they needed"
+  },
+  {
+   "topic": "Irrigation meter fee",
+   "what_was_recorded": "A meter fee to offset meter reading and administrative costs for irrigation meter users was discussed and agreed, with ~80 irrigation users out of the customer base (printed as -800, likely an OCR error for 800).",
+   "figures_as_printed": [
+    "$ 50/year",
+    "~80",
+    "-800"
+   ],
+   "quote": "administrative costs unique to irrigation meter users (~80 out of -800 customers)"
+  },
+  {
+   "topic": "Billing outsourcing cost",
+   "what_was_recorded": "Barb said billing outsourcing would still take the same amount of time; the Commission will still pursue looking at cost and time. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb feels that billing will still involve the same amount of time-- verifying readings"
+  },
+  {
+   "topic": "Whalom Kitchen grease trap non-compliance fee",
+   "what_was_recorded": "The non-compliance fee assessed to the previous owner is not forgiven; LTN Realty Trust remains responsible for the $1400 fee.",
+   "figures_as_printed": [
+    "$1400"
+   ],
+   "quote": "they are still responsible for the $1400."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Capital Reserve transfer to set aside a capital fund amount in the FY19 break-even budget.",
+   "amount_as_printed": "$ 22,000",
+   "outcome": "passed unanimously (break-even budget approved with the capital fund amount to be set aside)",
+   "quote": "to approve the break-even budget including a capital fund amount of $ 22,000 to be set aside. vote: unanimous"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Tilton Ave update",
+   "resolution": "voted to submit a warrant article to add Tilton Ave back into the Sewer Service Area",
+   "quote": "tilton ave update - carl went through the wmp-phase 1 tier 1 & 2 analysis shows tilton ave. as a needs area.",
+   "tags": [
+    "Tilton Avenue",
+    "sewer service area",
+    "warrant article",
+    "septic"
+   ]
+  },
+  {
+   "topic": "FY19 budget",
+   "resolution": "approved break-even budget with $ 22,000 capital set-aside",
+   "quote": "fy19 budget - barb reported that the preliminary figures were given to heather.",
+   "tags": [
+    "FY19 budget",
+    "capital reserve",
+    "irrigation meters",
+    "rates"
+   ]
+  },
+  {
+   "topic": "Fitchburg rate meeting",
+   "resolution": "no action; Cari to attend the next day's meeting",
+   "quote": "fitchburg rate meeting - car will be going to tomorrow's meeting.",
+   "tags": [
+    "Fitchburg",
+    "wholesale rates"
+   ]
+  },
+  {
+   "topic": "FY18 spending",
+   "resolution": "discussed; no vote",
+   "quote": "fy18 spending - barb referred to a spreadsheet of current balances.",
+   "tags": [
+    "FY18 spending",
+    "irrigation meters",
+    "spare parts"
+   ]
+  },
+  {
+   "topic": "DPW Systems update",
+   "resolution": "no action; questions forwarded to Jack and Flow Assessment to be invited to March 13",
+   "quote": "dpw systems update - small water, task 1 - carl has a list of",
+   "tags": [
+    "DPW",
+    "Small Water",
+    "billing usage"
+   ]
+  },
+  {
+   "topic": "Communications workshop",
+   "resolution": "process plan workshop proposed for Thursday March 20; invitation to be sent",
+   "quote": "communications workshop - the commission discussed setting up the special meeting with",
+   "tags": [
+    "workshop",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Billing outsourcing status",
+   "resolution": "no action; Commission to keep pursuing cost and time review",
+   "quote": "billing outsourcing status - ine sewer",
+   "tags": [
+    "billing",
+    "Northern Data",
+    "outsourcing"
+   ]
+  },
+  {
+   "topic": "FY17 Annual report",
+   "resolution": "to be sent to BOS for the February 15 deadline",
+   "quote": "fy17 annual report - barb asked if everyone had reviewed it and that she will be sending it in to elaine peterson (bos) for the",
+   "tags": [
+    "annual report",
+    "deadline"
+   ]
+  },
+  {
+   "topic": "Grease trap regulation compliance - Whalom Kitchen",
+   "resolution": "voted to notify the owner of responsibility for the fine; letter to LTN Realty Trust",
+   "quote": "grease trap regulation compliance -whalom kitchen- barb met with counsel and was told that the sewer commission should not forgive the",
+   "tags": [
+    "grease trap",
+    "non-compliance fee",
+    "Sewer Use Regulations",
+    "LTN Realty Trust"
+   ]
+  },
+  {
+   "topic": "1st Tuesday reports",
+   "resolution": "Barb to begin process for 2 non-compliant accounts",
+   "quote": "1st tuesday reports - barb has 2 non-compliant accounts and will begin the process.",
+   "tags": [
+    "non-compliance",
+    "accounts"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "accepted 12/5/17 minutes as edited; 1/30/18 minutes moved to next meeting",
+   "quote": "minutes - barb read an email from joan received today regarding edits and opinions in the minutes",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Next commission activities",
+   "resolution": "schedule noted; received and filed",
+   "quote": "next commission activities- 2/27/18-meeting- town hall, 3/8 - fincom budget presentation -town hall",
+   "tags": [
+    "schedule",
+    "FinCom",
+    "caucus"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Joan Pease email of 2/13/18",
+   "where": "list",
+   "quote": "on file: joan pease email of 2/13/18"
+  },
+  {
+   "name": "Review Document with attachments prepared by Carl Luck: Tilton Ave: Follow-up on Resident Request for Tilton Ave to be added to Sewer Service Area",
+   "where": "list",
+   "quote": "review document with attachments prepared by carl luck:"
+  },
+  {
+   "name": "WMP-Phase 1 Tier 1 & 2 analysis",
+   "where": "text",
+   "quote": "tilton ave update - carl went through the wmp-phase 1 tier 1 & 2 analysis shows tilton ave. as a needs area."
+  },
+  {
+   "name": "spreadsheet of current balances",
+   "where": "text",
+   "quote": "fy18 spending - barb referred to a spreadsheet of current balances."
+  },
+  {
+   "name": "Sewer Use Regulations",
+   "where": "text",
+   "quote": "per the sewer use regulations, the properly owner and business owner are equally responsible."
+  },
+  {
+   "name": "FY17 Annual report",
+   "where": "text",
+   "quote": "fy17 annual report - barb asked if everyone had reviewed it and that she will be sending it in to elaine peterson (bos) for the"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "Tilton Avenue",
+  "sewer service area",
+  "warrant article",
+  "FY19 budget",
+  "capital reserve",
+  "irrigation meters",
+  "Fitchburg and Leominster rates",
+  "billing outsourcing",
+  "grease trap",
+  "non-compliance fee",
+  "minutes approval",
+  "communications workshop",
+  "FY17 annual report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "on file:"
+ },
+ "dropped_unquoted_by_field": {}
 }

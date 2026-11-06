@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2018-10-16",
  "docid": "742",
@@ -12,31 +12,210 @@
  },
  "votes": [
   {
-   "motion": "Grant all statutory exemption applications totaling $18,771",
-   "outcome": "passed",
+   "motion": "Grant all statutory exemption applications reviewed (33), totaling $18,771.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "board voted to grant all applications totaling $18,771."
   },
   {
-   "motion": "Table decision on Chapter 61A application for 285 E Goodrich St. until full inspection and additional information obtained",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "boa voted to table decision until a full inspection of the 103 acre property and requesting more information regarding the use of this property."
+   "motion": "Table the decision on the 285 E Goodrich St. (029-001, Low Places Ranch, LLC, 61A) application until a full inspection of the 103 acre property and more information on its use are obtained.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "boa voted to table decision until a full inspection of the 103 acre property"
   },
   {
-   "motion": "Commit rollback tax in the amount of $1,965.81 for 920 Lancaster Ave. property",
-   "outcome": "passed",
+   "motion": "Commit the rollback tax of $1,965.81 for 920 Lancaster Ave. (120-011, Hansel).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the boa voted to commit the rollback tax in the amount of $1,965.81"
   },
   {
-   "motion": "Maintain the filing of supporting income documentation for Chapter 61A properties",
-   "outcome": "passed",
+   "motion": "Maintain the filing of supporting income documentation for 61A properties.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "for 61a properties, they voted to maintain the filing of supporting income documentation"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from scan; all votes are clearly readable.",
- "cost_usd": 0.1137965
+ "note": "OCR text from a two-page scan. Page 1 is the body; page 2 contains only the signature block (Louise Paquette, Administrative Assessor). The text ends mid-sentence ('timely tax rate and timely tax'), so the remainder of the meeting, including any adjournment, is not in the extract. Several votes record no motion, mover, seconder or tally, so outcomes are 'not stated'. Some approvals (100 Howard St., 39 Wildwood Rd., the routine approvals) are recorded as approved with no vote language and are listed as decisions. Public comment is not recorded. The OCR reads 'lax Collector' for 'Tax Collector'.",
+ "cost_usd": 0.00756299,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "in attendance were: chairman, richard letarte, board members, louis franco and rena swezey, regional assessor harald scheid, regional associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "in attendance were: chairman, richard letarte, board members, louis franco and rena swezey, regional assessor harald scheid, regional associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "in attendance were: chairman, richard letarte, board members, louis franco and rena swezey, regional assessor harald scheid, regional associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "in attendance were: chairman, richard letarte, board members, louis franco and rena swezey, regional assessor harald scheid, regional associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Regional Associate Assessor",
+   "status": "present",
+   "quote": "in attendance were: chairman, richard letarte, board members, louis franco and rena swezey, regional assessor harald scheid, regional associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "in attendance were: chairman, richard letarte, board members, louis franco and rena swezey, regional assessor harald scheid, regional associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and the September 11, 2018 minutes.",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and september 11, 2018 minutes."
+  },
+  {
+   "decision": "FY20 Chapter 61 Forest Management application for 100 Howard St. (015-012, Cole) approved.",
+   "quote": "100 howard st. - 015-012 - cole - chapter 61 forest management / fy20 application approved"
+  },
+  {
+   "decision": "FY20 Chapter 61B Recreational application for 39 Wildwood Rd. (010-050, Hickory Hills Landowners, Inc.) approved.",
+   "quote": "39 wildwood rd. - 010-050 hickory hills landowners, inc. - 61b recreational/fy20 application approved"
+  },
+  {
+   "decision": "Board will revisit the property that failed to file its FY20 chapter application.",
+   "quote": "board will revisit the property that failed to file the application."
+  },
+  {
+   "decision": "Richard asked Louise to contact Marina Scheid, RRG Chapter Specialist, to set up an inspection date with Jeffrey Powell for 285 E Goodrich St.; Richard will accompany the inspection.",
+   "quote": "richard requested that louise contact marina scheid, rrg chapter specialist to set up an inspection date with jeffrey powell."
+  },
+  {
+   "decision": "Board recommended that all properties applying for chapter land classification be visited prior to acceptance.",
+   "quote": "board recommended that all properties applying for chapter land classification be visited prior to acceptance."
+  },
+  {
+   "decision": "Board will target 61B accounts for inspection because of their number.",
+   "quote": "board expressed concern over the amount of 61b accounts and will target these properties for inspection."
+  },
+  {
+   "decision": "Louise will provide a copy of the Tax Rate Setting Schedule to the Town Manager and every department with items in the process.",
+   "quote": "louise will provide a copy to the town manager and every department who has items to master in this process."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemptions granted",
+   "what_was_recorded": "Board voted to grant all 33 statutory exemption applications, totaling a stated dollar amount.",
+   "figures_as_printed": [
+    "$18,771"
+   ],
+   "quote": "board voted to grant all applications totaling $18,771."
+  },
+  {
+   "topic": "Rollback tax on 920 Lancaster Ave. (Chapter 61A, sold 7/13/18)",
+   "what_was_recorded": "Board voted to commit a rollback tax for the property, which no longer qualifies for Chapter 61A after its sale.",
+   "figures_as_printed": [
+    "$1,965.81"
+   ],
+   "quote": "the boa voted to commit the rollback tax in the amount of $1,965.81"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals",
+   "resolution": "approved vouchers, abatements, warrants, commitments, payroll and September 11, 2018 minutes",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and september 11, 2018 minutes.",
+   "tags": [
+    "approvals",
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Statutory exemptions",
+   "resolution": "granted all 33 applications",
+   "quote": "board voted to grant all applications totaling $18,771.",
+   "tags": [
+    "exemptions",
+    "abatements"
+   ]
+  },
+  {
+   "topic": "FY20 Chapter applications",
+   "resolution": "two approved; 285 E Goodrich St. tabled pending inspection; 920 Lancaster Ave. rollback committed; inspection policy recommended",
+   "quote": "fy20 chapter applications: louise reported that all applications (approx. 80+) except for one were received timely.",
+   "tags": [
+    "chapter 61",
+    "61A",
+    "61B",
+    "inspections",
+    "rollback tax"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting and Classification Hearing dates",
+   "resolution": "reported, no action",
+   "quote": "louise reported that there will be a special town meeting held tuesday, november 13, 2018 and the classification hearing will be held on november 20, 2018.",
+   "tags": [
+    "town meeting",
+    "dates"
+   ]
+  },
+  {
+   "topic": "Assessment finalization and tax rate setting schedule",
+   "resolution": "presented; schedule to be shared with departments",
+   "quote": "harald presented the boa with the tax rate setting schedule indicating the target dates and objectives.",
+   "tags": [
+    "tax rate",
+    "growth certification",
+    "DLS",
+    "valuations",
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax Rate Setting Schedule (indicating the Target Dates and Objectives)",
+   "where": "text",
+   "quote": "harald presented the boa with the tax rate setting schedule indicating the target dates and objectives."
+  }
+ ],
+ "tags": [
+  "assessors",
+  "chapter 61 land",
+  "chapter 61A",
+  "chapter 61B",
+  "statutory exemptions",
+  "rollback tax",
+  "tax rate setting",
+  "FY2019 valuations",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

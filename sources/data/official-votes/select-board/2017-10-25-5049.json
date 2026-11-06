@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-10-25",
  "docid": "5049",
@@ -12,15 +12,162 @@
  },
  "votes": [
   {
-   "motion": "to sign the November 28, 2017 Special Town Meeting Warrant as presented",
+   "motion": "To sign the November 28, 2017 Special Town Meeting Warrant as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to sign the november 28, 2017 special town meeting warrant as presented 2\"d. p. luck vote: all in favor"
+   "procedural": false,
+   "quote": "to sign the november 28, 2017 special town meeting warrant as presented"
+  },
+  {
+   "motion": "To ratify the appointment of Pauline Roy as Senior Center Outreach Worker with an effective date of December 5, 2017.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the appointment of pauline roy as senior center outreach worker with an effective date of"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR (macOS Vision). First vote quote contains OCR artifact: \\\"2\\\"d\\\" (quote character before d, should be \\\"2nd\\\").",
- "cost_usd": 0.11938449999999999
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) of a two-page minutes document with some garbled characters (e.g., '2\"d.' for the second, 'Elaiiem. Peterson' signature). Votes were recorded only as 'All in Favor' with no vote count or roll call; the chair is not named. Article 10 was voted onto the warrant by the Board on October 23, which is a prior action and not recorded as a vote here.",
+ "cost_usd": 0.0046132199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present: paula bertram, clerk"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux stated it will be article #11 and it will"
+  },
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale reported the special town meeting warrant closed at 5:00 p.m. earlier today."
+  },
+  {
+   "name": "R. Ebersole",
+   "status": "present",
+   "quote": "mr. ebersole stated he had asked town counsel what the implications were of moving the stormwater bylaws"
+  },
+  {
+   "name": "P. Luck",
+   "status": "present",
+   "quote": "2nd.p. luck vote: all in favor"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, 70 williams drive, asked what number the citizens' petition for the moratorium on the sale of"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the minutes of October 3, 2017.",
+   "quote": "the board signed minutes of october 3, 2017."
+  },
+  {
+   "decision": "The Board signed an Accounts Payable warrant in the amount of $486,280.22.",
+   "quote": "the board signed an accounts payable warrant in the amount of $486,280.22."
+  },
+  {
+   "decision": "Ms. Lemieux forwarded the stormwater bylaw appeal question to Land Use Director Adam Burney for more information.",
+   "quote": "ms. lemieux has forwarded this on to land use director adam burney for more"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant in the amount of $486,280.22.",
+   "figures_as_printed": [
+    "$486,280.22"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $486,280.22."
+  },
+  {
+   "topic": "Deed in lieu of foreclosure, 842 Chase Road (Article 10)",
+   "what_was_recorded": "The article would treat the property as having had real estate taxes and other municipal charges and liens paid, under M.G.L. Chapter 60, § 77C; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "and to thereby treat as having been paid real estate taxes"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "topic": "Moratorium petition number on sale of municipal buildings",
+   "quote": "katey adams, 70 williams drive, asked what number the citizens' petition for the moratorium on the sale of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and Special Town Meeting articles discussion",
+   "resolution": "warrant signed after discussion; stormwater bylaw question referred to Land Use Director",
+   "quote": "discussion of special town meeting articles",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "stormwater bylaw",
+    "deed in lieu of foreclosure"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes and warrants signed",
+   "quote": "the board signed minutes of october 3, 2017.",
+   "tags": [
+    "minutes",
+    "accounts payable",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Town Manager Appointment - Senior Center Outreach Worker",
+   "resolution": "appointment ratified",
+   "quote": "ms. lemieux requested the board ratify her appointment of pauline roy to senior center outreach worker due",
+   "tags": [
+    "appointment",
+    "senior center"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "November 28, 2017 Special Town Meeting Warrant",
+   "where": "text",
+   "quote": "the board signed the november 28, 2017 special town meeting warrant for posting."
+  },
+  {
+   "name": "Article 10: deed in lieu of foreclosure to 842 Chase Road (Map 13, Parcel 013-0001)",
+   "where": "text",
+   "quote": "article 10 was voted to be added by this board on october 23'd"
+  },
+  {
+   "name": "Accounts Payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $486,280.22."
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant",
+  "stormwater bylaw",
+  "deed in lieu of foreclosure",
+  "appointments",
+  "accounts payable",
+  "moratorium petition",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

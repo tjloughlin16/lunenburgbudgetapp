@@ -1,13 +1,22 @@
-# Records request, August 2025 — Parks & Recreation
+# Email request, August 2025 — Parks & Recreation
 
 ## Where it came from
 
-**Obtained from the Town of Lunenburg** in response to a public records request under
-M.G.L. c. 66 § 10, answered in August 2025: a zip archive of five files, and a sixth report
-sent separately. The two MyRec reports carry their own print dates — 15 August 2025 and
-29 August 2025 — which bound the request. There is no URL for any of it: none was published,
-and asking was the only route. The requester is deliberately not named, for the reason the
-fund-1301 provenance file beside this one gives.
+**Obtained from the Town of Lunenburg in answer to an emailed request by TJ Loughlin, who runs
+this project**, sent 7 August 2025 to the Parks office, subject *Parks Information Request*. It
+asked for revenue, cost, users, fees, property, maintenance and staffing per programme. It did
+not cite the public records law, so it is an informal request, not a request under M.G.L. c. 66
+§ 10. This note called it a records request, with the requester unnamed, until 5 November 2026,
+when TJ supplied the thread, published at TJ's word as
+`correspondence/2025-08-07-parks-information-request-thread.pdf`.
+
+Christopher Ruth, Facilities Director, answered in two parts:
+
+- **26 August 2025:** five attachments, *"the reports that contain the data you requested"*.
+- **10 September 2025:** `Membership_Sales_Report_2025_08-29.pdf`, after TJ asked on 29 August
+  for the Town Beach registrations, which the first set did not include.
+
+There is no URL for any of it: none was published, and asking was the only route.
 
 ## What arrived, under which name, and where it is filed
 
@@ -41,9 +50,13 @@ headings. The journal runs to 30 June 2024 `GEN` entries and the file was printe
   programme fees and $8,828.00 of beach passes.
 - The bid sheet is a vendor's offer, and the email is a statement of a vote — both
   `stated`, each carrying the authority of whoever wrote it.
-- The MUNIS report has no text layer. Nothing has been extracted from it; its totals line
-  prints a grand total of $1,022,611.97 revised, far above the two Parks departments it
-  lists, so the report was run over a wider selection than the pages show.
+- The MUNIS report has no text layer. Nothing has been extracted from it. Its totals line prints
+  a grand total of $1,022,611.97 revised, far above the two Parks departments it lists. Mr Ruth
+  explained why on 29 August 2025: *"When the report was initially run it had the facilities
+  budget above it and totaled the 2 budgets together."* So that total is not a Parks figure.
+- Also from Mr Ruth, stated rather than shown: lines with a warrant comment (`WARRANT-23P24 RUN-1
+  TOWN OF`) *"are employee pay checks"*; `Salaries Programming`, $5,000, is *"a line item used for
+  recreation programming, it is used for various programs depending on the year"*.
 
 ## What would settle what these do not
 

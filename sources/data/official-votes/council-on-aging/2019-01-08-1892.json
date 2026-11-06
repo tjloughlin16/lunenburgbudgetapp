@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-01-08",
  "docid": "1892",
@@ -12,31 +12,365 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the December 11, 2018 meeting",
+   "motion": "Approve the minutes of the December 11, 2018 meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Grant",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo motioned to approve the minutes from the december 11, 2018 meeting, ms. grant seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "accept the proposed FY20 budget",
+   "motion": "Accept the proposed budget (FY20 budget, including the $100 increase for the Montachusett Opportunity Council donation).",
    "moved_by": "Ms. Rabbit",
    "seconded_by": "Ms. DiGiacomo",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "ms. rabbit moved to accept the proposed budget, ms. digiacomo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Grant",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo motioned to adjourn. ms. grant seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08537550000000001
+ "note": "Text is a clean extraction with no votes beyond the three recorded. A page-1 margin note reads 'Unanimously approved by COA at Feb. 12, 2019 meeting'; it sits inside the skateboard park discussion and appears to refer to the later approval of these minutes, so it is not recorded as a vote at this meeting. The text has no recorded vote on the skateboard park or the capital plan. The minutes name 'Ms. Lincoln' (Deb Lincoln) and 'Mr. Lincoln' (Pete Lincoln) and the Veterans Affairs and Building Report passage refers to 'Ms. Lincoln' without a first name, so attribution there is uncertain. Budget figures are as printed; no transfers recorded.",
+ "cost_usd": 0.00644602,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "director sue doherty, chairperson pete lincoln, cheryl moisan, betty digiacomo, diane nowd, jane rabbitt"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, barbara brown"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, barbara brown"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, barbara brown"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "present",
+   "quote": "jane rabbitt, deb lincoln, judy tarbell, sarah grant, barbara brown"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: jacquelyn dwyer, kevin mcnally"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: jacquelyn dwyer, kevin mcnally"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux, selectman jamie toale, eagle house supporters liaison marie burchfield"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "town manager heather lemieux, selectman jamie toale, eagle house supporters liaison marie burchfield"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "town manager heather lemieux, selectman jamie toale, eagle house supporters liaison marie burchfield"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz, skateboard park representatives anthony caiozzo, griffin caiozzo"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Skateboard park representative",
+   "status": "present",
+   "quote": "skateboard park representatives anthony caiozzo, griffin caiozzo, aidan moore, aiden swift"
+  },
+  {
+   "name": "Griffin Caiozzo",
+   "role": "Skateboard park representative",
+   "status": "present",
+   "quote": "skateboard park representatives anthony caiozzo, griffin caiozzo, aidan moore, aiden swift"
+  },
+  {
+   "name": "Aidan Moore",
+   "role": "Skateboard park representative",
+   "status": "present",
+   "quote": "skateboard park representatives anthony caiozzo, griffin caiozzo, aidan moore, aiden swift"
+  },
+  {
+   "name": "Aiden Swift",
+   "role": "Skateboard park representative",
+   "status": "present",
+   "quote": "skateboard park representatives anthony caiozzo, griffin caiozzo, aidan moore, aiden swift"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bridges Together: the teachers and the volunteers will be hosted at the same training session so each person understands their roles for the next session in February.",
+   "quote": "it was decided to host both the teachers and the volunteers to the same training session to assure each person understands their roles"
+  },
+  {
+   "decision": "The board agreed it would prefer upcoming town forums be held during the day.",
+   "quote": "the board agreed they would prefer meetings during the day."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY20 budget: Montachusett Opportunity Council donation",
+   "what_was_recorded": "Director Doherty said she will ask for $100 more this year to cover a rise in the Montachusett Opportunity Council donation; the board then approved the proposed budget.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "asking for $100 more this year to cover the rise in the montachusett opportunity council donation amount"
+  },
+  {
+   "topic": "Capital Plan eligibility for COA requests",
+   "what_was_recorded": "Director Doherty's requests were not eligible for the capital plan because they were under the minimum project threshold.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "because they weren't over the $10,000 minimum"
+  },
+  {
+   "topic": "Skateboard park: Eagle House parking lot cost history",
+   "what_was_recorded": "Mr. Lincoln recalled that a prior COA parking lot plan for the Eagle House never proceeded because the $300,000 cost could not be raised and no grants were available.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "the $300,000 the parking lot would cost, and there were no grants available at the time"
+  },
+  {
+   "topic": "Eagle House Supporters 50/50 raffle",
+   "what_was_recorded": "The ping pong ball 50/50 raffle brought in a stated amount.",
+   "figures_as_printed": [
+    "$235"
+   ],
+   "quote": "the ping pong ball 50/50 raffle brought in $235."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Heather Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "time preference for town forums",
+   "quote": "ms. lemieux asked the board if they had a time preference concerning upcoming forums in regard to town business."
+  },
+  {
+   "speaker": "Jamie Toale",
+   "stated_role": "Selectman",
+   "topic": "Board of Selectmen upcoming discussions",
+   "quote": "mr. toale announced that the board of selectmen would be discussing town meeting warrants, and marijuana prohibition."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (December 11, 2018 meeting)",
+   "resolution": "approved unanimously",
+   "quote": "ms. digiacomo motioned to approve the minutes from the december 11, 2018 meeting, ms. grant seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report: Skateboard Park discussion",
+   "resolution": "discussed; no action recorded",
+   "quote": "skateboard park discussion: ms. doherty informed the board that at the last board of selectmen meeting",
+   "tags": [
+    "skateboard park",
+    "parking",
+    "Eagle House",
+    "Memorial Dr",
+    "liability"
+   ]
+  },
+  {
+   "topic": "Bridges Together",
+   "resolution": "reported; training session decided",
+   "quote": "it was decided to host both the teachers and the volunteers to the same training session",
+   "tags": [
+    "schools",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "FY20 Budget",
+   "resolution": "proposed budget accepted",
+   "quote": "ms. rabbit moved to accept the proposed budget, ms. digiacomo seconded.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Capital Plan",
+   "resolution": "discussed; roof reconfiguration still under discussion",
+   "quote": "capital plan: ms. doherty asked mr. rodriquenz if her requests have been included",
+   "tags": [
+    "capital plan",
+    "building"
+   ]
+  },
+  {
+   "topic": "Dementia Friendly Community",
+   "resolution": "reported; no action",
+   "quote": "ms. rabbitt also reported that paula bertram will be representing the lunenburg planning board on the dementia friendly community focus group.",
+   "tags": [
+    "dementia",
+    "community"
+   ]
+  },
+  {
+   "topic": "Memory Café",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty reported the december café was well attended, despite the bad weather.",
+   "tags": [
+    "memory cafe"
+   ]
+  },
+  {
+   "topic": "Building Report",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty reported that the dpw is working on getting quotes to paint the interior of the building.",
+   "tags": [
+    "building",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Upcoming Events",
+   "resolution": "reported; no action",
+   "quote": "ms. doherty reported an eagle house supporter fund raiser involving the 2018 world series trophy is in the works.",
+   "tags": [
+    "fundraiser",
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "reported; finance report tabled",
+   "quote": "the finance report was tabled.",
+   "tags": [
+    "Eagle House",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Notices and Communications",
+   "resolution": "reported; no action",
+   "quote": "aarp will not be coming to do taxes at the eagle house this year",
+   "tags": [
+    "tax help",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Board Comment",
+   "resolution": "no action",
+   "quote": "mr. lincoln said he attended the eagle house new year's eve party",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "mr. toale announced that the board of selectmen would be discussing town meeting warrants, and marijuana prohibition.",
+   "tags": [
+    "public forums",
+    "Town Meeting",
+    "marijuana"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:55 a.m.",
+   "quote": "at 10:55 a.m. ms. digiacomo motioned to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "topographical plan of the park",
+   "where": "text",
+   "quote": "gave a brief presentation of a topographical plan of the park, which addressed parking by relocating a section of the kids kingdom playground"
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "Eagle House",
+  "skateboard park",
+  "budget",
+  "capital plan",
+  "parking",
+  "dementia friendly",
+  "Bridges Together",
+  "Town Meeting",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

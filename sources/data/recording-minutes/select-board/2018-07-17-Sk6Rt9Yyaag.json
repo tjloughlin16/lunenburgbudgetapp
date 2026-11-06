@@ -1,0 +1,464 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2018-07-17",
+ "video_id": "Sk6Rt9Yyaag",
+ "video_url": "https://www.youtube.com/watch?v=Sk6Rt9Yyaag",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2018-07-17-Sk6Rt9Yyaag.json",
+  "sha256": "a8b676e4e283e5c7e4e9c7b5a545574c7265380a41243820e68b21e70ff7051f",
+  "caption_lines": 419,
+  "segments": 3380
+ },
+ "recording": {
+  "duration_s": 9100,
+  "duration": "2:31",
+  "spoken_chars": 112924,
+  "words_approx": 18820
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07172018-5113",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-07-17-agenda-5113.txt",
+   "path": "sources/meetings/select-board/2018-07-17-agenda-5113.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07172018-5113",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-07-17-minutes-5113.txt",
+   "path": "sources/meetings/select-board/2018-07-17-minutes-5113.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T19:12:44Z",
+  "cost_usd": 0.2285364
+ },
+ "minutes": {
+  "headline": "Select Board approved acting police lieutenant, then held a policy workshop reviewing the manual with no votes.",
+  "summary": "After a closed session on solar litigation, the board announced a Green Communities grant award event, approved minutes and warrants, and appointed an acting police lieutenant and acting sergeant. Most of the meeting was a policy workshop reading through the board's policy manual and flagging items for later revision. No policy changes were voted.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Miss Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "police chief",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "executive-session",
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-safety"
+  ],
+  "votes": [
+   {
+    "t": 0,
+    "motion": "Enter executive session under chapter 30A section 21 on litigation with Settler Solar",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 831,
+    "motion": "Approve appointment of Thomas Campbell (as heard) as acting police lieutenant",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 893,
+    "motion": "Appoint Josh Tasi as acting police sergeant",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 9089,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 420,
+    "topic": "Green Communities competitive grant",
+    "what_was_said": "The town applied for a grant; the amount awarded will be announced Friday and is up to the application amount.",
+    "figures_as_heard": [
+     "two hundred and twelve thousand and three hundred and sixty-seven dollars"
+    ]
+   },
+   {
+    "t": 440,
+    "topic": "Accounts payable warrants",
+    "what_was_said": "Accounts payable warrants were read out for approval.",
+    "figures_as_heard": [
+     "six thousand five hundred and thirty four dollars and fifty two cents",
+     "one hundred and forty four thousand four hundred and sixty dollars in eighty eight cents",
+     "1million 328 450 583"
+    ]
+   },
+   {
+    "t": 5765,
+    "topic": "Free cash policy",
+    "what_was_said": "Suggested replacing the roads priority in the free cash policy with stabilization fund and OPEB trust uses, since roads funding rises each year.",
+    "figures_as_heard": [
+     "fifty thousand"
+    ]
+   },
+   {
+    "t": 6061,
+    "topic": "OPEB funding policy",
+    "what_was_said": "A member wants a policy reducing future OPEB liability, e.g. for new hires.",
+    "figures_as_heard": [
+     "eight million dollar reduction"
+    ]
+   },
+   {
+    "t": 6706,
+    "topic": "One-day liquor license insurance",
+    "what_was_said": "A minimum liquor liability insurance requirement was proposed for the policy.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 7467,
+    "topic": "Sign permit fee on town property",
+    "what_was_said": "Members questioned whether a sign permit fee would apply to charity event signs.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1106,
+    "decision": "Board agreed to act on the acting sergeant appointment at next week's meeting because it was missing from the agenda."
+   },
+   {
+    "t": 653,
+    "decision": "Policy workshop would flag issues only, with revisions and votes at later meetings."
+   },
+   {
+    "t": 3720,
+    "decision": "Communications/IT policy flagged for reorganization and separating employee from board policy."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 292,
+    "topic": "Executive session on solar litigation",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 292,
+    "t_end": 519,
+    "topic": "Announcements, Green Communities grant, minutes and warrants",
+    "resolution": "informational",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 519,
+    "t_end": 1229,
+    "topic": "Acting police lieutenant and sergeant appointments",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1229,
+    "t_end": 8984,
+    "topic": "Policy workshop reading through board policy manual",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 8984,
+    "t_end": 9089,
+    "topic": "Public comment, upcoming meetings, 300th anniversary, adjournment",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Executive session vote count",
+   "Vote on acting sergeant appointment result is not clearly stated",
+   "Exact grant award amount not yet known"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1609,
+    "about": "A member objected to a policy line requiring respect among members; another defended it for censure purposes.",
+    "sides": "one member against the wording, another member for keeping it",
+    "words_as_heard": "I feel like as an adult I don't need to be told that",
+    "kind": "members disagree"
+   },
+   {
+    "t": 1734,
+    "about": "A member said the permit fee vote last week was taken with little information and should be revoted.",
+    "sides": "one member against last week's fee vote, others noting the policy gray area",
+    "words_as_heard": "the vote was taken on very little information so I frankly seeing this I think we should revote that particular meeting fee",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 6272,
+    "kind": "safety",
+    "about": "Whether liquor license premises may lock doors so police can enter while patrons are present.",
+    "who": "a member",
+    "words_as_heard": "our liquor license agents which is the police department have to have the ability to get into the building"
+   },
+   {
+    "t": 8059,
+    "kind": "safety",
+    "about": "Emergency road disturbance such as a water main break needs an exception in the newly paved roads policy.",
+    "who": "a member",
+    "words_as_heard": "you may have to disturb a road if there's a water main break"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 582,
+    "name_as_heard": "policy manual",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "we should read through the policies",
+    "shown": true
+   },
+   {
+    "t": 8858,
+    "name_as_heard": "flag policy draft",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "there were two other draft policies and your Google Drive",
+    "shown": true
+   },
+   {
+    "t": 440,
+    "name_as_heard": "minutes from June 19th",
+    "kind": "prior minutes",
+    "words_as_heard": "we have minutes from June 19th which were sent out last Tuesday",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved an acting police lieutenant appointment; the vote on an acting sergeant was not audible and was moved to next week's agenda.",
+    "t": 831
+   },
+   {
+    "line": "The acting sergeant appointment was missing from the agenda, so the board agreed to act on it at next week's meeting.",
+    "t": 1106
+   },
+   {
+    "line": "Most of the meeting was a policy workshop that flagged items in the policy manual; revisions and votes were left to later meetings.",
+    "t": 653
+   },
+   {
+    "line": "Members raised changes to the free cash policy and a new policy on reducing future OPEB liability, with no vote taken.",
+    "t": 5765
+   },
+   {
+    "line": "The board announced that the Green Communities grant award would be made public on Friday, after the town's application.",
+    "t": 420
+   }
+  ],
+  "why_it_matters": [
+   "The flagged free cash and OPEB policies govern how town savings are spent and how long-term retiree benefit costs are handled, which bear on future tax bills; nothing changed at this meeting.",
+   "A Green Communities grant would pay for energy projects that would otherwise fall on the town budget, mostly taxes."
+  ],
+  "watch_next": [
+   "The acting sergeant appointment, set for next week's Select Board meeting.",
+   "Later meetings where the flagged policies are revised and voted."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T19:12:50Z",
+   "cost_usd": 0.022225099999999998
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07172018-5113",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-07-17-minutes-5113.txt",
+   "path": "sources/meetings/select-board/2018-07-17-minutes-5113.pdf"
+  },
+  "official_sha256": "0493566ede0ca9f4c5518fc8b708d4dfcedf4bfd6a10e9aad1cb7a211106cade",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the acting police lieutenant appointment (apart from a misheard name) and on the first two warrant amounts. They differ on the Green Communities grant amount, which our captions give as a figure and the official minutes say is unknown, and on the acting sergeant appointment, which the official minutes do not mention.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Name of acting police lieutenant appointee",
+    "t": 831,
+    "ours": "Approve appointment of Thomas Campbell (as heard) as acting police lieutenant — passed",
+    "official": "motion: d. mcquaid 2nd.p. luck to ratify the town manager's appointment of thomas gammel to acting police lieutenant vote: all in favor",
+    "official_reading": "Thomas Gammel",
+    "note": "Same vote and outcome (passed); the captions misheard the surname."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Acting police sergeant appointment (Josh Tasi)",
+    "t": 893,
+    "ours": "Appoint Josh Tasi as acting police sergeant — not audible",
+    "official": "",
+    "note": "Our minutes list a sergeant appointment vote with no audible outcome, and the official minutes record no such vote. Check the video and the official text for whether it was deferred to the next week."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Green Communities grant amount",
+    "t": 420,
+    "ours": "Green Communities competitive grant: two hundred and twelve thousand and three hundred and sixty-seven dollars",
+    "official": "we don't know the exact amount of the grant until they make the press release.",
+    "note": "Our captions give $212,367, but the official minutes say the amount was not yet known. Check the recording at this point to see whether a figure was actually stated."
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrants, first two amounts",
+    "t": 440,
+    "ours": "six thousand five hundred and thirty four dollars and fifty two cents, one hundred and forty four thousand four hundred and sixty dollars in eighty eight cents",
+    "official": "the board signed an accounts payable warrant in the amount of $6,534.52, another accounts payable warrant in the amount of $144,460.88",
+    "note": "Both give $6,534.52 and $144,460.88."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Third accounts payable warrant",
+    "t": 440,
+    "ours": "1million 328 450 583",
+    "official": "$1,328,455.83",
+    "official_reading": "$1,328,455.83",
+    "note": "Garbled caption digits for the third warrant, which the structured official data gives as $1,328,455.83. The quoted official text does not include this figure, so check the original."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "OPEB funding policy $8 million",
+    "t": 6061,
+    "ours": "OPEB funding policy: eight million dollar reduction",
+    "official": "reduced the town's liability by $8 million.",
+    "note": "Both give $8 million, but the official minutes describe it as a reduction in liability from the earlier policy; check that our minutes do not present it as a new decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash policy: fifty thousand",
+    "t": 5765,
+    "ours": "Free cash policy: fifty thousand",
+    "official": "",
+    "note": "The official minutes have no $50,000 figure in the free cash policy; they give a five percent stabilization threshold. Check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Acting sergeant appointment deferred to next week because missing from agenda",
+    "t": 1106,
+    "ours": "Board agreed to act on the acting sergeant appointment at next week's meeting because it was missing from the agenda.",
+    "official": "",
+    "note": "The official minutes record no such agreement."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Policy workshop flags issues only",
+    "t": 653,
+    "ours": "Policy workshop would flag issues only, with revisions and votes at later meetings.",
+    "official": "",
+    "note": "The official minutes do not state this ground rule."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Personnel policies in separate policy book",
+    "t": 3720,
+    "ours": "Communications/IT policy flagged for reorganization and separating employee from board policy.",
+    "official": "all these policies should be in separate policy book except for sexual harassment, protected class",
+    "note": "This is roughly the same theme as our separation of employee from board policy; our minutes mention the Communications/IT policy, which the official minutes do not name. Treat as a partial match."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Social Media Policy section 7.10 to be reviewed again",
+    "ours": "",
+    "official": "section 7.10 social media policy will be reviewed again.",
+    "note": "Our minutes do not record this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes of June 19, 2018 signed",
+    "ours": "",
+    "official": "the board signed minutes of june 19, 2018. the board signed an accounts payable warrant in the amount of",
+    "note": "Our minutes do not record the signing of the minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Permit technology fee comment",
+    "ours": "",
+    "official": "pointed out last week when we voted on the permit technology fee,",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Proposition 2 1/2 levy wording",
+    "ours": "",
+    "official": "as it is written it assumes you are always increasing it by 2 ½.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: McQuade/McQuaid, Adams, town manager",
+    "ours": "Mr. McQuade (member); Miss Adams (member); town manager (town manager)",
+    "official": "also present: heather lemieux, town manager",
+    "note": "Same people. McQuade is a misheard McQuaid."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees: Ebersole, Luck, Chief Marino",
+    "ours": "police chief (presenter)",
+    "official": "chief marino reported these are to fill the vacancies created by lt.",
+    "note": "Our minutes list the police chief unnamed (the official minutes name him Chief Marino), and omit Mr. Ebersole and Ms. Luck."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T19:14:01Z",
+   "cost_usd": 0.043645100000000006
+  }
+ }
+}

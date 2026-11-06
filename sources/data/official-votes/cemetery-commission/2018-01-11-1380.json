@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-01-11",
  "docid": "1380",
@@ -12,31 +12,186 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the November 30, 2017 meeting",
+   "motion": "Accept the minutes of the November 30, 2017 meeting.",
    "moved_by": "Chairman May",
    "seconded_by": "Commissioner Tyler",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "upon a motion by chairman may to accept the minutes, seconded by commissioner tyler, and with no further discussion, the motion passed unanimously"
+   "quote": "upon a motion by chairman may to accept the minutes, seconded by commissioner tyler, and with no further discussion, the motion passed unanimously."
   },
   {
-   "motion": "Accept the change to policy regarding Rules and Regulations involving delegation and supervision of day-to-day care and maintenance of Town Cemeteries by the Town Manager",
+   "motion": "Accept the change to the Rules and Regulations that delegates day-to-day care and maintenance of the Town Cemeteries to the Town Manager without prior Commission approval.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Commissioner Tyler",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion was made to accept this change by commissioner mendoza, seconded by commissioner tyler, and with no further discussion was passed unanimously"
+   "quote": "a motion was made to accept this change by commissioner mendoza, seconded by commissioner tyler, and with no further discussion was passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chairman May",
    "seconded_by": "Commissioner Mendoza",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made by chairman may to adjourn, seconded by commissioner mendoza. meeting was adjourned at 9:05 pm"
+   "quote": "a motion was made by chairman may to adjourn, seconded by commissioner mendoza. meeting was adjourned at 9:05 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; all votes recorded with verbatim quotes.",
- "cost_usd": 0.0813375
+ "note": "The OCR header is garbled (e.g. 'Lorrame Helendosa, Wice-clair' and 'William Opler, Clerk'); these are not treated as attendees. The minutes are signed 'William Tyler, Clerk.' Page 2 has no text. The minutes record no public comment and no documents list. The adjournment motion has no printed tally, so its outcome is recorded as 'passed' from the statement that the meeting was adjourned at 9:05 pm.\"}",
+ "cost_usd": 0.0038745200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present were: commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "members present were: commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman"
+  },
+  {
+   "name": "William Tyler",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "members present were: commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman"
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Supt.",
+   "status": "present",
+   "quote": "members present were: commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission concluded that there is adequate room left at both Cemeteries for the foreseeable future, with further expansion possible at the North Cemetery.",
+   "quote": "it was concluded that we have adequate room left for the foreseeable future. although"
+  },
+  {
+   "decision": "Commissioner Tyler will send a copy of the Rules and Regulations change to the Town Clerk for posting.",
+   "quote": "commissioner tyler will send a copy of the change to the town clerk for posting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Remaining expenses to pay",
+   "what_was_recorded": "Commissioner Tyler reported the only expenses left to pay at the moment are for loam and for food and bathroom facilities for prisoners from the Worcester County House of Correction.",
+   "figures_as_printed": [
+    "$422.00"
+   ],
+   "quote": "the only expenses left to pay at the moment is $422.00 for loam and food and bathroom facilities for the prisoners from the worcester county house of correction."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of November 30, 2017 meeting",
+   "resolution": "approved unanimously",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "minutes from the november 30, 2017 meeting were reviewed and upon a motion by chairman may"
+  },
+  {
+   "topic": "Chairman's meeting with Town Manager and follow-up letter",
+   "resolution": "discussed, no action",
+   "tags": [
+    "town manager",
+    "correspondence"
+   ],
+   "quote": "chairman may's meeting with the town manager on january 8, 2018 and the follow-up letter sent to"
+  },
+  {
+   "topic": "Communication with Charter Review Committee",
+   "resolution": "discussed; letter sent to CRC Chairman",
+   "tags": [
+    "charter review",
+    "correspondence"
+   ],
+   "quote": "the communication between the charter review committee (crc) and the cemetery commission was"
+  },
+  {
+   "topic": "Finances and expenditures from Town Accountant",
+   "resolution": "reported, no action",
+   "tags": [
+    "finances",
+    "expenditures"
+   ],
+   "quote": "commissioner tyler reported to the commission that his email to town accountant karen brochu was"
+  },
+  {
+   "topic": "Cemetery space",
+   "resolution": "concluded adequate room for foreseeable future",
+   "tags": [
+    "cemetery space",
+    "North Cemetery"
+   ],
+   "quote": "the subject of space left at both cemeteries was discussed and it was concluded that we have adequate room"
+  },
+  {
+   "topic": "Rules and Regulations policy change",
+   "resolution": "accepted unanimously; to be posted by Town Clerk",
+   "tags": [
+    "rules and regulations",
+    "town manager",
+    "policy"
+   ],
+   "quote": "a change in policy regarding our rules and regulations was presented by chairman may"
+  },
+  {
+   "topic": "Town Report deadline",
+   "resolution": "noted",
+   "tags": [
+    "town report"
+   ],
+   "quote": "the deadline for submission of information for the town report is february 15, 2018."
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "adjourned at 9:05 pm",
+   "tags": [
+    "adjournment",
+    "next meeting"
+   ],
+   "quote": "the next scheduled meeting of the cemetery commission is february 12, 2018 at the lunenburg public"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Follow-up letter to the Town Manager, sent January 9, 2018",
+   "where": "text",
+   "quote": "the follow-up letter sent to her on january 9, 2018"
+  },
+  {
+   "name": "Commissioner Tyler's email to Town Accountant Karen Brochu",
+   "where": "text",
+   "quote": "commissioner tyler reported to the commission that his email to town accountant karen brochu was"
+  },
+  {
+   "name": "Letter to CRC Chairman Robert Ebersole describing proposed Charter changes",
+   "where": "text",
+   "quote": "a letter was also sent to crc chairman robert ebersole describing the changes proposed to the charter."
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "rules and regulations",
+  "charter review",
+  "town manager",
+  "finances",
+  "cemetery space",
+  "town report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

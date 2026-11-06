@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-02-28",
  "docid": "2163",
@@ -12,6 +12,364 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR extraction from a scan; these are Finance Committee minutes with no recorded votes. The document contains budget presentations and discussion only.",
- "cost_usd": 0.0870235
+ "note": "OCR text from macOS Vision with garbled words (e.g., 'Geroge', 'Chiet', 'Pier Diems', 'Assoicates'); figures are recorded as printed. No motions, votes, adjournment or minutes approval are recorded, so votes is empty. 'Geroge, Chairman of BOH' is not matched to a named attendee. The 'Next Meetings' heading has no content and is not listed as a topic. The Town Manager is referenced but not named. The minutes carry a RECEIVED & FILED stamp dated APR 09 2019.",
+ "cost_usd": 0.008430819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin, jay simeone"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "john henshaw, vice-chairman"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "hannah anderson, secretary"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin, jay simeone"
+  },
+  {
+   "name": "George Martin",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin, jay simeone"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: marc luescher"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Chief (Fire Department presenter)",
+   "status": "present",
+   "quote": "chief sullivan presented his budget."
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Department presenter",
+   "status": "present",
+   "quote": "chief marino and amanda moore presented his budget"
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Police Department presenter",
+   "status": "present",
+   "quote": "chief marino and amanda moore presented his budget"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, on the paramedic, for outside training ems is in the budget, right?"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, last year during the process of going the paramedic route with"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Police DTS item of $3,700 will not be funded tonight; it will be addressed in the overall budget.",
+   "quote": "terri, we will not be able to find that tonight but we will address it as the overall budget."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "EMS outside paramedic training cost",
+   "what_was_recorded": "Outside paramedic training is not in the budget but the Chief is paying for it from the budget; Mr. Luck says it is in the FY20 budget, and the Chief confirms.",
+   "quote": "chief, right now it's not in the budget but i am paying it with the budget, we've had many"
+  },
+  {
+   "topic": "Paramedic training cost",
+   "what_was_recorded": "Mr. Luck states training a paramedic costs about $20K and questions the pay scale.",
+   "figures_as_printed": [
+    "$20K"
+   ],
+   "quote": "mr. luck, but that wasn't enough it sounded so its $20k to train them up so i think we need to"
+  },
+  {
+   "topic": "Paramedic entry pay versus basic",
+   "what_was_recorded": "Under the current scale, hiring an entry-level paramedic would cost $5K more per person than a basic EMT.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "chief, with our current scale it would cost $5k more a person to hire a paramedic at the entry level versus a basic."
+  },
+  {
+   "topic": "Paramedic step-to-step pay difference",
+   "what_was_recorded": "The Chief says the step-to-step difference is about $5K and paramedic pay is about 10% over a basic firefighter.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "in terms of numbers from step to step, it's about a $5k difference, but the pay scales that are out"
+  },
+  {
+   "topic": "Medical direction fee for paramedic license",
+   "what_was_recorded": "The Chief says the department currently pays about $5K for medical direction and that fee would go up with a paramedic license.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "we currently pay about $5k for that, i would participate when we finally do it, that would go up."
+  },
+  {
+   "topic": "Paramedic outsourcing cost",
+   "what_was_recorded": "The department pays other services about $60K each year for paramedic coverage, which the Chief wants to keep in town.",
+   "figures_as_printed": [
+    "$60K"
+   ],
+   "quote": "we are paying out approximately $60k each year to other services for their paramedic"
+  },
+  {
+   "topic": "EMS billing collections",
+   "what_was_recorded": "The Chief says about 64% of in-town transports are Medicare/Medicaid at a set rate; a paramedic level could raise rates but would not make EMS an enterprise fund.",
+   "figures_as_printed": [
+    "64%"
+   ],
+   "quote": "it's about 64% medicare/medicaid in town which is a"
+  },
+  {
+   "topic": "Police DTS line item",
+   "what_was_recorded": "Mr. Luck asks why the $3,700 DTS item cannot be funded when the police budget is $9k under target.",
+   "figures_as_printed": [
+    "$3,700",
+    "$9k"
+   ],
+   "quote": "carl luck, 50 sunset lane, dts that's for $3,700? in the police budget, it's $9k under target so i"
+  },
+  {
+   "topic": "Police software program",
+   "what_was_recorded": "The software program is above target at $3720 as an annual fee on a one-year contract; no savings figure was given.",
+   "figures_as_printed": [
+    "$3720"
+   ],
+   "quote": "john, about the software program, the above target is $3720, is that the annual fee? amanda, yes."
+  },
+  {
+   "topic": "Police therapy dog replacement",
+   "what_was_recorded": "A replacement for the dog Jerry, who has a couple of years left, is estimated at about $7K.",
+   "figures_as_printed": [
+    "$7K"
+   ],
+   "quote": "chief, jerry only has a couple years left in them."
+  },
+  {
+   "topic": "Police educational incentive",
+   "what_was_recorded": "Educational incentive is a lump-sum payment of about $5K for degrees (figure as printed in question).",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "mr. luck, the educational incentive, $5k, can you explain that?"
+  },
+  {
+   "topic": "Police associate degree incentive amount",
+   "what_was_recorded": "Amanda Moore says an associate degree incentive is around $2K and rises with higher degrees.",
+   "figures_as_printed": [
+    "$2K"
+   ],
+   "quote": "assoicates is around $2k and the higher the degree the higher the pay."
+  },
+  {
+   "topic": "Nashoba Valley assessment",
+   "what_was_recorded": "The Town Manager reported the Nashoba Valley assessment was estimated at $186K, with a second figure printed as $189,076,40.",
+   "figures_as_printed": [
+    "$186K",
+    "$189,076,40"
+   ],
+   "quote": "town manager, the nashoba valley assessment estimated at $186k was $189,076,40"
+  },
+  {
+   "topic": "Health insurance rate change",
+   "what_was_recorded": "Health insurance number came in lower, decreasing 2.45%, which will positively affect the schools budget.",
+   "figures_as_printed": [
+    "2.45%"
+   ],
+   "quote": "health insurance number came in and decreased 2.45% and this will positively impact the schools"
+  },
+  {
+   "topic": "Library outside funding risk",
+   "what_was_recorded": "Michelle Walton noted library operating costs are covered by Friends of the Library funding, which the town could be on the hook for if it ends.",
+   "figures_as_printed": [],
+   "quote": "where they have basic operating costs covered by the friends of the library, and if that funding should ever go"
+  },
+  {
+   "topic": "Mosquito Control proposed budget",
+   "what_was_recorded": "A report from the Mosquito Control board shows a proposed budget amount increased from FY19; not discussed as it has not been reviewed.",
+   "figures_as_printed": [],
+   "quote": "received a report in the mail from the mosquito control board about a proposed budget amount"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "paramedic training cost and police DTS and education incentive",
+   "quote": "carl luck, 50 sunset lane, on the paramedic, for outside training ems is in the budget, right?"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "EMS 900+ call data not tracked",
+   "quote": "i think that's a travesty, the information is so important as to us making informed decisions"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open Meeting",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "received; Mosquito Control report not discussed",
+   "quote": "received a report in the mail from the mosquito control board about a proposed budget amount",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Fire Department FY2020 budget presentation",
+   "resolution": "presented; questions from committee and public",
+   "quote": "chief sullivan presented his budget.",
+   "tags": [
+    "fire department",
+    "ems",
+    "paramedic",
+    "budget presentation"
+   ]
+  },
+  {
+   "topic": "Police Department FY2020 budget presentation",
+   "resolution": "presented; questions from committee and public",
+   "quote": "chief marino and amanda moore presented his budget",
+   "tags": [
+    "police department",
+    "dispatch",
+    "budget presentation"
+   ]
+  },
+  {
+   "topic": "Board of Health",
+   "resolution": "request noted (one more office day)",
+   "quote": "geroge, chairman of boh, needs one more day added to help run the office as the current time is",
+   "tags": [
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Committee/Department updates",
+   "resolution": "reported; charter review hearing rescheduled",
+   "quote": "charter review committee was supposed to have their",
+   "tags": [
+    "committee updates",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no minutes for review",
+   "quote": "no minutes for review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager/Financial Officer Reports",
+   "resolution": "reported assessment and health insurance figures",
+   "quote": "health insurance number came in and decreased 2.45% and this will positively impact the schools",
+   "tags": [
+    "town manager",
+    "health insurance",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "comments taken on EMS data and outside funding",
+   "quote": "i think that's a travesty, the information is so important as to us making informed decisions",
+   "tags": [
+    "public comment",
+    "ems data",
+    "library"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fire Department Budget Presentation",
+   "where": "list",
+   "quote": "attachments: fire department budget presentation police budget narrative"
+  },
+  {
+   "name": "Police Budget Narrative",
+   "where": "list",
+   "quote": "attachments: fire department budget presentation police budget narrative"
+  },
+  {
+   "name": "the Beacon",
+   "where": "text",
+   "quote": "passed a copy f the beacon to the committee for review"
+  },
+  {
+   "name": "Mosquito Control board proposed budget report",
+   "where": "text",
+   "quote": "received a report in the mail from the mosquito control board about a proposed budget amount"
+  },
+  {
+   "name": "5-year capital plan",
+   "where": "text",
+   "quote": "george, i'm looking at the 5-year capital plan, i don't see any replacements for ambulances."
+  }
+ ],
+ "tags": [
+  "fy2020 budget",
+  "fire department",
+  "police department",
+  "ems paramedic",
+  "dispatch",
+  "board of health",
+  "health insurance",
+  "schools budget",
+  "library funding",
+  "public comment",
+  "budget presentations",
+  "no votes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {}
 }

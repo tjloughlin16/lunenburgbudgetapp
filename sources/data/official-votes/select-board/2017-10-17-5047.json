@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-10-17",
  "docid": "5047",
@@ -12,47 +12,512 @@
  },
  "votes": [
   {
-   "motion": "Authorize Town Counsel through the direction of the Town Manager to review the proposal and draft the proposed easement for Hickory Hills Dam",
-   "moved_by": "R. Ebersole",
+   "motion": "Authorize Town Counsel, through the direction of the Town Manager, to review the Hickory Hills Lake dam overtopping easement proposal and draft the easement.",
+   "moved_by": "REbersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed",
+   "outcome": "passed (all in favor except Ms. Bertram, who recused herself)",
    "procedural": false,
-   "quote": "motion: rebersole 2\"d.p. luck to authorize town counsel through the direction of the town manager to review this proposal and draft the proposed easement vote: all in favor except ms. bertram"
+   "quote": "to authorize town counsel through the direction of the town manager to review this proposal and draft the proposed easement vote: all in favor except ms. bertram (who recused herself)"
   },
   {
-   "motion": "Approve the Nexamp PILOT as presented",
+   "motion": "Approve the Nexamp PILOT as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "motion: r. ebersole 2\"d: p. bertram to approve the nexamp pilot as presented vote: all in favor"
   },
   {
-   "motion": "Approve the common victualer license for Global Montello Group Corporation for 134 Leominister Shirley Road as submitted",
+   "motion": "Approve the common victualer license for Global Montello Group Corporation for 134 Leominster Shirley Road as submitted.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion:r. ebersole to approve the common victualer license for global montello group corporation for 134 leominister shirley road as submitted 2nd: p. bertram vote: all in favor"
+   "quote": "to approve the common victualer license for global montello group corporation for 134 leominister shirley road as submitte",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "Pursue the option to exercise the Board's right under Chapter 61B to purchase the property located at 2030 Massachusetts Avenue",
+   "motion": "That the Board pursue the option to exercise the Board's right under Chapter 61B to purchase the property located at 2030 Massachusetts Avenue.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: p. bertram that the board pursues the option to exercise the board's right under chapter 61b to purchase the property located at 2030 massachusetts avenue vote: all in favor"
+   "quote": "that the board pursues the option to exercise the board's right under chapter 61b to purchase the property located at 2030 massachusetts avenue vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
    "quote": "motion: p. bertram to adjourn the meeting 2\"d: r. ebersole vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with some character corruption (e.g., \"REbersole\" for \"R. Ebersole\", \"2\\\"d.\" for \"2nd:\"). Five votes recorded in meeting minutes. Names interpreted as written intent despite OCR errors. One vote (conservation commission appointment) mentioned but not recorded with formal motion/vote format, so excluded.\"",
- "cost_usd": 0.1456405
+ "note": "OCR text (macOS Vision) of a scanned document. Page 1 begins mid-meeting: no call to order, roll call, or Chair is printed, so the Chair and attendance status of board members are not stated; members are marked present from their participation. Several names are garbled in the OCR (REbersole, Mir. Ebersole, Seletman Bertram, Mis. Lemleus); they are recorded as printed. Page 5 begins mid-Article 9, and Articles 8 and 9 are missing. Page 6 is partly cut off. Two votes name the mover as printed (\"REbersole\" and \"R. Ebersole\"). Vote counts are given only as \"All in Favor\" and no numeric counts appear. The Nexamp amendment was withdrawn before any vote on it. No meeting date appears in the text; the date 2017-10-17 was supplied with the request. Dave Passios and David Passios may be the same person, recorded as printed.",
+ "cost_usd": 0.020829430000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale announced due to attending a community forum on tuesday, october 24\""
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck announced free child care will be available during the resources for opioid awareness and recovery"
+  },
+  {
+   "name": "Ms. Bertram",
+   "status": "present",
+   "quote": "ms. bertram announced the lunenburg snow riders will have a bridge dedication ceremony in memory of"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "status": "present",
+   "quote": "mr. ebersole stated someone responded to ms. luck's earlier comment about the school committee negotiations."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "40 Williams Ave",
+   "status": "present",
+   "quote": "katey adams, 40 williams ave, stated she has been advocating for some time to preserve the municipal"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "terri burchfield, finance committee chair, announced their public hearing on the special town meeting"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney gave a presentation about the phase ii permit."
+  },
+  {
+   "name": "Parker Elmore",
+   "role": "of Odyssey Advisors",
+   "status": "present",
+   "quote": "parker elmore of odyssey advisors reported on the actuarial asset valuation of the opeb (other post"
+  },
+  {
+   "name": "John Fortune",
+   "status": "present",
+   "quote": "john fortune and mel bertram were present to make the request for an easement on town property."
+  },
+  {
+   "name": "Mel Bertram",
+   "status": "present",
+   "quote": "john fortune and mel bertram were present to make the request for an easement on town property."
+  },
+  {
+   "name": "Mr. Clark",
+   "status": "present",
+   "quote": "mr. clark stated they are scheduled to appear before the conservation commission and planning board."
+  },
+  {
+   "name": "David Passios",
+   "status": "present",
+   "quote": "david passios asked if this would affect the increase of real estate taxes on that property over that time period of"
+  },
+  {
+   "name": "Wayne Matthews",
+   "role": "Territory Manager for Global Montello Group Corporation",
+   "status": "present",
+   "quote": "wayne matthews, territory manager for global montello group corporation, presented for the common"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "26 Whiting St.",
+   "status": "present",
+   "quote": "dave passios, 26 whiting st., reminded residents the special town meeting warrant is open until the 25\" of"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed that any changes by Nexamp's counsel to the PILOT agreement would have to come back before the Board for approval.",
+   "quote": "the board agreed that an changes by nexamp's counsel would have to come back before the board for"
+  },
+  {
+   "decision": "The MSBA Closeout and Final Payment Requisition item was tabled to a future meeting.",
+   "quote": "this item was tabled until a future meeting."
+  },
+  {
+   "decision": "Ms. Lemieux will follow up on the request for a road opening moratorium informational flyer for the tax bill mailing.",
+   "quote": "discussion ensued further and ms. lemieux will follow up on this request."
+  },
+  {
+   "decision": "The Special Town Meeting warrant articles will be reviewed again at the next Board meeting.",
+   "quote": "these articles will be reviewed again at the next board meeting."
+  },
+  {
+   "decision": "The Board signed accounts payable, payroll and deduction warrants and Special State Primary Election warrants for Senator in General Court.",
+   "quote": "the board signed special state primary election warrants for senator in general court scheduled for tuesday,"
+  },
+  {
+   "decision": "Town Manager, Police Chief and DPW Director agreed the last engineered parking plan for Marshall Park does not address the property's limitations; DPW Director to ask the engineer to revisit the site.",
+   "quote": "we agreed that the last engineered plan for parking does not address the limitations of"
+  },
+  {
+   "decision": "Ms. Lemieux signed the Design Consultants proposal for the stormwater work.",
+   "quote": "ms. lemieux has signed the proposal submitted by design consultants."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hickory Hills Lake dam easement cost",
+   "what_was_recorded": "The dam work is to be funded entirely by Hickory Hills Lake residents, with no monetary cost to the Town.",
+   "figures_as_printed": [],
+   "quote": "there will be no monetary cost to the town, it is being funded entirely by the hickory hills lake residents."
+  },
+  {
+   "topic": "Nexamp PILOT payments",
+   "what_was_recorded": "PILOT payments would be adjusted if the facility nameplate size decreased; the PILOT runs twenty years and does not change real estate taxes.",
+   "figures_as_printed": [
+    "twenty years"
+   ],
+   "quote": "so it could decrease in size and the pilot payments would be adjusted."
+  },
+  {
+   "topic": "FY 2018 budget amendment (Special Town Meeting Article 1)",
+   "what_was_recorded": "The dollar figure for the excess levy budget amendment will be provided after new growth certification.",
+   "figures_as_printed": [],
+   "quote": "the figure can be provided once we receive certification of our new growth from the department of revenue."
+  },
+  {
+   "topic": "Free cash available for Special Town Meeting",
+   "what_was_recorded": "Resident asked whether $800,000 in free cash is available for the November Special Town Meeting; the Town Manager said it would be available but is typically appropriated at Annual Town Meeting.",
+   "figures_as_printed": [
+    "$800,000"
+   ],
+   "quote": "he wanted to know if the $800,000 in free cash is available for use at special town meeting in november."
+  },
+  {
+   "topic": "Playground project supplement (Article 5 citizens petition)",
+   "what_was_recorded": "Citizens petition seeks $25,000 to supplement the $12,000 voted for the Wallis Park playground; funding source to be identified by the petitioner.",
+   "figures_as_printed": [
+    "$25,000",
+    "$12,000"
+   ],
+   "quote": "in the amount of $25,000 to supplement the amount voted under article 7 of the 2017 annual town meeting on may"
+  },
+  {
+   "topic": "Article 4 T.C. Passios design funding",
+   "what_was_recorded": "A dollar amount for architectural and engineering services for the T.C. Passios municipal offices will be assigned before town meeting.",
+   "figures_as_printed": [],
+   "quote": "a dollar amount will be assigned before the town meeting."
+  },
+  {
+   "topic": "Chapter 61B property assessed value",
+   "what_was_recorded": "The 23-acre parcel at 2030 Massachusetts Avenue has an assessed value of $224,000; the Town must pay for an appraisal if it exercises its right.",
+   "figures_as_printed": [
+    "$224,000"
+   ],
+   "quote": "the assessed value is $224,000."
+  },
+  {
+   "topic": "Storm water consultant funding",
+   "what_was_recorded": "Design Consultants' stormwater work is paid from a Community Compact grant plus money in the stormwater budget.",
+   "figures_as_printed": [
+    "$25,000",
+    "$10,000"
+   ],
+   "quote": "$25,000 from the community compact grant plus $10,000 in the stormwater budget will pay for their work."
+  },
+  {
+   "topic": "Framingham civic engagement costs",
+   "what_was_recorded": "Framingham spends around $5,000 plus staff time and other departments' involvement on its social media effort, as reported at the MMA conference.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "they spend around $5,000 plus her time/salary and other"
+  },
+  {
+   "topic": "Road opening moratorium flyer cost",
+   "what_was_recorded": "A one-sided tax bill flyer would cost around $240.00; a double-sided version would be $480.00.",
+   "figures_as_printed": [
+    "$240.00",
+    "$480.00"
+   ],
+   "quote": "it would need to be submitted to the tax collector's office by december 12\" and would cost around $240.00."
+  },
+  {
+   "topic": "Municipal aggregation electricity rate",
+   "what_was_recorded": "Municipal aggregation customers' new rate with Constellation NewEnergy is 10.465 cents per kWh, .00804 cents higher than last year.",
+   "figures_as_printed": [
+    "10.465 cents per kWh",
+    ".00804 cents"
+   ],
+   "quote": "will be 10.465 cents per kwh starting on their november meter read"
+  },
+  {
+   "topic": "Unitil residential electric rate",
+   "what_was_recorded": "Unitil's fixed residential electric service rate will rise to 12.402 cents per kWh as of December 1, 2017.",
+   "figures_as_printed": [
+    "12.402 cents per kWh"
+   ],
+   "quote": "unitil's electric service fixed residential rates will rise to 12.402 cents per k wh."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a payroll warrant and a deduction warrant.",
+   "figures_as_printed": [
+    "$274,392.77",
+    "$755,675.35",
+    "$160,052.90"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $274,392.77, a payroll warrant in the amount of $755,675.35 and a deduction warrant in the amount of $160,052.90."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Community forum and business dialogue announcements",
+   "quote": "mr. toale announced due to attending a community forum on tuesday, october 24\""
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Opioid awareness forum child care",
+   "quote": "ms. luck announced free child care will be available during the resources for opioid awareness and recovery"
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "",
+   "topic": "Snow Riders bridge dedication ceremony",
+   "quote": "ms. bertram announced the lunenburg snow riders will have a bridge dedication ceremony in memory of"
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "40 Williams Ave",
+   "topic": "Citizens petition on municipal building moratorium",
+   "quote": "katey adams, 40 williams ave, stated she has been advocating for some time to preserve the municipal"
+  },
+  {
+   "speaker": "Terri Burchfield",
+   "stated_role": "Finance Committee Chair",
+   "topic": "Finance Committee public hearing date",
+   "quote": "terri burchfield, finance committee chair, announced their public hearing on the special town meeting"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "26 Whiting St.",
+   "topic": "Special Town Meeting warrant deadline reminder",
+   "quote": "dave passios, 26 whiting st., reminded residents the special town meeting warrant is open until the 25\" of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action; announcements and Katey Adams petition submission",
+   "quote": "mr. toale announced due to attending a community forum on tuesday, october 24\"",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Storm Water Task Force MS4 Notice of Intent and Stormwater Management Plan",
+   "resolution": "presented; no action",
+   "quote": "storm water task force review ms4 notice of intent/discuss ms4 stormwater management plan",
+   "tags": [
+    "stormwater",
+    "MS4",
+    "permit"
+   ]
+  },
+  {
+   "topic": "GASB 75 / OPEB presentation",
+   "resolution": "presented; Board thanked presenter",
+   "quote": "presentation on gasb (governmental accounting standards board) 75/opeb",
+   "tags": [
+    "OPEB",
+    "GASB",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Landowners Assoc. Dam Committee easement request",
+   "resolution": "approved: Town Counsel to draft easement",
+   "quote": "hickory hills landowners assoc. dam committee - request for easement",
+   "tags": [
+    "easement",
+    "dam",
+    "town property"
+   ]
+  },
+  {
+   "topic": "Nexamp PILOT",
+   "resolution": "approved as presented, with Nexamp counsel changes to return to the Board",
+   "quote": "to approve the nexamp pilot as presented",
+   "tags": [
+    "PILOT",
+    "solar",
+    "tax agreement"
+   ]
+  },
+  {
+   "topic": "Common victualer license, Global Montello Group d/b/a Honey Farms Store #3829",
+   "resolution": "approved",
+   "quote": "common victualer license application-",
+   "tags": [
+    "license",
+    "common victualer"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen Goals",
+   "resolution": "discussed; no action recorded",
+   "quote": "1. board of selectmen goals",
+   "tags": [
+    "goals",
+    "economic development",
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Chapter 61B right of first refusal, 2030 Massachusetts Avenue",
+   "resolution": "approved: pursue Board's right to purchase",
+   "quote": "that the board pursues the option to exercise the board's right under chapter 61b to purchase the property located at 2030 massachusetts avenue vote: all in favor",
+   "tags": [
+    "Chapter 61B",
+    "land purchase",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Review of November 28, 2017 Special Town Meeting warrant articles",
+   "resolution": "reviewed; to return at next meeting",
+   "quote": "review november 28, 2017 special town meeting warrant articles",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "articles"
+   ]
+  },
+  {
+   "topic": "MSBA Closeout; Approve Final Payment Requisition",
+   "resolution": "tabled",
+   "quote": "this item was tabled until a future meeting.",
+   "tags": [
+    "MSBA",
+    "school building"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants signed; road opening flyer to follow up",
+   "quote": "the board signed an accounts payable warrant in the amount of $274,392.77, a payroll warrant in the amount of",
+   "tags": [
+    "warrants",
+    "road opening",
+    "tax bill"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "ms. luck reported the school committee met on october 4",
+   "tags": [
+    "school committee",
+    "stormwater",
+    "MMA",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "as a follow-up on a question about how the owners of the liquor license establishments were notified of the",
+   "tags": [
+    "liquor license",
+    "DLTA grant",
+    "dispatch",
+    "CPR",
+    "green communities",
+    "Marshall Park",
+    "electricity",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Appointment to Conservation Commission (1 vacancy)",
+   "resolution": "no action recorded; Conservation Commission endorsed Catie Childs",
+   "quote": "appointment to conservation commission- 1 vacancy",
+   "tags": [
+    "appointment",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:18 p.m.",
+   "quote": "the meeting adjourned at 9:18 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Nexamp PILOT agreement",
+   "where": "text",
+   "quote": "to approve the nexamp pilot as presented"
+  },
+  {
+   "name": "November 28, 2017 Special Town Meeting Warrant Articles",
+   "where": "text",
+   "quote": "review november 28, 2017 special town meeting warrant articles"
+  },
+  {
+   "name": "Citizens' petition for moratorium on sale of municipal buildings",
+   "where": "text",
+   "quote": "she submitted a citizens' petition for the special town meeting warrant to place a moratorium for no less than ten years"
+  },
+  {
+   "name": "Notice of Intent (NOI) for MS4 Phase II permit",
+   "where": "text",
+   "quote": "the town submits a notice of intent (noi); within the first year the town completes a"
+  },
+  {
+   "name": "Road opening moratorium policy",
+   "where": "text",
+   "quote": "ms. luck stated she has not seen the road opening moratorium policy on the town website."
+  },
+  {
+   "name": "Notice of disclosure under section 23(B)(3) filed with the Town Clerk",
+   "where": "text",
+   "quote": "had filed a notice of disclosure under section 23(b)(3), with the town clerk office"
+  }
+ ],
+ "tags": [
+  "select board",
+  "stormwater MS4",
+  "OPEB",
+  "Hickory Hills dam easement",
+  "Nexamp PILOT",
+  "liquor license",
+  "Chapter 61B",
+  "special town meeting warrant",
+  "warrants",
+  "electricity aggregation",
+  "economic development",
+  "municipal buildings"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

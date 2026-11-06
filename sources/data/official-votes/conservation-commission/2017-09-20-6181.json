@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-09-20",
  "docid": "6181",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept a donation of $22,000 from PJ Keating",
-   "moved_by": "BP",
+   "motion": "Accept PJ Keating's offer to donate 22000 to the commission, pending Board of Selectmen second approval.",
+   "moved_by": "bp",
    "seconded_by": "KJ",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion by bp to accept pending bos second by kj unanimous"
   },
   {
-   "motion": "Continue the Bob Proctor septic request for determination to October 4, 2017",
-   "moved_by": "KJ",
+   "motion": "Continue the 99 Pleasant Street determination hearing to 10/4.",
+   "moved_by": "kj",
    "seconded_by": "CL",
-   "outcome": "passed",
-   "procedural": false,
+   "outcome": "not stated",
+   "procedural": true,
    "quote": "continued to 10/4 by a motion from kj and a second by cl"
   },
   {
-   "motion": "Approve the amendment request for beach restoration at 667 Reservoir Road with 1000 square feet dimension, 8 inches deep",
+   "motion": "Approve the 667 Reservoir Road amendment request with 1000 square feet in dimension, 8 inches deep as described in the application.",
    "moved_by": "KJ",
    "seconded_by": "",
    "outcome": "not stated",
@@ -36,15 +36,15 @@
    "quote": "kj moved to approve the amendment request with 1000 square feet in dimension, 8 inches deep as described in the application."
   },
   {
-   "motion": "Approve a negative determination for tree cutting and shoreline work at 238 Townsend Harbor Road",
+   "motion": "Issue a negative determination for the 238 Townsend Harbor Road tree cutting and shoreline work, noting the slope is 45 degrees and there is only one platform.",
    "moved_by": "BP",
    "seconded_by": "CL",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion for a negative determination by bp with a note that the slope is 45 degrees, there is only one platform. cl seconded with the ciarification that a 45 degree angle was an average. the motion was passed unanimously."
+   "quote": "motion for a negative determination by bp with a note that the slope is 45 degrees, there is only one platform. cl seconded"
   },
   {
-   "motion": "Approve a negative determination for tree house placement at 393 Arbor Street",
+   "motion": "Issue a negative determination for the 393 Arbor Street tree house.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
@@ -52,23 +52,23 @@
    "quote": "kj moved for a negative determination. bp seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the Michael Tufts patio and decks request to October 4, 2017",
+   "motion": "Continue the 48 Oak Ridge Road hearing to October 4, 2017.",
    "moved_by": "BP",
    "seconded_by": "KJ",
-   "outcome": "unanimous",
-   "procedural": false,
+   "outcome": "passed unanimously",
+   "procedural": true,
    "quote": "the meeting was continued to october 4, 2017 by a motion of bp and a second by kj with a unanimous vote to approve"
   },
   {
-   "motion": "Continue the Settlers Solar Notice of Intent to October 4, 2017",
+   "motion": "Continue the 994 Northfield Road Settlers Solar hearing to 10/4.",
    "moved_by": "KJ",
    "seconded_by": "CL",
-   "outcome": "unanimous",
-   "procedural": false,
+   "outcome": "passed unanimously",
+   "procedural": true,
    "quote": "it was continued by a motion of kj and a second by cl with a unanimous vote."
   },
   {
-   "motion": "Issue an updated enforcement order at 70 Oak Ridge Road requiring a landscape plan and revised grading plan",
+   "motion": "Issue an updated enforcement order for 70 Oak Ridge Road requiring a landscape plan and a revised grading plan.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -76,7 +76,7 @@
    "quote": "the commission voted to issue an updated enforcement order requiring a landscape plan and a revised grading plan."
   },
   {
-   "motion": "Approve minutes of July 5, 2017",
+   "motion": "Approve the 7/5/17 minutes.",
    "moved_by": "BP",
    "seconded_by": "KJ",
    "outcome": "passed",
@@ -84,7 +84,7 @@
    "quote": "7/5/17 bp moved, kj seconded"
   },
   {
-   "motion": "Approve minutes of July 19, 2017",
+   "motion": "Approve the 7/19/17 minutes.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed",
@@ -92,7 +92,7 @@
    "quote": "7/19/17 kj moved and bp seconded"
   },
   {
-   "motion": "Approve minutes of August 30, 2017",
+   "motion": "Approve the 8/30 minutes.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed",
@@ -100,7 +100,7 @@
    "quote": "8/30 kj moved and bp seconded"
   },
   {
-   "motion": "Approve minutes of September 6, 2017",
+   "motion": "Approve the 9/6/17 minutes.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed",
@@ -109,6 +109,357 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Minutes of the Conservation Commission meeting of September 20, 2017.",
- "cost_usd": 0.1319275
+ "note": "OCR text from a scanned, handwritten-style document with heavy noise (e.g. 'CORPORA', 'THEMBURG', 'Billota', 'Byiaws'). Some names vary between the notices and the body (Fred Daley/Dailey, Glen Reinhardt/Rienhardt). No vote counts are printed for several motions (667 Reservoir, 99 Pleasant, enforcement order, minutes), and the 667 motion has no recorded seconder or result. No adjournment vote is recorded. Minutes header lists 8/16 but no approval motion for it appears. Member attendance is inferred from 'all members present except Mr. Dwyer'. The 'Bob' public comment speaker has no surname or stated role.",
+ "cost_usd": 0.01125652,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order at 7pm with chairman bursch presiding"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "with all members present except mr. dwyer"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "present",
+   "quote": "bob pease carl luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "present",
+   "quote": "bob pease carl luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "bob pease carl luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "present",
+   "quote": "bob pease carl luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm reviewed notice of non compliance with the commission."
+  },
+  {
+   "name": "David King",
+   "role": "representing the applicant (667 Reservoir Road)",
+   "status": "present",
+   "quote": "david king appeared and reviewed plans for the restoration of the beach area."
+  },
+  {
+   "name": "Fred Dailey",
+   "role": "applicant, represented himself (238 Townsend Harbor Road)",
+   "status": "present",
+   "quote": "fred dailey represented himself. he outlined the cutting of 7 trees with some vegetation"
+  },
+  {
+   "name": "Forrest and Terrie Hyde",
+   "role": "applicants, represented themselves (393 Arbor Street)",
+   "status": "present",
+   "quote": "forrest and terrie hyde represented themseives."
+  },
+  {
+   "name": "Glen Reinhardt",
+   "role": "applicant, represented himself (53 Pearl Street)",
+   "status": "present",
+   "quote": "glen rienhardt represented himself he changed his plans to eliminate the original shed"
+  },
+  {
+   "name": "PJ Keating",
+   "role": "",
+   "status": "present",
+   "quote": "pj keating appeared and wished to donate to the commission of 22000"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "new member recruit",
+   "status": "present",
+   "quote": "catie childs spoke to the commission about her prior commission experience."
+  },
+  {
+   "name": "Tracy Thibodeau",
+   "role": "new member recruit",
+   "status": "present",
+   "quote": "tracy thibodeau appeared to introduce herself to the commission and spoke of her prior experience."
+  },
+  {
+   "name": "David Scarpitti",
+   "role": "new member recruit",
+   "status": "present",
+   "quote": "david scarpitti spoke to the commission about his work experience with dep and his educational background."
+  },
+  {
+   "name": "Bob",
+   "role": "",
+   "status": "present",
+   "quote": "public comment for meeting close. bob atv evidence attempted to take the sign down."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MM will schedule site inspections with the applicant at 183 Hemlock Dr to work out a remediation scenario for the eroding bank.",
+   "quote": "mm will schedule site inspections with the applicant to work out a scenario with the applicant to remediate the bank."
+  },
+  {
+   "decision": "MM will work with DPW to evaluate 571 Chase Road and find remediation.",
+   "quote": "mm will work with dpw to evaluate the area to find remediation's."
+  },
+  {
+   "decision": "No further action required at this time on 250 Howard Street.",
+   "quote": "no further action required at this time"
+  },
+  {
+   "decision": "Next meeting scheduled for October 4, 2017 at the Ritter Land Use Building.",
+   "quote": "next meeting for october 4, 2017 at the ritter land use building"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Donation offered by PJ Keating",
+   "what_was_recorded": "PJ Keating appeared and wished to donate 22000 to the commission; the board moved to accept it pending BOS approval.",
+   "quote": "pj keating appeared and wished to donate to the commission of 22000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "PJ Keating",
+   "stated_role": "",
+   "topic": "donation to the commission",
+   "quote": "pj keating appeared and wished to donate to the commission of 22000"
+  },
+  {
+   "speaker": "Bob",
+   "stated_role": "",
+   "topic": "ATV evidence and sign removal",
+   "quote": "public comment for meeting close. bob atv evidence attempted to take the sign down."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7 PM; Dwyer absent",
+   "quote": "meeting called to order at 7pm with chairman bursch presiding with all members present except mr. dwyer",
+   "tags": [
+    "procedure",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Public comment: PJ Keating donation",
+   "resolution": "accepted pending BOS approval, unanimous",
+   "quote": "motion by bp to accept pending bos second by kj unanimous.",
+   "tags": [
+    "donation",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "99 Pleasant Street septic replacement (Bob Proctor)",
+   "resolution": "continued to 10/4",
+   "quote": "continued to 10/4 by a motion from kj and a second by cl",
+   "tags": [
+    "buffer zone",
+    "hearing",
+    "septic"
+   ]
+  },
+  {
+   "topic": "667 Reservoir Road beach restoration amendment (David King)",
+   "resolution": "motion to approve amendment made; outcome not recorded",
+   "quote": "kj moved to approve the amendment request with 1000 square feet in dimension, 8 inches deep as described in the application.",
+   "tags": [
+    "beach restoration",
+    "amended order of conditions",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "238 Townsend Harbor Road tree cutting and shoreline (Fred Dailey)",
+   "resolution": "negative determination, passed unanimously",
+   "quote": "motion for a negative determination by bp with a note that the slope is 45 degrees, there is only one platform. cl seconded",
+   "tags": [
+    "determination",
+    "tree cutting",
+    "shoreline",
+    "dock"
+   ]
+  },
+  {
+   "topic": "393 Arbor Street tree house (Forrest and Terrie Hyde)",
+   "resolution": "negative determination, passed unanimously",
+   "quote": "kj moved for a negative determination. bp seconded and the commission voted unanimously.",
+   "tags": [
+    "determination",
+    "tree house",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "48 Oak Ridge Road paver patio and decks (Michael Tufts)",
+   "resolution": "continued to October 4, 2017",
+   "quote": "the meeting was continued to october 4, 2017 by a motion of bp and a second by kj with a unanimous vote to approve",
+   "tags": [
+    "determination",
+    "continued hearing",
+    "patio",
+    "decks"
+   ]
+  },
+  {
+   "topic": "53 Pearl Street shed rebuild (Glen Reinhardt)",
+   "resolution": "applicant withdrew to revise plans and file a notice of intent; no vote",
+   "quote": "the applicant withdrew to update his plans and file a notice of inent.",
+   "tags": [
+    "determination",
+    "shed",
+    "garage",
+    "withdrawn"
+   ]
+  },
+  {
+   "topic": "994 Northfield Road solar field (Settlers Solar)",
+   "resolution": "continued to 10/4, unanimous",
+   "quote": "it was continued by a motion of kj and a second by cl with a unanimous vote.",
+   "tags": [
+    "notice of intent",
+    "solar field",
+    "wetland crossing",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "Enforcement",
+   "resolution": "updated enforcement order voted for 70 Oak Ridge Road; other items follow-up",
+   "quote": "the commission voted to issue an updated enforcement order requiring a landscape plan and a revised grading plan.",
+   "tags": [
+    "enforcement",
+    "erosion",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Old business: new member recruits",
+   "resolution": "introductions; no action recorded",
+   "quote": "catie childs spoke to the commission about her prior commission experience.",
+   "tags": [
+    "membership",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 7/5, 7/19, 8/30 and 9/6 minutes",
+   "quote": "the commission approved the following minutes by motion of the following:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report and committee reports",
+   "resolution": "listed; no action recorded",
+   "quote": "agents report /action items :",
+   "tags": [
+    "inspections",
+    "forest cutting",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Communications and next meeting",
+   "resolution": "next meeting set for October 4, 2017",
+   "quote": "next meeting for october 4, 2017 at the ritter land use building",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment for meeting close and adjournment",
+   "resolution": "no vote recorded on adjournment",
+   "quote": "public comment for meeting close. bob atv evidence attempted to take the sign down. adjournment",
+   "tags": [
+    "adjournment",
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for amendment and amended plan by applicant, dated August 2017",
+   "where": "list",
+   "quote": "documents presented for review was the request for amendment and an amended plan by applicant date auguts 2017."
+  },
+  {
+   "name": "Request for a determination and modified scope plan by the applicant (238 Townsend Harbor Road)",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination and a modified scope plan by the applicant"
+  },
+  {
+   "name": "Request for a determination application and modified scaled plan by the applicant (393 Arbor Street)",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination application and a modified scaled plan by the applicant."
+  },
+  {
+   "name": "Submission packet containing pictures and illustrations of proposed work (238 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "he reviewed the submission packet containing pictures and illustrations of the proposed work."
+  },
+  {
+   "name": "Application and supporting documents for hearings",
+   "where": "text",
+   "quote": "application and supporting documents are available for review at the conservation commission office by calling 978-582-4147 ext 431 by appointment."
+  },
+  {
+   "name": "Comments from the engineer and DEP (994 Northfield Road)",
+   "where": "text",
+   "quote": "rb reviewed the comments from the engineer and dep."
+  },
+  {
+   "name": "Notice of non compliance (250 Howard Street)",
+   "where": "text",
+   "quote": "mm reviewed notice of non compliance with the commission."
+  },
+  {
+   "name": "Letters regarding North Leominster Rod and Gun Club",
+   "where": "text",
+   "quote": "mm and rb reviewed the letters with the commission."
+  },
+  {
+   "name": "Updated enforcement order (70 Oak Ridge Road)",
+   "where": "text",
+   "quote": "the commission voted to issue an updated enforcement order requiring a landscape plan and a revised grading plan."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "buffer zone",
+  "determinations",
+  "public hearings",
+  "enforcement",
+  "minutes approval",
+  "donation",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for review was the request for amendment and an amended plan"
+ },
+ "dropped_unquoted_by_field": {}
 }

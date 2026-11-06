@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-03-22",
  "docid": "2217",
@@ -12,15 +12,454 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Mark Erickson",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "John",
+   "seconded_by": "Mark",
    "outcome": "passed 6-0",
    "procedural": true,
-   "quote": "john moved to adjourn the meeting and mark seconded the motion. the committee approved the motion 6-0"
+   "quote": "john moved to adjourn the meeting and mark seconded the motion. the committee approved the motion 6-0 at 9:35 pm."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction from scanned minutes. Sections 2–9 record budget presentations and discussion by various departments and committees (PACC, Monty Tech, DPW, Sewer Commission), but no votes on these presentations are recorded. The document notes at section 12 that the committee would review monied articles at the next meeting on March 26th. Only the adjournment vote at the end of this meeting is recorded.",
- "cost_usd": 0.08437549999999999
+ "dropped_unquoted": 1,
+ "note": "Scanned OCR text (macOS Vision) of the minutes. The attendance block is garbled; Marc Luescher's status is inferred as absent from the layout, and Mark E. (item 7c) is not identified as a named attendee. Item 4 has no heading in the text; the unlabeled budget totals table sits between items 3 and 5. The minutes record one vote (adjournment, 6-0); no other motions appear. Minutes were signed April 26, 2018. Other than the votes, the minutes have no transfers or documents list.",
+ "cost_usd": 0.010683920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, mark erickson, hannah anderson, george martin"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, mark erickson, hannah anderson, george martin"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, mark erickson, hannah anderson, george martin"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, mark erickson, hannah anderson, george martin"
+  },
+  {
+   "name": "Hannah Anderson",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, mark erickson, hannah anderson, george martin"
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "terri burchfield, john henshaw, jay simeone, mark erickson, hannah anderson, george martin"
+  },
+  {
+   "name": "Marc Luescher",
+   "status": "absent",
+   "quote": "marc luescher heather lemieux, karen brochu"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, karen brochu"
+  },
+  {
+   "name": "Karen Brochu",
+   "status": "present",
+   "quote": "heather lemieux, karen brochu"
+  },
+  {
+   "name": "Steven Walker",
+   "role": "Chair of the Public Access Cable Committee",
+   "status": "present",
+   "quote": "presentation by steven walker, chair of the public access cable committee"
+  },
+  {
+   "name": "Sheila Harrity",
+   "role": "Superintendent of Monty Tech",
+   "status": "present",
+   "quote": "sheila harrity, superintendent of monty tech and tammy crocket, business manager"
+  },
+  {
+   "name": "Tammy Crocket",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "sheila harrity, superintendent of monty tech and tammy crocket, business manager"
+  },
+  {
+   "name": "Joe Anderson",
+   "role": "Chair of Sewer Commission",
+   "status": "present",
+   "quote": "joe anderson, chair of sewer commission and carl luck, vice-chair"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "joe anderson, chair of sewer commission and carl luck, vice-chair"
+  },
+  {
+   "name": "Mark E.",
+   "status": "not stated",
+   "quote": "mark e. suggested that the sewer commission consider separating the one-time connection fees"
+  },
+  {
+   "name": "Bob Ebersol",
+   "status": "present",
+   "quote": "bob ebersol stated the charter review committee completed its initial draft of the town charter."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair began FY2019 budget presentations at 6:00 pm after discussion with the Town Manager, with the committee not called to order until 7:00 pm and questions deferred until then.",
+   "quote": "after discussion with the town manager, terri decided to begin hearing the fy2019 budget"
+  },
+  {
+   "decision": "Presenters agreed to remain after their presentations to answer questions.",
+   "quote": "presenters have kindly agreed to remain after their presentations to answer questions."
+  },
+  {
+   "decision": "Sewer Commission could write a policy separating one-time connection fees from monthly usage fees, so future commissions handle connection fees that way.",
+   "quote": "carl said that it was a good idea and that it would be something the commission could write a policy on"
+  },
+  {
+   "decision": "Next meeting set for Thursday, March 26, 2018 at 7:00 PM in the Bilotta Room at Town Hall to review the monied articles on the Annual Town Meeting warrant.",
+   "quote": "next meeting: thursday, march 26th, at the regular time of 7:00 pm in the bilotta room at town hall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PACC franchise fee income",
+   "what_was_recorded": "The Comcast franchise fee that funds PACC averages slightly over $28,000 a quarter.",
+   "figures_as_printed": [
+    "$28,000"
+   ],
+   "quote": "this fee averages slightly over $28,000 a quarter."
+  },
+  {
+   "topic": "PACC projected FY2018 ending balance",
+   "what_was_recorded": "Steve projected an FY2018 ending balance in the franchise fee account of $253,500.",
+   "figures_as_printed": [
+    "$253,500"
+   ],
+   "quote": "steve projects an fy2018 ending balance in this franchise fee account of $253,500."
+  },
+  {
+   "topic": "PACC franchise fee renewal with Comcast",
+   "what_was_recorded": "PACC is negotiating a renewal that would raise the franchise fee from 2.5% to 5%.",
+   "figures_as_printed": [
+    "2.5%",
+    "5%"
+   ],
+   "quote": "that fee from 2.5% to 5% which would be in line with the franchise fee to other towns."
+  },
+  {
+   "topic": "PACC FY19 operations expense",
+   "what_was_recorded": "PACC FY19 operations expense is $142,600, including salaries, health insurance, and studio lease; a proposed staff-hours increase would raise costs.",
+   "figures_as_printed": [
+    "$142,600"
+   ],
+   "quote": "operations: $142,600 including salaries, health insurance, and lease of studio space."
+  },
+  {
+   "topic": "PACC FY19 capital",
+   "what_was_recorded": "PACC FY19 capital request is $50,000 for studio improvements and equipment replacement or upgrades.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "capital: $50,000 - studio improvements. replacing/upgrading equipment."
+  },
+  {
+   "topic": "PACC FY19 ATM warrant article",
+   "what_was_recorded": "An FY19 ATM warrant article requests $192,600 to meet anticipated PACC expenditures.",
+   "figures_as_printed": [
+    "$192,600"
+   ],
+   "quote": "an article on the fy19 atm warrant requests $192,600 to meet these anticipated expenditures."
+  },
+  {
+   "topic": "Monty Tech Lunenburg assessment",
+   "what_was_recorded": "Lunenburg's Monty Tech assessment declined from $876,381 to $824,011 because enrollment fell by 10 students to 82, a 5.9% decrease.",
+   "figures_as_printed": [
+    "$876,381",
+    "$824,011",
+    "5.9%",
+    "$52,370"
+   ],
+   "quote": "thus, the town's assessment declined from $876,381 to $824,011, a decrease of 5.9% or $52,370."
+  },
+  {
+   "topic": "Monty Tech total FY19 budget",
+   "what_was_recorded": "Monty Tech is proposing a 3.2% increase in its total FY19 budget.",
+   "figures_as_printed": [
+    "3.2%"
+   ],
+   "quote": "monty tech is proposing a 3.2% increase in its total fy19 budget."
+  },
+  {
+   "topic": "Monty Tech per-student assessment",
+   "what_was_recorded": "Monty Tech per-student assessment rose from FY2018 to FY2019, an increase of about $500 per student.",
+   "figures_as_printed": [
+    "$9,525.88",
+    "$10,048.91",
+    "$500"
+   ],
+   "quote": "monty tech's per student assessment: fy2018 $9,525.88, fy2019: $10,048.91."
+  },
+  {
+   "topic": "Town budget totals table (heading not in extracted text)",
+   "what_was_recorded": "An unlabeled table shows personnel, non-personnel and total budgets for FY17 to FY19; the increase from projected FY18 to proposed FY19 is $588,061 or 3%.",
+   "figures_as_printed": [
+    "$12,809,451",
+    "$5,432,180",
+    "$18,241,631",
+    "$13,567,789",
+    "$6,034,260",
+    "$19,602,049",
+    "$13,978,429",
+    "$6,211,681",
+    "$20,190,110",
+    "$588,061",
+    "3%"
+   ],
+   "quote": "the increase over projected fy18 to proposed fy19 is $588,061 or 3%."
+  },
+  {
+   "topic": "Health insurance growth",
+   "what_was_recorded": "Health insurance growth from FY18 to FY19 was updated to 6.82%, down from an originally expected 8%.",
+   "figures_as_printed": [
+    "6.82%",
+    "8%"
+   ],
+   "quote": "the updated percentage growth from fy18 to fy19 is 6.82%. originally the expected growth was 8%."
+  },
+  {
+   "topic": "DPW assistant mechanic",
+   "what_was_recorded": "The proposed FY19 DPW budget recommends adding $37,000 for an assistant mechanic.",
+   "figures_as_printed": [
+    "$37,000"
+   ],
+   "quote": "includes a recommendation to add $37,000 for an assistant mechanic to augment the one mechanic the dpw has."
+  },
+  {
+   "topic": "DPW contract repair cost",
+   "what_was_recorded": "Contracted equipment repairs cost more than the stated hourly rate, which the DPW uses to justify an in-house mechanic.",
+   "figures_as_printed": [
+    "$100 per hour"
+   ],
+   "quote": "the charge to contract repairs exceeds $100 per hour."
+  },
+  {
+   "topic": "DPW department budget",
+   "what_was_recorded": "Dept of Public Works budget rises from FY18 $1,589,171 to a proposed FY19 $1,668,378.",
+   "figures_as_printed": [
+    "$1,589,171",
+    "$1,668,378"
+   ],
+   "quote": "dept of public works $1,589,171 fy19 proposed $1,668,378"
+  },
+  {
+   "topic": "Snow and ice account deficit",
+   "what_was_recorded": "A note in the DPW budget shows a snow and ice account deficit.",
+   "figures_as_printed": [
+    "($108,344)"
+   ],
+   "quote": "note: snow and ice account (deficit) ($108,344)"
+  },
+  {
+   "topic": "Sewer Commission charter",
+   "what_was_recorded": "The Sewer Commission is an enterprise fund whose charter requires it to be cost neutral to the Town.",
+   "figures_as_printed": [],
+   "quote": "the charter of the commission is to be cost neutral to the town."
+  },
+  {
+   "topic": "Sewer connection fees",
+   "what_was_recorded": "Connection fees, as non-recurring revenue, could fund capital or capital reserves, separate from monthly usage fees.",
+   "figures_as_printed": [],
+   "quote": "as non-recurring revenues connection fees could fund capital or capital reserves."
+  },
+  {
+   "topic": "Debt service FY19",
+   "what_was_recorded": "FY19 debt service costs and supporting details were included in the budget given to the committee by the Town Manager.",
+   "figures_as_printed": [],
+   "quote": "karen brochu said the debt service costs for fy19 and supporting details were included in the budget heather lemieux has given the committee."
+  },
+  {
+   "topic": "Monied articles: snow and ice, reserves, OPEB and other funds",
+   "what_was_recorded": "The Town Manager listed monied articles to adjust, including the snow and ice deficit, stabilization funds, OPEB trust fund, enterprise funds and borrowing.",
+   "figures_as_printed": [],
+   "quote": "adjust the snow & ice deficit, stabilization funds, opeb trust fund and separate out the sewer opeb,"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bob Ebersol",
+   "topic": "Charter Review Committee draft",
+   "quote": "bob ebersol stated the charter review committee completed its initial draft of the town charter. there will be a meeting at town hall on thursday, april 5 to get public response and comment."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Start time and presentation schedule",
+   "resolution": "presentations to begin at 6:00; committee called to order at 7:00",
+   "quote": "terri said that, while the meeting agenda had a 6:00 start time, the agenda header had the start time as",
+   "tags": [
+    "schedule",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "PACC FY2019 budget presentation",
+   "resolution": "presented",
+   "quote": "public access cable committee (pacc) fy2019 budget presentation by steven walker, chair of the public access cable committee",
+   "tags": [
+    "PACC",
+    "public access",
+    "FY2019 budget"
+   ]
+  },
+  {
+   "topic": "Monty Tech FY2019 budget presentation",
+   "resolution": "presented",
+   "quote": "monty tech fy2019 budget presentation by sheila harrity, superintendent of monty tech and tammy crocket, business manager",
+   "tags": [
+    "Monty Tech",
+    "assessment",
+    "FY2019 budget"
+   ]
+  },
+  {
+   "topic": "Unclassified budgets update",
+   "resolution": "presented",
+   "quote": "unclassified budgets: update presented by heather lemieux, town manager",
+   "tags": [
+    "unclassified",
+    "health insurance",
+    "FY2019 budget"
+   ]
+  },
+  {
+   "topic": "DPW FY2019 budget recommendation",
+   "resolution": "presented",
+   "quote": "department of public works fy2019 budget recommendation presentation by jack rodriquenz, director of the dpw ",
+   "tags": [
+    "DPW",
+    "staffing",
+    "FY2019 budget"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Sewer Commission FY2019 budget recommendation",
+   "resolution": "presented; committee member suggested separating connection fees",
+   "quote": "sewer commission fy2019 budget recommendation presentation by joe anderson, chair of sewer commission and carl luck, vice-chair",
+   "tags": [
+    "sewer",
+    "enterprise fund",
+    "connection fees"
+   ]
+  },
+  {
+   "topic": "Debt service",
+   "resolution": "no action",
+   "quote": "debt service: karen brochu said the debt service costs for fy19 and supporting details were included in the budget",
+   "tags": [
+    "debt service",
+    "FY2019 budget"
+   ]
+  },
+  {
+   "topic": "Updates on monied articles",
+   "resolution": "reported; no action recorded",
+   "quote": "updates on monied articles reported by town manager heather lemieux",
+   "tags": [
+    "monied articles",
+    "revolving funds",
+    "Town Meeting warrant"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "no action; no minutes to review",
+   "quote": "review of minutes: there were no minutes to review,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "informational; no action",
+   "quote": "bob ebersol stated the charter review committee completed its initial draft of the town charter.",
+   "tags": [
+    "charter review",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for March 26, 2018",
+   "quote": "next meeting: thursday, march 26th, at the regular time of 7:00 pm in the bilotta room at town hall.",
+   "tags": [
+    "schedule",
+    "Town Meeting warrant"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 9:35 pm",
+   "quote": "adjournment: john moved to adjourn the meeting and mark seconded the motion.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The budget Heather Lemieux has given the committee (FY2019 debt service details)",
+   "where": "text",
+   "quote": "were included in the budget heather lemieux has given the committee."
+  },
+  {
+   "name": "An article on the FY19 ATM warrant",
+   "where": "text",
+   "quote": "an article on the fy19 atm warrant requests $192,600 to meet these anticipated expenditures."
+  },
+  {
+   "name": "Annual Town Meeting warrant (monied articles)",
+   "where": "text",
+   "quote": "the monied articles on the annual town meeting warrant."
+  },
+  {
+   "name": "Initial draft of the Town Charter (Charter Review Committee)",
+   "where": "text",
+   "quote": "charter review committee completed its initial draft of the town charter."
+  }
+ ],
+ "tags": [
+  "FY2019 budget",
+  "budget presentations",
+  "Public Access Cable",
+  "Monty Tech assessment",
+  "Public Works DPW",
+  "Sewer Commission",
+  "unclassified budget",
+  "health insurance",
+  "debt service",
+  "monied articles",
+  "Annual Town Meeting warrant",
+  "charter review",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

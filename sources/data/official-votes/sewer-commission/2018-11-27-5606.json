@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-11-27",
  "docid": "5606",
@@ -12,42 +12,306 @@
  },
  "votes": [
   {
-   "motion": "To approve the Irrigation Meter Policy changes.",
+   "motion": "Approve the Irrigation Meter Policy changes (Sewer Use Regs Article VII-3D(2), Appendix K).",
    "moved_by": "Ryan S.",
    "seconded_by": "Joan P.",
-   "outcome": "failed 2-2",
+   "outcome": "2-2; item tabled",
    "procedural": false,
    "quote": "to approve the irrigation meter policy changes. vote: joe and john- opposed, joan and ryan - aye"
   },
   {
-   "motion": "To accept the Single Meter Policy as written.",
+   "motion": "Accept the Single Meter Policy as written (Sewer Use Regs Article VII-3(B)).",
    "moved_by": "John R.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "to accept the single meter policy as written. second: ryan s.",
-   "quote_taken_from_text": true
+   "quote": "to accept the single meter policy as written. second: ryan s. vote: unanimous"
   },
   {
-   "motion": "To change the Connection Charge Policy.",
+   "motion": "Change the Connection Charge Policy (Sewer Use Regs Article VII-4, Appendix G).",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "to change the connection charge policy. second: john r.",
-   "quote_taken_from_text": true
+   "quote": "to change the connection charge policy. second: john r. vote: unanimous"
   },
   {
-   "motion": "To approve the Grease Trap Regulation changes.",
+   "motion": "Approve the Grease Trap Regulation changes (Appendix C).",
    "moved_by": "Joan P.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "to approve the grease trap regulation changes. second: ryan s.",
-   "quote_taken_from_text": true
+   "quote": "to approve the grease trap regulation changes. second: ryan s. vote: unanimous"
+  },
+  {
+   "motion": "Accept the minutes of 11/6/18.",
+   "moved_by": "John R.",
+   "seconded_by": "Ryan S.",
+   "outcome": "passed 3-0-1",
+   "procedural": true,
+   "quote": "to accept the minutes of 11/6/18. second: ryan s. vote: joe a, john r. and ryan- aye. joan p.- abstain"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:18 pm.",
+   "moved_by": "Joan P.",
+   "seconded_by": "John R.",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "to adjourn: 7:18 pm. second: john r. vote: unanimous"
   }
  ],
- "dropped_unquoted": 2,
- "note": "OCR'd text, minor errors (e.g., \"Ipdated\" for \"Updated\") do not affect vote records. The Irrigation Meter Policy vote resulted in a 2-2 tie (Joe and John opposed; Joan and Ryan in favor) and was tabled per the minutes.",
- "cost_usd": 0.1295655
+ "dropped_unquoted": 0,
+ "note": "OCR text, not clean: page 1 begins mid-sentence, page 2 begins mid-sentence, the announcements are cut off at the page break, and some words are garbled (e.g. 'Ipdated', 'l/l'). Member presence is inferred from their motions and votes; no roll call is printed. The irrigation vote (2-2) is recorded as tabled. Carl Luck is named only as the author of a quoted comment and is not recorded as attending. No call-to-order time is printed. The clerk signature is partly garbled.",
+ "cost_usd": 0.007979519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe A",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: joe a, john r. and ryan- aye. joan p.- abstain"
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: john r. to accept the single meter policy as written."
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: joan p. to change the connection charge policy."
+  },
+  {
+   "name": "Ryan S.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: ryan s. second: joan p."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "business manager report - 1st tuesday report -barb reported all are compliant."
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley sewer commission board clerk"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public commenter, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, had questions about when the policy and fee go into effect."
+  },
+  {
+   "name": "Karen Carnavale",
+   "role": "public commenter, Whalom Village",
+   "status": "present",
+   "quote": "public comment -karen carnavale, whalom village - asked if the $50 will be charged for the now single meter that we will be"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The public hearing on the Policy Updates was closed.",
+   "quote": "the public hearing for policy updates was closed."
+  },
+  {
+   "decision": "The Irrigation Meter Policy change was tabled after the 2-2 vote.",
+   "quote": "the irrigation policy change was tabled."
+  },
+  {
+   "decision": "Barb will prepare a letter for Karen regarding the FY19 Recap.",
+   "quote": "fy19 recap - barb will be doing up a letter for karen."
+  },
+  {
+   "decision": "The Commission signed the Q1 FY19 Commitment for Sewer Billing.",
+   "quote": "commission signed the q1 fy19 commitment for sewer billing for $219,704.52."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Irrigation meter fee",
+   "what_was_recorded": "A public commenter asked how the $50 irrigation meter fee was determined; Barb said the fee does not cover all irrigation meter expenses but helps defray the costs.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "he also questioned how the $50 fee was determined. barb replied that"
+  },
+  {
+   "topic": "Scope of the $50 fee",
+   "what_was_recorded": "The Commission clarified that the $50 fee applies only to irrigation meters, not to the single meter being read.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "commission clarified that the $50 fee is only for irrigation meters."
+  },
+  {
+   "topic": "Q1 FY19 sewer billing commitment",
+   "what_was_recorded": "The Commission signed the Q1 FY19 Commitment for Sewer Billing.",
+   "figures_as_printed": [
+    "$219,704.52"
+   ],
+   "quote": "commission signed the q1 fy19 commitment for sewer billing for $219,704.52."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "effective date, meter selection, $50 fee basis",
+   "quote": "dave passios, 56 whiting street, had questions about when the policy and fee go into effect."
+  },
+  {
+   "speaker": "Karen Carnavale",
+   "stated_role": "Whalom Village",
+   "topic": "whether the $50 fee applies to the single meter",
+   "quote": "public comment -karen carnavale, whalom village - asked if the $50 will be charged for the now single meter that we will be"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Policy updates public hearing",
+   "resolution": "hearing closed",
+   "quote": "the public hearing for policy updates was closed.",
+   "tags": [
+    "public hearing",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Irrigation meter policy",
+   "resolution": "tabled after 2-2 vote",
+   "quote": "the irrigation policy change was tabled.",
+   "tags": [
+    "irrigation meter",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Single meter policy",
+   "resolution": "accepted unanimously",
+   "quote": "to accept the single meter policy as written. second: ryan s. vote: unanimous",
+   "tags": [
+    "sub-meter",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Connection charge policy with I/I capacity fee",
+   "resolution": "changed unanimously",
+   "quote": "to change the connection charge policy. second: john r. vote: unanimous",
+   "tags": [
+    "connection charge",
+    "inflow infiltration"
+   ]
+  },
+  {
+   "topic": "Grease trap rules and regulations",
+   "resolution": "approved unanimously",
+   "quote": "to approve the grease trap regulation changes. second: ryan s. vote: unanimous",
+   "tags": [
+    "grease trap",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements- barb-q2 bills were sent out and can be paid online.",
+   "tags": [
+    "billing",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Minutes of 11/6/18",
+   "resolution": "approved 3-0-1",
+   "quote": "to accept the minutes of 11/6/18. second: ryan s. vote: joe a, john r. and ryan- aye. joan p.- abstain",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "no action",
+   "quote": "business manager report - 1st tuesday report -barb reported all are compliant.",
+   "tags": [
+    "business manager",
+    "delinquencies",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:18 pm",
+   "quote": "to adjourn: 7:18 pm. second: john r. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Single Use Meter policy (updated)",
+   "where": "text",
+   "quote": "joe read the updated single use meter policy, that states effective"
+  },
+  {
+   "name": "Irrigation Meter Policy, Sewer Use Regs Article VII-3D(2), Appendix K",
+   "where": "text",
+   "quote": "irrigation meter policy - change to sewer use regs article vii-3d(2), appendix k"
+  },
+  {
+   "name": "Connection Charge Policy, Sewer Use Regs Article VII-4, Appendix G",
+   "where": "text",
+   "quote": "connection charge policy - change to sewer use regs article vii-4, appendix g"
+  },
+  {
+   "name": "Grease Trap Rules & Regulations, Appendix C",
+   "where": "text",
+   "quote": "grease trap rules & regulations- changes to appendix c"
+  },
+  {
+   "name": "Fitchburg Monthly bill",
+   "where": "text",
+   "quote": "commission reviewed the fitchburg monthly bill"
+  },
+  {
+   "name": "Leominster Quarterly Invoices",
+   "where": "text",
+   "quote": "and leominster quarterly invoices."
+  },
+  {
+   "name": "Q1 FY19 Commitment for Sewer Billing",
+   "where": "text",
+   "quote": "commission signed the q1 fy19 commitment for sewer billing for $219,704.52."
+  },
+  {
+   "name": "MRPC guidebook (sewer connection process)",
+   "where": "text",
+   "quote": "the mrpc guidebook to the planning board."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "irrigation meter",
+  "sub-meter policy",
+  "connection charge",
+  "inflow infiltration",
+  "grease trap",
+  "public hearing",
+  "sewer billing",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "commission reviewed the fitchburg monthly bill"
+ },
+ "dropped_unquoted_by_field": {}
 }

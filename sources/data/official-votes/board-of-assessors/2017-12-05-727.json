@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2017-12-05",
  "docid": "727",
@@ -12,39 +12,299 @@
  },
  "votes": [
   {
-   "motion": "approve November 7, 2017 minutes",
+   "motion": "Grant nine (9) statutory exemption applications in the amount of $5,850.00.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "november 7, 2017 minutes reviewed and approved."
-  },
-  {
-   "motion": "grant nine statutory exemption applications in the amount of $5,850.00",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "board voted to grant nine (9) application exemptions in the amount of $5,850.00."
   },
   {
-   "motion": "approve Chapter 61A application for FY19",
+   "motion": "Approve the Chapter 61A application for FY19 submitted by Nancy Dewitte Womble.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the boa voted to approve the chapter 61a application for fy19."
   },
   {
-   "motion": "meet on January 9, 2018 at 5:45 pm",
+   "motion": "Meet on January 9, 2018 at 5:45 pm.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "board voted to meet on january 9, 2018 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1299535
+ "note": "OCR text (macOS Vision) with garbled spots: 'nicnara Lelarte' and 'Boara members' (role as printed), '6t commitment', 'avi Paguette'. The minutes do not print the meeting date itself; the date 2017-12-05 comes from the request. Votes are recorded without tallies or movers, so outcomes are 'not stated'. Several items say 'reviewed and approved' with no motion, so they are recorded as decisions. The adjournment at 7:20 pm has no recorded vote. Received-and-filed stamp reads FEB 14 2018. Rebecca Boucher's role is not printed.",
+ "cost_usd": 0.0059142199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lou Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "in attendance were: chairman, lou franco,"
+  },
+  {
+   "name": "nicnara Lelarte",
+   "role": "Boara members",
+   "status": "present",
+   "quote": "in attendance were: chairman, lou franco, boara members, nicnara lelarte,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid, regional associate assessor, rebecca boucher, and louise"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Associate Assessor",
+   "status": "present",
+   "quote": "harald reported to the board that becky has filed a notice of resignation to regional resource group, inc."
+  },
+  {
+   "name": "Rebecca Boucher",
+   "role": "",
+   "status": "present",
+   "quote": "regional associate assessor, rebecca boucher, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "rebecca boucher, and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, and payroll (no motion or tally recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, and payroll."
+  },
+  {
+   "decision": "November 7, 2017 minutes reviewed and approved (no motion or tally recorded).",
+   "quote": "november 7, 2017 minutes reviewed and approved."
+  },
+  {
+   "decision": "Tax Rate Recapitulation forms signed by the BOA.",
+   "quote": "tax rate recapitulation forms were signed by the boa as well."
+  },
+  {
+   "decision": "One statutory exemption application denied for income above the qualifying amount; notification letter to be sent.",
+   "quote": "(notification letter will be sent)"
+  },
+  {
+   "decision": "Chapter applications tabled at the last meeting for 200 Pleasant St., 189 Howard St., and 117 Mulpus Rd. reviewed and approved.",
+   "quote": "boa reviewed and approved chapter applications which were \"tabled\" at the last meeting for properties located at 200 pleasant st.,"
+  },
+  {
+   "decision": "Recording of Chapter 61B Recreational Classified Land Tax Lien for 255 Sunny Hill Rd. (David & Kimberly Maki) reviewed and approved.",
+   "quote": "the boa reviewed and approved the recording of chapter 61b"
+  },
+  {
+   "decision": "Chapter 61A application for property at 1358 Mass Ave denied; a denial form will be sent and a letter requesting additional ownership and income documentation.",
+   "quote": "boa denied the 61a application for property located at 1358 mass ave."
+  },
+  {
+   "decision": "Letter to accompany the annual Personal Property Form of List reviewed and approved for mailing.",
+   "quote": "boa reviewed and approved the letter that will be mailed along with the annual personal property form of list"
+  },
+  {
+   "decision": "Harald to speak on assessment services coverage at a later time after Becky's resignation.",
+   "quote": "harald plans to speak on that at a later time."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemptions granted",
+   "what_was_recorded": "Nine statutory exemption applications granted in the stated amount.",
+   "figures_as_printed": [
+    "$5,850.00"
+   ],
+   "quote": "board voted to grant nine (9) application exemptions in the amount of $5,850.00."
+  },
+  {
+   "topic": "Statutory exemption income limit",
+   "what_was_recorded": "One application denied because income exceeded the qualifying amount.",
+   "figures_as_printed": [
+    "$68,700.00"
+   ],
+   "quote": "income exceeded the qualifying amount of $68,700.00."
+  },
+  {
+   "topic": "Motor vehicle excise commitment",
+   "what_was_recorded": "The sixth commitment for motor vehicle excise was mailed on November 30, 2017.",
+   "figures_as_printed": [
+    "$31,428.48"
+   ],
+   "quote": "the 6t commitment of $31,428.48 for motor vehicle excise was mailed on november 30, 2017."
+  },
+  {
+   "topic": "FY2018 tax rate",
+   "what_was_recorded": "FY2018 tax rate certified by the Bureau of Accounts, reported by Becky from a DOR email.",
+   "figures_as_printed": [
+    "$19.70"
+   ],
+   "quote": "the tax rate will be $19.70 per thousand."
+  },
+  {
+   "topic": "FY17 ATB abatement at 236 West St.",
+   "what_was_recorded": "ATB decided in favor of applicant; value reduced and total abatement granted.",
+   "figures_as_printed": [
+    "$55,400.00",
+    "$1,334.66"
+   ],
+   "quote": "atb found in favor of applicant granting abatement; value was reduced by $55,400.00. total abatement granted in the amount of $1,334.66."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, abatements, warrants, commitments, payroll",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, and payroll.",
+   "tags": [
+    "approvals",
+    "warrants",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "November 7, 2017 minutes",
+   "resolution": "approved",
+   "quote": "november 7, 2017 minutes reviewed and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Tax Rate Recapitulation forms",
+   "resolution": "signed",
+   "quote": "tax rate recapitulation forms were signed by the boa as well.",
+   "tags": [
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Statutory exemptions",
+   "resolution": "nine granted, one denied",
+   "quote": "statutory exemptions: ten (10) applications for exemptions were received and reviewed.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Motor vehicle excise commitment",
+   "resolution": "reported",
+   "quote": "louise reported that the 6t commitment of $31,428.48 for motor vehicle excise was mailed on november 30, 2017.",
+   "tags": [
+    "motor vehicle excise",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "FY2018 tax rate certified",
+   "resolution": "reported",
+   "quote": "tax rate certified: becky reported that we received an email today from the dor",
+   "tags": [
+    "tax rate"
+   ]
+  },
+  {
+   "topic": "Chapter 61A / 61B applications",
+   "resolution": "61A FY19 approved; 61B recording approved; 1358 Mass Ave 61A denied; tabled applications approved",
+   "quote": "becky reported on the chapter 61a fy19 application submitted by nancy dewitte womble.",
+   "tags": [
+    "chapter land",
+    "61A",
+    "61B"
+   ]
+  },
+  {
+   "topic": "FY17 ATB decision, 236 West St.",
+   "resolution": "noted",
+   "quote": "boa was notified of the fy17 atb decision regarding property located at 236 west st.",
+   "tags": [
+    "abatement",
+    "ATB"
+   ]
+  },
+  {
+   "topic": "Annual Personal Property Form of List letter",
+   "resolution": "approved",
+   "quote": "boa reviewed and approved the letter that will be mailed along with the annual personal property form of list",
+   "tags": [
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Assessor resignation and coverage",
+   "resolution": "noted; Harald to speak on coverage later",
+   "quote": "harald reported to the board that becky has filed a notice of resignation to regional resource group, inc.",
+   "tags": [
+    "staffing",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for January 9, 2018; adjourned 7:20 pm",
+   "quote": "board voted to meet on january 9, 2018 at 5:45 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax Rate Recapitulation forms",
+   "where": "text",
+   "quote": "tax rate recapitulation forms were signed by the boa as well."
+  },
+  {
+   "name": "DOR email on FY2018 tax rate certification (Division of Local Services)",
+   "where": "text",
+   "quote": "received an email today from the dor, division of local services"
+  },
+  {
+   "name": "Annual Personal Property Form of List and accompanying letter",
+   "where": "text",
+   "quote": "boa reviewed and approved the letter that will be mailed along with the annual personal property form of list"
+  },
+  {
+   "name": "Personal Property checklist added to back of the letter",
+   "where": "text",
+   "quote": "a checklist had been added last year to the back of the letter in order to provide more direction in completing the form."
+  },
+  {
+   "name": "Denial form and letter seeking additional information (1358 Mass Ave)",
+   "where": "text",
+   "quote": "a denial form will be sent and a letter seeking additional"
+  },
+  {
+   "name": "Notification letter for denied exemption application",
+   "where": "text",
+   "quote": "(notification letter will be sent)"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "exemptions",
+  "chapter land",
+  "abatement",
+  "tax rate",
+  "personal property",
+  "motor vehicle excise",
+  "staffing",
+  "resignation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

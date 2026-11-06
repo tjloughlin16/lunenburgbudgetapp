@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2018-05-01",
  "docid": "735",
@@ -12,33 +12,213 @@
  },
  "votes": [
   {
-   "motion": "To approve current expense vouchers, abatements, warrants, commitments, payroll, and April 3, 2018 minutes",
+   "motion": "Board voted to meet on June 5, 2018 at 5:45 pm (next meeting date).",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and april 3, 2018 minutes."
-  },
-  {
-   "motion": "To approve the release of 2.92 acres of land from parcel 099-01 creating a new parcel 099-01-0001",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "chapter 61b - boa approved the release of 2.92 acres of land from parcel 099-01 - 53 prospect st., creating a new parcel 099-01-0001 - 63 prospect st."
-  },
-  {
-   "motion": "To approve FY18 Statutory Exemptions in the amount of $87,866.74",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "fy18 statutory exemptions - $87,866.74 - approved by boa & dor."
-  },
-  {
-   "motion": "To meet on June 5, 2018 at 5:45 pm",
    "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on june 5 2018 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of meeting minutes. No movers or seconders recorded. No vote counts provided. All outcomes recorded as approvals or actions taken by the Board.",
- "cost_usd": 0.1584195
+ "note": "Scanned text via macOS Vision OCR; garbled in places. The Report by Assessor paragraph has overlapping OCR (\"block out ten days to work with RRG days to work with RO\") and the out-of-office dates are unreadable (\"June 6h\", \"June 1gthi\"), so exact dates are not recorded. Only one vote is recorded (set next meeting for June 5, 2018, outcome passed, no tally or mover printed). The adjournment at 6:40 pm is stated without a motion. The approval of vouchers and minutes is stated without a motion or tally, so it is recorded as a decision, not a vote. The signature line is garbled. Only one page was provided.",
+ "cost_usd": 0.00478262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "board member, rena swezey,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid, associate assessor, joshua gendron and louise paquette,"
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid, associate assessor, joshua gendron and louise paquette,"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and April 3, 2018 minutes. No motion or tally is printed for this approval.",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and april 3, 2018 minutes."
+  },
+  {
+   "decision": "Harald Scheid will contact the property owner of 231 West St. and send a letter reinforcing the reason for the denial of the RE abatement application.",
+   "quote": "harald stated that he will be in touch with property owner and send him a letter to reinforce the reason of denial."
+  },
+  {
+   "decision": "Harald Scheid will create the FY19 Preliminary Real Estate bill file within the next week, after all land divisions are entered into CAMA.",
+   "quote": "harald stated that he will be creating the fy19 preliminary real estate bill file within the next week after all the land divisions are entered into cama."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental bills for two commercial properties",
+   "what_was_recorded": "Supplemental bills for two commercial properties were mailed on 4/30/18 in a stated amount.",
+   "figures_as_printed": [
+    "$41,962.55"
+   ],
+   "quote": "supplemental bills for two commercial properties were mailed on 4/30/18 in the amount of $41,962.55."
+  },
+  {
+   "topic": "Motor vehicle commitments",
+   "what_was_recorded": "Motor vehicle commitments were reported for the 2018-02 and 2017-08 commitments.",
+   "figures_as_printed": [
+    "$198,772.30",
+    "$114.38"
+   ],
+   "quote": "motor vehicle commitment - 2018-02 commitment $198,772.30 & 2017-08 commitment $114.38"
+  },
+  {
+   "topic": "Chapter 61B roll back tax, 53 Prospect St. / 63 Prospect St.",
+   "what_was_recorded": "Roll back tax was paid on the Chapter 61B release of 2.92 acres creating parcel 099-01-0001.",
+   "figures_as_printed": [
+    "$1,200.24"
+   ],
+   "quote": "roll back tax paid in the amount of $1,200.24."
+  },
+  {
+   "topic": "FY18 statutory exemptions",
+   "what_was_recorded": "FY18 statutory exemptions were reported as approved by BOA and DOR.",
+   "figures_as_printed": [
+    "$87,866.74"
+   ],
+   "quote": "fy18 statutory exemptions - $87,866.74 - approved by boa & dor."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll, and minutes",
+   "resolution": "approved",
+   "tags": [
+    "vouchers",
+    "abatements",
+    "warrants",
+    "minutes"
+   ],
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and april 3, 2018 minutes."
+  },
+  {
+   "topic": "Supplemental bills",
+   "resolution": "no action",
+   "tags": [
+    "supplemental bills",
+    "commercial property"
+   ],
+   "quote": "supplemental bills for two commercial properties were mailed on 4/30/18 in the amount of $41,962.55."
+  },
+  {
+   "topic": "Motor vehicle commitments",
+   "resolution": "no action",
+   "tags": [
+    "motor vehicle",
+    "commitments"
+   ],
+   "quote": "motor vehicle commitment - 2018-02 commitment $198,772.30 & 2017-08 commitment $114.38"
+  },
+  {
+   "topic": "Chapter 61B land release, 53 and 63 Prospect St.",
+   "resolution": "no action",
+   "tags": [
+    "chapter 61B",
+    "roll back tax",
+    "land division"
+   ],
+   "quote": "chapter 61b - boa approved the release of 2.92 acres of land from parcel 099-01 - 53 prospect st.,"
+  },
+  {
+   "topic": "FY18 statutory exemptions",
+   "resolution": "no action",
+   "tags": [
+    "exemptions",
+    "DOR"
+   ],
+   "quote": "fy18 statutory exemptions - $87,866.74 - approved by boa & dor."
+  },
+  {
+   "topic": "Correspondence from 231 West St. property owner",
+   "resolution": "letter to owner to be sent by Harald Scheid",
+   "tags": [
+    "abatement denial",
+    "correspondence",
+    "231 West St."
+   ],
+   "quote": "correspondence - property owner of 231 west st. requested records to verify the boa's decision of"
+  },
+  {
+   "topic": "FY19 preliminary calendar",
+   "resolution": "no action",
+   "tags": [
+    "FY19",
+    "Munis upgrade",
+    "preliminary bills"
+   ],
+   "quote": "fy19 preliminary calendar - louise reported that munis will be upgraded on may 31 and will not be"
+  },
+  {
+   "topic": "Report by Assessor",
+   "resolution": "no action",
+   "tags": [
+    "FY19 revaluation",
+    "DOR recertification",
+    "staff absence"
+   ],
+   "quote": "report by assessor - harald reported that he has planned to block out ten days to work with rrg"
+  },
+  {
+   "topic": "Next meeting date and adjournment",
+   "resolution": "next meeting set for June 5, 2018; adjourned 6:40 pm",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ],
+   "quote": "board voted to meet on june 5 2018 at 5:45 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Correspondence - Property Owner of 231 West St. (request for records to verify BOA denial of RE abatement application)",
+   "where": "text",
+   "quote": "correspondence - property owner of 231 west st. requested records to verify the boa's decision of"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "tax commitments",
+  "chapter 61B",
+  "statutory exemptions",
+  "FY19 calendar",
+  "revaluation",
+  "Munis upgrade",
+  "correspondence",
+  "staff absence"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

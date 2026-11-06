@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2018-04-12",
  "docid": "3279",
@@ -12,6 +12,64 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Meeting was cancelled due to no quorum. No votes were recorded.",
- "cost_usd": 0.0548924
+ "note": "The minutes are a notice of meeting marked 'Cancelled NO QUORUM', with an agenda only. No votes, motions, discussion, attendance, public comment, or figures are recorded, so every list is empty except topics, which record agenda items not taken up. The letterhead names Dennis Mannone (Chair), Karin Menard (Clerk) and Pete McCauliff, but the text does not say they attended, so attendees is empty. Gary Lorden is named only in an agenda item, not as taking part. No documents are listed.",
+ "cost_usd": 0.00197312,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "not taken up; meeting cancelled for no quorum",
+   "quote": "1)call to order 2) whalom luxury apartments - discussion regarding playground and land donation agreement",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Whalom Luxury Apartments playground and land donation agreement",
+   "resolution": "not taken up; meeting cancelled for no quorum",
+   "quote": "whalom luxury apartments - discussion regarding playground and land donation agreement",
+   "tags": [
+    "Whalom Luxury Apartments",
+    "playground",
+    "land donation"
+   ]
+  },
+  {
+   "topic": "Other Business (unanticipated items, public comment)",
+   "resolution": "not taken up; meeting cancelled for no quorum",
+   "quote": "3) other business a) unanticipated items b) public comment",
+   "tags": [
+    "other business",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "not taken up; meeting cancelled for no quorum",
+   "quote": "public comment 4) adjournment",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cancelled meeting",
+  "no quorum",
+  "Whalom Luxury Apartments",
+  "playground",
+  "land donation agreement",
+  "Zoning Board of Appeals"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

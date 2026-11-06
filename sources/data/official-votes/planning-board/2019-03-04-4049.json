@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-03-04",
  "docid": "4049",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "close the Hearing",
+   "motion": "Close the public hearing on the Site Plan Approval and Special Permit application for 190 Electric Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -21,6 +21,139 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. The minutes describe a public hearing continuation and substantial discussion of the applicant's responses to review comments, but do not record a vote on the site plan approval or special permit itself. The hearing was closed by motion.",
- "cost_usd": 0.0823135
+ "note": "Hearing continuation minutes; the decision itself is not in these minutes. Text includes spacing artifacts from extraction (e.g., \"tec hnical\", \"fini shing\"), read as \"technical\" and \"finishing\". The applicant was agreeable to a two-year planting warranty after the board's proposed one-year condition was noted; the minutes do not say which term the eventual decision will carry.",
+ "cost_usd": 0.00320142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Brandon Smith",
+   "role": "representing the applicant (Borrego Solar)",
+   "status": "present",
+   "quote": "borrego solar ('borrego') was represented by brandon smith and josh farkas."
+  },
+  {
+   "name": "Josh Farkas",
+   "role": "representing the applicant (Borrego Solar)",
+   "status": "present",
+   "quote": "borrego solar ('borrego') was represented by brandon smith and josh farkas."
+  },
+  {
+   "name": "Emily Kelly",
+   "role": "",
+   "status": "present",
+   "quote": "emily kelly, 39 fitchview avenue- supports the project."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane- suggested the plantings be guaranteed for two years/two growing seasons."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus was for three different evergreen species for the screening plantings.",
+   "quote": "board consensus was for three different species."
+  },
+  {
+   "decision": "The Decision will include a condition for a one-year tree warranty from planting and that the plantings be located on the As Built.",
+   "quote": "the decision will include a condition that there will be a tree warranty for one year from planting and that the plantings be located on the as built."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental tree planting budget",
+   "what_was_recorded": "Chenis asked whether there is a budget for supplemental tree planting; Borrego said there is no set amount and it is based on tree count.",
+   "figures_as_printed": [],
+   "quote": "k. chenis inquired if there is any budget for supplemental tree planting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Emily Kelly",
+   "stated_role": "",
+   "topic": "Support for the solar project",
+   "quote": "emily kelly, 39 fitchview avenue- supports the project."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "topic": "Plantings warranty length",
+   "quote": "carl luck, 50 sunset lane- suggested the plantings be guaranteed for two years/two growing seasons."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing continuation: 190 Electric Avenue solar installation (Site Plan Approval and Special Permit)",
+   "resolution": "hearing closed; decision to follow",
+   "quote": "the hearing continuation was to hear and discuss an application for site plan approval and special permit under sections 250 - 8.4.",
+   "tags": [
+    "solar",
+    "site plan approval",
+    "special permit",
+    "public hearing",
+    "tree plantings",
+    "utility poles"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GEI Review letter dated 03.04.19",
+   "where": "list",
+   "quote": "documents used at meeting: gei review letter dated 03.04.19 and site plan revised 02.28.19"
+  },
+  {
+   "name": "Site Plan Revised 02.28.19",
+   "where": "list",
+   "quote": "documents used at meeting: gei review letter dated 03.04.19 and site plan revised 02.28.19"
+  }
+ ],
+ "tags": [
+  "solar",
+  "190 Electric Avenue",
+  "site plan approval",
+  "special permit",
+  "public hearing",
+  "tree plantings",
+  "utility poles",
+  "GEI review"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

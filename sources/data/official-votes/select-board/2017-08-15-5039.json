@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-08-15",
  "docid": "5039",
@@ -12,12 +12,12 @@
  },
  "votes": [
   {
-   "motion": "The Board moves forward with the concept of consolidating all town offices under one roof at the Passios Building",
+   "motion": "Move forward with the concept of consolidating all town offices under one roof at the Passios Building.",
    "moved_by": "P. Bertram",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram that the board moves forward with the concept of consolidating all town offices under one roof at the passios building 2\": d. mcquaid vote: all in favor"
+   "quote": "that the board moves forward with the concept of consolidating all town offices under one roof at the passios building"
   },
   {
    "motion": "Adjourn the meeting at 9:35 p.m.",
@@ -25,10 +25,371 @@
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole to adjourn the meeting at 9:35 p.m. 2nd: p. bertram vote: all in favor"
+   "quote": "motion: r. ebersole to adjourn the meeting at 9:35 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned document; minor OCR artifact in first vote ('2\": for \"2nd:\")",
- "cost_usd": 0.1051445
+ "note": "Text is OCR (macOS Vision) with garbled spots: the second-motion seconder line reads \"2\\\": D. McQuaid\" (likely \"2nd\"), \"Mr. Loale\" likely means Mr. Toale, and the signature line is garbled. The minutes print only \"All in Favor\" for the votes, with no vote count, so outcomes are recorded as \"passed\". Quotes were taken from the OCR text and collapsed where lines broke.",
+ "cost_usd": 0.00676762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, 45 williams drive, suggested more speed limit signage by the town beach at prospect street."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, stated he continues to hear rumblings about maintenance issues at the public safety building."
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "",
+   "status": "present",
+   "quote": "rebecca lantry, 251 west street, stated the old primary school is designated as chapter 40r."
+  },
+  {
+   "name": "Maureen Martin",
+   "role": "",
+   "status": "present",
+   "quote": "maureen martin, 54 longwood drive, wanted the board to consider 40r for those buildings."
+  },
+  {
+   "name": "Lois Lewis",
+   "role": "",
+   "status": "present",
+   "quote": "lois lewis, 389 sunny hill road, stated she did not like having all the municipal offices at the passios."
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "",
+   "status": "present",
+   "quote": "cathy clark, 275 cross road, wanted to echo mr. rodgers."
+  },
+  {
+   "name": "Amory Phelps",
+   "role": "",
+   "status": "present",
+   "quote": "amory phelps, 123 leominster road, asked if the town is going to vote on this."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will continue the building-use discussion at its August 22 meeting while discussing its goals.",
+   "quote": "the board will continue this at the august 22\"d meeting while discussing their goals."
+  },
+  {
+   "decision": "Town Manager Lemieux will have more information and a timetable for the September 19 meeting.",
+   "quote": "ms. lemieux will have more information and a timetable for the september 19* meeting."
+  },
+  {
+   "decision": "Town Manager Lemieux will research the school strategic plan and future plans for Turkey Hill Elementary School.",
+   "quote": "ms. lemieux will research the school strategic plan and future plans for turkey hill elementary school."
+  },
+  {
+   "decision": "Town Manager Lemieux will research the square footage needs and identify the cost of repair of the existing buildings.",
+   "quote": "ms. lemieux will research the square footage needs and identify the cost of repair of the existing buildings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Past fiscal year operational costs for five town buildings",
+   "what_was_recorded": "Total operational costs for the past fiscal year were listed for each building, with the old Primary School at zero.",
+   "figures_as_printed": [
+    "$41,084.37",
+    "$27,987.32",
+    "$6,713.21",
+    "$61,917.00",
+    "$0.00"
+   ],
+   "quote": "total operational costs for the buildings for the past fiscal year were: town hall ($41,084.37), ritter building ($27,987.32), brooks house ($6,713.21), passios ($61,917.00) and the old primary school ($0.00)."
+  },
+  {
+   "topic": "Past fiscal year maintenance costs for town buildings",
+   "what_was_recorded": "Maintenance costs were listed for each building, with Brooks and the old Primary School at zero.",
+   "figures_as_printed": [
+    "$15,334.41",
+    "$13,766.59",
+    "$0.00",
+    "$21,903.00",
+    "$0.00"
+   ],
+   "quote": "maintenance costs were: town hall ($15,334.41), ritter ($13,766.59), brooks ($0.00), passios ($21,903.00), old primary school ($0.00)."
+  },
+  {
+   "topic": "Brooks House revenue",
+   "what_was_recorded": "The town received $6,000 in revenue from The Lunenburg Ledger and net metering credits for electricity cost.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "we have received $6,000 in revenue from the lunenburg ledger and net metering credits for electricity cost."
+  },
+  {
+   "topic": "Passios Building projected operating cost",
+   "what_was_recorded": "Passios costs were projected at the worst case scenario for this year, with a best case of approximately $48,000.",
+   "figures_as_printed": [
+    "$61,917.",
+    "$48,000"
+   ],
+   "quote": "passios building's costs are projected at $61,917. at the worst case scenario for this year; the best case scenario is approximately $48,000."
+  },
+  {
+   "topic": "Passios Building FY17 operating cost and rent revenue",
+   "what_was_recorded": "FY17 cost to operate the Passios and rent received are stated, with an overall revenue gain.",
+   "figures_as_printed": [
+    "$83,239.46",
+    "$99,712",
+    "$16,473"
+   ],
+   "quote": "in fy17, the cost to operate was $83,239.46 with fflac, extended day,pacc and the superintendent's offices."
+  },
+  {
+   "topic": "Passios rent revenue and gain",
+   "what_was_recorded": "Rent received at the Passios and the overall revenue gain were stated.",
+   "figures_as_printed": [
+    "$99,712",
+    "$16,473"
+   ],
+   "quote": "we received $99,712 in rent, an overall revenue gain of $16,473."
+  },
+  {
+   "topic": "Passios Special Revenue Fund ending balance",
+   "what_was_recorded": "The ending balance last year in the Passios Special Revenue Fund was stated.",
+   "figures_as_printed": [
+    "$56,607"
+   ],
+   "quote": "the ending balance for last year was $56,607."
+  },
+  {
+   "topic": "Passios anticipated FY18 revenue",
+   "what_was_recorded": "Total anticipated revenue for FY18 at the Passios was estimated.",
+   "figures_as_printed": [
+    "$44,770"
+   ],
+   "quote": "total anticipated revenue for fy18 is approximately $44,770."
+  },
+  {
+   "topic": "Debt schedule for a bond to fund consolidation",
+   "what_was_recorded": "A debt schedule projection for a bond was presented by the town manager, prepared by the Finance Director.",
+   "figures_as_printed": [
+    "$5 million"
+   ],
+   "quote": "ms. lemieux presented a debt schedule projection created by finance director brochu for a $5 million bond."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant.",
+   "figures_as_printed": [
+    "$70,151.14"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $70,151.14."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Speed limit signage by town beach",
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "quote": "katey adams, 45 williams drive, suggested more speed limit signage by the town beach at prospect street."
+  },
+  {
+   "topic": "Maintenance at Public Safety Building and town center garage",
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "quote": "dave rodgers, 82 highland street, stated he continues to hear rumblings about maintenance issues at the public safety building."
+  },
+  {
+   "topic": "Old Primary School Chapter 40R designation",
+   "speaker": "Rebecca Lantry",
+   "stated_role": "",
+   "quote": "rebecca lantry, 251 west street, stated the old primary school is designated as chapter 40r."
+  },
+  {
+   "topic": "40R for the buildings and town center housing",
+   "speaker": "Maureen Martin",
+   "stated_role": "",
+   "quote": "maureen martin, 54 longwood drive, wanted the board to consider 40r for those buildings."
+  },
+  {
+   "topic": "Consolidating offices at Passios and abandoning Town Hall",
+   "speaker": "Lois Lewis",
+   "stated_role": "",
+   "quote": "lois lewis, 389 sunny hill road, stated she did not like having all the municipal offices at the passios."
+  },
+  {
+   "topic": "Commending the Board and parking and sale of buildings",
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "quote": "dave rodgers, 82 highland street, wanted to commend the board stating this is one of the best meetings he has"
+  },
+  {
+   "topic": "Concern about selling municipal buildings and the whole process",
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "quote": "katey adams, 45 williams drive, stated she was concerned with this whole process"
+  },
+  {
+   "topic": "Selling Town Hall and adding to Ritter Building",
+   "speaker": "Cathy Clark",
+   "stated_role": "",
+   "quote": "cathy clark, 275 cross road, wanted to echo mr. rodgers."
+  },
+  {
+   "topic": "Whether the Town will vote on the plan",
+   "speaker": "Amory Phelps",
+   "stated_role": "",
+   "quote": "amory phelps, 123 leominster road, asked if the town is going to vote on this."
+  },
+  {
+   "topic": "Leaving behind vacant buildings in town center",
+   "speaker": "Rebecca Lantry",
+   "stated_role": "",
+   "quote": "rebecca lantry stated she understood how they want to go forward but was concerned about what is left"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment: katey adams, 45 williams drive, suggested more speed limit signage by the town beach at prospect street.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Workshop: Town Buildings/Current and Future Use",
+   "resolution": "approved consolidation concept at Passios; continued to August 22 meeting",
+   "quote": "workshop: town buildings/current and future use",
+   "tags": [
+    "town buildings",
+    "Passios",
+    "consolidation",
+    "workshop",
+    "town hall",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $70,151.14.",
+   "tags": [
+    "warrant",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule review",
+   "resolution": "no action",
+   "quote": "mr. toale reviewed their upcoming meeting schedule.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (second session)",
+   "resolution": "no action",
+   "quote": "the question was asked if someone wanted to bid on one of the buildings, what is involved.",
+   "tags": [
+    "public comment",
+    "RFP",
+    "40R"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:35 p.m.",
+   "quote": "motion: r. ebersole to adjourn the meeting at 9:35 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tappe Architects' building assessment and space needs study (conceptual program summary)",
+   "where": "text",
+   "quote": "ms. lemieux presented the conceptual program summary from the tappe architects' building assessment and space needs study for square footage needs for town offices."
+  },
+  {
+   "name": "Debt schedule projection created by Finance Director Brochu for a $5 million bond",
+   "where": "text",
+   "quote": "ms. lemieux presented a debt schedule projection created by finance director brochu for a $5 million bond."
+  },
+  {
+   "name": "Slide showing actual square footage used in Passios, Town Hall, Ritter Building and old Primary School",
+   "where": "text",
+   "quote": "mr. mcquaid presented a slide showing the actual square footage being used in the passios, town hall, ritter"
+  },
+  {
+   "name": "Slide showing mixed use concept for the old Primary School",
+   "where": "text",
+   "quote": "he presented a slide showing a mixed use concept for the old primary school with commercial"
+  }
+ ],
+ "tags": [
+  "town buildings",
+  "Passios Building",
+  "town hall",
+  "consolidation of municipal offices",
+  "Tappe space needs study",
+  "bond debt",
+  "40R",
+  "public comment",
+  "RFP",
+  "building costs",
+  "workshop"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

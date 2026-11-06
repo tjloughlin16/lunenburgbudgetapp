@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2017-12-21",
  "docid": "2836",
@@ -12,47 +12,308 @@
  },
  "votes": [
   {
-   "motion": "approve October 19, 2017 minutes as amended",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Accept the October 19, 2017 minutes as amended.",
    "moved_by": "Harry",
    "seconded_by": "Kate",
-   "quote": "motion to accept as amended by harry. seconded by kate. unanimous vote in favor."
-  },
-  {
-   "motion": "approve November 9, 2017 minutes as presented",
    "outcome": "passed",
    "procedural": true,
+   "quote": "october 19, 2017 minutes - motion to accept as amended by harry. seconded by kate. unanimous vote in"
+  },
+  {
+   "motion": "Accept the November 9, 2017 minutes as presented.",
    "moved_by": "Harry",
    "seconded_by": "Gare",
-   "quote": "motion to accept as presented by harry. seconded by gare. unanimous vote in favor."
-  },
-  {
-   "motion": "approve December 7, 2017 minutes as presented",
    "outcome": "passed",
    "procedural": true,
+   "quote": "november 9. 2017 minutes. motion to accept as presented by harry. seconded by gare. unanimous vote"
+  },
+  {
+   "motion": "Accept the December 7, 2017 minutes as presented.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
-   "quote": "motion to accept as presented by gare. seconded by harry. unanimous vote in favor."
-  },
-  {
-   "motion": "accept Charter Revision as amended and distributed by Dick",
-   "outcome": "passed",
-   "procedural": false,
-   "moved_by": "Gare",
-   "seconded_by": "Dick",
-   "quote": "motion to accept charter revision as amended and distributed by dick, by gare. seconded by dick. unanimous vote in favor."
-  },
-  {
-   "motion": "adjourn",
    "outcome": "passed",
    "procedural": true,
+   "quote": "december 7, 2017 minutes. motion to accept as presented by gare. seconded by harry. unanimous"
+  },
+  {
+   "motion": "Accept the Charter Revision as amended and distributed by Dick.",
+   "moved_by": "Gare",
+   "seconded_by": "Dick",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion to accept charter revision as amended and distributed by dick, by gare. seconded by dick."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Kate",
-   "quote": "motion to adjourn by gare. seconded by kate. unanimous vote in favor."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion to adjourn by gare. seconded by kate. unanimous vote in favor. meeting closed at 7:57 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Document repeats the same content on pages 1-2 and pages 3-4; transcribed from PAGE 1 occurrence. Five votes recorded, all passed unanimously.",
- "cost_usd": 0.0941705
+ "dropped_unquoted": 1,
+ "note": "The extracted text repeats the same minutes twice (pages 1-2 and pages 3-4), with OCR variants (e.g. 'Kiirja Paananen', 'Donna Salia', 'tavor'). Records are taken from the first copy; the second copy matches on every vote. The minutes print 'Unanimous vote in favor' with no tally, so votes are recorded as 'passed'. No quorum is stated. The closing public comment line ('None') is recorded only through the opening 'No public - no comment.' quote and the topic row. No dollar amounts are printed anywhere in the minutes; the 4% is the only figure.",
+ "cost_usd": 0.00643382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kirja paananen, gare thompson, martha moore - director lpl"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kirja paananen, gare thompson, martha moore - director lpl"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kirja paananen, gare thompson, martha moore - director lpl"
+  },
+  {
+   "name": "Kirja Paananen",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kirja paananen, gare thompson, martha moore - director lpl"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kirja paananen, gare thompson, martha moore - director lpl"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kirja paananen, gare thompson, martha moore - director lpl"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: lars widstrand, donna saila, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  },
+  {
+   "name": "Donna Saila",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: lars widstrand, donna saila, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: lars widstrand, donna saila, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: lars widstrand, donna saila, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Room Use Policy deferred to the January 2018 LPLBOT meeting due to Donna's absence.",
+   "quote": "deferred to january, 2018 lplbot meeting due to donna's absence."
+  },
+  {
+   "decision": "Martha Moore to investigate what is needed to coordinate with the Town of Lunenburg on moving the Bartholomew trust funds to Touchstone management.",
+   "quote": "martha to investigate what is needed to be coordinated with the town of lunenburg to get this done."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2018 budget status",
+   "what_was_recorded": "Director reported the FY 2018 budget is on target, actually 4% below for this time of year.",
+   "figures_as_printed": [
+    "4%"
+   ],
+   "quote": "fy 2018 budget - right on target (actually 4% below) for this time of year."
+  },
+  {
+   "topic": "Mileage Reimbursement",
+   "what_was_recorded": "Additional funds were transferred into Mileage Reimbursement because more staff are traveling to courses, libraries and seminars; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "additional funds transferred into mileage reimbursement because more staff are traveling to courses, other"
+  },
+  {
+   "topic": "FY 2019 Office Supplies",
+   "what_was_recorded": "Director said additional money for Office Supplies should be anticipated in the FY 2019 budget due to increased program attendance; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "for fy 2019 budget we need to anticipate additional money for office supplies due to increased program"
+  },
+  {
+   "topic": "Bartholomew and Touchstone trust funds",
+   "what_was_recorded": "Continued discussion of moving Bartholomew trust funds, which considerably underperform the Touchstone funds, into Touchstone management; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "trust funds - continued discussion about moving bartholomew funds (which considerably underperform the touchstone funds) into management by touchstone."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Additional funds transferred into the Mileage Reimbursement line because more staff are traveling to courses and seminars.",
+   "amount_as_printed": "not stated",
+   "outcome": "transferred in; amount not printed in the minutes",
+   "quote": "additional funds transferred into mileage reimbursement because more staff are traveling to courses, other"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Public comment at opening",
+   "quote": "no public - no comment."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved October 19, November 9 and December 7, 2017 minutes",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "october 19, 2017 minutes - motion to accept as amended by harry. seconded by kate. unanimous vote in"
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "presented; no action recorded",
+   "tags": [
+    "director",
+    "budget",
+    "staff"
+   ],
+   "quote": "director's report (presented by martha)"
+  },
+  {
+   "topic": "Trust Funds",
+   "resolution": "continued; Martha Moore to investigate coordination with Town",
+   "tags": [
+    "trust funds",
+    "town coordination"
+   ],
+   "quote": "trust funds - continued discussion about moving bartholomew funds (which considerably underperform the"
+  },
+  {
+   "topic": "Charter Discussion Follow-up",
+   "resolution": "approved as amended",
+   "tags": [
+    "charter"
+   ],
+   "quote": "motion to accept charter revision as amended and distributed by dick, by gare. seconded by dick."
+  },
+  {
+   "topic": "Room Use Policy",
+   "resolution": "deferred to January 2018 meeting",
+   "tags": [
+    "room use policy"
+   ],
+   "quote": "deferred to january, 2018 lplbot meeting due to donna's absence."
+  },
+  {
+   "topic": "Thank you notes",
+   "resolution": "completed and being sent; no action recorded",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "thanks to kate all completed and being sent."
+  },
+  {
+   "topic": "Friends of Lunenburg Public Library Update",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "friends group"
+   ],
+   "quote": "friends of lunenburg public library update"
+  },
+  {
+   "topic": "LPLBOT By-laws",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "bylaws"
+   ],
+   "quote": "lplbot by-laws • director's evaluation - starts february 1, 2018"
+  },
+  {
+   "topic": "Director's Evaluation",
+   "resolution": "listed; starts February 1, 2018; no action recorded",
+   "tags": [
+    "director evaluation",
+    "personnel"
+   ],
+   "quote": "director's evaluation - starts february 1, 2018"
+  },
+  {
+   "topic": "Public Comment (close)",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "no public - no comment."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:57 p.m.",
+   "tags": [
+    "adjourn"
+   ],
+   "quote": "motion to adjourn by gare. seconded by kate. unanimous vote in favor. meeting closed at 7:57 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBOT Meeting Agenda for December 21, 2017",
+   "where": "list",
+   "quote": "lplbot meeting agenda for december 21, 2017"
+  },
+  {
+   "name": "LPL Director's Report December 21, 2017",
+   "where": "list",
+   "quote": "lpl director's report december 21, 2017"
+  },
+  {
+   "name": "Children's Area Report for the month of November, 2017",
+   "where": "list",
+   "quote": "children's area report for the month of november, 2017"
+  },
+  {
+   "name": "Young Adult Services Report December, 2017",
+   "where": "list",
+   "quote": "young adult services report december, 2017"
+  },
+  {
+   "name": "LPLBOT Draft Minutes for October 19, 2017, November 9, 2017, and December 7, 2017",
+   "where": "list",
+   "quote": "lplbot draft minutes for october 19, 2017, november 9, 2017, and december 7, 2017"
+  },
+  {
+   "name": "Charter Revision (as amended and distributed by Dick)",
+   "where": "text",
+   "quote": "motion to accept charter revision as amended and distributed by dick, by gare. seconded by dick."
+  }
+ ],
+ "tags": [
+  "library board",
+  "trust funds",
+  "FY 2018 budget",
+  "FY 2019 budget",
+  "charter revision",
+  "room use policy",
+  "director evaluation",
+  "minutes approval",
+  "bylaws"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-01-15",
  "docid": "5191",
@@ -12,31 +12,112 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to discuss strategy with respect to O'Brien Homes litigation per M.G.L. c. 30 § 21",
+   "motion": "Enter Executive Session per M.G.L. c. 30 § 21, Reason #3, to discuss litigation strategy in O'Brien Homes, Inc. et al. v. Town of Lunenburg et al. and the related Appeals Court case.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. mcquaid 2nd: p. luck to enter executive session per m.g.l. c. 30 § 21, reason #3: to discuss strategy with respect to litigation, where an open meeting may have a detrimental effect on the government's litigating position, and the chair so declares, namely o'brien homes, inc., et al. v. town of lunenburg, et al., land court docket nos. 13 misc 477878 through 13 misc 477887, and o'brien homes, inc. v. town of lunenburg planning board, et al., appeals court docket no. 2018-p-1520 vote: mr. mcquaid-aye, ms. luck-aye, ms. adams- aye, mr. toale-aye"
+   "quote": "to enter executive session per m.g.l. c. 30 § 21, reason #3: to discuss strategy with respect to"
   },
   {
-   "motion": "Accept and sign the settlement agreement as presented",
+   "motion": "Accept and sign the settlement agreement as presented.",
    "moved_by": "K. Adams",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams to accept and sign the settlement agreement as presented vote: ms. adams-aye; ms. luck-aye; mr. toale-aye, mr. mcquaid-aye 2nd: d. mcquaid"
+   "quote": "to accept and sign the settlement agreement as presented"
   },
   {
-   "motion": "Adjourn from Executive Session to return to Open Session",
+   "motion": "Adjourn from Executive Session to return to Open Session.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn from executive session to return to open session vote: ms. adams-aye; ms. luck-aye; mr. toale-aye, mr. mcquaid-aye 2nd: p. luck"
+   "quote": "to adjourn from executive session to return to open session"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision. Three votes recorded, all procedural or settlement-related; all passed unanimously 4-0.",
- "cost_usd": 0.1076175
+ "note": "Text is OCR (macOS Vision) with garbled words, so quotes are copied as printed. No roll-call tally is printed as a number; outcomes are recorded as \"passed\" from the listed ayes. Chair role is not printed; Mr. Toale is inferred as presiding from \"called the meeting to order\". \"Counsel (via telephone)\" is a heading that may cover Attorney Costa; status for Costa is marked remote on that basis. The minutes record no open-session business, no public comment, and no dollar figures. Attorney Borenstein and Mr. O'Brien are named only in passing and are not listed as attendees.",
+ "cost_usd": 0.00390622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "",
+   "status": "present",
+   "quote": "mr. toale called the meeting to order at 6:30 p.m."
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "mr. mcquaid-aye, ms. luck-aye, ms. adams- aye, mr. toale-aye"
+  },
+  {
+   "name": "P. Luck",
+   "role": "",
+   "status": "present",
+   "quote": "ms. luck-aye, ms. adams- aye, mr. toale-aye attorney costa r",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Ms. Adams",
+   "role": "",
+   "status": "present",
+   "quote": "ms. adams- aye, mr. toale-aye"
+  },
+  {
+   "name": "Attorney Costa",
+   "role": "Attorney",
+   "status": "remote",
+   "quote": "attorney costa reported he met with the planning board members last night and the settlement agreement has"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive Session: O'Brien Homes litigation and settlement agreement",
+   "resolution": "entered executive session; accepted and signed settlement agreement as presented; returned to open session",
+   "quote": "to enter executive session per m.g.l. c. 30 § 21, reason #3: to discuss strategy with respect to",
+   "tags": [
+    "executive session",
+    "litigation",
+    "settlement",
+    "O'Brien Homes",
+    "Planning Board",
+    "subdivision"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Settlement agreement (O'Brien Homes, Inc. / Town of Lunenburg / Planning Board)",
+   "where": "text",
+   "quote": "attorney costa reported he met with the planning board members last night and the settlement agreement has"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "settlement agreement",
+  "O'Brien Homes",
+  "Planning Board",
+  "subdivision",
+  "Land Court"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

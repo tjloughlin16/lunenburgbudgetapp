@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2019-02-20",
  "docid": "6242",
@@ -12,63 +12,362 @@
  },
  "votes": [
   {
-   "motion": "John Harrison determination of applicability for 16 by 4 rolling dock at 205 Sunset Lane continued to March 6, 2019",
+   "motion": "Continue the hearing on John Harrison's request for a determination of applicability (205 Sunset Lane) to March 6, 2019.",
    "moved_by": "Todd Dwyer",
    "seconded_by": "Catie Childs",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "continued until march 6, 2019 by a motion of td and a second by cc with a unanimous vote"
+   "procedural": false,
+   "quote": "john harrsion: continued until march 6, 2019 by a motion of td and a second by cc with a unanimous vote."
   },
   {
-   "motion": "K & E Realty Trust Notice of Intent for construction of addition to Asian Imperial building continued to March 6, 2019",
+   "motion": "Continue the Notice of Intent hearing for the Asian Imperial addition at 5 Electric Ave to March 6, 2019 at the Ritter Building, with the applicant's consent.",
    "moved_by": "Todd Dwyer",
    "seconded_by": "Catie Childs",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "continued to march 6, 2019, 7 pm at the ritter building at mass ave by a motion of td. cc seconded and the vote was unanimous to approve the motion."
   },
   {
-   "motion": "Borrego Solar Systems Notice of Intent for 2.26 Mega Watt solar facility at 190 Electric Avenue continued to March 6, 2019",
+   "motion": "Continue the Borrego Solar Notice of Intent hearing (190 Electric Avenue) to March 6, 2019 at 7 PM in the Ritter building, with the applicant's consent.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Todd Dwyer",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "continued to march 6, 2019 at 7 pm in the ritter building with consent of the applicant by a motion of jr.td seconded and the commission voted unanimously"
+   "procedural": false,
+   "quote": "continued to march 6, 2019 at 7 pm in the ritter building with consent of the applicant by a motion of jr.td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Nanci Bell Notice of Intent for replacement of existing retaining wall at 51 Fire Road 19 continued to March 6, 2019",
+   "motion": "Continue the Nanci Bell Notice of Intent hearing (51 Fire Road 19) to March 6, 2019 at 7 PM in the Ritter Building, with the applicant's consent.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Todd Dwyer",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "continued to march 6, 2019 at 7 pm in the ritter building ( with consent of the applicant) with a motion of jr.td seconded and the commission voted unanimously"
+   "procedural": false,
+   "quote": "continued to march 6, 2019 at 7 pm in the ritter building ( with consent of the applicant) with a motion of jr.td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Daniel and Jean Proctor amendment of Order of Conditions at 380, 390 and 400 Electric Ave approved with condition that all erosion stay in place through construction of the gas station",
+   "motion": "Approve the Proctor amendment of Order of Conditions DEP 208-1121 with the additional condition that all erosion stay in place through construction of the gas station.",
    "moved_by": "Todd Dwyer",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion to approve amendment with additional condition that all erosion stay in place through construction of the gas station by motion of td and second by jr with a unanimous vote to approve"
+   "quote": "motion to approve amendment with additional condition that all erosion stay in place through construction of the gas station by motion of td and second by jr with a unanimous vote to approve."
   },
   {
-   "motion": "NJLJ properties Notice of Intent for fuel dispensing area, convenience store and drive thru donut shop at 400 Electric Ave continued to March 6, 2019",
+   "motion": "Continue the NJLJ Properties Notice of Intent hearing (400 Electric Ave) to March 6, 2019 at the Ritter Building at the applicant's request.",
    "moved_by": "Todd Dwyer",
    "seconded_by": "Catie Childs",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "hearing continued to march 6, 2019 at the ritter building by request of the applicant. by td which was seconded by cc with a unanimous vote to approve"
+   "procedural": false,
+   "quote": "hearing continued to march 6, 2019 at the ritter building by request of the applicant. by td which was seconded by cc with a unanimous vote to approve."
   },
   {
-   "motion": "Approve concept for language adding 5% fee for online files to wetland regulations",
+   "motion": "Approve the concept of the language for the wetland regulation change adding a 5% fee for online files.",
    "moved_by": "Carl Luck",
    "seconded_by": "Catie Childs",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the concept for the language was approved by a motion of cl and a second by cc with a unanimous vote to approve"
+   "quote": "the concept for the language was approved by a motion of cl and a second by cc with a unanimous vote to approve."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Conservation Commission meeting, February 20, 2019. All seven votes were unanimously approved. No issues with scan quality or missing records noted.",
- "cost_usd": 0.13446049999999998
+ "note": "Text extraction, not a scan; votes are readable. Votes are recorded as unanimous with no tallies. No roll call; KJ is read as Kenneth Jones (absent). No adjournment motion or minutes-approval vote is recorded. The motion continuing the 5 Electric Ave (K & E Realty Trust) hearing sits under the Pelletier/Sidleau paragraph and is attributed to that hearing from context. Public Comment heading has no recorded statements. Names of several applicants (John Harrison, Nanci Bell, K & E Realty Trust, NJLJ properties) appear only as filers and are not listed as attendees.",
+ "cost_usd": 0.009794920000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj."
+  },
+  {
+   "name": "Bob Pease",
+   "status": "present",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj."
+  },
+  {
+   "name": "Catie Childs",
+   "status": "present",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj."
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj."
+  },
+  {
+   "name": "Kenneth Jones",
+   "status": "absent",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted that the inside of the restaurant was stated by the owner as an issue and could be examined."
+  },
+  {
+   "name": "Pete Pelletier",
+   "status": "not stated",
+   "quote": "pete pelletier, pelletier brothers and kevin sidleau."
+  },
+  {
+   "name": "Kevin Sidleau",
+   "status": "present",
+   "quote": "kevin sidleau noted they would be willing to place it out of the 30 foot zone into the new parking lot"
+  },
+  {
+   "name": "Brandon Smith",
+   "role": "representing Borrego Solar",
+   "status": "present",
+   "quote": "brandon smith representing borrego solar is proposing a 2 mw solar facility."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "appeared with Dan Proctor for the continued amendment",
+   "status": "present",
+   "quote": "greg roy appeared with dan proctor for the continued amendment."
+  },
+  {
+   "name": "Dan Proctor",
+   "status": "present",
+   "quote": "dan proctor noted the building is in the current location to allow for handicap access"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "David Ross and Associates; representing John and David Saliba",
+   "status": "present",
+   "quote": "neil gorman came in from david ross to represent john and david saliba."
+  },
+  {
+   "name": "Jassy Bratko",
+   "role": "of the NCLT",
+   "status": "present",
+   "quote": "jassy bratko of the nclt noted that this area was listed as prime habitat under the biomap."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission expressed a desire that the pad be moved out of the 30 foot zone, that dumpsters be added, and that relocated structures be shown in better detail on the plans (5 Electric Ave).",
+   "quote": "the commission expressed a desire to move pad out of the 30 foot, add dumpsters and relocated structures in better detail on the plans."
+  },
+  {
+   "decision": "The Commission will examine alternatives and continue to pursue the Saliba Northfield Road land acquisition proposal.",
+   "quote": "commission will examine alternatives and continue to pursue ."
+  },
+  {
+   "decision": "The conservation administrator instructed the Shady Point owner to expand the earthen berm as soon as weather started to break into spring conditions.",
+   "quote": "instructed the owner to expand as soon as weather started to b reak further into spring conditions."
+  },
+  {
+   "decision": "The minutes of the January 16, 2019 and February 6 meetings were reviewed with no action taken.",
+   "quote": "minutes of previous meetings - review and approval of january 16, 2019 & february 6- no action taken"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Wetland regulation change: 5% fee for online files",
+   "what_was_recorded": "New business item on adding a 5% fee for online files to the wetland regulations; the concept was approved and the language was to be inserted.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "change in wetland regulations to add a 5% fee for online files"
+  },
+  {
+   "topic": "ADA grant",
+   "what_was_recorded": "Administrator reported the ADA grant is in effect and the small town forest completion was the first step; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "ada grant update mm reported that the grant is in effect and that the small town forest completion was the first step."
+  },
+  {
+   "topic": "Enforcement fines at 101 Pleasant Street",
+   "what_was_recorded": "Administrator noted fines continue to accumulate; a magistrate hearing on the first 25 tickets was set for end of March. No dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "mm noted fines continue to accumulate."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Abutters to the project",
+   "stated_role": "abutters",
+   "topic": "Vegetative buffer for Borrego Solar project",
+   "quote": "abutters to the project indicated a desire to see a vegetative buffer."
+  },
+  {
+   "speaker": "Jassy Bratko",
+   "stated_role": "of the NCLT",
+   "topic": "Biomap habitat designation for Saliba property",
+   "quote": "jassy bratko of the nclt noted that this area was listed as prime habitat under the biomap."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened meeting; Kenneth Jones (KJ) absent",
+   "quote": "chairman bursch opened the meeting with all in attendance except kj.",
+   "tags": [
+    "call to order",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "John Harrison RDA, 205 Sunset Lane (Lake Shirley)",
+   "resolution": "continued to March 6, 2019",
+   "quote": "john harrsion: continued until march 6, 2019 by a motion of td and a second by cc with a unanimous vote.",
+   "tags": [
+    "determination of applicability",
+    "continuance",
+    "rolling dock"
+   ]
+  },
+  {
+   "topic": "K & E Realty Trust NOI, 5 Electric Ave (Asian Imperial)",
+   "resolution": "continued to March 6, 2019",
+   "quote": "continued to march 6, 2019, 7 pm at the ritter building at mass ave by a motion of td.",
+   "tags": [
+    "notice of intent",
+    "continuance",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Borrego Solar NOI, 190 Electric Avenue (2.26 MW solar facility)",
+   "resolution": "continued to March 6, 2019",
+   "quote": "continued to march 6, 2019 at 7 pm in the ritter building with consent of the applicant by a motion of jr.td seconded and the commission voted unanimously.",
+   "tags": [
+    "solar",
+    "notice of intent",
+    "continuance",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Nanci Bell NOI, 51 Fire Road 19 (retaining wall)",
+   "resolution": "continued to March 6, 2019",
+   "quote": "continued to march 6, 2019 at 7 pm in the ritter building ( with consent of the applicant) with a motion of jr.td",
+   "tags": [
+    "notice of intent",
+    "continuance",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "Daniel and Jean Proctor amendment of DEP 208-1121, 380/390/400 Electric Ave",
+   "resolution": "amendment approved with added erosion condition",
+   "quote": "motion to approve amendment with additional condition that all erosion stay in place through construction of the gas station",
+   "tags": [
+    "order of conditions amendment",
+    "riverfront",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "NJLJ Properties NOI, 400 Electric Ave (fuel, convenience store, drive-thru donut shop)",
+   "resolution": "continued to March 6, 2019",
+   "quote": "hearing continued to march 6, 2019 at the ritter building by request of the applicant.",
+   "tags": [
+    "notice of intent",
+    "continuance",
+    "retail redevelopment"
+   ]
+  },
+  {
+   "topic": "Enforcement",
+   "resolution": "updates only; no action recorded",
+   "quote": "mm noted fines continue to accumulate.",
+   "tags": [
+    "enforcement",
+    "fines",
+    "violations"
+   ]
+  },
+  {
+   "topic": "New business: 5% fee for online files in wetland regulations",
+   "resolution": "concept approved",
+   "quote": "the concept for the language was approved by a motion of cl and a second by cc with a unanimous vote to approve.",
+   "tags": [
+    "wetland regulations",
+    "fees",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "New business: Saliba land acquisition proposal, Northfield Road (parcel #994)",
+   "resolution": "discussed; commission to examine alternatives and continue to pursue",
+   "quote": "commission will examine alternatives and continue to pursue .",
+   "tags": [
+    "land acquisition",
+    "open space",
+    "biomap habitat"
+   ]
+  },
+  {
+   "topic": "Old business and agent's report",
+   "resolution": "updates only; no action recorded",
+   "quote": "ada grant update mm reported that the grant is in effect and that the small town forest completion was the first step.",
+   "tags": [
+    "ADA grant",
+    "enforcement",
+    "town forest",
+    "chase road"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "no action taken",
+   "quote": "minutes of previous meetings - review and approval of january 16, 2019 & february 6- no action taken",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Communications and next meeting",
+   "resolution": "next meeting set for March 6, 2019 at 7:00 PM",
+   "quote": "next meeting is march 6, 2019 at 7:00 pm in the ritter memorial land use building 960 mass ave",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for an amendment narrative and supplemental plans with a final revision date of February 20, 2019 (Proctor amendment)",
+   "where": "list",
+   "quote": "documents considered by the commission was a request for an amendment narrative and supplemental plans with a final revision date of february 20, 2019"
+  },
+  {
+   "name": "O&M plans (updated for adjacent proposed development at 400 Electric)",
+   "where": "text",
+   "quote": "the o& m plans were updated to reflect the adjacent proposed development at 400 electric."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "notice of intent",
+  "wetlands",
+  "buffer zone",
+  "continuances",
+  "order of conditions",
+  "solar",
+  "enforcement",
+  "land acquisition",
+  "wetland regulations fee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents considered by the commission was"
+ },
+ "dropped_unquoted_by_field": {}
 }

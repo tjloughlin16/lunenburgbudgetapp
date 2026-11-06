@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-03-04",
  "docid": "4048",
@@ -12,23 +12,211 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing for the special permit for the drive-thru",
+   "motion": "Close the public hearing for the special permit for the drive-thru.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "k. chenis made motion to close the public hearing for the special permit for the drive -thru, p. bertram se conded, all aye."
   },
   {
-   "motion": "Close the public hearing for site plan approval",
+   "motion": "Close the public hearing for the site plan approval.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "k. chenis reiterated his motion to close the public hearing, t. cole seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record two procedural votes to close public hearings. A straw vote is mentioned regarding site plan approval but is explicitly labeled as a \"straw vote\" and not a formal recorded vote. No formal votes on approval or denial of the special permit or site plan are recorded in these minutes.",
- "cost_usd": 0.0885755
+ "note": "Text extraction of the continued public hearing; meeting opened 8:42 PM. Two votes recorded (both to close hearings, both all aye, counts not printed). A motion by K. Chenis to close the hearing was retracted and is not counted; a straw vote (P. Bertram, T. Cole, K. Chenis favoring site plan approval with conditions) is not a recorded vote. The minutes print 'D. Proctor' and 'Danny Proctor' at the same address without saying they are one person; they are listed separately as printed in public comment and the attendee entry is one person. No dollar figures are printed.",
+ "cost_usd": 0.00561752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Mickey Higgins",
+   "role": "the developer, representing NJLJ Properties, LLC",
+   "status": "present",
+   "quote": "njlj was represented by patrick mclaughlin, mhf design consultants, inc., salem, nh ('mhf') and the developer mickey higgins."
+  },
+  {
+   "name": "Patrick McLaughlin",
+   "role": "representing the applicant (MHF Design Consultants, Inc.)",
+   "status": "present",
+   "quote": "njlj was represented by patrick mclaughlin, mhf design consultants, inc., salem, nh ('mhf') and the developer mickey higgins."
+  },
+  {
+   "name": "Heather Monticup",
+   "role": "Greenman-Pedersen, Inc. (GPI), traffic consultant",
+   "status": "present",
+   "quote": "heather monticup, greenman -pedersen, inc. ('gpi')- presented the traffic analysis for the project."
+  },
+  {
+   "name": "Danny Proctor",
+   "role": "1529 Massachusetts Avenue (owner's family member per minutes address; minutes print D. Proctor)",
+   "status": "present",
+   "quote": "danny proctor, 1529 massachusetts avenue- he is looking forward to the new facility."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane- inquired about drainage of the water in the pump station area."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair of the Stormwater Task Force",
+   "status": "present",
+   "quote": "phyllis luck, chair of the stormwater task force- opined that a manual shutoff is not good enough."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street - stated actuated valves are very dependable."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board felt the manual shutoff process was not an adequate solution to spills and directed that further research be done by the developer.",
+   "quote": "the board felt that the manual shutoff process was not an adequate solution to spills and further research was required by the developer."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial cost of repeated continuances",
+   "what_was_recorded": "A public speaker noted the financial costs that keep adding up each time more information is requested from the applicant; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "d. proctor- noted the financial costs that continue to add up each time more information is requested."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Danny Proctor",
+   "stated_role": "1529 Massachusetts Avenue",
+   "topic": "looking forward to new facility",
+   "quote": "danny proctor, 1529 massachusetts avenue- he is looking forward to the new facility."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "drainage and automatic shutoff",
+   "quote": "carl luck, 50 sunset lane- inquired about drainage of the water in the pump station area."
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Chair of the Stormwater Task Force",
+   "topic": "manual shutoff adequacy",
+   "quote": "phyllis luck, chair of the stormwater task force- opined that a manual shutoff is not good enough."
+  },
+  {
+   "speaker": "D. Proctor",
+   "stated_role": "1529 Massachusetts Avenue",
+   "topic": "engineers found current process meets specifications",
+   "quote": "d. proctor, 1529 massachusetts avenue- stated that both the designing engineer and reviewing engineer identified the current process as meeting specifications."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "actuated valves and approval",
+   "quote": "dave passios, 56 whiting street - stated actuated valves are very dependable."
+  },
+  {
+   "speaker": "D. Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "repeated conditions and continuances",
+   "quote": "d. passios- asserted that an issue with the planning board is that even after applicants have fulfilled the necessary conditions,"
+  },
+  {
+   "speaker": "D. Proctor",
+   "stated_role": "1529 Massachusetts Avenue",
+   "topic": "financial costs of continuances",
+   "quote": "d. proctor- noted the financial costs that continue to add up each time more information is requested."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Traffic analysis presentation (GPI) for 400 Electric Avenue",
+   "resolution": "presented; no action",
+   "quote": "heather monticup, greenman -pedersen, inc. ('gpi')- presented the traffic analysis for the project."
+  },
+  {
+   "topic": "Drive-thru special permit public hearing",
+   "resolution": "hearing closed",
+   "quote": "k. chenis made motion to close the public hearing for the special permit for the drive -thru, p. bertram se conded, all aye."
+  },
+  {
+   "topic": "Site plan approval public hearing",
+   "resolution": "hearing closed",
+   "quote": "site plan approval hearing closed 10:25 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Plans revised 02.25.19",
+   "where": "list",
+   "quote": "documents used at meeting: site plans revised 02.25.19"
+  },
+  {
+   "name": "Traffic Impact Analysis dated 02.19",
+   "where": "list",
+   "quote": "traffic impact analysis dated 02.19"
+  },
+  {
+   "name": "Graves Engineering, Inc. letter dated 03.04.19",
+   "where": "list",
+   "quote": "graves engineering, inc. letter dated 03.04.19"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "400 Electric Avenue",
+  "special permit",
+  "site plan approval",
+  "drive-thru",
+  "fuel station",
+  "convenience store",
+  "stormwater",
+  "spill containment",
+  "traffic",
+  "public hearing",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-09-13",
  "docid": "5770",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the Notice of Intent for the 2018 Municipal Separate Storm Sewer System (MS4) Permit as presented",
+   "motion": "Accept the Notice of Intent (NOI) for the 2018 MS4 Permit as presented.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Phyllis Luck",
    "outcome": "passed",
@@ -20,15 +20,236 @@
    "quote": "jack rabbitt made a motion to accept the noi as presented; it was seconded by phyllis luck; all voted in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:14 pm.",
    "moved_by": "J. Rabbitt",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j. rabbitt to adjourn the meeting at 8:14 pm. 2nd: p. luck vote: all in favor"
+   "quote": "to adjourn the meeting at 8:14 pm. 2nd: p. luck vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Two votes recorded: one substantive motion on the MS4 Notice of Intent, one procedural motion to adjourn.",
- "cost_usd": 0.0857075
+ "note": "Text is macOS Vision OCR with some errors (e.g. 'S WMP', 'SWIf', 'DP W'); figures and names are as printed. The minutes contain no attendance roll, so status is 'present' only where the minutes record the person acting or speaking, and 'not stated' for people only referred to. Only two motions are recorded; the first passed with 'all voted in favor' and no count printed. No dollar figures, public comment section, or document list heading appear.",
+ "cost_usd": 0.008953309999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF; Member, BOS",
+   "status": "present",
+   "quote": "phyllis luck, chair swtf member, bos"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack rabbitt reported that the outreach effort with the hickory hills gardening club was a huge success."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, working with the design consultants, inc. (dci) will ensure that this happens in a timely manner to meet the september 29, 2018 deadline."
+  },
+  {
+   "name": "Mike Clark",
+   "role": "Consultant",
+   "status": "present",
+   "quote": "it was also pointed out by consultant mike clark that the town must designate a swmp team coordinator"
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ed himlan provided a sample survey disseminated by the town of harrison, new york."
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "adam burney and phyllis luck will meet with town manager lemieux to discuss this critical role."
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DP W Director",
+   "status": "not stated",
+   "quote": "he is also working with dp w director rodriquenz to accomplish this important step of recording data in the field."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Burney, working with Design Consultants, Inc. (DCI), will ensure the NOI is sent electronically and in paper copy in time to meet the September 29, 2018 deadline, after the Town Manager signs.",
+   "quote": "adam burney, working with the design consultants, inc. (dci) will ensure that this happens in a timely manner to meet the september 29, 2018 deadline."
+  },
+  {
+   "decision": "Adam Burney and Phyllis Luck will meet with Town Manager Lemieux to discuss the SWMP Team Coordinator role.",
+   "quote": "adam burney and phyllis luck will meet with town manager lemieux to discuss this critical role."
+  },
+  {
+   "decision": "The SWTF will bring the SWMP to the Board of Selectmen for review after the first of the year.",
+   "quote": "the swtf will be bringing the swmp to them for review after the first of the year."
+  },
+  {
+   "decision": "Schedule of SWMP task completion dates must be followed throughout the life of the MS4 Permit.",
+   "quote": "this schedule of completion dates must be followed throughout the life of the ms4 permit for all actions completed to fulfill the town's obligations"
+  },
+  {
+   "decision": "A minor change in terminology is required in MCM 1 so the SWMP terminology is consistent.",
+   "quote": "it was determined that a minor change in terminology was required to insure that the swmp's terminology is consistent throughout."
+  },
+  {
+   "decision": "Measurable goals need to be added to Appendix H, Phosphorus.",
+   "quote": "it was ascertained that measurable goals need to be added."
+  },
+  {
+   "decision": "Adam Burney asked to add the THINK BLUE MASSACHUSETTS link to the SWTF website as soon as possible.",
+   "quote": "it was requested that he add the think blue massachusetts link to the website as soon as possible."
+  },
+  {
+   "decision": "Jack Rabbitt will provide pictures of the Hickory Hills Gardening Club event for possible inclusion in the MS4 Annual Report.",
+   "quote": "he will provide pictures of the event which may be added to the ms4 annual report as an attachment."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Notice of Intent for 2018 MS4 Permit",
+   "resolution": "approved as presented",
+   "quote": "jack rabbitt made a motion to accept the noi as presented; it was seconded by phyllis luck; all voted in favor.",
+   "tags": [
+    "NOI",
+    "MS4 permit",
+    "vote"
+   ]
+  },
+  {
+   "topic": "Stormwater Management Plan and SWMP Team Coordinator",
+   "resolution": "discussed; Burney and Luck to meet Town Manager",
+   "quote": "a discussion of the stormwater management plan (swmp) ensued.",
+   "tags": [
+    "SWMP",
+    "coordinator",
+    "BOS"
+   ]
+  },
+  {
+   "topic": "Task completion dates",
+   "resolution": "no action; schedule must be followed",
+   "quote": "regarding dates for task completion, it was shared that if a task is shown on the s wmp to be completed in 2019",
+   "tags": [
+    "SWMP",
+    "annual report",
+    "deadlines"
+   ]
+  },
+  {
+   "topic": "MCM 1 Public Outreach and Education",
+   "resolution": "minor terminology change required",
+   "quote": "there was a review of minimum control measure (mcm) 1, public outreach and education.",
+   "tags": [
+    "MCM 1",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "MCM 2 Public Involvement and Participation",
+   "resolution": "survey planned for 2019",
+   "quote": "the survey will be posted on the town's website and town facebook page in 2019 and survey responses will be tracked.",
+   "tags": [
+    "MCM 2",
+    "public survey"
+   ]
+  },
+  {
+   "topic": "Appendix H Phosphorus",
+   "resolution": "measurable goals to be added; outfall ranking underway",
+   "quote": "it was ascertained that measurable goals need to be added.",
+   "tags": [
+    "phosphorus",
+    "fertilizer",
+    "outfalls"
+   ]
+  },
+  {
+   "topic": "SWTF website and THINK BLUE link",
+   "resolution": "link to be added as soon as possible",
+   "quote": "it was requested that he add the think blue massachusetts link to the website as soon as possible.",
+   "tags": [
+    "website",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "MRPC data management training",
+   "resolution": "no action; update at next meeting",
+   "quote": "land use director burney is in discussions with the montachusett regional planning commission (mrpc) regarding data management training assistance.",
+   "tags": [
+    "data management",
+    "MRPC",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Gardening Club outreach report",
+   "resolution": "reported; pictures to be provided",
+   "quote": "jack rabbitt reported that the outreach effort with the hickory hills gardening club was a huge success.",
+   "tags": [
+    "outreach",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Fourth quarter meeting schedule",
+   "resolution": "noted",
+   "quote": "meeting schedule for the fourth quarter: october 4 and 25; november 1 and 29; december 6.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent (NOI) for the 2018 Municipal Separate Storm Sewer System (MS4) Permit",
+   "where": "text",
+   "quote": "there was a discussion on the notice of intent (noi) for the 2018 municipal separate storm sewer system (ms4) permit"
+  },
+  {
+   "name": "Stormwater Management Plan (SWMP)",
+   "where": "text",
+   "quote": "a discussion of the stormwater management plan (swmp) ensued."
+  },
+  {
+   "name": "MS4 Annual Report",
+   "where": "text",
+   "quote": "he will provide pictures of the event which may be added to the ms4 annual report as an attachment."
+  },
+  {
+   "name": "Sample survey disseminated by the Town of Harrison, New York",
+   "where": "text",
+   "quote": "ed himlan provided a sample survey disseminated by the town of harrison, new york."
+  },
+  {
+   "name": "Appendix H, Phosphorus",
+   "where": "text",
+   "quote": "there was some discussion of appendix h, phosphorus."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "notice of intent",
+  "stormwater management plan",
+  "public outreach",
+  "phosphorus",
+  "website",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-01-16",
  "docid": "5788",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "adjourn the meeting at 12:35 pm",
+   "motion": "To adjourn the meeting at 12:35 pm.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Phyllis Luck",
    "outcome": "passed",
@@ -21,6 +21,256 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd from a town clerk filing. The adjournment is the only motion voted on; the rest of the meeting consists of discussion and consensus on proposals but no recorded votes on any substantive matters.",
- "cost_usd": 0.0933905
+ "note": "Minutes text is OCR and partly garbled (e.g., names of the Rodriquenz letter and some table labels). No roll call or attendance list, so attendance is inferred only from participation. The narrative on page 1 carries the minutes; pages 2-7 are cost-estimate sheets and pages 8-18 are DCi proposal letters, included in the extracted text but not voted on. Page 15 shows the second proposal dated 2018 12 14 per file name, while the minutes say proposals were received 1/1/19. No votes other than adjournment are recorded, and the vote outcome is only printed as \"All in Favor\" (recorded as passed).",
+ "cost_usd": 0.00940732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF; Member, BOS",
+   "status": "present",
+   "quote": "respectfully submitted, phyllis luck, chair swtf member, bos"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director rodriquenz posed that this was a question for the contractor"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney offered several reasons why the contractor may have separated the two seemingly intertwined proposals."
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager lemieux felt that the town's employees did not have sufficient time to assist with any of these tasks."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: jack rabbitt to adjourn the meeting at 12:35 pm."
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "MWC representative",
+   "status": "not stated",
+   "quote": "phyllis luck pointed out that the hourly rate for mwc representative ed himlan, had gone from $50 to $90"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "DCI representative; originator of the proposals",
+   "status": "not stated",
+   "quote": "set up a meeting with mike clark, originator of the proposals, to discuss further."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The proposals were determined to need negotiation and/or re-scoping because they exceeded the funds available in the FY19 budget.",
+   "quote": "it was determined that the proposals needed to be negotiated and/or re-scoped as they exceeded the $40,000 - $50,000 that the town has available within the fy19 budget."
+  },
+  {
+   "decision": "Seeking other quotes was not pursued because there was not enough time to do so and complete Year One requirements; the best course was to review the proposals closely and seek cuts and renegotiation.",
+   "quote": "consensus was that there wasn't enough time to do that and complete the year one requirements of the ms4 permit"
+  },
+  {
+   "decision": "Clarification from the contractor was needed on why the work was split into two proposals.",
+   "quote": "therefore, clarification from the contractor was needed."
+  },
+  {
+   "decision": "Phyllis Luck agreed to set up a meeting with Mike Clark, suggested by the Town Manager with Rodriquenz and Burney.",
+   "quote": "phyllis luck offered to set up the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY19 funds available for the MS4 permit work",
+   "what_was_recorded": "The group said the proposals exceeded the funds the Town has available within the FY19 budget.",
+   "figures_as_printed": [
+    "$40,000 - $50,000"
+   ],
+   "quote": "exceeded the $40,000 - $50,000 that the town has available within the fy19 budget."
+  },
+  {
+   "topic": "Hourly rate increases in the proposals",
+   "what_was_recorded": "Luck noted the MWC representative's hourly rate rose from $50 to $90 and the DCI representative's from $100 to $150.",
+   "figures_as_printed": [
+    "$50 to $90",
+    "$100 to $150"
+   ],
+   "quote": "the rate for dci representative mike clark, from $100 to $150."
+  },
+  {
+   "topic": "Year One proposal (MCM 3 and 6 plus meetings) total fee",
+   "what_was_recorded": "The first DCi Year One proposal lists task fees and a total compensation figure of $49,000.",
+   "figures_as_printed": [
+    "$2,500",
+    "$5,500",
+    "$5,000",
+    "$25,000",
+    "$5,000",
+    "$6,000",
+    "$49,000"
+   ],
+   "quote": "task 6: meetings and coordination total $2,500 $5,500 •$5,000 .. $25,000 -$5,000 $6,000 $49,000"
+  },
+  {
+   "topic": "Reimbursable expenses in the first proposal",
+   "what_was_recorded": "Reimbursable expenses are excluded from the first proposal's amounts and are estimated not to exceed a stated figure.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "all reimbursable expenses (prints, telephones, postage, mileage, and regulations, etc.) are not included in the above amounts and are estimated not to exceed $1,000"
+  },
+  {
+   "topic": "Year One proposal (MCM 6 and meetings and on-call) total fee",
+   "what_was_recorded": "The second DCi Year One proposal lists task fees and a total compensation figure of $23,000.",
+   "figures_as_printed": [
+    "$3,000",
+    "$10,000",
+    "$5,000",
+    "$5,000",
+    "$23,000"
+   ],
+   "quote": "task 4: on-call consulting ..... total $3,000 $10,000 $5,000 $5,000 $23,000"
+  },
+  {
+   "topic": "On-call consulting budget range",
+   "what_was_recorded": "On-call consulting tasks are expected to fall in a stated dollar range, with scope and budget to be formalized by email.",
+   "figures_as_printed": [
+    "$500 to $1,000"
+   ],
+   "quote": "the scope and budget will be formalized by email as the tasks are expected to in the $500 to $1,000 range."
+  },
+  {
+   "topic": "Five-year permit cost estimate summary total",
+   "what_was_recorded": "The DCi cost estimate summary sheet, stamped received and filed Jan 30 2019, shows a total of 442,100.",
+   "figures_as_printed": [
+    "442,100"
+   ],
+   "quote": "25,000 30,000 442,100 442,100 received & filed jan 30 2019"
+  },
+  {
+   "topic": "Cost estimate yearly sheet total (first sheet)",
+   "what_was_recorded": "One yearly sheet of the DCi Years 1-5 cost estimate shows a total of $74,100.",
+   "figures_as_printed": [
+    "$ 74,100"
+   ],
+   "quote": "5,000 7,150 5,000 6,000 $ 74,100"
+  },
+  {
+   "topic": "Cost estimate yearly sheet total (second sheet)",
+   "what_was_recorded": "One yearly sheet of the DCi cost estimate shows a total of $107,600.",
+   "figures_as_printed": [
+    "$ 107,600"
+   ],
+   "quote": "10,000 5,000 6,000 $ 107,600"
+  },
+  {
+   "topic": "Cost estimate yearly sheet total (third sheet)",
+   "what_was_recorded": "One yearly sheet of the DCi cost estimate shows a total of $100,800.",
+   "figures_as_printed": [
+    "$ 100,800"
+   ],
+   "quote": "$ 10,000 $ 5,000 $ 6,000 $ 100,800"
+  },
+  {
+   "topic": "Cost estimate yearly sheet total (fourth sheet)",
+   "what_was_recorded": "One yearly sheet of the DCi cost estimate shows a total of $95,600.",
+   "figures_as_printed": [
+    "$ 95,600"
+   ],
+   "quote": "$ 10,000 $ 5,000 6,000 $ 95,600"
+  },
+  {
+   "topic": "Cost estimate yearly sheet total (fifth sheet)",
+   "what_was_recorded": "One yearly sheet of the DCi cost estimate shows a total of 64,000.",
+   "figures_as_printed": [
+    "64,000"
+   ],
+   "quote": "21,000 5,000 10,000 5,000 6,000 64,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of two DCi Year One proposals",
+   "resolution": "discussed; to be renegotiated or re-scoped; contractor to clarify",
+   "quote": "there was consensus among the group that the proposals were not cost effective for lunenburg.",
+   "tags": [
+    "proposals",
+    "MS4 permit",
+    "cost"
+   ]
+  },
+  {
+   "topic": "DCi Years 1-5 cost estimate",
+   "resolution": "discussed; found beyond Town funding; in-house options raised",
+   "quote": "the consensus was that these estimates were beyond the town's funding ability.",
+   "tags": [
+    "cost estimate",
+    "public education",
+    "in-house"
+   ]
+  },
+  {
+   "topic": "Seeking other quotes",
+   "resolution": "not pursued; not enough time",
+   "quote": "there was discussion about seeking other quotes for the work, but consensus was that there wasn't enough time",
+   "tags": [
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Follow-up meeting with DCi",
+   "resolution": "no vote; Luck to arrange meeting with Mike Clark",
+   "quote": "the town manager suggested that dpw director rodriquenz, land use director adam burney, and swtf chair phyllis luck set up a meeting with mike clark",
+   "tags": [
+    "contractor",
+    "meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposal for YEAR ONE 2018-2019 Management (SWTF) MS4 Permit",
+   "where": "text",
+   "quote": "proposal for year one 2018-2019 management (swtf) ms4 permit and proposal for year one 2018- 2019 management ms4 permit, both received by the swtf on 1/1/19."
+  },
+  {
+   "name": "Proposal for YEAR ONE 2018-2019 Management MS4 Permit",
+   "where": "text",
+   "quote": "proposal for year one 2018- 2019 management ms4 permit, both received by the swtf on 1/1/19."
+  },
+  {
+   "name": "DCI Cost Estimate For: Town of Lunenburg's General Permit Small MS4 Permit, Years 1 - 5, and Summary",
+   "where": "text",
+   "quote": "latest version of dci's \"cost estimate for: town of lunenburg's general permit small ms4 permit, years 1 - 5, and summary, received via email earlier today."
+  },
+  {
+   "name": "DCI Proposals and Cost Estimators",
+   "where": "list",
+   "quote": "attachments: dci proposals and cost estimators"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "DCi consultant proposals",
+  "FY19 budget",
+  "cost reduction",
+  "Stormwater Task Force",
+  "Year One"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments"
+ },
+ "dropped_unquoted_by_field": {}
 }

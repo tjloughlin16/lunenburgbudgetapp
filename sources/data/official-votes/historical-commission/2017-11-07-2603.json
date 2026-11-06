@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2017-11-07",
  "docid": "2603",
@@ -12,6 +12,194 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes describe discussions, reports, and informal agreements (McGrath willing to reconsider his offer, Dwyer agreeing to contact Tyler, Lantry to speak to town manager, Dwyer to act as clerk) but contain no motion language, voting language, or recorded formal votes. Text ends with \"ADJOURNMENT: 8PM\" without motion or vote language.",
- "cost_usd": 0.0795285
+ "note": "OCR text from a macOS Vision scan with errors (e.g., \"act ask clerk\", duplicated \"buildings on\", \"Septem-\" and \"work-\" split across lines). The minutes record no motions or votes, so votes is empty. The minutes end mid-sentence on page 1 (\"the APDC\"); page 2 contains only \"ADJOURNMENT: 8PM\", which is too short to serve as a quote, so adjournment is noted here rather than as a topic. Only the three named people present are listed as attendees; Rodriquenz, Tyler, Louise and the Planning Board are mentioned but did not appear as taking part.",
+ "cost_usd": 0.00360282,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lantry",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:38."
+  },
+  {
+   "name": "McGrath",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mcgrath, and dwyer present"
+  },
+  {
+   "name": "Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mcgrath, and dwyer present"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review of the September minutes was postponed because Lantry did not have a copy.",
+   "quote": "lantry did not have a copy of the minutes from the septem-"
+  },
+  {
+   "decision": "McGrath postponed physical work on the town pound until spring.",
+   "quote": "mcgrath postponed physical work on the town pound until spring"
+  },
+  {
+   "decision": "The Commission agreed it was interested in learning the location of the family burial plot, the names of those buried there, and assisting in its protection and restoration.",
+   "quote": "the commission agreed that it was interested in learning the location of the plot, the names of those"
+  },
+  {
+   "decision": "Dwyer agreed to contact William Tyler about the old family burial plot.",
+   "quote": "dwyer agreed to contact tyler about the matter."
+  },
+  {
+   "decision": "Lantry will speak to the town manager about whether town funds were allocated to the commission.",
+   "quote": "lantry said she would speak to the town manager about it."
+  },
+  {
+   "decision": "Lantry will ask the Historical Society whether any members are interested in serving on the Historic Commission, following Lois Louise's resignation.",
+   "quote": "lantry will ask the historic society if any members are interested in serving on the historic commission."
+  },
+  {
+   "decision": "Dwyer will, for now, act as clerk in Louise's stead.",
+   "quote": "dwyer will, for now, act ask clerk in louise's stead."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Historic commission funds for town projects",
+   "what_was_recorded": "The commission may have funds to help with the pound, tomb and Fish Street cemetery projects, but it was unclear whether town funds were allocated to the commission as in the prior year.",
+   "figures_as_printed": [],
+   "quote": "historic commission may have funds available to help with these projects, though it was not clear if town funds had been allocated"
+  },
+  {
+   "topic": "Council on Aging Senior Citizen Tax Work Off Program request",
+   "what_was_recorded": "Received a Council on Aging request for the commission to participate in the Senior Citizen Tax Work Off Program; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "council on aging: request for participation in senior citizen tax work off program"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "postponed",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review of minutes: october meeting was canceled. lantry did not have a copy of the minutes from the septem-"
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted; no action",
+   "tags": [
+    "correspondence",
+    "planning board",
+    "council on aging"
+   ],
+   "quote": "planning board: notice of decision to approve construction at 40 pioneer drive"
+  },
+  {
+   "topic": "Old business: Town Pound",
+   "resolution": "postponed to spring",
+   "tags": [
+    "town pound",
+    "tree warden"
+   ],
+   "quote": "update on town pound: mcgrath postponed physical work on the town pound until spring"
+  },
+  {
+   "topic": "Old business: Town Tomb Project",
+   "resolution": "discussed; McGrath asked to reconsider withdrawn offer",
+   "tags": [
+    "town tomb",
+    "cemetery commission"
+   ],
+   "quote": "update on town tomb project: rodriquenz also told mcgrath that he is the superintendent of all buildings"
+  },
+  {
+   "topic": "Old business: family burial plot and Fish Street cemetery",
+   "resolution": "Dwyer to contact Tyler",
+   "tags": [
+    "cemetery",
+    "burial plot",
+    "restoration"
+   ],
+   "quote": "the commission agreed that it was interested in learning the location of the plot, the names of those"
+  },
+  {
+   "topic": "Historic Marker Project",
+   "resolution": "noted; no action",
+   "tags": [
+    "historic marker",
+    "national register",
+    "bronze plaques"
+   ],
+   "quote": "lantry reported that thirteen respondents have requested bronze plaques"
+  },
+  {
+   "topic": "New business: resignation of Lois Louise",
+   "resolution": "Lantry to ask Historical Society for members; Dwyer to act as clerk",
+   "tags": [
+    "membership",
+    "resignation"
+   ],
+   "quote": "lois louise has submitted her resignation from the historic commission."
+  },
+  {
+   "topic": "New business: letter to the BoS about APD",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "APD",
+    "bylaw",
+    "board of selectmen"
+   ],
+   "quote": "lantry read mcgrath's letter to the bos, explaining the difficulties that the apd faced"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Planning Board notice of two public hearings 11-13",
+   "where": "list",
+   "quote": "planning board: notice of two public hearings 11-13, not of concern to the commission"
+  },
+  {
+   "name": "Planning Board notice of decision to approve construction at 40 Pioneer Drive",
+   "where": "list",
+   "quote": "planning board: notice of decision to approve construction at 40 pioneer drive"
+  },
+  {
+   "name": "Planning Board notice of public hearing 10-23",
+   "where": "list",
+   "quote": "planning board: notice of public hearing 10-23, not of concern"
+  },
+  {
+   "name": "Council on Aging request for participation in Senior Citizen Tax Work Off Program",
+   "where": "list",
+   "quote": "council on aging: request for participation in senior citizen tax work off program"
+  },
+  {
+   "name": "McGrath's letter to the BoS on the APD",
+   "where": "text",
+   "quote": "lantry read mcgrath's letter to the bos, explaining the difficulties that the apd faced"
+  }
+ ],
+ "tags": [
+  "historic commission",
+  "town pound",
+  "town tomb",
+  "cemetery",
+  "burial plot",
+  "historic marker",
+  "membership resignation",
+  "correspondence",
+  "APD bylaw"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

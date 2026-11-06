@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-08-01",
  "docid": "5587",
@@ -12,39 +12,142 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session to discuss strategy regarding litigation regarding enforcement of the Allocation Agreement between the Sewer Commission and JEG Holdings",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "motion": "Enter executive session to discuss litigation strategy regarding enforcement of the Allocation Agreement with JEG Holdings (G.L. c. 30A s 21(a)(3)).",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "roll call vote: john r. - yes, joe a. - yes, carl l. - yes"
   },
   {
-   "motion": "Amend the Highfield Village agreement to provide for equal payments over 20 years with the condition that if the property sells, the outstanding amount would payable in full at that time",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "To amend the Highfield Village agreement to provide for equal payments over 20 years, with the outstanding amount payable in full if the property sells.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "quote": "motion: john r. second: joe a. to amend the highfield village agreement to provide for equal payments over 20 years with the condition that if the property sells, the outstanding amount would payable in full at that time. discussion: none vote: unanimous"
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "motion: john r. second: joe a. to amend the highfield village agreement to provide for equal payments over 20 years"
   },
   {
-   "motion": "Present to the Board of Selectmen that the Sewer Commission would like to stay with Kopelman and Paige for the drafting of an amendment to Highfield Village to spread the payments equally over 20 years payable in full at the time of sale",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "To present to the Board of Selectmen that the Sewer Commission would like to stay with Kopelman and Paige for drafting the Highfield Village amendment.",
    "moved_by": "John Reynolds",
    "seconded_by": "Troy D.",
-   "quote": "motion: john reynolds second: troy d. to present to the board of selectmen that the sewer commission would like to stay with kopelman and paige for the drafting of an amendment to highfield village to spread the payments equally over 20 years payable in full at the time of sale. vote: unanimous"
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "motion: john reynolds second: troy d. to present to the board of selectmen that the sewer commission would like to stay with kopelman and paige"
   },
   {
-   "motion": "End executive session at 6:45 and return to open meeting",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "End executive session at 6:45 and return to open meeting.",
    "moved_by": "John R.",
    "seconded_by": "",
-   "quote": "motion: john r. to end executive session at 6:45 and return to open meeting discussion: none roll call vote: john r. - yes, troy d. - yes, joe a. - yes, carl l. - yes"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to end executive session at 6:45 and return to open meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision; text is readable. Minor transcription artifact: \"will dento\" (likely \"Emily Lehto\") in signature line.",
- "cost_usd": 0.1213385
+ "note": "Single page of OCR text (PAGE 1 only); the header line is garbled (\"Village\") and the start of the meeting, including the motion to enter executive session, is not printed; only its purpose and roll call appear. \"John R.\" and \"John Reynolds\" appear to be the same member but are printed differently. The minutes name the counterparty as \"JEG Holdings\" in the purpose statement and \"JEH Holding\" in the discussion. The OCR of the signature line is garbled. No public comment, approval of prior minutes, or adjournment vote is recorded. Vote counts are given only as roll calls or \"Unanimous\", so no numeric tally is stated for the motions.",
+ "cost_usd": 0.00453022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John R.",
+   "role": "Commission member (named as John Reynolds in one motion)",
+   "status": "present",
+   "quote": "roll call vote: john r. - yes, joe a. - yes, carl l. - yes"
+  },
+  {
+   "name": "Joe A.",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "roll call vote: john r. - yes, joe a. - yes, carl l. - yes"
+  },
+  {
+   "name": "Carl L.",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "carl l. provided input from a discussion he had had with town counsel."
+  },
+  {
+   "name": "Troy D.",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "troy d. arrived at 6:37pm."
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minutes Assistant",
+   "status": "not stated",
+   "quote": "emily lehto, minutes assistant"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Highfield Village payment schedule",
+   "what_was_recorded": "The Commission voted to amend the Highfield Village agreement so the amount owed is paid in equal installments over 20 years, with the outstanding balance due in full on sale; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "to amend the highfield village agreement to provide for equal payments over 20 years with the condition that if the property sells, the outstanding amount would payable in full at that time."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session on enforcement of Allocation Agreement (JEG Holdings)",
+   "resolution": "entered executive session; returned to open meeting at 6:45",
+   "tags": [
+    "executive session",
+    "litigation",
+    "Allocation Agreement"
+   ],
+   "quote": "to discuss strategy with respect to litigation pursuant to g.l. c. 30a s 21(a)(3) regarding"
+  },
+  {
+   "topic": "Highfield Village agreement amendment",
+   "resolution": "amendment approved: equal payments over 20 years, payable in full on sale",
+   "tags": [
+    "Highfield Village",
+    "payment plan",
+    "sewer"
+   ],
+   "quote": "to amend the highfield village agreement to provide for equal payments over 20 years"
+  },
+  {
+   "topic": "Counsel for drafting the Highfield Village amendment",
+   "resolution": "approved staying with Kopelman and Paige; to be presented to Board of Selectmen",
+   "tags": [
+    "legal counsel",
+    "Kopelman and Paige",
+    "Board of Selectmen"
+   ],
+   "quote": "would like to stay with kopelman and paige for the drafting of an amendment to highfield village"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Allocation Agreement (between the Sewer Commission and JEG Holdings)",
+   "where": "text",
+   "quote": "enforcement of the allocation agreement between the sewer commission and jeg holdings"
+  },
+  {
+   "name": "Highfield Village agreement",
+   "where": "text",
+   "quote": "to amend the highfield village agreement to provide for equal payments over 20 years"
+  }
+ ],
+ "tags": [
+  "Highfield Village",
+  "sewer allocation agreement",
+  "executive session",
+  "litigation",
+  "payment plan",
+  "legal counsel",
+  "Kopelman and Paige"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

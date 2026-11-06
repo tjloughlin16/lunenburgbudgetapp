@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-02-28",
  "docid": "5791",
@@ -12,16 +12,329 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting at 7:15",
+   "motion": "To adjourn the meeting at 7:15.",
    "moved_by": "M. Allison",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "seconded_by": "Phyllis Luck",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: m. allison to adjourn the meeting at 7:15. respectfully submi",
-   "quote_taken_from_text": true
+   "quote": "motion: m. allison to adjourn the meeting at 7:15."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Only one vote recorded: the adjournment motion.",
- "cost_usd": 0.0944355
+ "note": "OCR text (macOS Vision) with errors such as 'DP W', 'conterence', and a missing sentence at the page 2-3 break; the text is cut off after 'It was agreed that the Town has no obligation to' and page 3 begins mid-sentence. The only recorded motion is the adjournment; its result is printed as 'Vote: All in Favor' with no count. The meeting date 2019-02-28 is not printed in the minutes text. Carl Luck is named as leaving with the Town Manager; his status is inferred as present. Mike Clark (DCI), Town Counsel Costa, DPW Director Rodriquenz and Governor Baker are mentioned but not recorded as taking part, so they are omitted from attendees.",
+ "cost_usd": 0.008356619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Task Force Chair",
+   "status": "present",
+   "quote": "task force chair phyllis luck asked if anyone present wanted to make a comment."
+  },
+  {
+   "name": "Matt Allison",
+   "role": "",
+   "status": "present",
+   "quote": "matt allison asked the town manager about the stormwater budget within dpw."
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "ms. lemieux stated that the $500,000 that was included in the pavement management debt exclusion"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "",
+   "status": "present",
+   "quote": "adam burney relayed that the consultants stated the new annual report was more comprehensive"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "the town manager and carl luck left to attend the finance committee meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DCI agreed that updates to the Cost Estimator over the 5-year span will be at no charge; the Town Manager said DCI agreed to put this in writing.",
+   "quote": "dci agreed that updates to the cost estimator, over the 5 year span, will be at no charge."
+  },
+  {
+   "decision": "The Town Manager will share the DCI invoices with the SWTF after requesting more detail on them.",
+   "quote": "she will share those invoices with the swtf."
+  },
+  {
+   "decision": "The group agreed the Town has no obligation to the DCI proposal; the text is cut off in the minutes at this point.",
+   "quote": "it was agreed that the town has no obligation to"
+  },
+  {
+   "decision": "Creating a plan for the successor entity to the SWTF, and planning the report to the November Town Meeting, were deferred until all Task Force members are present.",
+   "quote": "it was felt that this, as well as planning a report to be given to the november town meeting on the work of the swtf should wait for all task force members to be present"
+  },
+  {
+   "decision": "Two funding options for MS4 Permit mandates were identified: funding within the budget, or creating a Stormwater Utility or Enterprise Fund.",
+   "quote": "it was determined there are basically 2: funding within the budget or creating a stormwater utility or enterprise fund."
+  },
+  {
+   "decision": "Chair Luck's contact with the DPW Director is to be sought; the Chair will reach out to the DPW Director about the SWTF meeting at the DPW building.",
+   "quote": "he will reach out to the dpw director to see if that is of interest."
+  },
+  {
+   "decision": "DPW Director Rodriquenz should be contacted ASAP about a Spring Town Clean-up this year (Adam Burney's view, no vote recorded).",
+   "quote": "adam burney felt that dpw director rodriquenz should be contacted asap to see if such was achievable for this year."
+  },
+  {
+   "decision": "The next scheduled meeting is set for March 28 at 6:00 pm, with 2nd-quarter meetings on April 25, May 23, and June 13; additional meetings, if required, go on the second Thursday of the month.",
+   "quote": "it was determined that the next scheduled meeting will be march 28 at 6:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stormwater budget within DPW",
+   "what_was_recorded": "The Town Manager reported that the $500,000 in the Pavement Management Debt Exclusion for Stormwater has been expended, and that DPW's budget has line items for drainage and catch basin cleaning.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "ms. lemieux stated that the $500,000 that was included in the pavement management debt exclusion"
+  },
+  {
+   "topic": "Task 1 Small MS Permit Cost Estimator",
+   "what_was_recorded": "The proposal lists the Small MS Permit Cost Estimator task at $2,500.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "task 1 - small ms permit cost estimator, $2,500."
+  },
+  {
+   "topic": "Task 3 IDDE draft program",
+   "what_was_recorded": "The proposal describes a draft IDDE program for $20,000.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "describes a draft idde program for $20,000, consisting basically of"
+  },
+  {
+   "topic": "IDDE engineering over five years",
+   "what_was_recorded": "IDDE work in the Cost Estimator is quoted at $135,000 for years 1 through 3 and another $51,000 for years 4 and 5, estimated at $186,000 over the permit's five years.",
+   "figures_as_printed": [
+    "$135,000",
+    "$51,000",
+    "$186,000"
+   ],
+   "quote": "idde work as proposed in the cost estimator for years 1 through 3 is quoted at $135,000, with another"
+  },
+  {
+   "topic": "Task 4 MCM 6 Good Housekeeping",
+   "what_was_recorded": "The proposal lists Good Housekeeping at $8,000.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "task 4 - mcm 6: good housekeeping $8,000."
+  },
+  {
+   "topic": "DPW Meetings and Coordination",
+   "what_was_recorded": "The DPW meetings and coordination cost is $6,000, the same as in Years 2 through 5; because the proposal covers 4 months, it was asked whether the cost should be $2,000.",
+   "figures_as_printed": [
+    "$6,000",
+    "$2,000"
+   ],
+   "quote": "$6,000 is the same price spelled out in the cost estimator for dp w meetings & coordination in each of years 2 through 5"
+  },
+  {
+   "topic": "Task 7 SWMP draft and final",
+   "what_was_recorded": "The SWMP task is shown at a cost of $5,000.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "task 7 - swmp, draft, due february 2019, final due june 30, 2019 at a cost of $5,000."
+  },
+  {
+   "topic": "Year 2 Annual Report",
+   "what_was_recorded": "The first Annual Report under the new MS4 Permit is shown at $5,500, versus $2,000 and $2,200 for the two prior DCI Annual Reports.",
+   "figures_as_printed": [
+    "$5,500",
+    "$2,000",
+    "$2,200"
+   ],
+   "quote": "the annual report, the first under the new ms4 permit is shown at a cost of $5,500."
+  },
+  {
+   "topic": "Year 2 Annual SWMP update",
+   "what_was_recorded": "The annual SWMP update is shown at $5,000; DCI was willing to look into lowering it.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "the annual swmp update is shown at $5,000; dci was willing to look into this"
+  },
+  {
+   "topic": "Year 2 MCM3 IDDE engineering",
+   "what_was_recorded": "Engineering costs for the Year 2 IDDE program are $62,000, pending a revised Estimator.",
+   "figures_as_printed": [
+    "$62,000"
+   ],
+   "quote": "mcm3 idde program, engineering costs are $62,000 for year 2"
+  },
+  {
+   "topic": "SWTF meetings cost",
+   "what_was_recorded": "If there are quarterly meetings, the SWTF meetings cost should be much lower than $10,000, more like $3,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$3,000"
+   ],
+   "quote": "swtf meetings, if there are quarterly meetings, the cost should be much lower than $10,000; more"
+  },
+  {
+   "topic": "Year 2 total engineering cost",
+   "what_was_recorded": "The Year 2 total engineering cost per the Estimator is $107,600; Adam Burney stated the figure was reduced to $98,600 at the 2/4/19 discussion.",
+   "figures_as_printed": [
+    "$107,600",
+    "$98,600"
+   ],
+   "quote": "the total cost, as per estimator, is $107,600 for engineering work in year 2; adam burney stated"
+  },
+  {
+   "topic": "Funding sources for MS4 mandates",
+   "what_was_recorded": "Discussion identified two basic funding routes, within the budget or a Stormwater Utility or Enterprise Fund; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "it was determined there are basically 2: funding within the budget or creating a stormwater utility or enterprise fund."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Stormwater budget within DPW",
+   "speaker": "Matt Allison",
+   "quote": "matt allison asked the town manager about the stormwater budget within dpw."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening comment and Stormwater budget question",
+   "resolution": "discussed; Town Manager to pass DCI remarks to the SWTF",
+   "quote": "matt allison asked the town manager about the stormwater budget within dpw.",
+   "tags": [
+    "budget",
+    "DPW",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "DCI Proposal for Year One 2018-2019 Management",
+   "resolution": "reviewed task by task; clarifications requested",
+   "quote": "phyllis luck began the discussion on the dci proposal for year one 2018-2019 management, dated",
+   "tags": [
+    "DCI",
+    "MS4 permit",
+    "consultant proposal"
+   ]
+  },
+  {
+   "topic": "Year 2 Cost Estimator and consultant bids",
+   "resolution": "no action; awaiting revised Estimator; additional bids suggested",
+   "quote": "the discussion then moved on to the year 2 cost estimator; since the revised year 2 estimator had not",
+   "tags": [
+    "DCI",
+    "cost estimator",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Relationship with DPW",
+   "resolution": "discussed; outreach to DPW Director to be made",
+   "quote": "between he and the swtf had deteriorated, and looked forward to working to improve this",
+   "tags": [
+    "DPW",
+    "relationship"
+   ]
+  },
+  {
+   "topic": "Plan for successor entity and November Town Meeting report",
+   "resolution": "deferred until all members present",
+   "quote": "the group then turned to the creation of a plan for the future entity that will replace the swtf.",
+   "tags": [
+    "successor entity",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Funding source options for MS4 Permit",
+   "resolution": "two options identified; no action",
+   "quote": "it was determined there are basically 2: funding within the budget or creating a stormwater utility or enterprise fund.",
+   "tags": [
+    "funding",
+    "enterprise fund",
+    "stormwater utility"
+   ]
+  },
+  {
+   "topic": "Spring Town Clean-up",
+   "resolution": "discussed; DPW Director to be contacted",
+   "quote": "the group then turned to the organization of a spring town clean-up.",
+   "tags": [
+    "clean-up",
+    "lakes",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for March 28; 2nd-quarter dates set",
+   "quote": "it was determined that the next scheduled meeting will be march 28 at 6:00 pm.",
+   "tags": [
+    "schedule",
+    "meetings"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DCI proposals for YEAR ONE of MS4 Permit, dated December 14, 2018 (two proposals, replaced)",
+   "where": "text",
+   "quote": "proposals for year one of municipal separate storm sewer system (ms4) permit, dated december 14, 2018"
+  },
+  {
+   "name": "DCI Proposal for YEAR ONE 2018-2019 Management, dated February 11, 2019",
+   "where": "text",
+   "quote": "phyllis luck began the discussion on the dci proposal for year one 2018-2019 management, dated"
+  },
+  {
+   "name": "5 Year Cost Estimator",
+   "where": "text",
+   "quote": "as outlined in the proposal and 5 year cost estimator, include"
+  },
+  {
+   "name": "Year 2 Estimator, dated 2/4/2019",
+   "where": "text",
+   "quote": "the group focused on the year 2 estimator, dated 2/4/2019."
+  },
+  {
+   "name": "Revised Year 2 Estimator (not yet received)",
+   "where": "text",
+   "quote": "since the revised year 2 estimator had not been received"
+  },
+  {
+   "name": "Email from DPW (sender unnamed) including a quote from Governor Baker",
+   "where": "text",
+   "quote": "phyllis luck read the quote from governor baker included in that email"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "DCI consultant proposal",
+  "budget",
+  "DPW",
+  "cost estimator",
+  "funding options",
+  "town clean-up",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

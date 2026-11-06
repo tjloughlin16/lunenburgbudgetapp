@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2017-10-11",
  "docid": "1561",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 27 September",
+   "motion": "Approve the minutes of 27 September.",
    "moved_by": "T. Burchfield",
    "seconded_by": "K. Adams",
    "outcome": "passed",
@@ -20,15 +20,230 @@
    "quote": "motion, t. burchfield, to approve minutes from 27 september; second, k. adams; all aye"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Burchfield",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, t. burchfield to adjourn, second, m. jeffreys, all aye."
+   "quote": "motion, t. burchfield to adjourn, second, m. jeffreys, all aye. meeting adjourned at 8:33"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Two procedural votes recorded. Sections a–h are discussion topics with no motions or votes.",
- "cost_usd": 0.0803735
+ "note": "Scanned minutes read via OCR. Page 2 opens mid-item, and the heading for item e is missing, so the accountable officers, employee review and termination sub-items are shown under an unlabelled item. Only two motions appear, both recorded as \"all aye\" with no numeric tally. OCR errors are likely (e.g., \"Poliey\", \"identity\", \"ill.\"). No dollar figures, public comment, or document list are printed. The Chair is not named. M. Allison is referenced as a written comment, not as present. Upcoming meeting dates are given as \"25 October at Ritter\" and \"08 November\" with no year.",
+ "cost_usd": 0.00493132,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "present: jamie toale (selectman), michael-ray jeffreys (planning board), katie adams (school committee), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "present: jamie toale (selectman), michael-ray jeffreys (planning board), katie adams (school committee), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "present: jamie toale (selectman), michael-ray jeffreys (planning board), katie adams (school committee), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: jamie toale (selectman), michael-ray jeffreys (planning board), katie adams (school committee), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "present: jamie toale (selectman), michael-ray jeffreys (planning board), katie adams (school committee), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "M. Allison",
+   "role": "Planning Board",
+   "status": "not stated",
+   "quote": "m. allison (planning board) provided a comment stating that town members should get more time to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "K. Adams will organize the Charter into categories to make it more digestible and distribute it at the next meeting.",
+   "quote": "k. adams will organize the charter into categories to make it more digestible and will distribute at the next meeting."
+  },
+  {
+   "decision": "The board will look into alternatives to the name Board of Selectmen.",
+   "quote": "male centric. we will look into alternatives"
+  },
+  {
+   "decision": "Members to continue exploring what other towns do, with a focus on their schedules.",
+   "quote": "j. toale would like for us to continue to explore what other towns do with a focus on their schedules."
+  },
+  {
+   "decision": "General consensus that the Director of Facilities idea is worth exploring; may need to be weighed against resources and existing duties.",
+   "quote": "general consensus is that this is worth exploring; k. adams noted that this may take resources"
+  },
+  {
+   "decision": "Town Clerk elected-versus-appointed question to be looked at on a spreadsheet (policy versus operation).",
+   "quote": "poliey versus operation - will be looked at on spreadsheet"
+  },
+  {
+   "decision": "Action item: continue to communicate with boards, committees, and departments to identify organizational inefficiencies and needs.",
+   "quote": "continue to communicate with boards, committees, and departments to identity organizational"
+  },
+  {
+   "decision": "Action item: place a brainstorming agenda item on the next meeting agenda.",
+   "quote": "agenda item for brain storming"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (27 September)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion, t. burchfield, to approve minutes from 27 september; second, k. adams; all aye"
+  },
+  {
+   "topic": "Responses from committees and boards",
+   "resolution": "discussed; charter to be organized into categories",
+   "tags": [
+    "committee responses",
+    "timeline"
+   ],
+   "quote": "t. burchfield mentioned that pacc will review and respond; unsure of how to contact the cultural council."
+  },
+  {
+   "topic": "Representative town government: review of similar communities and consensus",
+   "resolution": "continued research",
+   "tags": [
+    "representative government",
+    "research"
+   ],
+   "quote": "members need more time to continue to research this"
+  },
+  {
+   "topic": "Representative town government: time of meetings, participation, and outreach",
+   "resolution": "discussed; continue exploring other towns' schedules",
+   "tags": [
+    "participation",
+    "outreach",
+    "meeting schedule"
+   ],
+   "quote": "t. burchfield stated that it would be good to first look into changing the time."
+  },
+  {
+   "topic": "Board of Selectmen: alternative name and structure",
+   "resolution": "will look into alternatives",
+   "tags": [
+    "Board of Selectmen",
+    "governance structure"
+   ],
+   "quote": "j. toale noted that other communities call it a select board."
+  },
+  {
+   "topic": "Town Meeting: schedule of meetings",
+   "resolution": "discussed",
+   "tags": [
+    "Town Meeting",
+    "schedule"
+   ],
+   "quote": "general views are that the time of town meeting isn't ideal."
+  },
+  {
+   "topic": "Accountable officers, employee review, and termination processes",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "accountable officers",
+    "personnel"
+   ],
+   "quote": "i. accountable officers ii. employee review processes ill. termination processes"
+  },
+  {
+   "topic": "Director of Facilities",
+   "resolution": "general consensus to explore",
+   "tags": [
+    "facilities",
+    "staffing"
+   ],
+   "quote": "general consensus is that this is worth exploring; k. adams noted that this may take resources"
+  },
+  {
+   "topic": "Town Clerk: elected or appointed",
+   "resolution": "to be looked at on spreadsheet",
+   "tags": [
+    "Town Clerk",
+    "governance structure"
+   ],
+   "quote": "poliey versus operation - will be looked at on spreadsheet"
+  },
+  {
+   "topic": "Designate small group tasks",
+   "resolution": "no action recorded",
+   "tags": [
+    "working groups"
+   ],
+   "quote": "designate small group tasks"
+  },
+  {
+   "topic": "Action items before next meeting",
+   "resolution": "assigned",
+   "tags": [
+    "action items"
+   ],
+   "quote": "continue to communicate with boards, committees, and departments to identity organizational"
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "meetings are held at town hall, 7:00 pm, on the second and fourth wednesdays of the month, unless"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:33",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion, t. burchfield to adjourn, second, m. jeffreys, all aye. meeting adjourned at 8:33"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Charter",
+   "where": "text",
+   "quote": "k. adams will organize the charter into categories to make it more digestible and will distribute at the next meeting."
+  },
+  {
+   "name": "spreadsheet (Town Clerk policy versus operation)",
+   "where": "text",
+   "quote": "poliey versus operation - will be looked at on spreadsheet"
+  }
+ ],
+ "tags": [
+  "Charter review",
+  "town government structure",
+  "Board of Selectmen",
+  "Town Meeting",
+  "public participation",
+  "Town Clerk",
+  "Director of Facilities",
+  "accountable officers"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

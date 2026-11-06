@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-02-21",
  "docid": "6193",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Issue a negative determination for construction at 221 Goodrich Street",
+   "motion": "Negative (3) determination for Martha Macdonald's request at 221 Goodrich Street (last part of yard grading).",
    "moved_by": "KJ",
    "seconded_by": "Mr Luck",
    "outcome": "passed unanimously",
@@ -20,15 +20,15 @@
    "quote": "kj moved for a negative (3) determination. mr luck seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the Dixon beach determination request to March 7, 2018 at 7 PM",
+   "motion": "Continue the Dixon request at 307 Townsend Harbor Road to March 7, 2018 at 7 PM.",
    "moved_by": "BP",
-   "seconded_by": "cc",
+   "seconded_by": "",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "bp motioned to continue cc second for march 7 2018 at 7 pm the motion was approved by unanimous vote"
   },
   {
-   "motion": "Continue the North County Land Trust determination request to March 7, 2018 at 7 PM",
+   "motion": "Continue the North County Land Trust hearing for 548 Northfield Road to 3/7/18 at 7PM.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
@@ -36,15 +36,15 @@
    "quote": "kj motion to continue to 3/7/18 at 7pm seconded by bp with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue the Scott Benjamin dock determination request to March 7 at 7 PM",
+   "motion": "Continue the Scott Benjamin hearing for 40 Fire Rd 12 to 3/7 at 7.",
    "moved_by": "BP",
    "seconded_by": "CL",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "continued to 3/7 at 7 bp moved and cl seconded."
   },
   {
-   "motion": "Issue a negative determination for parking lot at 5 Electric Avenue with conditions that snow removal be off site and not over the stone wall",
+   "motion": "Issue a negative determination for the 5 Electric Avenue project with the condition that snow removal must be off site and not over the stone wall.",
    "moved_by": "KJ",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
@@ -52,7 +52,7 @@
    "quote": "kj moved to issue a negative determination with the condition that snow removal must be off site and not over the stone wall. bp seconded and the commission approved unanimously."
   },
   {
-   "motion": "Issue a standard Order of Conditions and WPA form 6 for remedial work on Hickory Hills Dam",
+   "motion": "Issue a standard Order of Conditions with the issuance of the WPA form 6 for the Hickory Hills dam work.",
    "moved_by": "KJ",
    "seconded_by": "CL",
    "outcome": "passed unanimously",
@@ -60,15 +60,432 @@
    "quote": "the commission moved to issue a standard order of conditions with the issuance of the wpa form 6. this was by motion of kj and a second by cl with a unanimous vote;"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:45 PM.",
    "moved_by": "KJ",
    "seconded_by": "BP",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "the meeting adjourned at 9:45 pm by motion of kj and a second by bp."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes clearly recorded with motions, movers, seconders, and outcomes stated. One minor note: in vote 2, the seconder is printed as \"cc\" in the minutes, which is ambiguous but transcribed exactly as it appears.",
- "cost_usd": 0.1162195
+ "note": "Extracted text, not a scan; all votes readable. Attendance is stated only for the Chair (remote), Vice Chair (presided) and Rabbitt (absent); other members are marked present from their recorded motions. Initials are mapped by context: BP = Bob Pease, CL = Catie Childs, KJ = Kenneth Jones, MM = Matthew Marro, and 'Mr Luck' = Carl Luck. The Scott Benjamin continuance and the adjournment print no result. The notice names Xu Minh for 5 Electric Avenue while the presenter is printed as Kim Minh. The Fire Road address appears as both '40 Fire Rd 12' and '46 Fire Road 12'. The Hickory Hills notice says 'Lake Association' while the document says 'Landowners Association'. Chair Bursch recused himself from the 5 Electric Avenue item. The minutes end by saying documents are available at the commission office, and no separate exhibit list is printed.",
+ "cost_usd": 0.01076872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "call to order by vice chair dwyer at 7 pm with mr. rabbitt absent and chair bursch participating remotely."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "call to order by vice chair dwyer at 7 pm"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "absent",
+   "quote": "with mr. rabbitt absent and chair bursch participating remotely."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member",
+   "status": "present",
+   "quote": "bp seconded and the commission approved unanimously."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Member",
+   "status": "present",
+   "quote": "cl inquired about the purpose of the island."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "kj moved for a negative (3) determination. mr luck seconded and the commission voted unanimously."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Member",
+   "status": "present",
+   "quote": "kj moved to issue a negative determination with the condition that snow removal must be off site and not over the stone wall."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm reminded the commission he had emailed the draft cover letter and reviewed what the content was"
+  },
+  {
+   "name": "Scott Pitta",
+   "role": "presenter, Drone Consultant Group",
+   "status": "present",
+   "quote": "appointment: drone presentation by scott pitta of drone consultant group"
+  },
+  {
+   "name": "David Price",
+   "role": "",
+   "status": "present",
+   "quote": "david price also appeared"
+  },
+  {
+   "name": "Dominic Meringolo",
+   "role": "representing the LSIC",
+   "status": "present",
+   "quote": "dominic meringolo represented the lsic."
+  },
+  {
+   "name": "Martha Macdonald",
+   "role": "applicant, request for determination",
+   "status": "present",
+   "quote": "martha macdonald appeared before the commission and outlined the particulars of the lot."
+  },
+  {
+   "name": "Kim Minh",
+   "role": "presenter, 5 Electric Avenue project",
+   "status": "present",
+   "quote": "kim minh presented. kim outlined the project is within the buffer zone."
+  },
+  {
+   "name": "Steve Douglas",
+   "role": "public",
+   "status": "present",
+   "quote": "steve douglas 24 wintergreen court asked if kim was the owner she said yes."
+  },
+  {
+   "name": "Melvin Bertram",
+   "role": "presenter, Notice of Intent",
+   "status": "present",
+   "quote": "melvin bertram presented the notice of intent and plan."
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "presenter, Notice of Field Change",
+   "status": "present",
+   "quote": "anthony cleaves presented the changes which involved the moving of the electric utilities."
+  },
+  {
+   "name": "Gary Gouldrup",
+   "role": "presenter, Small Town Forest update",
+   "status": "present",
+   "quote": "gary gouldrup appeared and explained the completed cutting at small town forest."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "LSIC will submit for review a revised clarity sampling map (around 6 points, not 14) and a map of algae count sample locations; the algae sampling requirement goes back into the LMP with the limit reduced to 5 ft.",
+   "quote": "it was agreed that the lsic will submit for review and discussion discussion/approval the following:"
+  },
+  {
+   "decision": "Commission requests LSIC provide drawdown/refill data for Nov. 30, 2016 through April 2017 (lake level, outflow, dam gate settings) and identify residents who reported water issues.",
+   "quote": "drawdown/refill data for the period nov. 30, 2016 through april 2017."
+  },
+  {
+   "decision": "Commission agreed the seepage area was not significant and instructed MM to fill out a WPA form 6 Notice of non significance for the Hickory Hills dam filling proposal.",
+   "quote": "instructed mm to fill out a wpa form 6 notice of non significance"
+  },
+  {
+   "decision": "Field change for Lunenburg Water District at 496 Mass Ave (electric utility move) accepted as a minor change.",
+   "quote": "was accepted as a minor change."
+  },
+  {
+   "decision": "Commission reminded the applicant that snow removal by the wetland must be done off site.",
+   "quote": "the commission remined kim that snow removal by the wetland must be done off site."
+  },
+  {
+   "decision": "No action taken on the Police Department ATV purchase, which is already funded by the Town.",
+   "quote": "the commission did not take any action as cl noted it was already funded for purchase by the town."
+  },
+  {
+   "decision": "Site inspection to be held before the next meeting for the Tri Town Landing extension permit modification request.",
+   "quote": "a site inspection will be held before the next meeting to consider a modification in plans."
+  },
+  {
+   "decision": "Commission indicated it was not interested in the Pleasant Street/Young's Road land gift.",
+   "quote": "the commission indicated they were not interested in the land as it is mostly wetland and is not developable or useful for passive recreation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Police Department ATV purchase",
+   "what_was_recorded": "The commission took no action because the Town had already funded the ATV purchase; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the commission did not take any action as cl noted it was already funded for purchase by the town."
+  },
+  {
+   "topic": "Forest Stewardship Grant",
+   "what_was_recorded": "Forest Stewardship Grant was listed under New Business with no action; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "forest stewardship grant - no action"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steve Douglas",
+   "stated_role": "",
+   "topic": "5 Electric Avenue hearing, ownership question",
+   "quote": "steve douglas 24 wintergreen court asked if kim was the owner she said yes."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Drone presentation",
+   "resolution": "presented, no action recorded",
+   "quote": "appointment: drone presentation by scott pitta of drone consultant group",
+   "tags": [
+    "drone",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "LSIC annual report and lake updates",
+   "resolution": "information requested from LSIC; LSIC to submit revised maps and data",
+   "quote": "appointment: lsic updates- dominic meringolo represented the lsic.",
+   "tags": [
+    "LSIC",
+    "lake management",
+    "drawdown",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "221 Goodrich Street request for determination",
+   "resolution": "negative (3) determination issued, passed unanimously",
+   "quote": "martha macdonald appeared before the commission and outlined the particulars of the lot.",
+   "tags": [
+    "determination",
+    "buffer zone",
+    "single family home"
+   ]
+  },
+  {
+   "topic": "307 Townsend Harbor Road sandy beach hearing",
+   "resolution": "continued to March 7, 2018",
+   "quote": "bp motioned to continue cc second for march 7 2018 at 7 pm",
+   "tags": [
+    "hearing",
+    "continued",
+    "beach"
+   ]
+  },
+  {
+   "topic": "548 Northfield Road RDA hearing",
+   "resolution": "continued to 3/7/18 at 7PM",
+   "quote": "kj motion to continue to 3/7/18 at 7pm seconded by bp",
+   "tags": [
+    "hearing",
+    "continued",
+    "bridge",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "40 Fire Rd 12 RDA hearing",
+   "resolution": "continued to 3/7 at 7",
+   "quote": "continued to 3/7 at 7 bp moved and cl seconded.",
+   "tags": [
+    "hearing",
+    "continued",
+    "docks"
+   ]
+  },
+  {
+   "topic": "5 Electric Avenue parking lot hearing",
+   "resolution": "negative determination issued with snow-removal condition, passed unanimously",
+   "quote": "kim minh presented. kim outlined the project is within the buffer zone.",
+   "tags": [
+    "determination",
+    "parking lot",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Dam Notice of Intent",
+   "resolution": "WPA form 6 issued and standard Order of Conditions issued, passed unanimously",
+   "quote": "melvin bertram presented the notice of intent and plan.",
+   "tags": [
+    "Notice of Intent",
+    "dam",
+    "order of conditions",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "Notice of Field Change, Lunenburg Water District, 496 Mass Ave",
+   "resolution": "accepted as minor change",
+   "quote": "anthony cleaves presented the changes which involved the moving of the electric utilities.",
+   "tags": [
+    "field change",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Current business: violations",
+   "resolution": "status updates only; items stay on agenda",
+   "quote": "571 chase road (c) -no updates : to remain on agenda until restoration is completed (grown in)",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "New business: Police ATV purchase and Forest Stewardship Grant",
+   "resolution": "no action on both",
+   "quote": "the commission did not take any action as cl noted it was already funded for purchase by the town.",
+   "tags": [
+    "ATV",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Old business: Small Town Forest update",
+   "resolution": "update received, completed cutting explained",
+   "quote": "gary gouldrup appeared and explained the completed cutting at small town forest.",
+   "tags": [
+    "forest",
+    "cutting"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance",
+   "resolution": "none presented",
+   "quote": "certificates of compliance - none presented for consideration",
+   "tags": [
+    "certificates"
+   ]
+  },
+  {
+   "topic": "Extension permit, Tri Town Landing",
+   "resolution": "site inspection to be held before next meeting",
+   "quote": "a site inspection will be held before the next meeting to consider a modification in plans.",
+   "tags": [
+    "extension permit",
+    "site inspection"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "no action taken",
+   "quote": "minutes of previous meetings - review and approval of - 1/6",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report and legal updates",
+   "resolution": "updates only, no action",
+   "quote": "mm reminded the commission he had emailed the draft cover letter and reviewed what the content was",
+   "tags": [
+    "enforcement",
+    "legal",
+    "cover letter"
+   ]
+  },
+  {
+   "topic": "101 Pleasant Street / 72 and 76 Mass Ave",
+   "resolution": "update, awaiting owner filings",
+   "quote": "mm noted that the owner of mass ave wanted to demolish a structure",
+   "tags": [
+    "permits",
+    "demolition"
+   ]
+  },
+  {
+   "topic": "70 Oak Ridge",
+   "resolution": "update, erosion control in good shape",
+   "quote": "erosion control is in good shape.",
+   "tags": [
+    "erosion control"
+   ]
+  },
+  {
+   "topic": "Land gift, Pleasant Street / Young's Road",
+   "resolution": "commission not interested",
+   "quote": "the commission indicated they were not interested in the land as it is mostly wetland",
+   "tags": [
+    "land gift",
+    "wetland"
+   ]
+  },
+  {
+   "topic": "Communications and next meeting",
+   "resolution": "next meeting set for March 7, 2018",
+   "quote": "next meeting for march 7 , 2018 at the ritter memorial",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "WPA form 1 by Martha Macdonald",
+   "where": "list",
+   "quote": "documents presented for consideration was a wpa form 1 by martha macdonald and a site plan for 221 goodrich street by david e. ross."
+  },
+  {
+   "name": "Site plan for 221 Goodrich Street by David E. Ross",
+   "where": "list",
+   "quote": "documents presented for consideration was a wpa form 1 by martha macdonald and a site plan for 221 goodrich street by david e. ross."
+  },
+  {
+   "name": "Notice of Intent by Hickory Hills Landowners Association",
+   "where": "list",
+   "quote": "documents presented for consideration was a notice of intent by hickory hills landowners association and a plan by tighe and bond entitled\" dam overtopping project\" dated december 6, 2017"
+  },
+  {
+   "name": "Plan by Tighe and Bond entitled \"Dam overtopping Project\" dated December 6, 2017",
+   "where": "list",
+   "quote": "documents presented for consideration was a notice of intent by hickory hills landowners association and a plan by tighe and bond entitled\" dam overtopping project\" dated december 6, 2017"
+  },
+  {
+   "name": "LSIC annual report",
+   "where": "text",
+   "quote": "he reviewed the annual report and indicated that"
+  },
+  {
+   "name": "LMP (Lake Management Plan) clarity sampling map",
+   "where": "text",
+   "quote": "current map in the lmp has 14 points"
+  },
+  {
+   "name": "Order of Conditions from the Shirley Conservation Commission",
+   "where": "text",
+   "quote": "the new order of conditions from the shirley conservation commission will be provided to the lcc."
+  },
+  {
+   "name": "Enforcement order cover letter (draft)",
+   "where": "text",
+   "quote": "mm reminded the commission he had emailed the draft cover letter and reviewed what the content was"
+  },
+  {
+   "name": "WPA form 6 Notice of non significance",
+   "where": "text",
+   "quote": "to issue a standard order of conditions with the issuance of the wpa form 6"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "buffer zone",
+  "determinations",
+  "orders of conditions",
+  "continuances",
+  "enforcement",
+  "LSIC",
+  "lake management",
+  "drone",
+  "public hearings"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration was"
+ },
+ "dropped_unquoted_by_field": {}
 }

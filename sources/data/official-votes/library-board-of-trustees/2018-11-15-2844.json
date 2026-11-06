@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2018-11-15",
  "docid": "2844",
@@ -12,31 +12,293 @@
  },
  "votes": [
   {
-   "motion": "Approve the October 18, 2018 minutes as amended",
-   "moved_by": "Kate",
-   "seconded_by": "Donna",
-   "outcome": "unanimously approved",
+   "motion": "Approve the October 18, 2018 minutes as amended.",
+   "moved_by": "Kate McCarron",
+   "seconded_by": "Donna Saiia",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "kate made the motion to approve. donna seconded. motion unanimously approved. lars abstained as he was not in attendance at the oct. 18, 2018 meeting."
+   "quote": "kate made the motion to approve. donna seconded. motion unanimously approved."
   },
   {
-   "motion": "Authorize transferring $1,700 from the interest of the Touchstone account to be applied to the cost of the new projector in the Wallace Community Room",
-   "moved_by": "Dick",
-   "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "motion": "Authorize transferring $1,700 from the interest of the Touchstone account to be applied to the cost of the new projector in the Wallace Community Room.",
+   "moved_by": "Dick Mailloux",
+   "seconded_by": "Kate McCarron",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "dick suggested closing out the \"old money\" accounts and then made a motion that the trustees authorize transferring $1,700 from the interest of the touchstone account to be applied to the cost of the new projector in the wallace community room. kate seconded the motion. motion unanimously approved."
+   "quote": "made a motion that the trustees authorize transferring $1,700 from the interest of the touchstone account"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lars",
    "seconded_by": "Donna",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn by lars. motion seconded by donna.. motion unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0849715
+ "note": "Text-only minutes, no scan. Votes are recorded as unanimous without per-member tallies; the chair said all votes would be by role call because Harry Kubetz attended remotely, but individual roll-call results are not printed. Lars is named as abstaining and as moving adjournment but is not in the attendance list; his attendance status is recorded as not stated. Vote outcomes are \"passed unanimously\" as printed.",
+ "cost_usd": 0.0059148199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson dick mailloux"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, donna saiia, bob conroy, harry kubetz (attending remotely via facetime)"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "Acting Secretary & Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "kate mccarron acting secretary & trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "martha moore - director lpl"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, donna saiia, bob conroy, harry kubetz (attending remotely via facetime)"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, donna saiia, bob conroy, harry kubetz (attending remotely via facetime)"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "remote",
+   "quote": "harry kubetz (attending remotely via facetime)"
+  },
+  {
+   "name": "Lars",
+   "role": "",
+   "status": "not stated",
+   "quote": "lars abstained as he was not in attendance at the oct. 18, 2018 meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The amended September 20, 2018 minutes will be approved at the December 20, 2018 meeting, as they were not available.",
+   "quote": "the amended september 20, 2018 minutes were not available and will be approved in our december 20, 2018 meeting."
+  },
+  {
+   "decision": "The New Charter Language Proposal is deferred to the December 20, 2018 meeting.",
+   "quote": "new charter language proposal § deferred to our december 20, 2018 meeting."
+  },
+  {
+   "decision": "Further discussion of THES visits is deferred to the December 20, 2018 meeting.",
+   "quote": "further discussion deferred to our december 20, 2018 meeting."
+  },
+  {
+   "decision": "Martha will distribute the new Trustee Training Pocket Guide for the board to discuss at the December meeting.",
+   "quote": "it was suggested that martha distribute the new trustee training pocket guide for the board to discuss during the december meeting."
+  },
+  {
+   "decision": "Harry will pursue an author visit after meeting former US marine Craig Grossi.",
+   "quote": "harry will pursue an author visit."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2019 budget status",
+   "what_was_recorded": "The FY 2019 budget was reported as 37% spent and on-target.",
+   "figures_as_printed": [
+    "37%"
+   ],
+   "quote": "fy 2019 budget - we are 37% spent and on-target."
+  },
+  {
+   "topic": "Additional staffing funds approved at Special Town Meeting",
+   "what_was_recorded": "An additional $7,200 for staffing was approved at Special Town Meeting and will be allocated as needed.",
+   "figures_as_printed": [
+    "$7,200"
+   ],
+   "quote": "an additional $7,200 for staffing was approved of at special town meeting and will be allocated as needed."
+  },
+  {
+   "topic": "Projector for Wallace Community Room from Touchstone trust interest",
+   "what_was_recorded": "The trustees authorized using $1,700 of Touchstone account interest toward the cost of a new projector.",
+   "figures_as_printed": [
+    "$1,700"
+   ],
+   "quote": "made a motion that the trustees authorize transferring $1,700 from the interest of the touchstone account"
+  },
+  {
+   "topic": "Trust fund expenditures",
+   "what_was_recorded": "Trust fund monies dating back to the 1800s and the interest on the new Touchstone account are being reviewed, and the trustees must vote on any expenditures from the trust funds.",
+   "figures_as_printed": [],
+   "quote": "the trustees must vote on any expenditures from the trust funds."
+  },
+  {
+   "topic": "Cookie Walk and Book & Bake Sale proceeds",
+   "what_was_recorded": "The Friends raised $2,633 during the October Book & Bake Sale.",
+   "figures_as_printed": [
+    "$2,633"
+   ],
+   "quote": "$2,633 was raised by the friends during the october book & bake sale."
+  },
+  {
+   "topic": "LCC grant and Saundra Lane fund request for author program",
+   "what_was_recorded": "A program featuring the author of Walking to Listen is estimated to cost $1,575, with a request to be made to the Saundra Lane Cultural Events Fund.",
+   "figures_as_printed": [
+    "$1,575"
+   ],
+   "quote": "there will also be a request made to the saundra lane cultural events fund since the program is estimated to cost $1,575."
+  },
+  {
+   "topic": "Special Town Meeting salary line",
+   "what_was_recorded": "The town approved adding $7,200 to the library's FY2019 salary line.",
+   "figures_as_printed": [
+    "$7,200"
+   ],
+   "quote": "the town approved that $7,200 be added to the library's fy2019 salary line."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of interest from the Touchstone account to the cost of a new projector in the Wallace Community Room",
+   "amount_as_printed": "$1,700",
+   "outcome": "passed unanimously",
+   "quote": "made a motion that the trustees authorize transferring $1,700 from the interest of the touchstone account"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment",
+   "quote": "there was no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "October 18, 2018 minutes approved as amended; September 20, 2018 minutes deferred to December 20, 2018",
+   "quote": "the minutes for october 18, 2018 minutes were approved as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; trust fund transfer of $1,700 approved for projector; charter language and THES visits deferred",
+   "quote": "director's report (presented by martha)",
+   "tags": [
+    "budget",
+    "staffing",
+    "trust funds",
+    "programs",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received; Cookie Walk callers to mention nut allergies",
+   "quote": "friends of lpl update",
+   "tags": [
+    "Friends of LPL",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Agenda Items for upcoming meetings",
+   "resolution": "Trustee Training Pocket Guide to be distributed for December; author visit to be pursued",
+   "quote": "agenda items for upcoming meetings",
+   "tags": [
+    "agenda",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "received; trustee training attendance reported",
+   "quote": "bob and kate attended a trustee training and were impressed by the presenters",
+   "tags": [
+    "trustee training"
+   ]
+  },
+  {
+   "topic": "Public Comments (closing)",
+   "resolution": "no comment",
+   "quote": "public comments • none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:27 p.m.",
+   "quote": "meeting closed at 7:27 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBOT Meeting Agenda for October 18, 2018",
+   "where": "list",
+   "quote": "lplbot meeting agenda for october 18, 2018"
+  },
+  {
+   "name": "LPLBOT Draft Minutes for September 20, 2018",
+   "where": "list",
+   "quote": "lplbot draft minutes for september 20, 2018"
+  },
+  {
+   "name": "Directors Report of November 15, 2018",
+   "where": "list",
+   "quote": "directors report of november 15, 2018"
+  },
+  {
+   "name": "Children’s Area Report for the month of November 2018",
+   "where": "list",
+   "quote": "children's area report for the month of november 2018"
+  },
+  {
+   "name": "Young Adult Report for the month of October 2018",
+   "where": "list",
+   "quote": "young adult report for the month of october 2018"
+  },
+  {
+   "name": "Young Adult Report for the month of November 2018",
+   "where": "list",
+   "quote": "young adult report for the month of november 2018"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "FY2019 budget",
+  "trust funds",
+  "fund transfer",
+  "projector",
+  "grants",
+  "programs",
+  "Friends of LPL",
+  "staffing",
+  "minutes approval",
+  "remote attendance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

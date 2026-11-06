@@ -1,0 +1,362 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2017-06-21",
+ "video_id": "xO4KytR9YO4",
+ "video_url": "https://www.youtube.com/watch?v=xO4KytR9YO4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2017-06-21-xO4KytR9YO4.json",
+  "sha256": "2843518a3cef557ef3ca0c0e2eca5d5c1a80a06d9c7a5d13a088c1dda9d61c8a",
+  "caption_lines": 249,
+  "segments": 915
+ },
+ "recording": {
+  "duration_s": 8274,
+  "duration": "2:17",
+  "spoken_chars": 27124,
+  "words_approx": 4520
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06212017-6174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2017-06-21-agenda-6174.txt",
+   "path": "sources/meetings/conservation-commission/2017-06-21-agenda-6174.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06212017-6174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2017-06-21-minutes-6174.txt",
+   "path": "sources/meetings/conservation-commission/2017-06-21-minutes-6174.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-06T01:28:04Z",
+  "cost_usd": 0.1339038
+ },
+ "minutes": {
+  "headline": "Conservation Commission debated a Lake beach wall and drainage fix and planned a town forest timber cut; no votes audible",
+  "summary": "The Commission heard a request for a dock at 67 Island Road, a cell tower relocation, and a long hearing on an Island Road property where a rebuilt beach wall and water runoff were disputed. It also began planning a timber harvest on a small town forest to remove declining hemlocks. Most vote results are not in the captions.",
+  "attendees": [],
+  "public_comment": [],
+  "tags": [
+   "legal",
+   "planning-and-zoning",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 179,
+    "motion": "Accept the motion for a negative determination on 67 Island Road",
+    "outcome": "not audible",
+    "procedural": false
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 4008,
+    "topic": "Forester services",
+    "what_was_said": "The forester is paid from the proceeds of the harvest itself.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 5107,
+    "topic": "Town forest harvest",
+    "what_was_said": "A member noted there is no money outlay from the town.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 411,
+    "decision": "Applicant to submit revised cell tower location plans to staff within a couple of weeks."
+   },
+   {
+    "t": 5325,
+    "decision": "A public walk of the town forest planned for sometime in late August."
+   },
+   {
+    "t": 5714,
+    "decision": "Island Road hearing continued, with a site walk."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 98,
+    "topic": "Announcements and pollinator habitat update",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 98,
+    "t_end": 260,
+    "topic": "67 Island Road dock request",
+    "resolution": "motion for negative determination, result not audible",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 278,
+    "t_end": 520,
+    "topic": "Cell tower location revision",
+    "resolution": "revised plans to be submitted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 833,
+    "t_end": 2144,
+    "topic": "Island Road beach wall enforcement and notice of intent",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2411,
+    "t_end": 3052,
+    "topic": "Wetland filing discussion and continuances",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3403,
+    "t_end": 5325,
+    "topic": "Small town forest cutting plan",
+    "resolution": "informational; walk planned",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 5366,
+    "t_end": 7961,
+    "topic": "Island Road beach drainage and grading",
+    "resolution": "continued with site walk",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 7961,
+    "t_end": 8234,
+    "topic": "Parking barricade and property map",
+    "resolution": "informational",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Most vote results",
+   "Long garbled stretches 2500-3400 and 4000-5000"
+  ],
+  "confidence": "low",
+  "contention": [
+   {
+    "t": 7021,
+    "about": "Members disagreed with the applicant's representative over beach grading and runoff.",
+    "sides": "one member against the drainage plan; other members and the applicant's representative in favor",
+    "words_as_heard": "I have a problem with just continuing to allow most of the beach water to run down the beach",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1866,
+    "kind": "condition",
+    "about": "Wants the plan amended to say bank stabilization rather than wall.",
+    "who": "a member",
+    "words_as_heard": "I'd like to see the plan amended so it doesn't say wall anymore"
+   },
+   {
+    "t": 5714,
+    "kind": "safety",
+    "about": "Erosion of the beach into the lake.",
+    "who": "a member",
+    "words_as_heard": "we cannot allow it to continue to erode"
+   },
+   {
+    "t": 7227,
+    "kind": "condition",
+    "about": "Wants detail of the stone trench design.",
+    "who": "a member",
+    "words_as_heard": "I'd like to see detail on the stone trench"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 914,
+    "name_as_heard": "pictures of the wall",
+    "kind": "other",
+    "words_as_heard": "I would have brought a couple pictures",
+    "shown": true
+   },
+   {
+    "t": 1866,
+    "name_as_heard": "the plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "I'd like to see the plan amended",
+    "shown": true
+   },
+   {
+    "t": 7599,
+    "name_as_heard": "O&M plan",
+    "kind": "report",
+    "words_as_heard": "the detail in the onm plan",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Commission continued the Island Road beach drainage and grading hearing and set a site walk.",
+    "t": 5714
+   },
+   {
+    "line": "Members planned a timber harvest on a small town forest, with a public walk of the forest set for late August.",
+    "t": 5325
+   },
+   {
+    "line": "The Commission continued the Island Road beach wall enforcement and notice of intent hearing.",
+    "t": 2411
+   },
+   {
+    "line": "A motion for a negative determination on the 67 Island Road dock request was made; the result is not audible in the captions.",
+    "t": 179
+   },
+   {
+    "line": "The cell tower applicant is to send revised location plans to staff within a couple of weeks.",
+    "t": 411
+   }
+  ],
+  "why_it_matters": [
+   "The Island Road hearings stay open, so a ruling on the rebuilt beach wall and water runoff is still pending and will come after the site walk.",
+   "The town forest harvest is described as costing the town nothing, since the forester is paid from the harvest proceeds, but it will change a public woodland that residents can walk and comment on."
+  ],
+  "watch_next": [
+   "Public walk of the town forest, planned for late August.",
+   "Site walk and continued hearing on Island Road beach drainage and grading."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-06T01:28:10Z",
+   "cost_usd": 0.0210831
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06212017-6174",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2017-06-21-minutes-6174.txt",
+   "path": "sources/meetings/conservation-commission/2017-06-21-minutes-6174.pdf"
+  },
+  "official_sha256": "901f2e0d1890a4faff81b6b081c634d5e4df042249eb3849ae4884c5cee3b449",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records overlap only on the 67 Island Road negative determination; the official minutes record many more votes and items than ours. The main difference is that ours ties a site walk to Island Road, while the official minutes tie the July 15 site walk to 183 Hemlock Dr, and the cell tower request differs in what it asks for.",
+  "counts": {
+   "agree": 1,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Negative determination vote, 67 Island Road",
+    "ours": "Accept the motion for a negative determination on 67 Island Road — not audible",
+    "official": "td moved for a negative determination. kj seconded and the commission voted unanimously.",
+    "note": "Both record a negative determination at 67 Island Road; ours did not capture the tally, the official says unanimous.",
+    "t": 179
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Island Road hearing continuation (43 Island Rd)",
+    "ours": "Island Road hearing continued, with a site walk.",
+    "official": "kj moved to continue to july 5, 2017 with a second by td and a un anmimous vote.",
+    "note": "Official records a continuance to July 5 with no site walk for 43 Island Rd; the site walk of July 15 is tied to 183 Hemlock Dr. Check whether the site walk belonged to Island Road or Hemlock Dr.",
+    "t": 5714
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Revised cell tower plans within a couple of weeks",
+    "ours": "Applicant to submit revised cell tower location plans to staff within a couple of weeks.",
+    "official": "continued to july 5 pending updated erosion protection plans by a motion to continue by kj and a second by bp.",
+    "note": "Official describes the Verizon hearing as continued to July 5 pending updated erosion protection plans, not location plans; check what was requested of the applicant.",
+    "t": 411
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Public walk of the town forest in late August",
+    "ours": "A public walk of the town forest planned for sometime in late August.",
+    "official": "",
+    "note": "Official minutes do not mention a late August public walk.",
+    "t": 5325
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Survey of cutting line and forest plan by New England Forest",
+    "ours": "",
+    "official": "motion to commence survey of the cutting line and the development of a plan by new england forest by bp and a second by kj and a unanimous vote.",
+    "note": "A vote in the official minutes that our record does not contain."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Negative determination of applicability, 55 Wildwood Road",
+    "ours": "",
+    "official": "td moved to issue a negative determination of applicability. with the condition that erosion control be placed between the work and the resource area. bp seconded and the commission voted unanimously",
+    "note": "A vote not recorded in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Continue 183 Hemlock Dr to July 19 with site walk July 15",
+    "ours": "",
+    "official": "the commission continued to the july 19 meeting and scheduled a site walk for july 15, 2017 by a motion from kj and a second from bp",
+    "note": "A vote and decision not recorded in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Forester compensation, 20% of gross value",
+    "ours": "",
+    "official": "mr gouldrup would get compensated by a portion of the harvesting revenue ( 20% based on gross value).",
+    "note": "Figure not in our record."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other continuances and next meeting",
+    "ours": "",
+    "official": "next meeting for july 5, 2017 at 7:00 pm in the ritter land use building 960 mass avenue.",
+    "note": "Official also records continuances for Proctor and Viviano, Emerald Place erosion, and the next meeting date; ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees",
+    "ours": "",
+    "official": "chairman bursch presiding with all members except, tb,cl,jr",
+    "note": "Our attendee list is empty; official lists members present and three absent."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-06T01:29:34Z",
+   "cost_usd": 0.0366671
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2018-06-27",
  "docid": "3290",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from May 16, 2018",
+   "motion": "Approve the minutes of May 16, 2018.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
    "outcome": "passed 2-0",
@@ -20,39 +20,309 @@
    "quote": "dennis mannone motioned to approve minute from may 16, 2018. karin menard seconded. approved 2-0."
   },
   {
-   "motion": "Notify BOS that there are no conflicts and approve use of the town beach for baptism by Seventh Day Adventist Church",
+   "motion": "Notify the Board of Selectmen that there are no known conflicts and approve the use of the Town Beach for a baptism.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "karin motioned to notify bos that there are no conﬂicts that we are aware of and ok the use of the beach for this purpose. dennis mannone seconded. approved 2-0."
+   "quote": "ok the use of the beach for this purpose. dennis mannone seconded. approved 2-0."
   },
   {
-   "motion": "Charge Central Mass Youth Basketball teams $10 per player for use of Wallis Park",
+   "motion": "Charge Central Mass Youth Basketball teams $10 per player for use of Wallis Park.",
    "moved_by": "Karin Menard",
-   "seconded_by": "Dennis Mannone",
+   "seconded_by": "Dennis",
    "outcome": "passed 2-0",
    "procedural": false,
    "quote": "karin motioned and dennis seconded to charge central mass youth basketball teams $10 per player for use of wallis park. approved 2-0."
   },
   {
-   "motion": "Designate Dennis as Parks delegate to Open Space Ad Hoc Committee with Karin as alternate",
+   "motion": "Designate Dennis Mannone as the Parks representative to the Open Space Ad Hoc Committee, with Karin Menard as alternate.",
    "moved_by": "Karin Menard",
-   "seconded_by": "Dennis Mannone",
+   "seconded_by": "Dennis",
    "outcome": "passed 2-0",
    "procedural": false,
    "quote": "karin motioned to designate dennis with karin as the alternate. dennis seconded. approved 2-0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Karin Menard",
-   "seconded_by": "Dennis Mannone",
+   "seconded_by": "Dennis",
    "outcome": "passed 2-0",
    "procedural": true,
    "quote": "karin motioned to adjourn and dennis seconded to adjourn at 7:10 pm. approved 2-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Parks Commission meeting minutes, June 27, 2018. Five votes recorded, all procedural or substantive actions with explicit outcomes.",
- "cost_usd": 0.0657214
+ "note": "Minutes are a plain-text extraction; numbering restarts under item 4 (Adult Fitness is sub-item 1) and item numbers are inconsistent. Three members named, Pete McCauliff absent. Several actions (reorganization, beach closure, Whalom Rd follow-up, capital plan) are recorded without a motion and are listed as decisions. The minutes describe the Benjamin Builders escrow as a ZBA decision. No public comment recorded. No documents list is printed.",
+ "cost_usd": 0.006296919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone and jack rodriquenz. absent: pete mccauliff"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone and jack rodriquenz. absent: pete mccauliff"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone and jack rodriquenz. absent: pete mccauliff"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: pete mccauliff"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Reorganization: Dennis Mannone remains Chair and Karin Menard remains clerk.",
+   "quote": "reorganization of committee - dennis mannone will remain as chair, karin menard will remain as clerk."
+  },
+  {
+   "decision": "Adult fitness facility idea added to the list of ideas for future discussion.",
+   "quote": "will add to the list of ideas for future discussion."
+  },
+  {
+   "decision": "Karin and Dennis agreed the Town Beach should be closed during inclement weather; Jack to email the beach coordinator.",
+   "quote": "karin and dennis both agreed that the beach should be closed during inclement weather. jack will send an email to the beach coordinator."
+  },
+  {
+   "decision": "Karin to tell Main Street Bank the commission thought its 'We Love Lunenburg' event idea was a great plan.",
+   "quote": "karin will let her contact with main street bank know we thought it was a great plan."
+  },
+  {
+   "decision": "Karin to email Think Tank and ask them to contact Jack about Wallis Park court hoops and sponsorship.",
+   "quote": "karin will email think tank and ask them to contact jack."
+  },
+  {
+   "decision": "Jack to reach out and get more information on the 250 Whalom Rd. Benjamin Builders matter.",
+   "quote": "jack will reach out and get more information."
+  },
+  {
+   "decision": "Dennis to send dates that work for him for a walking tour; Karin to post if a majority of commissioners will be present.",
+   "quote": "dennis to send over dates that work for him for a walking tour. karin will post if a majority of commissioners will be present."
+  },
+  {
+   "decision": "Commission will discuss the Capital Plan after a walking tour.",
+   "quote": "commission decided they will discuss after a walking tour."
+  },
+  {
+   "decision": "Karin to ask Samantha Tucker, Admin for DPW, to send out bills for unpaid Summer 2018 user fees.",
+   "quote": "karin will ask samantha tucker, admin for dpw, to send out bills."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Central Mass Youth Basketball user fee",
+   "what_was_recorded": "Karin recommended charging Central Mass Youth Basketball (2 teams of 5th and 6th grade boys) the same $10 per-player fee charged to other youth groups using Park facilities; the board approved it.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "karin recommended charging the same $10 fee per player that is currently being charged to other youth groups using park facilities."
+  },
+  {
+   "topic": "Summer 2018 user fees outstanding",
+   "what_was_recorded": "Phillies and Little League have paid Summer 2018 user fees; payments are outstanding from Life Long Learners, Central Mass Youth Baseball, and Central Mass Youth Basketball, and bills will be sent.",
+   "figures_as_printed": [],
+   "quote": "outstanding is payment from life long learners, central mass youth baseball, and central mass youth basketball."
+  },
+  {
+   "topic": "Town Beach operating budget",
+   "what_was_recorded": "Karin expressed concern about the budget and said closing the beach during rain with no patrons could help close the budget gap.",
+   "figures_as_printed": [],
+   "quote": "karin expressed concern about the budget and didn't think it made sense to keep the beach open"
+  },
+  {
+   "topic": "250 Whalom Rd. Benjamin Builders escrow",
+   "what_was_recorded": "The ZBA decided to have Benjamin Builders put funds into an escrow account with the town so the occupancy permit is not held up; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "they decided to have benjamin builders put the funds into an escrow account with the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 2-0; June 19 minutes not ready",
+   "quote": "dennis mannone motioned to approve minute from may 16, 2018. karin menard seconded. approved 2-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reorganization of committee",
+   "resolution": "Chair and clerk remain the same; no vote recorded",
+   "quote": "reorganization of committee - dennis mannone will remain as chair, karin menard will remain as clerk.",
+   "tags": [
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Adult fitness facility",
+   "resolution": "added to future ideas list",
+   "quote": "will add to the list of ideas for future discussion.",
+   "tags": [
+    "adult fitness",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Seventh Day Adventist baptism at Town Beach",
+   "resolution": "approved 2-0",
+   "quote": "ok the use of the beach for this purpose. dennis mannone seconded. approved 2-0.",
+   "tags": [
+    "town beach",
+    "permit"
+   ]
+  },
+  {
+   "topic": "Spring / Summer 2018 youth fees and payments",
+   "resolution": "Central Mass Youth Basketball $10 per player fee approved 2-0; bills to be sent",
+   "quote": "karin recommended charging the same $10 fee per player that is currently being charged to other youth groups using park facilities.",
+   "tags": [
+    "youth sports fees",
+    "user fees"
+   ]
+  },
+  {
+   "topic": "Town Beach policy and summer 2018",
+   "resolution": "beach to close during inclement weather, agreed without vote",
+   "quote": "karin and dennis both agreed that the beach should be closed during inclement weather.",
+   "tags": [
+    "town beach",
+    "weather",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Main Street Bank We Love Lunenburg event request",
+   "resolution": "no concern; Karin to reply to bank",
+   "quote": "karin will let her contact with main street bank know we thought it was a great plan.",
+   "tags": [
+    "town beach",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "Wallis Park hoops and sponsorship inquiry from Think Tank",
+   "resolution": "Karin to email Think Tank; Jack to follow up",
+   "quote": "karin will email think tank and ask them to contact jack.",
+   "tags": [
+    "Wallis Park",
+    "sponsorship"
+   ]
+  },
+  {
+   "topic": "250 Whalom Rd. Benjamin Builders ZBA agreement update",
+   "resolution": "Jack to follow up; no action by the board",
+   "quote": "jack will reach out and get more information.",
+   "tags": [
+    "Whalom Rd",
+    "escrow",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Open Space Ad Hoc Committee representative",
+   "resolution": "Dennis designated, Karin alternate; approved 2-0",
+   "quote": "karin motioned to designate dennis with karin as the alternate. dennis seconded. approved 2-0.",
+   "tags": [
+    "open space"
+   ]
+  },
+  {
+   "topic": "Long term vision",
+   "resolution": "walking tour to be scheduled",
+   "quote": "dennis to send over dates that work for him for a walking tour.",
+   "tags": [
+    "long term vision",
+    "walking tour"
+   ]
+  },
+  {
+   "topic": "Capital plan",
+   "resolution": "deferred until after walking tour",
+   "quote": "commission decided they will discuss after a walking tour.",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "none",
+   "quote": "other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": []
+  },
+  {
+   "topic": "Correspondence and public comment",
+   "resolution": "no public comment",
+   "quote": "correspondence, announcement and public and board comment - no public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for July 26, 2018 at DPW",
+   "quote": "next meeting: july 26, 2018 6pm @ dpw",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:10 pm, 2-0",
+   "quote": "karin motioned to adjourn and dennis seconded to adjourn at 7:10 pm. approved 2-0.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Release of liability form (Seventh Day Adventist Church baptism request)",
+   "where": "text",
+   "quote": "they have signed the needed release of liability form with the town"
+  },
+  {
+   "name": "Email from Main Street Bank re 'We Love Lunenburg' event",
+   "where": "text",
+   "quote": "karin received an email from main street bank"
+  },
+  {
+   "name": "Email from Town Manager (Heather) re Wallis Park sponsorship policy",
+   "where": "text",
+   "quote": "heather had replied via email that there was not one"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "town beach",
+  "youth sports fees",
+  "Wallis Park",
+  "sponsorship",
+  "open space",
+  "long term vision",
+  "capital plan",
+  "reorganization",
+  "250 Whalom Rd",
+  "baptism permit",
+  "budget gap"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

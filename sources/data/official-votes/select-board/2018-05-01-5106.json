@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-05-01",
  "docid": "5106",
@@ -12,39 +12,566 @@
  },
  "votes": [
   {
-   "motion": "approve minutes of April 3, 2018",
+   "motion": "Recommend approval of Article 26 (citizen petition to allow sale of cigarette rolling papers) at Annual Town Meeting.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole 2n°: p. bertram to recommend approval of article 26"
+  },
+  {
+   "motion": "Recommend passing over Articles 27 and 28 at Annual Town Meeting.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole to recommend passing over article 27 and 28"
+  },
+  {
+   "motion": "Change the composition of the SWTF to a Board of Selectmen member, a Planning Board member and Conservation Commission member, plus two alternate members appointed by the Board of Selectmen.",
+   "moved_by": "R.Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r.ebersole 2\": p. bertram to change the composition of the swtf to a board of selectmen member, a planning board member"
+  },
+  {
+   "motion": "Approve the minutes of April 3, 2018.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes of april 3, 2018 were approved."
-  },
-  {
-   "motion": "recommend approval of Article 26 (elimination of Chapter 127 cigarettes; allow sale of cigarette rolling papers)",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: r. ebersole 2n°: p. bertram to recommend approval of article 26 ms. lemieux stated the police chief will present his thoughts on this bylaw at town meeting. vote: all in favor"
-  },
-  {
-   "motion": "recommend passing over Articles 27 and 28",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: r. ebersole to recommend passing over article 27 and 28 2nd: p. bertram vote: all in favor"
-  },
-  {
-   "motion": "change the composition of the Southwest Task Force to a Board of Selectmen member, a Planning Board member, Conservation Commission member and two alternate members to be appointed by the Board of Selectmen",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Bertram",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: r.ebersole 2\": p. bertram to change the composition of the swtf to a board of selectmen member, a planning board member and conservation commission member and two alternate members to be appointed by the board of selectmen vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. One procedural vote (minutes approval) and three substantive votes on town meeting articles and committee composition. No votes to adjourn or enter executive session recorded.",
- "cost_usd": 0.14162149999999998
+ "note": "OCR text from a scanned minutes document with garbled words (e.g., \"Mt. Toale\", \"lown\", \"agle House\", \"2n°\"). Page 2 begins mid-sentence in the Tilton Avenue sewer discussion, so the article's opening and title are missing. No roll call, so attendance is inferred from speaking and status is mostly \"not stated\"; no roles are printed for most people. Votes are recorded only as \"All in Favor\" with no counts. The minutes approval has no printed motion, mover or vote. The signature stamp on the final page reads RECEIVED & FILED JUN 06 2018.",
+ "cost_usd": 0.016652220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale reported the board received a letter dated april 25, 2018 from the attorney general's office,",
+   "role": "not stated"
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck thanked everyone for coming out to the earth day event last weekend.",
+   "role": "not stated"
+  },
+  {
+   "name": "Ms. Bertram",
+   "status": "present",
+   "quote": "ms. bertram noted this item is not on their agenda so she did not believe they could",
+   "role": "not stated"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "status": "present",
+   "quote": "mr. ebersole stated he was impressed by the work done by the group and although the board would not be voting tonight, he",
+   "role": "not stated"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux stated the police chief will present his thoughts on this bylaw at town meeting.",
+   "role": "not stated"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "status": "present",
+   "quote": "mr. mcquaid stated he supported what he was trying to do, but there are a lot of",
+   "role": "not stated"
+  },
+  {
+   "name": "Steve Douglas",
+   "status": "present",
+   "quote": "steve douglas, 24 wintergreen court, representing the hickory hills dam committee presented on annual",
+   "role": "representing the Hickory Hills Dam Committee"
+  },
+  {
+   "name": "Lance Rozell",
+   "status": "present",
+   "quote": "lance rozell, owner of city line plaza and smit patel, owner of city line smoke shop presented on behalf of",
+   "role": "owner of City Line Plaza"
+  },
+  {
+   "name": "Smit Patel",
+   "status": "present",
+   "quote": "lance rozell, owner of city line plaza and smit patel, owner of city line smoke shop presented on behalf of",
+   "role": "owner of City Line Smoke Shop"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster ave., announced the board of selectmen candidates' debate on thursday, may 3rd",
+   "role": "not stated"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, updated on the efforts to add one additional staff to the fire department budget",
+   "role": "not stated"
+  },
+  {
+   "name": "Katey Adams",
+   "status": "present",
+   "quote": "katey adams, 45 williams drive, noted article 26 on the town meeting warrant is a citizen's petition article",
+   "role": "not stated"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, appreciated that the town manager has prioritized public safety needs",
+   "role": "not stated"
+  },
+  {
+   "name": "Adam Burney",
+   "status": "not stated",
+   "quote": "land use director adam burney met with mrpc staff john hume and karen chapman on tuesday, april 17th and",
+   "role": "Land Use Director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will add the Attorney General's Open Meeting Law determination to next week's agenda and discuss it then.",
+   "quote": "we will add this topic to next week's agenda and discuss it at that time."
+  },
+  {
+   "decision": "The Board took no vote on Hickory Hills Article 21 at this meeting; Mr. Ebersole stated he would support the article at Town Meeting.",
+   "quote": "although the board would not be voting tonight, he"
+  },
+  {
+   "decision": "The Board was not ready to make a recommendation on the Tilton Avenue sewer article this evening; Mr. Ebersole recommended reaching out to Tilton Ave. residents before Town Meeting.",
+   "quote": "she and mr. ebersole were not ready to make a recommendation on this article this evening."
+  },
+  {
+   "decision": "The Board tabled committee reports to proceed to the workshop item.",
+   "quote": "the board tabled committee reports to proceed to the workshop item."
+  },
+  {
+   "decision": "Mr. McQuaid offered to take what was presented at the workshop and compose a graphic draft.",
+   "quote": "mr. mcquaid offered to take what was presented today and compose a graphic draft."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Department added staffing overtime",
+   "what_was_recorded": "Annual overtime for two added firefighters was estimated at about $40,000; no increase in taxes was said to be needed for the proposed 24/7 coverage, which Mr. Luck said would save $31,000 in overtime and on-call stipends.",
+   "figures_as_printed": [
+    "$40,000",
+    "$31,000"
+   ],
+   "quote": "the annual overtime for two staff was approximately $40,000."
+  },
+  {
+   "topic": "Fire Department 24/7 coverage savings",
+   "what_was_recorded": "Mr. Luck said the Fire Department would save $31,000 in overtime and on-call stipends and that there would be no tax increase to fund it.",
+   "figures_as_printed": [
+    "$31,000"
+   ],
+   "quote": "fire department will save $31,000 in overtime and on-call stipends if the town goes 24/7."
+  },
+  {
+   "topic": "LED streetlight conversion accumulated depreciation",
+   "what_was_recorded": "Unitil's formal quote put the accumulated depreciation value of the 335 streetlights at $81,808.79.",
+   "figures_as_printed": [
+    "$81,808.79"
+   ],
+   "quote": "we received the formal quote from unitil that the accumulated depreciation value is $81,808.79."
+  },
+  {
+   "topic": "LED streetlight conversion Option 1",
+   "what_was_recorded": "Option 1 from Unitil totals $126,808.79, including Police Details $45,000, undepreciated costs $81,808.79, removal and installation $33,500, and an energy efficiency credit of $33,500.",
+   "figures_as_printed": [
+    "$45,000",
+    "$81,808.79",
+    "$33,500",
+    "$33,500",
+    "$126,808.79"
+   ],
+   "quote": "the first option includes an estimated cost for police details in the amount of $45,000, the"
+  },
+  {
+   "topic": "LED streetlight conversion Option 2",
+   "what_was_recorded": "Option 2 is the same costs and credit minus the $45,000 Police Details cost, for a grand total of $81,808.79.",
+   "figures_as_printed": [
+    "$81,808.79",
+    "$45,000"
+   ],
+   "quote": "option 2 includes the same costs and credit minus the $45,000 for police details"
+  },
+  {
+   "topic": "LED streetlight estimated annual savings",
+   "what_was_recorded": "Unitil estimates the Town would save about $29,760 a year by converting to LED.",
+   "figures_as_printed": [
+    "$29,760"
+   ],
+   "quote": "until estimates the town would save approximately $29,760 a year by converting to led."
+  },
+  {
+   "topic": "Tax title collections",
+   "what_was_recorded": "From February 27 to April 23, $104,934.96 was collected from property owners with tax title properties, reducing the list from 34 to 29 properties.",
+   "figures_as_printed": [
+    "$104,934.96"
+   ],
+   "quote": "$104,934.96 has been collected from property owners with properties in tax title"
+  },
+  {
+   "topic": "Tax title receivables year-over-year comparison",
+   "what_was_recorded": "Compared with the same nine months in FY17, FY18 collected $231,260 more in tax title receivables.",
+   "figures_as_printed": [
+    "$231,260"
+   ],
+   "quote": "$231,260 more has been collected in tax title receivables in fy18 than the previous year."
+  },
+  {
+   "topic": "State earmark for HVAC upgrade at Eagle House",
+   "what_was_recorded": "A $25,000 HVAC upgrade for the Eagle House made it through the House FY19 budget and goes to Conference Committee.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "projects, $25,000 to upgrade the hvac system that is failing in the older section of the agle house"
+  },
+  {
+   "topic": "Health insurance OPEB liability",
+   "what_was_recorded": "The new four-year Public Employee Committee agreement is estimated to reduce the town's OPEB liability by $8 million.",
+   "figures_as_printed": [
+    "$8 million"
+   ],
+   "quote": "will reduce the town's opeb lability by an estimated $8 million."
+  },
+  {
+   "topic": "Hickory Hills dam easement financial liability",
+   "what_was_recorded": "Hickory Hills Landowners said the Town will have no financial liability for the dam work in the road easement.",
+   "figures_as_printed": [],
+   "quote": "the lown will have no financial liability."
+  },
+  {
+   "topic": "Accounts payable warrants",
+   "what_was_recorded": "Accounts payable warrants of $2149.20 and $1,059,060.76 were presented.",
+   "figures_as_printed": [
+    "$2149.20",
+    "$1,059,060.76"
+   ],
+   "quote": "accounts payable warrants in the amount of $2149.20 and $1,059,060.76 were presented."
+  },
+  {
+   "topic": "Payroll and deductions warrants",
+   "what_was_recorded": "A payroll warrant of $730,360.41 and a deductions warrant of $38,572.08 were presented.",
+   "figures_as_printed": [
+    "$730,360.41",
+    "$38,572.08"
+   ],
+   "quote": "a payroll warrant in the amount of $730,360.41 and a deductions warrant in the amount of $38,572.08 were also presented."
+  },
+  {
+   "topic": "Extended Day childcare at Town Meeting",
+   "what_was_recorded": "Childcare at Town Meeting has no charge, but parents who fail to pick up within 30 minutes after close are assessed the full cost of childcare that day.",
+   "figures_as_printed": [],
+   "quote": "there will be no charge for this service."
+  },
+  {
+   "topic": "Raising taxes 2.5% every year",
+   "what_was_recorded": "Ms. Luck asked for a discussion of raising taxes by 2.5% every year, which she called unsustainable.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "action file issue: ms. luck reiterated she would like a discussion about raising taxes by 2.5% every year and"
+  },
+  {
+   "topic": "Old Primary School hazardous materials abatement",
+   "what_was_recorded": "Vertex recommended abating hazardous materials in phases at a cost of $308,000, with demolition costs through capital planning starting in FY2020.",
+   "figures_as_printed": [
+    "$308,000"
+   ],
+   "quote": "perform the abatement of hazardous materials in phases ($308,000) and the costs of"
+  },
+  {
+   "topic": "Town Hall property condition assessment",
+   "what_was_recorded": "Town Hall immediate repairs total $37,066; five-year upkeep with inflation totals $148,744; additional ADA improvements $3,092.",
+   "figures_as_printed": [
+    "$37,066",
+    "$148,744",
+    "$3,092"
+   ],
+   "quote": "immediate repairs total $37,066"
+  },
+  {
+   "topic": "Cell equipment revenue at Town Hall",
+   "what_was_recorded": "Retaining Town Hall would let revenue from Cell Equipment offset annual maintenance costs.",
+   "figures_as_printed": [],
+   "quote": "by retaining ownership, revenue from cell equipment will offset annual maintenance costs"
+  },
+  {
+   "topic": "TC Passios property condition assessment",
+   "what_was_recorded": "TC Passios immediate repairs total $30,432 (excluding $755,500 hazardous materials allowance); five-year upkeep totals $2,932,253; ADA improvements $7,153.",
+   "figures_as_printed": [
+    "$30,432",
+    "$755,500",
+    "$2,932,253",
+    "$7,153"
+   ],
+   "quote": "additional $7,153 for general ada improvements (stripe spaces, convert urinals to lowered"
+  },
+  {
+   "topic": "TC Passios renovation borrowing",
+   "what_was_recorded": "Renovating TC Passios would require authorization to borrow for final design and construction costs through a long-term note.",
+   "figures_as_printed": [],
+   "quote": "would require authorization to borrow for final design and construction costs for long term"
+  },
+  {
+   "topic": "State grants and funding programs mentioned",
+   "what_was_recorded": "Recipients of state and federal grant programs were cited as examples, including Lancaster, Worcester, Bolton, and economic development loans.",
+   "figures_as_printed": [
+    "$124,699",
+    "$225,000",
+    "$96,000",
+    "$500,000 - $5,000,000"
+   ],
+   "quote": "lancaster received $124,699"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Board of Selectmen candidates debate announcement",
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Ave.",
+   "quote": "tom alonzo, 284 lancaster ave., announced the board of selectmen candidates' debate on thursday, may 3rd"
+  },
+  {
+   "topic": "Fire Department staffing proposal and FY19 budget amendment",
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "quote": "carl luck, 50 sunset lane, updated on the efforts to add one additional staff to the fire department budget"
+  },
+  {
+   "topic": "Citizen petition Article 26 and town facilities",
+   "speaker": "Katey Adams",
+   "stated_role": "45 Williams Drive",
+   "quote": "katey adams, 45 williams drive, noted article 26 on the town meeting warrant is a citizen's petition article"
+  },
+  {
+   "topic": "Public safety staffing and Fire Department proposal",
+   "speaker": "Rhonda Lisio",
+   "stated_role": "181 Reservoir Road",
+   "quote": "rhonda lisio, 181 reservoir road, appreciated that the town manager has prioritized public safety needs"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, Attorney General determination, and public comment",
+   "resolution": "AG determination to next week's agenda; public comment taken",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "open meeting law",
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Landowners Inc. re: Article 21",
+   "resolution": "presented; no vote, Board to support at Town Meeting",
+   "quote": "presented on annual town meeting article 21 (perpetual easement along and upon portions of town-owned property).",
+   "tags": [
+    "dam",
+    "easement",
+    "Article 21",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Citizen Petition re: ATM Article 26",
+   "resolution": "recommended approval",
+   "quote": "citizen petition re: atm article 26",
+   "tags": [
+    "cigarettes",
+    "rolling papers",
+    "bylaw",
+    "Article 26"
+   ]
+  },
+  {
+   "topic": "Articles 27 and 28 passed over",
+   "resolution": "recommended passing over",
+   "quote": "mr. toale noted the charter review committee will be requesting articles 27 and 28 be passed over at town meeting.",
+   "tags": [
+    "charter review",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Tilton Avenue sewer article",
+   "resolution": "no recommendation; outreach to residents recommended",
+   "quote": "she and mr. ebersole were not ready to make a recommendation on this article this evening.",
+   "tags": [
+    "sewer",
+    "septic",
+    "Tilton Avenue"
+   ]
+  },
+  {
+   "topic": "Fire Department staffing proposal",
+   "resolution": "discussed; no action",
+   "quote": "the discussion turned to mr. luck's earlier presentation regarding adding another staff to the fire department.",
+   "tags": [
+    "fire department",
+    "staffing",
+    "overtime",
+    "budget"
+   ]
+  },
+  {
+   "topic": "SWTF membership composition",
+   "resolution": "changed composition to Selectmen, Planning Board, Conservation members plus two alternates",
+   "quote": "to change the composition of the swtf to a board of selectmen member, a planning board member",
+   "tags": [
+    "SWTF",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants, and action file issues",
+   "resolution": "minutes of April 3 approved; warrants presented; action file items discussed",
+   "quote": "minutes of april 3, 2018 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "taxes",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Workshop meeting on town facilities",
+   "resolution": "discussed; no consensus vote recorded",
+   "quote": "workshop meeting on town facilities",
+   "tags": [
+    "town facilities",
+    "Town Hall",
+    "Passios",
+    "Ritter",
+    "Old Primary School",
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Town Manager and department reports",
+   "resolution": "received; no action",
+   "quote": "land use director adam burney met with mrpc staff john hume and karen chapman on tuesday, april 17th and",
+   "tags": [
+    "MRPC",
+    "LED streetlights",
+    "Summer Street",
+    "health insurance",
+    "DPW",
+    "IT",
+    "land use",
+    "tax title"
+   ]
+  },
+  {
+   "topic": "Public comment and closing announcements",
+   "resolution": "comment taken; Town Meeting and meeting dates announced",
+   "quote": "mr. toale reminded everyone this coming saturday is the annual town meeting.",
+   "tags": [
+    "public comment",
+    "election",
+    "town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the Attorney General's office, Division of Open Government, dated April 25, 2018",
+   "where": "text",
+   "quote": "mr. toale reported the board received a letter dated april 25, 2018 from the attorney general's office,"
+  },
+  {
+   "name": "Attorney General's Open Meeting Law training videos (#1 and #2)",
+   "where": "text",
+   "quote": "members to review the attorney general's open meeting law training videos (#1 and #2)"
+  },
+  {
+   "name": "Annual Town Meeting Article 21 (Perpetual Easement along and upon portions of Town-owned property)",
+   "where": "text",
+   "quote": "presented on annual town meeting article 21 (perpetual easement along and upon portions of town-owned property)."
+  },
+  {
+   "name": "Citizen petition, ATM Article 26 (Eliminate Chapter 127 Cigarettes, 127-1, 127-2 and allow sale of cigarette rolling papers)",
+   "where": "text",
+   "quote": "(eliminate chapter 127 cigarettes, 127-1, 127-2 and allow sale of cigarette rolling papers)"
+  },
+  {
+   "name": "Annual Town Meeting Articles 27 and 28 (Charter Review Committee)",
+   "where": "text",
+   "quote": "mr. toale noted the charter review committee will be requesting articles 27 and 28 be passed over at town meeting."
+  },
+  {
+   "name": "Formal quote from Unitil on LED streetlight conversion",
+   "where": "text",
+   "quote": "we received the formal quote from unitil that the accumulated depreciation value is $81,808.79."
+  },
+  {
+   "name": "Presentation of the Town Counsel at the Open Meeting Law training",
+   "where": "text",
+   "quote": "the presentation town counsel gave at this training is now on the website"
+  },
+  {
+   "name": "Updated Public Employee Committee Agreement",
+   "where": "text",
+   "quote": "the selectmen signed an updated public employee committee agreement on april 10th"
+  },
+  {
+   "name": "Draft performance evaluations for management and non-management personnel",
+   "where": "text",
+   "quote": "department heads were provided draft performance evaluations for management and non-management personnel"
+  },
+  {
+   "name": "Extended Day registration form",
+   "where": "text",
+   "quote": "registered to attend extended day will need to complete a registration form that is available"
+  },
+  {
+   "name": "Capital Improvement Bill list of capital projects (FY19 state budget)",
+   "where": "text",
+   "quote": "senator tran had requested a list of capital projects to advocate in a capital improvement"
+  },
+  {
+   "name": "Vertex Property Condition Assessments for Town Hall, Ritter, Passios and old Primary (February 13, 2018 presentation)",
+   "where": "text",
+   "quote": "february 13, 2018 presentation by vertex on the property condition assessments for town"
+  },
+  {
+   "name": "Timeline of Discussion on Town Facilities",
+   "where": "text",
+   "quote": "timeline of discussion on town facilities"
+  },
+  {
+   "name": "Ms. Bertram's PowerPoint presentation on town facility ideas",
+   "where": "text",
+   "quote": "ms. bertram presented a powerpoint presentation on her ideas."
+  }
+ ],
+ "tags": [
+  "town meeting",
+  "Fire Department staffing",
+  "town facilities",
+  "Hickory Hills dam",
+  "cigarette rolling papers",
+  "LED streetlights",
+  "health insurance",
+  "open meeting law",
+  "tax title",
+  "warrants",
+  "state earmark"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. bertram presented a powerpoint presentation on her ideas."
+ },
+ "dropped_unquoted_by_field": {}
 }

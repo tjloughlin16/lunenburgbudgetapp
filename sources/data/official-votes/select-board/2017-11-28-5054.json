@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-11-28",
  "docid": "5054",
@@ -12,6 +12,48 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. No explicit vote language found. Minutes describe a discussion of warrant articles and adjournment to attend a Special Town Meeting, but do not record any motion, second, or voting outcome using standard parliamentary language.",
- "cost_usd": 0.0786105
+ "note": "Single-page minutes with a brief record. No board members are named as present, no motions or votes are recorded, and the 6:30 p.m. adjournment has no recorded motion, so no votes are listed. The meeting was held on 2017-11-28 per the request; the minutes were received and filed 2018 (JAN 03 2018). Elaine M. Peterson is listed as the submitter of the minutes, not as a stated attendee.",
+ "cost_usd": 0.00175142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elaine M. Peterson",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager",
+   "role": "Executive Assistant to the Town Manager (signed the minutes as submitter)"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "discussed, no action recorded",
+   "quote": "the board met and discussed some of the articles that were on the special town meeting warrant this evening",
+   "tags": [
+    "special town meeting",
+    "warrant articles"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "discussed some of the articles that were on the special town meeting warrant this evening"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "meeting adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

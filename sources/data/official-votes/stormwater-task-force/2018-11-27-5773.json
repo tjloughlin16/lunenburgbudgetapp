@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-11-27",
  "docid": "5773",
@@ -12,15 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of the September 13 and October 25, 2018 meetings",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the september 13 and october 25, 2018 meetings were reviewed and approved."
-  },
-  {
-   "motion": "to adjourn the meeting at 8:42 pm",
+   "motion": "To adjourn the meeting at 8:42 pm.",
    "moved_by": "M. Allison",
    "seconded_by": "J. Rabbitt",
    "outcome": "passed",
@@ -29,6 +21,202 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text; \"2^d.\" is OCR artifact for \"seconded by\"",
- "cost_usd": 0.1404305
+ "note": "Scanned via OCR (macOS Vision) with garbled passages: page 1 opening line (\"the own\", \"Article 1/\") is unreadable; \"BPM\" appears for \"BMP\" in places; page 2 ends mid-discussion of MCM 6 and page 3 begins mid-sentence (\"BMP's in MCM 3 must be completed by year 1.\"), so text between pages is missing. The seconder \"2^d. J. Rabbitt\" is OCR for a second-motion line and is recorded as J. Rabbitt. Meeting time \"6:3 pm\" is printed as such. No roll call or attendance list is printed; attendance status is inferred from speaking roles only. Minutes approval has no recorded motion or count, so it is listed as a decision, not a vote. No dollar figures are printed. No public comment section is printed.",
+ "cost_usd": 0.006073519999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWIF; Member, BOS",
+   "status": "present",
+   "quote": "phyllis luck, chair swif member, bos"
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "consultant working with Mike Clark of Design Consultants Inc. (DCI)",
+   "status": "present",
+   "quote": "ed himlan passed out copies of the municipal separate storm sewer system (ms4) permit"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matt allison pointed out that town \"ordinances\", should be replaced"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "adam burney confirmed that this has been completed."
+  },
+  {
+   "name": "Mike Clark",
+   "role": "of Design Consultants Inc. (DCI)",
+   "status": "not stated",
+   "quote": "mike clark of design consultants inc. (dci), said that he believes dci is working"
+  },
+  {
+   "name": "J. Rabbitt",
+   "role": "member (seconded motion)",
+   "status": "present",
+   "quote": "to adjourn the meeting at 8:42 pm. 2^d. j. rabbitt"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the September 13 and October 25, 2018 meetings reviewed and approved (no motion or count recorded).",
+   "quote": "minutes of the september 13 and october 25, 2018 meetings were reviewed and approved."
+  },
+  {
+   "decision": "SWTF agreed the Street Design and Parking Lot Guidelines Report and Green Infrastructure Report be combined into one report, to be started in year 3.",
+   "quote": "the swtf members agreed these should be combined in one report and must be started in year 3."
+  },
+  {
+   "decision": "Parks Commission to be added as a Responsible Party for the Parks and Open Spaces Operations and Maintenance Procedures BMP (discussed).",
+   "quote": "it was discussed that the parks commission should be added as a responsible party."
+  },
+  {
+   "decision": "Phyllis Luck to go back to the CMRSWC member who raised the Lunenburg Water District MS4 compliance issue for clarification.",
+   "quote": "phyllis will go back to the cmrswc member who raised this issue for clarification."
+  },
+  {
+   "decision": "SWTF information to be organized in the SWTF Google Drive using the SWMP headings as the framework; members agreed.",
+   "quote": "it was suggested that the swmp headings be used as the organizational framework for this google drive. members agreed this made sense."
+  },
+  {
+   "decision": "Meeting schedule set: December 20, 2018; January 29 (Tuesday), February 28, March 28; any extra first-quarter 2019 meetings on the second Thursday.",
+   "quote": "meeting schedule: december 20, 2018; january 29 (tuesday), february 28, march 28."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DCI quote for MCM 3 requirements (DPW)",
+   "what_was_recorded": "DPW Director requested a quote from DCI to complete MCM 3 requirements; no figure was printed and Adam Burney had no new information.",
+   "quote": "that the dpw director had requested a quote from dci to complete the requirements of mcm 3.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Plastic bag bylaw warrant article",
+   "resolution": "announced; no action",
+   "quote": "passed at town meeting on november 13, with swif support.",
+   "tags": [
+    "plastic bags",
+    "town meeting",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "quote": "minutes of the september 13 and october 25, 2018 meetings were reviewed and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "MS4 SWMP review: MCM 5 and MCM 6",
+   "resolution": "reviewed; combined report agreed; Parks Commission added as responsible party",
+   "quote": "we began by reviewing mcm 5.",
+   "tags": [
+    "MS4 permit",
+    "SWMP",
+    "BMP",
+    "catch basins",
+    "street sweeping",
+    "winter road maintenance"
+   ]
+  },
+  {
+   "topic": "MCM 3 work and DCI quote",
+   "resolution": "no update; continued",
+   "quote": "however, adam had no new information for this evening's meeting.",
+   "tags": [
+    "MCM 3",
+    "DCI",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Stormwater Survey",
+   "resolution": "discussed; no action",
+   "quote": "begin with the end in mind",
+   "tags": [
+    "stormwater survey",
+    "public education"
+   ]
+  },
+  {
+   "topic": "Lunenburg Water District MS4 compliance",
+   "resolution": "Chair to seek clarification",
+   "quote": "phyllis luck had been made aware of potential requirements of bringing the lunenburg water district",
+   "tags": [
+    "water district",
+    "MS4 permit"
+   ]
+  },
+  {
+   "topic": "SWTF Google Drive organization",
+   "resolution": "approved by members",
+   "quote": "members agreed this made sense.",
+   "tags": [
+    "Google Drive",
+    "records"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "set",
+   "quote": "meeting schedule: december 20, 2018; january 29 (tuesday), february 28, march 28.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:42 pm",
+   "quote": "to adjourn the meeting at 8:42 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MS4 Permit Stormwater Management Plan (SWMP) sections: MCM 5 (Post Construction Stormwater Management in New Development and Redevelopment, Permit Part 2.3.6) and MCM 6 (Good Housekeeping and Pollution Prevention for Permittee Owned Operations, Permit Part 2.3.7)",
+   "where": "list",
+   "quote": "ed himlan passed out copies of the municipal separate storm sewer system (ms4) permit stormwater management plan (swmp) sections"
+  },
+  {
+   "name": "Town Bylaw Section 204-1E (2)",
+   "where": "text",
+   "quote": "town bylaw section 204-1e (2) must be modified and include sections 204-1d (7) and 204-1f"
+  },
+  {
+   "name": "Town Meeting Warrant Article (plastic bag reduction bylaw)",
+   "where": "text",
+   "quote": "passed at town meeting on november 13, with swif support."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "SWMP",
+  "town bylaws",
+  "plastic bag bylaw",
+  "stormwater survey",
+  "DPW",
+  "water district",
+  "Google Drive",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ed himlan passed out copies of the municipal separate storm sewer system (ms4) permit"
+ },
+ "dropped_unquoted_by_field": {}
 }

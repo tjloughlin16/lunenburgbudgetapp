@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2018-09-10",
  "docid": "3457",
@@ -12,39 +12,171 @@
  },
  "votes": [
   {
-   "motion": "Accept the July 16, 2018 minutes and the August 13, 2018 minutes",
+   "motion": "Accept both the July 16, 2018 minutes and the August 13, 2018 minutes.",
    "moved_by": "E. Arnold",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by e. arnold: accept both the july 16, 2018 minutes and the august 13, 2018 minutes 2nd: s. andrews vote: all in favor"
+   "quote": "motion by e. arnold: accept both the july 16, 2018 minutes and the august 13, 2018 minutes"
   },
   {
-   "motion": "Accept the final changes to the SAP processes and update the SAP as submitted",
+   "motion": "Accept the final changes to the processes and update the SAP as submitted.",
    "moved_by": "S. Andrews",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews: accept the final changes to the processes and update the sap as submitted. 2nd: e. arnold vote: all in favor"
+   "quote": "motion by s. andrews: accept the final changes to the processes and update the sap as submitted."
   },
   {
-   "motion": "Seek approval for the $5K expense for the purchase of Market Data regarding wage compensation for SAP job roles",
+   "motion": "Seek approval for the $5K expense for the purchase of market data regarding wage compensation for SAP job roles.",
    "moved_by": "S. Andrews",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews: seek approval for the $5k expense for the purchase of market data regarding wage compensation for sap job roles. 2nd: e. arnold vote: all in favor"
+   "quote": "seek approval for the $5k expense for the purchase of market data regarding wage compensation for sap job roles."
   },
   {
-   "motion": "Adjourn the meeting at 8:00pm",
+   "motion": "Adjourn the meeting at 8:00pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by s. andrews: to adjourn the meeting at 8:00pm 2nd: e. arnold te: all in favor"
+   "quote": "to adjourn the meeting at 8:00pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. Final vote has apparent OCR artifact (\"te:\" instead of \"Vote:\") but outcome is clear from context.",
- "cost_usd": 0.0211212
+ "note": "Text is a clean extraction of a single-page-plus minutes set. Votes are recorded only as 'All in Favor' with no numeric count. The adjournment line is printed with a typo ('te:  All in Favor'), and the record does not show a roll-call. The minutes do not print a heading for a documents list.",
+ "cost_usd": 0.00423902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Chase",
+   "role": "Personnel Committee",
+   "status": "present",
+   "quote": "meeting called to order at 6:35pm with all attendee's present."
+  },
+  {
+   "name": "Sue Andrews",
+   "role": "Personnel Committee",
+   "status": "present",
+   "quote": "personnel committee attendees: scott chase sue andrews erik arnold"
+  },
+  {
+   "name": "Erik Arnold",
+   "role": "Personnel Committee",
+   "status": "present",
+   "quote": "personnel committee attendees: scott chase sue andrews erik arnold"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "",
+   "status": "present",
+   "quote": "jamie toale gave an overview of his thinking regarding the improvement"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to spend time creating simple tools to get started on volunteer recruitment and onboarding, and to review this further at the next scheduled meeting.",
+   "quote": "there was interest in the committee spending time taking a look at creating some simple tools that might get the project started"
+  },
+  {
+   "decision": "The next meeting was set for October 17, 2018 at 6:30pm.",
+   "quote": "the committee determined that the next meeting will be held october 17, 2018 at 6:30pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP salary survey alternatives",
+   "what_was_recorded": "Heather reported two options for the 2019 SAP compensation survey: buying market data from comparable towns for about $5K, or a full consultant review for about $20K. Each would need a warrant article at the Special Town Meeting.",
+   "figures_as_printed": [
+    "$5K",
+    "$20K"
+   ],
+   "quote": "we could purchase market data from other comprable towns to lunenburg for about $5k."
+  },
+  {
+   "topic": "Consultant full review cost",
+   "what_was_recorded": "A consultant doing a full review of all appropriate jobs was estimated at about $20K.",
+   "figures_as_printed": [
+    "$20K"
+   ],
+   "quote": "a consultant doing a full review of all appropriate jobs would cost about $20k."
+  },
+  {
+   "topic": "Market data expense approval",
+   "what_was_recorded": "The committee voted to seek approval for a $5K expense to purchase market data on SAP job wage compensation.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "seek approval for the $5k expense for the purchase of market data regarding wage compensation for sap job roles."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved",
+   "quote": "revised minutes from the july 16, 2018 meeting, and the minutes from the august 13,2018"
+  },
+  {
+   "topic": "Personnel Action Forms",
+   "resolution": "no action",
+   "quote": "there were no actions needing review at this time."
+  },
+  {
+   "topic": "SAP Policy Review (vacation and FMLA processes)",
+   "resolution": "approved final changes and SAP update",
+   "quote": "the committee reviewed the documents in their final form."
+  },
+  {
+   "topic": "SAP Salary Survey alternatives",
+   "resolution": "approved seeking $5K for market data",
+   "quote": "each expense would require a warrent article to be presented at the special town meeting november 13, 2018."
+  },
+  {
+   "topic": "BOS Goals: volunteer recruitment and onboarding",
+   "resolution": "general discussion, no action",
+   "quote": "while no formal agreements were initiated, there was interest in the committee spending time"
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for October 17, 2018; adjourned 8:00pm",
+   "quote": "the committee determined that the next meeting will be held october 17, 2018 at 6:30pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Final refreshed SAP documents (vacation process and FMLA process)",
+   "where": "text",
+   "quote": "heather presented the final refreshed documents that will update the sap"
+  },
+  {
+   "name": "Warrant article for SAP salary survey expense (Special Town Meeting November 13, 2018)",
+   "where": "text",
+   "quote": "each expense would require a warrent article to be presented at the special town meeting november 13, 2018."
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "SAP policy",
+  "salary survey",
+  "compensation",
+  "volunteer recruitment",
+  "BOS goals",
+  "minutes approval",
+  "warrant article"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

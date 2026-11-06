@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-07-09",
  "docid": "3992",
@@ -12,31 +12,181 @@
  },
  "votes": [
   {
-   "motion": "enter Executive Session to discuss litigation strategy",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Enter Executive Session under G.L. c. 30A, § 21 to discuss litigation strategy in Town of Lunenburg v. Settlers Solar, et al.",
    "moved_by": "Kenneth Chenis",
    "seconded_by": "Matthew Allison",
-   "quote": "kenneth chenis made the motion to enter executive session, seconded by matthew allison, roll call vote, t. cole, aye, d. prokowiew, aye, k. chenis, aye, m. allison, aye, g. bittner, aye."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "kenneth chenis made the motion to enter executive session, seconded by matthew allison, roll call vote, t. cole, aye, d. prokowiew, aye"
   },
   {
-   "motion": "authorize Town Counsel's submittal of settlement proposal with $5,000 landscape architect limit and $50,000 tree fund with funds remaining after 36 months from construction completion returned to the applicant",
-   "outcome": "passed 5-0",
-   "procedural": false,
+   "motion": "Authorize Town Counsel's submittal of their proposal with a $5,000 limit on the landscape architect, and that any funds remaining from the $50,000 after 36 months from construction completion be returned to the applicant.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
-   "quote": "d. prokowiew made a motion authorizing town counsel 's submittal of their proposal with a $5,000 limit on the landscape architect and that any funds remainin g from the $50,000 after 36 months from construction completion will be returned to the applicant , seconded by m. allison, roll call vote, t. cole, aye, d. prokowiew, aye, k. chenis, aye, m. allison, aye, g. bittner, aye."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "d. prokowiew made a motion authorizing town counsel 's submittal of their proposal with a $5,000 limit on the landscape architect"
   },
   {
-   "motion": "close Executive Session and return to Regular Session",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Close Executive Session and return to Regular Session.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "quote": "k. chenis made a motion to close executive session and return to regular session, seconded by d. prokowiew, roll call vote, t. cole, aye, d. prokowiew, aye, k. chenis, aye, m. allison, aye, g. bittner, aye."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "k. chenis made a motion to close executive session and return to regular session, seconded by d. prokowiew, roll call vote, t. cole, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All three votes passed unanimously (5-0). Two are procedural motions (enter and close executive session); one is substantive (authorizing Town Counsel's settlement proposal).",
- "cost_usd": 0.1029385
+ "note": "Executive session minutes only; no regular session minutes are included. Vote counts are not printed as totals; roll calls list each member as aye, so outcomes are recorded as passed. The adjournment at 7:16 PM is recorded without a motion, so it is not listed as a vote. Some words are broken in the extracted text (e.g., 'litig ation', 'remainin g', 'w ill'); quotes were copied as printed. Opposing counsel Michael Rosen and the parties are referenced but did not take part in the meeting, so they are not listed as attendees.",
+ "cost_usd": 0.00586732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel adam costa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Counsel relayed the Board's settlement offer to opposing counsel: agree to remand on three terms (plans with red and pink revisions, adherence to the contingent settlement agreement, and tree fund increase to $50,000).",
+   "quote": "the board's offer was to agree to remand with the following terms."
+  },
+  {
+   "decision": "Tree fund spending will be done at the Board's discretion through a single point of contact the Board identifies.",
+   "quote": "the board would spend the funds at its discretion through a single point of contact identified by the board."
+  },
+  {
+   "decision": "The Board needs to determine a single point of contact (e.g., Land Use Director, Board member, or landscape architect) to talk with abutters about plantings; a tree plan will be created for Board review after abutter and landscape architect conversations.",
+   "quote": "the board needs to determine a single point of contact, e.g., land use director, board member, landscape architect."
+  },
+  {
+   "decision": "Town Counsel will verify with opposing counsel what constitutes construction completion; A. Burney anticipates it will be when the project is turned on.",
+   "quote": "a. burney anticipates that will be when the project is turned on; a. costa will verify with m. rosen."
+  },
+  {
+   "decision": "Town Counsel advised that once the new application is submitted, it be sent out for peer review.",
+   "quote": "a. costa advised that as soon as the new application is submitted, it be sent out for peer review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tree fund increase in settlement offer",
+   "what_was_recorded": "The Board's settlement offer included raising the tree fund from $10,000 to $50,000; opposing counsel agreed to an increase of $40,000 with conditions.",
+   "figures_as_printed": [
+    "$10,000",
+    "$50,000",
+    "$40,000"
+   ],
+   "quote": "the plaintiff would agree to an increase in the tree fund from $10,000 to the amount of $50,000."
+  },
+  {
+   "topic": "Landscape architect professional fee cap",
+   "what_was_recorded": "Opposing counsel requested the professional fee for a landscape architect be capped at $5,000, and the motion authorized that $5,000 limit.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "m. rosen requested the professional fee be capped at $5,000."
+  },
+  {
+   "topic": "Tree fund spending deadline and return of remaining funds",
+   "what_was_recorded": "Opposing counsel wanted a 36-month limit from construction completion on spending tree funds; funds remaining after that would be returned to the applicant under the motion.",
+   "figures_as_printed": [
+    "thirty-six (36) months",
+    "$50,000"
+   ],
+   "quote": "m. rosen wanted a time limit of thirty-six (36) months from completion of construction placed on spending of the tree"
+  },
+  {
+   "topic": "Estimated cost of replanting after clear cutting",
+   "what_was_recorded": "T. Cole asserted that the $50,000 would easily be spent replanting if 34 acres were clear cut, with any remainder going to the Town.",
+   "figures_as_printed": [
+    "$50,000",
+    "34 acres"
+   ],
+   "quote": "t. cole asserted that if you clear cut 34 acres, the $50,000 will easily be spent replanting"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Town of Lunenburg v. Settlers Solar litigation",
+   "resolution": "Entered executive session, took a motion authorizing Town Counsel's proposal (passed), then closed executive session and returned to regular session; adjourned executive session at 7:16 PM",
+   "quote": "board chair requested a motion to enter executive session pursuant to g.l. c. 30a, § 21, to discuss strategy",
+   "tags": [
+    "litigation",
+    "Settlers Solar",
+    "remand",
+    "tree fund",
+    "executive session",
+    "Town Counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Contingent settlement agreement",
+   "where": "text",
+   "quote": "the plaintiff would adhere to all terms of the contingent settlement agreement."
+  },
+  {
+   "name": "Plans showing the red and pink revisions",
+   "where": "text",
+   "quote": "the project would be developed in accordance with the plans that showed both the red and pink revisions."
+  }
+ ],
+ "tags": [
+  "litigation",
+  "Settlers Solar",
+  "tree fund",
+  "remand",
+  "executive session",
+  "landscape architect",
+  "Town Counsel",
+  "stormwater special permit"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

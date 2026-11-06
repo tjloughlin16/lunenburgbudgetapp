@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2017-09-06",
  "docid": "1576",
@@ -12,39 +12,175 @@
  },
  "votes": [
   {
-   "motion": "Nominate Bob Ebersole as committee chair",
+   "motion": "Nominate B. Ebersole as committee chair.",
    "moved_by": "J. Toale",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion, j. toale, nominate b. ebersole as committee chair, second, m. jeffreys, all aye."
   },
   {
-   "motion": "Nominate Jamie Toale as committee vice-chair",
+   "motion": "Nominate J. Toale as committee vice-chair.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "S. Archambault",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion, m. jeffreys, nominate j. toale as committee vice-chair, second, s. archambault, all aye."
   },
   {
-   "motion": "Nominate Michael-Ray Jeffreys as committee clerk",
+   "motion": "Nominate M. Jeffreys as committee clerk.",
    "moved_by": "J. Toalc",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion, j. toalc, nominate m. jeffreys as committee clerk, second, b. ebersole, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "J. Toale",
    "seconded_by": "Steve Archambault",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, j. toale to adjourn, second, steve archambault, all aye."
+   "quote": "motion, j. toale to adjourn, second, steve archambault, all aye. meeting adjourned at 7:44pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from scanned minutes; all four votes passed unanimously.",
- "cost_usd": 0.0847565
+ "note": "Text is OCR (macOS Vision) and some names look OCR-garbled: \"Burchficld\" and \"J. Toalc\" are recorded as printed; the clerk motion's mover is likely J. Toale. No roll-call or vote counts are printed beyond \"all aye\". No dollar figures or public comment appear. The three trailing titles (Town Charter, Clark University study) are unlabelled and their attachment status is unclear; the text ends with garbled fragments (\"Nat- Nife\"). Documents are recorded as text mentions, not a list.",
+ "cost_usd": 0.00399572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jamie toale (selectmen)"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jamie toale (selectmen)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "michael-ray jeffreys (planning board), katie adams"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "katie adams (school committee), michael mackin (school committee)"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "michael mackin (school committee), terry burchficld (finance committee)"
+  },
+  {
+   "name": "Terry Burchficld",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terry burchficld (finance committee), mark erickson (finance committee)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "mark erickson (finance committee), steve archambault (community representative)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "nancy gray (community representative)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members agreed to meet on the second and fourth Wednesdays of the month, with no objections to meetings being televised and a preference for meetings in Town Hall.",
+   "quote": "members agreed to meet on the second and fourth wednesdays of the month; no objections to meetings being televised and preference will be for meetings in town hall."
+  },
+  {
+   "decision": "Members will review the documents provided and bring up areas of interest at the next meeting.",
+   "quote": "members will review documents provided and bring up areas of interest at next meeting"
+  },
+  {
+   "decision": "Chairman B. Ebersole will provide a double-spaced, larger-font version of the Town Charter for members to mark up and use as a primary reference.",
+   "quote": "chairman, b. ebersole will provide a version of the town charter that is double space and has larger font for"
+  },
+  {
+   "decision": "M. Mackin will provide a draft of a process for keeping community members abreast of the committee's progress while seeking their input, at the next meeting.",
+   "quote": "he will provide a draft of this process at the next meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Select officers",
+   "resolution": "chair, vice-chair and clerk elected",
+   "quote": "motion, j. toale, nominate b. ebersole as committee chair, second, m. jeffreys, all aye."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "agreed to meet second and fourth Wednesdays",
+   "quote": "members agreed to meet on the second and fourth wednesdays of the month; no objections to meetings being"
+  },
+  {
+   "topic": "Discussion of materials, Open Meeting Law and Town Charter",
+   "resolution": "discussion, no action",
+   "quote": "chairman confirmed with members receipt of material distributed via email; he advised the committee on open"
+  },
+  {
+   "topic": "Action items before next meeting",
+   "resolution": "assigned to members and chair",
+   "quote": "members will review documents provided and bring up areas of interest at next meeting"
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "no action",
+   "quote": "meetings are held at town hall, 7:00 pm, on the second and fourth wednesdays of the month, unless otherwise"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:44pm",
+   "quote": "motion, j. toale to adjourn, second, steve archambault, all aye. meeting adjourned at 7:44pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Town Charter",
+   "where": "text",
+   "quote": "lunenburg town charter forms of government in the commonwealth of massachusetts"
+  },
+  {
+   "name": "Study on Structural Changes in Local Government in the Commonwealth of Massachusetts, Clark University (2010)",
+   "where": "text",
+   "quote": "study on structural changes in local govermment in the commonwealth of massachusetts, clark university (2010)"
+  }
+ ],
+ "tags": [
+  "charter review committee",
+  "officers",
+  "meeting schedule",
+  "open meeting law",
+  "community engagement",
+  "Town Charter"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

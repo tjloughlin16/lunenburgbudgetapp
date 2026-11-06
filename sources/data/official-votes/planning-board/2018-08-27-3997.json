@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-08-27",
  "docid": "3997",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of 8/13/18",
+   "motion": "Approve the minutes of 8/13/18.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "k. chenis made motion to approve, t. cole seconded, t. cole, aye; d. prokowiew, abstained due to absence; k. chenis, aye; m. allison, aye. vote passed 3-0."
   },
   {
-   "motion": "Approve Jamie Toale for Montachusett Metropolitan Planning Organization Subregion 3 Representative position",
+   "motion": "Approve Jamie Toale for the MPO Subregion 3 representative position (recommendation to the Town Manager).",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "k. chenis made a motion to approve jamie toale for the mpo position, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "Recess for five minutes or until Town Counsel arrives",
+   "motion": "Recess for five (5) minutes, or until Town Counsel arrives.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "k. chenis made a motion to recess for five ( 5) minutes , or until town counsel arrives, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "Waive the fees for resubmittal of the ANR Plan",
+   "motion": "Waive the fees for resubmittal of the ANR Plan (171 Gilchrest Street).",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -44,15 +44,15 @@
    "quote": "k. chenis made a motion to waive the fees for resubmittal of the anr plan, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "Either the Board Chair or Vice Chair reach out to Mr. Jeffreys and inquire if his intention is to remain and re-engage with the Charter Review Committee",
+   "motion": "Either the Board Chair or Vice Chair reach out to Mr. Jeffreys to ask whether he intends to remain and re-engage with the Charter Review Committee.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "k. chenis made a motion that either the board chair or vice chair reach out to mr. jeffreys and inquire if his intention is to remain and re-engage with the charter review committee, d. prokowiew seconded, all aye."
+   "quote": "k. chenis made a motion that either the board chair or vice chair reach out to mr. jeffreys and inquire if his intention is to remain"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -61,6 +61,288 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09309150000000001
+ "note": "Text is a clean extraction, no scan. Settlers Solar public hearing says 'see separate minutes', so its votes and discussion are not in this text. Whitespace in quotes was collapsed to single spaces. The printed name 'J amie Rheault' has a stray space and is recorded as printed. No public comment section is printed. Town Counsel arrived 7:05 PM. The 'Documents used at meeting' list is printed at the end.",
+ "cost_usd": 0.00786872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "kenneth chenis, clerk"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "david prokowiew, member"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "tanner cole, member"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel adam costa (arrived 7:05 pm)"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: gregory bittner"
+  },
+  {
+   "name": "J amie Rheault",
+   "role": "representing the applicant (Whitman & Bingham Associates (WBA))",
+   "status": "present",
+   "quote": "the applicant, kevin hill was represented by j amie rheault, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "Kevin Hill",
+   "role": "Applicant",
+   "status": "not stated",
+   "quote": "the applicant, kevin hill was represented by j amie rheault, whitman & bingham associates (wba)"
+  },
+  {
+   "name": "M. Rosen",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "m. rosen reviewed the list of items to address for the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board intends to extend the current recreational marijuana moratorium over the winter to work through the regulatory process, with a single phase of licensed non-medical adult marijuana discussed at each meeting.",
+   "quote": "the board intends to extend the current moratorium over the winter to work through the regulatory process"
+  },
+  {
+   "decision": "A marijuana discussion timeline was set: September 10 Retail; September 24 Cultivation; October 22 wrap up; November 5 Processing and Testing Labs; November 26 Craft Cultivator; December 10 Transporter.",
+   "quote": "the following timeline was set for marijuana discussion:"
+  },
+  {
+   "decision": "A. Burney will seek guidance from Town Counsel on the marijuana regulations.",
+   "quote": "a. burney will seek guidance from town counsel."
+  },
+  {
+   "decision": "Sign Bylaw (§250-6.5) discussion put on hold until all Board members are present.",
+   "quote": "discussion on hold until all board members are present."
+  },
+  {
+   "decision": "Solar Energy Systems (§250-4.15) placed on hold while the Board focuses on marijuana.",
+   "quote": "on hold while the board focuses on marijuana."
+  },
+  {
+   "decision": "A. Burney will send a letter to the owner of Asian Imperial Restaurant, 5 & 9 Electric Avenue, stating the remaining driveway apron is within the Town's right-of-way and that the DPW Director will take corrective action.",
+   "quote": "a. burney will send a letter to the property owner stating the remaining driveway apron"
+  },
+  {
+   "decision": "The ANR plan application for 171 Gilchrest Street was withdrawn without prejudice for rescheduling at a later date.",
+   "quote": "the application was withdrawn without prejudice for rescheduling at a later date."
+  },
+  {
+   "decision": "Settlers Solar LLC was told revised plans are due to the Planning Office by Tuesday, September 4th, 4:00 PM, and are to include a suggested easement to the conservation restriction area.",
+   "quote": "the applicant was informed that the revised plans are to be submitted to the planning office by tuesday, september 4th, 4:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Settlers Solar tree fund for landscape architect",
+   "what_was_recorded": "M. Rosen listed, among the items for the Settlers Solar applicant, up to $5000 of the tree fund usable for a landscape architect.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "m. rosen reviewed the list of items to address for the board - walking trail, up to $5000 of the tree fund useable for a landscape architect"
+  },
+  {
+   "topic": "ANR resubmittal fee waiver",
+   "what_was_recorded": "The Board voted to waive the fees for resubmittal of the ANR Plan for 171 Gilchrest Street; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "k. chenis made a motion to waive the fees for resubmittal of the anr plan, d. prokowiew seconded, all aye."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (8/13/18)",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "k. chenis made motion to approve, t. cole seconded, t. cole, aye; d. prokowiew, abstained due to absence; k. chenis, aye; m. allison, aye. vote passed 3-0."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Open Space update noted",
+   "tags": [
+    "committees",
+    "open space"
+   ],
+   "quote": "open space ad hoc committee- continuing to update the open space and recreation plan."
+  },
+  {
+   "topic": "MPO Subregion 3 representative",
+   "resolution": "approved Jamie Toale for recommendation to Town Manager",
+   "tags": [
+    "appointments",
+    "MPO"
+   ],
+   "quote": "the planning board needs to make its recommendation to the town manager."
+  },
+  {
+   "topic": "Recreational marijuana regulations",
+   "resolution": "moratorium extension intended; discussion timeline set; Town Counsel guidance sought",
+   "tags": [
+    "marijuana",
+    "moratorium",
+    "zoning bylaw"
+   ],
+   "quote": "the board intends to extend the current moratorium over the winter to work through the regulatory process"
+  },
+  {
+   "topic": "Sign Bylaw §250-6.5",
+   "resolution": "on hold",
+   "tags": [
+    "zoning bylaw",
+    "sign bylaw"
+   ],
+   "quote": "discussion on hold until all board members are present."
+  },
+  {
+   "topic": "Solar Energy Systems §250-4.15",
+   "resolution": "on hold",
+   "tags": [
+    "zoning bylaw",
+    "solar"
+   ],
+   "quote": "on hold while the board focuses on marijuana."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; Settlers Solar continued hearing set for September 10",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ],
+   "quote": "september 10- continued public hearing for settlers solar, 994 northfield road"
+  },
+  {
+   "topic": "Ongoing items (Asian Imperial, Village at Flat Hill, Economic Development, Board of Appeals)",
+   "resolution": "updates noted; Asian Imperial letter to be sent",
+   "tags": [
+    "enforcement",
+    "drainage",
+    "economic development",
+    "zoning bylaw"
+   ],
+   "quote": "a. burney will send a letter to the property owner stating the remaining driveway apron"
+  },
+  {
+   "topic": "Board comment: earth removal and marijuana publicity",
+   "resolution": "no action; earth removal draft expected October",
+   "tags": [
+    "earth removal",
+    "marijuana",
+    "public outreach"
+   ],
+   "quote": "k. chenis requested earth removal permitting be included on future agendas."
+  },
+  {
+   "topic": "Recess",
+   "resolution": "recessed five minutes or until Town Counsel arrived",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "k. chenis made a motion to recess for five ( 5) minutes , or until town counsel arrives, d. prokowiew seconded, all aye."
+  },
+  {
+   "topic": "ANR Plan, 171 Gilchrest Street",
+   "resolution": "withdrawn without prejudice; resubmittal fees waived",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Gilchrest Street"
+   ],
+   "quote": "the application was withdrawn without prejudice for rescheduling at a later date."
+  },
+  {
+   "topic": "Public hearing, 994 Northfield Road, Settlers Solar LLC",
+   "resolution": "continued; revised plans due September 4",
+   "tags": [
+    "solar",
+    "public hearing",
+    "Northfield Road"
+   ],
+   "quote": "the applicant was informed that the revised plans are to be submitted to the planning office by tuesday, september 4th, 4:00 pm."
+  },
+  {
+   "topic": "Board comment: Charter Review Committee appointment",
+   "resolution": "Chair or Vice Chair to contact Mr. Jeffreys",
+   "tags": [
+    "appointments",
+    "charter review"
+   ],
+   "quote": "k. chenis made a motion that either the board chair or vice chair reach out to mr. jeffreys and inquire if his intention is to remain"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:01 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "k. chenis made a motion to adjourn, d. prokowiew seconded, all aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 8/13/18",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 8/13/18 anr plan- 171 gilchrest street"
+  },
+  {
+   "name": "ANR Plan- 171 Gilchrest Street",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 8/13/18 anr plan- 171 gilchrest street"
+  },
+  {
+   "name": "Revised plans for 994 Northfield Road (Settlers Solar LLC)",
+   "where": "text",
+   "quote": "the revised plans are to be submitted to the planning office by tuesday, september 4th, 4:00 pm."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "marijuana",
+  "moratorium",
+  "zoning bylaw",
+  "solar",
+  "ANR plan",
+  "appointments",
+  "MPO",
+  "charter review",
+  "tree fund",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

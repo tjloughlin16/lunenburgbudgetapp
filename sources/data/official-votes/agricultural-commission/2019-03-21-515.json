@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2019-03-21",
  "docid": "515",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of December 20, 2018",
+   "motion": "Accept the minutes of December 20, 2018.",
    "moved_by": "R. Stober",
    "seconded_by": "A. Snow",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "r. stober moved to accept the minutes of december 20, 2018, a. snow 2nd, j. marzuca abstained, all aye."
   },
   {
-   "motion": "Pay $300 for bussing to the Boston Flower Show this year",
+   "motion": "Pay $300 for bussing students this year (to the Boston Flower Show).",
    "moved_by": "A. Snow",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "a. snow moved we pay $300 for bussing this year, r. stober 2nd, all aye."
   },
   {
-   "motion": "Approve and include version #2 in the updated LCFM application/rules",
+   "motion": "Approve and include version #2 (up to 25% resale and required farm visits) in the updated LCFM application/rules.",
    "moved_by": "A. Snow",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "a. snow moved, r. stober 2nd to approve and include version #2 in the updated lcfm application/rules, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "A. Snow",
    "seconded_by": "R. Stober",
    "outcome": "passed",
@@ -45,6 +45,190 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0856315
+ "note": "Single-page minutes with a clean text layer. The December 20, 2018 minutes vote is recorded only as 'all aye' with one abstention, with no numeric count printed, so the outcome is given as 'passed'. The 'members agreed' line is recorded as a decision and also precedes the formal vote on version #2. No public comment section is printed; D. Guerin's remarks are recorded as a guest presentation. No documents list heading is printed.",
+ "cost_usd": 0.00416532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "A. Snow",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "J. Marzuca",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, a. snow, r. stober, j. marzuca"
+  },
+  {
+   "name": "D. Guerin",
+   "role": "Director of the Science Department at LHS",
+   "status": "present",
+   "quote": "guests: d. guerin, director of the science department at lhs"
+  },
+  {
+   "name": "S. Harp",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "s. harp was not present and there was no web page presentation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The members agreed to include the version allowing up to 25% resale and required farm visits in the LCFM rules (later confirmed by the recorded vote on version #2).",
+   "quote": "the members agreed to include the version allowing up to 25% resale and required farm visits."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bussing students to the Boston Flower Show (school greenhouse guest presentation)",
+   "what_was_recorded": "AgCom paid $300 two years earlier for student bussing to the Boston Flower Show, and the commission then voted to pay $300 for bussing this year.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "agcom had paid $300 two years ago for the cost of bussing students to the boston flower show."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "minutes of December 20, 2018 approved (J. Marzuca abstained)",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "r. stober moved to accept the minutes of december 20, 2018, a. snow 2nd, j. marzuca abstained, all aye."
+  },
+  {
+   "topic": "Guest presentation by D. Guerin on school greenhouse",
+   "resolution": "approved $300 for student bussing this year",
+   "tags": [
+    "school greenhouse",
+    "bussing",
+    "education"
+   ],
+   "quote": "d. guerin gave a description of what she does at the school, specifically in the greenhouse."
+  },
+  {
+   "topic": "New greenhouse past discussions",
+   "resolution": "no action",
+   "tags": [
+    "greenhouse"
+   ],
+   "quote": "we shared past discussions by the commission about the new greenhouse."
+  },
+  {
+   "topic": "LCFM market manager resignation",
+   "resolution": "reported, no action",
+   "tags": [
+    "LCFM",
+    "farmers market",
+    "staffing"
+   ],
+   "quote": "m. allison began lcfm discussion by stating he received an email from h. bowen today informing of her resignation as market manager, effective immediately."
+  },
+  {
+   "topic": "LCFM rules on resale and farm visits",
+   "resolution": "approved version #2 for the updated LCFM application/rules",
+   "tags": [
+    "LCFM",
+    "rules",
+    "farmers market"
+   ],
+   "quote": "a. snow moved, r. stober 2nd to approve and include version #2 in the updated lcfm application/rules, all aye."
+  },
+  {
+   "topic": "Harvard farmers market",
+   "resolution": "reported, no action",
+   "tags": [
+    "farmers market",
+    "regional"
+   ],
+   "quote": "a. snow announced that harvard will not be holding a farmers market this year."
+  },
+  {
+   "topic": "Banner over Route 2A",
+   "resolution": "discussed; outreach to other Town groups for interest and funding",
+   "tags": [
+    "signage",
+    "MDOT",
+    "DPW"
+   ],
+   "quote": "he also reported on discussions with lunenburg dpw and mdot about placement of a banner over 2a."
+  },
+  {
+   "topic": "Market signs at Right To Farm signs",
+   "resolution": "reported, DPW approval noted",
+   "tags": [
+    "signage",
+    "DPW"
+   ],
+   "quote": "a. snow also mentioned a discussion with dpw and their approval to place market signs at existing"
+  },
+  {
+   "topic": "Grange meeting and charter",
+   "resolution": "reported, no action",
+   "tags": [
+    "Grange",
+    "charter"
+   ],
+   "quote": "m. allison announced the next meeting of the grange is april 5, 2019 where we will be receiving our new charter."
+  },
+  {
+   "topic": "Bag ban applicability to LCFM",
+   "resolution": "reported, no action",
+   "tags": [
+    "bag ban",
+    "LCFM",
+    "Town counsel"
+   ],
+   "quote": "the determination by town manager and counsel that the bag ban will not apply to the lcfm"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:23pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "a. snow moved to adjourn, r. stober second, adjourned at 9:23pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Two versions of suggested addition to the LCFM rules about resale of goods and farm visits (undated)",
+   "where": "text",
+   "quote": "distributed 2 versions of suggested addition to the lcfm rules about resale of goods and farm visits."
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "LCFM",
+  "school greenhouse",
+  "bussing",
+  "signage",
+  "bag ban",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

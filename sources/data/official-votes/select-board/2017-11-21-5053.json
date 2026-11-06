@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-11-21",
  "docid": "5053",
@@ -12,31 +12,415 @@
  },
  "votes": [
   {
-   "motion": "Not renew Earth Removal permit #1 for Ralph Montouri Construction Co.",
+   "motion": "To not renew Earth Removal permit #1 for Ralph Montouri Construction Co.",
    "moved_by": "P. Bertram",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "motion: p. bertram 2nd. d. mcquaid to not renew earth removal permit #1 for ralph montouri construction co. vote: all in favor"
   },
   {
-   "motion": "Approve an extension until August 31, 2018 for the 11 earth removal permits to P.J. Keating Company with the stipulation that they work with the Building Commissioner to review all the permits and make adjustments as appropriate",
+   "motion": "To approve an extension until August 31, 2018 for the 11 earth removal permits to P. J. Keating Company, with stipulations for engineering reports, closure plans and combining permits.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "motion: p. bertram 2n: p. luck to approve an extension until august 31, 2018 for the 11 earth removal permits to p. j. keating company"
   },
   {
-   "motion": "Enter Executive Session under M.G.L. c. 30A, §21, Reason # 3 to discuss strategy with respect to collective bargaining",
+   "motion": "To enter Executive Session under M.G.L. c. 30A, §21, Reason # 3, to discuss collective bargaining strategy (Professional Firefighters PPFM Local 4358A Contract Negotiations) and not return to open session.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
-   "outcome": "passed 4-0",
+   "outcome": "passed, roll call 4 aye (Mr. McQuaid, Ms. Luck, Ms. Bertram, Mr. Toale)",
    "procedural": true,
-   "quote": "motion: p. bertram 2°°: p. luck to enter executive session under m.g.l. c. 30a, §21, reason # 3; to discuss strategy with respect to collective bargaining"
+   "quote": "motion: p. bertram 2°°: p. luck to enter executive session under m.g.l. c. 30a, §21, reason # 3; to discuss strategy with respect to"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; all three votes extracted successfully. Vote 2 quote truncated for length while remaining verbatim. Vote 3 shows \"2°°\" as OCR artifact for \"seconded.\"",
- "cost_usd": 0.1305005
+ "note": "OCR text (macOS Vision) with garbled characters in places (e.g., 'AFSME', '2n:' and '2°°:' for the seconds, 'resurtaced', 'selt-sustaining'); quotes were copied as printed. Only three motions are recorded with votes; the Powell Sand & Gravel permits (#32, #54) were discussed with no motion or vote printed. The adjournment at 9:33 p.m. is stated without a recorded motion. Motions name 'P. Bertram' and 'P. Luck' while the board discussion names 'Ms. Bertram' and 'Ms. Luck'; I did not assume these are the same people as separate attendee entries. The minutes name 'Karen Brochu' as Finance Director and elsewhere as 'Town Accountant Brochu'. The Executive Session minutes are noted as separate and are not in this text. The minutes do not print a members-present roll call. Chief Marino and Conservation Administrator Matt Marro are mentioned but not recorded as taking part. Documents: no list or heading of documents appears in the minutes.",
+ "cost_usd": 0.012612020000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "not stated (presided; announced the workshop)",
+   "status": "present",
+   "quote": "mr. toale announced tonight's main agenda is a workshop."
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote; mr. mcquaid-aye, ms. luck- aye, ms. bertram-aye, mr. toale- aye"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "vote; mr. mcquaid-aye, ms. luck- aye, ms. bertram-aye, mr. toale- aye"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote; mr. mcquaid-aye, ms. luck- aye, ms. bertram-aye, mr. toale- aye"
+  },
+  {
+   "name": "Selectman Ebersole",
+   "role": "Selectman",
+   "status": "absent",
+   "quote": "selectman ebersole, who was not present this evening, had some comments"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, asked if there was a functioning electronic sign at the end of the public safety"
+  },
+  {
+   "name": "Garry Rhodes",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "building commissioner garry rhodes reported on the status of the parcels permitted for earth removal."
+  },
+  {
+   "name": "Moe Langlois",
+   "role": "Operations Manager for P.J. Keating",
+   "status": "present",
+   "quote": "moe langlois, operations manager for p.j. keating, thanked mr. rhodes for assisting them in deciphering the process."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "the board was joined by dpw director jack rodriquenz and park commissioners dennis mannone, karin menard and pete mccauliff"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "the board was joined by dpw director jack rodriquenz and park commissioners dennis mannone, karin menard and pete mccauliff"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "the board was joined by dpw director jack rodriquenz and park commissioners dennis mannone, karin menard and pete mccauliff"
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "the board was joined by dpw director jack rodriquenz and park commissioners dennis mannone, karin menard and pete mccauliff"
+  },
+  {
+   "name": "Loxi Jo Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "school superintendent loxi jo calmes, facilities director john londa, school committee members heather sroka,"
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "school superintendent loxi jo calmes, facilities director john londa, school committee members heather sroka,"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Chair, School Committee",
+   "status": "present",
+   "quote": "school committee members heather sroka, chair, wendy bertrand, dawn-marie ayles, meredith weiss and jim laveck"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members heather sroka, chair, wendy bertrand, dawn-marie ayles, meredith weiss and jim laveck"
+  },
+  {
+   "name": "Dawn-Marie Ayles",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members heather sroka, chair, wendy bertrand, dawn-marie ayles, meredith weiss and jim laveck"
+  },
+  {
+   "name": "Meredith Weiss",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members heather sroka, chair, wendy bertrand, dawn-marie ayles, meredith weiss and jim laveck"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members heather sroka, chair, wendy bertrand, dawn-marie ayles, meredith weiss and jim laveck"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "also present was karen brochu, finance director."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Conservation Administrator Marro will be requested to visit the Ralph Montouri site for wetland issues before a closure plan is requested.",
+   "quote": "conservation administrator marro will be requested to visit the site for any wetland issues prior to a closure plan being requested"
+  },
+  {
+   "decision": "On the School Committee's suggestion, the Board held off on the Parks/School MOA and turf field discussion (agenda item 2); the School Committee members left the meeting.",
+   "quote": "mr. toale stated on the suggestion of the school committee, i suggest we hold off on the discussion although it"
+  },
+  {
+   "decision": "Workshop item 4 (next steps for Board of Selectmen, Parks Commission, Town Manager, School Committee and Superintendent) deferred to a later date.",
+   "quote": "this will be discussed more at a later date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "AFSCME collective bargaining agreement, year one cost",
+   "what_was_recorded": "The total cost of year one of the ratified contract, to be funded at the Special Town Meeting from the Salary Reserve Line Item.",
+   "figures_as_printed": [
+    "$13,746.45"
+   ],
+   "quote": "the total for year one of the contract is $13,746.45, which will come out of the salary reserve line item in the current year's budget"
+  },
+  {
+   "topic": "Mulpus Road timber harvest bid",
+   "what_was_recorded": "High bid received and awarded to Blanchflower Logging; consulting fee paid from proceeds, balance to the Timber Revolving Account.",
+   "figures_as_printed": [
+    "$41,429.36"
+   ],
+   "quote": "a high bid of $41,429.36 was received and awarded to blanchflower logging, inc."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant.",
+   "figures_as_printed": [
+    "$512,063.76"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $512,063.76."
+  },
+  {
+   "topic": "Wallis Park playground funding",
+   "what_was_recorded": "$12,000 already appropriated through the 2017 Capital Plan; a citizen's petition requests an additional $25,000 for the project.",
+   "figures_as_printed": [
+    "$12,000",
+    "$25,000"
+   ],
+   "quote": "$12,000 was appropriated through the 2017 capital plan for the playground area, but a citizen's petition is requesting an additional $25,000"
+  },
+  {
+   "topic": "Town beach family pass fee",
+   "what_was_recorded": "Family beach pass fee raised from $20 to $50, the first increase in over ten years.",
+   "figures_as_printed": [
+    "$20",
+    "$50"
+   ],
+   "quote": "this year we increased the beach pass fee for families from $20 to $50."
+  },
+  {
+   "topic": "Track and field annual payment (MOA)",
+   "what_was_recorded": "Annual payment under the track and field arrangement, memorialized in letters between the School Committee, Board of Selectmen and the Bengals.",
+   "figures_as_printed": [
+    "$47,500"
+   ],
+   "quote": "the annual payment amounts to $47,500; that portion is memorialized in letters between the school"
+  },
+  {
+   "topic": "Turf field maintenance budget",
+   "what_was_recorded": "Budget provides for two annual visits from a company to service the turf field.",
+   "figures_as_printed": [],
+   "quote": "i have budgeted for two annual visits from the company to service the field"
+  },
+  {
+   "topic": "Parks user fee revolving fund",
+   "what_was_recorded": "Park and field user fees go into a dedicated revolving fund; fee review under way.",
+   "figures_as_printed": [],
+   "quote": "fees collected for user fees go into a dedicated revolving fund."
+  },
+  {
+   "topic": "DLTA grant funding",
+   "what_was_recorded": "Town plans to apply for the next round of DLTA funding in December when announced.",
+   "figures_as_printed": [],
+   "quote": "the plan is to apply for the next round of dlta funding in december once that is announced"
+  },
+  {
+   "topic": "Parks user fee funding model",
+   "what_was_recorded": "Selectman Ebersole did not want parks and recreation moved to a 100% user fee system; funding should combine taxes, fees and grants.",
+   "figures_as_printed": [],
+   "quote": "he would not like to see it go to a 100% user fee system for parks and recreation"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Workshop announcement and warrant mailer date error",
+   "quote": "the actual warrant inside that mailer lists the correct date and time."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Marching band before Special Town Meeting",
+   "quote": "ms. luck announced the lunenburg high school marching band will be playing at the school at 6:30 p.m."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Electronic sign at Public Safety Building",
+   "quote": "dave passios, 56 whiting street, asked if there was a functioning electronic sign at the end of the public safety"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "quote": "mr. toale announced tonight's main agenda is a workshop.",
+   "tags": [
+    "public comment",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "informational, no action; AFSCME contract to Special Town Meeting",
+   "quote": "announcement of ratification of collective bargaining agreement with afsme (current business):",
+   "tags": [
+    "collective bargaining",
+    "town facilities",
+    "grants",
+    "conservation",
+    "energy",
+    "road projects"
+   ]
+  },
+  {
+   "topic": "Earth removal permits (old business)",
+   "resolution": "permit #1 not renewed; P.J. Keating permits extended to August 31, 2018; Powell permits discussed, no vote recorded",
+   "quote": "building commissioner garry rhodes reported on the status of the parcels permitted for earth removal.",
+   "tags": [
+    "earth removal",
+    "permits",
+    "old business"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "accounts payable warrant signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $512,063.76.",
+   "tags": [
+    "warrants",
+    "payables"
+   ]
+  },
+  {
+   "topic": "Town Facilities and Grounds Workshop",
+   "resolution": "discussed; item 4 deferred to a later date",
+   "quote": "the board moved from the stage to the floor to begin their workshop.",
+   "tags": [
+    "town facilities",
+    "parks",
+    "fields",
+    "turf",
+    "track",
+    "school district",
+    "Turkey Hill",
+    "central offices"
+   ]
+  },
+  {
+   "topic": "Executive session (Professional Firefighters contract)",
+   "resolution": "motion to enter executive session passed by roll call",
+   "quote": "to enter executive session under m.g.l. c. 30a, §21, reason # 3; to discuss strategy with respect to",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "firefighters"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant (mailer front cover and inside warrant)",
+   "where": "text",
+   "quote": "the actual warrant inside that mailer lists the correct date and time."
+  },
+  {
+   "name": "Memorandum to the Board of Selectmen on the track and field agreement",
+   "where": "text",
+   "quote": "we articulated that in a memorandum to the board of selectmen, the bengals have memorialized that in a letter"
+  },
+  {
+   "name": "Letter from the Bengals to the Board of Selectmen",
+   "where": "text",
+   "quote": "the bengals have memorialized that in a letter as well."
+  },
+  {
+   "name": "Informational packet on the history of the track and field agreement (sent by Superintendent Calmes)",
+   "where": "text",
+   "quote": "she had sent over an informational packet showing the history of trying to work together"
+  },
+  {
+   "name": "Draft MOA (track and field)",
+   "where": "text",
+   "quote": "she clarified there is no moa currently, only a draft."
+  },
+  {
+   "name": "Facilities presentation by Mr. Londa (presented to School Committee, available on youtube dated October 16th)",
+   "where": "text",
+   "quote": "this was presented to the school committee at one of their meetings and is available on youtube dated october 16th."
+  },
+  {
+   "name": "Citizen's petition for Wallis Park funding",
+   "where": "text",
+   "quote": "a citizen's petition is requesting an additional $25,000 towards that project"
+  },
+  {
+   "name": "Earth removal permits (#1 Ralph Montouri; #32 and #54 Powell Sand & Gravel; 11 P.J. Keating permits)",
+   "where": "text",
+   "quote": "permit #32- to the rear of 395 goodrich street containing 16 acres, more or less, owned by applicant."
+  },
+  {
+   "name": "Green Communities annual report to DOER (due mid-December)",
+   "where": "text",
+   "quote": "the green communities task force will be submitting their annual report to the department of energy"
+  },
+  {
+   "name": "Waiver and release of liability form (walking tour)",
+   "where": "text",
+   "quote": "participants will be asked to sign a waiver and release of liability form"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "earth removal",
+  "parks and fields",
+  "turf field",
+  "school district facilities",
+  "Turkey Hill Elementary",
+  "central offices",
+  "AFSCME contract",
+  "collective bargaining",
+  "firefighters",
+  "warrants",
+  "town facilities workshop",
+  "workshop",
+  "grants",
+  "DLTA",
+  "Green Communities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

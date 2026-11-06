@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2017-09-21",
  "docid": "2832",
@@ -12,31 +12,278 @@
  },
  "votes": [
   {
-   "motion": "Elect Harry Kubetz as Board Secretary",
+   "motion": "Elect Harry Kubetz as Board Secretary by nomination, with Kate McCarron as backup.",
    "moved_by": "Gare",
    "seconded_by": "Lars",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "gare nominated harry kubetz with kate mocarron as backup. seconded by lars. unanimous vote in favor."
   },
   {
-   "motion": "Approve June 22, 2017 minutes as amended",
+   "motion": "Accept the June 22, 2017 minutes as amended (slight grammatical amendment on the sentence about MUNIS).",
    "moved_by": "Gare",
    "seconded_by": "Kirja",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion to accept as amended by gare, seconded by kirja. unanimous vote in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Gare",
    "seconded_by": "Harry",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion to adjourn by gare. seconded by harry. unanimous vote in favor."
+   "quote": "motion to adjourn by gare. seconded by harry. unanimous vote in favor. meeting closed at 7:34 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is clear. All three votes recorded unanimously. Minor spelling variation: attendee list shows \"Kiirja Paananen\" but motion text prints \"Kirja\"—using the latter as printed in the motion itself.",
- "cost_usd": 0.1087845
+ "note": "Text is OCR from a scanned page (macOS Vision) with some garbled words (e.g., 'MoCarron', 'Kirja', 'orogram'); quotes are copied as extracted. The minutes print no dollar figures, so budget_items is empty. The minutes record no public speakers. Internal date inconsistency: 'Thursday, September 21, 17' and the referenced calendar's 'corrected June 2018 date' label.",
+ "cost_usd": 0.00585032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:45 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, gare thompson"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, gare thompson"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, gare thompson"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, gare thompson"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, gare thompson"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: donna saiia, martha moore - director lpl, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director LPL",
+   "status": "absent",
+   "quote": "absent: donna saiia, martha moore - director lpl, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: donna saiia, martha moore - director lpl, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: donna saiia, martha moore - director lpl, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kate McCarron will compose and write the Trustees' thank-you notes; everyone agreed she should do it.",
+   "quote": "kate volunteered to be the lplbot member that composes and writes the notes, and everyone agreed that she should do it."
+  },
+  {
+   "decision": "Harry Kubetz will liaise with Director Martha Moore and reach out to DPW to ask why the library furnace cycled on and off so often during the meeting.",
+   "quote": "it was agreed that harry would liaise with martha and that he would reach out to dpw to inquire why the furnace in"
+  },
+  {
+   "decision": "General board consensus that computer 'Coding' should be considered as an ongoing Young Adult program.",
+   "quote": "the general lplbot consensus was that this was an excellent idea."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Nomination and election of Board Secretary",
+   "resolution": "Harry Kubetz elected secretary, Kate McCarron backup",
+   "quote": "nomination and election of board secretary gare nominated harry kubetz with kate mocarron as backup.",
+   "tags": [
+    "secretary",
+    "election"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "no public - no comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of June 22, 2017 minutes",
+   "resolution": "approved as amended",
+   "quote": "slight grammatical amendment on sentence about munis suggested by kiirja and gare. motion to accept",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "presented by Dick in lieu of Martha; no action",
+   "quote": "director's report (presented by dick in lieu of martha)",
+   "tags": [
+    "director report",
+    "programs",
+    "building maintenance"
+   ]
+  },
+  {
+   "topic": "LED project",
+   "resolution": "no discussion beyond Director's Report",
+   "quote": "led saga continues - nothing discussed other than what was included in director's report.",
+   "tags": [
+    "LED"
+   ]
+  },
+  {
+   "topic": "Capital Planning",
+   "resolution": "not discussed",
+   "quote": "capital planning - not included in director's report & nothing discussed.",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Young Adult Area Report",
+   "resolution": "discussed; no action",
+   "quote": "young adult area report - the report discussed many different issues.",
+   "tags": [
+    "young adults",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Children's Area Report",
+   "resolution": "no report presented",
+   "quote": "children's area report - no report was presented.",
+   "tags": [
+    "children"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "discussed; another member may attend Oct. 2 Friends meeting",
+   "quote": "dick mentioned that he, personally, will not be able to attend the friend's meeting on monday, oct. 2",
+   "tags": [
+    "friends of library",
+    "dues"
+   ]
+  },
+  {
+   "topic": "Thank-you notes from Trustees",
+   "resolution": "Kate McCarron to write notes",
+   "quote": "kate volunteered to be the lplbot member that composes and writes the notes",
+   "tags": [
+    "thank you notes"
+   ]
+  },
+  {
+   "topic": "Revised calendar",
+   "resolution": "new calendar distributed",
+   "quote": "pass out new calendar with correction for june friday mistake",
+   "tags": [
+    "calendar"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "room use policy carried forward; program line in budget not discussed",
+   "quote": "room use policy - it was suggested that perhaps donna could distribute her notes electronically in advance",
+   "tags": [
+    "room use policy",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "coding program idea and teen room expansion discussed; Town goals worksheet reported",
+   "quote": "gare suggested that (computer) 'coding' could or should be considered as an ongoing young adult program.",
+   "tags": [
+    "young adults",
+    "town goals worksheet"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:34 p.m.",
+   "quote": "motion to adjourn by gare. seconded by harry. unanimous vote in favor. meeting closed at 7:34 p.m.",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for September 21, 2017",
+   "where": "list",
+   "quote": "referenced documents: lplbot agenda for september 21, 2017"
+  },
+  {
+   "name": "Director's report of September 21, 2017",
+   "where": "list",
+   "quote": "director's report of september 21, 2017"
+  },
+  {
+   "name": "Young Adult Services librarian's report of September 21, 2017",
+   "where": "list",
+   "quote": "young adult services librarian's report of september 21, 2017"
+  },
+  {
+   "name": "(amended) LPL Board of Trustees Meeting Calendar (corrected June 2018 date) for 2017-2018",
+   "where": "list",
+   "quote": "(amended) lpl board of trustees meeting calendar (corrected june 2018 date) for 2017-2018"
+  },
+  {
+   "name": "Boards and Committee Goals worksheet (attachment to Elaine Peterson's email)",
+   "where": "text",
+   "quote": "in addition to other information, this worksheet requests boards' achievements in '17 and goal for '18."
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "secretary election",
+  "minutes approval",
+  "director's report",
+  "building maintenance",
+  "furnace",
+  "friends of library",
+  "thank you notes",
+  "young adult programs",
+  "calendar",
+  "town goals worksheet"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

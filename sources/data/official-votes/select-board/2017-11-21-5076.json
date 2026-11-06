@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-11-21",
  "docid": "5076",
@@ -12,23 +12,148 @@
  },
  "votes": [
   {
-   "motion": "Ratify the proposed agreement with the Professional Firefighters PPFM Local 4358A",
+   "motion": "Ratify the proposed agreement with the Professional Firefighters PPFM Local 4358A.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: p. bertram 2n%: p. luck to ratily the proposed agreement with the professional firefighters ppfm local 4358a discussion: mr. toale noted if we ratify this now, the funding for the first year is on special town meeting warrant. mr. lemieux stated we need to announce it during an open meeting which could be at the special town meeting. vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram - aye, mr. toale-aye"
+   "quote": "motion: p. bertram 2n%: p. luck to ratily the proposed agreement with the professional firefighters ppfm local 4358a"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting vote: mr. mcquaid-aye, ms. luck-aye, ms. bertram -aye, mr. toale-aye 2\": p. luck"
+   "quote": "motion: p. bertram to adjourn the meeting vote: mr. mcquaid-aye, ms. luck-aye, ms. bertram -aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text shows votes clearly. Ebersole was noted as absent but in favor; the 4-0 vote reflects the members present. The second motion's seconding (\"2\": P. Luck\") appears after the vote result rather than before it in the minutes text.",
- "cost_usd": 0.1209475
+ "note": "OCR text from a scanned page; several words are garbled (e.g., \"ratily\", \"2n%\", \"2\\\"\" for seconds). Seconder names were read from those garbled lines and are best-effort. \"Mr. Lemieux\" appears once in the discussion, probably meaning Ms. Lemieux (Town Manager). The text has no roll call, agenda, or call-to-order header beyond \"The meeting commenced at 9:34 p.m.\", and the board members' roles are not printed. The votes are recorded as individual aye votes, so the 4-0 count is derived from the four named ayes. The receipt stamp reads JUN 05 2019, well after the 2017-11-21 meeting date you gave.",
+ "cost_usd": 0.00377412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "not printed",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram - aye, mr. toale-aye"
+  },
+  {
+   "name": "P. Luck",
+   "role": "not printed",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram - aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Toale",
+   "role": "not printed",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram - aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "not printed",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram - aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "not printed",
+   "status": "absent",
+   "quote": "mr. ebersole, although not present tonight, had expressed he was in favor of the recommendations."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A flat stipend of $1500 will be paid to the Fire Prevention Officer in two annual payments, as agreed with the Fire Chief and union representatives.",
+   "quote": "it was agreed that a flat stipend of $1500 will be paid to the fire prevention officer in two annual payments."
+  },
+  {
+   "decision": "The new Firefighter/Paramedic position would not be posted until the town was ready to provide that service.",
+   "quote": "the position of firefighter/paramedic would not be posted until the town was ready to provide that service."
+  },
+  {
+   "decision": "The pay schedule was extended from five to seven steps, with a 2.5% increase per step.",
+   "quote": "we extended from five to seven steps in the pay schedule to be more similar to other positions with a 2.5% increase per step."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Prevention Officer stipend",
+   "what_was_recorded": "A flat stipend was agreed for the Fire Prevention Officer, paid in two annual payments.",
+   "figures_as_printed": [
+    "$1500"
+   ],
+   "quote": "it was agreed that a flat stipend of $1500 will be paid to the fire prevention officer in two annual payments."
+  },
+  {
+   "topic": "Pay schedule step increase",
+   "what_was_recorded": "The pay schedule was extended from five to seven steps, with a 2.5% increase per step.",
+   "figures_as_printed": [
+    "2.5%"
+   ],
+   "quote": "we extended from five to seven steps in the pay schedule to be more similar to other positions with a 2.5% increase per step."
+  },
+  {
+   "topic": "First-year funding for the fire union agreement",
+   "what_was_recorded": "Discussion noted the first-year funding for the agreement is on the Special Town Meeting warrant; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion: mr. toale noted if we ratify this now, the funding for the first year is on special town meeting warrant."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Town Manager report on fire union negotiations",
+   "resolution": "no action",
+   "quote": "ms. lemieux reported she met with the fire chief and the firefighter union representatives regarding two items",
+   "tags": [
+    "fire department",
+    "collective bargaining",
+    "negotiations"
+   ]
+  },
+  {
+   "topic": "Ratify Professional Firefighters agreement (PPFM Local 4358A)",
+   "resolution": "ratified 4-0",
+   "quote": "discussion: mr. toale noted if we ratify this now, the funding for the first year is on special town meeting warrant.",
+   "tags": [
+    "union contract",
+    "fire department",
+    "pay schedule",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:41 p.m.",
+   "quote": "the meeting adjourned at 9:41 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "fire department",
+  "collective bargaining",
+  "union contract",
+  "pay schedule",
+  "fire prevention officer",
+  "special town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

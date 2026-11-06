@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-02-19",
  "docid": "5149",
@@ -12,40 +12,643 @@
  },
  "votes": [
   {
-   "motion": "approve the PILOT agreement for personal property with Settler's Solar, LLC, 994 Northfield Road",
+   "motion": "Approve the PILOT agreement for personal property with Settler's Solar, LLC, 994 Northfield Road.",
    "moved_by": "P. Luck",
    "seconded_by": "K. Adams",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: p. luck to approve the pilot agreement for personal property with settler's solar, llc, 994 northfield road 2nd: k. adams vote: all in favor"
+   "quote": "motion: p. luck to approve the pilot agreement for personal property with settler's solar, llc, 994"
   },
   {
-   "motion": "approve the January 8, 2019 minutes with corrections",
+   "motion": "Approve the January 8, 2019 minutes with the corrections requested.",
    "moved_by": "P. Luck",
    "seconded_by": "K. Adams",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion: p. luck to approve the january 8, 2019 minutes with the above corrections 2nd: k. adams vote: all in favor"
+   "quote": "motion: p. luck to approve the january 8, 2019 minutes with the above corrections"
   },
   {
-   "motion": "add the sixth ballot question to the May 2019 Annual Town Election on prohibition of marijuana for researchers",
+   "motion": "Add a sixth ballot question to the May 2019 Annual Town Election on the prohibition of marijuana for researchers.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 2-1",
    "procedural": false,
-   "quote": "motion: k. adams 2\"d:p. luck to add the sixth ballot question to the may 2019 annual town election on the prohibition of marijuana for researchers discussion: ms. luck stated she th",
-   "quote_taken_from_text": true
+   "quote": "to add the sixth ballot question to the may 2019 annual town election on the prohibition of marijuana for researchers"
   },
   {
-   "motion": "add to the Annual Town Meeting warrant an article to impose an excise on the retail sales of marijuana for adult use at the rate of 3% of the total sales price",
+   "motion": "Add an article to the Annual Town Meeting warrant to accept G.L. c. 64N, § 3 and impose a 3% excise on retail sales of marijuana for adult use.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: p. luck to add to the annual town meeting warrant an article: to see if the town will vote to accept g.l. c. 64n, § 3 to impose an excise on the retail sales of marijuana for adult use at the rate of 3% percent of the total sales price received by marijuana retailers as a consideration of the sale of marijuana or marijuana products; or take any other action relative thereto. vote: all in favor"
+   "quote": "motion: k. adams 2nd: p. luck to add to the annual town meeting warrant an article: to see if the town will vote to accept g.l. c. 64n, § 3"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P. Luck",
+   "seconded_by": "K. Adams",
+   "outcome": "passed (all in favor)",
+   "procedural": true,
+   "quote": "motion: p. luck to adjourn the meeting the meeting adjourned at 9:49 p.m. 2nd. k. adams vote: all in favor"
   }
  ],
  "dropped_unquoted": 1,
- "note": "OCR macOS Vision scan. All votes clearly recorded with formal motion, second, and vote outcome statements.\"",
- "cost_usd": 0.1264275
+ "note": "OCR text (macOS Vision) with garbled words and some gaps: the Parks Commission statement between pages 3 and 4 is missing, page 6-7 sentences are cut, and page 13 begins mid-sentence. Five motions with recorded votes were found. The 'Vote to extend' warrant item and the Earth Removal permit item have no recorded motion, so they are not listed as votes. Dollar figures are as printed in the OCR text.",
+ "cost_usd": 0.01812412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; phyllis luck, clerk; katey adams,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; phyllis luck, clerk; katey adams,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; phyllis luck, clerk; katey adams,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "member not present: damon mcquaid, vice chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director; rich benevento, worldtech engineering; adam burney, land use director"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director; rich benevento, worldtech engineering; adam burney, land use director"
+  },
+  {
+   "name": "Rich Benevento",
+   "role": "WorldTech Engineering",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director; rich benevento, worldtech engineering; adam burney, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; jack rodriquenz, dpw director; rich benevento, worldtech engineering; adam burney, land use director"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Chairman, Open Space Committee",
+   "status": "present",
+   "quote": "open space committee members present: brandon kibbe, chairman; karin menard, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Open Space Committee member",
+   "status": "present",
+   "quote": "open space committee members present: brandon kibbe, chairman; karin menard, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Richard Brockelman",
+   "role": "Open Space Committee member",
+   "status": "present",
+   "quote": "open space committee members present: brandon kibbe, chairman; karin menard, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Open Space Committee member",
+   "status": "present",
+   "quote": "open space committee members present: brandon kibbe, chairman; karin menard, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Secretary for the Lunenburg Grange",
+   "status": "present",
+   "quote": "chris menard, 672 page street, secretary for the lunenburg grange, introduced himself and his"
+  },
+  {
+   "name": "Elisa Menard",
+   "role": "Grange Asst. Steward",
+   "status": "present",
+   "quote": "introduced himself and his two daughters, elisa (grange asst. steward) and lauren (grange steward)."
+  },
+  {
+   "name": "Lauren Menard",
+   "role": "Grange Steward",
+   "status": "present",
+   "quote": "introduced himself and his two daughters, elisa (grange asst. steward) and lauren (grange steward)."
+  },
+  {
+   "name": "Matt Allison",
+   "role": "Grange Lecturer",
+   "status": "present",
+   "quote": "matt allison, 188 flat hill road, (grange lecturer), was present also."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, stated he agrees almost 98% with ms. bertram."
+  },
+  {
+   "name": "George Martin",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "george martin, 522 burrage street, stated there are a lot of dedicated people working very hard"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "paula bertram stated in the 32 years she has been in town, it hasn't been done this way."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "rhonda lisio, 181 reservoir road, suggested addressing ms. adams as dr. adams."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board requested updated project cost numbers for the Complete Streets Tier 3 discussion at its next meeting.",
+   "quote": "the board requested updated numbers for the next meeting."
+  },
+  {
+   "decision": "Mr. Benevento will repackage the Complete Streets project #3 with the Town Manager and DPW Director.",
+   "quote": "i will be working with ms. lemieux and mr. rodriquenz on this."
+  },
+  {
+   "decision": "The Earth Removal Permit #14 extension item was pushed out to a later date.",
+   "quote": "ms. lemieux reported this agenda item was pushed out to a later date as more time was needed."
+  },
+  {
+   "decision": "The three warrant articles on conveying the old Primary building, conveying the Brooks building, and architectural and engineering services for TC Passios were tabled until March 5.",
+   "quote": "mr. toale recommended the discussion be tabled until the march 5 meeting when we have a full board."
+  },
+  {
+   "decision": "Demolition delay permit for the old Primary School was added as an agenda item for March 5.",
+   "quote": "ms. lemieux asked if the board wanted to add demolition delay permit for the old primary"
+  },
+  {
+   "decision": "The Town Manager will reach out to the Architectural Preservation District Commission and coordinate a facilities walkthrough of the old Primary School.",
+   "quote": "she would like to reach out to the architectural preservation district commission (apdc) because at the meeting they attended,"
+  },
+  {
+   "decision": "The Board will meet again with WorldTech and the DPW Director to review the Complete Streets plan.",
+   "quote": "the board will meet again with world tech and the dpw director at some time to review the complete streets plan again."
+  },
+  {
+   "decision": "Town Counsel was asked to draft an amendment to the existing Casella contract reflecting the recycling price terms.",
+   "quote": "town counselhas been asked to draft the amendmentto the existing contract with these terms."
+  },
+  {
+   "decision": "The Board approved the minutes of December 18, 2018 and January 15, 2019 without a recorded motion.",
+   "quote": "the board also approved minutes of december 18, 2018 and january 15, 2019."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Complete Streets Tier 3 project costs",
+   "what_was_recorded": "Discussion of project costs found to differ from the numbers the consultant had and the Board had been reading on the plan; updated numbers requested.",
+   "figures_as_printed": [],
+   "quote": "after discussion about the costs of the projects and finding they were very different from the numbers mr. benevento had"
+  },
+  {
+   "topic": "PILOT agreement for personal property with Settler's Solar",
+   "what_was_recorded": "The Board approved a PILOT agreement for personal property; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "to approve the pilot agreement for personal property with settler's solar, llc, 994"
+  },
+  {
+   "topic": "Accounts payable, payroll and payroll deductions warrants signed",
+   "what_was_recorded": "The Board signed three warrants: accounts payable, payroll, and payroll deductions.",
+   "figures_as_printed": [
+    "$108,346.43",
+    "$785,965.88",
+    "$171,195.18"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $108,346.43, a payroll warrant in the amount of $785,965.88 and a payroll deductions warrant in the amount of $171,195.18."
+  },
+  {
+   "topic": "Recycling contract with Casella",
+   "what_was_recorded": "Casella agreed to a recycling price effective July 1, 2019, reverting to original terms if the market changes.",
+   "figures_as_printed": [
+    "$50/ton"
+   ],
+   "quote": "casella agreed to $50/ton for recycling that would go into effect july 1, 2019."
+  },
+  {
+   "topic": "Pay As You Throw bag fees and trash disposal cost",
+   "what_was_recorded": "Trash disposal cost will rise up to 3% per the CPI; bag fees will rise to offset the bag contract increase, to be announced later.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "the cost of trash disposal will be increasing up to 3% based on the consumer price index for the boston-brockton-nashua area."
+  },
+  {
+   "topic": "Fuel tank replacement at DPW",
+   "what_was_recorded": "Capital plan request for new fuel tanks at DPW; a DPW cost breakdown was provided.",
+   "figures_as_printed": [
+    "$220,000"
+   ],
+   "quote": "$220,000 for the installation of new fuel tanks at the department of public works"
+  },
+  {
+   "topic": "Fuel tank cost discussion",
+   "what_was_recorded": "A Finance Committee member noted the $330,000 figure looks high initially but tanks last about 30 years; DPW provided a cost breakdown including engineering and installation.",
+   "figures_as_printed": [
+    "$330,000"
+   ],
+   "quote": "had stated looking at $330,000 looks like a lot of money initially"
+  },
+  {
+   "topic": "Fuel tank cost breakdown",
+   "what_was_recorded": "DPW Director provided a cost breakdown of the gas tanks replacement; no total printed.",
+   "figures_as_printed": [],
+   "quote": "the dpw director provided a cost breakdown of the gas tanks replacement which includes engineering work, installation, etc."
+  },
+  {
+   "topic": "Annual maintenance cost of new fuel system",
+   "what_was_recorded": "Public comment raised the annual maintenance cost of the new fuel system as not yet discussed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "dave passios, 56 whiting street, stated one of the things not being discussed is the cost of maintaining the new fuel system on an annual basis."
+  },
+  {
+   "topic": "State funding requests for FY20 (Senator Tran)",
+   "what_was_recorded": "Governor has not released a funding mechanism for the projects on the Senator's list.",
+   "figures_as_printed": [],
+   "quote": "to date, the governor has not released a funding mechanism to fund these projects."
+  },
+  {
+   "topic": "TC Passios asbestos abatement request",
+   "what_was_recorded": "Listed as a Senator Tran budget priority (Capital Plan FY20, not funded).",
+   "figures_as_printed": [
+    "$755,000"
+   ],
+   "quote": "$755,000 for abatement of asbestos at the tc passios (in capital plan fy20, not funded)"
+  },
+  {
+   "topic": "Senior Center HVAC upgrade request",
+   "what_was_recorded": "Listed as a Senator Tran budget priority (Capital Plan for FY22); read first in priority order.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "$45,000 for an hvac upgrade at the senior center (in capital plan for fy22)"
+  },
+  {
+   "topic": "Town Hall handicap ramp request",
+   "what_was_recorded": "Listed as a Senator Tran budget priority (Facilities Bond Bill); read second in priority order.",
+   "figures_as_printed": [
+    "$27,000"
+   ],
+   "quote": "$27,000 for the replacement of the handicap ramp at the town hall (in facilities bond bill)"
+  },
+  {
+   "topic": "Library LED lighting request",
+   "what_was_recorded": "Listed as a Senator Tran budget priority (Facilities Bond Bill).",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "$40,000 for the installation of new led lighting fixtures at the library (in facilities bond bill)"
+  },
+  {
+   "topic": "ADA Self-Evaluation and Transition Plan planning assistance",
+   "what_was_recorded": "Listed as a Senator Tran budget priority; grant application to MA Office on Disability that was not funded.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "$50,000 for planning assistance to update the town's outdated ada self-"
+  },
+  {
+   "topic": "Town Hall ramp and sidewalk cost",
+   "what_was_recorded": "Discussion of the Town Hall accessible ramp and associated sidewalk work and cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about the handicapped accessible ramp at town hall and the associated needed sidewalk work and cost ensued."
+  },
+  {
+   "topic": "Grange membership rates",
+   "what_was_recorded": "Grange handout states Lunenburg membership rates.",
+   "figures_as_printed": [
+    "$40",
+    "$80"
+   ],
+   "quote": "lunenburg set its membership rates at $40 per person and $80 maximum per family"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Old Primary School demolition delay and fallback plan",
+   "quote": "dave passios, 56 whiting street, stated he agrees almost 98% with ms. bertram."
+  },
+  {
+   "speaker": "George Martin",
+   "stated_role": "",
+   "topic": "Packaging ideas for Town Meeting; postcard poll",
+   "quote": "george martin, 522 burrage street, stated there are a lot of dedicated people working very hard"
+  },
+  {
+   "speaker": "Ms. Menard",
+   "stated_role": "speaking as a citizen",
+   "topic": "Keeping old Primary School, TC Passios and Brooks House land",
+   "quote": "ms. menard, speaking as a citizen, stated the old primary school land, tc passios land and"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "",
+   "topic": "Two-day Town Meeting and Charter Review night",
+   "quote": "paula bertram stated in the 32 years she has been in town, it hasn't been done this way."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "",
+   "topic": "Form of address for Ms. Adams",
+   "quote": "rhonda lisio, 181 reservoir road, suggested addressing ms. adams as dr. adams."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Annual cost of new fuel system",
+   "quote": "dave passios, 56 whiting street, stated one of the things not being discussed is the cost of maintaining the new fuel system on an annual basis."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointments: Lunenburg Grange #169 introduction",
+   "resolution": "presented; no action recorded",
+   "quote": "introduction from lunenburg grange #169 members",
+   "tags": [
+    "Grange",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Sunday entertainment license, Kindred Spirits",
+   "resolution": "listed; no action recorded in text",
+   "quote": "sunday entertainment license for kindred spirits, 324 electric avenue for march 17,",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Complete Streets Tier 3 application with WorldTech Engineering",
+   "resolution": "discussed; Board requested updated numbers",
+   "quote": "meeting with dw director and worldtech engineering regarding the complete streets tier 3 application due april 1",
+   "tags": [
+    "Complete Streets",
+    "transportation",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Earth Removal Permit #14 extension (P. J. Keating Company)",
+   "resolution": "pushed to a later date",
+   "quote": "ms. lemieux reported this agenda item was pushed out to a later date as more time was needed.",
+   "tags": [
+    "earth removal",
+    "permit"
+   ]
+  },
+  {
+   "topic": "PILOT agreement with Settler's Solar, LLC",
+   "resolution": "approved",
+   "quote": "to approve the pilot agreement for personal property with settler's solar, llc, 994",
+   "tags": [
+    "PILOT",
+    "solar",
+    "tax"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "approved January 8, 2019 minutes; warrants signed; evaluation noted",
+   "quote": "the board also approved minutes of december 18, 2018 and january 15, 2019.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "Open Meeting Law"
+   ]
+  },
+  {
+   "topic": "Workshop on town facilities and TC Passios with Conservation, Open Space and Parks",
+   "resolution": "workshop discussion; no action recorded",
+   "quote": "workshop on town facilities: joint meeting with conservation commission, open space, and parks commission",
+   "tags": [
+    "town facilities",
+    "TC Passios",
+    "open space",
+    "Brooks House",
+    "old Primary School"
+   ]
+  },
+  {
+   "topic": "Memo: sixth marijuana ballot question",
+   "resolution": "added to May 2019 ballot",
+   "quote": "memo from land use director re: adding 6t ballot question to the may 2019 annual",
+   "tags": [
+    "marijuana",
+    "ballot question"
+   ]
+  },
+  {
+   "topic": "Marijuana retail excise article for Town Meeting",
+   "resolution": "added to Annual Town Meeting warrant",
+   "quote": "motion: k. adams 2nd: p. luck to add to the annual town meeting warrant an article: to see if the town will vote to accept g.l. c. 64n, § 3",
+   "tags": [
+    "marijuana",
+    "excise",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; no action",
+   "quote": "town manager report town facilities (tm goal #2, action ii)",
+   "tags": [
+    "TC Passios",
+    "recycling",
+    "PAYT",
+    "electricity",
+    "MBTA",
+    "dementia friendly"
+   ]
+  },
+  {
+   "topic": "Announcements and meeting notices",
+   "resolution": "informational; no action",
+   "quote": "attendance at meetings, other announcements,etc.",
+   "tags": [
+    "announcements",
+    "appointments",
+    "caucus",
+    "census"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant closing date and two-day meeting",
+   "resolution": "discussed; three charter/building articles tabled to March 5",
+   "quote": "vote to extend closing of the annual town meeting warrant until march 25 at 4 pm",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Senator Tran request for FY20 fiscal priorities",
+   "resolution": "priority list discussed; no vote recorded",
+   "quote": "discussion regarding request from senator tran re: prioritization of fiscal priorities in",
+   "tags": [
+    "state budget",
+    "capital needs",
+    "ADA"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational; meeting dates reviewed",
+   "quote": "committee reports ms. adams attended the mrc meeting last thursday but had nothing to report.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public comment and adjournment",
+   "resolution": "adjourned at 9:49 p.m.",
+   "quote": "the meeting adjourned at 9:49 p.m.",
+   "tags": [
+    "public comment",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Grange handout",
+   "where": "list",
+   "quote": "mr. menard presented a handout. see attached."
+  },
+  {
+   "name": "Old Primary Building to sell/lease building/land warrant article (draft)",
+   "where": "text",
+   "quote": "old primary building to sell/lease building/land: to see if the town will vote to transfer the care,"
+  },
+  {
+   "name": "Brooks House warrant article (same as Old Primary article)",
+   "where": "text",
+   "quote": "the brooks house article is the same article."
+  },
+  {
+   "name": "Memo from Land Use Director Re: Adding 6t ballot question to the May 2019 Annual Town Election on prohibition of marijuana researchers",
+   "where": "text",
+   "quote": "land use director adam burney referred to the memorandum sent recently:"
+  },
+  {
+   "name": "Draft Bylaw for the Regulation of Non-Medical Marijuana",
+   "where": "text",
+   "quote": "the planning board has finalized the draft bylaw for the regulation of non-medical marijuana."
+  },
+  {
+   "name": "Planning Board public hearing notice on Chapter 250 Zoning amendments (February 25, 2019)",
+   "where": "text",
+   "quote": "the lunenburg planning board will hold a public hearing on february 25, 2019,"
+  },
+  {
+   "name": "Memo from Senator Tran's office on FY20 fiscal priorities",
+   "where": "text",
+   "quote": "ms. lemieux referred the board to a memo from senator tran's office."
+  },
+  {
+   "name": "Vertex studies (building condition reports)",
+   "where": "text",
+   "quote": "ms. adams stated the vertex studies were 80 page reports on the buildings and they came and"
+  },
+  {
+   "name": "Tappe study (space needs)",
+   "where": "text",
+   "quote": "the tappe study was based on space needs based on square footage space."
+  },
+  {
+   "name": "Complete Streets prioritization plan (Tier 2)",
+   "where": "text",
+   "quote": "which you used to create the prioritization plan (tier 2) and submitted it to"
+  },
+  {
+   "name": "DPW cost breakdown of gas tanks replacement",
+   "where": "text",
+   "quote": "the dpw director provided a cost breakdown of the gas tanks replacement which includes engineering work, installation, etc."
+  },
+  {
+   "name": "Amendment to the existing Casella contract",
+   "where": "text",
+   "quote": "town counselhas been asked to draft the amendmentto the existing contract with these terms."
+  },
+  {
+   "name": "Open Space survey",
+   "where": "text",
+   "quote": "the number one thing on the open space survey was that (319) people want connectivity, sidewalks"
+  },
+  {
+   "name": "MBTA Fare Proposal public hearing materials",
+   "where": "text",
+   "quote": "the mbta fare proposal public hearing is scheduled for february 27, 2019 and is open"
+  },
+  {
+   "name": "Earth Removal Permit #14 extension, P. J. Keating Company",
+   "where": "text",
+   "quote": "revote to extend earth removal permit #14 - p. j. keating company- until march 5, 2019"
+  },
+  {
+   "name": "Minutes of January 8, 2019",
+   "where": "text",
+   "quote": "ms. luck requested the following changes to the january 8, 2019 minutes"
+  },
+  {
+   "name": "Colonial Power Group municipal aggregation notification letter",
+   "where": "text",
+   "quote": "notification letter from the town's power supply program, colonial power group, to"
+  },
+  {
+   "name": "Title search materials for 174 Northfield Road Rear (Deborah St. Vrain)",
+   "where": "text",
+   "quote": "has provided materials based on a title search performed on 174 northfield"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "town facilities",
+  "TC Passios",
+  "old Primary School",
+  "Brooks House",
+  "Complete Streets",
+  "marijuana",
+  "recycling",
+  "PAYT bags",
+  "Senator Tran budget requests",
+  "fuel tanks",
+  "Town Meeting warrant",
+  "Grange",
+  "open space",
+  "PILOT"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. menard presented a handout."
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

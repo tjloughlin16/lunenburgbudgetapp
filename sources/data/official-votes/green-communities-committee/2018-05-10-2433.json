@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2018-05-10",
  "docid": "2433",
@@ -12,22 +12,176 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the previous meeting",
-   "moved_by": "N.s.",
+   "motion": "Approve the minutes of the previous meeting.",
+   "moved_by": "N.S.",
    "seconded_by": "U.D.",
    "outcome": "not stated",
    "procedural": true,
    "quote": "n.s. made a motion to approve, u.d. seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "N.S.",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
    "quote": "n.s. then motioned to adjourn at approximately 8:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd document from scanned minutes. The seconder of the first motion is unclear: \"U.D.\" does not match any of the four listed members' initials (David Blatt, Neal Sullivan, Liz Murphy, John Londa), and may be an OCR error.",
- "cost_usd": 0.0871915
+ "note": "OCR text from a scanned page with several errors (e.g., 'gace', 'Uniti's', 'reviewea', 'Leany'). Page 1 ends mid-sentence and the opening header line 'Jim Breault, Liaison' is unclear; it is recorded as an attendee with status not stated. The minutes record motions to approve prior minutes and to adjourn but no vote results, so outcomes are 'not stated'. 'U.D.' is printed as the seconder and is not expanded in the minutes. The guest presentation's content (Onics filter, 15-19% power reduction) is described but has no dollar figure.",
+ "cost_usd": 0.00355642,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: david blatt- chair, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "member",
+   "status": "present",
+   "quote": "present: david blatt- chair, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "member",
+   "status": "present",
+   "quote": "present: david blatt- chair, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "John Londa",
+   "role": "member",
+   "status": "present",
+   "quote": "present: david blatt- chair, neal sullivan, liz murphy, john londa"
+  },
+  {
+   "name": "Jim Breault",
+   "role": "Liaison",
+   "status": "not stated",
+   "quote": "jim breault, liaison"
+  },
+  {
+   "name": "Bob Campbell",
+   "role": "guest",
+   "status": "present",
+   "quote": "the committee opened the floor to guest, bob campbell regarding green grid energy"
+  },
+  {
+   "name": "David Passios",
+   "role": "member of the public",
+   "status": "present",
+   "quote": "one member of the public, david passios, commented that if the town has a reasonable option"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "D.B. will create a comparison spreadsheet of the street light options, with assumptions such as hours lights are on and noting the estimates coming from Unitil, for Selectmen to use.",
+   "quote": "d.b stated he will create the spreadsheet and include assumptions such as number of hours lights are on"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unitil LED conversion savings and payback",
+   "what_was_recorded": "Unitil documents present an approximate annual savings and a payback period for the LED investment.",
+   "figures_as_printed": [
+    "$30,000",
+    "2.5 year"
+   ],
+   "quote": "documents present an approximate $30,000 annual savings with a 2.5 year payback of the investment."
+  },
+  {
+   "topic": "Tanko estimate to convert street lights",
+   "what_was_recorded": "Tanko gave an estimate to convert the street light heads (not poles), plus a per-light charge when a head needs replacement.",
+   "figures_as_printed": [
+    "$156,000",
+    "$300 per light"
+   ],
+   "quote": "tanko gace an estimate of $156,000 to convert the street lights-just the head,"
+  },
+  {
+   "topic": "Tanko maintenance costs",
+   "what_was_recorded": "Tanko's maintenance costs were stated as $4000 for changing bulbs and on-call service, excluding the cost of bulbs.",
+   "figures_as_printed": [
+    "$4000"
+   ],
+   "quote": "tanko's maintenance costs were $4000 changing bulbs, and on call service but doesn't include"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Passios",
+   "stated_role": "member of the public",
+   "topic": "street lamp maintenance contractor",
+   "quote": "one member of the public, david passios, commented that if the town has a reasonable option"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment on street lamp maintenance",
+   "resolution": "no action",
+   "quote": "one member of the public, david passios, commented that if the town has a reasonable option",
+   "tags": [
+    "public comment",
+    "street lamps"
+   ]
+  },
+  {
+   "topic": "Street light LED conversion options (Unitil)",
+   "resolution": "discussed; committee to prepare comparison spreadsheet; no vote",
+   "quote": "documents from unitil regarding street light led conversion were presented and reviewed.",
+   "tags": [
+    "street lights",
+    "LED conversion",
+    "Unitil",
+    "maintenance contract"
+   ]
+  },
+  {
+   "topic": "Guest presentation: Green Grid Energy Solutions and Onics energy filter",
+   "resolution": "presented; no action",
+   "quote": "the committee opened the floor to guest, bob campbell regarding green grid energy",
+   "tags": [
+    "energy filter",
+    "LED",
+    "energy savings",
+    "guest presentation"
+   ]
+  },
+  {
+   "topic": "Approval of previous minutes and adjournment",
+   "resolution": "approved minutes; adjourned about 8:00 PM",
+   "quote": "n.s. made a motion to approve, u.d. seconded.",
+   "tags": [
+    "minutes",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Documents from Unitil regarding street light LED conversion",
+   "where": "list",
+   "quote": "documents from unitil regarding street light led conversion were presented and reviewed."
+  }
+ ],
+ "tags": [
+  "street lights",
+  "LED conversion",
+  "Unitil",
+  "Tanko",
+  "energy savings",
+  "maintenance contract",
+  "energy filter",
+  "Selectmen"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents from unitil regarding street light led conversion were presented and reviewed."
+ },
+ "dropped_unquoted_by_field": {}
 }

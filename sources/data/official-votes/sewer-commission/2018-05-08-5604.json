@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-05-08",
  "docid": "5604",
@@ -12,55 +12,420 @@
  },
  "votes": [
   {
-   "motion": "Reduce the fee for A & D Crossroads from $5,825 to $1,000 to be paid immediately and that fulfills their commitment to the penalty",
+   "motion": "Reduce the fee for A & D Crossroads from $5,825 to $1,000 to be paid immediately, which fulfills their commitment to the penalty.",
    "moved_by": "John R.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: john r. to reduce the fee for a & d crossroads from $5,825 to $ 1,000 to be paid immediately and that fulfills their commitment to the penalty. second: troy d. vote: unanimous"
+   "quote": "to reduce the fee for a & d crossroads from $5,825 to $ 1,000 to be paid immediately and that fulfills their commitment to the penalty."
   },
   {
-   "motion": "Approve Weston Sampson to go up to the $5,000 budgeted amount if needed, which will include a compliant DEP report and the rewriting of the I/I regulation",
+   "motion": "Approve Weston Sampson to go up to the $5000 budgeted amount if needed, including a compliant DEP report and the rewriting of the l/l regulation.",
    "moved_by": "John R.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: john r. second: troy d. to approve weston sampson to go up to the $5000 budgeted amount if needed which will include a compliant dep report and the rewriting of the l/l regulation. vote: unanimous"
+   "quote": "to approve weston sampson to go up to the $5000 budgeted amount if needed which will include a compliant dep report and the rewriting of the l/l regulation."
   },
   {
-   "motion": "Approve the minutes for 4/10/18",
-   "moved_by": "John R.",
-   "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: john r. second: troy d. to approve the minutes for 4/10/18. vote: unanimous"
-  },
-  {
-   "motion": "Grant the request for a grease trap waiver for Hilltop Market, operating as they are, and it is not necessary to remove the grease trap",
+   "motion": "Grant the grease trap waiver for Hilltop Market, operating as they are, so the grease trap need not be removed.",
    "moved_by": "Troy D.",
    "seconded_by": "John R.",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: troy d. second: john r. that the request for the grease trap waiver be granted for hilltop market, operating as they are, and it is not necessary to remove the grease trap."
+   "quote": "that the request for the grease trap waiver be granted for hilltop market, operating as they are, and it is not necessary to remove the grease trap."
   },
   {
-   "motion": "After speaking to counsel, Barb will send a letter to the owner and manager of Whalom Kitchen, with counsel's recommendations",
+   "motion": "Barb, after speaking to counsel, will send a letter to the owner and manager, with counsel's recommendations.",
    "moved_by": "John R.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: john r. second: troy d. that barb, after speaking to counsel, will send a letter to the owner and manager, with counsel's recommendations. vote: unanimous"
+   "quote": "that barb, after speaking to counsel, will send a letter to the owner and manager, with counsel's recommendations."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Approve the minutes of 4/10/18.",
+   "moved_by": "John R.",
+   "seconded_by": "Troy D.",
+   "outcome": "passed, unanimous",
+   "procedural": true,
+   "quote": "to approve the minutes for 4/10/18."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:59 pm.",
    "moved_by": "Troy D.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: troy d. to adjourn: 8:59 pm. second: john r. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document from macOS Vision. One motion (Hilltop Market waiver) states outcome informally as \"All agreed\" in discussion but records no explicit vote line.",
- "cost_usd": 0.1043755
+ "note": "Text is OCR of a two-page scan. Page 1 begins mid-sentence and page 2 begins mid-sentence. The clerk's name is garbled in the OCR ('ane Ranley') and is recorded as printed. The Hilltop Market motion has no recorded vote result, so its outcome is 'not stated'. Roles for Joan, Barb, John R., Troy D., Jack R. and Peter are not printed. Peter's affiliation is not stated. Attendance for John Londa and Kim Chen is not stated.",
+ "cost_usd": 0.01049532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joan",
+   "role": "",
+   "status": "present",
+   "quote": "joan suggested waiting for carl's input and it will be added to the next meeting's agenda."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb confirmed that 6 certified letters, requesting a plan for meeting requirements, were sent starting in february 2016."
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: john r. to reduce the fee for a & d crossroads from $5,825 to $ 1,000 to be paid immediately and that fulfills their commitment to the penalty."
+  },
+  {
+   "name": "Troy D.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: troy d. to adjourn: 8:59 pm. second: john r. vote: unanimous"
+  },
+  {
+   "name": "Jack R.",
+   "role": "",
+   "status": "present",
+   "quote": "jack r. passed out a list of parts cost estimates from swss, which has a lead time of 9-12 weeks."
+  },
+  {
+   "name": "Peter",
+   "role": "",
+   "status": "present",
+   "quote": "peter provided the check to the town for $1000 and left the meeting."
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "Weston & Sampson",
+   "status": "present",
+   "quote": "7:30pm pat cotton, weston & sampson - dep response to report of december 2017"
+  },
+  {
+   "name": "John Londa",
+   "role": "Lunenburg Schools",
+   "status": "not stated",
+   "quote": "john londa, lunenburg schools - request for waiver-all schools"
+  },
+  {
+   "name": "Kim Chen",
+   "role": "current tenant",
+   "status": "not stated",
+   "quote": "barb received a letter from kim chen saying that they should not be responsible since it was not her non-compliance."
+  },
+  {
+   "name": "ane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Joan suggested John L. have the interceptor pumped in July and the schools' waiver request added to the agenda for the 2nd July meeting; John L. to return then for the primary school waiver as well.",
+   "quote": "joan suggested john l. have it pumped in july and have the waiver request added to the sewer commission agenda for the 2nd july meeting."
+  },
+  {
+   "decision": "Pat Cotton's DEP response item to wait for Carl's input and go on the next agenda; Commission to get back to Pat with project priorities.",
+   "quote": "the commission will get back to pat with the priorities."
+  },
+  {
+   "decision": "Jack to go ahead and work with SWSS on obtaining the parts.",
+   "quote": "jack will go ahead to work with swss on obtaining the parts."
+  },
+  {
+   "decision": "The Commission and Jack agreed that I/I scopes of work (pump station data, Mass Ave manholes) should not come from the Commission.",
+   "quote": "the commission and jack agreed that these scopes of work should not come from the commission."
+  },
+  {
+   "decision": "Irrigation Meter representatives to be present at the next meeting before a draft policy update is worked on.",
+   "quote": "the irrigation meter representatives present at the next meeting before working on a draft update to the policy."
+  },
+  {
+   "decision": "Commission agreed to put the grease trap regulation change (warnings monthly instead of every 2 weeks) on a future agenda.",
+   "quote": "commission agreed to put this on a future agenda."
+  },
+  {
+   "decision": "Barb given permission to go to town counsel for help responding to Richard Bursch as owner and Kim Chen as current tenant.",
+   "quote": "gave barb permission to go to town counsel for assistance with response to both richard bursch as owner and kim chen as current tenant."
+  },
+  {
+   "decision": "Commission wants to review the non-compliance list at the next meeting.",
+   "quote": "joan noted that the commission wants to review the non-compliance list at the next meeting."
+  },
+  {
+   "decision": "Billing outsourcing deferred; Barb would like to wait until August.",
+   "quote": "billing outsourcing update- barb would like to wait until august as previously discussed"
+  },
+  {
+   "decision": "Capital Plan and Policy added to future agenda items.",
+   "quote": "reviewed agenda items requested throughout the meeting, adding capital plan and policy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "A & D Crossroads grease trap fee",
+   "what_was_recorded": "Total fees assessed were $5,825; the commission agreed to a one-time $1,000 payment, payable immediately.",
+   "figures_as_printed": [
+    "$5,825",
+    "$1,000"
+   ],
+   "quote": "the total amount of fees assessed was $5,825."
+  },
+  {
+   "topic": "Weston & Sampson DEP response and I/I regulation rewrite",
+   "what_was_recorded": "Consultant to go up to the budgeted amount if needed; Pat said there is still money in the budget and it would not be exceeded.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "to approve weston sampson to go up to the $5000 budgeted amount if needed"
+  },
+  {
+   "topic": "SWSS pump and supply parts cost estimates",
+   "what_was_recorded": "A parts cost estimate list from SWSS was distributed; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "jack r. passed out a list of parts cost estimates from swss, which has a lead time of 9-12 weeks."
+  },
+  {
+   "topic": "Fitchburg water/sewer rate increase",
+   "what_was_recorded": "Fitchburg rate increase of 8% approved, effective June 1, reflected in the first invoice of the new fiscal year.",
+   "figures_as_printed": [
+    "8%"
+   ],
+   "quote": "update on fitchburg rate increase - approved for 8% increase effective june 1, reflected in first invoice of new fiscal year."
+  },
+  {
+   "topic": "Business manager invoices",
+   "what_was_recorded": "Invoices discussed from Fitchburg Water/Sewer and KP Law; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "invoices-fitchburg water/sewer invoice and kp law for highfield"
+  },
+  {
+   "topic": "Rates and capital plan",
+   "what_was_recorded": "Troy expressed concern about keeping rates artificially low for the sake of the capital plan; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "keeping rates artificially low for the sake of the capital plan"
+  },
+  {
+   "topic": "Town Meeting budget articles",
+   "what_was_recorded": "Three budget articles and the Tilton Ave inclusion in the Sewer Service Area were recapped; all articles passed. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "town meeting recap-3 budget articles and tilton ave inclusion in sewer service area (ssa)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joan",
+   "stated_role": "",
+   "topic": "farewell to Troy",
+   "quote": "joan said that she will miss troy and appreciated his perspective."
+  },
+  {
+   "speaker": "Troy",
+   "stated_role": "",
+   "topic": "policy, rates and capital plan concerns",
+   "quote": "troy said that he has been concerned about the lack of policy and keeping rates artificially low for the sake of the capital plan."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "A & D Crossroads grease trap fee",
+   "resolution": "reduced to $1,000, paid immediately",
+   "tags": [
+    "fees",
+    "grease trap",
+    "settlement"
+   ],
+   "quote": "the commission discussed options for settling the fee and all parties agreed to a one-time payment of $1,000, payable immediately."
+  },
+  {
+   "topic": "Lunenburg Schools grease trap and interceptor waiver",
+   "resolution": "continued to 2nd July meeting",
+   "tags": [
+    "waiver",
+    "grease trap",
+    "schools"
+   ],
+   "quote": "the grease traps will be cleaned in july and john l will come back to the 2nd july meeting to request"
+  },
+  {
+   "topic": "DEP response and I/I report (Weston & Sampson)",
+   "resolution": "approved up to $5000 budgeted amount; awaiting Carl's input",
+   "tags": [
+    "DEP",
+    "I/I",
+    "consultant"
+   ],
+   "quote": "joan suggested waiting for carl's input and it will be added to the next meeting's agenda."
+  },
+  {
+   "topic": "Town Meeting recap",
+   "resolution": "noted; all articles passed",
+   "tags": [
+    "town meeting",
+    "budget"
+   ],
+   "quote": "joan noted that all articles had passed."
+  },
+  {
+   "topic": "Minutes of 4/10/18",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of 4/10/18 - no changes were made."
+  },
+  {
+   "topic": "DPW systems update and FY18 work",
+   "resolution": "no action; Jack to obtain parts with SWSS",
+   "tags": [
+    "DPW",
+    "pumps",
+    "I/I"
+   ],
+   "quote": "jack will go ahead to work with swss on obtaining the parts."
+  },
+  {
+   "topic": "Irrigation meter policy",
+   "resolution": "deferred; Irrigation Meter representatives to attend next meeting",
+   "tags": [
+    "irrigation",
+    "policy"
+   ],
+   "quote": "the irrigation meter representatives present at the next meeting before working on a draft update to the policy."
+  },
+  {
+   "topic": "Grease trap regulation change",
+   "resolution": "put on a future agenda",
+   "tags": [
+    "regulation",
+    "grease trap"
+   ],
+   "quote": "commission agreed to put this on a future agenda."
+  },
+  {
+   "topic": "Hilltop Farm (1 Main St) grease trap waiver",
+   "resolution": "waiver granted by motion; outcome not stated; trap need not be removed",
+   "tags": [
+    "waiver",
+    "grease trap",
+    "Hilltop"
+   ],
+   "quote": "all agreed that they are exempt from the regulation and that the trap would not need to be removed"
+  },
+  {
+   "topic": "Whalom Kitchen fine appeal",
+   "resolution": "Barb to write owner and manager after speaking to counsel",
+   "tags": [
+    "fines",
+    "Whalom Kitchen",
+    "counsel"
+   ],
+   "quote": "that barb, after speaking to counsel, will send a letter to the owner and manager, with counsel's recommendations."
+  },
+  {
+   "topic": "First Tuesday report",
+   "resolution": "no action; all compliant",
+   "tags": [
+    "compliance"
+   ],
+   "quote": "first tuesday report - all compliant."
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "noted; Fitchburg 8% rate increase; permit renewals in progress; billing outsourcing deferred to August",
+   "tags": [
+    "invoices",
+    "permits",
+    "billing"
+   ],
+   "quote": "update on fitchburg rate increase - approved for 8% increase effective june 1, reflected in first invoice of new fiscal year."
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "Capital Plan and Policy added",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "reviewed agenda items requested throughout the meeting, adding capital plan and policy."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; farewell to Troy",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "joan said that she will miss troy and appreciated his perspective."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Carl Luck 5/8/18 - \"Comments and Inputs\"",
+   "where": "list",
+   "quote": "email from carl luck 5/8/18 -\" comments and inputs\""
+  },
+  {
+   "name": "Email from Carl Luck 5/8/18 - \"Re. Irrigation Meter Policy\"",
+   "where": "list",
+   "quote": "email from carl luck 5/8/18 -\" re. irrigation meter policy\""
+  },
+  {
+   "name": "Parts list from SWSS dated 5/7/18",
+   "where": "list",
+   "quote": "parts list from swss dated 5/7/18"
+  },
+  {
+   "name": "Hilltop Farms letter dated 4/16/18",
+   "where": "list",
+   "quote": "hilltop farms letter dated 4/16/18"
+  },
+  {
+   "name": "Whalom Kitchen Letter from Kim Chen dated 5/5/18",
+   "where": "list",
+   "quote": "whalom kitchen letter from kim chen dated 5/5/18"
+  },
+  {
+   "name": "6 certified letters requesting a plan for meeting requirements (sent starting February 2016)",
+   "where": "text",
+   "quote": "barb confirmed that 6 certified letters, requesting a plan for meeting requirements, were sent starting in february 2016."
+  },
+  {
+   "name": "2011 Flow Metering Report and Risk Assessment of Sanitary Sewer Overflow",
+   "where": "text",
+   "quote": "dep wants to have a more detailed look at the 2011 flow metering report and risk assessment"
+  },
+  {
+   "name": "Grease Trap regulations (Appendix)",
+   "where": "text",
+   "quote": "joan wants to change the grease trap regulations in the appendix to say that barb will send out warnings once"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease traps",
+  "fees",
+  "settlement",
+  "I/I",
+  "DEP",
+  "Weston & Sampson",
+  "Fitchburg rate",
+  "waivers",
+  "policy",
+  "budget",
+  "DPW",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "on file:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-01-16",
  "docid": "5091",
@@ -12,63 +12,451 @@
  },
  "votes": [
   {
-   "motion": "To enter Executive Session to conduct contract negotiations with non-union personnel regarding the Town Manager Contract",
+   "motion": "Enter executive session under M.G.L. c. 30 §21, Reason #2, for contract negotiations (Town Manager Contract), returning to open session at 7:00 p.m.",
    "moved_by": "R.Ebersole",
    "seconded_by": "P. bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: r.ebersole 2nd: p. bertram to enter executive session under m.g.l. c. 30 §21, reason #2: to conduct contract negotiations with non-union personnel, if any"
+   "quote": "to enter executive session under m.g.l. c. 30 §21, reason #2: to conduct contract negotiations with non-union personnel"
   },
   {
-   "motion": "To approve the transfer of the license address for Lloyd's Limousine Service",
+   "motion": "Approve the minutes of December 7, 2017.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the board approved the minutes of december 7, 2017."
+  },
+  {
+   "motion": "Approve the transfer of the license address for Lloyd's Limousine Service.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the transfer of the license address for lloyd's limousine service 2\"°: p. bertram vote: all in favor"
+   "quote": "to approve the transfer of the license address for lloyd's limousine service"
   },
   {
-   "motion": "To ratify the Town Manager appointment of Robert Hamel to the Senior Citizen Property Tax Workoff Committee",
+   "motion": "Ratify the Town Manager appointment of Robert Hamel to the Senior Citizen Property Tax Workoff Committee.",
    "moved_by": "P. Bertram",
    "seconded_by": "R.Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram 2nd. r.ebersole to ratify the town manager appointment of robert hamel to the senior citizen property tax workoff"
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of robert hamel to the senior citizen property tax workoff"
   },
   {
-   "motion": "To open the warrant for the May 5, 2018 Annual Town Meeting and close it on March 22, 2018 at 6:00 p.m.",
+   "motion": "Open the warrant for the May 5, 2018 Annual Town Meeting and close it on March 22, 2018 at 6:00 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "R.Ebersole",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion:p. bertram 2\"d. r.ebersole to open the warrant for the may 5, 2018 annual town meeting and close it on march 22, 2018 at 6:00 p.m. vote: all in favor"
+   "procedural": false,
+   "quote": "to open the warrant for the may 5, 2018 annual town meeting and close it on march 22, 2018 at 6:00 p.m."
   },
   {
-   "motion": "To sign the renewal Bond Anticipation Note as presented for Middle/High School construction",
+   "motion": "Sign the renewal Bond Anticipation Note as presented.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"': p. bertram to sign the renewal bond anticipation note as presented vote: all in favor"
+   "quote": "to sign the renewal bond anticipation note as presented"
   },
   {
-   "motion": "To approve the fee of $25.00 for a one day entertainment license",
+   "motion": "Approve the fee of $25.00 for a one day entertainment license.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the fee of $25.00 for a one day entertainment license 2nd: p. bertram vote: all in favor"
+   "quote": "to approve the fee of $25.00 for a one day entertainment license"
   },
   {
-   "motion": "To not exercise the right of first refusal for Lot 5, Prospect Street and Cross Road",
+   "motion": "Not exercise the right of first refusal for Lot 5, Prospect Street and Cross Road.",
    "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole 2*: p. bertram to not exercise the right of first refusal for lot 5, prospect street and cross road vote: all in favor"
+   "quote": "to not exercise the right of first refusal for lot 5, prospect street and cross road"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes with artifacts in the \"2nd\" designations (2\\\"°:, 2\\\"d., 2\\\"':, 2*:) preserved as appearing in source. All seven votes passed.\"",
- "cost_usd": 0.1647745
+ "note": "Scanned text (macOS Vision OCR) with garbled fragments: page 1 header line is corrupted, the executive session header is partly missing, and page 8 begins mid-sentence, so the Town Manager update heading is missing and its speaker is unattributed (FY19 and Complete Streets content read as the Town Manager's report). Agenda item 3 is absent from the numbering (1, 2, 4, 5, 6, 7). The first 'PUBLIC COMMENT' heading holds only remarks by board members Bertram and Toale, which were not recorded as public comment. The minutes approval has no printed motion or mover; it is recorded as passed from 'The Board approved'. Votes printed 'All in Favor' are recorded as 'passed' without a count. Executive session minutes are separate and not in this text. Several attendees appear only in the 'Others present' list with no role printed.",
+ "cost_usd": 0.013631320000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "J. Toale",
+   "role": "Selectmen Chair",
+   "status": "present",
+   "quote": "selectmen chair toale opened the meeting at 6:09 p.m. and requested a motion to enter executive session."
+  },
+  {
+   "name": "P. Bertram",
+   "status": "present",
+   "quote": "vote: p. bertram-aye; p. luck -aye; d. mcquaid -aye; r. ebersole -aye; j. toale -aye"
+  },
+  {
+   "name": "P. Luck",
+   "status": "present",
+   "quote": "vote: p. bertram-aye; p. luck -aye; d. mcquaid -aye; r. ebersole -aye; j. toale -aye"
+  },
+  {
+   "name": "D. McQuaid",
+   "status": "present",
+   "quote": "mr. mcquaid stated there was farther down cross road."
+  },
+  {
+   "name": "R.Ebersole",
+   "status": "present",
+   "quote": "vote: p. bertram-aye; p. luck -aye; d. mcquaid -aye; r. ebersole -aye; j. toale -aye"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux who worked with"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "others present: sue doherty, council on aging director; pete lincoln, coa chairman, debbie lincoln,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "COA Chairman",
+   "status": "present",
+   "quote": "coa chairman pete lincoln appreciated the opportunity to come before the board"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "status": "present",
+   "quote": "others present: sue doherty, council on aging director; pete lincoln, coa chairman, debbie lincoln,"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "COA member",
+   "status": "present",
+   "quote": "coa member deb lincoln listed some of the activities they hold there:"
+  },
+  {
+   "name": "Susanna Jewell",
+   "status": "present",
+   "quote": "susanna jewell, bob hamel, judy tarbell, amy whitcomb ricciuti, thomas gustafson, leon tarbell,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "susanna jewell, bob hamel, judy tarbell, amy whitcomb ricciuti, thomas gustafson, leon tarbell,"
+  },
+  {
+   "name": "Amy Whitcomb Ricciuti",
+   "status": "present",
+   "quote": "susanna jewell, bob hamel, judy tarbell, amy whitcomb ricciuti, thomas gustafson, leon tarbell,"
+  },
+  {
+   "name": "Thomas Gustafson",
+   "status": "present",
+   "quote": "susanna jewell, bob hamel, judy tarbell, amy whitcomb ricciuti, thomas gustafson, leon tarbell,"
+  },
+  {
+   "name": "Leon Tarbell",
+   "status": "present",
+   "quote": "susanna jewell, bob hamel, judy tarbell, amy whitcomb ricciuti, thomas gustafson, leon tarbell,"
+  },
+  {
+   "name": "Tom Crounse",
+   "role": "owner, Lloyd's Limousine Service",
+   "status": "present",
+   "quote": "tom crounse, owner, appeared to request a change to his address on his license."
+  },
+  {
+   "name": "Robert Hamel",
+   "role": "appointee, Senior Citizen Property Tax Workoff Program Committee (Member at large)",
+   "status": "present",
+   "quote": "ms. lemieux introduced mr. hamel who was present."
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, had questions about the bond anticipation note discussed earlier this evening."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed an accounts payable warrant in the amount of $1,226,254.84 (no vote recorded).",
+   "quote": "they signed an accounts payable warrant in the amount of $1,226,254.84."
+  },
+  {
+   "decision": "A warrant for the MS/HS project in the amount of $172,455.23 was not signed after discussion (no vote recorded).",
+   "quote": "a warrant in the amount of $172,455.23 for the ms/hs project was presented and after some discussion it was not signed."
+  },
+  {
+   "decision": "Mr. Ebersole asked that research on what communities require for CORI checks of limousine drivers be placed on the board's to-do list (no vote recorded).",
+   "quote": "mr. ebersole requested looking at what communities are doing for requiring cori checks for limousine drivers be placed on their"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA volunteer value",
+   "what_was_recorded": "The COA reported 41 volunteers gave 2318.5 hours in FY17, valued at minimum wage.",
+   "figures_as_printed": [
+    "$11.00",
+    "$25,503.50"
+   ],
+   "quote": "if the town were to pay them at the minimum wage of $11.00 per hour it would have cost $25,503.50"
+  },
+  {
+   "topic": "Senior van fares",
+   "what_was_recorded": "Van ride cost per stop in Lunenburg and round-trip fare to Nashoba Hospital in Ayer.",
+   "figures_as_printed": [
+    ".50",
+    "$2.00"
+   ],
+   "quote": "cost to ride the van is .50 each stop lunenburg, $2.00 round trip to nashoba hospital in ayer"
+  },
+  {
+   "topic": "Eagle House newsletter subscription",
+   "what_was_recorded": "An 11-month newsletter subscription price was given.",
+   "figures_as_printed": [
+    "$5.50"
+   ],
+   "quote": "an 11 month subscription can be purchased for $5.50."
+  },
+  {
+   "topic": "Middle/High School bond anticipation note",
+   "what_was_recorded": "The Treasurer presented a BAN dated January 25, 2018 for the Middle/High school construction, at 1.5% due January 25, 2019; the board signed the renewal.",
+   "figures_as_printed": [
+    "$2,100,000.00"
+   ],
+   "quote": "a bond anticipation note (ban) dated january 25, 2018, in the amount of $2,100,000.00 was presented"
+  },
+  {
+   "topic": "One day entertainment license fee",
+   "what_was_recorded": "A suggested fee for a one day entertainment license was noted and approved.",
+   "figures_as_printed": [
+    "$25.00"
+   ],
+   "quote": "ms. lemieux noted a suggestion of $25.00 for the one day entertainment license fee."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The board signed an accounts payable warrant.",
+   "figures_as_printed": [
+    "$1,226,254.84"
+   ],
+   "quote": "they signed an accounts payable warrant in the amount of $1,226,254.84."
+  },
+  {
+   "topic": "MS/HS project warrant",
+   "what_was_recorded": "A warrant for the MS/HS project was presented and not signed.",
+   "figures_as_printed": [
+    "$172,455.23"
+   ],
+   "quote": "a warrant in the amount of $172,455.23 for the ms/hs project was presented"
+  },
+  {
+   "topic": "FY19 budget target and process",
+   "what_was_recorded": "Departments were given a target budget; requests above it need justification. Town Manager will present FY19 recommendation February 15.",
+   "figures_as_printed": [],
+   "quote": "for the fy19 budget, departments were given a target budget to meet and any requests that exceed that figure"
+  },
+  {
+   "topic": "Funding for board minute-recording help",
+   "what_was_recorded": "Possible available funding for boards needing help recording minutes depends on incoming budgets; no amount stated.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux stated she would have to see budgets come in and see if there could be any available funding for that."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Questions on the Bond Anticipation Note",
+   "quote": "dave rodgers, 82 highland street, had questions about the bond anticipation note discussed earlier this evening."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Executive session (Town Manager contract)",
+   "resolution": "entered executive session; resumed open session at 7:02 p.m.",
+   "quote": "selectmen chair toale opened the meeting at 6:09 p.m. and requested a motion to enter executive session.",
+   "tags": [
+    "executive session",
+    "town manager contract"
+   ]
+  },
+  {
+   "topic": "Opening remarks and Fitchburg students",
+   "resolution": "no action",
+   "quote": "ms. bertram announced she will not be seeking reelection in may.",
+   "tags": [
+    "board",
+    "fitchburg students"
+   ]
+  },
+  {
+   "topic": "Lloyd's Limousine license address",
+   "resolution": "approved address transfer",
+   "quote": "tom crounse, owner, appeared to request a change to his address on his license.",
+   "tags": [
+    "licensing",
+    "limousine"
+   ]
+  },
+  {
+   "topic": "Council on Aging mission and goals",
+   "resolution": "presented; no action",
+   "quote": "council on aging & coa director discussion of coa mission and goals",
+   "tags": [
+    "council on aging",
+    "seniors",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Ratify appointment, Senior Citizen Property Tax Workoff Committee",
+   "resolution": "ratified appointment of Robert Hamel",
+   "quote": "to ratify the town manager appointment of robert hamel to the senior citizen property tax workoff",
+   "tags": [
+    "appointments",
+    "tax workoff"
+   ]
+  },
+  {
+   "topic": "Open warrant for May 5, 2018 Annual Town Meeting",
+   "resolution": "warrant opened; closes March 22, 2018 at 6:00 p.m.",
+   "quote": "to open the warrant for the may 5, 2018 annual town meeting and close it on march 22, 2018 at 6:00 p.m.",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Town updates: Complete Streets, forums, business workshops, FY19 budget schedule",
+   "resolution": "reported; no action",
+   "quote": "i will present my recommendation for the fy19 budget on thursday, february 15th at 7:00 p.m.",
+   "tags": [
+    "complete streets",
+    "fy19 budget",
+    "business partnership"
+   ]
+  },
+  {
+   "topic": "Sign renewal of BAN, Middle/High School bond",
+   "resolution": "renewal note signed",
+   "quote": "a bond anticipation note (ban) dated january 25, 2018, in the amount of $2,100,000.00 was presented",
+   "tags": [
+    "bond anticipation note",
+    "school construction"
+   ]
+  },
+  {
+   "topic": "One day entertainment license fee",
+   "resolution": "approved $25.00 fee",
+   "quote": "ms. lemieux noted a suggestion of $25.00 for the one day entertainment license fee.",
+   "tags": [
+    "license fees"
+   ]
+  },
+  {
+   "topic": "Right of first refusal, Lot 5, Prospect St. & Cross Road",
+   "resolution": "not exercised",
+   "quote": "ms. lemieux reported the town received a request to remove this property from chapter 61b status.",
+   "tags": [
+    "chapter 61b",
+    "land"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "approved Dec 7, 2017 minutes; signed AP warrant; did not sign MS/HS warrant",
+   "quote": "the board approved the minutes of december 7, 2017.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "ms. bertram reported conservation commission meets tomorrow night",
+   "tags": [
+    "committee reports",
+    "stormwater",
+    "transportation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY19 budget and Annual Town Meeting schedule (in meeting packets)",
+   "where": "list",
+   "quote": "in your meeting packets is the budget and schedule to meet deadlines for the may 5"
+  },
+  {
+   "name": "Five Year Financial Forecast and FY19 Capital Plan presentation (Finance Committee, January 25, 2018)",
+   "where": "text",
+   "quote": "the presentation for the five year financial forecast and fy19 capital plan will be presented to the finance"
+  },
+  {
+   "name": "Bond anticipation note dated January 25, 2018 ($2,100,000.00)",
+   "where": "text",
+   "quote": "a bond anticipation note (ban) dated january 25, 2018, in the amount of $2,100,000.00 was presented"
+  },
+  {
+   "name": "Accounts payable warrant ($1,226,254.84)",
+   "where": "text",
+   "quote": "they signed an accounts payable warrant in the amount of $1,226,254.84."
+  },
+  {
+   "name": "MS/HS project warrant ($172,455.23)",
+   "where": "text",
+   "quote": "a warrant in the amount of $172,455.23 for the ms/hs project was presented"
+  },
+  {
+   "name": "Report presented by MRPC in December",
+   "where": "text",
+   "quote": "the report that was presented by mrpc in december will be re-presented at this"
+  },
+  {
+   "name": "Event Statistics from 07/01/2017 to 12/31/2017 compiled from My Senior Center software",
+   "where": "text",
+   "quote": "event statistics from 07/01/2017 to 12/31/2017 compiled from my senior center software"
+  },
+  {
+   "name": "Transportation statistics from My Senior Center",
+   "where": "text",
+   "quote": "transportation statistics from my senior center"
+  },
+  {
+   "name": "Eagle House newsletter (online at www.ourseniorcenter.com)",
+   "where": "text",
+   "quote": "you can also view the newsletter online by going to www.ourseniorcenter.com"
+  },
+  {
+   "name": "Minutes of December 7, 2017",
+   "where": "text",
+   "quote": "the board approved the minutes of december 7, 2017."
+  }
+ ],
+ "tags": [
+  "executive session",
+  "town manager contract",
+  "council on aging",
+  "limousine licensing",
+  "town meeting warrant",
+  "bond anticipation note",
+  "license fees",
+  "chapter 61B",
+  "appointments",
+  "fy19 budget",
+  "minutes and warrants",
+  "committee reports",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "in your meeting packets is the budget and schedule"
+ },
+ "dropped_unquoted_by_field": {}
 }

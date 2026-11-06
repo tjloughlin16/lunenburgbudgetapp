@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2018-05-30",
  "docid": "3174",
@@ -12,23 +12,268 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the joint meeting with Conservation Commission on May 9, 2018",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the joint meeting with the Conservation Commission on May 9, 2018.",
    "moved_by": "Bob",
    "seconded_by": "Dave",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "minutes approved unanimously (motion: bob, second: dave)"
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Bob",
    "seconded_by": "Dave",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "meeting adjourned at 9:22 (motion: bob, second: dave)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.019915
+ "note": "Plain text minutes, not a scan; all votes are recorded as unanimous or with a motion and seconder, no roll-call tallies. The letterhead spells the member \"Todd Dwyer\" but the body says \"Todd Dyer\"; the body spelling is used. Spellings vary within the text (Luneburg/Lunenburg, Prokowiew). The minutes contain no documents list heading; the only document-type references are the PowerPoint presentation, the prior plan and the 2008 survey, all named in passing. The adjournment motion has no printed result, so the outcome is \"not stated\". Matt Allison and Adam Burney are named but did not speak, so they are not listed as attendees. Some dollar figures are grant caps and reimbursement rates, not Town appropriations.",
+ "cost_usd": 0.006023819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brandon Kibbe",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present were brandon kibbe, bob pease, richard brockelman, and david prokowiew."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present were brandon kibbe, bob pease, richard brockelman, and david prokowiew."
+  },
+  {
+   "name": "Richard Brockelman",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present were brandon kibbe, bob pease, richard brockelman, and david prokowiew."
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present were brandon kibbe, bob pease, richard brockelman, and david prokowiew."
+  },
+  {
+   "name": "Todd Dyer",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: todd dyer."
+  },
+  {
+   "name": "Richard Burch",
+   "role": "Chair of the Conservation Commission",
+   "status": "present",
+   "quote": "richard burch, chair of the conservation commission also participated in the meeting."
+  },
+  {
+   "name": "Matt Charpentier",
+   "role": "Member of the public",
+   "status": "present",
+   "quote": "matt charpentier asked about the updating of maps for wildlife habitats and vernal pools"
+  },
+  {
+   "name": "Matt Morro",
+   "role": "Member of the public",
+   "status": "present",
+   "quote": "matt morro noted he has experience/knowledge in completing ada assessments and volunteered to complete the ada portion"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The plan will be revised by the Committee without outside consultants or regional agencies, with the goal of completing the Open Space and Recreation Plan prior to Thanksgiving.",
+   "quote": "the committee agreed that the plan would be revised by the committee without the use of outside consultants or regional agencies."
+  },
+  {
+   "decision": "The 2018 survey will be implemented using Survey Monkey, PDF copies online, hard copies in public places, and, if possible, a mailing with the tax bills.",
+   "quote": "there was a consensus the survey should be implemented using survey monkey, pdf copies online, and hard copies in public places"
+  },
+  {
+   "decision": "The 2018 survey will be based on the 2008 survey so the data can be analyzed for changes.",
+   "quote": "there was agreed that the 2018 survey should be based on the 2008 survey so the data could be analyzed for changes."
+  },
+  {
+   "decision": "Brandon will revise the survey on behalf of the full committee using the ideas discussed at the meeting.",
+   "quote": "it was agrees that brandon would use the ideas discussed at the meeting to revise the survey on behalf of the full committee."
+  },
+  {
+   "decision": "Dave will contact the town hall about the possibility and timeline for including the updated survey with tax bills.",
+   "quote": "dave will contact the town hall about the possibility /time line for including the updated open space survey with tax bills."
+  },
+  {
+   "decision": "Section leads assigned for the June 19 meeting: Dave on the Community Setting Section, Rich on Population Characteristics and on the Inventory of Lands of Conservation and Recreational Interest, and Bob on the Environmental Inventory and Analysis; the Plan Summary and Introduction will be revised toward the end.",
+   "quote": "for the june 19th meeting, dave will review community setting section (rich will review population characteristics within the community setting section); bob will review the text of the environmental inventory and analysis"
+  },
+  {
+   "decision": "Brandon will work on updating the mapping; the mapping requirements have not changed.",
+   "quote": "brandon said the mapping requirements have not changed and that he will work on updating the mapping."
+  },
+  {
+   "decision": "Committee members are to visit each existing conservation/open space and park/recreation asset to prepare assessments; the committee will discuss this further at a future meeting.",
+   "quote": "the committee will further discuss this at a future meeting."
+  },
+  {
+   "decision": "Matt Morro volunteered to complete the ADA portion of the assessment for each asset.",
+   "quote": "matt morro noted he has experience/knowledge in completing ada assessments and volunteered to complete the ada portion"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State grant reimbursement for open space and conservation",
+   "what_was_recorded": "A valid open space plan makes the town eligible for state grants; open space/conservation projects may be reimbursed at 64% up to a stated cap.",
+   "figures_as_printed": [
+    "64%",
+    "$400K"
+   ],
+   "quote": "open space/conservation the town may be reimbursed 64% up to $400k."
+  },
+  {
+   "topic": "State grant reimbursement for parks and recreation",
+   "what_was_recorded": "Parks/recreation projects may be reimbursed at 64% up to a stated cap; the presentation noted missed recreation grant opportunities.",
+   "figures_as_printed": [
+    "64%",
+    "$100K"
+   ],
+   "quote": "parks/recreation the town may be reimbursed 64% up to $100k."
+  },
+  {
+   "topic": "Lane Property acquisition grant",
+   "what_was_recorded": "Having a plan led to a grant to acquire the Lane Property.",
+   "figures_as_printed": [
+    "$270,000"
+   ],
+   "quote": "obtained a $270,000 grant to acquire the lane property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Matt Charpentier",
+   "topic": "wildlife habitat maps, vernal pools, and protection of wildlife on conservation lands",
+   "quote": "matt charpentier asked about the updating of maps for wildlife habitats and vernal pools and expressed concern that wildlife be protected on conservation lands after they are acquired."
+  },
+  {
+   "speaker": "Public (unnamed)",
+   "topic": "parking at the Lunenburg Public Beach",
+   "quote": "suggestions from the public included adding parking for the lunenburg public beach."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public information presentation on the Open Space and Recreation Plan",
+   "resolution": "presented, no action",
+   "quote": "brandon gave a powerpoint presentation that reviewed the development history of our present open space and recreation plan",
+   "tags": [
+    "presentation",
+    "open space plan",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Public information questions and answers",
+   "resolution": "discussed, no action",
+   "quote": "matt charpentier asked about the updating of maps for wildlife habitats and vernal pools",
+   "tags": [
+    "public input",
+    "wildlife",
+    "trail maps"
+   ]
+  },
+  {
+   "topic": "Approve minutes of joint meeting with Conservation Commission on May 9, 2018",
+   "resolution": "approved unanimously",
+   "quote": "minutes approved unanimously (motion: bob, second: dave)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Calendar of meetings and milestones",
+   "resolution": "agreed; tentative meeting dates set",
+   "quote": "the committee agreed that the plan would be revised by the committee without the use of outside consultants or regional agencies.",
+   "tags": [
+    "schedule",
+    "milestones"
+   ]
+  },
+  {
+   "topic": "Survey review and distribution",
+   "resolution": "consensus on survey method; Brandon to revise survey",
+   "quote": "there was a consensus the survey should be implemented using survey monkey, pdf copies online, and hard copies in public places",
+   "tags": [
+    "survey",
+    "tax bills",
+    "public input"
+   ]
+  },
+  {
+   "topic": "Review of prior plan and section leads",
+   "resolution": "section leads assigned",
+   "quote": "for the june 19th meeting, dave will review community setting section",
+   "tags": [
+    "plan revision",
+    "section leads"
+   ]
+  },
+  {
+   "topic": "Mapping requirements and draft map revisions",
+   "resolution": "Brandon to update mapping",
+   "quote": "brandon said the mapping requirements have not changed and that he will work on updating the mapping.",
+   "tags": [
+    "mapping"
+   ]
+  },
+  {
+   "topic": "Assessments of existing infrastructure",
+   "resolution": "deferred to a future meeting; ADA volunteer",
+   "quote": "the committee will further discuss this at a future meeting.",
+   "tags": [
+    "ADA assessment",
+    "infrastructure",
+    "site visits"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint presentation on the Open Space and Recreation Plan (presented by Brandon)",
+   "where": "text",
+   "quote": "brandon gave a powerpoint presentation that reviewed the development history of our present open space and recreation plan"
+  },
+  {
+   "name": "Prior Open Space and Recreation Plan",
+   "where": "text",
+   "quote": "review survey and results from prior plan."
+  },
+  {
+   "name": "2008 survey",
+   "where": "text",
+   "quote": "there was agreed that the 2018 survey should be based on the 2008 survey so the data could be analyzed for changes."
+  },
+  {
+   "name": "Minutes from joint meeting with Conservation Commission on May 9, 2018",
+   "where": "text",
+   "quote": "review and approve minutes from joint meeting with conservation commission on may 9, 2018."
+  }
+ ],
+ "tags": [
+  "open space plan",
+  "recreation plan",
+  "public survey",
+  "state grants",
+  "conservation commission",
+  "ADA assessment",
+  "committee planning",
+  "wildlife and vernal pools",
+  "public beach parking"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

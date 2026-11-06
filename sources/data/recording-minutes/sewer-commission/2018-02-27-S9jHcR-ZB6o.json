@@ -1,0 +1,584 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2018-02-27",
+ "video_id": "S9jHcR-ZB6o",
+ "video_url": "https://www.youtube.com/watch?v=S9jHcR-ZB6o",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2018-02-27-S9jHcR-ZB6o.json",
+  "sha256": "172dcd3c008a5b28a74b2a02e1276e8c12848e62705d4130afcdb8fc448f948b",
+  "caption_lines": 403,
+  "segments": 3015
+ },
+ "recording": {
+  "duration_s": 8708,
+  "duration": "2:25",
+  "spoken_chars": 109245,
+  "words_approx": 18207
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02272018-5592",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2018-02-27-agenda-5592.txt",
+   "path": "sources/meetings/sewer-commission/2018-02-27-agenda-5592.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02272018-5592",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2018-02-27-minutes-5592.txt",
+   "path": "sources/meetings/sewer-commission/2018-02-27-minutes-5592.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T21:15:34Z",
+  "cost_usd": 0.3923375
+ },
+ "minutes": {
+  "headline": "Sewer Commission agreed to buy spare pump parts and start I&I Task 1; contested minutes were tabled.",
+  "summary": "The commission signed a settlement agreement, then reviewed Small Water's list of spare pump station parts and agreed to buy it while keeping a reserve for emergencies. It took up I&I Task 1, a maintenance and capital plan, the Tilton extension notice, the FY19 budget and the Fitchburg rate proposal. A long dispute over edited minutes ended with the minutes tabled. A resident raised open meeting law concerns in public comment.",
+  "attendees": [
+   {
+    "name_as_heard": "Joe Anderson",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Carl",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Troy",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jack",
+    "role": "DPW director"
+   },
+   {
+    "name_as_heard": "Barb",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Dan Proctor",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Mr. Radik",
+    "role": "presenter (Small Water)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 2377,
+    "speaker_as_heard": "Bobby Brazil",
+    "stated_role": "resident, 94 Main Street",
+    "topic": "Alleged open meeting law violations: communications passed through a staff member and late minutes; urged minutes approval at start of meetings."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "legal",
+   "policy",
+   "public-comment",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 3241,
+    "motion": "Accept the Task 1 report as written and begin work on I&I Task 1.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 4502,
+    "motion": "Buy the Small Water spare parts list and move ten thousand out of I&I to leave more for emergencies.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 7010,
+    "motion": "Approve Jane's original unedited minutes rather than the edited ones.",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 7857,
+    "motion": "Accept the January 30 minutes as reviewed edit by edit by the group.",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 8700,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3458,
+    "topic": "FY18 purchase of service balance",
+    "what_was_said": "Budget status of the purchase of service section was reviewed against Task 1, John Street repairs, Highfield village counsel and the spare parts list.",
+    "figures_as_heard": [
+     "231 for 784",
+     "96 380",
+     "35"
+    ]
+   },
+   {
+    "t": 4120,
+    "topic": "Spare parts versus I&I reserve",
+    "what_was_said": "Members worked out how much would remain for emergencies after buying the parts and holding money for I&I.",
+    "figures_as_heard": [
+     "22 K",
+     "nine thousand dollars",
+     "19 K"
+    ]
+   },
+   {
+    "t": 5877,
+    "topic": "Debt payment",
+    "what_was_said": "The project came in under budget so the annual debt payment was reduced.",
+    "figures_as_heard": [
+     "eight forty three thousand",
+     "eight twenty four"
+    ]
+   },
+   {
+    "t": 8568,
+    "topic": "Fitchburg invoice and Q3 commitment",
+    "what_was_said": "An invoice matching the flow meter and the third quarter bill commitment were reported.",
+    "figures_as_heard": [
+     "15,000 497 86",
+     "174 704 83"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4502,
+    "description": "Move ten thousand out of the I&I amount to raise the emergency balance",
+    "amount_as_heard": "ten thousand",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 5511,
+    "decision": "Business manager to research a pump station engineering study and Jack to talk with Small Water about maintenance."
+   },
+   {
+    "t": 5769,
+    "decision": "Tilton extension letter edits agreed by consensus with a response deadline of March 13."
+   },
+   {
+    "t": 8526,
+    "decision": "Minutes tabled and approval to move to the start of future meetings."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 190,
+    "topic": "Settlement agreement signing",
+    "resolution": "signed",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 301,
+    "t_end": 2110,
+    "topic": "Small Water report and spare pump parts",
+    "resolution": "informational, prioritization requested",
+    "tags": [
+     "water-sewer",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2377,
+    "t_end": 2640,
+    "topic": "Public comment on open meeting law",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2646,
+    "t_end": 3426,
+    "topic": "I&I Task 1",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 3426,
+    "t_end": 5530,
+    "topic": "FY18 spending and maintenance plan",
+    "resolution": "voted",
+    "tags": [
+     "budget",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 5531,
+    "t_end": 6750,
+    "topic": "Tilton extension, FY19 budget, Fitchburg rate, warrant articles, workshop",
+    "resolution": "consensus",
+    "tags": [
+     "warrant-article",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 6752,
+    "t_end": 8547,
+    "topic": "Minutes dispute",
+    "resolution": "tabled",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 8568,
+    "t_end": 8720,
+    "topic": "Business manager report and adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "water-sewer"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote outcomes and counts are not in the captions.",
+   "Many speakers cannot be told apart and some numbers are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2819,
+    "about": "Whether I&I Task 1 scope and questions had been discussed and answered",
+    "sides": "a member against the DPW director",
+    "words_as_heard": "I take great exception to that there was no extensive discussion",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7159,
+    "about": "Approving minutes unedited versus reviewing edits",
+    "sides": "a member against two members",
+    "words_as_heard": "I take great exception I think are just recommending that we bastardized the entire system of reviewing minutes",
+    "kind": "charged language"
+   },
+   {
+    "t": 8464,
+    "about": "Whether two members authorizing an analysis outside a meeting violates open meeting law",
+    "sides": "a member against two members",
+    "words_as_heard": "I believe it is illegal but you're doing business outside of the office",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1056,
+    "kind": "safety",
+    "about": "Stations running on one pump risk sewage overflow",
+    "who": "the DPW director",
+    "words_as_heard": "the end result is in the worst case scenario is sewage pouring out onto the ground"
+   },
+   {
+    "t": 3345,
+    "kind": "condition",
+    "about": "Opposes Task 1 over RFQ flaws",
+    "who": "a member",
+    "words_as_heard": "I'm going to vote no is because there are things on this list that I think are fundamental problems with the RFQ"
+   },
+   {
+    "t": 3846,
+    "kind": "condition",
+    "about": "Wants prioritized list before spending",
+    "who": "a member",
+    "words_as_heard": "I want to see the prioritized list that's my proposal"
+   },
+   {
+    "t": 8464,
+    "kind": "liability or legal",
+    "about": "Possible open meeting law violation",
+    "who": "a member",
+    "words_as_heard": "I believe it is illegal"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1954,
+    "name_as_heard": "the spare parts lists",
+    "kind": "other",
+    "words_as_heard": "there were two lists the lists we got here doesn't have this $10,000 item",
+    "shown": true
+   },
+   {
+    "t": 2776,
+    "name_as_heard": "list of questions on the RFP",
+    "kind": "letter or email",
+    "words_as_heard": "I had submitted several months ago a fairly extensive list of questions",
+    "shown": false
+   },
+   {
+    "t": 3458,
+    "name_as_heard": "handout on anticipated spending FY 18",
+    "kind": "budget document",
+    "words_as_heard": "there's a handout purchase of service section",
+    "shown": true
+   },
+   {
+    "t": 7054,
+    "name_as_heard": "January 30 and February 13 minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "I'm looking at January 30th and the other one I'm looking at is February 13",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "sewer-infiltration-costs",
+    "title": "Sewer infiltration costs",
+    "question": "How much has been spent and what remains for sewer I&I work this year?",
+    "t": 3426,
+    "words_as_heard": "we've got some still in cupboard for contracts and such we have a balance of 96 380",
+    "data_in_play": [
+     "96 380",
+     "231 for 784"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "sewer-pump-contract",
+    "title": "Pump station spare parts",
+    "question": "What would a spare pump stock cost and how would it be phased?",
+    "t": 1527,
+    "words_as_heard": "if we can afford it we should buy all the parts and if we can't you think we should phase in",
+    "data_in_play": [
+     "35",
+     "six months"
+    ],
+    "existing": "thread:sewer-pump-procurement"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission voted to buy the spare pump station parts on Small Water's list and move money out of I&I so more is held for emergencies.",
+    "t": 4502
+   },
+   {
+    "line": "It voted to accept the Task 1 report as written and begin work on I&I Task 1; the vote tally was not audible.",
+    "t": 3241
+   },
+   {
+    "line": "The commission tabled the minutes after a long dispute over edits, and agreed to move minutes approval to the start of future meetings.",
+    "t": 8526
+   },
+   {
+    "line": "Members agreed by consensus on edits to the Tilton extension letter, with a response deadline of March 13.",
+    "t": 5769
+   },
+   {
+    "line": "The business manager will research a pump station engineering study, and Jack will talk with Small Water about maintenance.",
+    "t": 5511
+   }
+  ],
+  "why_it_matters": [
+   "Spare parts and the I&I work are paid from sewer purchase-of-service money, so these choices affect how much is left for emergency repairs and, over time, what sewer users are charged.",
+   "Moving minutes approval to the start of meetings changes when the public can see a settled record of what the commission decided."
+  ],
+  "watch_next": [
+   "March 13, the response deadline set for the Tilton extension letter.",
+   "Approval of the tabled minutes, now to be taken at the start of future meetings."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T21:15:40Z",
+   "cost_usd": 0.0226111
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02272018-5592",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2018-02-27-minutes-5592.txt",
+   "path": "sources/meetings/sewer-commission/2018-02-27-minutes-5592.pdf"
+  },
+  "official_sha256": "55b9f3fb45ab0b3b91e9b012396b72878bf8640e5e585bbb06f9104513b68355",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "Both records cover the same two votes and the $10,000 I/I transfer, but ours has no audible outcomes or tallies and official gives passed votes with Carl nay. The key difference is that official gives $35,034 for parts, $12,000 left in I/I and a $19,000 emergency fund, which our heard figures only partly match.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 5,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote to accept Task 1 report",
+    "ours": "Accept the Task 1 report as written and begin work on I&I Task 1. — not audible",
+    "official": "motion: joan p. second: troy d. to accept the task 1 report as written and begin work on that.",
+    "note": "Official records the vote as passing (Joan, Troy, Joe aye, Carl nay); our record has no audible outcome. Check the recording for the tally.",
+    "t": 3241
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote on SWSS spare parts and moving $10,000 out of I/I",
+    "ours": "Buy the Small Water spare parts list and move ten thousand out of I&I to leave more for emergencies. — not audible",
+    "official": "motion: joan p. second: troy d. to use $35,034 for the swss parts and move the $10,000 out of i/l, leaving $12,000, to get the emergency fund up to $19,000.",
+    "note": "Official gives a passed vote (Carl nay) and amounts $35,034, $12,000 and $19,000; ours has no outcome or parts total. Check the recording.",
+    "t": 4502
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer of $10,000 out of I/I to Emergency Fund",
+    "ours": "Move ten thousand out of the I&I amount to raise the emergency balance — ten thousand (discussed only)",
+    "official": "to use $35,034 for the swss parts and move the $10,000 out of i/l, leaving $12,000, to get the emergency fund up to $19,000.",
+    "note": "Same $10,000 amount and purpose, but ours calls it discussed only while official records it passed.",
+    "t": 4502
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Spare parts vs I&I reserve figures",
+    "ours": "22 K, nine thousand dollars, 19 K",
+    "official": "to use $35,034 for the swss parts and move the $10,000 out of i/l, leaving $12,000, to get the emergency fund up to $19,000.",
+    "note": "Ours: 22K, 9K, 19K; official: $12,000 left in I/I, $19,000 emergency, $35,034 parts. 19K matches; 22K and 9K do not clearly match $12,000 or $10,000. Verify against the recording.",
+    "t": 4120
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY18 purchase of service balance",
+    "ours": "231 for 784, 96 380, 35",
+    "official": "",
+    "note": "Official prints no purchase of service balance figures.",
+    "t": 3458
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Debt payment figures",
+    "ours": "eight forty three thousand, eight twenty four",
+    "official": "",
+    "note": "Official mentions a revised debt schedule but prints no amount.",
+    "t": 5877
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fitchburg invoice and Q3 commitment",
+    "ours": "15,000 497 86, 174 704 83",
+    "official": "",
+    "note": "Official has no invoice or Q3 figures; only the 3/7 cost review meeting.",
+    "t": 8568
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Pump station study / maintenance decision",
+    "ours": "Business manager to research a pump station engineering study and Jack to talk with Small Water about maintenance.",
+    "official": "jack will have a discussion with swss.",
+    "note": "Both have Jack talking with SWSS, but official does not mention the business manager researching an engineering study. Official says Jack will meet SWSS on a prioritized parts list. Check the recording.",
+    "t": 5511
+   },
+   {
+    "kind": "agree",
+    "about": "Tilton extension letter edits",
+    "ours": "Tilton extension letter edits agreed by consensus with a response deadline of March 13.",
+    "official": "all agreed to the edits and barb will send out the letters.",
+    "note": "Both record agreement to the edits; official adds March 13th response date for residents.",
+    "t": 5769
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Minutes tabled, approval moved to start of future meetings",
+    "ours": "Minutes tabled and approval to move to the start of future meetings.",
+    "official": "",
+    "note": "Official minutes do not mention this.",
+    "t": 8526
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Jack to contact Weston & Sampson on next I/I step",
+    "ours": "",
+    "official": "jack will contact weston & sampson to get their opinion on what the next step would be on i/l after task 1 is completed.",
+    "note": "Not in our decisions."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FinCom presentation 3/8",
+    "ours": "",
+    "official": "presentation to fincom on 3/8 will be done by joe and carl.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Barb to review FY19 budget figures with Karen Brochu",
+    "ours": "",
+    "official": "barb will be going over the final fy19 budget figures with karen.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Communication workshop availability",
+    "ours": "",
+    "official": "barb will check with jack, heather lemieux and bob ebersole for their availability to attend",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Joan (member)",
+    "ours": "Joe Anderson (member)",
+    "official": "motion: joan p. second: troy d. to accept the task 1 report as written and begin work on that.",
+    "note": "Official lists Joan P., Troy D., Carl and Joe as present; ours lists Joe Anderson, Carl, Troy but no Joan. Check whether Joan and Joe are separate members.",
+    "official_reading": "Joan P."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Dan Proctor presenter",
+    "ours": "Dan Proctor (presenter)",
+    "official": "",
+    "note": "Official does not list Dan Proctor."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Small Water presenter",
+    "ours": "Mr. Radik (presenter (Small Water))",
+    "official": "6:45pm small water systems services (swss) quarterly update - al packard reported that everything is operational and",
+    "official_reading": "Al Packard",
+    "note": "Official names Al Packard as the SWSS presenter; Radik is probably a mishearing, though verify."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees: Karen Brochu, Bob Ebersole, Heather Lemieux, Jane Ranley",
+    "ours": "",
+    "official": "bob ebersole, passed out copies of the complaint of a violation of the open meeting law",
+    "note": "Official lists Bob Ebersole as present, and Karen Brochu, Heather Lemieux and Jane Ranley as named; none in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T21:17:04Z",
+   "cost_usd": 0.04774110000000001
+  }
+ }
+}

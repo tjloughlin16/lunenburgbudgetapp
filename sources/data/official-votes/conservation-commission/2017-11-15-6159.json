@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-11-15",
  "docid": "6159",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Grant negative determination for Michael Tufts' paver patio and two decks within the buffer zone at 48 Oak Ridge Road",
-   "moved_by": "CL",
+   "motion": "Negative determination on the 48 Oak Ridge Road request (Michael Tufts, paver patio and 2 decks in buffer zone)",
+   "moved_by": "Cl",
    "seconded_by": "KJ",
    "outcome": "passed 5-1",
    "procedural": false,
    "quote": "cl moved for a negative determination. kj seconded and the commission voted 5-1 with rb voting no."
   },
   {
-   "motion": "Continue consideration of Notice of Intent for home upgrade, driveway, and septic system at 390 New West Townsend Road to December 6",
+   "motion": "Continue the 390 New West Townsend Road Notice of Intent hearing to December 6",
    "moved_by": "CC",
    "seconded_by": "CL",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "motion to continue to december 6 by cc with a second by cl and a unanimous vote."
   },
   {
-   "motion": "Fine 323 Leominster Road $100 per day until acceptable Notice of Intent is filed for unauthorized work in riverfront zone",
+   "motion": "Fine of 100 dollars per day at 323 Leominster Road until an acceptable Notice of Intent is filed",
    "moved_by": "TD",
    "seconded_by": "BP",
    "outcome": "passed unanimously",
@@ -36,15 +36,316 @@
    "quote": "td recommended 100 dollars per day until such time as an acceptable notice of intent is filed bp seconded. the vote was approved unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10 PM",
    "moved_by": "KJ",
    "seconded_by": "CC",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "meeting adjourned at 10 pm by a motion of kj and a second by cc"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from macOS Vision. Minutes are readable; no pages missing or votes illegible.",
- "cost_usd": 0.0938805
+ "note": "OCR text from a scanned agenda/minutes with garbled passages (page 1 header and roster read as 'Call Luck', 'D18', 'IN CORON'; page 2 opening line; 181 Kilburn section cut off at 'eil l'; 307 Townsend Harbor section partly garbled). Member initials (CL, KJ, RB, TD, JR, BP, CC) are used in the text without full names, so only the roster names are listed; member attendance is not stated. The minutes approval item lists dates but records no motion or vote. The adjournment motion records no result. No roll call is printed.",
+ "cost_usd": 0.00844762,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Call Luck",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "call luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "call luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "call luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted he has not heard back yet from the owner."
+  },
+  {
+   "name": "Mike Tufts",
+   "role": "representing himself",
+   "status": "present",
+   "quote": "mike tufts appeared before the commission to represent himself."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "jamie rheault and matt fournier appeared representing the applicant."
+  },
+  {
+   "name": "Matt Fournier",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "jamie rheault and matt fournier appeared representing the applicant."
+  },
+  {
+   "name": "Tom Christopher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tom christopher appeared in front of the commission explaining the apr status of the lot"
+  },
+  {
+   "name": "Steve Babineau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve babineau appeared before the commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Emergency certification issued by MM for the 181 Kilburn Street dam repair; Mr. Christopher to return with a Notice of Intent, expected by the beginning of 2018.",
+   "quote": "mm issued an emergency certification."
+  },
+  {
+   "decision": "At 307 Townsend Harbor Road the chair requested that the owners file a request for a determination.",
+   "quote": "the chair requested to file a request for a determination."
+  },
+  {
+   "decision": "At 654 Massachusetts Ave the stop work order stays in place until a notice of intent is filed, and a 90-day deadline was set.",
+   "quote": "a deadline of 90 days was agreed to (february 15, 2018)."
+  },
+  {
+   "decision": "At 390 New West Townsend Road the commission asked that the wall material notes be clarified and that more trees be added.",
+   "quote": "the commission requested the notes be clarified"
+  },
+  {
+   "decision": "Butterfly Lane: MM directed to investigate the violations the commission found.",
+   "quote": "commission found some violations mm to investigate"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "323 Leominster Road unauthorized work fine",
+   "what_was_recorded": "Staff recommended and the board approved a fine of 100 dollars per day for continuing work after being told no, until an acceptable Notice of Intent is filed.",
+   "figures_as_printed": [
+    "100 dollars a day",
+    "100 dollars per day"
+   ],
+   "quote": "mm recommended 100 dollars a day for continuing work despite being told no."
+  },
+  {
+   "topic": "842 R Chase Road warrant and funding",
+   "what_was_recorded": "New business item reviewing the town warrant and funding; the Finance committee was reported to be in favor. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "new business - 842 r chase road - updates and any new considerations -review of town warrant and funding."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "JR",
+   "stated_role": "",
+   "topic": "climate change slide show",
+   "quote": "public comment-jr presented a slide show on climate change by the nrwa from the annual meeting."
+  },
+  {
+   "speaker": "JR",
+   "stated_role": "abutter",
+   "topic": "307 Townsend Harbor Road beach expansion",
+   "quote": "jr spoke as an abutter noted that the roots the applicant spoke of causing injury (the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: climate change slide show",
+   "resolution": "presented",
+   "quote": "public comment-jr presented a slide show on climate change by the nrwa from the annual meeting.",
+   "tags": [
+    "climate change",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "48 Oak Ridge Road determination hearing",
+   "resolution": "negative determination, 5-1",
+   "quote": "cl moved for a negative determination. kj seconded and the commission voted 5-1 with rb voting no.",
+   "tags": [
+    "determination",
+    "buffer zone",
+    "patio",
+    "deck"
+   ]
+  },
+  {
+   "topic": "390 New West Townsend Road Notice of Intent hearing",
+   "resolution": "continued to December 6",
+   "quote": "motion to continue to december 6 by cc with a second by cl and a unanimous vote.",
+   "tags": [
+    "notice of intent",
+    "septic",
+    "wall",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "181 Kilburn Street emergency dam repair",
+   "resolution": "emergency certification issued; Notice of Intent to follow",
+   "quote": "mm issued an emergency certification.",
+   "tags": [
+    "emergency",
+    "dam",
+    "beaver",
+    "spillway"
+   ]
+  },
+  {
+   "topic": "Ongoing enforcement updates (183 Hemlock Dr, 70 Oak Ridge Rd, 571 Chase Rd, 168 West St)",
+   "resolution": "updates only, no action",
+   "quote": "183 hemlock dr (c) - update mm noted he is currently working on revising the original notice of",
+   "tags": [
+    "enforcement",
+    "updates"
+   ]
+  },
+  {
+   "topic": "307 Townsend Harbor Road unauthorized beach expansion",
+   "resolution": "request for determination directed",
+   "quote": "the chair requested to file a request for a determination.",
+   "tags": [
+    "enforcement",
+    "beach",
+    "abutter"
+   ]
+  },
+  {
+   "topic": "654 Massachusetts Ave cutting in buffer zone",
+   "resolution": "stop work order kept; 90-day deadline set",
+   "quote": "a deadline of 90 days was agreed to (february 15, 2018).",
+   "tags": [
+    "enforcement",
+    "buffer zone",
+    "stop work order"
+   ]
+  },
+  {
+   "topic": "323 Leominster Road unauthorized riverfront work",
+   "resolution": "fines of 100 dollars per day approved unanimously",
+   "quote": "td recommended 100 dollars per day until such time as an acceptable notice of intent is filed bp seconded. the vote was approved unanimously.",
+   "tags": [
+    "enforcement",
+    "riverfront",
+    "fines"
+   ]
+  },
+  {
+   "topic": "842 R Chase Road",
+   "resolution": "no action; warrant and funding reviewed",
+   "quote": "new business - 842 r chase road - updates and any new considerations -review of town warrant and funding.",
+   "tags": [
+    "town warrant",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Contract update",
+   "resolution": "no action; contract signed",
+   "quote": "the contract has been signed and will be implemented.",
+   "tags": [
+    "contract"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance - Butterfly Lane",
+   "resolution": "violations found; MM to investigate",
+   "quote": "commission found some violations mm to investigate",
+   "tags": [
+    "certificate of compliance",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Extension permit",
+   "resolution": "no action; none presented",
+   "quote": "extension permit - none presented for consideration",
+   "tags": [
+    "extension permit"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings (10/18 and 11/1)",
+   "resolution": "listed for review and approval; no vote recorded",
+   "quote": "minutes of previous meetings - review and approval of -10/18 and 11/1 jk and bp both.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no reports",
+   "quote": "committee reports - storm water, trails (if any updates) no reports",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Agent's report: inspections",
+   "resolution": "updates only; properties in compliance, 101 Pleasant erosion noted",
+   "quote": "status of inspections 101 pleasant - mm noted that there was an erosion breech during the storm.",
+   "tags": [
+    "inspections",
+    "erosion",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10 PM",
+   "quote": "meeting adjourned at 10 pm by a motion of kj and a second by cc",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised narrative and drawing (revised sketch and narrative) by the applicant, 48 Oak Ridge Road",
+   "where": "list",
+   "quote": "documents presented for consideration was a revised narrative and drawing by the applicant"
+  },
+  {
+   "name": "Notice of Intent for the upgrade of a single family home, driveway and septic system at 390 New West Townsend Road",
+   "where": "text",
+   "quote": "notice of intent for the upgrade of a single family home, driveway and a septic system at 390 new west townsend"
+  },
+  {
+   "name": "Town warrant",
+   "where": "text",
+   "quote": "review of town warrant and funding."
+  },
+  {
+   "name": "Contract (Old Business)",
+   "where": "text",
+   "quote": "the contract has been signed and will be implemented."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "determinations",
+  "enforcement",
+  "emergency certification",
+  "public hearing",
+  "fines",
+  "buffer zone",
+  "Notice of Intent"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration was a revised narrative and drawing by the applicant"
+ },
+ "dropped_unquoted_by_field": {}
 }

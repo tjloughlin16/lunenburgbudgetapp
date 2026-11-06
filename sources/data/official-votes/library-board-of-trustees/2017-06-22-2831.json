@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2017-06-22",
  "docid": "2831",
@@ -12,23 +12,351 @@
  },
  "votes": [
   {
-   "motion": "Accept May 25, 2017 minutes as amended",
-   "moved_by": "Kate McCarron",
-   "seconded_by": "Kiirja Paananen",
+   "motion": "Approve the May 25, 2017 minutes as amended.",
+   "moved_by": "Kate",
+   "seconded_by": "Kirja",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to accept as amended by kate, seconded by kirja, voted by roll call: dick mailloux, harry kubetz via skype, kate mccarron, kirja paananen, donna salia: all in favor; lars abstained"
+   "quote": "motion to accept as amended by kate, seconded by kirja, voted by roll call: dick mailloux, harry kubetz via skype, kate mccarron, kirja paananen, donna salia: all in favor"
   },
   {
-   "motion": "To adjourn",
-   "moved_by": "Lars Widstrand",
-   "seconded_by": "Kiirja Paananen",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Lars",
+   "seconded_by": "Kirja",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by lars, seconded by kirja, voted by roll call dick mailloux, harry kubetz via skype, kate mccarron, kiirja paananen, donna saiia, lars widstrand - all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text (macOS Vision). This is a scanned/OCR document with minor spelling inconsistencies (e.g., \"Kirja/Kiirja\" and \"Salia/Saiia\" are OCR variants of the same names). Both votes are recorded with roll call as noted in the minutes.",
- "cost_usd": 0.12480649999999999
+ "note": "OCR text (macOS Vision) with typos; names vary across the text (Kirja/Kiirja, Saila/Salia/Saiia), recorded as printed in each quote. Harry Kubetz participated by Skype, so votes were taken by roll call. The text has a RECEIVED & FILED stamp dated SEP 25 2017. The text does not include the referenced reports, email, or calendar themselves. No public comment is recorded. Only two motions appear, both procedural; the outcomes are not given as counts, and Lars Widstrand's abstention on the minutes is recorded in the quote.",
+ "cost_usd": 0.00903092,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:46 p.m. by chairperson dick mailloux."
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "",
+   "status": "remote",
+   "quote": "attending: dick mailloux, harry kubetz via skype, kate mccarron, kiirja paananen, donna saila, lars widstrand, martha moore"
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz via skype, kate mccarron, kiirja paananen, donna saila, lars widstrand, martha moore"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz via skype, kate mccarron, kiirja paananen, donna saila, lars widstrand, martha moore"
+  },
+  {
+   "name": "Donna Saila",
+   "role": "",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz via skype, kate mccarron, kiirja paananen, donna saila, lars widstrand, martha moore"
+  },
+  {
+   "name": "Lars Widstrand",
+   "role": "Temporary Secretary, Trustee of Lunenburg Public Library",
+   "status": "present",
+   "quote": "lars widstrand temporary secretary, trustee of lunenburg public library"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz via skype, kate mccarron, kiirja paananen, donna saila, lars widstrand, martha moore"
+  },
+  {
+   "name": "Gare Thompson",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: gare thompson, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: gare thompson, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: gare thompson, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Nomination and election of Board Secretary postponed until the September meeting; Lars covers this meeting as secretary.",
+   "quote": "the nomination and election of board secretary postponed until september meeting, lars will cover this meeting."
+  },
+  {
+   "decision": "Room Use Policy (continued from May) tabled until the September meeting.",
+   "quote": "need to table the question until september meeting."
+  },
+  {
+   "decision": "Board agreed the Agroforestry-type program is something for LPL to build on, and to research future programs on similar topics.",
+   "quote": "it was agreed that this type of program and activity is something [for lpl] to build on"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2017 budget close-out",
+   "what_was_recorded": "Any FY2017 overage will be moved into library materials (books, e-books, etc.).",
+   "figures_as_printed": [],
+   "quote": "any \"overage\" will be moved into library materials (books, e-books, etc.)."
+  },
+  {
+   "topic": "Electricity reserve and Fitchburg Solar credit",
+   "what_was_recorded": "Director was told to reserve an electricity amount; about $6K may be credited back to the library, with the refund dates and terms unclear.",
+   "figures_as_printed": [
+    "$17K",
+    "$6K"
+   ],
+   "quote": "martha stated that john londa informed her to reserve $17k for electricity. of that amount, we can expect somewhere around $6k to be credited back to the library."
+  },
+  {
+   "topic": "Unitil distribution and related fees",
+   "what_was_recorded": "The library will still receive Unitil bills for distribution and other electric power-related fees; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we will still receive a bill from unitil for"
+  },
+  {
+   "topic": "Summer food program (Meal 4 Kids / Project Bread)",
+   "what_was_recorded": "The summer lunch program costs the library nothing; a possible expansion to four days depends on funding.",
+   "figures_as_printed": [],
+   "quote": "no cost is incurred by the library for the program."
+  },
+  {
+   "topic": "Stuffed chair refurbishment",
+   "what_was_recorded": "About one third of the stuffed chairs will be refurbished each year over three years, paid from Friends money (last year's endowment).",
+   "figures_as_printed": [],
+   "quote": "roughly 1/3 of all stuffed chair will be refurbished with money from the friends"
+  },
+  {
+   "topic": "Commercial carpeting bids",
+   "what_was_recorded": "Firm bids are being sought over the summer; current bids are seven years old and moving costs must be included in the project cost.",
+   "figures_as_printed": [],
+   "quote": "martha is seeking firm bids over the summer for commercial carpeting"
+  },
+  {
+   "topic": "LED lighting project payments",
+   "what_was_recorded": "All invoices for the LED project have been paid in full although the project is not complete; all green funds for it are spent.",
+   "figures_as_printed": [],
+   "quote": "invoices for the entire project have been paid in full"
+  },
+  {
+   "topic": "Friends endowment",
+   "what_was_recorded": "Endowment discussion held with Edward Jones financial services; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "endowment discussion was held with edward jones financial services."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Any FY2017 overage moved into Library materials (books, e-books, etc.) at close-out.",
+   "outcome": "stated plan; no amount printed and no vote",
+   "quote": "any \"overage\" will be moved into library materials (books, e-books, etc.)."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no public comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "no public - no comment"
+  },
+  {
+   "topic": "Board Secretary election",
+   "resolution": "postponed to September",
+   "tags": [
+    "governance",
+    "secretary"
+   ],
+   "quote": "the nomination and election of board secretary postponed until september meeting, lars will cover this meeting."
+  },
+  {
+   "topic": "Approval of May 25, 2017 minutes",
+   "resolution": "approved as amended; Lars abstained",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to accept as amended by kate, seconded by kirja, voted by roll call"
+  },
+  {
+   "topic": "Director's report: FY2017 and FY2018 budgets, electricity vendor",
+   "resolution": "reported; no action",
+   "tags": [
+    "budget",
+    "electricity",
+    "MUNIS"
+   ],
+   "quote": "new vendor for electricity: fitchburg solar."
+  },
+  {
+   "topic": "Programs report",
+   "resolution": "reported; agreed to research similar programs",
+   "tags": [
+    "programs",
+    "summer reading",
+    "summer food"
+   ],
+   "quote": "approximately 30 patrons visited this program - it was very well received by the patrons."
+  },
+  {
+   "topic": "Building and maintenance",
+   "resolution": "reported; no action",
+   "tags": [
+    "building",
+    "carpet",
+    "chairs",
+    "painting"
+   ],
+   "quote": "martha is picking out fabric for some of the \"stuffed\" chairs"
+  },
+  {
+   "topic": "LED lighting project",
+   "resolution": "discussed; no action; Town Counsel question raised",
+   "tags": [
+    "LED",
+    "lighting",
+    "DMH Electric"
+   ],
+   "quote": "many open items, such as non-functioning emergency lights (serious!)"
+  },
+  {
+   "topic": "Room Use Policy",
+   "resolution": "tabled to September",
+   "tags": [
+    "room use policy"
+   ],
+   "quote": "room use policy-continued from may meeting"
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "reported; annual meeting July 14",
+   "tags": [
+    "Friends",
+    "endowment"
+   ],
+   "quote": "endowment discussion was held with edward jones financial services."
+  },
+  {
+   "topic": "Director's evaluation comments",
+   "resolution": "board comments; no action",
+   "tags": [
+    "director",
+    "evaluation"
+   ],
+   "quote": "dick stated (and it was echoed by the board) that we have a very competent director"
+  },
+  {
+   "topic": "Trustee meeting dates 2017/2018",
+   "resolution": "calendar distributed; no action",
+   "tags": [
+    "calendar"
+   ],
+   "quote": "dick distributed marked up calendar for the dates for upcoming meetings."
+  },
+  {
+   "topic": "Other, not on agenda: fiction and non-fiction shelving",
+   "resolution": "discussed; no action",
+   "tags": [
+    "shelving",
+    "collection"
+   ],
+   "quote": "question from donna about the mix of fiction vs. non-fiction and the distribution/ usage of shelves in the library."
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "listed",
+   "tags": [
+    "agenda"
+   ],
+   "quote": "agenda items for upcoming meetings"
+  },
+  {
+   "topic": "Board comments: Golden Rules for Board Members",
+   "resolution": "hard copy distributed; no further discussion",
+   "tags": [
+    "governance"
+   ],
+   "quote": "distributed as hard copy by dick."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:57 p.m.",
+   "tags": [
+    "adjourn"
+   ],
+   "quote": "meeting closed at 7:57 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for June 22, 2017",
+   "where": "list",
+   "quote": "lplbot agenda for june 22, 2017"
+  },
+  {
+   "name": "Director's report",
+   "where": "list",
+   "quote": "director's report children's librarian's report"
+  },
+  {
+   "name": "Children's librarian's report",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "YA librarian's report",
+   "where": "list",
+   "quote": "children's librarian's report ya librarian's report"
+  },
+  {
+   "name": "Director's email to Heather Lemieux, dated June 15, 2017; subject: Moving forward",
+   "where": "list",
+   "quote": "director's email to heather lemieux, dated june 15, 2017; subject: moving forward"
+  },
+  {
+   "name": "LPL Board of Trustees Meeting Calendar 2017-2018",
+   "where": "list",
+   "quote": "lpl board of trustees meeting calendar 2017-2018"
+  },
+  {
+   "name": "Board Comments--Golden Rules for Board Members (hard copy)",
+   "where": "text",
+   "quote": "board comments--golden rules for board members"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "electricity",
+  "LED lighting",
+  "summer food program",
+  "room use policy",
+  "Friends of LPL",
+  "director evaluation",
+  "trustee governance",
+  "building maintenance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

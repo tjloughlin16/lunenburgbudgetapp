@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2017-09-07",
  "docid": "1377",
@@ -12,55 +12,329 @@
  },
  "votes": [
   {
-   "motion": "Accept the bid of T. Bennett Tree Service for $7,200.00 for tree cutting at South Cemetery Section #1",
+   "motion": "Accept the bid of T. Bennett Tree Service for $7200.00 for tree cutting at South Cemetery Section #1.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Commissioner Tyler",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "commissioner mendoza made a motion to accept the bid of t. bennett tree service for the amount of $7200.00. commissioner tyler seconded, and with no further discussion, the motion passed unanimously."
+   "quote": "commissioner mendoza made a motion to accept the bid of t. bennett tree service for the amount of $7200.00."
   },
   {
-   "motion": "Accept the bid of $4,800.00 by M&M Tree Service for tree cutting at South Cemetery Section #2",
+   "motion": "Accept the bid of $4800.00 by M&M Tree Service for tree cutting at South Cemetery Section #2.",
    "moved_by": "Commissioner Tyler",
    "seconded_by": "Commissioner Mendoza",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion by commissioner tyler was made to accept the bid of $4800.00 by m&m tree service and was seconded by commissioner mendoza, no further discussion ensued, so the motion passed unanimously."
+   "quote": "a motion by commissioner tyler was made to accept the bid of $4800.00 by m&m tree service"
   },
   {
-   "motion": "Accept the bid of $2,000.00 by Miller's Paving for paving at South Cemetery",
+   "motion": "Accept the bid of $2000.00 by Miller's Paving for paving a section of roadway at South Cemetery.",
    "moved_by": "Commissioner Tyler",
    "seconded_by": "Commissioner Mendoza",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "commissioner tyler made a motion to accept the bid of $2000.00 by miller's paving, with a second from commissioner mendoza, and without further discussion the motion passed unanimously."
+   "quote": "commissioner tyler made a motion to accept the bid of $2000.00 by miller's paving"
   },
   {
-   "motion": "Accept the bid from Atlantic Broom for 39 6-inch signs and 22 crosses for $1,077.44 for street signs at North and South Cemetery",
-   "moved_by": "Commissioner Tyler",
+   "motion": "Accept the bid from Atlantic Broom for 39 6-inch signs and 22 crosses, total $1077.44, for North and South Cemetery street signs.",
+   "moved_by": "Commission Tyler",
    "seconded_by": "Commissioner Mendoza",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion by commission tyler was made to accept the bid from atlantic broom for 39- 6- inch signs and 22 crosses, for a total of $1077.44. commissioner mendoza seconded and the motion passed unanimously."
+   "quote": "made to accept the bid from atlantic broom for 39- 6- inch signs and 22 crosses, for a total of $1077.44."
   },
   {
-   "motion": "Purchase 2 3x5 foot signs from D&G Graphics not to exceed $2,500.00 (one for North and one for South Cemetery) to display cemetery rules",
+   "motion": "Purchase two 3 x 5 foot entry signs from D&G Graphics, not to exceed $2500.00, one for North and one for South Cemetery.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Commissioner Tyler",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion was made to purchase 2- 3 x 5 foot signs from d&g graphics, not to exceed $2500.00, one for north and one for south cemetery, by commissioner mendoza, seconded by commissioner tyler, with no further discussion, the motion passed unanimously."
+   "quote": "a motion was made to purchase 2- 3 x 5 foot signs from d&g graphics, not to exceed $2500.00"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Commissioner Tyler",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "chairman may asked for a motion to adjourn, with commissioner mendoza offering that motion. commissioner tyler seconded, and it was passed unanimously to adjourn the meeting."
+   "quote": "chairman may asked for a motion to adjourn, with commissioner mendoza offering that motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. All votes recorded.",
- "cost_usd": 0.09444249999999998
+ "note": "OCR scan of two pages with garbled header text (the meeting location and time are partly unreadable). Votes and decisions are readable. The minutes print \"passed unanimously\" for each vote with no roll-call counts. No vote on minutes because none were available. The Geigas letter and Dunn letter were not attended by their authors or recipients.",
+ "cost_usd": 0.007025119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice-chairman lorraine mendoza, william tyler, clerk and todd holman, cemetery supt."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice-chairman lorraine mendoza, william tyler, clerk and todd holman, cemetery supt."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice-chairman lorraine mendoza, william tyler, clerk and todd holman, cemetery supt."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Supt.",
+   "status": "present",
+   "quote": "members present were chairman lance may, vice-chairman lorraine mendoza, william tyler, clerk and todd holman, cemetery supt."
+  },
+  {
+   "name": "Mike Clark",
+   "role": "",
+   "status": "present",
+   "quote": "in the public comment portion of the meeting, mike clark described the eagle scout project his son"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Eagle Scout wreath project at Veterans graves taken under advisement until more details are available.",
+   "quote": "it was decided to take under advisement until more details were available."
+  },
+  {
+   "decision": "North Cemetery paving sealed bids taken under advisement until the June meeting because of the appropriations time frame.",
+   "quote": "it was decided to take them under advisement until the june meeting because of the time frame for appropriations"
+  },
+  {
+   "decision": "Opening and closing of the Cemeteries is the Commission's call.",
+   "quote": "it was agreed that the opening and closing of the cemeteries was our call."
+  },
+  {
+   "decision": "Vehicular traffic regulations to be re-written next year.",
+   "quote": "it was decided to re-write the vehicular traffic regulations next year."
+  },
+  {
+   "decision": "Letter to be sent to Mr. David Dunn requesting removal of the bench and sneakers from a gravesite.",
+   "quote": "it was decided to send a letter to mr. david dunn"
+  },
+  {
+   "decision": "Entry signs to display two rules for now: dogs must be leashed and shrubs must be kept trimmed.",
+   "quote": "it was decided to include just 2 rules for the present, as other rules could be"
+  },
+  {
+   "decision": "Supt. Holman to report back in October with further rules and regulations.",
+   "quote": "supt. holman was to report back in october with further"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "South Cemetery Section #1 tree cutting bid",
+   "what_was_recorded": "Commission accepted the T. Bennett Tree Service bid for South Cemetery Section #1 after reviewing three bids.",
+   "figures_as_printed": [
+    "$7200.00"
+   ],
+   "quote": "commissioner mendoza made a motion to accept the bid of t. bennett tree service for the amount of $7200.00."
+  },
+  {
+   "topic": "South Cemetery Section #2 tree cutting bid",
+   "what_was_recorded": "Commission accepted the M&M Tree Service bid for South Cemetery Section #2 after three bids were discussed.",
+   "figures_as_printed": [
+    "$4800.00"
+   ],
+   "quote": "a motion by commissioner tyler was made to accept the bid of $4800.00 by m&m tree service"
+  },
+  {
+   "topic": "South Cemetery paving bid",
+   "what_was_recorded": "Commission accepted the Miller's Paving bid for paving a roadway section at South Cemetery after three bids were before it.",
+   "figures_as_printed": [
+    "$2000.00"
+   ],
+   "quote": "commissioner tyler made a motion to accept the bid of $2000.00 by miller's paving"
+  },
+  {
+   "topic": "Street signs bid (Atlantic Broom)",
+   "what_was_recorded": "Commission accepted the Atlantic Broom bid for North and South Cemetery street signs and crosses.",
+   "figures_as_printed": [
+    "$1077.44"
+   ],
+   "quote": "made to accept the bid from atlantic broom for 39- 6- inch signs and 22 crosses, for a total of $1077.44."
+  },
+  {
+   "topic": "Entry signs with cemetery rules (D&G Graphics)",
+   "what_was_recorded": "Commission authorized purchase of two entry signs from D&G Graphics, not to exceed the stated amount.",
+   "figures_as_printed": [
+    "$2500.00"
+   ],
+   "quote": "a motion was made to purchase 2- 3 x 5 foot signs from d&g graphics, not to exceed $2500.00"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike Clark",
+   "topic": "Eagle Scout project placing wreaths at Veterans graves before Christmas",
+   "quote": "in the public comment portion of the meeting, mike clark described the eagle scout project his son wants to do."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; no minutes available",
+   "quote": "no minutes were available for approval.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence: letter from Geire Geigas",
+   "resolution": "read into record",
+   "quote": "a letter from geire geigas dated july 17, 2017 was read, thanking supt. holman",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Public comment: Eagle Scout wreath project",
+   "resolution": "taken under advisement",
+   "quote": "it was decided to take under advisement until more details were available.",
+   "tags": [
+    "public comment",
+    "Eagle Scout",
+    "veterans graves"
+   ]
+  },
+  {
+   "topic": "Old business: North Cemetery receiving tomb and niche wall",
+   "resolution": "discussed; construction to start last week of September",
+   "quote": "the north cemetery receiving tomb and niche wall was discussed and supt.",
+   "tags": [
+    "construction",
+    "North Cemetery"
+   ]
+  },
+  {
+   "topic": "Rules and regulations",
+   "resolution": "opening/closing is Commission's call; traffic rules to be rewritten next year",
+   "quote": "it was agreed that the opening and closing of the cemeteries was our call.",
+   "tags": [
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "Lions Club Blue Spruce replacement",
+   "resolution": "informational; no action",
+   "quote": "the lions club is working to replace one of the blue spruce trees",
+   "tags": [
+    "trees",
+    "donations"
+   ]
+  },
+  {
+   "topic": "New business: North Cemetery paving sealed bids",
+   "resolution": "taken under advisement until June meeting",
+   "quote": "sealed bids were opened and reviewed for the north cemetery paving project",
+   "tags": [
+    "paving",
+    "bids"
+   ]
+  },
+  {
+   "topic": "South Cemetery Section #1 tree cutting",
+   "resolution": "bid accepted (T. Bennett Tree Service)",
+   "quote": "commissioner mendoza made a motion to accept the bid of t. bennett tree service",
+   "tags": [
+    "tree cutting",
+    "bids"
+   ]
+  },
+  {
+   "topic": "South Cemetery Section #2 tree cutting",
+   "resolution": "bid accepted (M&M Tree Service)",
+   "quote": "a motion by commissioner tyler was made to accept the bid of $4800.00 by m&m tree service",
+   "tags": [
+    "tree cutting",
+    "bids"
+   ]
+  },
+  {
+   "topic": "South Cemetery paving",
+   "resolution": "bid accepted (Miller's Paving)",
+   "quote": "commissioner tyler made a motion to accept the bid of $2000.00 by miller's paving",
+   "tags": [
+    "paving",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Street signs for North and South Cemetery",
+   "resolution": "bid accepted (Atlantic Broom)",
+   "quote": "made to accept the bid from atlantic broom for 39- 6- inch signs and 22 crosses",
+   "tags": [
+    "signs",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Letter re bench and sneakers at a gravesite",
+   "resolution": "letter to be sent",
+   "quote": "it was decided to send a letter to mr. david dunn",
+   "tags": [
+    "regulations",
+    "gravesite"
+   ]
+  },
+  {
+   "topic": "Entry signs displaying cemetery rules",
+   "resolution": "two signs authorized (D&G Graphics); two rules adopted for now",
+   "quote": "a motion was made to purchase 2- 3 x 5 foot signs from d&g graphics",
+   "tags": [
+    "signs",
+    "dogs",
+    "rules"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:05 pm",
+   "quote": "meeting was adjourned at 10:05 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Geire Geigas dated July 17, 2017",
+   "where": "text",
+   "quote": "a letter from geire geigas dated july 17, 2017 was read, thanking supt. holman for his continued"
+  },
+  {
+   "name": "Sealed bids for North Cemetery paving project",
+   "where": "text",
+   "quote": "sealed bids were opened and reviewed for the north cemetery paving project"
+  },
+  {
+   "name": "Letter to Mr. David Dunn requesting removal of bench and sneakers",
+   "where": "text",
+   "quote": "it was decided to send a letter to mr. david dunn"
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "tree cutting",
+  "paving",
+  "street signs",
+  "bids",
+  "rules and regulations",
+  "public comment",
+  "Eagle Scout",
+  "veterans graves",
+  "gravesite regulations"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

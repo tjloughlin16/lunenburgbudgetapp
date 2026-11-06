@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2018-02-15",
  "docid": "474",
@@ -12,6 +12,125 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This document is a notice of meeting and agenda for the Agricultural Commission (2/15/2018), not actual meeting minutes. It lists items to be discussed but contains no record of motions, votes, or outcomes. No votes are recorded in this text.",
- "cost_usd": 0.0071205999999999995
+ "note": "The text is only the page-1 Notice of Meeting and agenda for the 15 Feb 2018 Agricultural Commission meeting. It has no attendance, discussion, motions, votes, public comment or minutes of what was taken up, so the topics are listed from the agenda only and their resolutions are not stated. The OCR also picked up a garbled stamp at the bottom (\"DOSILVE L 313 L BY: 9Am 212:15 €6\") that could not be read.",
+ "cost_usd": 0.00234542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "-call to order -review/approve minutes from january 18, 2018 meeting",
+   "tags": [
+    "agenda",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Review/Approve Minutes from January 18, 2018 meeting",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "-review/approve minutes from january 18, 2018 meeting",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "General Discussion",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "-general discussion -new business",
+   "tags": [
+    "general discussion"
+   ]
+  },
+  {
+   "topic": "New business: Cultural Commission Arts Festival",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "-new business - cultural commission arts festival",
+   "tags": [
+    "arts festival",
+    "cultural commission"
+   ]
+  },
+  {
+   "topic": "Old Business: Sale of Town Property",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "-old business - sale of town property",
+   "tags": [
+    "town property",
+    "sale"
+   ]
+  },
+  {
+   "topic": "Old Business: Farming Beyond Borders event",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "- farming beyond borders event",
+   "tags": [
+    "farming",
+    "event"
+   ]
+  },
+  {
+   "topic": "Old Business: Articles for Town Meeting",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "- articles for town meeting - open discussion",
+   "tags": [
+    "town meeting",
+    "articles"
+   ]
+  },
+  {
+   "topic": "Open discussion",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "- articles for town meeting - open discussion",
+   "tags": [
+    "open discussion"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "- public comment -set next meeting date",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Set Next Meeting Date",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "-set next meeting date -adjourn",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "not stated (agenda listing only)",
+   "quote": "-set next meeting date -adjourn",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "agricultural commission",
+  "agenda",
+  "notice of meeting",
+  "arts festival",
+  "town property sale",
+  "farming event",
+  "town meeting articles",
+  "no minutes of discussion"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

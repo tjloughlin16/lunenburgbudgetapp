@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-01-30",
  "docid": "5590",
@@ -12,66 +12,549 @@
  },
  "votes": [
   {
-   "motion": "approve the potential credit that Barb has calculated following the Adjustment policy of $436.65",
+   "motion": "Approve the potential sewer credit of $ 436.65 for Mary Manning, calculated by Barb under the Adjustment policy.",
    "moved_by": "Joan P.",
-   "seconded_by": "Troy D.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion: joan p. second: troy d. to approve the potential credit that barb has calculated following the adjustment policy of $ 436.65. vote: unanimous"
+   "quote": "to approve the potential credit that barb has calculated following the adjustment policy of $ 436.65. vote: unanimous",
+   "seconded_by": "Troy D."
   },
   {
-   "motion": "send the restitution agreement draft to Dan Proctor for the 380 Electric Ave. property",
-   "moved_by": "Joan P.",
-   "seconded_by": "Troy D.",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: joan p. second: troy d. to send the restitution agreement draft to dan proctor for the 380 electric ave. property vote: unanimous"
-  },
-  {
-   "motion": "assess privilege fee of $103,963.23 for the 380 Electric Ave. property",
+   "motion": "Take action to look at the Tilton Ave. area to see if it qualifies as a needs area.",
    "moved_by": "Carl L.",
-   "seconded_by": "Troy",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion: carl l. second: troy to assess privilege fee of $103,963,23 for the 380 electric ave. property. unanimous vote:"
+   "quote": "to take action to look at the tilton ave. area to see if qualifies as a needs area.",
+   "seconded_by": "Troy D."
   },
   {
-   "motion": "accept minutes of 9/12/17 as amended",
-   "moved_by": "John R.",
-   "seconded_by": "Joan",
-   "outcome": "passed",
+   "motion": "Send the restitution agreement draft to Dan Proctor for the 380 Electric Ave. property.",
+   "moved_by": "Joan P.",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "to send the restitution agreement draft to dan proctor for the 380 electric ave. property",
+   "seconded_by": "Troy D."
+  },
+  {
+   "motion": "Assess privilege fee of $103,963,23 for the 380 Electric Ave. property.",
+   "moved_by": "Carl L.",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "to assess privilege fee of $103,963,23 for the 380 electric ave. property.",
+   "seconded_by": "Troy"
+  },
+  {
+   "motion": "Accept minutes of 9/12/17 as amended.",
+   "moved_by": "John R. P.",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: john r. p. to accept minutes of 9/12/17 as amended. unanimous motion: troy d. r.",
-   "quote_taken_from_text": true
+   "quote": "motion: john r. p. to accept minutes of 9/12/17 as amended.",
+   "seconded_by": ""
   },
   {
-   "motion": "accept minutes of 10/31/17 as amended",
+   "motion": "Accept minutes of 10/31/17 as amended.",
    "moved_by": "Troy D.",
-   "seconded_by": "John",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: troy d. r. to accept minutes of 10/31/17 as amended. unanimous motion: john r. to",
-   "quote_taken_from_text": true
+   "quote": "to accept minutes of 10/31/17 as amended.",
+   "seconded_by": ""
   },
   {
-   "motion": "accept minutes of 11/14/17 as amended",
+   "motion": "Accept minutes of 11/14/17 as amended.",
    "moved_by": "John R.",
-   "seconded_by": "Troy D.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: john r. to accept minutes of 11/14/17 as amended. unanimous second: joan vote: se",
-   "quote_taken_from_text": true
+   "quote": "to accept minutes of 11/14/17 as amended.",
+   "seconded_by": ""
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 10:22 pm.",
    "moved_by": "Carl L.",
-   "seconded_by": "Troy D.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: carl l. to adjourn: 10:22 pm. second: troyd. vote: unanimous"
+   "quote": "to adjourn: 10:22 pm. second: troyd. vote: unanimous",
+   "seconded_by": "Troy D."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan from macOS Vision. Minutes formatting is somewhat disrupted: the three minutes-approval votes have \"Second:\" and \"Vote:\" labels listed after all motion information, rather than inline. The document includes one motion without a vote taken (Joan P.'s motion on office space at the FY19 budget section), which has been excluded per the rules.",
- "cost_usd": 0.0882903
+ "dropped_unquoted": 0,
+ "note": "No attendance roll appears in the text; attendance is inferred from speaking or voting, so commissioners and staff are marked present on that basis. OCR is garbled in places: the figures \"$103,963,23\", \"S656\" and \"$2OK\" are recorded as printed; the name \"Cari\" may be a misreading of Carl and is not recorded as an attendee. The seconders for the 9/12/17, 10/31/17 and 11/14/17 minutes motions are scrambled and left blank. A motion to accept the $6,000 office space figure was seconded but the minutes say no vote was taken, so it is not recorded as a vote. The clerk's signature line is garbled. The minutes' date-of-filing stamp reads MAR 21 2018.",
+ "cost_usd": 0.015174620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Manning",
+   "role": "applicant (credit request)",
+   "status": "present",
+   "quote": "mary manning, lt 27 mass ave, - request forcredit."
+  },
+  {
+   "name": "Audra S.",
+   "role": "representing the applicant (Tilton Ave. extension)",
+   "status": "present",
+   "quote": "audra s. researched and found that tilton ave. was in the comprehensive"
+  },
+  {
+   "name": "Graham Sprague",
+   "role": "representing the applicant (Tilton Ave. extension)",
+   "status": "present",
+   "quote": "grahams. stated that the lot has a stream and a drop down in the back."
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: joan p. second: troy d."
+  },
+  {
+   "name": "Troy D.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: joan p. second: troy d."
+  },
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: carll. second: troy d."
+  },
+  {
+   "name": "John R. P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: john r. p. to accept minutes of 9/12/17 as amended."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb noted that march 22nd is the deadline for the town meeting warrant."
+  },
+  {
+   "name": "Joe",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joe explained thatthe sprague's would liketo go the"
+  },
+  {
+   "name": "Heather",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather said thatthere is a flat retainer rate forthe town"
+  },
+  {
+   "name": "Karen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karen reported that the sewer commission's total liability is $129,481 accrued"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission advised the Sprague's to do parallel work while the Sewer Commission researches the plans for Tilton Ave.",
+   "quote": "commission advised the sprague's to do some parallel work while sewer commission researches the plans."
+  },
+  {
+   "decision": "Carl said the Sewer Commission should do research and go back to engineering for information on Tilton Ave.",
+   "quote": "carl said the sewer commission should do research and go back to engineering for information."
+  },
+  {
+   "decision": "Troy asked to put the issue raised in Carl's public statement on a future agenda for discussion.",
+   "quote": "troy would like to put the issue on an agenda to discuss."
+  },
+  {
+   "decision": "Carl will give Barb a copy of his public comment statement, to be attached to the minutes.",
+   "quote": "carl will give barb a copy of his statement (attached as part of the minutes)."
+  },
+  {
+   "decision": "Heather will present the FY19 budget to FinCom by the 15th, as an estimated budget.",
+   "quote": "heather said that she would like to present the budget to fincom by the 15th"
+  },
+  {
+   "decision": "Barb and Heather will decide the key budget items; the Sewer Commission will discuss them at the 2/13 meeting and then give Heather its best numbers.",
+   "quote": "barb and heather will decide the key items, the sewer commission will discuss"
+  },
+  {
+   "decision": "There was a consensus to leave the $6,000 office space figure in the FY19 budget for this year; Joe will put researching office space cost on the agenda.",
+   "quote": "there was a consensus to leave the $6,000 for this year"
+  },
+  {
+   "decision": "Legal line in the FY19 budget left at $5000, with a later discussion on use of legal services.",
+   "quote": "legal-will be left at$5000 with a discussion on use of legal services."
+  },
+  {
+   "decision": "The Commission agreed to allot $5000 for meter work for now.",
+   "quote": "the commission agreed to allot $5000 for now."
+  },
+  {
+   "decision": "The Sewer Commission agreed to ask counsel for guidance on the non-compliance fee assessed to the previous owner of Whalom Kitchen.",
+   "quote": "the sewer commission agreed to ask counsel for guidance."
+  },
+  {
+   "decision": "Carl will set up a couple of meetings with Fitchburg's CSS 4d project (John Fitch Highway rate study) to ask how the figures were arrived at.",
+   "quote": "he will set up a couple of times and see if who is available to go."
+  },
+  {
+   "decision": "Barb will bring the annual report request to the next meeting.",
+   "quote": "annual report request - barb will have it for next meeting."
+  },
+  {
+   "decision": "Barb would like to have FY 18 spending on the next agenda.",
+   "quote": "barb would like to have fy 18 spending on the nextagenda."
+  },
+  {
+   "decision": "Joan asked for future agenda discussions on the Commission's use of legal, Communications, and a workshop for these discussions.",
+   "quote": "joan would like to have a discussion on the commission's use oflegal"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mary Manning sewer credit",
+   "what_was_recorded": "Barb calculated a potential sewer credit from the last 4 quarters under the Adjustment policy, and the Commission approved it.",
+   "figures_as_printed": [
+    "$ 436.65"
+   ],
+   "quote": "to approve the potential credit that barb has calculated following the adjustment policy of $ 436.65."
+  },
+  {
+   "topic": "380 Electric Ave. privilege fee",
+   "what_was_recorded": "The Commission voted to assess a privilege fee for the 380 Electric Ave. property.",
+   "figures_as_printed": [
+    "$103,963,23"
+   ],
+   "quote": "to assess privilege fee of $103,963,23 for the 380 electric ave. property."
+  },
+  {
+   "topic": "OPEB liability and annual costs",
+   "what_was_recorded": "Karen reported the Sewer Enterprise OPEB liability for Barb's retirement and the annual service cost and net OPEB expense.",
+   "figures_as_printed": [
+    "$129,481",
+    "$ 6,559",
+    "$10,072",
+    "$129K"
+   ],
+   "quote": "with $ 6,559 annual service cost and net opeb expenses of $10,072."
+  },
+  {
+   "topic": "OPEB annual funding amount",
+   "what_was_recorded": "Karen suggested funding the annual service cost amount to help when Barb retires.",
+   "figures_as_printed": [
+    "$6,559"
+   ],
+   "quote": "karen suggested funding the $6,559 annual"
+  },
+  {
+   "topic": "OPEB funding level",
+   "what_was_recorded": "The Commission agreed to fund roughly 10% of the service cost for two years, as the Town did.",
+   "figures_as_printed": [
+    "S656"
+   ],
+   "quote": "like the town did, so all agreed to s656."
+  },
+  {
+   "topic": "Office space charge",
+   "what_was_recorded": "Office space including utilities is charged at a flat rate used for other committees, and the $6K figure was left in the budget.",
+   "figures_as_printed": [
+    "$6,000/yr",
+    "$6,000",
+    "$6K"
+   ],
+   "quote": "calculation for other committees, such as pac and dg ink, at $6,000/yr."
+  },
+  {
+   "topic": "Engineering consulting line",
+   "what_was_recorded": "Barb noted there was $10,000 under engineering consulting, and the Commission questioned whether it would be enough for planned studies.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "barb noted that there was $10,000 underengineering consulting."
+  },
+  {
+   "topic": "Meter software and cellular costs",
+   "what_was_recorded": "Barb said meter updates would cost $38K for software and $22K for cellular, plus the meter cost.",
+   "figures_as_printed": [
+    "$38K",
+    "$22K"
+   ],
+   "quote": "barb said it would be $38k for software and $22k for cellular plus the meter cost."
+  },
+  {
+   "topic": "Meter monitoring cost",
+   "what_was_recorded": "Carl noted the town is paying SWSS $1,200 per year to monitor the meters.",
+   "figures_as_printed": [
+    "$1,200/year"
+   ],
+   "quote": "since right now itis costing $1,200/year for swssto"
+  },
+  {
+   "topic": "Meter allotment",
+   "what_was_recorded": "The Commission agreed to allot $5000 for now for meter work.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "the commission agreed to allot $5000 for now."
+  },
+  {
+   "topic": "Outsourced billing and recurring cost",
+   "what_was_recorded": "Discussion of using this year's money for up-front development and then allotting $5K for recurring cost in FY19; Barb said the $10K is a starting point.",
+   "figures_as_printed": [
+    "$5K",
+    "$10K"
+   ],
+   "quote": "then allot $5k for recurring cost for fy19."
+  },
+  {
+   "topic": "Outsourced billing starting amount",
+   "what_was_recorded": "Barb said the $10K is a starting point for outsourcing billing.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "barb replied that the $10k is a starting point."
+  },
+  {
+   "topic": "Legal line",
+   "what_was_recorded": "The legal line was left at $5000 pending discussion of use of legal services.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "legal-will be left at$5000 with a discussion on use of legal services."
+  },
+  {
+   "topic": "Inflow/infiltration (I/I) spending",
+   "what_was_recorded": "Carl suggested spending $20K on I/I this year as a start, to be discussed again.",
+   "figures_as_printed": [
+    "$2OK"
+   ],
+   "quote": "carl suggested geting $2ok done this year as a"
+  },
+  {
+   "topic": "Fitchburg usage and rates",
+   "what_was_recorded": "Fitchburg rate increase of 30% and Leominster 3%; Barb expects about $186K in Fitchburg usage in FY18, more than budgeted, but revenue is better than estimated.",
+   "figures_as_printed": [
+    "30%",
+    "3%",
+    "$186K"
+   ],
+   "quote": "spending about $186k for fitchburg usage in fy18, more than was budgeted"
+  },
+  {
+   "topic": "Fitchburg CSS 4d project cost",
+   "what_was_recorded": "Carl said the project cost came in 50% over what was expected.",
+   "figures_as_printed": [
+    "50%"
+   ],
+   "quote": "carl said that the costcame in 50% more than they expected"
+  },
+  {
+   "topic": "Pump station maintenance line",
+   "what_was_recorded": "Joan asked about the 2% line item for maintenance of pump stations and noted the 2% technician support is low.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "joan asked about the line item for 2% for maintenance of pump stations."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "statement on the call for the 11/3/17 special meeting",
+   "quote": "carl read a statement concerning the call for the 11/3/17 special meeting"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Mary Manning sewer credit request",
+   "resolution": "approved $ 436.65 credit",
+   "quote": "mary manning, lt 27 mass ave, - request forcredit.",
+   "tags": [
+    "sewer credit",
+    "leak",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Tilton Ave. sewer extension request (Audra and Graham Sprague)",
+   "resolution": "approved motion to look at Tilton Ave. as a needs area; parallel work advised",
+   "quote": "joe explained thatthe sprague's would liketo go the",
+   "tags": [
+    "sewer extension",
+    "Tilton Ave",
+    "SSA",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Public comment on 11/3/17 special meeting call",
+   "resolution": "statement read; no vote; agenda item requested",
+   "quote": "carl read a statement concerning the call for the 11/3/17 special meeting",
+   "tags": [
+    "public comment",
+    "special meeting"
+   ]
+  },
+  {
+   "topic": "Legal counsel billing to sewer",
+   "resolution": "discussed; no vote",
+   "quote": "heather clarified that if a commissioner goes to heather with a sewer question for legal, it will be charged to",
+   "tags": [
+    "legal",
+    "town counsel",
+    "budget"
+   ]
+  },
+  {
+   "topic": "OPEB funding",
+   "resolution": "discussed; 10% of service cost for two years agreed",
+   "quote": "karen reported that the sewer commission's total liability is $129,481 accrued",
+   "tags": [
+    "OPEB",
+    "retirement",
+    "trust fund"
+   ]
+  },
+  {
+   "topic": "FY19 budget",
+   "resolution": "reviewed line by line; no final vote; key items to 2/13 meeting",
+   "quote": "fy19 budget - cari asked about how office space is calculated.",
+   "tags": [
+    "FY19 budget",
+    "office space",
+    "meters",
+    "I/I",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Fitchburg usage and CSS 4d project costs",
+   "resolution": "discussed; Carl to set up meetings",
+   "quote": "carl said that the costcame in 50% more than they expected",
+   "tags": [
+    "Fitchburg",
+    "rate study",
+    "CSS 4d"
+   ]
+  },
+  {
+   "topic": "380 Electric Ave. car wash restitution agreement and privilege fee",
+   "resolution": "approved: draft sent to Dan Proctor; privilege fee assessed",
+   "quote": "to send the restitution agreement draft to dan proctor for the 380 electric ave. property",
+   "tags": [
+    "privilege fee",
+    "restitution agreement",
+    "380 Electric Ave"
+   ]
+  },
+  {
+   "topic": "Approval of minutes 9/12/17, 10/31/17, 11/14/17",
+   "resolution": "approved as amended",
+   "quote": "to accept minutes of 9/12/17 as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Whalom Kitchen (previously 324 Ugly Omelet) non-compliance fee",
+   "resolution": "referred to counsel for guidance",
+   "quote": "whalom kitchen (previously 324 ugly omelet)- barb said that they want to open on 2/7.",
+   "tags": [
+    "non-compliance fee",
+    "permit",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Annual report request",
+   "resolution": "Barb to bring to next meeting",
+   "quote": "annual report request - barb will have it for next meeting.",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "requests for future discussions and workshop",
+   "quote": "joan would like to have a discussion on the commission's use oflegal",
+   "tags": [
+    "agenda",
+    "legal",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:22 pm",
+   "quote": "to adjourn: 10:22 pm. second: troyd. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public Comment - Carl Luck",
+   "where": "list",
+   "quote": "1) public comment - carl luck"
+  },
+  {
+   "name": "FY19 Draft budget - revision 1/30/18",
+   "where": "list",
+   "quote": "2) fy19 draft budget -revision 1/30/18"
+  },
+  {
+   "name": "budget handout (line 9a, Reserve Capacity)",
+   "where": "text",
+   "quote": "(9a from the budget handout) for reserve capacity is based on"
+  },
+  {
+   "name": "Adjustment policy",
+   "where": "text",
+   "quote": "following the adjustment policy of $ 436.65"
+  },
+  {
+   "name": "Irrigation Meter policy",
+   "where": "text",
+   "quote": "get a copy ofthe irrigation meter policy from barb"
+  },
+  {
+   "name": "Comprehensive Master Wastewater Plan (CWMP)",
+   "where": "text",
+   "quote": "comprehensive master wastewater plan (cwmp) phase 1 study in 2001"
+  },
+  {
+   "name": "original engineering report",
+   "where": "text",
+   "quote": "asked aboutwhere the original engineering reportis"
+  },
+  {
+   "name": "restitution agreement draft",
+   "where": "text",
+   "quote": "barb received the restitution agreement as a draft"
+  },
+  {
+   "name": "Weston & Sampson 2012 valuation document",
+   "where": "text",
+   "quote": "have weston & sampson follow-up on their 2012 valuation document"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY19 budget",
+  "OPEB",
+  "legal counsel",
+  "Fitchburg",
+  "Tilton Ave extension",
+  "sewer credit",
+  "privilege fee",
+  "restitution agreement",
+  "meters",
+  "inflow and infiltration",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

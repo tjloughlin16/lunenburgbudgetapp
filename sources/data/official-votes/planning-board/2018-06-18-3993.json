@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-06-18",
  "docid": "3993",
@@ -12,39 +12,203 @@
  },
  "votes": [
   {
-   "motion": "Enter executive session to discuss litigation strategy regarding the O'Brien Homes case",
+   "motion": "Select Board vote to enter Executive Session under G.L. c. 30A, § 21 to discuss litigation strategy (O'Brien Homes), not returning to Regular Session.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "d. mcquaid made the motion to enter executive session, seconded by p. luck, roll call vote, k. adams, aye; p. luck, aye; d. mcquaid, aye; j. toale, aye; r. ebersole, aye."
+   "quote": "made the motion to enter executive session, seconded by p. luck, roll call vote, k. adams, aye"
   },
   {
-   "motion": "Enter executive session to discuss litigation strategy regarding the O'Brien Homes case",
+   "motion": "Planning Board vote to enter Executive Session under G.L. c. 30A, § 21 to discuss litigation strategy (O'Brien Homes), not returning to Regular Session.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "T. Cole",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "d. prokowiew made the motion to enter executive session, seconded by t. cole, roll call vote, d. prokowiew, aye; t. cole, aye; g. bittner, aye."
+   "quote": "made the motion to enter executive session, seconded by t. cole, roll call vote"
   },
   {
-   "motion": "Request information regarding settlement demands",
+   "motion": "Motion to ask for information regarding settlement demands.",
    "moved_by": "B. Ebersole",
    "seconded_by": "P. Luck",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "b. ebersole made motion to a sk for information regarding settlement demands, seconded by. p. luck, roll call vote, k. adams, aye; p. luck, aye; d. mcquaid, aye; j. toale, aye, b. ebersole, aye."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "b. ebersole made motion to a sk for information regarding settlement demands"
   },
   {
-   "motion": "Adjourn executive session",
+   "motion": "Planning Board vote to adjourn Executive Session, not to enter Regular Session.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "T. Cole",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "d. prokowiew made motion to adjourn executive session, not to enter regular session, se conded by t. cole, roll call vote, d. prokowiew, aye; t. cole, aye; g. bittner, aye."
+   "quote": "made motion to adjourn executive session, not to enter regular session"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11147850000000001
+ "note": "Executive session minutes only; no regular-session business or public comment recorded. The minutes record Select Board votes (roll calls of five members) alongside Planning Board votes; those Select Board votes are included here. Vote totals are not printed as counts; outcomes are 'passed' because roll-call ayes are listed but no result is stated. Marjorie J. Boggio appears only in the letterhead and is not named as taking part. The minutes name 'B. Ebersole' as mover while the attendance line says 'R. Ebersole'; names are recorded as printed. The Adjourned 7:20 PM line is not a vote.",
+ "cost_usd": 0.0069370199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: kenneth chenis, matthew allison"
+  },
+  {
+   "name": "J. Toale",
+   "role": "Select Board Chair",
+   "status": "present",
+   "quote": "also present: select board members j. toale, p. luck, k. adams, d. mcquaid, r. ebersole"
+  },
+  {
+   "name": "P. Luck",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members j. toale, p. luck, k. adams, d. mcquaid, r. ebersole"
+  },
+  {
+   "name": "K. Adams",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members j. toale, p. luck, k. adams, d. mcquaid, r. ebersole"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members j. toale, p. luck, k. adams, d. mcquaid, r. ebersole"
+  },
+  {
+   "name": "R. Ebersole",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members j. toale, p. luck, k. adams, d. mcquaid, r. ebersole"
+  },
+  {
+   "name": "H. Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager h. lemieux, town counsel adam costa"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "town manager h. lemieux, town counsel adam costa"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "former Town Counsel Attorney, KP Law",
+   "status": "present",
+   "quote": "former town counsel attorneys joel bard and deborah ecker, kp law"
+  },
+  {
+   "name": "Deborah Ecker",
+   "role": "former Town Counsel Attorney, KP Law",
+   "status": "present",
+   "quote": "former town counsel attorneys joel bard and deborah ecker, kp law"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A status conference will be scheduled on the O'Brien Homes case; counsel will attempt to obtain O'Brien Homes' demands before that conference.",
+   "quote": "she will also attempt to get the demands of o'brien homes prior to the conference."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "O'Brien Homes litigation costs and possible monetary claim",
+   "what_was_recorded": "Counsel said the amount O'Brien Homes will claim cannot be anticipated, and that the case has involved extensive costs such as deposition transcripts and attorney fees; no dollar figures were printed.",
+   "quote": "as the trial has taken approximately 2 ½ years in court, there is no way to anticipate how much of a monetary amount o'brien homes will claim.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "O'Brien Homes Inc. v. Bakaysa litigation (executive session)",
+   "resolution": "discussed in executive session; motion to request settlement demand information passed; adjourned without returning to Regular Session",
+   "quote": "select board chair james toale requested a motion to enter executive session pursuant to g.l. c. 30a, § 21",
+   "tags": [
+    "litigation",
+    "O'Brien Homes",
+    "executive session",
+    "Land Court",
+    "subdivision",
+    "sanctions",
+    "bad faith claim"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "KP Law Letter Dated May 29, 2018, Re: O’Brien Homes Inc. v. Emerick R. Bakaysa, et al (Planning Board of the Town of Lunenburg and Town of Lunenburg), Land Court No. 13-MISC-477878 to 13-MISC-477887-KCL",
+   "where": "list",
+   "quote": "kp law letter dated may 29, 2018 , re: o'brien homes inc. v. emerick r. bakaysa"
+  },
+  {
+   "name": "Commonwealth of Massachusetts, The Trial Court, Land Court Department, Decision, dated May 23, 2018",
+   "where": "list",
+   "quote": "commonwealth of massachusetts, the trial court, land court department, decision, dated may 23, 2018"
+  },
+  {
+   "name": "Rules and Regulations Governing the Subdivision of Land",
+   "where": "text",
+   "quote": "the rules and regulations governing the subdivision of land that was in place at the time of filing"
+  },
+  {
+   "name": "Zoning Bylaw Section 5.6",
+   "where": "text",
+   "quote": "were not subject to section 5.6. of the zoning bylaw"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "O'Brien Homes",
+  "Land Court",
+  "subdivision plans",
+  "Zoning Bylaw Section 5.6",
+  "sanctions",
+  "bad faith claim",
+  "settlement"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at executive session:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-12-11",
  "docid": "5615",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Change counsel from KP Law to town counsel",
+   "motion": "To change counsel from KP Law to town counsel.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
    "outcome": "passed 5-0",
@@ -20,32 +20,165 @@
    "quote": "motion: joan p. second: john r. to change counsel from kp law to town counsel. vote: joe-aye, joan-aye, john-aye, ryan-aye, carl-aye"
   },
   {
-   "motion": "Specify interest as stated in Carl's email of December 2nd",
+   "motion": "To specify interest as stated in Carl's email of Dec 2nd.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: joan p. second: john r. to specify interest as stated in carl's email of dec 2nd. vote: joe-aye, joan-aye, john-aye, ryan-aye, carl- aye",
-   "quote_taken_from_text": true
+   "quote": "motion: joan p. second: john r. to specify interest as stated in carl's email of dec 2nd."
   },
   {
-   "motion": "Ask town counsel to recommend a reduction in interest for paying it off early",
+   "motion": "To ask town counsel to recommend a reduction in interest for paying it off early.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: joan p. to ask town counsel to recommend a reduction in interest for paying it off early. vote: joe-aye, joan-aye, john-aye, ryan-aye, carl-aye. second: john r."
+   "quote": "motion: joan p. to ask town counsel to recommend a reduction in interest for paying it off early."
   },
   {
-   "motion": "Adjourn executive session",
+   "motion": "To adjourn executive session at 8:12pm.",
    "moved_by": "John R.",
    "seconded_by": "Ryan S.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: john r. to adjourn executive session at 8:12pm. second: ryan s. vote: joe-aye, joan-aye, john-aye, ryan-aye, carl-aye."
+   "quote": "motion: john r. to adjourn executive session at 8:12pm. second: ryan s."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0946235
+ "note": "Partial text: OCR of page 1 only. The minutes begin mid-sentence, so there is no call to order, no attendance roll, no date or location header, and no agenda. Attendance is inferred from the roll-call votes and speaking parts. Votes are recorded as individual aye votes, and the 5-0 counts are derived from those. The executive session's end and any later business are not in this page.",
+ "cost_usd": 0.00471272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe",
+   "status": "present",
+   "quote": "vote: joe-aye, joan-aye, john-aye, ryan-aye, carl-aye"
+  },
+  {
+   "name": "Joan P.",
+   "status": "present",
+   "quote": "motion: joan p. second: john r. to change counsel from kp law to town counsel."
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "second: john r. to change counsel from kp law to town counsel."
+  },
+  {
+   "name": "Ryan S.",
+   "status": "present",
+   "quote": "second: ryan s. vote: joe-aye, joan-aye, john-aye, ryan-aye, carl-aye."
+  },
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "carl agreed and per the terms, reminded the group that the proponents had agreed to pay the amount in full"
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb clarified that the interest fitchburg was charging was"
+  },
+  {
+   "name": "Jane Ranle",
+   "status": "not stated",
+   "quote": "respectively submitted, jane ranle sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The members present agreed the agreement had been drawn out longer than originally expected and that it was a good time to change counsel.",
+   "quote": "all present agreed that it has been drawn out longer than originally expected and it was a good time to change."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Interest charged by Fitchburg",
+   "what_was_recorded": "Barb clarified that the interest Fitchburg was charging was 2%.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "barb clarified that the interest fitchburg was charging was 2%."
+  },
+  {
+   "topic": "Interest omitted from original allocation calculation",
+   "what_was_recorded": "Interest costs were not in the original allocation calculation, which covered only the John Fitch construction cost.",
+   "figures_as_printed": [],
+   "quote": "interest costs were not mentioned in the original allocation calculation, just the john fitch construction cost."
+  },
+  {
+   "topic": "Payment terms for the proponents",
+   "what_was_recorded": "Originally the full payment was due upfront; the agreement is being renegotiated to pay over 20 years, so asking for interest is valid.",
+   "figures_as_printed": [],
+   "quote": "originally the full payment was to be made upfront, but now they are renegotiating to pay over 20 years"
+  },
+  {
+   "topic": "Reduction in interest for early payoff",
+   "what_was_recorded": "The board asked town counsel to recommend a reduction in interest if the proponents pay off the amount early.",
+   "figures_as_printed": [],
+   "quote": "to ask town counsel to recommend a reduction in interest for paying it off early."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Proponent agreement, interest and counsel",
+   "resolution": "counsel changed to town counsel; interest specified; town counsel asked for early-payoff reduction",
+   "tags": [
+    "proponent agreement",
+    "interest",
+    "legal counsel"
+   ],
+   "quote": "we had sent the revised agreement to kp law after discovering an error in the original calculation"
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "adjourned at 8:12pm",
+   "tags": [
+    "executive session"
+   ],
+   "quote": "to adjourn executive session at 8:12pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Barb's email \"Stop the presses\" from November 30th",
+   "where": "list",
+   "quote": "barb's email \"stop the presses\" from november 30th"
+  },
+  {
+   "name": "Carl's email from November 30th",
+   "where": "list",
+   "quote": "carl's email from november 30th"
+  },
+  {
+   "name": "Carl's email from December 2nd",
+   "where": "list",
+   "quote": "carl's email from december 2nd"
+  },
+  {
+   "name": "revised agreement",
+   "where": "text",
+   "quote": "we had sent the revised agreement to kp law after discovering an error in the original calculation"
+  },
+  {
+   "name": "original Allocation calculation",
+   "where": "text",
+   "quote": "interest costs were not mentioned in the original allocation calculation, just the john fitch construction cost."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "proponent agreement",
+  "interest",
+  "legal counsel change",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

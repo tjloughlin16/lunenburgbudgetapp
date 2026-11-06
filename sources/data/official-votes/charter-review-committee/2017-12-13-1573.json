@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2017-12-13",
  "docid": "1573",
@@ -12,15 +12,218 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "Mr. Archambault",
    "seconded_by": "Ms. Burchfield",
-   "outcome": "all in favor",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by mr. archambault, seconded by ms. burchfield, all in favor"
+   "quote": "motion to adjourn by mr. archambault, seconded by ms. burchfield, all in favor; 8:31"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0865425
+ "note": "Text is OCR output (macOS Vision) of a two-page set of minutes; page 2 begins mid-sentence and some lines are split. The only recorded vote is the motion to adjourn; no other motions appear. No dollar figures appear in the text. Dates and names are as printed (the minutes call the Chair \"Chairman Ebersole\" and the staff member \"Dave Passios\" in discussion and \"David Passios\" under Also present).",
+ "cost_usd": 0.00451792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Ebersole",
+   "role": "Chairman; Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), katie adams (school committee), terri burchfield (finance committee), mark erickson (finance committee), steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), katie adams (school committee), terri burchfield (finance committee), mark erickson (finance committee), steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), katie adams (school committee), terri burchfield (finance committee), mark erickson (finance committee), steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), katie adams (school committee), terri burchfield (finance committee), mark erickson (finance committee), steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), katie adams (school committee), terri burchfield (finance committee), mark erickson (finance committee), steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), katie adams (school committee), terri burchfield (finance committee), mark erickson (finance committee), steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), katie adams (school committee), terri burchfield (finance committee), mark erickson (finance committee), steve archambault (community representative), nancy gray (community representative)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "absent",
+   "quote": "absent: michael-ray jeffreys (planning board), michael mackin (school committee)"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "absent",
+   "quote": "absent: michael-ray jeffreys (planning board), michael mackin (school committee)"
+  },
+  {
+   "name": "David Passios",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: david passios"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Ebersole will clarify the process with counsel after the board's discussion of the committee recommendation process.",
+   "quote": "after the discussion, mr. ebersole said he will clarify the process with counsel."
+  },
+  {
+   "decision": "Continue communication with boards and committees.",
+   "quote": "1. continue communication with boards and committees."
+  },
+  {
+   "decision": "Mr. Ebersole will review the TM process with Town Counsel.",
+   "quote": "2. mr. ebersole will review the tm process with town counsel."
+  },
+  {
+   "decision": "Mr. Ebersole will obtain a full inventory of all property and facilities so the board can be clear of who is responsible for what.",
+   "quote": "3. mr. ebersole said he would obtain a full inventory of all property and facilities so we can be clear"
+  },
+  {
+   "decision": "Mr. Toale will share the Moderators input with TM.",
+   "quote": "4. mr. toale will share the moderators input with tm."
+  },
+  {
+   "decision": "Ms. Adams will draft a rough timeline with milestones, to be presented at the next meeting.",
+   "quote": "she said she would draft a rough timeline with milestones for our next meeting."
+  },
+  {
+   "decision": "The next meeting is set for Wednesday, December 27, 2017, 7:00 PM, tentatively at Town Hall; later meetings are January 10, 2018 and January 24, 2018, 7:00 PM.",
+   "quote": "next meeting wednesday, december 27, 2017, 7:00 pm tentatively at town hall"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "no action; no minutes ready for review",
+   "quote": "no minutes ready for review",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Feedback from committees",
+   "resolution": "discussed; follow-up contacts noted, no action taken",
+   "quote": "ms. gray: cemetery commission proposing some changes; will meet with us in january.",
+   "tags": [
+    "cemetery commission",
+    "library",
+    "sewer commission",
+    "parks",
+    "trust fund",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Charter schedule and ATM timeline",
+   "resolution": "discussed; Ms. Adams to draft timeline with milestones",
+   "quote": "discussed our schedule and chance that we might miss atm. realistically, we may need more time.",
+   "tags": [
+    "schedule",
+    "annual town meeting",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "five action items assigned",
+   "quote": "1. continue communication with boards and committees.",
+   "tags": [
+    "action items",
+    "town counsel",
+    "inventory of property"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment none board comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no comment",
+   "quote": "public comment none board comment none",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meeting set for December 27, 2017 at Town Hall; January 10 and 24, 2018 dates listed",
+   "quote": "next meeting wednesday, december 27, 2017, 7:00 pm tentatively at town hall",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:31",
+   "quote": "motion to adjourn by mr. archambault, seconded by ms. burchfield, all in favor; 8:31",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "worksheet of appointed position",
+   "where": "text",
+   "quote": "ebersole referenced the worksheet of appointed position and how they are appointed and said we would"
+  },
+  {
+   "name": "charter (draft under review with TM and Finance Director)",
+   "where": "text",
+   "quote": "ms. burchfield said the finance committee meets tomorrow to review the charter with tm and finance director."
+  }
+ ],
+ "tags": [
+  "charter review",
+  "annual town meeting",
+  "warrant articles",
+  "town meeting",
+  "schedule",
+  "boards and committees",
+  "cemetery commission",
+  "library",
+  "parks",
+  "trust fund",
+  "sewer commission",
+  "town counsel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

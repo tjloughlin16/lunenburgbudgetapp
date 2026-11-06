@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-10-03",
  "docid": "5573",
@@ -12,31 +12,322 @@
  },
  "votes": [
   {
-   "motion": "Authorize $3,500 for manhole Task 1 of the Weston & Sampson proposal",
+   "motion": "Authorize the $3,500 for the manhole Task 1 of the Weston & Sampson proposal.",
    "moved_by": "Carl L.",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, Unanimous",
    "procedural": false,
-   "quote": "motion: carl l. second: joe a. to authorize the $3,500 for the manhole task 1 of the weston & sampson proposal."
+   "quote": "to authorize the $3,500 for the manhole task 1 of the weston & sampson proposal."
   },
   {
-   "motion": "Assess privilege fee on 51 Joslin St. according to the Sewer Assessment bylaw",
+   "motion": "Assess privilege fee on 51 Joslin St. according to the Sewer Assessment bylaw.",
    "moved_by": "Troy D.",
    "seconded_by": "Carl L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, Unanimous",
    "procedural": false,
-   "quote": "motion: troy d. second: carl l. to assess privilege fee on 51 joslin st. according to the sewer assessment bylaw."
+   "quote": "to assess privilege fee on 51 joslin st. according to the sewer assessment bylaw."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Troy D.",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Troy D",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, Unanimous",
    "procedural": true,
-   "quote": "motion to adjourn: troy d discussion: none"
+   "quote": "motion to adjourn: troy d discussion: none meeting adjourned at 7:56 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document; third vote's second and vote outcome appear in a separate section of the OCR but are clearly part of that vote record.",
- "cost_usd": 0.1176515
+ "note": "OCR text from a scanned page with garbled words and names (e.g., 'wan proctor', 'Cari', 'Tane h.'). No roll call is recorded, so attendance is inferred from speaking or moving; status is 'present' for those who spoke, and the clerk's status is 'not stated'. The 'Second: John R.' and 'Vote: Unanimous' lines appear after the clerk's signature and are read as belonging to the adjournment motion. Vote tallies are printed only as 'Unanimous'. No public comment section is recorded.",
+ "cost_usd": 0.00742172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack read an update from pat cotton, developing a quote for the sewer and manhole pipeline rehab, including"
+  },
+  {
+   "name": "Troy D.",
+   "role": "",
+   "status": "present",
+   "quote": "troy reported that he did some research and came up with about the same value."
+  },
+  {
+   "name": "Carl L.",
+   "role": "",
+   "status": "present",
+   "quote": "carl asked if they could look at the plan to see where the 15 trees and land involved are and questioned taking $7,500"
+  },
+  {
+   "name": "Joe A.",
+   "role": "",
+   "status": "present",
+   "quote": "joe clarified that the $ 7,000 entailed $3,500 for rehab of 10 worst manholes and $3,500 for pipework."
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "john also spoke to his sons that have a landscape business and came up with about the same"
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb reported that the list was sent to jill but she has not received the monthly report."
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley's appointment is before selectmen for approval and she should be able to start this week."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission reviewed the casement cleanup list and will discuss any questions on it at the next meeting.",
+   "quote": "commission reviewed the list and will discuss any questions on it at the next meeting"
+  },
+  {
+   "decision": "Discussion of the A meter relocation tabled to the next meeting.",
+   "quote": "commission decided to table discussion to the next meeting."
+  },
+  {
+   "decision": "Commission decided to ask town counsel for advice on the Cross Roads permit revocation and lien process; issue added to next meeting agenda.",
+   "quote": "decided to ask town counsel for advice on the process."
+  },
+  {
+   "decision": "Jack will ask Pat Cotton about the work on Elizabeth St and Burke St.",
+   "quote": "jack will ask pat about the work on elizabeth st and burke st."
+  },
+  {
+   "decision": "Pump station monthly report to be put on the agenda for the 10/10 meeting.",
+   "quote": "it will be put on agenda for 10/10 meeting."
+  },
+  {
+   "decision": "A daytime meeting to be set up with April, Barb and anyone else interested, and a meeting with Northern Data to be set up.",
+   "quote": "a daytime meeting will be setup with april, barb and anyone else interested."
+  },
+  {
+   "decision": "Commission will discuss moving the 10/31 meeting to 10/24 at the next meeting.",
+   "quote": "commission will discuss moving the 10/31 meeting to 10/24 at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Casement / easement cleanup estimate (380 Electric Ave)",
+   "what_was_recorded": "Jack's list for cleanup of the sewer easement, with an estimated range and average; the Commission reviewed it and deferred questions to the next meeting.",
+   "figures_as_printed": [
+    "$11,220 - $16,520",
+    "$ 13,870",
+    "$500",
+    "$200",
+    "$50"
+   ],
+   "quote": "estimate of $11,220 - $16,520 and average of $ 13,870"
+  },
+  {
+   "topic": "Carl's question about taking $7,500 from sewer customers",
+   "what_was_recorded": "Carl questioned taking $7,500 from sewer customers for the easement issue; no plan or information was provided.",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "questioned taking $7,500 from sewer customers for this issue."
+  },
+  {
+   "topic": "Sewer and manhole pipeline rehab quote and $7,000 pipe work",
+   "what_was_recorded": "The $7,000 work was split between $3,500 for rehab of the 10 worst manholes and $3,500 for pipework; the Commission then authorized the $3,500 manhole Task 1.",
+   "figures_as_printed": [
+    "$ 7,000",
+    "$3,500",
+    "$3,500"
+   ],
+   "quote": "joe clarified that the $ 7,000 entailed $3,500 for rehab of 10 worst manholes and $3,500 for pipework."
+  },
+  {
+   "topic": "John Street excavating bids",
+   "what_was_recorded": "John Street is to be managed by the DPW and needs 3 bids for excavating; the DPW Director felt the cost would be much less than the stated figure.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "which the dpw director felt would be much less than $10,000."
+  },
+  {
+   "topic": "Billing cost",
+   "what_was_recorded": "A cost of $3,500 per year for the billing was mentioned alongside a planned meeting with Northern Data.",
+   "figures_as_printed": [
+    "$3,500"
+   ],
+   "quote": "$3,500 per year for the billing."
+  },
+  {
+   "topic": "Privilege fee assessment at 51 Joslin St.",
+   "what_was_recorded": "Privilege fee assessed on 51 Joslin St. under the Sewer Assessment bylaw after the owner subdivided and built a house; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "to assess privilege fee on 51 joslin st. according to the sewer assessment bylaw."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Casement punch list cleanup (380 Electric Ave)",
+   "resolution": "reviewed; questions deferred to next meeting",
+   "tags": [
+    "easement",
+    "cleanup",
+    "trees",
+    "estimate"
+   ],
+   "quote": "commission reviewed casement punch list from wan proctor"
+  },
+  {
+   "topic": "DPW/Systems update",
+   "resolution": "approved $3,500 manhole Task 1; quote and pump calibration summary due 10/13",
+   "tags": [
+    "DPW",
+    "manholes",
+    "pipeline rehab",
+    "Weston & Sampson"
+   ],
+   "quote": "dpw/systems update- jack read an update from pat cotton"
+  },
+  {
+   "topic": "A meter relocation and pump stations",
+   "resolution": "tabled to next meeting; pump report to 10/10 agenda",
+   "tags": [
+    "meter",
+    "pump stations"
+   ],
+   "quote": "jack reported that swss and weston & sampson opinions are that it does not need to be put on the deck"
+  },
+  {
+   "topic": "BOS workshop with boards and commissions, October 10",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "volunteers",
+    "communications"
+   ],
+   "quote": "bos workshop with boards and commission october 10 discussion"
+  },
+  {
+   "topic": "Cross Roads permit to discharge revocation review",
+   "resolution": "ask town counsel; added to next agenda",
+   "tags": [
+    "permit",
+    "lien",
+    "restaurants"
+   ],
+   "quote": "cross roads process review for potential revocation of permit to discharge"
+  },
+  {
+   "topic": "Fitchburg WMP meeting",
+   "resolution": "reported; no action",
+   "tags": [
+    "Fitchburg",
+    "rate increase"
+   ],
+   "quote": "fitchburg has all the information they need."
+  },
+  {
+   "topic": "Privilege fee assessment, 51 Joslin St.",
+   "resolution": "privilege fee assessed",
+   "tags": [
+    "privilege fee",
+    "assessment",
+    "subdivision"
+   ],
+   "quote": "to assess privilege fee on 51 joslin st. according to the sewer assessment bylaw."
+  },
+  {
+   "topic": "Minutes taker appointment",
+   "resolution": "reported; pending Selectmen approval",
+   "tags": [
+    "clerk",
+    "appointment"
+   ],
+   "quote": "barb reported that jane ranley's appointment is before selectmen for approval"
+  },
+  {
+   "topic": "Future agenda member inputs (meeting date change)",
+   "resolution": "to discuss moving 10/31 meeting to 10/24 at next meeting",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "commission will discuss moving the 10/31 meeting to 10/24 at the next meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:56 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 7:56 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Cleanup list prepared by Jack (casement punch list)",
+   "where": "text",
+   "quote": "jack passed out a list that he had put together"
+  },
+  {
+   "name": "Plans for the sewer easement area",
+   "where": "text",
+   "quote": "commission reviewed the plans, discussed the validity of items on the list"
+  },
+  {
+   "name": "Pat Cotton quote for sewer and manhole pipeline rehab",
+   "where": "text",
+   "quote": "jack read an update from pat cotton, developing a quote for the sewer and manhole pipeline rehab"
+  },
+  {
+   "name": "June manhole inspection",
+   "where": "text",
+   "quote": "as identified in the june manhole inspection"
+  },
+  {
+   "name": "Reports on 10 manholes needing work",
+   "where": "text",
+   "quote": "commission discussed the reports on 10 manholes needing work"
+  },
+  {
+   "name": "Weston & Sampson proposal",
+   "where": "text",
+   "quote": "to authorize the $3,500 for the manhole task 1 of the weston & sampson proposal."
+  },
+  {
+   "name": "Summary from drawdowns and field measurements for pump station calibration",
+   "where": "text",
+   "quote": "he is finalizing the summary from the drawdowns and field measurements for pump station calibration"
+  },
+  {
+   "name": "Insurance packet",
+   "where": "text",
+   "quote": "the insurance packet needs to be added"
+  },
+  {
+   "name": "Sewer Assessment bylaw",
+   "where": "text",
+   "quote": "according to the sewer assessment bylaw."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "easement cleanup",
+  "manholes",
+  "inflow and infiltration",
+  "pump stations",
+  "privilege fee",
+  "Cross Roads permit",
+  "budget",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "commission reviewed the plans"
+ },
+ "dropped_unquoted_by_field": {}
 }

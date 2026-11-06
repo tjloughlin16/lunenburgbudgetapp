@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-11-14",
  "docid": "5576",
@@ -12,23 +12,422 @@
  },
  "votes": [
   {
-   "motion": "approve Sewer Commission Minutes of 10/10/17",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "To approve Sewer Commission minutes of 10/10/17.",
    "moved_by": "John R.",
    "seconded_by": "Troy D.",
-   "quote": "motion - john r. second - troy d. to approve sewer commission minutes of 10/10/17 vote -unanimous."
+   "outcome": "passed, unanimous",
+   "procedural": true,
+   "quote": "minutes - 10/10/17-motion - john r. second - troy d. to approve sewer commission minutes of 10/10/17 vote -unanimous."
   },
   {
-   "motion": "adjourn at 7:50pm",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "To adjourn at 7:50pm.",
    "moved_by": "Troy D.",
    "seconded_by": "Joan P.",
+   "outcome": "passed, unanimous",
+   "procedural": true,
    "quote": "motion: troy d. to adjourn at 7:50pm second: joan p. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1031405
+ "note": "OCR text from a scan, with garbled spots (e.g. \"S oe reiterated\", \"Tasks 1 & Il for 1/l work\", \"Jane Ranley\" signature lines). Page 1 starts mid-sentence, so any call to order, roll call and early agenda items are missing. No attendance roll is printed; attendance is inferred from speaking roles, so statuses are marked present only where the minutes show someone speaking. Roles for Joe, Troy, Joan, John, Carl and Jack are not printed. Votes are recorded only for approving the 10/10/17 minutes and adjournment; the Q2 commitment sign-off and the tabling of the 10/31/17 minutes are recorded without a motion. No documents list heading is printed.",
+ "cost_usd": 0.00736872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe",
+   "role": "",
+   "status": "present",
+   "quote": "joe asked if all are clear that communication be decided on as a group-no one goes off individually."
+  },
+  {
+   "name": "Troy D.",
+   "role": "",
+   "status": "present",
+   "quote": "troy asked how real a threat is it for weston & sampson to quit the town."
+  },
+  {
+   "name": "Joan Pease",
+   "role": "",
+   "status": "present",
+   "quote": "joan added that according to counsel, they should not be contacting anyone individually"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "",
+   "status": "present",
+   "quote": "john reynolds agreed that they are valid points."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "carl luck requested to include a document with the records of the meeting."
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "barb brought up the issue of being asked to contact people that her supervisor does not want her contacting."
+  },
+  {
+   "name": "Jack",
+   "role": "",
+   "status": "present",
+   "quote": "jack talked to pat cotton of weston and sampson and he feels progress will be made."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager, heather lemieux, stated that a policy is not necessary but could be helpful to clarify communications."
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley, board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All agreed that no one will contact any consultants or do summaries without the agreement of the Commission.",
+   "quote": "all agreed that no one will contact any consultants or do summaries without the agreement of the commission."
+  },
+  {
+   "decision": "All Commissioners, Heather and Jack agreed to attend a workshop meeting to discuss a policy on communications.",
+   "quote": "all commissioners, heather and jack agreed to attend a workshop meeting to discuss a policy."
+  },
+  {
+   "decision": "Protocol for Commissioners addressing staff, departments, employees and vendors will be discussed at the workshop.",
+   "quote": "all agreed that this would be discussed at the workshop."
+  },
+  {
+   "decision": "Anyone may get clarification from town counsel on protocol and procedure at the attorney office hours, but policy issues should not be discussed there.",
+   "quote": "agreed that anyone should be able to get clarification from counsel on protocol and procedure but should not be discussing policy issues."
+  },
+  {
+   "decision": "Jack will send the Tasks I & II report electronically to Commissioners so all can review it before a list of questions is prepared.",
+   "quote": "jack will send report electronically to commissioners to give all a chance to digest it"
+  },
+  {
+   "decision": "Jack will get the Weston & Sampson-DEP report to the Sewer Commission once finished.",
+   "quote": "weston & sampson-dep report, - jack spoke to pat today-should be finished this week and will get it to the sewer commission."
+  },
+  {
+   "decision": "Commission signed off on the Q2 commitment.",
+   "quote": "q2 commitment - sewer commission signed off on commitment for $209,239.10."
+  },
+  {
+   "decision": "The 10/31/17 minutes were tabled to the next meeting, with Barb to make Troy's edit and resend them.",
+   "quote": "minutes - 10/31/17 - tabled to next meeting and barb will make troy's edit and resend out."
+  },
+  {
+   "decision": "All agreed Barb should contact the attorney if she has not heard back on Crossroads; Crossroads will be on the next agenda and there will be no hearing on Dec. 5.",
+   "quote": "barb said that they would not be having a hearing on dec. 5 and crossroads will be on the next agenda."
+  },
+  {
+   "decision": "All agreed that if Barb has not heard by the end of the week, she can start the non-compliance process for the October 1st Tuesday report.",
+   "quote": "all agreed that if barb has not heard by the end of the week, she can start non-compliance process."
+  },
+  {
+   "decision": "Commission agreed the Millette extension is not a paving moratorium issue; the Commission decides on expansion.",
+   "quote": "jack said that the paving moratorium should not be issue for sewer commission - the commission decides on expansion."
+  },
+  {
+   "decision": "Commission discussed doing a capital plan for future budget items based on a pump station survey.",
+   "quote": "commission discussed doing a capital plan for future budget items, based on doing a pump station survey."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Q2 sewer commitment",
+   "what_was_recorded": "The Commission signed off on the Q2 commitment at the stated amount.",
+   "figures_as_printed": [
+    "$209,239.10"
+   ],
+   "quote": "q2 commitment - sewer commission signed off on commitment for $209,239.10."
+  },
+  {
+   "topic": "Crossroads lien and tax-roll charges",
+   "what_was_recorded": "Barb reported the town is fine on the lien but must check whether the charges qualify for putting on the tax rolls.",
+   "figures_as_printed": [],
+   "quote": "barb confirmed that adam said we are good on the liening but have to see if charges quality for putting it on the tax rolls."
+  },
+  {
+   "topic": "Pricing impact of losing vendors",
+   "what_was_recorded": "Members said losing a vendor could affect pricing and timing on work and that pricing could go up.",
+   "figures_as_printed": [],
+   "quote": "if we lose vendors, pricing could go up."
+  },
+  {
+   "topic": "Tax bill delinquencies",
+   "what_was_recorded": "Barb's next focus item is getting the delinquencies done for the tax bills.",
+   "figures_as_printed": [],
+   "quote": "barb's next focus item will be working to get the delinquencies done for the tax bills."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joe",
+   "stated_role": "",
+   "topic": "meeting discussion outcome",
+   "quote": "public comment -- joe thought discussion went well so that commission can do the best for the town and will be good when all are on the same page."
+  },
+  {
+   "speaker": "Carl",
+   "stated_role": "",
+   "topic": "chair's leadership of meeting",
+   "quote": "carl thought joe had done a good job leading the meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Summaries sent to DPW by vice-chair",
+   "resolution": "discussed; all agreed no contact with consultants or summaries without Commission agreement",
+   "quote": "sent by the vice-chair to dpw with questions, directives or reprimands that were not authorized or voted on by the sewer",
+   "tags": [
+    "communications",
+    "DPW",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Communications between members, DPW, contractors and consultants",
+   "resolution": "discussed; communication to be decided as a group",
+   "quote": "communications between individual commission members/dpw/contractors/consultants - joe asked if all are clear",
+   "tags": [
+    "communications",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Communication policy discussion",
+   "resolution": "workshop agreed to discuss a policy",
+   "quote": "town manager, heather lemieux, stated that a policy is not necessary but could be helpful to clarify communications.",
+   "tags": [
+    "communications policy",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Communication with Weston & Sampson",
+   "resolution": "discussed; no action; further discussion deferred to workshop",
+   "quote": "communication specifically with weston & sampson-joe reiterated that discussion should be as a group.",
+   "tags": [
+    "Weston & Sampson",
+    "consultants"
+   ]
+  },
+  {
+   "topic": "Potential impact of losing vendors",
+   "resolution": "discussed; no action",
+   "quote": "potential impact to the rate users, town and commission of losing vendors - joe stated that he would not like to lose good vendors.",
+   "tags": [
+    "vendors",
+    "rates"
+   ]
+  },
+  {
+   "topic": "Protocol for Commissioners addressing staff and vendors",
+   "resolution": "deferred to workshop",
+   "quote": "protocol for commissioners addressing staff, departments, employees, vendors - all agreed that this would be discussed at the workshop.",
+   "tags": [
+    "protocol",
+    "staff"
+   ]
+  },
+  {
+   "topic": "Impact of individual Commissioner communications",
+   "resolution": "discussed; no action",
+   "quote": "impact, issues, and consequences of individual commissioner",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Town Attorney office hours",
+   "resolution": "agreed on use of office hours",
+   "quote": "town attorney office hours discussion - commission discussed how to make use of the open hours with counsel",
+   "tags": [
+    "legal",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Pump station survey and capital plan",
+   "resolution": "discussed; capital plan idea noted",
+   "quote": "commission discussed doing a capital plan for future budget items, based on doing a pump station survey.",
+   "tags": [
+    "capital plan",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Weston & Sampson-DEP report",
+   "resolution": "Jack to forward report when finished",
+   "quote": "weston & sampson-dep report, - jack spoke to pat today-should be finished this week and will get it to the sewer commission.",
+   "tags": [
+    "DEP",
+    "Weston & Sampson"
+   ]
+  },
+  {
+   "topic": "Tasks I & II for I/I work",
+   "resolution": "report to be sent to Commissioners; work to go out for bids, possibly spring",
+   "quote": "jack will send report electronically to commissioners to give all a chance to digest it",
+   "tags": [
+    "I/I work",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Millette extension request",
+   "resolution": "Jack reports paving moratorium not an issue",
+   "quote": "millette extension request jack said that the paving moratorium should not be issue for sewer commission",
+   "tags": [
+    "paving",
+    "extension"
+   ]
+  },
+  {
+   "topic": "380 Electric Ave. Car Wash",
+   "resolution": "no decision; counsel says Commission is authorized to act, more research needed",
+   "quote": "380 electric ave. car wash status-- counsel emailed that commission is authorized to act",
+   "tags": [
+    "car wash",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Billing outsourcing",
+   "resolution": "status update; next step meeting with Treasurer and Finance",
+   "quote": "billing outsourcing status - barb is setting up next step to meet with myleen",
+   "tags": [
+    "billing",
+    "outsourcing"
+   ]
+  },
+  {
+   "topic": "Grease trap compliance: Crossroads permit revocation hearing",
+   "resolution": "hearing not on Dec. 5; Crossroads on next agenda",
+   "quote": "grease trap regulation compliance - crossroads",
+   "tags": [
+    "grease trap",
+    "permit",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "1st Tuesday report status",
+   "resolution": "non-compliance process may start if no reply by end of week",
+   "quote": "1st tuesday report status - barb has not heard from the one account for october logs.",
+   "tags": [
+    "compliance",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Q2 commitment",
+   "resolution": "signed off",
+   "quote": "q2 commitment - sewer commission signed off on commitment for $209,239.10.",
+   "tags": [
+    "commitment",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Minutes approval and tabling",
+   "resolution": "10/10/17 minutes approved; 10/31/17 minutes tabled",
+   "quote": "minutes - 10/31/17 - tabled to next meeting and barb will make troy's edit and resend out.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "received; permit to connect on Mays Field Road; Nov. 21 workshop to be rescheduled",
+   "quote": "business manager report-barb received a permit to connect on mays field road",
+   "tags": [
+    "permits",
+    "business manager"
+   ]
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "discussed; policy review",
+   "quote": "members agenda inputs for future meetings -policy review-barb had received a request",
+   "tags": [
+    "agenda",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "commissioners commented on the meeting",
+   "quote": "public comment -- joe thought discussion went well so that commission can do the best for the town and will be good when all are on the same page.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50pm",
+   "quote": "motion: troy d. to adjourn at 7:50pm second: joan p. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Weston & Sampson-DEP report",
+   "where": "text",
+   "quote": "weston & sampson-dep report, - jack spoke to pat today-should be finished this week and will get it to the sewer commission."
+  },
+  {
+   "name": "Tasks I & II report for I/I work (Weston & Sampson)",
+   "where": "text",
+   "quote": "jack will send report electronically to commissioners to give all a chance to digest it"
+  },
+  {
+   "name": "Task 2 proposal",
+   "where": "text",
+   "quote": "for the purpose of evaluating the task 2 proposal, which had been protocol for the past 11 years he had been on the"
+  },
+  {
+   "name": "Q2 Commitment",
+   "where": "text",
+   "quote": "q2 commitment - sewer commission signed off on commitment for $209,239.10."
+  },
+  {
+   "name": "Minutes of 10/10/17",
+   "where": "text",
+   "quote": "minutes - 10/10/17-motion - john r. second - troy d. to approve sewer commission minutes of 10/10/17 vote -unanimous."
+  },
+  {
+   "name": "Minutes of 10/31/17",
+   "where": "text",
+   "quote": "minutes - 10/31/17 - tabled to next meeting and barb will make troy's edit and resend out."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "communications policy",
+  "vendors",
+  "Weston & Sampson",
+  "DPW",
+  "grease trap",
+  "billing",
+  "minutes",
+  "commitment",
+  "I/I work",
+  "governance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

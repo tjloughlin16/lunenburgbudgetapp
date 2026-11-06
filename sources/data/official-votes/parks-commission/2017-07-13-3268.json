@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2017-07-13",
  "docid": "3268",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of May 10, 2017",
+   "motion": "Approve the minutes of May 10, 2017.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "dennis mannone motioned to approve the minutes of may 10, 2017. karin menard seconded. approved 3-0."
   },
   {
-   "motion": "recommend appointment of Ethan Gentler to the Town Manager and Board of Selectman",
+   "motion": "Recommend appointment of Ethan Gentler to the Town Manager and Board of Selectman.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
@@ -28,7 +28,7 @@
    "quote": "karin menard motioned to recommend appointment of ethan gentler to the town manager and board of selectman. dennis mannone seconded. approved 3-0."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 9pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -37,6 +37,213 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; readable text quality is good. Three votes recorded, all carried 3-0.",
- "cost_usd": 0.0818165
+ "note": "Text is OCR from two pages. The attendance line prints 'Pete McCaulitt' while the header and motions print 'Pete McCauliff'; recorded as McCauliff. 'Col' in the field-use decision is printed as-is and may be an OCR error for a different word. The DPW Director / Town Manager is listed as 'not present' with no name. Ethan Gentler and Karen Brochu are mentioned but did not take part, so they are not listed as attendees. Votes are recorded as printed, with no roll-call detail.",
+ "cost_usd": 0.00476942,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order by dennis mannone at 7:02pm. attendance: karin menard, dennis mannone, pete mccaulitt"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "call to order by dennis mannone at 7:02pm. attendance: karin menard, dennis mannone, pete mccaulitt"
+  },
+  {
+   "name": "Pete McCauliff",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone, pete mccaulitt"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karin Menard will speak with Jack on how to handle field use by other organizations that is not approved in advance.",
+   "quote": "karin will speak with jack on how to handle the other organizations."
+  },
+  {
+   "decision": "Pete McCauliff will do a better job communicating that a Col is required before using a field.",
+   "quote": "pete said he would do a better job at communicating that a col is required in order to use the field"
+  },
+  {
+   "decision": "The Memorandum of Agreement with Lunenburg Public Schools is too time-consuming for a shared agenda, so Karin Menard will add it as the main agenda item at the August meeting.",
+   "quote": "karin will add it as the main agenda item on the august meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Phillies flat rate fee",
+   "what_was_recorded": "The Phillies agreed to a flat rate fee covering their preseason practices and all home games.",
+   "figures_as_printed": [
+    "$1300"
+   ],
+   "quote": "the phillies have agreed to a flat rate fee of $1300 which includes their preseason practices and all home games."
+  },
+  {
+   "topic": "Turf complex bleachers and retaining wall, remaining bond money",
+   "what_was_recorded": "Pete is looking into using remaining bond money for the bleachers and tilting retaining wall, with Karen Brochu looking into it; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "he is looking into the possibility of using the remaining money from the bond and has karen brochu looking into it."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 7:02pm",
+   "quote": "call to order by dennis mannone at 7:02pm. attendance: karin menard, dennis mannone, pete mccaulitt",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Review minutes of May 10, 2017",
+   "resolution": "approved 3-0",
+   "quote": "dennis mannone motioned to approve the minutes of may 10, 2017. karin menard seconded. approved 3-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Minutes of June 10, 2017",
+   "resolution": "no action; no minutes present",
+   "quote": "june 10, 2017 - no minutes present",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager updates",
+   "resolution": "no report; not present",
+   "quote": "4) dpw director / town manager updates - not present",
+   "tags": [
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Turf complex update",
+   "resolution": "discussed; bond money being looked into",
+   "quote": "pete said the track was complete. the only thing left that is an issue are the bleachers and the retaining wall behind that is tilting.",
+   "tags": [
+    "turf complex",
+    "bond"
+   ]
+  },
+  {
+   "topic": "Town Beach summer hiring and policies",
+   "resolution": "one lifeguard response; recommended appointment of Ethan Gentler 3-0",
+   "quote": "karin told the commission that the received one response to the lifeguard posting that was posted for a second time.",
+   "tags": [
+    "town beach",
+    "lifeguards",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "General field updates",
+   "resolution": "discussed; unapproved field use to be addressed",
+   "quote": "karin expressed her frustration over field usage that isn't approved before using (ie french river, lunenburg little league etc.).",
+   "tags": [
+    "field use",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Wallis Park update",
+   "resolution": "no action",
+   "quote": "d) wallis park update and discussion - none",
+   "tags": [
+    "Wallis Park"
+   ]
+  },
+  {
+   "topic": "Policy and procedure discussions on fees and scheduling",
+   "resolution": "no action",
+   "quote": "e) continuation of policy / procedure discussions, fees and scheduling of fields, courts and beaches under the parks commission umbrella - none.",
+   "tags": [
+    "policy",
+    "fees",
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Phillies update",
+   "resolution": "flat rate fee agreed",
+   "quote": "the phillies have agreed to a flat rate fee of $1300 which includes their preseason practices and all home games.",
+   "tags": [
+    "Phillies",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Memorandum of Agreement with Lunenburg Public Schools",
+   "resolution": "briefly reviewed; moved to August agenda as main item",
+   "quote": "commission briefly re viewed the document provided by lunenburg public schools.",
+   "tags": [
+    "schools",
+    "agreement"
+   ]
+  },
+  {
+   "topic": "Unanticipated items",
+   "resolution": "none",
+   "quote": "a) unanticipated items - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Correspondence, announcements and public comment",
+   "resolution": "none",
+   "quote": "b) correspondence, announcements and public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting set for August 17, 2017 at 7pm",
+   "quote": "upcoming meeting schedule and agenda august 17, 2017 at 7pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9pm, 3-0",
+   "quote": "karin menard motioned to adjourn at 9pm and pete mccauliff seconded. approved 3-0.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum of Agreement with Lunenburg Public Schools (document provided by Lunenburg Public Schools)",
+   "where": "text",
+   "quote": "memorandum of agreement with lunenburg public schools - commission briefly re viewed the document provided by lunenburg public schools."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "turf complex",
+  "town beach",
+  "lifeguards",
+  "field use",
+  "Phillies",
+  "schools agreement",
+  "bond",
+  "fees",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

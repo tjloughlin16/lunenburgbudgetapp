@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2018-11-01",
  "docid": "3283",
@@ -12,23 +12,208 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of October 3, 2018",
-   "moved_by": "Dennis",
-   "seconded_by": "Susanna",
+   "motion": "Approve the minutes of October 3, 2018.",
+   "moved_by": "Dennis Mannone",
+   "seconded_by": "Susanna Jewell",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "dennis motioned and susanna seconded to approve the minutes of october 3, 2018 - approved 3-0"
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Karin",
-   "seconded_by": "Susanna",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 8:24.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Susanna Jewell",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "karin motioned and susanna seconded to adjourn at 8:24."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. The document appears to be OCR-scanned (macOS Vision per the header). Note that items are numbered 1-10 then jump to 13, suggesting items 11-12 may have been missing from the OCR or original document.",
- "cost_usd": 0.10097149999999999
+ "note": "OCR text of a two-page scan. Numbering jumps from item 10 to 13 (items 11-12 not in the text). The adjournment motion has no recorded result. Several sentences look cut off in the OCR (e.g., item 8 ends 'a feasibility study.'). Item 7 also lists items not all tied to a vote; the board's capital decisions were consensus, not recorded votes. Bob Ebersole and Jack are mentioned but not recorded as taking part, so they are not listed as attendees. No public comment is recorded. The stamp reads RECEIVED & FILED APR 09 2019.",
+ "cost_usd": 0.0041074200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "present: karin menard, dennis mannone, susanna jewell"
+  },
+  {
+   "name": "Dennis Mannone",
+   "status": "present",
+   "quote": "present: karin menard, dennis mannone, susanna jewell"
+  },
+  {
+   "name": "Susanna Jewell",
+   "status": "present",
+   "quote": "present: karin menard, dennis mannone, susanna jewell"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Keep user fees at $10 per player for youth groups with a seasonal agreement, including T-ball; the group agreed.",
+   "quote": "the user fees should be kept at $10 per player for youth groups with a seasonal agreement and that includes tball. the group agreed."
+  },
+  {
+   "decision": "Karin will notify Lunenburg Little League that the T-ball fee is not waived.",
+   "quote": "karin will notify lunenburg little league that they are not waiving the tball fee."
+  },
+  {
+   "decision": "Karin will arrange a meeting with the School Department about fees; Dennis wants to take part.",
+   "quote": "karin said she would arrange a meeting."
+  },
+  {
+   "decision": "Board size for Charter review (three or five) tabled for commissioners to consider and discuss at a future meeting.",
+   "quote": "karin asked the others to give it some thought and we could discuss at a future meeting."
+  },
+  {
+   "decision": "Commissioners agreed the Town Beach rehab and the side potential pocket park go forward as one capital request, and Wallis Basketball Court is a request.",
+   "quote": "all agreed that the town beach rehab and the side potential pocket park be submitted as one item."
+  },
+  {
+   "decision": "Susanna volunteered to work out the process for the beach.",
+   "quote": "susanna volunteered to figure out what the process for the beach."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unpaid Life Long Learners Softball fees",
+   "what_was_recorded": "Fees owed by the Life Long Learners Softball program had not been paid, as reported by the DPW Administrative Assistant.",
+   "quote": "fees owed by the life long learners softball program still had not been paid.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Unpaid Spring 2018 School Department user fee for Marshall Park",
+   "what_was_recorded": "The Spring 2018 user fee of $10 per player charged to the School Department for Marshall Park was not paid; Susanna wants an acknowledgment even if not collected.",
+   "quote": "spring 2018 $10 per player user fee we were charging the school department to use marshall park",
+   "figures_as_printed": [
+    "$10"
+   ]
+  },
+  {
+   "topic": "2019 spring usage fees",
+   "what_was_recorded": "Fee for youth groups with a seasonal agreement, including T-ball, kept at $10 per player; the board may raise user fees later.",
+   "quote": "the user fees should be kept at $10 per player for youth groups with a seasonal agreement and that includes tball.",
+   "figures_as_printed": [
+    "$10"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes of October 3, 2018",
+   "resolution": "approved 3-0",
+   "quote": "dennis motioned and susanna seconded to approve the minutes of october 3, 2018 - approved 3-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager updates",
+   "resolution": "discussed; school and softball fees to be pursued",
+   "quote": "karin reported that the dpw administrative assistant emailed earlier in the",
+   "tags": [
+    "fees",
+    "unpaid fees",
+    "school department"
+   ]
+  },
+  {
+   "topic": "2019 Spring Usage Fees",
+   "resolution": "fee kept at $10 per player; Little League notice; user fee review",
+   "quote": "dennis thought the user fees should be kept at $10 per player for youth groups with a seasonal agreement and that includes tball.",
+   "tags": [
+    "user fees",
+    "youth sports",
+    "fields"
+   ]
+  },
+  {
+   "topic": "Beach Financials",
+   "resolution": "no action",
+   "quote": "5) beach financials - none at this time.",
+   "tags": [
+    "beach"
+   ]
+  },
+  {
+   "topic": "Charter Review",
+   "resolution": "board size question tabled to a future meeting",
+   "quote": "bob ebersole had notified karin via email that they had gone back to the original wording of the parks section",
+   "tags": [
+    "charter review",
+    "board size"
+   ]
+  },
+  {
+   "topic": "Capital Plan",
+   "resolution": "agreed capital requests; continued work",
+   "quote": "jack had asked the group to continue working on a capital plan.",
+   "tags": [
+    "capital plan",
+    "Wallis Basketball Court",
+    "Town Beach"
+   ]
+  },
+  {
+   "topic": "Long term planning",
+   "resolution": "feasibility study for recreational space favored; no vote",
+   "quote": "commission felt they had a good handle on many of the small ideas and that a feasibility study.",
+   "tags": [
+    "long term planning",
+    "feasibility study"
+   ]
+  },
+  {
+   "topic": "Open Space update",
+   "resolution": "no action; draft to be sent for review",
+   "quote": "karin updated the group that the finishing touches were being put on the draft",
+   "tags": [
+    "open space"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "none",
+   "quote": "other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:24",
+   "quote": "karin motioned and susanna seconded to adjourn at 8:24.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Open Space draft",
+   "where": "text",
+   "quote": "karin updated the group that the finishing touches were being put on the draft and a"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "user fees",
+  "school department",
+  "Marshall Park",
+  "charter review",
+  "capital plan",
+  "beach",
+  "open space",
+  "fields",
+  "feasibility study"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

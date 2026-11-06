@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-08-28",
  "docid": "3958",
@@ -12,15 +12,118 @@
  },
  "votes": [
   {
-   "motion": "close the hearing",
+   "motion": "Close the public hearing on the 40 Pioneer Drive and 98 Leominster Shirley Road site plan and special permit application.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion, k. chenis to close the hearing, second, d. prokowiew, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are continuation minutes of a public hearing on a site plan and special permit application. Only one vote is recorded—the motion to close the hearing.",
- "cost_usd": 0.0832635
+ "note": "The minutes cover only the continued public hearing and its closing; the only recorded vote is the motion to close the hearing. No decision on the site plan or special permit is recorded. The hearing's start is not shown, only the 7:02 PM meeting time and the 7:15 PM close. The minutes do not say which Fire Chief correspondence or the Zoning Board of Appeals outcome was final. No dollar figures appear in the text.",
+ "cost_usd": 0.00315102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "representing the applicant",
+   "status": "not stated",
+   "quote": "the applicant, ecological fibers, inc. (steven quill- owner) was represented by wesley flis, whitman & bingham associates"
+  },
+  {
+   "name": "Steven Quill",
+   "role": "owner",
+   "status": "not stated",
+   "quote": "the applicant, ecological fibers, inc. (steven quill- owner) was represented by wesley flis, whitman & bingham associates"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Hearing (cont'd): 40 Pioneer Drive and 98 Leominster Shirley Road, site plan approval and special permit",
+   "resolution": "hearing closed; no decision recorded",
+   "quote": "the hearing was to hear and discuss an application for site plan approval under section 8.4.",
+   "tags": [
+    "site plan",
+    "special permit",
+    "public hearing",
+    "fire access",
+    "parking",
+    "driveways"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Plan, Revised 08/28/17",
+   "where": "list",
+   "quote": "documents used at hearing: site plan, revised 08/28/17"
+  },
+  {
+   "name": "public hearings 2017/40 Pioneer Drive_98 Leominster Shirley Road 08.28.17",
+   "where": "list",
+   "quote": "public hearings 2017/40 pioneer drive_98 leominster shirley road 08.28.17"
+  },
+  {
+   "name": "Electronic mail from the Fire Chief dated August 22nd",
+   "where": "text",
+   "quote": "in an electronic mail dated august 22nd, the fire chief noted various concerns that he had"
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "site plan",
+  "special permit",
+  "fire access",
+  "parking",
+  "warehouse addition",
+  "Pioneer Drive",
+  "Leominster Shirley Road"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

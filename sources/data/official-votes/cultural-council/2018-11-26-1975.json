@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2018-11-26",
  "docid": "1975",
@@ -12,55 +12,227 @@
  },
  "votes": [
   {
-   "motion": "Allocate $750 from Boys & Girls Club unused funds to 2019 grant cycle",
-   "outcome": "passed",
+   "motion": "Allocate the unused $750 from last year's Boys & Girls Club grant to the 2019 grant cycle.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion to allocate this $750 for 2019 grant cycle passes"
   },
   {
-   "motion": "Nominate Minna Scholten as Chair",
-   "outcome": "passed",
+   "motion": "Nominate Minna Scholten for Chair for 2019.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "nominate minna scholten passes"
+   "quote": "chair nominate minna scholten passes"
   },
   {
-   "motion": "Nominate Tyler Hathaway as Secretary",
-   "outcome": "passed",
+   "motion": "Nominate Tyler Hathaway for Secretary for 2019.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "nominate tyler hathaway passes"
   },
   {
-   "motion": "Nominate Thia St. Martin as Treasurer",
-   "outcome": "passed",
+   "motion": "Nominate Thia St. Martin for Treasurer for 2019.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "nominate thia st. martin passes"
   },
   {
-   "motion": "Approve Stephanie Karlson joining Lunenburg Cultural Council",
-   "outcome": "passed",
+   "motion": "Approve Stephanie Karlson joining the Lunenburg Cultural Council.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed (Yes: 7)",
    "procedural": false,
    "quote": "motion to approve stephanie karlson joining lunenburg cultural council yes: 7 passes"
   },
   {
-   "motion": "Form ad hoc committee for Lunenburg Arts Festival with members Laura Kelly, Ashley Faharty, Jamie Merrill Blood, Tyler Hathaway, Laura Brzozosky, Minna Scholten, and Thia St. Martin",
-   "outcome": "passed",
+   "motion": "Form an ad hoc committee for the Lunenburg Arts Festival with the named members.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed (Yes: 7)",
    "procedural": false,
-   "quote": "motion to form ad hoc committee for lunenburg arts festival named members laura kelly, ashley faharty, jamie merrill blood, tyler hathaway, laura brzozosky, minna scholten, thia st. martin yes: 7 passes"
+   "quote": "motion to form ad hoc committee for lunenburg arts festival named members laura kelly, ashley faharty, jamie merrill blood, tyler hathaway, laura brzozosky, minna scholten, thia st. martin"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The \"Grant allocation discussion and vote\" section lists items to deny and items to grant but records no explicit motion statement or vote outcome (passed/failed), only the administrative decisions themselves, and therefore is not included as a recorded vote. The meeting adjourned at 9:33pm with no recorded adjournment motion.",
- "cost_usd": 0.1255075
+ "note": "Text is plain extracted minutes, not a scan. Movers and seconders are not printed for any motion. The grant allocation heading says \"discussion and vote\" and lists denials and grants, but no motion or result is printed, so it is recorded as a decision, not a vote. The \"Read and Approve minutes\" heading and the 9:33pm adjournment have no motion printed, so no procedural votes are recorded. Individual grant requests carry ID numbers but no dollar amounts. Stephanie Karlson and Charles Baldwin are named but did not attend. Officer nomination results are printed only as \"Passes\". The grant applications are not treated as documents.",
+ "cost_usd": 0.00519752,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Minna Scholten",
+   "role": "",
+   "status": "present",
+   "quote": "roll call minna scholten present laura kelly present ashley faharty present"
+  },
+  {
+   "name": "Laura Kelly",
+   "role": "",
+   "status": "present",
+   "quote": "roll call minna scholten present laura kelly present ashley faharty present"
+  },
+  {
+   "name": "Ashley Faharty",
+   "role": "",
+   "status": "present",
+   "quote": "roll call minna scholten present laura kelly present ashley faharty present"
+  },
+  {
+   "name": "Jamie Merrill Blood",
+   "role": "",
+   "status": "present",
+   "quote": "ashley faharty present jamie merrill blood present tyler hathaway present"
+  },
+  {
+   "name": "Tyler Hathaway",
+   "role": "",
+   "status": "present",
+   "quote": "jamie merrill blood present tyler hathaway present laura brzozosky present"
+  },
+  {
+   "name": "Laura Brzozosky",
+   "role": "",
+   "status": "present",
+   "quote": "tyler hathaway present laura brzozosky present thia st. martin present"
+  },
+  {
+   "name": "Thia St. Martin",
+   "role": "",
+   "status": "present",
+   "quote": "laura brzozosky present thia st. martin present pete mccarron present"
+  },
+  {
+   "name": "Pete McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "thia st. martin present pete mccarron present read and appr",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Reasonable accommodations are required for events and should be detailed in event details, following the Chair's discussion with Charles Baldwin about accessibility.",
+   "quote": "spoke with charles baldwin about accessibility - reasonable accommodations required and should be detailed in event details"
+  },
+  {
+   "decision": "The unused $750 from the Boys & Girls Club grant must be used in Cultural Council grants.",
+   "quote": "one grant from last year from boys & girls club didn't use their funds ($750). must be used in cc grants."
+  },
+  {
+   "decision": "Under the grant allocation heading, seven applications are listed to be denied funds and fourteen listed to be granted funds; the minutes print no vote result for this item.",
+   "quote": "deny funds to: lunenburg photographic and drone expo (id 26226)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant funds allotted for granting",
+   "what_was_recorded": "The Treasurer reported the amount allotted for granting.",
+   "figures_as_printed": [
+    "$5618"
+   ],
+   "quote": "treasurer: $5618 is allotted for granting"
+  },
+  {
+   "topic": "Unused grant returned from Boys & Girls Club",
+   "what_was_recorded": "One grant from last year was not used and the funds must be used in Cultural Council grants; the motion allocated them to the 2019 cycle.",
+   "figures_as_printed": [
+    "$750"
+   ],
+   "quote": "one grant from last year from boys & girls club didn't use their funds ($750)."
+  },
+  {
+   "topic": "Total grant funds for 2019",
+   "what_was_recorded": "After adding the $750, the total for 2019 grants was stated.",
+   "figures_as_printed": [
+    "$6368"
+   ],
+   "quote": "$6368 is now the total for 2019"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Unused $750 from last year's Boys & Girls Club grant allocated to the 2019 grant cycle.",
+   "outcome": "passed",
+   "amount_as_printed": "$750",
+   "quote": "motion to allocate this $750 for 2019 grant cycle passes"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Officer reports",
+   "resolution": "reports given; $750 reallocated to 2019 grant cycle",
+   "tags": [
+    "officers",
+    "grants",
+    "treasurer"
+   ],
+   "quote": "officer reports chair: # of applications about the same as last year"
+  },
+  {
+   "topic": "Read and approve minutes",
+   "resolution": "no action recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "read and approve minutes"
+  },
+  {
+   "topic": "Special orders: nominate 2019 officers",
+   "resolution": "Minna Scholten Chair, Tyler Hathaway Secretary, Thia St. Martin Treasurer; each nomination passed",
+   "tags": [
+    "elections",
+    "officers"
+   ],
+   "quote": "special orders nominate officers for 2019"
+  },
+  {
+   "topic": "Unfinished business: membership of Stephanie Karlson",
+   "resolution": "approved, passed 7 yes",
+   "tags": [
+    "membership"
+   ],
+   "quote": "unfinished business motion to approve stephanie karlson joining lunenburg cultural council"
+  },
+  {
+   "topic": "New business: ad hoc committee for Lunenburg Arts Festival",
+   "resolution": "formed with seven named members, passed 7 yes",
+   "tags": [
+    "arts festival",
+    "committee"
+   ],
+   "quote": "new business motion to form ad hoc committee for lunenburg arts festival"
+  },
+  {
+   "topic": "Grant allocation discussion and vote",
+   "resolution": "denials and grant awards listed; no vote result printed",
+   "tags": [
+    "grants",
+    "applications"
+   ],
+   "quote": "grant allocation discussion and vote"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cultural council",
+  "grants",
+  "officer elections",
+  "arts festival",
+  "membership",
+  "accessibility",
+  "2019 budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

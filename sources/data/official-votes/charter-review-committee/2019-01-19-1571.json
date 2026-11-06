@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2019-01-19",
  "docid": "1571",
@@ -12,40 +12,392 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 10/24/2018",
+   "motion": "Approve the minutes of 10/24/2018.",
    "moved_by": "Terri",
    "seconded_by": "Jamie",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "10/24/2018: terri moved to approve, jamie seconded, vote unanimous"
+   "quote": "terri moved to approve, jamie seconded, vote unanimous"
   },
   {
-   "motion": "Approve minutes from 12/12/2018",
+   "motion": "Approve the minutes of 12/12/2018.",
    "moved_by": "Heather",
    "seconded_by": "Jim",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
-   "quote": "12/12/2018: heather moved to approve, jim seconded, vote unanimous"
+   "quote": "heather moved to approve, jim seconded, vote unanimous"
   },
   {
-   "motion": "Approve recommended language for section 2-4 on Second Town Meeting",
+   "motion": "Approve Town Counsel recommended language to section 2-4 so that a second town meeting is treated under the rules of ATM, not STM.",
    "moved_by": "Jim",
    "seconded_by": "Phyllis",
    "outcome": "passed 9-0",
    "procedural": false,
-   "quote": "jim moved to approve, phyllis seconded, vote unanimous (9- 0",
+   "quote": "jim moved to approve, phyllis seconded, vote unanimous (9- 0)",
    "quote_taken_from_text": true
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jim",
    "seconded_by": "Heather",
-   "outcome": "passed unanimously",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "jim moved to adjourn, heather seconded, vote unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1081295
+ "note": "Header reads \"1/9/2019\" and the schedule lists Wed. Jan. 9th as Public Hearing #1, but the meeting date supplied is 2019-01-19; recorded as the 1/9/2019 minutes. Procedural votes were recorded as \"unanimous\" with no count. Discussion sections include items marked \"no discussion\" and items with no motion, so none are recorded as votes. No dollar figures appear in the text. The Town Moderator's written comment is noted but unnamed.",
+ "cost_usd": 0.00961002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Archambault",
+   "role": "Chair (Community Representative)",
+   "status": "present",
+   "quote": "steve archambault, chair (community representative), terri burchfield, vice chair"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Vice Chair (Finance Committee)",
+   "status": "present",
+   "quote": "steve archambault, chair (community representative), terri burchfield, vice chair"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Clerk (Finance Committee)",
+   "status": "present",
+   "quote": "mark erickson, clerk (finance committee), jaime toale (selectmen)"
+  },
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "mark erickson, clerk (finance committee), jaime toale (selectmen)"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "phyllis luck (selectmen), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "phyllis luck (selectmen), nancy gray (community representative)"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "nancy gray (community representative), tanner cole (planning"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "jim laveck (school committee), heather sroka (school committee)"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "jim laveck (school committee), heather sroka (school committee)"
+  },
+  {
+   "name": "Clarence Floyd",
+   "status": "present",
+   "quote": "clarence floyd, 720 goodrich st. spoke in favor of the town clerk being elected."
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland st: asked about opportunities for public comment."
+  },
+  {
+   "name": "Tim Murphy",
+   "status": "present",
+   "quote": "tim murphy, 97 island rd: asked that days be clarified"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Cemetery commission",
+   "status": "present",
+   "quote": "bill tyler, cemetery commission"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane: asked if the document on the website is current."
+  },
+  {
+   "name": "Katie Adams",
+   "status": "present",
+   "quote": "katie adams, williams dr: one option is to not make a change"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, whiting st.: agrees 30 days may too short"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "karin menard requests that parks department section 3-9 (a) be changed to say"
+  },
+  {
+   "name": "Marie Burchfield",
+   "status": "present",
+   "quote": "marie burchfield, emerald place: gave her opinion that no change should be made."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Public comment was kept open for the duration of the discussion portion of the agenda.",
+   "quote": "we decided to keep public comment open for the duration of the discussion portion of the agenda."
+  },
+  {
+   "decision": "The Select Board change item was marked red so the town can vote on the proposed change.",
+   "quote": "item marked as red so town can vote on the proposed change."
+  },
+  {
+   "decision": "Steve to send the commission a PDF of Town Counsel's proposed appointments language.",
+   "quote": "steve to send to the commission a pdf of town counsel"
+  },
+  {
+   "decision": "Steve to check whether the Town Clerk position is union or non-union.",
+   "quote": "steve to check to see if it"
+  },
+  {
+   "decision": "Steve to modify the proposed Section 4-2 (i) change to read 'subject to written policies, set forth by elected commissions.'",
+   "quote": "steve to modify the proposed change to say,"
+  },
+  {
+   "decision": "Change specific references to months so that they are in days.",
+   "quote": "change specific references to months so that they are in days."
+  },
+  {
+   "decision": "Day or days to be defined as calendar days, as discussed previously.",
+   "quote": "day or days refer to calendar days, defined in terms: discussed previously."
+  },
+  {
+   "decision": "Committee determined it did not previously vote to include a minimum write-in vote requirement.",
+   "quote": "we clarified previous discussions on minimum write-in votes and determined we did not vote to include this."
+  },
+  {
+   "decision": "Steve asked that recommended changes be forwarded to him.",
+   "quote": "steve asked that recommended changes be forwarded to him."
+  },
+  {
+   "decision": "Steve asked everyone to submit comments or written input to the committee and asked members to reach out to their respective commissions.",
+   "quote": "steve commented on the opportunities for further discussion and asked everyone to"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Select Board change: cost to the town",
+   "what_was_recorded": "Phyllis asked whether changing to Select Board has a cost to the town; the committee thought not. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "phyllis asked if there is a cost to the town; we think not."
+  },
+  {
+   "topic": "Town Clerk pay",
+   "what_was_recorded": "Dave Rodgers said the Town Clerk is underpaid, and it was noted the position is the only elected position that is paid. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "he also said it is underpaid."
+  },
+  {
+   "topic": "Cemetery building funded from own funds",
+   "what_was_recorded": "Bill Tyler said the Cemetery Commission is constructing a building from its own funds and wants it dedicated to its use. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a building they are constructing from their own funds be dedicated to their use"
+  },
+  {
+   "topic": "Town Manager budget role for shared resources",
+   "what_was_recorded": "Jamie said the Town Manager handles shared resources across the town through the budget process. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "jamie pointed out that the town manager has responsibility for shared resources across the town through the budget process."
+  },
+  {
+   "topic": "Facilities jurisdiction cost implications",
+   "what_was_recorded": "The Town Manager raised concern about insurance and additional equipment, such as a dedicated backhoe, if commissions had jurisdiction over facilities. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "also concerned about other implications such as insurance and additional equipment such as a dedicated backhoe."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Clarence Floyd",
+   "stated_role": "",
+   "topic": "Town Clerk elected; keep Board of Selectmen name",
+   "quote": "clarence floyd, 720 goodrich st. spoke in favor of the town clerk being elected. he also sees no reason to change bos to select board."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Opportunities for public comment; Town Clerk election and pay",
+   "quote": "dave rodgers, 82 highland st: asked about opportunities for public comment."
+  },
+  {
+   "speaker": "Tim Murphy",
+   "stated_role": "",
+   "topic": "Days wording; Town Manager selection committee names",
+   "quote": "tim murphy, 97 island rd: asked that days be clarified"
+  },
+  {
+   "speaker": "Bill Tyler",
+   "stated_role": "Cemetery commission",
+   "topic": "Cemetery changes and section 4-2 (i)",
+   "quote": "bill tyler, 5 graham st: clarified cemetery changes"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "",
+   "topic": "Whether draft is current; minimum vote and super majority",
+   "quote": "carl luck, 50 sunset lane: asked if the document on the website is current."
+  },
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "",
+   "topic": "Resist changes not needed; Town Clerk and jurisdiction",
+   "quote": "katie adams, williams dr: one option is to not make a change; we should resist changes if they"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Appointments 30-day timeframe and pool; Town Clerk; write-in votes",
+   "quote": "dave passios, whiting st.: agrees 30 days may too short"
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "",
+   "topic": "Parks section 3-9 (a) to say 5 members; voter requirement; write-in votes",
+   "quote": "karin menard requests that parks department section 3-9 (a) be changed to say"
+  },
+  {
+   "speaker": "Marie Burchfield",
+   "stated_role": "Emerald Place",
+   "topic": "Opposed any change to write-in vote requirement",
+   "quote": "marie burchfield, emerald place: gave her opinion that no change should be made."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 PM",
+   "quote": "1. call to order: 7:00 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved minutes of 10/24/2018 and 12/12/2018",
+   "quote": "2. approval of minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public hearing on draft charter",
+   "resolution": "report read; written comments read; public comment taken and held open",
+   "quote": "3. public hearing on draft charter",
+   "tags": [
+    "public hearing",
+    "draft charter"
+   ]
+  },
+  {
+   "topic": "Discussion of comments and proposed changes",
+   "resolution": "Select Board item marked red; Second Town Meeting approved 9-0; Town Clerk, voter requirement, appointments, Town Manager and facilities items continued; write-in item not included",
+   "quote": "deliberate, amend and vote of topics addressed in board/public comments.",
+   "tags": [
+    "select board",
+    "town clerk",
+    "town meeting",
+    "appointments",
+    "town manager",
+    "cemetery commission",
+    "write-in votes"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and public outreach",
+   "resolution": "2019 meeting dates reviewed through April 24; outreach requested",
+   "quote": "5. meeting schedule & further public outreach",
+   "tags": [
+    "meeting schedule",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:51 PM",
+   "quote": "6. adjournment: 9:51 pm jim moved to adjourn, heather seconded, vote unanimous",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft charter (current version on the website)",
+   "where": "text",
+   "quote": "asked if the document on the website is current."
+  },
+  {
+   "name": "Charter Committee Report (current version)",
+   "where": "text",
+   "quote": "charter committee report: steve (chair) read the current version of the committee report into"
+  },
+  {
+   "name": "Written comments on draft Charter from Jim, the Town Moderator and Bill Tyler",
+   "where": "text",
+   "quote": "steve read into the record comments from jim, from the town moderator and from bill tyler, cemetery commission."
+  },
+  {
+   "name": "Town Counsel recommended language to section 2-4",
+   "where": "text",
+   "quote": "steve shared town counsel recommended language to section 2-4"
+  },
+  {
+   "name": "Town Counsel proposed language on appointments, section 7-8 (f)",
+   "where": "text",
+   "quote": "town counsel has proposed language."
+  },
+  {
+   "name": "1935 grant of land from Dickinson",
+   "where": "text",
+   "quote": "steve referenced 1935 grant of land from dickinson."
+  },
+  {
+   "name": "MGL (statute governing boards and commissions)",
+   "where": "text",
+   "quote": "karin menard referenced that mgl governs what some boards and commissions are responsible for."
+  },
+  {
+   "name": "2019 Proposed Charter Review Meeting Dates",
+   "where": "text",
+   "quote": "2019 proposed charter review meeting dates:"
+  }
+ ],
+ "tags": [
+  "charter review",
+  "public hearing",
+  "select board",
+  "town clerk",
+  "town meeting",
+  "appointments",
+  "town manager",
+  "cemetery commission",
+  "write-in votes",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

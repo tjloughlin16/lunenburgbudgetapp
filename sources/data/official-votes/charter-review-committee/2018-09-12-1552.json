@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-09-12",
  "docid": "1552",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of August 8 and 22",
+   "motion": "Approve the minutes of August 8 and August 22.",
    "moved_by": "J. Toale",
    "seconded_by": "T. Burchfield",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "j. toale moved to approve minutes, second by t. burchfield, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Burchfield",
    "seconded_by": "M. Erickson",
    "outcome": "not stated",
@@ -29,6 +29,207 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0962735
+ "note": "Single text extraction, no scan issues. The minutes record the August 8 and 22 minutes approval twice, once as moved by M. Erickson (seconded by J. Taole) and once as moved by J. Toale (seconded by T. Burchfield, all aye); recorded here once, using the second entry. The name appears as both J. Toale and J. Taole in the text; both printed as-is. No numeric vote count is printed for the approval (all aye only). The adjournment motion has no recorded result. No dollar figures appear in the text. No documents list is printed.",
+ "cost_usd": 0.00468372,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather",
+   "status": "absent",
+   "quote": "heather absent; all others present"
+  },
+  {
+   "name": "B. Ebersole",
+   "status": "present",
+   "quote": "discussion with b. ebersole, m. erickson, and t. burchfield: in the conversion from the town websites"
+  },
+  {
+   "name": "M. Erickson",
+   "status": "present",
+   "quote": "m. erickson motion to approve minutes, second by j. taole"
+  },
+  {
+   "name": "T. Burchfield",
+   "status": "present",
+   "quote": "j. toale moved to approve minutes, second by t. burchfield, all aye."
+  },
+  {
+   "name": "J. Toale",
+   "status": "present",
+   "quote": "j. toale moved to approve minutes, second by t. burchfield, all aye."
+  },
+  {
+   "name": "J. Taole",
+   "status": "present",
+   "quote": "m. erickson motion to approve minutes, second by j. taole"
+  },
+  {
+   "name": "M. Jeffreys",
+   "status": "present",
+   "quote": "m. jeffreys volunteered to write the pro for change to select board."
+  },
+  {
+   "name": "S. Archambault",
+   "status": "present",
+   "quote": "s. archambault is under the impression that we were seeking to get two town meetings."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "status": "not stated",
+   "quote": "nathan lockwood will attend next meeting to discuss rank choice voting"
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "not stated",
+   "quote": "phyllis and carl luck will attend to discuss write-in voting requirements"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "not stated",
+   "quote": "phyllis and carl luck will attend to discuss write-in voting requirements"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Item 5A, discussion of voting requirements for write-in candidates when there isn't a name on the ballot, was postponed.",
+   "quote": "a. when there isn't a name on the ballot postponed"
+  },
+  {
+   "decision": "M. Jeffreys volunteered to write the pro-change argument (about 250 words) to the Select Board.",
+   "quote": "m. jeffreys volunteered to write the pro for change to select board."
+  },
+  {
+   "decision": "M. Jeffreys volunteered to write the against argument to the change (Town Clerk to be appointed instead of elected) for the Town Clerk.",
+   "quote": "m. jeffreys volunteered to write the against to the change to the town clerk to appointed instead of elected."
+  },
+  {
+   "decision": "The group will seek public input for a strong opinion against the proposed change.",
+   "quote": "the group will seek the public for a strong opinion against this."
+  },
+  {
+   "decision": "B. Ebersole will follow up with Town Counsel on the differences between Annual Town Meeting and Special Town Meeting.",
+   "quote": "b. ebersole will follow-up with town counsel to delineate the differences between annual town meeting and special town meeting"
+  },
+  {
+   "decision": "B. Ebersole recommended adding a future agenda item on employment.",
+   "quote": "b. ebersole recommends that we add a future agenda of an employment topic."
+  },
+  {
+   "decision": "B. Ebersole will follow up with the Town Clerk to help finalize the meeting calendar.",
+   "quote": "b. ebersole will follow up with town clerk to help finalize the calendar."
+  },
+  {
+   "decision": "Next meeting set for September 26; the first October meeting will discuss employment.",
+   "quote": "september 26 first meeting in october to discuss employment"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "noted one absence (Heather); all others present",
+   "quote": "heather absent; all others present",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "2. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approve minutes",
+   "resolution": "approved August 8 and 22 minutes; discussion on minutes not transferred from town websites",
+   "quote": "j. toale moved to approve minutes, second by t. burchfield, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Discuss meeting and outreach schedule",
+   "resolution": "noted upcoming presenters on rank choice voting and write-in requirements",
+   "quote": "nathan lockwood will attend next meeting to discuss rank choice voting",
+   "tags": [
+    "outreach",
+    "ranked choice voting",
+    "write-in"
+   ]
+  },
+  {
+   "topic": "Discuss voting requirements for write-in candidates",
+   "resolution": "postponed",
+   "quote": "a. when there isn't a name on the ballot postponed",
+   "tags": [
+    "write-in candidates"
+   ]
+  },
+  {
+   "topic": "Continued discussion on proposed charter changes",
+   "resolution": "no vote; assignments to write pro and against statements; discussion of vacancies, appointments, employment and town meeting provisions",
+   "quote": "t. burchfield suggested that we should task out the strong issues to work through language.",
+   "tags": [
+    "charter changes",
+    "vacancies",
+    "appointments",
+    "employment",
+    "town meeting",
+    "public outreach"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "next meeting set for September 26; October meeting on employment",
+   "quote": "september 26 first meeting in october to discuss employment",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn at 7:54PM; result not recorded",
+   "quote": "motion by t. burchfield, second by m. erickson. 7:54pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Working copy of the charter",
+   "where": "text",
+   "quote": "in working copy of the charter, c was deleted but in the current draft, it's still there."
+  },
+  {
+   "name": "Current draft of the charter",
+   "where": "text",
+   "quote": "in working copy of the charter, c was deleted but in the current draft, it's still there."
+  },
+  {
+   "name": "Minutes from 22AUG (calendar)",
+   "where": "text",
+   "quote": "calendar is in minutes from 22aug"
+  }
+ ],
+ "tags": [
+  "charter review",
+  "ranked choice voting",
+  "write-in candidates",
+  "town meeting",
+  "appointments and vacancies",
+  "employment",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

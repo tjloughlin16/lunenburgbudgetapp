@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2018-03-26",
  "docid": "1545",
@@ -12,31 +12,147 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of 1/24/18",
+   "motion": "Approve the minutes of 1/24/18.",
    "moved_by": "Steve",
    "seconded_by": "Paula",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "steve motioned to approve the minutes of 1/24/18. paula seconded. motion passed unanimously."
   },
   {
-   "motion": "recommend to the Board of Selectmen to approve the proposed Comcast contract",
+   "motion": "Recommend to the Board of Selectmen that it approve the proposed Comcast contract.",
    "moved_by": "Steve Walker",
    "seconded_by": "Paula",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "steve walker made a motion to recommend to the board of selectmen to approve the proposed contract. paula seconded. motion passed unanimously."
   },
   {
-   "motion": "approve the minutes",
+   "motion": "Approve the draft minutes read to the Committee.",
    "moved_by": "Steve Walker",
    "seconded_by": "Tom Alonzo",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "steve walker made a motion to approve the minutes, tom alonzo seconded. passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR of a scan; minor capitalization variations present but readable. Three votes recorded.",
- "cost_usd": 0.0816015
+ "note": "Single OCR page (Vision). No roll call or attendance list, so attendance is inferred from who spoke or moved; status is marked present only for those acting in the minutes. A stray 'None.' appears above the Minutes/Correspondence heading with no clear label; treated as no public comment and no transfers. Minutes do not identify which meeting's minutes were approved in the last motion. The quoted 'Motion passed unanimously' results are recorded as 'passed' since no count was printed. Adjournment at 6:20 pm had no vote recorded and is not listed as a topic.",
+ "cost_usd": 0.0034879200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "respectfully submitted, paula bertram"
+  },
+  {
+   "name": "Steve Walker",
+   "status": "present",
+   "quote": "steve walker made a motion to recommend to the board of selectmen to approve the proposed contract."
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo reviewed the option of a fiber video return line or digital upgrade and determined that the digital upgrade didn't make sense."
+  },
+  {
+   "name": "Steve Malandrinos",
+   "status": "present",
+   "quote": "steve malandrinos informed the committee that the video return line will come into the head end room at the middle/high school."
+  },
+  {
+   "name": "Paula",
+   "status": "present",
+   "quote": "paula read the draft minutes to the committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tom Alonzo reviewed a fiber video return line against a digital upgrade and determined the digital upgrade did not make sense; the fiber video return line option was taken forward.",
+   "quote": "tom alonzo reviewed the option of a fiber video return line or digital upgrade and determined that the digital upgrade didn't make sense."
+  },
+  {
+   "decision": "Appointment with the Selectmen set for April 3, 2018 to outline the proposed contract and officially make the recommendation; posted meeting, all committee members encouraged to attend.",
+   "quote": "an appointment with the selectmen has been scheduled for april 3, 2018 to outline the proposed contract and officially"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast capital payment",
+   "what_was_recorded": "The proposed Comcast contract includes capital of $170K, paid 50% in year 1, 25% in year 2 and the remaining 25% in year 3.",
+   "figures_as_printed": [
+    "$170K",
+    "50%",
+    "25%",
+    "25%"
+   ],
+   "quote": "capital of $170k 50% to be paid in year 1, 25% in year 2 and the remaining 25% in the third year"
+  },
+  {
+   "topic": "Comcast subscriber fees",
+   "what_was_recorded": "The proposed Comcast contract includes a payment of 5% of the Subscriber Fees.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "5% of the subscriber fees"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes/Correspondence: approval of 1/24/18 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "steve motioned to approve the minutes of 1/24/18. paula seconded. motion passed unanimously."
+  },
+  {
+   "topic": "Discuss Comcast Contract Proposal",
+   "resolution": "recommended to Board of Selectmen for approval",
+   "tags": [
+    "Comcast",
+    "contract",
+    "cable franchise",
+    "fiber video return line"
+   ],
+   "quote": "committee discussed latest contract proposal from comcast."
+  },
+  {
+   "topic": "Approval of draft minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "paula read the draft minutes to the committee."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Comcast contract proposal (latest)",
+   "where": "text",
+   "quote": "committee discussed latest contract proposal from comcast."
+  },
+  {
+   "name": "Two Comcast side letters (Standard Senior Citizens Discount; High Definition Programing)",
+   "where": "text",
+   "quote": "comcast has provided two side letters regarding:"
+  }
+ ],
+ "tags": [
+  "cable TV",
+  "Comcast contract",
+  "franchise",
+  "public access",
+  "Board of Selectmen",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

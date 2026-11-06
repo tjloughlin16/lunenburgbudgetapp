@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2018-06-21",
  "docid": "2847",
@@ -12,79 +12,422 @@
  },
  "votes": [
   {
-   "motion": "Move the Trust Funds agenda item forward to be discussed first",
+   "motion": "Move the 'Trust Funds' agenda item forward to be the first item discussed.",
    "moved_by": "Harry",
    "seconded_by": "Lars",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "harry made the motion to do this. lars seconded the motion. the motion was unanimously approved."
   },
   {
-   "motion": "Approve May 17, 2018 minutes as amended",
+   "motion": "Approve the May 17, 2018 minutes as amended.",
    "moved_by": "Kate",
    "seconded_by": "Lars",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kate made the motion to accept as amended. the motion was seconded by lars. the motion was unanimously approved."
   },
   {
-   "motion": "Re-elect Dick Mailloux as Chair",
-   "moved_by": "Harry",
+   "motion": "Re-elect Dick Mailloux as Chair (nominated by Harry).",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dick mailloux will continue as the chair. he was nominated by harry. seconded by kate. unanimously approved."
   },
   {
-   "motion": "Re-elect Harry Kubetz as Vice-Chair",
-   "moved_by": "Dick",
+   "motion": "Re-elect Harry Kubetz as Vice-Chair (nominated by Dick).",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "harry kubetz will continue as vice-chair. he was nominated by dick. seconded by kate. unanimously approved."
   },
   {
-   "motion": "Re-elect Harry Kubetz as Secretary",
-   "moved_by": "Lars",
+   "motion": "Re-elect Harry Kubetz as Secretary (nominated by Lars).",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "harry kubetz will continue as secretary. he was nominated by lars. seconded by kate. unanimously approved."
   },
   {
-   "motion": "Suspend the Budget Subcommittee",
+   "motion": "Suspend the Budget Subcommittee.",
    "moved_by": "Lars",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "it was proposed by lars that the budget subcommittee be suspended. the proposal was seconded by kate. unanimously approved."
   },
   {
-   "motion": "Establish Personnel Subcommittee composed of Dick, Maia, Kate, and Bob",
+   "motion": "Form the Personnel Subcommittee of Dick, Maia, Kate and Bob.",
    "moved_by": "Harry",
    "seconded_by": "Lars",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the personnel subcommittee will be composed of dick, maia, kate and bob. harry made the motion. seconded by lars. unanimously approved."
   },
   {
-   "motion": "Establish Friends Endowment Subcommittee composed of Dick and Harry",
+   "motion": "Form the Friends Endowment Subcommittee of Dick and Harry.",
    "moved_by": "Kate",
    "seconded_by": "Lars",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the friends endowment subcommittee will be composed of dick and harry. kate made the motion. seconded by lars. unanimously approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Harry",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by harry. motion seconded by kate. motion unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.037542900000000004
+ "note": "Clean text extract, not a scan; all votes are readable. Trustee roles other than Harry Kubetz (Secretary, Trustee) are not printed. Richard Letarte's title is not printed and he is listed as a guest with no recorded statement; Karen Brochu is likewise listed without a recorded statement. The Director's Report has a 'Staff' heading with no content under it. The last item in the referenced-documents block reads only 'LPLBOT' and was not recorded as a document. Deferrals of the four policy items were recorded without a vote.",
+ "cost_usd": 0.00896722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, lars widstrand, bob conroy, harry kubetz"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, lars widstrand, bob conroy, harry kubetz"
+  },
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, lars widstrand, bob conroy, harry kubetz"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "martha moore - director lpl"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, lars widstrand, bob conroy, harry kubetz"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, lars widstrand, bob conroy, harry kubetz"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Secretary, Trustee",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, kate mccarron, martha moore - director lpl, lars widstrand, bob conroy, harry kubetz"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "absent",
+   "quote": "donna saiia, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "donna saiia, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "donna saiia, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Brian Jamros",
+   "role": "VP Bartholomew Investments",
+   "status": "present",
+   "quote": "brian jamros, vp bartholomew investments; myleen mallari, treasurer, town of lunenburg"
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Treasurer, Town of Lunenburg",
+   "status": "present",
+   "quote": "myleen mallari, treasurer, town of lunenburg"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Director, Accounting Dept, Town of Lunenburg",
+   "status": "present",
+   "quote": "karen brochu, director, accounting dept, town of lunenburg"
+  },
+  {
+   "name": "Richard Letarte",
+   "status": "present",
+   "quote": "and richard letarte, dick mailloux recommended that we move the agenda item"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Room Use Policy Update deferred to the September 20, 2018 meeting.",
+   "quote": "room use policy update- deferred to our september 20, 2018 meeting."
+  },
+  {
+   "decision": "Parking Policy Update deferred to the September 20, 2018 meeting.",
+   "quote": "parking policy update- deferred to our september 20, 2018 meeting."
+  },
+  {
+   "decision": "Safety Policy deferred to the September 20, 2018 meeting.",
+   "quote": "safety policy- deferred to our september 20, 2018 meeting."
+  },
+  {
+   "decision": "LED Update deferred to the September 20, 2018 meeting.",
+   "quote": "led update- deferred to our september 20, 2018 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2018 budget spending",
+   "what_was_recorded": "Director reported the library is 93% spent with large invoices still to pay, so nearly all the budget should be spent by fiscal year-end.",
+   "figures_as_printed": [
+    "93%"
+   ],
+   "quote": "we are 93% spent and we have some large invoices yet to pay, so we should be spending virtually all of our budget by the fiscal year-end."
+  },
+  {
+   "topic": "FY 2018 line-item moves to salary lines",
+   "what_was_recorded": "Excess funds in some budget lines such as Electricity are being moved to salary lines to cover previously discovered salary shortfalls; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "excess funds in some budget lines (such as electricity) are being moved to salary lines to make up for previously-discovered salary shortfalls."
+  },
+  {
+   "topic": "FY 2019 salary shortfalls",
+   "what_was_recorded": "Salary shortfalls already exist for FY 2019 and the Director is trying to get the Town to cover them with additional funds; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "there are already some salary shortfalls that martha is attempting to have the town cover with additional funds."
+  },
+  {
+   "topic": "Trust Funds rate of return",
+   "what_was_recorded": "Bartholomew explained the library's realized yield on trust funds under its control was a low 1.72% because of a very conservative risk profile set by the Town.",
+   "figures_as_printed": [
+    "1.72%"
+   ],
+   "quote": "explained why the rate of return (yield) that the lpl realized on the money that bartholomew had under its control was currently a low 1.72%"
+  },
+  {
+   "topic": "Touchstone-invested trust funds",
+   "what_was_recorded": "Contrast was drawn with funds Touchstone invests, perhaps because of how a gift was designated.",
+   "figures_as_printed": [
+    "$18,000"
+   ],
+   "quote": "perhaps because of the way the $18,000 was gifted and designated"
+  },
+  {
+   "topic": "Friends book and bake sale revenue",
+   "what_was_recorded": "The Friends Book & Bake sale generated revenue of $2,434.",
+   "figures_as_printed": [
+    "$2,434"
+   ],
+   "quote": "the book & bake sale generated $2,434 in revenue."
+  },
+  {
+   "topic": "Friends fundraiser plans",
+   "what_was_recorded": "Possible Friends fundraisers were discussed, a Miniature Golf and a Cookie Walk; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "there are possible plans for a miniature golf fund raiser as well as a cookie walk fund raiser."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Excess funds in some budget lines (such as Electricity) moved to salary lines to cover previously discovered salary shortfalls.",
+   "outcome": "in progress, as reported; no amount printed",
+   "quote": "excess funds in some budget lines (such as electricity) are being moved to salary lines to make up for previously-discovered salary shortfalls."
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "General public comment",
+   "quote": "public comment - no comment."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment",
+   "quote": "public comment - no comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Trust Funds (moved to first item)",
+   "resolution": "presentation and discussion; no action recorded",
+   "quote": "at the invitation of the lplbots and myleen mallari, brian jamros gave a presentation of bartholomew",
+   "tags": [
+    "trust funds",
+    "investments",
+    "Bartholomew",
+    "town treasurer"
+   ]
+  },
+  {
+   "topic": "Re-introduction of new and re-elected members",
+   "resolution": "introductions made",
+   "quote": "each trustee individually introduced themselves",
+   "tags": [
+    "board membership"
+   ]
+  },
+  {
+   "topic": "Approval of May 17, 2018 minutes",
+   "resolution": "approved as amended",
+   "quote": "approval of may 17, 2018 minutes as amended (there were two amendments)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Board of Trustees re-organization and 2018-2019 meeting calendar",
+   "resolution": "officers re-elected; subcommittees set; calendar presented",
+   "quote": "dick provided a 2018/19 calendar showing the lplbot meetings which are scheduled for the 3rd thursday of each month from september 2018 through june 2019.",
+   "tags": [
+    "officers",
+    "subcommittees",
+    "meeting calendar"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; budget and staffing reported",
+   "quote": "director's report (presented by martha)",
+   "tags": [
+    "budget",
+    "staffing",
+    "programs",
+    "technology",
+    "building maintenance"
+   ]
+  },
+  {
+   "topic": "Room Use Policy Update",
+   "resolution": "deferred to September 20, 2018",
+   "quote": "room use policy update- deferred to our september 20, 2018 meeting.",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "Parking Policy Update",
+   "resolution": "deferred to September 20, 2018",
+   "quote": "parking policy update- deferred to our september 20, 2018 meeting.",
+   "tags": [
+    "policy",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Safety Policy",
+   "resolution": "deferred to September 20, 2018",
+   "quote": "safety policy- deferred to our september 20, 2018 meeting.",
+   "tags": [
+    "policy",
+    "safety"
+   ]
+  },
+  {
+   "topic": "LED Update",
+   "resolution": "deferred to September 20, 2018",
+   "quote": "led update- deferred to our september 20, 2018 meeting.",
+   "tags": [
+    "LED",
+    "building"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "received; fundraisers discussed",
+   "quote": "the book & bake sale generated $2,434 in revenue.",
+   "tags": [
+    "friends of the library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action; absence noted",
+   "quote": "dick mentioned that he will be unable to attend the lplbot meeting on september 20, 2018.",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "listed (the four deferred policy items)",
+   "quote": "agenda items for upcoming meetings",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:13 p.m.",
+   "quote": "meeting closed at 8:13 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBOT Meeting Agenda for June 21, 2018",
+   "where": "list",
+   "quote": "lplbot meeting agenda for june 21, 2018"
+  },
+  {
+   "name": "LPLBoT Draft Minutes for May 17, 2018",
+   "where": "list",
+   "quote": "lplbot draft minutes for may 17, 2018"
+  },
+  {
+   "name": "Directors Report of June 21, 2018",
+   "where": "list",
+   "quote": "directors report of june 21, 2018"
+  },
+  {
+   "name": "Children's Area Report for the month of May 2018",
+   "where": "list",
+   "quote": "children's area report for the month of may 2018"
+  },
+  {
+   "name": "Young Adult Services Report June 2018",
+   "where": "list",
+   "quote": "young adult services report june 2018"
+  },
+  {
+   "name": "2018/19 Calendar",
+   "where": "list",
+   "quote": "dick provided a 2018/19 calendar showing the lplbot meetings which are scheduled for the 3rd thursday"
+  },
+  {
+   "name": "Bartholomew bound handout about the firm, its management team, reporting, governing laws and fee schedule",
+   "where": "text",
+   "quote": "he provided a bound handout about his firm, its management team, its reporting"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "trust funds",
+  "investments",
+  "budget",
+  "officer elections",
+  "subcommittees",
+  "policy deferrals",
+  "friends of the library",
+  "staffing",
+  "salary shortfalls"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

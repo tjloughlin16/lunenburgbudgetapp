@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2018-01-24",
  "docid": "1544",
@@ -12,23 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 12/18/17 with the addition of Paula being present",
-   "moved_by": "Steve",
-   "seconded_by": "Paula",
+   "motion": "Approve the minutes of 12/18/17 with the addition of Paula being present.",
+   "moved_by": "Steve Walker",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "steve motioned to approve the minutes of 12/18/17 with the addition of adding paula being present. paula seconded. motion passed unanimously."
+   "quote": "steve motioned to approve the minutes of 12/18/17 with the addition of adding paula being present. paula seconded. motion passed unanimously.",
+   "seconded_by": "Paula Bertram"
   },
   {
-   "motion": "Authorize Tom Alonzo and Bill Hewig to contact Comcast to determine what is included in the digital upgrade and what the town would be required to purchase to comply",
+   "motion": "Authorize Tom Alonzo and Bill Hewig to contact Comcast to determine what is included in the digital upgrade and what the Town would be required to purchase to comply.",
    "moved_by": "Paula Bertram",
-   "seconded_by": "Steve Walker",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "paula bertram made a motion to authorize tom alonzo/bill hewig to contact comcast to determine what is included in the digital upgrade and what would the town be required to purchase to comply. steve walker seconded, passed unanimously."
+   "quote": "paula bertram made a motion to authorize tom alonzo/bill hewig to contact comcast to determine what is included in the digital upgrade",
+   "seconded_by": "Steve Walker"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1279835
+ "note": "OCR text (macOS Vision) with visible errors (e.g., 'trom', 'MINENRURG TOWN'). The received-and-filed stamp is partly garbled but reads 'RECEIVED & FILED MAR 27 2018' and 'TOWN CLERK OFFICE'. No roll call is printed, so attendance status is inferred from participation except where marked 'not stated'. The minutes do not state a vote on the side-letter terms; that is recorded as a decision. Adjournment at 6:37 pm is printed with no motion. Attached sample letter is referenced but not included in the text.",
+ "cost_usd": 0.00416532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rhonda Lisio",
+   "role": "",
+   "status": "present",
+   "quote": "rhonda lisio stated that the comments made by paula bertram relative to the inability to broadcast live trom locations"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "paula bertram made a motion to authorize tom alonzo/bill hewig to contact comcast to determine what is included in the digital upgrade"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "",
+   "status": "present",
+   "quote": "steve walker indicated that currently pacc is able to broadcast from other"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "tom alonzo pointed out that all issues will be discussed and reviewed, when hd becomes available"
+  },
+  {
+   "name": "Bill Hewig",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney hewig pointed out that side letters are not a legal obligation."
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "",
+   "status": "not stated",
+   "quote": "mr. malandrinos added that currently the upload speeds at the high school excellent"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee found the terms of the two Comcast side letters acceptable, and Bill Hewig will work with Comcast to draft them.",
+   "quote": "following discussion the committee found that the terms of the side letters are acceptable. bill hewig will work with comcast to draft."
+  },
+  {
+   "decision": "The Committee agreed to a meeting in two years to discuss HD/EPG.",
+   "quote": "the committee was agreeable to a meeting in two years to discuss hd/epg."
+  },
+  {
+   "decision": "The next Committee meeting should be to approve contract terms and recommend acceptance to the Board of Selectmen.",
+   "quote": "the next time the committee meets it should be to approve contract terms and recommend acceptance to the board of selectmen."
+  },
+  {
+   "decision": "The next cable meeting was tentatively scheduled for Wednesday, January 7, 2018.",
+   "quote": "the next cable meeting was tentatively scheduled for wednesday, january 7, 2018."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast counter offer: capital payment schedule",
+   "what_was_recorded": "Comcast's counter offer proposed paying 50% of the $170K capital in year 1 and the balance two or three years later.",
+   "figures_as_printed": [
+    "50%",
+    "$170K"
+   ],
+   "quote": "(1) pay 50% of our $170k capital in year 1, and the balance 2 or 3 years later;"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Live broadcast from locations other than Town Hall (clarification)",
+   "resolution": "no action",
+   "tags": [
+    "live broadcast",
+    "PACC",
+    "vpn"
+   ],
+   "quote": "rhonda lisio stated that the comments made by paula bertram relative to the inability to broadcast live trom locations"
+  },
+  {
+   "topic": "Minutes of 12/18/17",
+   "resolution": "approved with addition of Paula being present",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "steve motioned to approve the minutes of 12/18/17 with the addition of adding paula being present."
+  },
+  {
+   "topic": "Comcast contract proposal and side letters",
+   "resolution": "authorized inquiry to Comcast on digital upgrade; side letter terms found acceptable; drafting by Bill Hewig",
+   "tags": [
+    "Comcast",
+    "side letters",
+    "HD/EPG",
+    "SD",
+    "senior discount",
+    "capital"
+   ],
+   "quote": "discuss comcast contract proposal - tom indicated we would be discussing the two side letters received from comcast"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sample Standard Senior Citizen Discount side letter (attached)",
+   "where": "text",
+   "quote": "give a standard senior citizen discount side letter [see attached sample letter]"
+  },
+  {
+   "name": "Two side letters received from Comcast",
+   "where": "text",
+   "quote": "discuss comcast contract proposal - tom indicated we would be discussing the two side letters received from comcast"
+  },
+  {
+   "name": "Committee's counter offer (email to Greg Franks of Comcast, minutes of 12/18/17)",
+   "where": "text",
+   "quote": "bill hewig had sent the committee's counter offer via email to greg franks of comcast (minutes of 12/18/17)."
+  },
+  {
+   "name": "Comcast counter offer",
+   "where": "text",
+   "quote": "comcast's counter offer is to:"
+  }
+ ],
+ "tags": [
+  "cable franchise",
+  "Comcast",
+  "PEG access",
+  "side letters",
+  "HD/EPG",
+  "digital upgrade",
+  "live broadcast",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached sample letter"
+ },
+ "dropped_unquoted_by_field": {}
 }

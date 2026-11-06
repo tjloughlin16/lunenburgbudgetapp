@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-01-08",
  "docid": "5145",
@@ -12,29 +12,478 @@
  },
  "votes": [
   {
-   "motion": "Approve the earth removal permit and delay the closure approval pending approval from the Planning Board",
+   "motion": "Approve the minutes of October 9, October 11 and November 6, 2018 (motion text not printed).",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of october 9, october 11 and november 6, 2018 were approved."
+  },
+  {
+   "motion": "Approve the earth removal permit for PSG Realty 393-435 LLC and delay the closure approval pending approval from the Planning Board.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2\": p. luck to approve the earth removal permit and delay the closure approval pending approval from the planning board vote: all in favor"
+   "quote": "to approve the earth removal permit and delay the closure approval pending approval from the planning board vote: all in favor"
   },
   {
-   "motion": "Take no action on the Right of First Refusal for the C. 61 property located at 994 Northfield Road",
+   "motion": "Take no action on the Right of First Refusal for the Chapter 61 property located at 994 Northfield Road.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2\"d: p. luck to take no action on the right of first refusal for the c. 61 property located at 994 northfield road vote: all in favor"
+   "quote": "to take no action on the right of first refusal for the c. 61 property located at 994 northfield road vote: all in favor"
   },
   {
-   "motion": "Place ballot questions regarding the five uses of adult recreational marijuana on the May 18, 2019 Annual Town Election ballot",
-   "outcome": "passed 3-1",
+   "motion": "Vote on the Planning Board's request regarding a ballot question on prohibiting marijuana establishments (motion text not printed).",
+   "outcome": "3 in favor, 1 against (Luck)",
    "procedural": false,
    "quote": "vote: 3 in favor, 1 against (luck)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document scanned with macOS Vision; vote 3 (marijuana ballot questions) was not recorded with formal motion or seconding information in the minutes, outcome recorded with Ms. Luck as sole dissenter",
- "cost_usd": 0.13477250000000002
+ "note": "OCR text of a mixed set of pages: the Select Board and Planning Board passages run together, the page headers are missing, and several passages are out of order (pages 4-5 and 9-10). The 3-1 marijuana vote has a tally but no printed motion or mover. The minutes approval has no motion or mover printed. The Vanto Vices heading is cut off. Pete Stella and Peter Stella appear at the same address and may be one person; both are listed as printed. The Board member appears as Ms. Luck and as P. Luck. Some OCR errors are kept as printed (for example 2\"d and ad hoe). Attendance for Board members is inferred from their participation and votes.",
+ "cost_usd": 0.015567120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman, Lunenburg Board of Selectmen",
+   "status": "present",
+   "quote": "jamie toale, chairman, lunenburg board of selectmen"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "Board of Selectmen member",
+   "status": "present",
+   "quote": "motion: d. mcquaid 2\": p. luck"
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "Board of Selectmen member (appears as P. Luck in motions)",
+   "status": "present",
+   "quote": "ms. luck had a correction for the november 7 minutes."
+  },
+  {
+   "name": "Matt Allison",
+   "role": "Chairman, Planning Board",
+   "status": "present",
+   "quote": "planning board members present: matt allison, chairman; david prokowiew, tanner"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "planning board members present: matt allison, chairman; david prokowiew, tanner"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "david prokowiew, tanner cole, paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "david prokowiew, tanner cole, paula bertram"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Planning Board member",
+   "status": "absent",
+   "quote": "planning board member not present: kenneth chenis"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam burney, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam burney, land use director"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "McCarty Engineering, representing the applicant (PSG Realty 393-435 LLC)",
+   "status": "present",
+   "quote": "brian marchetti, mccarty engineering, presented on behalf of the application for psg realty 393-435 llc."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Chair, Open Space Committee",
+   "status": "present",
+   "quote": "chair brandon kibbe reported they had called their meeting to order."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "representing Parks Commission (Open Space Committee)",
+   "status": "present",
+   "quote": "he introduced karin menard, representing parks commission: ashley maillet and richard brockelman,"
+  },
+  {
+   "name": "Ashley Maillet",
+   "role": "Member At Large (Open Space Committee)",
+   "status": "present",
+   "quote": "he introduced karin menard, representing parks commission: ashley maillet and richard brockelman,"
+  },
+  {
+   "name": "Richard Brockelman",
+   "role": "Member At Large (Open Space Committee)",
+   "status": "present",
+   "quote": "he introduced karin menard, representing parks commission: ashley maillet and richard brockelman,"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commission (Open Space Committee)",
+   "status": "present",
+   "quote": "bob pease, conservation commission and sarah cammer, member at large."
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member At Large (Open Space Committee)",
+   "status": "present",
+   "quote": "bob pease, conservation commission and sarah cammer, member at large."
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "bill tyler, 5 graham st., acknowledged the service of the late lance may to the town,"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane, thanked the board for all the work they do on behalf of the"
+  },
+  {
+   "name": "John Baker",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "john baker, 53 chase road, stated he was in favor of the warrant article and this would put"
+  },
+  {
+   "name": "Ms. Adams",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "ms. adams stated she has attended all the planning board hearings and what they are doing"
+  },
+  {
+   "name": "Pete Stella",
+   "role": "public speaker, 31 Chase Road",
+   "status": "present",
+   "quote": "pete stella, 31 chase road, stated he was one of the 53% that voted for legalization, but he"
+  },
+  {
+   "name": "Paul Smith",
+   "role": "public speaker, 800 Chase Road",
+   "status": "present",
+   "quote": "paul smith, 800 chase road, believes it should go to a vote."
+  },
+  {
+   "name": "Dr. Gary Moritz",
+   "role": "Pastor, Twin City Baptist",
+   "status": "present",
+   "quote": "dr. gary moritz, pastor, twin city baptist stated research has shown that ingesting"
+  },
+  {
+   "name": "Peter Stella",
+   "role": "public speaker, 31 Chase Road (during Open Space discussion; may be the same person as Pete Stella)",
+   "status": "present",
+   "quote": "peter stella, 31 chase road, stated he had a problem with open space especially in a town"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the accounts payable, payroll and deductions warrants.",
+   "quote": "the board signed accounts payable warrants in the amounts of $3,636,545.81 and $825,905.42, payroll warrants"
+  },
+  {
+   "decision": "Mr. Toale wanted to check further with Town Counsel before the Board changed course on the solar project discussion (no vote taken).",
+   "quote": "mr. toale stated he wanted to check with town counsel further before changing course."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed accounts payable, payroll and deductions warrants in the listed amounts.",
+   "figures_as_printed": [
+    "$3,636,545.81",
+    "$825,905.42",
+    "$0.01",
+    "$933.40",
+    "$780,190.13",
+    "$599,936.26",
+    "$186,334.54"
+   ],
+   "quote": "the board signed accounts payable warrants in the amounts of $3,636,545.81 and $825,905.42, payroll warrants in the amounts of $0.01, $933.40"
+  },
+  {
+   "topic": "ADA Project Grant from MA Office on Disability",
+   "what_was_recorded": "The Town received a $7,500 grant for accessibility improvements to the Lane, Cowdrey, and Small Town Forest properties; other requested grants were not awarded.",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "we received a grant award in the amount of $7,500 for accessibility improvements to the lane, cowdrey, and small town forest properties."
+  },
+  {
+   "topic": "Tier 3 Complete Streets funding request",
+   "what_was_recorded": "The Town's request for Tier 3 Complete Streets Construction funding was not approved; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "our request for tier 3 complete streets construction funding was not approved"
+  },
+  {
+   "topic": "Chapter 61 rollback tax payments to the Town",
+   "what_was_recorded": "Ms. Luck reported the Town received tax payments when properties were removed from Chapter 61 and suggested a fund for open space acquisition.",
+   "figures_as_printed": [
+    "$167,837",
+    "$44,000"
+   ],
+   "quote": "since 2004, the town received $167,837 and in 2006, the town received $44,000."
+  },
+  {
+   "topic": "Marijuana 3% tax",
+   "what_was_recorded": "A public speaker referred to a 3% tax that Fitchburg could keep if marijuana were allowed.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "fitchburg can have the 3% tax. he feels it needs to go to citizen vote."
+  },
+  {
+   "topic": "School FY2020 budget",
+   "what_was_recorded": "The Town Manager met with the School Business Manager on the School's FY2020 budget proposal and gave a target budget; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "business manager michael cassidy on january 2nd to discuss the school's fy2020 budget proposal"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lion's Club pancake breakfast announcement",
+   "quote": "ms. luck noted the lion's club pancake breakfast was tomorrow at the senior center"
+  },
+  {
+   "speaker": "Bill Tyler",
+   "stated_role": "5 Graham St.",
+   "topic": "Recognition of the late Lance May's service to the Town",
+   "quote": "bill tyler, 5 graham st., acknowledged the service of the late lance may to the town,"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Thanks to Board; marijuana prohibition warrant article",
+   "quote": "carl luck, 50 sunset lane, thanked the board for all the work they do on behalf of the"
+  },
+  {
+   "speaker": "John Baker",
+   "stated_role": "53 Chase Road",
+   "topic": "Support for warrant article; police resources",
+   "quote": "john baker, 53 chase road, stated he was in favor of the warrant article and this would put"
+  },
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "Planning Board bifurcated approach to options",
+   "quote": "ms. adams stated she has attended all the planning board hearings and what they are doing"
+  },
+  {
+   "speaker": "Pete Stella",
+   "stated_role": "31 Chase Road",
+   "topic": "Marijuana legalization; citizen vote",
+   "quote": "pete stella, 31 chase road, stated he was one of the 53% that voted for legalization, but he"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Education and impacts of marijuana votes",
+   "quote": "carl luck, 50 sunset lane, noted ms. bertram's comment about wanting to understand the"
+  },
+  {
+   "speaker": "Paul Smith",
+   "stated_role": "800 Chase Road",
+   "topic": "Marijuana question should go to a vote",
+   "quote": "paul smith, 800 chase road, believes it should go to a vote."
+  },
+  {
+   "speaker": "Dr. Gary Moritz",
+   "stated_role": "Pastor, Twin City Baptist",
+   "topic": "Marijuana ban; effects on teenagers and families",
+   "quote": "dr. gary moritz, pastor, twin city baptist stated research has shown that ingesting"
+  },
+  {
+   "speaker": "Peter Stella",
+   "stated_role": "31 Chase Road",
+   "topic": "Open space spending",
+   "quote": "peter stella, 31 chase road, stated he had a problem with open space especially in a town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "ms. luck noted the lion's club pancake breakfast was tomorrow at the senior center",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public hearing: Earth Removal Permit, PSG Realty 393-435 LLC, 181 Leominster-Shirley Road",
+   "resolution": "approved with closure approval delayed pending Planning Board",
+   "quote": "mr. toale opened the hearing. brian marchetti, mccarty engineering, presented on behalf",
+   "tags": [
+    "earth removal",
+    "public hearing",
+    "gravel",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Open Space Committee re: Right of First Refusal Option for 994 Northfield Road",
+   "resolution": "no action (vote to take no action)",
+   "quote": "open space committee re: right of first refusal option for 994 northfield road",
+   "tags": [
+    "chapter 61",
+    "open space",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Vanto Vices solar project (heading cut off in OCR text)",
+   "resolution": "continued; Town Counsel to be consulted",
+   "quote": "discussion ensued about taking no action. mr. toale stated he wanted to check with town counsel further before changing course.",
+   "tags": [
+    "solar",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Minutes / Warrants / Action File Issues",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "minutes of october 9, october 11 and november 6, 2018 were approved.",
+   "tags": [
+    "minutes",
+    "warrants",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "ms. luck reported the central mass regional stormwater coalition held their annual meeting in",
+   "tags": [
+    "committee reports",
+    "MART",
+    "municipal buildings"
+   ]
+  },
+  {
+   "topic": "Discussion on Placing A Ballot Question on the May 18, 2019 Annual Town Election",
+   "resolution": "Planning Board request discussed; vote 3 in favor, 1 against (Luck)",
+   "quote": "discussion on placing a ballot question on the may 18, 2019 annual town election",
+   "tags": [
+    "marijuana",
+    "ballot question",
+    "planning board",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Interviews / Appointments / Re-appointments / Resignations",
+   "resolution": "noted; Cemetery Commission vacancy to be jointly appointed January 22",
+   "quote": "ms. lemieux stated this was notification to this board of her resignation as she is retiring.",
+   "tags": [
+    "resignation",
+    "library director",
+    "cemetery commission"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action",
+   "quote": "i received notification from the ma office on disability that we received a grant award",
+   "tags": [
+    "grants",
+    "complete streets",
+    "town website",
+    "vacancies"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public hearing notice, Earth Removal Permit application (Lunenburg Board of Selectmen)",
+   "where": "text",
+   "quote": "to all interested parties: the lunenburg board of selectmen will be holding a public hearing on tuesday, january 8, 2019"
+  },
+  {
+   "name": "Earth Removal Permit application submitted by PSG Realty 393-435 LLC",
+   "where": "text",
+   "quote": "on the application submitted by psg realty 393-435 llc., for an earth removal permit"
+  },
+  {
+   "name": "Memo from the Building Commissioner and the Land Use Director on the earth removal permit",
+   "where": "text",
+   "quote": "memo from the building commissioner and the land use director recommending that we consider approving the earth removal permit"
+  },
+  {
+   "name": "Closure plan and final contours (earth removal site)",
+   "where": "text",
+   "quote": "that is shown on the closure plan as well as the final contours."
+  },
+  {
+   "name": "Chapter 61B notice of intent to convert to another use dated November 28, 2018, for 994 Northfield Road",
+   "where": "text",
+   "quote": "chapter 61b notice of intent to convert to another use dated november 28, 2018, for 994 northfield"
+  },
+  {
+   "name": "Open Space Committee letter to the Selectboard on 994 Northfield Road",
+   "where": "text",
+   "quote": "mr. kibbe read a letter to the board aloud:"
+  },
+  {
+   "name": "Letter from the Land Use Director to the Board of Selectmen dated December 11 (Planning Board request)",
+   "where": "text",
+   "quote": "submitted to the board of selectmen by the land use director on december 11"
+  },
+  {
+   "name": "Planning Board survey on marijuana prohibition (150 responses)",
+   "where": "text",
+   "quote": "was on a survey by the planning board was responded to by 150 residents."
+  },
+  {
+   "name": "Moratorium warrant article as it appeared in the May 6, 2017 and November 13, 2018 warrants",
+   "where": "text",
+   "quote": "the warrant article as it appeared in the may 6, 2017 and the november 13, 2018 warrants"
+  },
+  {
+   "name": "Accounts payable, payroll and deductions warrants",
+   "where": "text",
+   "quote": "the board signed accounts payable warrants in the amounts of $3,636,545.81 and $825,905.42"
+  }
+ ],
+ "tags": [
+  "select board",
+  "planning board",
+  "marijuana",
+  "earth removal",
+  "open space",
+  "chapter 61",
+  "solar",
+  "warrants",
+  "town manager report",
+  "public comment",
+  "2019"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

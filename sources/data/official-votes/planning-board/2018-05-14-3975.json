@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-05-14",
  "docid": "3975",
@@ -12,23 +12,219 @@
  },
  "votes": [
   {
-   "motion": "Approve the non-material change for 7 Trillium Court deck expansion",
-   "moved_by": "Michael-Ray Jeffreys",
-   "seconded_by": "Kenneth Chenis",
+   "motion": "Approve the non-material change request for 7 Trillium Court (John Arnold).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "K. Chenis",
    "outcome": "passed",
    "procedural": false,
    "quote": "m. jeffreys made a motion to approve the non-material change, k. chenis, seconded, all aye."
   },
   {
-   "motion": "Approve the minutes of 4/23/18",
-   "moved_by": "David Prokowiew",
-   "seconded_by": "Michael-Ray Jeffreys",
+   "motion": "Approve the minutes of 4/23/18.",
+   "moved_by": "D. Prokowiew",
+   "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": true,
    "quote": "d. prokowiew made a motion to approve the minutes of 4/23/18, m. jeffreys seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text, readable. No other votes recorded; Tri Town Landing hearing noted but minutes referenced separately.",
- "cost_usd": 0.08540750000000001
+ "note": "Text is OCR of a scanned minutes page with several garbled words (e.g., 'previousy', 'Commite', '17#'); quotes were taken from the OCR text as printed. Public comment and dollar figures are not recorded. Adjournment at 8:34 PM is noted with no motion or vote recorded. The Tri Town Landing hearing is referred to separate minutes not included here. The 'Minutes/2018/05.14.18' line is a filing path and was not treated as a document.",
+ "cost_usd": 0.0049374200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director"
+  },
+  {
+   "name": "John Arnold",
+   "role": "resident of 7 Trillium Court, appeared before the Board",
+   "status": "present",
+   "quote": "john arnold of 7 trillium court, noted that the previousy existing"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A listening session on the Recreational Marijuana Bylaw will be placed on the June 25 Board agenda for public input.",
+   "quote": "will be placed on the june 25'h board agenda for public input"
+  },
+  {
+   "decision": "The Board will work on the bylaw during July and August, with a draft available for the public in September; the Board will look to Town Counsel for assistance.",
+   "quote": "the board will work on the bylaw during july and august, with a draft available for the public in september."
+  },
+  {
+   "decision": "Town Meeting zoning Article 34 (Section 250-8.3) will be an ongoing discussion item during upcoming Board meetings.",
+   "quote": "this will be an ongoing discussion item during upcoming board meetings."
+  },
+  {
+   "decision": "A. Burney and the DPW Director will bring the Village at Flat Hill drainage review to the Board of Selectmen for discussion.",
+   "quote": "a. burney and the dpw director will bring this to the board of selectmen for discussion."
+  },
+  {
+   "decision": "The possible chairs' meeting (Economic Development MRPC brochure work) is put on hold until after the Board's annual reorganization next month.",
+   "quote": "a. burney recommended this be put on hold until after the board's annual reorganization next month."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Storm Water Task Force grant application",
+   "what_was_recorded": "The Storm Water Task Force was meeting to go over a grant application; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "storm water task force- meeting may 17# to go over grant application"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: 7 Trillium Court, Non-Material Change",
+   "resolution": "approved as non-material change",
+   "tags": [
+    "non-material change",
+    "special permit",
+    "Woodlands",
+    "wetlands"
+   ],
+   "quote": "appointment: 7 trillium court, non-material change- john arnold of 7 trillium court"
+  },
+  {
+   "topic": "Public Hearing: Tri Town Landing, 37 Youngs Road",
+   "resolution": "referred to separate minutes",
+   "tags": [
+    "public hearing",
+    "Tri Town Landing"
+   ],
+   "quote": "public hearing: tri town landing, 37 youngs road-see separate minutes."
+  },
+  {
+   "topic": "Minutes approval 4/23/18",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "4/23/18- d. prokowiew made a motion to approve the minutes of 4/23/18"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "tags": [
+    "committees",
+    "stormwater grant",
+    "open space plan",
+    "green community"
+   ],
+   "quote": "capital planning committee- no meeting"
+  },
+  {
+   "topic": "Director's items: Town Meeting follow-up",
+   "resolution": "continued as ongoing discussion item; listening session planned",
+   "tags": [
+    "town meeting",
+    "zoning articles",
+    "bylaw"
+   ],
+   "quote": "all zoning articles passed with the exception of article 34 regarding section 250- 8.3."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule",
+    "town election",
+    "marijuana bylaw"
+   ],
+   "quote": "june 25- listening session for recreational marijuana bylaw"
+  },
+  {
+   "topic": "Ongoing items: Village at Flat Hill drainage, Economic Development",
+   "resolution": "assigned follow-up; brochure work on hold",
+   "tags": [
+    "drainage",
+    "Board of Selectmen",
+    "MRPC",
+    "brochure"
+   ],
+   "quote": "a. burney and the dpw director will bring this to the board of selectmen for discussion."
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "no action",
+   "tags": [
+    "board comment"
+   ],
+   "quote": "m. jeffreys wanted the board to know what a rewarding experience he had while serving on the board."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 04/23/18",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 04/23/18"
+  },
+  {
+   "name": "7 Trillium Court, Request for Non-Material Change",
+   "where": "list",
+   "quote": "7 trillium court, request for non-material change"
+  },
+  {
+   "name": "319 Grant, draft Letter of Support",
+   "where": "list",
+   "quote": "319 grant, draft letter of support"
+  },
+  {
+   "name": "Open Space and Recreation Plan (update discussion)",
+   "where": "text",
+   "quote": "meeting held may on for discussion of updaling the open space and recreation plan."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "non-material change",
+  "zoning bylaw",
+  "town meeting",
+  "recreational marijuana bylaw",
+  "Tri Town Landing",
+  "stormwater grant",
+  "Village at Flat Hill",
+  "Woodlands"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

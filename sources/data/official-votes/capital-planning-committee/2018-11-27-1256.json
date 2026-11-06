@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2018-11-27",
  "docid": "1256",
@@ -12,15 +12,183 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from the November 6 meeting",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "the committee approved minutes from the 11/6 meeting.",
+   "motion": "Approve the minutes of the 11/6 meeting.",
    "moved_by": "",
-   "seconded_by": ""
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the committee approved minutes from the 11/6 meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan in good condition. One procedural vote recorded (approval of prior minutes). No explicit mover or seconder named; no vote count stated, only \"approved\".",
- "cost_usd": 0.0814775
+ "note": "Single OCR page; header and attendance labels (Present/Absent/Also Present) are garbled, so Heather Sroka's status is not stated. The Jack Rodriquenz role is taken from the Also Present line. The approval of 11/6 minutes has no printed mover, seconder or count. Adjournment at 6:15 p.m. has no recorded motion or vote, so it is not listed as a vote. Heather Lemieux is named only in public-comment discussion and is not recorded as an attendee. No dollar totals or vote counts are printed beyond the figures listed.",
+ "cost_usd": 0.00436452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, john henshaw."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, john henshaw."
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, john henshaw."
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, john henshaw."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "",
+   "status": "not stated",
+   "quote": "heather sroka david passios, jack rodriquenz, dpw director."
+  },
+  {
+   "name": "David Passios",
+   "role": "",
+   "status": "present",
+   "quote": "mr. passios asked about the procedure the capital committee will use to prioritize the"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack rodriquenz reviewed the capital requests for the dpw with the committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Action items for the December 4 meeting at 5:15: review minutes for 11/20 (changes needed) and 11/27, and prioritize Capital requests.",
+   "quote": "action items for the december 4\" meeting with a start time of 5:15"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Wallis Park basketball court refurbishment and fencing (DPW request)",
+   "what_was_recorded": "The DPW's first capital request is for refurbishing the Wallis Park basketball court and the fencing around it.",
+   "quote": "the first capital request from the dpw is $36,000 to refur-",
+   "figures_as_printed": [
+    "$36,000"
+   ]
+  },
+  {
+   "topic": "Fuel tank removal and replacement project (DPW)",
+   "what_was_recorded": "The fuel tank removal and replacement project will require a capital expenditure of the amount stated.",
+   "quote": "the fuel tank removal and replacement project will require a capital expenditure of $220,000.",
+   "figures_as_printed": [
+    "$220,000"
+   ]
+  },
+  {
+   "topic": "Staffing shortage and extra funds for engineers and architects (DPW)",
+   "what_was_recorded": "Extra funds are required for engineers and architects, and project timelines have been extended; no figure was printed.",
+   "quote": "extra funds are required for engineers and architects and have extended the time period",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Passios",
+   "stated_role": "",
+   "topic": "procedure for prioritizing capital requests",
+   "quote": "mr. passios asked about the procedure the capital committee will use to prioritize the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment on prioritization procedure",
+   "resolution": "no action; Collins Center Scoring method mentioned",
+   "quote": "mr. passios asked about the procedure the capital committee will use to prioritize the",
+   "tags": [
+    "public comment",
+    "prioritization"
+   ]
+  },
+  {
+   "topic": "DPW capital requests review",
+   "resolution": "reviewed; no vehicles for FY20; VERTEX facility report handed out",
+   "quote": "jack rodriquenz reviewed the capital requests for the dpw with the committee.",
+   "tags": [
+    "DPW",
+    "capital requests",
+    "staffing",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Capital spreadsheet changes",
+   "resolution": "discussed; changes to be made",
+   "quote": "jack rodriquenz and john henshaw discussed some changes that need to be made to the capital spreadsheet.",
+   "tags": [
+    "capital spreadsheet"
+   ]
+  },
+  {
+   "topic": "Approval of 11/6 meeting minutes",
+   "resolution": "approved",
+   "quote": "the committee approved minutes from the 11/6 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Action items for December 4 meeting",
+   "resolution": "scheduled; review minutes and prioritize requests",
+   "quote": "action items for the december 4\" meeting with a start time of 5:15",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:15 p.m.; no motion recorded",
+   "quote": "adjournment at 6:15 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "VERTEX report (facility repairs needed within one year)",
+   "where": "list",
+   "quote": "jack handed out a copy of the vertex report that lists facility repairs that need to be done within one year."
+  },
+  {
+   "name": "Capital Spreadsheet",
+   "where": "text",
+   "quote": "jack rodriquenz and john henshaw discussed some changes that need to be made to the capital spreadsheet."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "DPW",
+  "capital requests",
+  "Wallis Park",
+  "fuel tank",
+  "staffing",
+  "facilities",
+  "VERTEX report",
+  "minutes approval",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jack handed out a copy of the vertex report"
+ },
+ "dropped_unquoted_by_field": {}
 }

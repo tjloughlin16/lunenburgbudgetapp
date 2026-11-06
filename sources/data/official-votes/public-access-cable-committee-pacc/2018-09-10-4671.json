@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2018-09-10",
  "docid": "4671",
@@ -12,25 +12,172 @@
  },
  "votes": [
   {
-   "motion": "authorize the manager to proceed with New England Apparel to sell at cost clothing items with free range to choose what products",
+   "motion": "Authorize the manager to proceed with New England Apparel to sell clothing items at cost, with free range to choose products.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": false,
    "quote": "the pacc made a motion to authorize the manager to proceed with new england apparel to sell at cost clothing items with free range to choose what products."
-  },
-  {
-   "motion": "approve the meeting minutes from August 6, 2018",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "committee reviewed and approved the minutes."
-  },
-  {
-   "motion": "approve the producer's compliance policy with recommended changes",
-   "outcome": "approved",
-   "procedural": false,
-   "quote": "pacc reviewed and approved the policy with recommended changes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded. The New England Apparel motion outcome is not stated in the minutes. No moved_by or seconded_by names are printed.",
- "cost_usd": 0.0817285
+ "note": "The minutes record one motion (clothing sales) with no mover, seconder, or result. Approval of the Aug 6 minutes and the producer's compliance policy are recorded without a motion or tally, so they are listed as decisions, not votes. The section headed \"Public comments\" is a list of committee and staff reports, not statements from named members of the public, so public_comment is empty. The minutes name no documents in a list.",
+ "cost_usd": 0.00340592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member (signed as PACC Clerk)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "not stated",
+   "quote": "non-members are jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee reviewed and approved the minutes of Aug 6, 2018 (no motion or tally recorded).",
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "decision": "PACC approved the producer's compliance policy with recommended changes (no motion or tally recorded).",
+   "quote": "pacc reviewed and approved the policy with recommended changes."
+  },
+  {
+   "decision": "October meeting will begin at 7:15pm, then return to the normal 6pm time.",
+   "quote": "oct meeting will begin at 7:15pm, then go back to our normal time of 6pm."
+  },
+  {
+   "decision": "Jo will find out the cost of adding a third channel.",
+   "quote": "jo will find out what the cost will be for adding a third channel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Comcast payment to PAC",
+   "what_was_recorded": "Comcast made a payment to PAC of a stated amount.",
+   "figures_as_printed": [
+    "$53,719.07"
+   ],
+   "quote": "comcast made a payment to pac of $53,719.07"
+  },
+  {
+   "topic": "Line item transfer for new hire salaries",
+   "what_was_recorded": "A line item transfer was made to cover new videographer hire salaries; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "line item transfer was made to cover new hire salaries."
+  },
+  {
+   "topic": "Cost of adding a third channel",
+   "what_was_recorded": "Jo will find out the cost of adding a third channel; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "jo will find out what the cost will be for adding a third channel."
+  },
+  {
+   "topic": "Golf shirts with PACC logo and clothing sales at cost",
+   "what_was_recorded": "Videographers want to order golf shirts with the PACC logo, and the committee discussed selling clothing at cost; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "videographers would like to order golf shirts with pacc's logo on it."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line item transfer to cover new hire salaries (two videographers hired, Adam Hurley and Marie Roy).",
+   "amount_as_printed": "not printed",
+   "outcome": "made (per minutes)",
+   "quote": "line item transfer was made to cover new hire salaries."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Studio and operations report (listed under Public comments)",
+   "resolution": "noted; no public speakers recorded",
+   "quote": "public comments: 1. studio was redesigned. 2. first videographer meeting was held in aug.",
+   "tags": [
+    "studio",
+    "videographers",
+    "operations",
+    "football"
+   ]
+  },
+  {
+   "topic": "Discussion of new meeting time",
+   "resolution": "October meeting at 7:15pm, then normal 6pm time",
+   "quote": "oct meeting will begin at 7:15pm, then go back to our normal time of 6pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes of Aug 6, 2018",
+   "resolution": "approved",
+   "quote": "committee reviewed and approved the minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of producer's compliance policy",
+   "resolution": "approved with recommended changes",
+   "quote": "pacc reviewed and approved the policy with recommended changes.",
+   "tags": [
+    "policy",
+    "producers"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:26pm; next meeting Oct. 1st",
+   "quote": "meeting adjourned at 8:26pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of Aug 6, 2018",
+   "where": "text",
+   "quote": "review and approve meeting minutes from aug 6, 2018."
+  },
+  {
+   "name": "Producer's compliance policy",
+   "where": "text",
+   "quote": "review of producer's compliance policy"
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "cable",
+  "PACC",
+  "videographers",
+  "Comcast payment",
+  "line item transfer",
+  "clothing sales",
+  "meeting schedule",
+  "producer policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

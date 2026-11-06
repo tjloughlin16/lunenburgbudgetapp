@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-06-08",
  "docid": "1438",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Pursue a cost estimate from Monty Tech Vocational High School for the construction of a new 2 bay garage to be built by Monty Tech Vocational High School students",
+   "motion": "Pursue a cost estimate from Monty Tech Vocational High School for a new 2 bay garage to be built by its students.",
    "moved_by": "Commissioner Tyler",
    "seconded_by": "Commissioner Mendoza",
    "outcome": "passed unanimously",
@@ -21,6 +21,64 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0892815
+ "note": "The OCR text has no roll call or attendance list; attendance is inferred from who spoke or moved. Adjournment at 6:00 PM is recorded with no motion, so no procedural vote is listed. No dollar figures are printed. The Monty Tech representative is not named.",
+ "cost_usd": 0.00196422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Clerk; also referred to as Commissioner Tyler",
+   "status": "present",
+   "quote": "commissioner tyler made the motion and commissioner mendoza seconded his motion"
+  },
+  {
+   "name": "Chairman May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman may called for a motion to pursue a cost estimate from monty tech vocational high school"
+  },
+  {
+   "name": "Commissioner Mendoza",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioner mendoza seconded his motion and upon no further discussion"
+  },
+  {
+   "name": "Representative from Monty Tech (name not printed)",
+   "role": "representing Monty Tech",
+   "status": "present",
+   "quote": "the cemetery commission met at 4 pm on june 8, 2018 with a representative from"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "New garage at the old garage site on Holman St.",
+   "resolution": "motion to pursue Monty Tech cost estimate passed unanimously",
+   "quote": "gather information on the construction of a new garage at the site of the old garage on holman st.",
+   "tags": [
+    "garage",
+    "construction",
+    "Monty Tech",
+    "cost estimate"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery",
+  "garage",
+  "Monty Tech",
+  "cost estimate",
+  "Holman St"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

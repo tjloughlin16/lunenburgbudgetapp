@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-09-12",
  "docid": "5043",
@@ -12,29 +12,369 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes of August 22, 2017",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the board approved minutes of august 22, 2017."
-  },
-  {
-   "motion": "To adjourn the Planning Board meeting",
+   "motion": "Adjourn the Planning Board meeting.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. prokowiew to adjourn the planning board meeting 2\"°: m. allison vote: all in favor"
+   "quote": "motion: d. prokowiew to adjourn the planning board meeting"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting 2\"': r. ebersole vote: all in favor"
+   "quote": "motion: p. bertram to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text (macOS Vision); minor OCR artifacts in motion second-by notation (2\"° and 2\"')",
- "cost_usd": 0.1362475
+ "note": "Text is macOS Vision OCR of the minutes, with visible OCR errors (e.g., 'Willlams', 'econonic', 'Elainem Pelerson'); quotes follow the OCR text. Both adjournment motions show 'Vote: All in Favor' with no count. The August 22 minutes approval is printed without a motion or vote count. Phyllis Luck is listed as a Board member with no attendance status printed and no recorded participation. The economic development presentation is referenced but no documents list is printed. Board members' remarks inside the public comment paragraphs are recorded as public comment because they appear under that heading.",
+ "cost_usd": 0.009420419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member, Board of Selectmen",
+   "status": "not stated",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Chairman, Planning Board",
+   "status": "present",
+   "quote": "planning board members: greg bittner, chairman; matthew allison, vice chairman; david prokowiew, member; michael ray-jeffreys, member"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chairman, Planning Board",
+   "status": "present",
+   "quote": "planning board members: greg bittner, chairman; matthew allison, vice chairman; david prokowiew, member; michael ray-jeffreys, member"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member, Planning Board",
+   "status": "present",
+   "quote": "planning board members: greg bittner, chairman; matthew allison, vice chairman; david prokowiew, member; michael ray-jeffreys, member"
+  },
+  {
+   "name": "Michael Ray-Jeffreys",
+   "role": "Member, Planning Board",
+   "status": "present",
+   "quote": "planning board members: greg bittner, chairman; matthew allison, vice chairman; david prokowiew, member; michael ray-jeffreys, member"
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "Planning Board Member/Clerk",
+   "status": "absent",
+   "quote": "not present: ken chenis, planning board member/clerk"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, adam burney, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, adam burney, land use director"
+  },
+  {
+   "name": "Heather Bowen",
+   "role": "",
+   "status": "present",
+   "quote": "heather bowen, 188 flat hill road, stated the boards need to be aware of what is being discussed on facebook."
+  },
+  {
+   "name": "Marie Martin",
+   "role": "",
+   "status": "present",
+   "quote": "marie martin, 54 longwood drive, expressed her appreciation to the boards for their work and commitment."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, 45 williams drive, feels economic development should be encouraged towards both municipal"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, asked for clarification on the village center district bylaw"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, stated as we talk about the town center and what we can do with what we have"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board approved minutes of August 22, 2017 (no motion or vote count recorded).",
+   "quote": "the board approved minutes of august 22, 2017."
+  },
+  {
+   "decision": "Board decided to meet with the Nexamp representative on October 3rd to discuss a PILOT agreement.",
+   "quote": "the board decided to meet with the nexamp representative on october 3'd to discuss a pilot agreement."
+  },
+  {
+   "decision": "Chairman Toale recommended coming back with goals and action items for the next step.",
+   "quote": "mr. toale recommended coming back with some goals and action items for the next step."
+  },
+  {
+   "decision": "Chairman Toale would like to invite the Sewer Commission and others to the next workshop.",
+   "quote": "he would like to invite the sewer commission as well as others to the next workshop."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable and school payroll warrants signed",
+   "what_was_recorded": "The Board signed two accounts payable warrants and one school payroll warrant.",
+   "figures_as_printed": [
+    "$548,801.48",
+    "$355,960.62",
+    "$2336.67"
+   ],
+   "quote": "they signed accounts payable warrants in the amounts of $548,801.48 and $355,960.62 and a school payroll warrant in the amount of $2336.67."
+  },
+  {
+   "topic": "Nexamp PILOT agreement",
+   "what_was_recorded": "Board meeting with Nexamp to discuss a PILOT agreement; the minutes print no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "the board decided to meet with the nexamp representative on october 3'd to discuss a pilot agreement."
+  },
+  {
+   "topic": "Electric cost charged by Unitil",
+   "what_was_recorded": "A speaker said the high electric cost charged by Unitil to residents is a factor in where people choose to live; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we also need to talk about the high electric cost that unitil is charging residents"
+  },
+  {
+   "topic": "Website update grant",
+   "what_was_recorded": "Town Manager noted grant money has been received to update the town website; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux noted that grant money has been received to update the website, making it more user-friendly."
+  },
+  {
+   "topic": "Solar as revenue",
+   "what_was_recorded": "A member suggested looking into solar as a form of town revenue; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "maybe we should look into solar as a form of revenue."
+  },
+  {
+   "topic": "Cost of economic development next steps",
+   "what_was_recorded": "Discussion of what economic development next steps would cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "further discussion ensued about how to proceed for economic development, what the next steps are, what would it cost, etc."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. McQuaid",
+   "stated_role": "",
+   "topic": "Being misquoted on social media about Village Center",
+   "quote": "mr. mcquaid noted he has been misquoted on social media regarding the village center."
+  },
+  {
+   "speaker": "Ms. Bertram",
+   "stated_role": "",
+   "topic": "Statement on Town offices vote and public involvement",
+   "quote": "ms. bertram recommended the board of selectmen put out a statement as to their vote to go with the tc passios building for the town offices"
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "topic": "Citizens working as a team; Facebook discussion",
+   "quote": "mr. jeffreys opined that the citizens have been working together as a team to advance the town."
+  },
+  {
+   "speaker": "Mr. Prokowiew",
+   "stated_role": "",
+   "topic": "Communication gap; post information on website",
+   "quote": "mr. prokowiew opined that there is a communication gap between town government and the citizens."
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "",
+   "topic": "Website grant funding",
+   "quote": "ms. lemieux noted that grant money has been received to update the website, making it more user-friendly."
+  },
+  {
+   "speaker": "Heather Bowen",
+   "stated_role": "",
+   "topic": "Social media awareness; commercial kitchen bylaws",
+   "quote": "heather bowen, 188 flat hill road, stated the boards need to be aware of what is being discussed on facebook."
+  },
+  {
+   "speaker": "Marie Martin",
+   "stated_role": "",
+   "topic": "Appreciation; concern about 40R in Town Center",
+   "quote": "marie martin, 54 longwood drive, expressed her appreciation to the boards for their work and commitment."
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "topic": "Economic development and open space",
+   "quote": "katey adams, 45 williams drive, feels economic development should be encouraged towards both municipal"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Village Center District bylaw clarification",
+   "quote": "dave rodgers, 82 highland street, asked for clarification on the village center district bylaw"
+  },
+  {
+   "speaker": "Heather Bowen",
+   "stated_role": "",
+   "topic": "Permitting differences for Stillman Country Fair and Unifier Festival",
+   "quote": "heather bowen, 155 flat hill road, thanked the boards for this brainstorming."
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "topic": "Bolton art and farming community example",
+   "quote": "katey adams, 45 willlams drive, related how the bolton community combined art with farming"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "topic": "Parking in the Town center",
+   "quote": "ana lockwood, 91 main street, stated as we talk about the town center and what we can do with what we have"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (first)",
+   "resolution": "discussed; no action",
+   "quote": "mr. mcquaid noted he has been misquoted on social media regarding the village center.",
+   "tags": [
+    "public comment",
+    "village center"
+   ]
+  },
+  {
+   "topic": "PowerPoint presentation: Economic Development",
+   "resolution": "informational; discussed, no action",
+   "quote": "mr. burney noted the presentation which is informational and conceptual is to open up the discussion.",
+   "tags": [
+    "economic development",
+    "zoning",
+    "open space",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action",
+   "quote": "heather bowen, 155 flat hill road, thanked the boards for this brainstorming.",
+   "tags": [
+    "public comment",
+    "parking",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Planning Board meeting adjournment",
+   "resolution": "adjourned",
+   "quote": "motion: d. prokowiew to adjourn the planning board meeting",
+   "tags": [
+    "planning board",
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "minutes approved; warrants signed; Nexamp meeting set",
+   "quote": "the board approved minutes of august 22, 2017.",
+   "tags": [
+    "warrants",
+    "PILOT",
+    "Nexamp",
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint presentation: Economic Development (including Slide 8 'Community Desires' renamed 'Community Comments' and Slide 9 on vacant commercial/industrial land)",
+   "where": "text",
+   "quote": "mr. burney noted the presentation which is informational and conceptual is to open up the discussion."
+  },
+  {
+   "name": "Village Center District bylaw",
+   "where": "text",
+   "quote": "dave rodgers, 82 highland street, asked for clarification on the village center district bylaw"
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "the town charter states the sewer commissioners shall in conjunction with other land use bodies"
+  },
+  {
+   "name": "2011 Open Space plan",
+   "where": "text",
+   "quote": "there were many recommendations on the 2011 open space plan that were never completed."
+  },
+  {
+   "name": "Master Plan",
+   "where": "text",
+   "quote": "a potential next step is to update the the master plan."
+  },
+  {
+   "name": "Planning Board Use Table and Definitions (bylaw review)",
+   "where": "text",
+   "quote": "mr. mcquaid added everything the planning board is doing with the use table and the definitions is a great step forward."
+  }
+ ],
+ "tags": [
+  "economic development",
+  "town center",
+  "village center",
+  "zoning",
+  "planning board",
+  "public comment",
+  "warrants",
+  "PILOT",
+  "Nexamp",
+  "solar",
+  "Unitil",
+  "open space",
+  "website",
+  "joint meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

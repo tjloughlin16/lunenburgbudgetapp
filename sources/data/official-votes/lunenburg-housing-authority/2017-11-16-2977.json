@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2017-11-16",
  "docid": "2977",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "accept the October 19, 2017 minutes",
+   "motion": "Accept the minutes of the October 19, 2017 meeting.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "linda mcdonald made a motion to accept the minutes ; deborah christen seconded. all were in favor and the minutes were accepted."
   },
   {
-   "motion": "accept the October 2017 financials",
+   "motion": "Accept the October 2017 financials.",
    "moved_by": "Caroline Fortin",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "caroline fortin made a motion to accept the october 2017 financials; linda mcdonald seconded and all were in favor."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:58 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
@@ -36,7 +36,198 @@
    "quote": "deborah christen made a motion to adjourn the meeting at 6:58 p.m. linda mcdonald seconded, all were in favor, and the meeting was adjourned."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1088115
+ "dropped_unquoted": 2,
+ "note": "The extracted text runs through page 2, which ends with the adjournment and footer; page 3 is blank in the extract. The financial report refers to pages F2 and F3 and the work order report, none of which are in the text, so their figures are only as printed in the narrative. The minutes record no public comment section and no motions beyond the three listed.",
+ "cost_usd": 0.00365492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paul Doherty",
+   "role": "Acting Chair",
+   "status": "present",
+   "quote": "paul doherty, acting chair deborah a.h. christen, member caroline fortin, member linda mcdonald, member"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member caroline fortin, member linda mcdonald, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member linda mcdonald, member members absent"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "linda mcdonald, member members absent: elizabeth murphy, chair"
+  },
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "elizabeth murphy, chair also present: peter proulx, executive director"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "peter proulx, executive director denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Regarding the error in the Quarterly Debt Write-Off resolution at the prior meeting ($4.50 stated vs. $54.50 in backup), no further action is required; $54.50 was the amount used.",
+   "quote": "there is no further action required, the $54.50 was the amount used."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Quarterly Debt Write-Off resolution error",
+   "what_was_recorded": "The Executive Director reported the resolution at last month's meeting stated $4.50 while the backup stated $54.50, the correct amount.",
+   "figures_as_printed": [
+    "$4.50",
+    "$54.50"
+   ],
+   "quote": "the resolution stated $4.50 while the backup stated $54.50 (the correct amount)."
+  },
+  {
+   "topic": "Reserves and planned spending",
+   "what_was_recorded": "Reserves were reported at 70.92% on page F2, with $30,000 of spending expected in the next two months.",
+   "figures_as_printed": [
+    "70.92%",
+    "$30,000"
+   ],
+   "quote": "page f2 - reserves at 70.92%. spending $30,000 in next two months."
+  },
+  {
+   "topic": "Budget variance through first ten months",
+   "what_was_recorded": "The financial report showed the operation $19,598 ahead of budget through the first ten months.",
+   "figures_as_printed": [
+    "$19,598"
+   ],
+   "quote": "$19,598 ahead of budget through first ten months."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of October 19, 2017 meeting",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "linda mcdonald made a motion to accept the minutes ; deborah christen seconded. all were in favor and the minutes were accepted."
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "no action; debt write-off error noted, no further action required",
+   "tags": [
+    "executive director",
+    "debt write-off",
+    "capital projects",
+    "regionalization"
+   ],
+   "quote": "there was an error noted in the quarterly debt write -off resolution at last month's meeting."
+  },
+  {
+   "topic": "Financial Report (October 2017)",
+   "resolution": "approved",
+   "tags": [
+    "finance",
+    "reserves"
+   ],
+   "quote": "caroline fortin made a motion to accept the october 2017 financials; linda mcdonald seconded and all were in favor."
+  },
+  {
+   "topic": "Modernization Report",
+   "resolution": "no action",
+   "tags": [
+    "modernization",
+    "windows"
+   ],
+   "quote": "705 window replacement - work should be completed by second week of december."
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "no action",
+   "tags": [
+    "occupancy",
+    "work orders"
+   ],
+   "quote": "98.15% occupied for october, one vacancy during the month."
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "no action; Public Housing Notices listed",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "other correspondence: public housing notices"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Work order report (October 2017)",
+   "where": "list",
+   "quote": "work order report included."
+  },
+  {
+   "name": "Quarterly Debt Write-Off resolution (prior meeting) and its backup",
+   "where": "text",
+   "quote": "the resolution stated $4.50 while the backup stated $54.50 (the correct amount)."
+  },
+  {
+   "name": "Monthly payroll",
+   "where": "text",
+   "quote": "monthly payroll was passed around for two board member signatures."
+  },
+  {
+   "name": "Financial report pages F2 and F3 (October 2017)",
+   "where": "text",
+   "quote": "page f2 - reserves at 70.92%. spending $30,000 in next two months."
+  },
+  {
+   "name": "Management Agreement between Leominster and West Boylston Housing Authority",
+   "where": "text",
+   "quote": "leominster has signed a management agreement with west boylston housing authority."
+  },
+  {
+   "name": "Public Housing Notices",
+   "where": "text",
+   "quote": "other correspondence: public housing notices"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "regular meeting",
+  "financial report",
+  "debt write-off",
+  "reserves",
+  "modernization",
+  "window replacement",
+  "state-aided housing",
+  "occupancy",
+  "regionalization",
+  "Leominster",
+  "West Boylston"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "work order report included."
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

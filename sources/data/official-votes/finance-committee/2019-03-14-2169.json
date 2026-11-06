@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-03-14",
  "docid": "2169",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of 2.28.2019",
+   "motion": "Accept the minutes of 2.28.2019.",
    "moved_by": "John",
    "seconded_by": "Hannah",
    "outcome": "passed 6-0",
@@ -20,7 +20,7 @@
    "quote": "john motioned to accept the minutes of 2.28.2019 hannah second. vote 6-0."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:50pm.",
    "moved_by": "Hannah",
    "seconded_by": "John",
    "outcome": "passed 6-0",
@@ -28,7 +28,375 @@
    "quote": "hannah made a motion at 9:50pm. john second. vote 6-0"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd from a scan using macOS Vision. Text is readable. Two procedural votes recorded: minutes approval and adjournment.",
- "cost_usd": 0.0997885
+ "dropped_unquoted": 1,
+ "note": "OCR text from macOS Vision with many garbled words and some misattributed speakers (for example \"Peter\" and \"Heather Sroka\" are unlabelled in parts). Speaker identities for some exchanges are inferred from the speaker labels printed. Only two motions are recorded, both 6-0. Attachments are referenced but not included in the text. Received and filed stamp dated May 09 2019 appears on page 1.",
+ "cost_usd": 0.010207419999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: terri burchfield, hannah anderson, michelle walton, john henshaw,"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "hannah anderson, secretary"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: terri burchfield, hannah anderson, michelle walton, john henshaw,"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "john henshaw, vice-chairman"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jay simeone george martin marc luescher"
+  },
+  {
+   "name": "George Martin",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: george martin"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Public, 50 Sunset Lane",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane- in the process tonight, are questions asked in the presentation or at the end"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jack rodriquenz, dpw director, presented his budget."
+  },
+  {
+   "name": "Dr. Burnham",
+   "role": "Superintendent of Schools",
+   "status": "present",
+   "quote": "dr. burnham, superintendent of schools, presented their budget."
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager- no, starting in december when the budget is sent out"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Business Manager/HR Manager",
+   "status": "present",
+   "quote": "michael cassidy (business manager/hr manager)- of all the new budgeted full-time positions"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather sroka, our next meeting in in april."
+  },
+  {
+   "name": "Peter",
+   "role": "not stated",
+   "status": "present",
+   "quote": "peter- it did but it raised another one, which is you just pointed out that the finance"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "tom alonzo-wanted to publicly apologize to the school committee because they did have handouts for their slides."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karen Brochu will post the town budget with expenses to date on the line items on the Town's website, in response to Carl Luck's request.",
+   "quote": "terri- karen brochu will be posting that on the towns website."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Parks and beach staff pay",
+   "what_was_recorded": "Jack Rodriquenz described beach workers' low pay as a reason for staffing and fee changes.",
+   "quote": "those folks that are working over there for $7/hour or something, so",
+   "figures_as_printed": [
+    "$7/hour"
+   ]
+  },
+  {
+   "topic": "Facilities/grounds custodian and MTC salaries and road program spending",
+   "what_was_recorded": "Spending on the road program was reported for 2016 and the following years, with a projected figure for the next year.",
+   "quote": "we probably only spent about $900k so on the next two years we are up to about a $1.5 million",
+   "figures_as_printed": [
+    "$1.5 million",
+    "$900K",
+    "$1.7"
+   ]
+  },
+  {
+   "topic": "Debt exclusion for roads",
+   "what_was_recorded": "Jack Rodriquenz said the debt exclusion totals $4 million, at a million dollars a year, and that the road work is under budget.",
+   "quote": "the debt exclusion is $4 million, a million dollars a year",
+   "figures_as_printed": [
+    "$4 million",
+    "a million dollars a year"
+   ]
+  },
+  {
+   "topic": "Storm water piece of the $500K",
+   "what_was_recorded": "Carl Luck asked whether the storm water spending is on track against the $500K; Jack Rodriquenz estimated spending between the high $70s and low $90s.",
+   "quote": "the $500k you put up, are we on track with that for the storm water piece",
+   "figures_as_printed": [
+    "$500K",
+    "high $70 to low $90's"
+   ]
+  },
+  {
+   "topic": "Traffic and signs line item",
+   "what_was_recorded": "Carl Luck noted the traffic and signs line is the same every year, citing the figure.",
+   "quote": "some are like $28k, traffic and signs are $28,253 every year",
+   "figures_as_printed": [
+    "$28K",
+    "$28,253"
+   ]
+  },
+  {
+   "topic": "Drainage line item",
+   "what_was_recorded": "Carl Luck noted the drainage line has been $18K every year since 2013; Jack Rodriquenz explained the debt exclusion link.",
+   "quote": "the drainage is $18k every year since 2013",
+   "figures_as_printed": [
+    "$18K"
+   ]
+  },
+  {
+   "topic": "Storm Water Management line item",
+   "what_was_recorded": "Carl Luck said the $100K storm water line is $60K more than expected and asked whether it is all engineering; Jack Rodriquenz said it is not all engineering and the storm water operation must be self-funded.",
+   "quote": "under the storm water management, the $100k that's in there, that's unfortunate because that wasn't expected to be in the budget, its $60k more than you had expected",
+   "figures_as_printed": [
+    "$100K",
+    "$60K"
+   ]
+  },
+  {
+   "topic": "Road lines painting within traffic signs and devices",
+   "what_was_recorded": "Within the $28K traffic signs and devices line, about $17,500 is for painting road lines, per Carl Luck's question and Jack Rodriquenz's confirmation.",
+   "quote": "it's like $17,500 for lines in the roads, which i am very interested in",
+   "figures_as_printed": [
+    "$17,500",
+    "$28K"
+   ]
+  },
+  {
+   "topic": "Title 1 grant reduction for school budget",
+   "what_was_recorded": "Dr. Burnham said the district has been advised of a $30K reduction in Title 1 funding compared with this year, to be confirmed in July.",
+   "quote": "we have been advised we will receive a $30k reduction to the title money compared",
+   "figures_as_printed": [
+    "$30K"
+   ]
+  },
+  {
+   "topic": "School budget request versus Town Manager target",
+   "what_was_recorded": "John Henshaw compared the school budget request with the Town Manager's target budget, a difference of 334,000.",
+   "quote": "your budget request is $21,029,000 compared to the town managers target budget $20,695,000",
+   "figures_as_printed": [
+    "$21,029,000",
+    "$20,695,000",
+    "334,000"
+   ]
+  },
+  {
+   "topic": "Gap between school and town budgets",
+   "what_was_recorded": "Dr. Burnham gave the gap between the school budget and the Town Manager's budget as approximately $334,000, between a 4.2% and a 2.5% budget.",
+   "quote": "it's approximately $334,000.",
+   "figures_as_printed": [
+    "$334,000",
+    "4.2%",
+    "2.5%"
+   ]
+  },
+  {
+   "topic": "Health insurance cost assumption in school budgeting",
+   "what_was_recorded": "Dr. Burnham said budgeting used an 8% health insurance increase guideline, which made the full position list unfeasible.",
+   "quote": "we were budgeting with a guideline of an 8% increase in our health insurance",
+   "figures_as_printed": [
+    "8%"
+   ]
+  },
+  {
+   "topic": "Reductions needed to meet target budget",
+   "what_was_recorded": "Dr. Burnham said there is not enough room in supply lines and other expenses to recover a gap of over $300K.",
+   "quote": "to recover that kind of a gap, over $300k.",
+   "figures_as_printed": [
+    "over $300K"
+   ]
+  },
+  {
+   "topic": "Department percentage increases",
+   "what_was_recorded": "Peter cited percentage cuts across several departments as a concern.",
+   "quote": "7% in one department, 9% in another department, 11% in another department,",
+   "figures_as_printed": [
+    "7%",
+    "9%",
+    "11%"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Town budget review process and year-to-date actuals",
+   "quote": "i have concerns about the town budget and review process, every year for at least the past 10 years"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "OPEB impact of new full-benefit positions",
+   "quote": "i have a question not particular to the school's budget but impact upon the town particularly opeb"
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Request for copy of town budget with expenses to date",
+   "quote": "i would like to go back to my starting public comment and formally requests at least a copy of the towns budget with expenses to date on the line items"
+  },
+  {
+   "speaker": "Peter",
+   "stated_role": "not stated",
+   "topic": "School budget process, schedule and public communication",
+   "quote": "peter- i understand that, i am fairly familiar with the process although i find this one a little bit concerning"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "not stated",
+   "topic": "Apology to School Committee for handouts",
+   "quote": "tom alonzo-wanted to publicly apologize to the school committee because they did have handouts for their slides."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "heard public comment from Carl Luck",
+   "quote": "carl luck, 50 sunset lane- in the process tonight, are questions asked in the presentation or at the end",
+   "tags": [
+    "public comment",
+    "town budget"
+   ]
+  },
+  {
+   "topic": "Department 2020 budget presentation: Department of Public Works",
+   "resolution": "presented; committee questions on parks, vehicles, snow, roads, dam and storm water",
+   "quote": "jack rodriquenz, dpw director, presented his budget.",
+   "tags": [
+    "DPW",
+    "budget",
+    "roads",
+    "storm water",
+    "snow"
+   ]
+  },
+  {
+   "topic": "Department 2020 budget presentation: Public Schools",
+   "resolution": "presented; committee questions on the school budget gap and cuts; public comment followed",
+   "quote": "dr. burnham, superintendent of schools, presented their budget.",
+   "tags": [
+    "schools",
+    "budget",
+    "foreign language",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports listed; fuel tank data follow-up noted",
+   "quote": "following up on the conversation relative to the fuel tanks and i have collected the data",
+   "tags": [
+    "updates",
+    "fuel"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 6-0",
+   "quote": "john motioned to accept the minutes of 2.28.2019 hannah second. vote 6-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager and Financial Officer reports",
+   "resolution": "discussion of school budget gap and budget schedule; no action recorded",
+   "quote": "6. town manager/financial officer reports",
+   "tags": [
+    "town manager",
+    "school budget",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:50pm, 6-0",
+   "quote": "hannah made a motion at 9:50pm. john second. vote 6-0",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DPW Line Item",
+   "where": "list",
+   "quote": "attachments: dpw line item lunenburg public school line item"
+  },
+  {
+   "name": "Lunenburg Public School Line Item",
+   "where": "list",
+   "quote": "attachments: dpw line item lunenburg public school line item"
+  }
+ ],
+ "tags": [
+  "FY2020 budget",
+  "public works",
+  "public schools",
+  "budget gap",
+  "storm water",
+  "roads",
+  "snow and ice",
+  "foreign language cuts",
+  "public comment",
+  "town budget actuals"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

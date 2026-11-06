@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-12-11",
  "docid": "5084",
@@ -12,15 +12,342 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting at 9:00 p.m.",
+   "motion": "To adjourn the meeting at 9:00 p.m.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn the meeting at 9:00 p.m. 2n°: k. adams vote: all in favor"
+   "quote": "motion: d. mcquaid to adjourn the meeting at 9:00 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One motion by Ms. Adams regarding marijuana ballot questions (page 2-3) was made but received no second and therefore was not voted on; not included above.",
- "cost_usd": 0.1103875
+ "note": "The minutes are OCR text from macOS Vision with errors (e.g., \"Innenburg\", \"Elainem Peterson\", \"2n°\" for \"2nd\"); no scan. The meeting date 2018-12-11 is supplied by the user; the minutes print it only as the memo date. The only recorded vote is the adjournment. Ms. Adams said she made a motion on the marijuana ballot question, but the minutes say there was no second, so it is not recorded as a vote. The Planning Board and Park Commission adjournments are mentioned without votes. Pages 6-10 are attachments (a memo, draft articles and a handout) following the minutes, with no heading. The Chairman's remark that the moratorium awaited Attorney General approval is discussion only.",
+ "cost_usd": 0.011235620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; damon mcquaid, vice chairman, katey adams,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; damon mcquaid, vice chairman, katey adams,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; damon mcquaid, vice chairman, katey adams,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "board of selectmen member not present: phyllis luck, clerk"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Chairman, Planning Board",
+   "status": "present",
+   "quote": "planning board members present: matthew allison, chairman, david prokowiew, tanner cole"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Planning Board Member",
+   "status": "present",
+   "quote": "planning board members present: matthew allison, chairman, david prokowiew, tanner cole"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Planning Board Member",
+   "status": "present",
+   "quote": "planning board members present: matthew allison, chairman, david prokowiew, tanner cole"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Planning Board Member",
+   "status": "absent",
+   "quote": "planning board members absent: kenneth chenis, paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Planning Board Member",
+   "status": "absent",
+   "quote": "planning board members absent: kenneth chenis, paula bertram"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks Commissioner",
+   "status": "present",
+   "quote": "park commission members present: karin menard, susanna jewell"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Park Commission Member",
+   "status": "present",
+   "quote": "park commission members present: karin menard, susanna jewell"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam burney, land use director; jack"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam burney, land use director; jack"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam burney, land use director; jack"
+  },
+  {
+   "name": "Alex Lind",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "alex lind, anthony caiozzo, aiden swift, gregory roy"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Also Present; skate park committee presenter",
+   "status": "present",
+   "quote": "anthony caiozzo, 1091 massachusetts avenue, stated when the skate park committee approached them in february"
+  },
+  {
+   "name": "Aiden Swift",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "alex lind, anthony caiozzo, aiden swift, gregory roy"
+  },
+  {
+   "name": "Gregory Roy",
+   "role": "Also Present; skate park committee",
+   "status": "present",
+   "quote": "mr. roy stated when we get to the part when we can pick a designer who can provide actual figures"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board tabled the capital plan request for updating the Master Plan for a future discussion with the Planning Board, because the Planning Board did not list it on its agenda.",
+   "quote": "this item was tabled for a future discussion with the planning board because they did not list it on their meeting agenda."
+  },
+  {
+   "decision": "The Chair said he would place the marijuana ballot question on the agenda again with the full Board and invited the Planning Board to come back.",
+   "quote": "mr. toale stated he would like to place this on the agenda again with the full board. he invited the planning board to come back."
+  },
+  {
+   "decision": "The skate park committee will do more research on other parks and demographics and return to the Park Commissioners.",
+   "quote": "the skate park committee will do some more research on other parks and demographics and return to the park commissioners."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a payroll warrant and a deductions warrant.",
+   "figures_as_printed": [
+    "$553,525.91",
+    "$879,649. 64",
+    "$578,528.18"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $553,525.91, a payroll warrant in the amount of $879,649. 64 and a deductions warrant in the amount of $578,528.18."
+  },
+  {
+   "topic": "Skate park early funding",
+   "what_was_recorded": "Parks Commissioner Menard said the funding mentioned when the students first presented in February was $100,000.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the funding mentioned was $100,000 and a location had not yet been decided upon."
+  },
+  {
+   "topic": "Skate park cost estimate",
+   "what_was_recorded": "Caiozzo said the skate park committee's rough approximation for a 7,500 square foot facility was $250,000, the figure presented to the Selectmen two months later.",
+   "figures_as_printed": [
+    "$250,000"
+   ],
+   "quote": "came up with an area of 7,500 square feet at a cost of $250,000 which was a rough approximation."
+  },
+  {
+   "topic": "Skate park long-term maintenance costs",
+   "what_was_recorded": "Members discussed long-term maintenance costs, limited town resources and the growing size and expense of the skate park project; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "there is still the cost of long-term maintenance."
+  },
+  {
+   "topic": "Safe Routes to School sidewalk grants",
+   "what_was_recorded": "Ms. Adams reported the MRC was accepting submissions for sidewalk grants; no grant amount was printed.",
+   "figures_as_printed": [],
+   "quote": "she stated they are currently accepting submissions for sidewalk grants under the safe routes to school"
+  },
+  {
+   "topic": "Marijuana tax and economic revenue",
+   "what_was_recorded": "A memo argued marijuana could bring new economic development and town revenue through local taxes; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "marijuana could be a significant source of new economic development and revenue for the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Anthony Caiozzo",
+   "stated_role": "",
+   "topic": "skate park size, cost and history",
+   "quote": "anthony caiozzo, 1091 massachusetts avenue, stated when the skate park committee approached them in february"
+  },
+  {
+   "speaker": "Karin Menard",
+   "stated_role": "Parks Commissioner",
+   "topic": "ballot question and parks concerns",
+   "quote": "karin menard, parks commissioner, stated she was in agreement with the planning board."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; none offered",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there was none from the board members or the public."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action; none given",
+   "tags": [
+    "announcements"
+   ],
+   "quote": "there were no announcements this evening."
+  },
+  {
+   "topic": "Joint meeting with Planning Board: ballot question on prohibiting recreational marijuana sales",
+   "resolution": "discussed; to return to the full Board; no vote",
+   "tags": [
+    "marijuana",
+    "ballot question",
+    "planning board",
+    "prohibition"
+   ],
+   "quote": "mr. toale stated he would like to place this on the agenda again with the full board. he invited the planning board to come back."
+  },
+  {
+   "topic": "Capital plan request for updating the Master Plan",
+   "resolution": "tabled",
+   "tags": [
+    "master plan",
+    "planning board"
+   ],
+   "quote": "this item was tabled for a future discussion with the planning board because they did not list it on their meeting agenda."
+  },
+  {
+   "topic": "Joint meeting with Parks Commission: Skate Park Committee",
+   "resolution": "continued; committee to return with research; no vote",
+   "tags": [
+    "skate park",
+    "parks commission",
+    "parking"
+   ],
+   "quote": "the skate park committee will do some more research on other parks and demographics and return to the park commissioners."
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants signed; no minutes or action items",
+   "tags": [
+    "warrants",
+    "finance"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $553,525.91"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "tags": [
+    "committee reports",
+    "MRC",
+    "Safe Routes to School"
+   ],
+   "quote": "ms. adams reported she attended the mrc meeting this past thursday."
+  },
+  {
+   "topic": "Board goals: FY19 action plan for municipal buildings and communication",
+   "resolution": "discussed; no action",
+   "tags": [
+    "goals",
+    "municipal buildings",
+    "communication"
+   ],
+   "quote": "ms. lemieux stated one of the board's goals is to adopt an action plan for activities during fy19"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: d. mcquaid to adjourn the meeting at 9:00 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum dated 11 December 2018 from Adam R. Burney, Land Use Director, to Jamie Toale, Chair, RE: Adult Use Marijuana Prohibition Ballot Questions",
+   "where": "list",
+   "quote": "article 16 on the 18 november 2018 special town meeting was proposed by the planning board to extend the"
+  },
+  {
+   "name": "Draft Articles 1, 2 and 5 amending the Code of Lunenburg §250-4.10 (marijuana cultivator, product manufacturer, transporter/retailer) with proposed ballot questions",
+   "where": "list",
+   "quote": "marijuana retailer; or take any other action relative thereto"
+  },
+  {
+   "name": "Handout of written input signed Phyllis on marijuana prohibition",
+   "where": "list",
+   "quote": "thank you for sharing this input as a handout and insuring that these points are a part"
+  },
+  {
+   "name": "Planning Board survey (152 residents responded)",
+   "where": "text",
+   "quote": "the pb conducted a survey, to which 152 residents responded:"
+  },
+  {
+   "name": "Cannabis Control Commission final regulations",
+   "where": "text",
+   "quote": "the cannabis control commission promulgated their final regulations."
+  },
+  {
+   "name": "Skate park committee presentation (students, February)",
+   "where": "text",
+   "quote": "the students had approached them in february with their presentation."
+  },
+  {
+   "name": "MRPC parking study of the town center",
+   "where": "text",
+   "quote": "ms. lemieux reported mrpc will be conducting a parking study of the town center this spring."
+  }
+ ],
+ "tags": [
+  "marijuana",
+  "recreational marijuana prohibition",
+  "ballot question",
+  "planning board",
+  "parks commission",
+  "skate park",
+  "warrants",
+  "committee reports",
+  "municipal buildings",
+  "joint meeting",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

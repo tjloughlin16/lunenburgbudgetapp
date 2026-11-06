@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2018-01-25",
  "docid": "3274",
@@ -12,23 +12,226 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from December 20, 2017",
-   "moved_by": "Dennis",
-   "seconded_by": "Karin",
+   "motion": "Approve the minutes of December 20, 2017.",
+   "moved_by": "Dennis Mannone",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "dennis motioned and karin seconded to approve the minutes from december 20, 2017. approved 3-0"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Karin",
-   "seconded_by": "Pete",
+   "motion": "Concerning the transfer of the turf complex to the Lunenburg Public Schools (motion text not recorded in the minutes).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "dennis said that his vote against the motion was because he was looking for checks and balances."
+  },
+  {
+   "motion": "Adjourn the meeting at 9:14pm.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "karin motioned and pete seconded to adjourn at 9:14pm. approved 3-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes extracted with macOS Vision. No other votes recorded beyond approval of prior minutes and adjournment.",
- "cost_usd": 0.08923049999999999
+ "note": "OCR text from scanned pages (macOS Vision); some words hyphenated across lines. Minutes name no chair or roles. The turf complex transfer vote is only referenced through Dennis's statement that he voted against the motion; the motion text and result are not printed. Page 1 carries a Town Clerk received stamp. No documents or exhibits are named.",
+ "cost_usd": 0.00419382,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "",
+   "status": "present",
+   "quote": "dennis called the meeting to order at 7:01 pm. attendance: karin menard, dennis mannone, pete mccauliff."
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "",
+   "status": "present",
+   "quote": "dennis called the meeting to order at 7:01 pm. attendance: karin menard, dennis mannone, pete mccauliff."
+  },
+  {
+   "name": "Pete McCauliff",
+   "role": "",
+   "status": "present",
+   "quote": "dennis called the meeting to order at 7:01 pm. attendance: karin menard, dennis mannone, pete mccauliff."
+  },
+  {
+   "name": "Sandy Laserte",
+   "role": "",
+   "status": "present",
+   "quote": "sandy laserte was present to ask questions about the decision to transfer the turf complex"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dennis asked that the First Aid equipment and any other equipment at the beach be checked for condition so that nothing needing replacement is missed; Karin will add this to the list to discuss with Gen Nass.",
+   "quote": "dennis also asked that we double check the condition of the first aid equipment as well as any other equipment to ensure nothing needs replacement."
+  },
+  {
+   "decision": "Dennis suggested inviting Lunenburg Little League to the March meeting to sort out what the commission needs from them for the 2018 spring season.",
+   "quote": "dennis suggested that we invite lunenburg little league to our march meeting and sort through the details of what we need from them."
+  },
+  {
+   "decision": "Karin directed Pete to get the High School baseball and softball schedule information to the DPW director, to avoid the miscommunications of last season.",
+   "quote": "karin told pete he needed to get that information over to the dpw director so we would avoid the miscommunications of"
+  },
+  {
+   "decision": "Pete asked the commission to work on determining a fee structure for the High School softball and baseball programs' use of Marshall Park.",
+   "quote": "pete asked the commission to work to determine a fee structure for the usage of marshall park by the high school softball and baseball programs."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Beach swim lessons: revenue",
+   "what_was_recorded": "Total swim lesson revenue taken in for the two sessions, with 2 families qualifying for a family discount.",
+   "figures_as_printed": [
+    "$2080"
+   ],
+   "quote": "session ii: 48 attended total taken in $2080"
+  },
+  {
+   "topic": "Town Beach swim lessons: Red Cross cost",
+   "what_was_recorded": "Cost paid to the Red Cross for the swim lessons.",
+   "figures_as_printed": [
+    "$300.00"
+   ],
+   "quote": "cost to red cross: $300.00"
+  },
+  {
+   "topic": "Town Beach swim lessons: salary cost",
+   "what_was_recorded": "Estimated salary cost of the two swim lesson sessions, based on lifeguard salary, since instructors were not broken out.",
+   "figures_as_printed": [
+    "$820"
+   ],
+   "quote": "using the lifeguard salary, the 2 sessions of swim lessons had $820 in salary costs."
+  },
+  {
+   "topic": "Snack shack electricity and policy",
+   "what_was_recorded": "Town pays electricity on the snack shacks at Marshall and McNally fields with no usage or fee policy; expenses described as not significant.",
+   "figures_as_printed": [],
+   "quote": "although the expenses aren't significant, we are paying electricity on these"
+  },
+  {
+   "topic": "Field usage fee structure and user payments",
+   "what_was_recorded": "Discussion of collecting user payments for 2018 spring baseball season and a fee structure for High School use of Marshall Park; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "pete asked the commission to work to determine a fee structure for the usage of marshall park"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sandy Laserte",
+   "stated_role": "",
+   "topic": "Turf complex transfer to Lunenburg Public Schools",
+   "quote": "sandy laserte was present to ask questions about the decision to transfer the turf complex to the lunen- burg public school",
+   "quote_taken_from_text": true
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "approved minutes of December 20, 2017 (3-0)",
+   "quote": "dennis motioned and karin seconded to approve the minutes from december 20, 2017. approved 3-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager updates",
+   "resolution": "no action (none)",
+   "quote": "3) dpw director / town manager updates - none",
+   "tags": [
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Turf complex updates",
+   "resolution": "no action (none reported)",
+   "quote": "a) turf complex - turn over updates / discussion - none",
+   "tags": [
+    "turf complex"
+   ]
+  },
+  {
+   "topic": "Town Beach summer 2017 overview, 2018 staffing, rate review",
+   "resolution": "discussed; swim lesson figures reviewed; first aid check and beach registration automation noted; no action recorded",
+   "quote": "karin gave an update on swim lessons that was provided by gen nass.",
+   "tags": [
+    "town beach",
+    "swim lessons",
+    "staffing",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Policy and fees for fields, courts and beaches (snack shacks and storage box)",
+   "resolution": "discussed; no action recorded",
+   "quote": "karin pointed out that we currently do not have any policy around usage or fees for the snack shacks",
+   "tags": [
+    "snack shacks",
+    "policy",
+    "fees",
+    "Fitzgerald field"
+   ]
+  },
+  {
+   "topic": "Baseball field and snack shack usage for 2018",
+   "resolution": "discussed; invite Lunenburg Little League to March meeting",
+   "quote": "dennis suggested that we invite lunenburg little league to our march meeting",
+   "tags": [
+    "baseball",
+    "softball",
+    "Marshall Park",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Unanticipated items",
+   "resolution": "no action (none)",
+   "quote": "a) unanticipated items - none",
+   "tags": []
+  },
+  {
+   "topic": "Correspondence, announcements and public comment (turf complex transfer)",
+   "resolution": "discussed; a vote referenced but motion and result not recorded",
+   "quote": "sandy laserte was present to ask questions about the decision to transfer the turf complex",
+   "tags": [
+    "turf complex",
+    "public comment",
+    "Lunenburg Public Schools"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule and agenda",
+   "resolution": "set dates; agenda items TBD",
+   "quote": "february 15, 2018 march 15, 2018",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "parks commission",
+  "turf complex",
+  "town beach",
+  "swim lessons",
+  "baseball",
+  "softball",
+  "snack shacks",
+  "field fees",
+  "public comment",
+  "Marshall Park"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

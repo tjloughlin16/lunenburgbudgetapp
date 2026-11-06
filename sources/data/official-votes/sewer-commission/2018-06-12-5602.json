@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-06-12",
  "docid": "5602",
@@ -12,31 +12,365 @@
  },
  "votes": [
   {
-   "motion": "Accept the response to the DEP as discussed",
+   "motion": "Accept the response to the DEP as discussed.",
    "moved_by": "Ryan S",
    "seconded_by": "John R.",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: ryan s second: john r. to accept the response to the dep as discussed. vote: unanimous"
+   "quote": "to accept the response to the dep as discussed."
   },
   {
-   "motion": "Settle the non-compliance fee for $900, with immediate payment",
+   "motion": "Settle the Whalom Kitchen non-compliance fee for $900, with immediate payment.",
    "moved_by": "Joan P.",
    "seconded_by": "Ryan S.",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: joan p. second: ryan s. to settle the non-compliance fee for $900, with immediate payment. vote: unanimous"
+   "quote": "to settle the non-compliance fee for $900, with immediate payment."
   },
   {
-   "motion": "Accept minutes for 5/29/18",
+   "motion": "Accept the minutes of 5/29/18.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "unanimous",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion: joan p. to accept minutes for 5/29/18. second: john r. vote: unanimous"
+   "quote": "minutes of 5/29/18 motion: joan p. to accept minutes for 5/29/18."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:43 pm.",
+   "moved_by": "John R.",
+   "seconded_by": "Joan P.",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "motion: john r. to adjourn: 8:43 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan",
- "cost_usd": 0.1374625
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scan with garbled words (e.g., 'taulty', 'tuture', '//1', '//10', 'I/l'). No roll call, so attendance status is 'not stated' except for the two applicants who appeared. The clerk's signature block is unreadable, so the clerk is not listed. No public comment section is printed; Bob Proctor and Kim Chen appeared on agenda items. Page 2 is partially printed and the adjournment is on it. Dollar figures are the $1,400 assessed fee and the $900 settlement.",
+ "cost_usd": 0.00689712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "carl brought up a concern about having elizabeth st. checked with a camera to check for a leak"
+  },
+  {
+   "name": "Pat",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "pat suggested having it checked"
+  },
+  {
+   "name": "Ryan S",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "motion: ryan s second: john r."
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "motion: john r. to adjourn: 8:43 pm."
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "motion: joan p. to accept minutes for 5/29/18."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "barb provided the letter sent today to richard and kim"
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "homeowner's representative, Lancaster Ave extension request",
+   "status": "present",
+   "quote": "bob proctor, lancaster ave, extension request - bob has a homeowner at 146 lancaster ave."
+  },
+  {
+   "name": "Kim Chen",
+   "role": "Whalom Kitchen, non-compliance fee appeal",
+   "status": "present",
+   "quote": "kim chen, whalom kitchen, non-compliance fee appeal - kim received the letter dated 9/12/17"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "owner of the Whalom Kitchen property (landlord)",
+   "status": "not stated",
+   "quote": "richard bursch who owns the property"
+  },
+  {
+   "name": "Debbie",
+   "role": "of SWSS",
+   "status": "not stated",
+   "quote": "debbie of swss had no changes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed Bob Proctor can go forward with an engineered plan for the private extension for 146 Lancaster Ave; he will approach neighbors about participating.",
+   "quote": "the commission agreed he can go forward"
+  },
+  {
+   "decision": "Commission will get a clarification from town counsel on the privilege fee for a private extension.",
+   "quote": "commission discussed the privilege fee for a private extension and will get a clarification from town counsel."
+  },
+  {
+   "decision": "Commission wants a letter sent to Richard Bursch (landlord) stating that in the future he will be held responsible for any fees assessed for any building he owns.",
+   "quote": "commission wants letter sent to richard bursch (landlord) regarding the settlement"
+  },
+  {
+   "decision": "The town counsel will be asked to review the Weston & Sampson wording for the 4:1 I/I removal and/or capacity fee policy.",
+   "quote": "the town counsel will be asked to review it."
+  },
+  {
+   "decision": "Pat will make the edits to the DEP Response draft and submit it.",
+   "quote": "pat will make the edits to the dep response draft and submit it."
+  },
+  {
+   "decision": "Combine all documents relating to meters into one policy, with wording that no credits be given for faulty meters and maintenance is the homeowner's responsibility (suggested).",
+   "quote": "it was suggested that the commission combine all the documents relating to meters into one policy"
+  },
+  {
+   "decision": "Joan offered to call the references provided by the new irrigation meter proposals to get feedback on customer experiences; Commission agreed.",
+   "quote": "joan offered to call the references provided by the new irrigation meter proposals to get feedback on customer experiences and commission agreed."
+  },
+  {
+   "decision": "Proposed an agenda item at a future meeting to discuss water meters at the trailer parks.",
+   "quote": "it was proposed that the commission have an agenda item to discuss water meters at tuture meeting"
+  },
+  {
+   "decision": "Commission had no issue with Barb's request to change the permit fees due date to 8/1; a draft will be reviewed at the //10 meeting.",
+   "quote": "the commission had no issue with barb's request to change the permit fees due date to 8/1"
+  },
+  {
+   "decision": "Barb will talk with counsel on the 4:1 I/I removal and/or capacity fee for incorporation into the Sewer Regs.",
+   "quote": "barb will talk with counsel."
+  },
+  {
+   "decision": "Commission will need to approve draft policies at the first meeting in July to present them during the July & August televised meetings, to take effect in August; the Connection Charge policy revisions will be discussed July 10th.",
+   "quote": "commission will need to approve draft policies at the first meeting in july"
+  },
+  {
+   "decision": "Flow Assessment will be asked to come to a meeting to discuss the quarterly flow data.",
+   "quote": "flow assessment will be asked to come to a meeting to discuss data."
+  },
+  {
+   "decision": "Commission will suggest meeting with SWSS twice/year.",
+   "quote": "commission will suggest meeting with swss twice/year,"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Whalom Kitchen non-compliance fee appeal",
+   "what_was_recorded": "Kim Chen asked for a reduction of the non-compliance fee assessed; the Commission settled the fee at $900 with immediate payment.",
+   "figures_as_printed": [
+    "$1,400",
+    "$900"
+   ],
+   "quote": "reduction of the $1,400 non-compliance fee assessed."
+  },
+  {
+   "topic": "Whalom Kitchen settlement payment",
+   "what_was_recorded": "Motion to settle the non-compliance fee for $900 with immediate payment, passed unanimously.",
+   "figures_as_printed": [
+    "$900"
+   ],
+   "quote": "to settle the non-compliance fee for $900, with immediate payment."
+  },
+  {
+   "topic": "Whalom Kitchen annual permit fee",
+   "what_was_recorded": "Kim Chen said she will pay the annual permit fee to use the sewer; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "kim said that she will pay the annual permit fee to use the sewer"
+  },
+  {
+   "topic": "Irrigation meter annual charge",
+   "what_was_recorded": "Commission discussed the timing of irrigation meter billing and having the yearly fee deducted from the meter credit rather than billed separately; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "having the yearly fee deducted from the meter credit rather than being billed separately."
+  },
+  {
+   "topic": "Permit fee due date",
+   "what_was_recorded": "Commission had no issue with changing the permit fees due date to 8/1 due to time constraints with the current deadline; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the commission had no issue with barb's request to change the permit fees due date to 8/1"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Elizabeth St. leak camera check and DEP response",
+   "resolution": "DEP response accepted as discussed; Pat to edit and submit",
+   "quote": "carl brought up a concern about having elizabeth st. checked with a camera to check for a leak",
+   "tags": [
+    "DEP",
+    "leak",
+    "camera inspection"
+   ]
+  },
+  {
+   "topic": "4:1 I/I removal and/or capacity fee policy wording",
+   "resolution": "wording changed; town counsel to review",
+   "quote": "commission discussed the wording proposed by weston & sampson for the 4:1 i/l removal and/or capacity fee policy",
+   "tags": [
+    "inflow and infiltration",
+    "policy",
+    "capacity fee"
+   ]
+  },
+  {
+   "topic": "Bob Proctor, 146 Lancaster Ave private extension request",
+   "resolution": "Commission agreed he can proceed with an engineered plan; privilege fee to be clarified by counsel",
+   "quote": "bob proctor, lancaster ave, extension request - bob has a homeowner at 146 lancaster ave.",
+   "tags": [
+    "sewer extension",
+    "private extension",
+    "privilege fee"
+   ]
+  },
+  {
+   "topic": "Kim Chen, Whalom Kitchen non-compliance fee appeal",
+   "resolution": "settled at $900 with immediate payment; landlord letter to be sent",
+   "quote": "kim chen, whalom kitchen, non-compliance fee appeal - kim received the letter dated 9/12/17",
+   "tags": [
+    "non-compliance fee",
+    "appeal",
+    "settlement",
+    "landlord"
+   ]
+  },
+  {
+   "topic": "Policy update - irrigation meters",
+   "resolution": "discussed; meter documents to be combined into one policy; references to be called; agenda item on trailer-park meters proposed",
+   "quote": "policy update discussions-irrigation meter - annual charge, manual meters, installation requirements",
+   "tags": [
+    "irrigation meter",
+    "manual meter",
+    "policy",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Grease trap regulation change",
+   "resolution": "wording changed with counsel input; permit fee due date moved to 8/1; draft to be reviewed at next meeting",
+   "quote": "commission reviewed suggested updates to the rules and regulations for grease traps and made changes to wording",
+   "tags": [
+    "grease trap",
+    "rules and regulations",
+    "permit fees"
+   ]
+  },
+  {
+   "topic": "Sewer Regs - inflow/infiltration requirements for large projects",
+   "resolution": "discussed; Barb to talk with counsel",
+   "quote": "sewer regs - inflow/infiltration requirements for large projects.",
+   "tags": [
+    "sewer regulations",
+    "inflow and infiltration"
+   ]
+  },
+  {
+   "topic": "Public hearings for regulation changes",
+   "resolution": "discussed; draft policies to be approved at first July meeting",
+   "quote": "public hearings for regulation changes - commission will need to approve draft policies at the first meeting in july",
+   "tags": [
+    "public hearing",
+    "regulations",
+    "connection charge"
+   ]
+  },
+  {
+   "topic": "OML complaint 5/11/18 response",
+   "resolution": "received counsel's response; no motion recorded",
+   "quote": "oml complaint - 5/11/18 response - commission had received a copy of the",
+   "tags": [
+    "open meeting law",
+    "complaint",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Quarterly flow comparison",
+   "resolution": "data reviewed; Flow Assessment to be asked to attend a meeting",
+   "quote": "quarterly flow comparison - commission reviewed the data and noted that it still indicates a large",
+   "tags": [
+    "flow",
+    "meter readings",
+    "water department data"
+   ]
+  },
+  {
+   "topic": "Minutes of 5/29/18",
+   "resolution": "approved unanimously",
+   "quote": "minutes of 5/29/18 motion: joan p. to accept minutes for 5/29/18.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Contract renewals - SWSS Year 3",
+   "resolution": "no changes from SWSS; Commission to suggest meeting twice a year",
+   "quote": "contract renewals-swss year 3 - debbie of swss had no changes.",
+   "tags": [
+    "contract",
+    "SWSS"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SSES table",
+   "where": "list",
+   "quote": "hand-outs sses table 6/12/18 letter from counsel re. whalom kitchen"
+  },
+  {
+   "name": "6/12/18 Letter from Counsel re. Whalom Kitchen",
+   "where": "list",
+   "quote": "6/12/18 letter from counsel re. whalom kitchen"
+  },
+  {
+   "name": "DEP Response draft",
+   "where": "text",
+   "quote": "pat will make the edits to the dep response draft and submit it."
+  },
+  {
+   "name": "Weston & Sampson proposed wording for the 4:1 I/I removal and/or capacity fee policy",
+   "where": "text",
+   "quote": "commission discussed the wording proposed by weston & sampson for the 4:1 i/l removal and/or capacity fee policy"
+  },
+  {
+   "name": "OML complaint response prepared by Counsel (5/11/18)",
+   "where": "text",
+   "quote": "commission had received a copy of the response prepared by counsel."
+  },
+  {
+   "name": "Quarterly flow comparison data",
+   "where": "text",
+   "quote": "commission reviewed the data and noted that it still indicates a large"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "DEP response",
+  "inflow and infiltration",
+  "grease traps",
+  "irrigation meters",
+  "non-compliance fee",
+  "sewer extension",
+  "sewer regulations",
+  "contracts",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "hand-outs"
+ },
+ "dropped_unquoted_by_field": {}
 }

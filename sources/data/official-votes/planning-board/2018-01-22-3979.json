@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-01-22",
  "docid": "3979",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Grant waiver from site plan approval process for 40 Summer Street",
+   "motion": "Grant the waiver as requested for 40 Summer Street (pre-submittal meeting, site plan approval process).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "m. jeffreys made a motion to grant the waiver as requested, seconded by d. prokowiew, all aye."
   },
   {
-   "motion": "Release $740,984.25 from Stone Farm Estates bond balance, retaining $27,000.00",
+   "motion": "Release $ 740,984.25 from the Stone Farm Estates remaining balance of $ 767,984.25, leaving a balance of $ 27,000.00 for bond release.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
@@ -28,13 +28,356 @@
    "quote": "d. prokowiew made a motion to release $ 740,984.25 from the remaining balance of $ 767,984.25; to leave a balance of $ 27,000.00, seconded by m. jeffreys."
   },
   {
-   "motion": "Approve prior minutes from 12/04/17 Executive and 12/11/17",
+   "motion": "Approve the minutes of 12/04/17 (Executive) and 12/11/17.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval: all minutes approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. The document header shows \"January 8, 2018\" but references an upcoming \"January 22nd meeting\"; user metadata indicates meeting date 2018-01-22, possibly an OCR misread of the date.",
- "cost_usd": 0.11948349999999999
+ "note": "The minutes text is for the January 8, 2018 meeting (header: \"Minutes January 8, 2018\"); the user-supplied meeting date is 2018-01-22, and the minutes refer to January 22 as a future meeting. Recorded as the January 8 minutes. Text is OCR with garbled words (e.g., \"surely\" for surety, \"pian\" for plan, \"fifly\" for fifty, \"BIZEO\"); quotes follow the OCR text. Motions on Stone Farm and 40 Summer Street record \"all aye\" with no count. Adjournment, and the Lake Whalom and 274 Prospect discussions, have no recorded motion, so no vote is recorded for them. Several minutes-approval and dates are as printed. Attendee statuses for the applicants and John Scribner are not stated in the minutes.",
+ "cost_usd": 0.00823612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys (left at 9:50 pm), adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys (left at 9:50 pm), adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys (left at 9:50 pm), adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys (left at 9:50 pm), adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys (left at 9:50 pm), adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "small business owner, 563 Massachusetts Avenue",
+   "status": "present",
+   "quote": "tanner cole, 563 massachusetts avenue. speaking as a small business owner, he would like the board"
+  },
+  {
+   "name": "Carios Terrero",
+   "role": "requested waiver, 40 Summer Street pre-submittal meeting",
+   "status": "not stated",
+   "quote": "carios terrero and aaron cosgrove requested a waiver from the board's site pian"
+  },
+  {
+   "name": "Aaron Cosgrove",
+   "role": "requested waiver, 40 Summer Street pre-submittal meeting",
+   "status": "not stated",
+   "quote": "carios terrero and aaron cosgrove requested a waiver from the board's site pian"
+  },
+  {
+   "name": "John Scribner",
+   "role": "Stone Farm LLC",
+   "status": "not stated",
+   "quote": "john scribner, stone farm llc, requested that the surely be reduced."
+  },
+  {
+   "name": "Elaine Mroz",
+   "role": "Stone Farm Condominium Association",
+   "status": "present",
+   "quote": "elaine mroz of the stone farm condominium association inquired as to the incentive for the developer to complete the work"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "representing the prospective applicant; Whitman & Bingham Associates (WBA)",
+   "status": "present",
+   "quote": "the prospective applicant was represented by wesley flis,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Continued discussion of the sign bylaw amendment (freestanding sign proposal) to the Board's January 22 meeting.",
+   "quote": "there will be continued discussion at the board's january 22nd meeting."
+  },
+  {
+   "decision": "A. Burney will ask the BC/ZEO whether an applicant can seek relief through the ZBA for the ten (10) acre requirement.",
+   "quote": "a. burney will ask the bizeo if an applicant can seek relief through the zba for the ten 10) acre requirement."
+  },
+  {
+   "decision": "Lake Whalom Overlay District density discussion to continue at a future meeting; Board did not feel another opinion should be solicited.",
+   "quote": "there will be continued future discussion."
+  },
+  {
+   "decision": "A. Burney will inform the Board of Selectmen of the Board's planning opinion on Lot 5 (Chapter 61B).",
+   "quote": "a. burney will inform the board of selectmen."
+  },
+  {
+   "decision": "Meeting schedule set: January 22 continued discussion of Sign Bylaw and LWOD Bylaw; January 29 potential workshop on Definitions and Use Table.",
+   "quote": "january 22 - continued discussion of sign bylaw and lwod bylaw"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stone Farm Estates bond release - amount to be retained",
+   "what_was_recorded": "The reviewing engineer's suggested retained amount was $27,000.00, based on a 15% prevailing-wage adjustment, for construction-phase items unfinished at turnover to the condominium association.",
+   "figures_as_printed": [
+    "$27,000.00",
+    "15%"
+   ],
+   "quote": "the suggested amount to be retained, provided by the board's reviewing engineer, was $27,000.00 based upon a 15% adjustment"
+  },
+  {
+   "topic": "Stone Farm Estates bond release - funds released",
+   "what_was_recorded": "Motion to release $ 740,984.25 from a remaining balance of $ 767,984.25, leaving $ 27,000.00; passed.",
+   "figures_as_printed": [
+    "$ 740,984.25",
+    "$ 767,984.25",
+    "$ 27,000.00"
+   ],
+   "quote": "d. prokowiew made a motion to release $ 740,984.25 from the remaining balance of $ 767,984.25; to leave a balance of $ 27,000.00, seconded by m. jeffreys."
+  },
+  {
+   "topic": "Stone Farm Estates - developer's engineer cost estimate",
+   "what_was_recorded": "The developer's engineer submitted a cost estimate slightly under $15,000, so the developer may finish for less and would then want remaining funds back.",
+   "figures_as_printed": [
+    "$ 15,000.00"
+   ],
+   "quote": "the developer's engineer submitted a cost of slightly less than $ 15,000.00."
+  },
+  {
+   "topic": "Tanner Cole public comment - sign costs",
+   "what_was_recorded": "Speaker said the bylaw process can be a large expense for a small business and engineering could cost more than the sign itself; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the engineering could end up costing more than the sign."
+  },
+  {
+   "topic": "Lot 5 Prospect Street Chapter 61B - purchase",
+   "what_was_recorded": "Discussion of whether the Town should purchase the property; two members favored purchase, two found it not financially feasible for the Town. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "m. allison and g. bittner agreed that it was not financially feasible for the town."
+  },
+  {
+   "topic": "274 Prospect Street pre-submittal - cost to applicant",
+   "what_was_recorded": "Applicant's representative said they would not want to waste the client's money if a special permit for more than three units was unavailable. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "if not, he doesn't want to waste the client's money."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tanner Cole",
+   "stated_role": "small business owner, 563 Massachusetts Avenue",
+   "topic": "Sign bylaw - freestanding sign without Planning Board review",
+   "quote": "he would like the board to consider amending the sign bylaw to allow a freestanding sign in front of a building"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment - sign bylaw",
+   "resolution": "continued to January 22 meeting",
+   "quote": "there will be continued discussion at the board's january 22nd meeting.",
+   "tags": [
+    "sign bylaw",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "40 Summer Street pre-submittal - waiver request",
+   "resolution": "waiver granted",
+   "quote": "m. jeffreys made a motion to grant the waiver as requested, seconded by d. prokowiew, all aye.",
+   "tags": [
+    "waiver",
+    "vehicles",
+    "site plan"
+   ]
+  },
+  {
+   "topic": "Stone Farm Estates closeout and bond release",
+   "resolution": "approved release; $27,000.00 retained",
+   "quote": "d. prokowiew made a motion to release $ 740,984.25 from the remaining balance of $ 767,984.25",
+   "tags": [
+    "bond release",
+    "condominium",
+    "prevailing wage"
+   ]
+  },
+  {
+   "topic": "Lake Whalom Overlay District board discussion",
+   "resolution": "continued; Burney to ask BC/ZEO about ZBA relief",
+   "quote": "a. burney will ask the bizeo if an applicant can seek relief through the zba for the ten 10) acre requirement.",
+   "tags": [
+    "LWOD",
+    "density",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "274 Prospect Street pre-submittal meeting",
+   "resolution": "no action; Board discussion of concept plan",
+   "quote": "wba presented a concept plan; eighteen (18) units, all 55+, two bedrooms, with two of the units being affordable.",
+   "tags": [
+    "274 Prospect Street",
+    "density",
+    "special permit",
+    "age-restricted housing"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 12/04/17 Executive and 12/11/17",
+   "quote": "minutes approval: all minutes approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "capital planning committee- committee to begin prioritizing departmental requests.",
+   "tags": [
+    "capital planning",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Director's items - Lot 5 Prospect Street Chapter 61B",
+   "resolution": "planning opinion given; Burney to inform Board of Selectmen",
+   "quote": "lot 5, prospect street & cross road: chapter 61b- the board needed to provide a planning opinion to the board of",
+   "tags": [
+    "Chapter 61B",
+    "land purchase",
+    "Board of Selectmen"
+   ]
+  },
+  {
+   "topic": "Director's items - District Local Technical Assistance",
+   "resolution": "no action; update",
+   "quote": "the town continues to pursue economic development through dlta.",
+   "tags": [
+    "DLTA",
+    "economic development",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Director's items - Definitions and Use Table",
+   "resolution": "work in progress; language finalized through page 11",
+   "quote": "definitions and use table- the board worked on finalizing the language up to page 11 of the december 11t draft.",
+   "tags": [
+    "zoning",
+    "definitions",
+    "use table"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "scheduled",
+   "quote": "january 22 - continued discussion of sign bylaw and lwod bylaw",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:00 PM",
+   "quote": "adjournment: 10:00 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "40 Summer Street- Request for Waiver",
+   "where": "list",
+   "quote": "40 summer street- request for waiver"
+  },
+  {
+   "name": "Stone Farm Estates, Riley Road- Request for Bond Release",
+   "where": "list",
+   "quote": "stone farm estates, riley road- request for bond release"
+  },
+  {
+   "name": "274 Prospect Street - Conceptual",
+   "where": "list",
+   "quote": "274 prospect street - conceptual"
+  },
+  {
+   "name": "Minutes- Executive 12/04/17, 12/11/17",
+   "where": "list",
+   "quote": "minutes- executive 12/04/17, 12/11/17"
+  },
+  {
+   "name": "Definitions and Use Table, DRAFT",
+   "where": "list",
+   "quote": "definitions and use table, draft"
+  },
+  {
+   "name": "District Local Technical Assistance, Request for Service Delivery",
+   "where": "list",
+   "quote": "district local technical assistance, request for service delivery"
+  },
+  {
+   "name": "Minutes/2017/12.11.17",
+   "where": "list",
+   "quote": "minutes/2017/12.11.17"
+  },
+  {
+   "name": "Lake Whalom Overlay District (LWOD) Bylaw",
+   "where": "text",
+   "quote": "a. burney noted that the current bc/zeo is not bound by a previous determination."
+  },
+  {
+   "name": "Code §250-4.12.E.(2) (LWOD density language)",
+   "where": "text",
+   "quote": "he feels that under §250-4.12.e.(2)"
+  },
+  {
+   "name": "Town's Housing Production Plan",
+   "where": "text",
+   "quote": "the town's housing production plan is effective through 2020."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "sign bylaw",
+  "Lake Whalom Overlay District",
+  "density",
+  "bond release",
+  "Stone Farm Estates",
+  "40 Summer Street",
+  "274 Prospect Street",
+  "waiver",
+  "Lot 5 Chapter 61B",
+  "definitions and use table",
+  "DLTA",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

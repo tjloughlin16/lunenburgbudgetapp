@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-03-06",
  "docid": "746",
@@ -12,19 +12,174 @@
  },
  "votes": [
   {
-   "motion": "to approve current expense vouchers, payroll, abatements, warrants, commitments and February 12, 2019 minutes",
+   "motion": "Schedule the next Board of Assessors meeting for Tuesday, April 9, 2019 at 5:45 pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and february 12, 2019 minutes."
-  },
-  {
-   "motion": "to meet on Tuesday, April 9, 2019 at 5:45 pm",
-   "outcome": "not stated",
-   "procedural": true,
+   "procedural": false,
    "quote": "board voted to meet on tuesday, april 9, 2019 2018 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one apparent typo in the minutes text itself (\"2019 2018\" quoted verbatim). No moved_by or seconded_by names recorded for either vote.",
- "cost_usd": 0.1107235
+ "note": "OCR text, no scan. The minutes record no motions, seconds or vote counts for the approvals or abatement decisions, so those are listed as decisions. The only vote-like entry is the scheduling of the next meeting, with no mover or count. Text conflicts: 'eight (2) RE applications denied' (10 + 8 + 1 = 19 fits 8; 2 would not sum), and the next meeting date reads 'April 9, 2019 2018'. The approval line says 'Board reviewed and approved' with no motion. Richard Letarte's status is absent per the minutes. Abatement table sums check: RE amounts total $2,536.73. The signature line is garbled by OCR ('Lause Gaquette'); the typed name is Louise Paquette.",
+ "cost_usd": 0.00407452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: board members, louis franco, rena swezey, regional associate assessor, joshua gendron"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "present: board members, louis franco, rena swezey, regional associate assessor, joshua gendron"
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Regional Associate Assessor",
+   "status": "present",
+   "quote": "joshua presented nineteen (19) real estate and one (1) pp abatement applications to the boa for review and decisions."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "louise paquette, administrative assessor."
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "chairman, richard letarte not present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and the February 12, 2019 minutes (no motion or vote count printed).",
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and february 12, 2019 minutes."
+  },
+  {
+   "decision": "Ten Real Estate abatement applications were approved, eight were denied (printed as 'eight (2)'), and one was tabled until the next meeting; no vote recorded.",
+   "quote": "ten (10) real estate applications were approved and eight (2) re applications denied and one (1) application was tabled until the next meeting."
+  },
+  {
+   "decision": "One PP abatement (453 Mass Ave) was granted.",
+   "quote": "one (1) pp abatement was granted."
+  },
+  {
+   "decision": "Discussion of replacing the expired CAMA CSC State software was deferred to the next meeting.",
+   "quote": "discussion of the replacement of the \"expired\" cama csc state software will be discussed at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Real Estate abatements approved",
+   "what_was_recorded": "Ten Real Estate abatements were approved, with individual amounts abated totaling $2,536.73.",
+   "figures_as_printed": [
+    "$72.85",
+    "$112.08",
+    "$212.95",
+    "$300.75",
+    "$3.74",
+    "$313.82",
+    "$155.04",
+    "$177.46",
+    "$397.88",
+    "$790.16",
+    "$2,536.73"
+   ],
+   "quote": "amount abated $72.85 $112.08 $212.95"
+  },
+  {
+   "topic": "Personal property abatement granted",
+   "what_was_recorded": "One PP abatement for 453 Mass Ave was granted, with amount abated of $789.23.",
+   "figures_as_printed": [
+    "$789.23"
+   ],
+   "quote": "amount abated $789.23 $789.23"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, payroll, abatements, warrants, commitments and minutes",
+   "resolution": "approved (no motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and february 12, 2019 minutes.",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Abatement applications",
+   "resolution": "10 RE approved, 8 denied, 1 tabled; 1 PP granted",
+   "quote": "joshua presented nineteen (19) real estate and one (1) pp abatement applications to the boa for review and decisions.",
+   "tags": [
+    "abatements",
+    "real estate",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "louise reminded the boa that the citizens caucus will be held on monday, march 11th at 7pm at the turkey hill elementary school.",
+   "tags": [
+    "citizens caucus",
+    "board membership"
+   ]
+  },
+  {
+   "topic": "CAMA CSC State software replacement",
+   "resolution": "deferred to next meeting",
+   "quote": "discussion of the replacement of the \"expired\" cama csc state software will be discussed at the next meeting.",
+   "tags": [
+    "CAMA",
+    "software"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled April 9, 2019 at 5:45 pm",
+   "quote": "board voted to meet on tuesday, april 9, 2019 2018 at 5:45 pm.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:03 pm",
+   "quote": "meeting adjourned 7:03 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Real Estate and PP abatement applications (19 RE, 1 PP)",
+   "where": "text",
+   "quote": "joshua presented nineteen (19) real estate and one (1) pp abatement applications to the boa for review and decisions."
+  }
+ ],
+ "tags": [
+  "abatements",
+  "real estate",
+  "personal property",
+  "assessors",
+  "CAMA software",
+  "vouchers",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

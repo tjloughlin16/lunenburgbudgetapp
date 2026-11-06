@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-07-24",
  "docid": "5114",
@@ -12,48 +12,603 @@
  },
  "votes": [
   {
-   "motion": "approve the Lunenburg Bengals Youth Football/Cheer Association tollbooth fundraiser on Saturday, August 4 from 11:00 a.m. to 3:00 p.m.",
+   "motion": "Approve the Lunenburg Bengals Youth Football/Cheer Association tollbooth fundraiser on Saturday, August 4* from 11:00 a.m. to 3:00 p.m.",
    "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
+   "seconded_by": "D.McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the lunenburg bengals youth football/cheer association tollbooth fundraiser on saturday, august 4* from 11:00 a.m to 3:00 p.m. 2': d.mcquaid vote: all in favor"
+   "quote": "motion: r. ebersole to approve the lunenburg bengals youth football/cheer association tollbooth fundraiser on saturday, august 4* from 11:00 a.m to 3:00 p.m."
   },
   {
-   "motion": "ratify the Town Manager's appointment of Sean Zrate as Acting Police Sergeant",
-   "moved_by": "R. Ebersole",
+   "motion": "Ratify the Town Manager's appointment of Sean Zrate as Acting Police Sergeant.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "K. Adams",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole 2'°: k. adams to ratify the town manager's appointment of sean zrate as acting police sergeant vote: all in favor"
+   "quote": "to ratify the town manager's appointment of sean zrate as acting police sergeant vote: all in favor"
   },
   {
-   "motion": "approve the amendment to the traffic rules and regulations as recommended by the Police Chief and DPW Director",
+   "motion": "Approve the amendment to the traffic rules and regulations (Schedule I - Parking) as recommended by the Police Chief and DPW Director.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole to approve the amendment to the traffic rules and regulations as recommended by the police chief and dpw director 2\"d: d. mcquaid vote: all in favor"
+   "quote": "to approve the amendment to the traffic rules and regulations as recommended by the police chief and dpw director"
   },
   {
-   "motion": "approve the Memorandum of Agreement between the Town of Lunenburg and Laborers International Union of North America, Public Employees Local Union 39 (DPW Unit); July 1, 2018 to June 30, 2021 with the proposed changes to the existing contract",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
+   "motion": "Approve the Memorandum of Agreement between the Town of Lunenburg and Laborers International Union of North America, Public Employees Local Union 39 (DPW Unit), July 1, 2018 to June 30, 2021, with the proposed changes.",
+   "moved_by": "R.Ebersole",
+   "seconded_by": "D.McQuaid",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: r.ebersole 2'°: d.mcquaid to approve the memorandum of agreement between the town of lunenburg and laborers international union of north america, public employees local union 39 (dpw unit); july 1, 2018 to june 30, 2021 with the proposed changes to the exisiting contract within the document vote: ms. adam",
-   "quote_taken_from_text": true
+   "quote": "to approve the memorandum of agreement between the town of lunenburg and laborers international union of north america, public employees local union 39 (dpw unit)"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "R. Ebersole",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r.ebersole to adjourn the meeting 2°: d. mcquaid vote: all in favor"
+   "quote": "to adjourn the meeting 2°: d. mcquaid vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes with some character artifacts in \"seconded by\" notation (2', 2'°, 2\"d rendered as OCR artifacts). All votes captured with verbatim quotes as they appear in the scanned text.",
- "cost_usd": 0.1264245
+ "note": "Text is OCR (macOS Vision) with garbled characters in places (ordinal markers such as 2'° and 2\"d, a few misspellings); quotes were copied as printed. The minutes say the meeting resumed at 9:26 p.m. after an executive session, but the executive session minutes are separate and not in this text. The B&H Corporation item is listed with no discussion or action recorded. The Shady Point discussion was explicitly not a decision. Vote results printed as \"All in Favor\" carry no count; the DPW MOA vote is a recorded 5-0 roll call. No transfers are recorded.",
+ "cost_usd": 0.016944720000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; phyllis luck, member;"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; phyllis luck, member;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; phyllis luck, member;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "damon mcquaid, member; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "damon mcquaid, member; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "COA Chairman",
+   "status": "present",
+   "quote": "coa chairman pete lincoln stated before giving tonight's report, he and deb lincoln would like to"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "COA member",
+   "status": "present",
+   "quote": "coa member deb lincoln reported once a year we honor our volunteers with an appreciation cookout"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "ms. doherty presented a powerpoint on activities at the senior center as an end of year report."
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "Outreach Coordinator",
+   "status": "present",
+   "quote": "ms. roy stated the goal of the program is to bring together elementary age students as well as older"
+  },
+  {
+   "name": "Joe Anderson",
+   "role": "Director of Funding for the Bengals",
+   "status": "present",
+   "quote": "joe anderson, 780 west street, director of funding for the bengals, stated they are seeking to hold a"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "ms. lemieux reported police chief marino was here to update on the noise bylaw being drafted"
+  },
+  {
+   "name": "Nicholas LaFountain",
+   "role": "Attorney, representing Shady Point Campground temporarily",
+   "status": "present",
+   "quote": "attorney nicholas lafountain of weymouth introduced himself stating he was a personal friend of robert and"
+  },
+  {
+   "name": "Aisling Gaughan",
+   "role": "Public comment, 73 Lancaster Ave.",
+   "status": "present",
+   "quote": "aisling gaughan, 73 lancaster ave., was following up on her request regarding the location of the weathervane on town hall."
+  },
+  {
+   "name": "Mike DeFazio, Jr.",
+   "role": "Public comment, 131 Flynn Road",
+   "status": "present",
+   "quote": "mike defazio, jr., 131 flynn road, stated he lives on the channel and watches every boat that goes"
+  },
+  {
+   "name": "Jason Roux",
+   "role": "Public comment, 100 Sunset Lane",
+   "status": "present",
+   "quote": "jason roux, 100 sunset lane, stated he has lived on the lake his whole life."
+  },
+  {
+   "name": "Janet Leavitt",
+   "role": "Public comment, 30 May Street",
+   "status": "present",
+   "quote": "janet leavitt, 30 may street, stated encouraging people coming into town to enjoy lunenburg's"
+  },
+  {
+   "name": "Gary Spindt",
+   "role": "Public comment, 7 Ruth Street",
+   "status": "present",
+   "quote": "gary spindt, 7 ruth street, stated he also lives on the lake and he heard that shady point spends"
+  },
+  {
+   "name": "Scott Benjamin",
+   "role": "Public comment, 40 Fire Road 12",
+   "status": "present",
+   "quote": "scott benjamin, 40 fire road 12, stated he lives on a portion of the lake that is too narrow for one boat"
+  },
+  {
+   "name": "Kathy Reinhardt",
+   "role": "Public comment, 53 Pearl Street",
+   "status": "present",
+   "quote": "kathy reinhardt, 53 pearl street, stated she is directly across the lake from shady point."
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Public comment, 362 Sunset Lane",
+   "status": "present",
+   "quote": "joanna bilotta, 362 sunset lane, stated she lives directly across from shady point on the penisula."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Public comment, 65 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 65 whiting street, stated he attended because he hoped there would some discussion"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the minutes of July 10, 2018 and listed Executive Session Minutes ready to be released (April 2017 through November 2017 sessions).",
+   "quote": "the board signed minutes of july 10, 2018 and the following executive session minutes ready"
+  },
+  {
+   "decision": "Board agreed to check with Town Counsel on the validity of the Shady Point Special Permit (requested by Ms. Luck).",
+   "quote": "ms. luck requested checking with town counsel on the validity of the special permit. mr. toale agreed."
+  },
+  {
+   "decision": "Chair said the Board will continue talking with the enforcement officer and the Shady Point owners, and will bring back any decision needed; no decision was planned for that night.",
+   "quote": "we will continue to talk to the enforcement officer and to talk to the shady point owners"
+  },
+  {
+   "decision": "Chair volunteered to attend the MMPO meetings until the Board finds a designee; liaison discussion continued to another meeting.",
+   "quote": "after discussion, mr. toale volunteered to attend"
+  },
+  {
+   "decision": "Chair suggested addressing the earth removal closure process as a workshop at the August 14 meeting.",
+   "quote": "mr. toale suggested addressing the earth removal closure process as a workshop"
+  },
+  {
+   "decision": "Town Manager will forward the new Council on Aging contract and templates to Town Counsel for review.",
+   "quote": "ms. lemieux will be forwarding it to town counsel for review."
+  },
+  {
+   "decision": "Town Manager confirmed the Town may provide biographies and photos of board and committee members and a directory on the town website.",
+   "quote": "ms. adams asked if there would be opportunity to provide biographies and photos of boards and committee members as well as a directory on the town website. ms. lemieux stated yes."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging volunteer value",
+   "what_was_recorded": "Volunteer hours at the Senior Center were valued at $27,615.50 if paid $11.00 per hour.",
+   "figures_as_printed": [
+    "$11.00",
+    "$27,615.50"
+   ],
+   "quote": "this year we had 45 volunteers donate 2510.5 hours at the senior center. if they were paid at $11.00 per hour, it would amount to $27,615.50."
+  },
+  {
+   "topic": "Shady Point police details cost",
+   "what_was_recorded": "Attorney LaFountain reported Shady Point police detail amounts for 2016, 2017 and 2017 year to date; Mr. Spindt said Shady Point spends thousands annually on details and suggested the Town chip in.",
+   "figures_as_printed": [
+    "$16,474",
+    "$13,229",
+    "$9,425"
+   ],
+   "quote": "attorney lafountain reported the following amounts: 2016: $16,474; 2017:$13,229 and $9,425 to date for this year."
+  },
+  {
+   "topic": "Lake policing funding by lake associations",
+   "what_was_recorded": "Chief Marino said the Lake Shirley Association usually contributes money to lake policing because the Town does not have it in its budget.",
+   "figures_as_printed": [],
+   "quote": "usually the lake shirley association kicks in money too because we do not have it in our budget."
+  },
+  {
+   "topic": "Police boat funding request",
+   "what_was_recorded": "Attorney LaFountain said his clients would not object if the Board allocated additional funds for a Police boat on the lake during summer.",
+   "figures_as_printed": [],
+   "quote": "my clients would have no complaints if this board would allocate additonal funds for a police boat to be on the lake at all times during the summer."
+  },
+  {
+   "topic": "Police boat (FY19 Capital Plan)",
+   "what_was_recorded": "The Police Boat in the FY19 Capital Plan has been ordered.",
+   "figures_as_printed": [],
+   "quote": "the police boat that was part of the fy19 capital plan has been ordered."
+  },
+  {
+   "topic": "Economic Development Bond Bill requests",
+   "what_was_recorded": "Town Manager submitted three project amendments to Senator Tran's office for the Economic Development Bond Bill: $300,000, $250,000 and $450,000.",
+   "figures_as_printed": [
+    "$300,000",
+    "$250,000",
+    "$450,000"
+   ],
+   "quote": "$300,000 for the redevelopment of the property at 925 massachusetts avenue;"
+  },
+  {
+   "topic": "Community commercial kitchen cost",
+   "what_was_recorded": "Ms. Luck asked how much a community commercial kitchen would cost the Town; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "she asked how much a community commercial kitchen would cost the town."
+  },
+  {
+   "topic": "West Street properties (17 & 23 West Street)",
+   "what_was_recorded": "Town-assessed value of the West Street property is approximately $170,000 and would need to be put out to bid for disposal; Ms. Luck asked if it would be sold as is for that amount.",
+   "figures_as_printed": [
+    "$170,000"
+   ],
+   "quote": "the town-assessed value is approximately $170,000 and would need to be put"
+  },
+  {
+   "topic": "Green Communities Competitive Grant",
+   "what_was_recorded": "Town was awarded a Green Communities Competitive Grant of $198,867 for energy efficiency projects, with about $39,000 in estimated energy savings.",
+   "figures_as_printed": [
+    "$198,867",
+    "$39,000"
+   ],
+   "quote": "was awarded in the amount of $198,867 for a variety of energy efficiency projects"
+  },
+  {
+   "topic": "Personnel classification consultant",
+   "what_was_recorded": "Personnel Committee recommended hiring a third party consultant for a wage and classification review; an appropriation would be requested at the Special Town Meeting. No figure given.",
+   "figures_as_printed": [],
+   "quote": "the personnel committee is recommending to hire a third party consultant to perform the review."
+  },
+  {
+   "topic": "Unused West Street demolition funds",
+   "what_was_recorded": "Mr. Passios said capital funding was appropriated years ago for demolition of the West Street buildings and remains unused; he recommended reappropriating it. No figure given.",
+   "figures_as_printed": [],
+   "quote": "there was capital funding appropriated for demolition of those buildings years ago; that money is still sitting unused."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "topic": "Close call at auto accident; public safety staffing",
+   "quote": "ms. adams reported she was close to an auto accident this past weekend and the first police officer who"
+  },
+  {
+   "speaker": "Aisling Gaughan",
+   "topic": "Weathervane on Town Hall",
+   "quote": "aisling gaughan, 73 lancaster ave., was following up on her request regarding the location of the weathervane on town hall."
+  },
+  {
+   "speaker": "Mike DeFazio, Jr.",
+   "stated_role": "Resident, 131 Flynn Road",
+   "topic": "Shady Point and lake boat traffic",
+   "quote": "mike defazio, jr., 131 flynn road, stated he lives on the channel and watches every boat that goes"
+  },
+  {
+   "speaker": "Jason Roux",
+   "stated_role": "Resident, 100 Sunset Lane",
+   "topic": "Lake traffic and fishing tournaments",
+   "quote": "jason roux, 100 sunset lane, stated he has lived on the lake his whole life."
+  },
+  {
+   "speaker": "Janet Leavitt",
+   "stated_role": "Resident, 30 May Street",
+   "topic": "Visitor impact and lake costs",
+   "quote": "janet leavitt, 30 may street, stated encouraging people coming into town to enjoy lunenburg's"
+  },
+  {
+   "speaker": "Gary Spindt",
+   "stated_role": "Resident, 7 Ruth Street",
+   "topic": "Shady Point police detail costs",
+   "quote": "gary spindt, 7 ruth street, stated he also lives on the lake and he heard that shady point spends"
+  },
+  {
+   "speaker": "Scott Benjamin",
+   "stated_role": "Resident, 40 Fire Road 12",
+   "topic": "Boat speed and lake width",
+   "quote": "scott benjamin, 40 fire road 12, stated he lives on a portion of the lake that is too narrow for one boat"
+  },
+  {
+   "speaker": "Kathy Reinhardt",
+   "stated_role": "Resident, 53 Pearl Street",
+   "topic": "Shady Point and lake safety",
+   "quote": "kathy reinhardt, 53 pearl street, stated she is directly across the lake from shady point."
+  },
+  {
+   "speaker": "Nicholas LaFountain",
+   "stated_role": "Attorney, representing Shady Point Campground temporarily",
+   "topic": "Shady Point defense and noise bylaw",
+   "quote": "attorney nicholas lafountain of weymouth introduced himself stating he was a personal friend of robert and"
+  },
+  {
+   "speaker": "Joanna Bilotta",
+   "stated_role": "Resident, 362 Sunset Lane",
+   "topic": "Shady Point cooperation and boat patrol",
+   "quote": "joanna bilotta, 362 sunset lane, stated she lives directly across from shady point on the penisula."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Resident, 65 Whiting Street",
+   "topic": "Special permit process; West Street funds; Primary School assessment",
+   "quote": "dave passios, 65 whiting street, stated he attended because he hoped there would some discussion"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "ms. adams reported she was close to an auto accident this past weekend and the first police officer who",
+   "tags": [
+    "public comment",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Council on Aging update",
+   "resolution": "presented; no action",
+   "quote": "coa chairman pete lincoln stated before giving tonight's report, he and deb lincoln would like to",
+   "tags": [
+    "council on aging",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Lunenburg Bengals tollbooth fundraiser request",
+   "resolution": "approved",
+   "quote": "joe anderson, 780 west street, director of funding for the bengals, stated they are seeking to hold a",
+   "tags": [
+    "event permit",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Entertainment/special event license, townwide noise bylaw, and Shady Point activity (continued from 6/19/18)",
+   "resolution": "discussed; continued; no decision",
+   "quote": "we are not here this evening to make any decisions, we are here to listen.",
+   "tags": [
+    "noise bylaw",
+    "shady point",
+    "special events",
+    "public hearing-style comment"
+   ]
+  },
+  {
+   "topic": "Appointment of Acting Police Sergeant",
+   "resolution": "ratified",
+   "quote": "to ratify the town manager's appointment of sean zrate as acting police sergeant",
+   "tags": [
+    "police",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Schedule I - Parking traffic amendment",
+   "resolution": "approved",
+   "quote": "replace main street, east side, from massachusetts ave. to oak ave-no parking any time -",
+   "tags": [
+    "traffic",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "the contractor will be installing drainage structures in fitchburg on monday (7/23).",
+   "tags": [
+    "roads",
+    "grants",
+    "personnel",
+    "animal control",
+    "marijuana",
+    "town website",
+    "police",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Old Business: Board goals FY2019",
+   "resolution": "discussed; no action",
+   "quote": "mr. toale asked for any feedback on the board goals for fiscal year 2019.",
+   "tags": [
+    "board goals"
+   ]
+  },
+  {
+   "topic": "Old Business: liaison appointments (MMPO)",
+   "resolution": "Chair volunteered; continued",
+   "quote": "after discussion, mr. toale volunteered to attend",
+   "tags": [
+    "liaison",
+    "MMPO"
+   ]
+  },
+  {
+   "topic": "Current Business: B&H Corporation d/b/a Mickey Shea's request to withdraw",
+   "resolution": "listed; no action recorded",
+   "quote": "request to withdraw application for change of manager/beneficial interest",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Signing of minutes and executive session minutes for release",
+   "resolution": "signed",
+   "quote": "the board signed minutes of july 10, 2018 and the following executive session minutes ready",
+   "tags": [
+    "minutes",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "ms. luck reported the storm watertask force will be meeting on august 2nd.",
+   "tags": [
+    "committees",
+    "marijuana",
+    "council on aging contract"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action",
+   "quote": "dave passios, 65 whiting street, stated he attended because he hoped there would some discussion",
+   "tags": [
+    "public comment",
+    "special permit",
+    "West Street"
+   ]
+  },
+  {
+   "topic": "Quarterly Animal Control Report",
+   "resolution": "received; comments invited",
+   "quote": "mr. toale noted he overlooked the quarterly animal control report provided this evening",
+   "tags": [
+    "animal control"
+   ]
+  },
+  {
+   "topic": "Executive session; DPW union Memorandum of Agreement",
+   "resolution": "approved 5-0",
+   "quote": "to approve the memorandum of agreement between the town of lunenburg and laborers international union of north america, public employees local union 39 (dpw unit)",
+   "tags": [
+    "union contract",
+    "DPW",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:26 p.m.",
+   "quote": "the meeting adjourned at 9:26 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Report from Land Use Director Adam Burney on 701 Reservoir Road (Shady Point), following up on the 19 June 2018 BOS meeting",
+   "where": "list",
+   "quote": "she referred the board to a report from land use director adam burney following up on the questions brought up at the last meeting."
+  },
+  {
+   "name": "Special Permit issued by the Zoning Board of Appeals, 9 October 2001 (Shady Point)",
+   "where": "text",
+   "quote": "as background on 9 october 2001, the zoning board of appeals issued a special permit"
+  },
+  {
+   "name": "PowerPoint presentation on Senior Center activities (COA end of year report)",
+   "where": "text",
+   "quote": "ms. doherty presented a powerpoint on activities at the senior center as an end of year report."
+  },
+  {
+   "name": "Quarterly Animal Control Report",
+   "where": "text",
+   "quote": "mr. toale noted he overlooked the quarterly animal control report provided this evening"
+  },
+  {
+   "name": "Board of Selectmen goals for Fiscal Year 2019 (listed in prior meeting minutes)",
+   "where": "text",
+   "quote": "they are listed in the minutes from the last meeting."
+  },
+  {
+   "name": "Draft townwide noise bylaw",
+   "where": "text",
+   "quote": "chief marino reported he has made all the corrections suggested by town counsel to the draft noise"
+  },
+  {
+   "name": "Memorandum of Agreement, Laborers International Union of North America, Public Employees Local Union 39 (DPW Unit), July 1, 2018 to June 30, 2021",
+   "where": "text",
+   "quote": "to approve the memorandum of agreement between the town of lunenburg and laborers international union of north america"
+  },
+  {
+   "name": "Economic Development Bond Bill (Senate version) amendments",
+   "where": "text",
+   "quote": "we will wait to see if these amendments make it into the filed economic development bond bill."
+  },
+  {
+   "name": "Green Communities Competitive Grant application",
+   "where": "text",
+   "quote": "as announced at last week's meeting, the green communities competitive grant application"
+  },
+  {
+   "name": "New Council on Aging contract and supporting templates (MART)",
+   "where": "text",
+   "quote": "mart emailed the new council on aging contract and supporting templates for compliance late today."
+  },
+  {
+   "name": "Schedule I - Parking traffic rules amendment",
+   "where": "text",
+   "quote": "replace main street, east side, from massachusetts ave. to oak ave-no parking any time -"
+  },
+  {
+   "name": "Executive Session Minutes for Release",
+   "where": "list",
+   "quote": "executive session minutes for release"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Shady Point",
+  "noise bylaw",
+  "special events",
+  "Council on Aging",
+  "police",
+  "traffic",
+  "West Street property",
+  "Green Communities grant",
+  "Economic Development Bond Bill",
+  "personnel",
+  "union contract",
+  "animal control",
+  "marijuana",
+  "town website",
+  "liaison appointments",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "she referred the board to a report from land use director adam burney"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-08-01",
  "docid": "5037",
@@ -12,16 +12,694 @@
  },
  "votes": [
   {
-   "motion": "Appoint William Tyler to the Cemetery Commission",
-   "moved_by": "Lance May",
-   "seconded_by": "R. Ebersole",
+   "motion": "Appoint Ryan Stober to the Agricultural Commission with a term ending June 30, 2020.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "R.Ebersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "he motioned to appoint mr. tyler to the three year term. discussion ensued over the term of the appointment. the elected vacancy, when appointed to, shall only be until the next annual election. mr. ebersole seconded the cemetery commission nomination of will",
-   "quote_taken_from_text": true
+   "quote": "to appoint ryan stober to the agricultural commission with a term ending june 30, 2020"
+  },
+  {
+   "motion": "Appoint Ashley Steele to the Agricultural Commission with a term to expire June 30, 2018.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint ashley steele to the agricultural commission with a term to expire june 30, 2018"
+  },
+  {
+   "motion": "Ratify the appointment of Andrew Hudson as Local Building Inspector.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the appointment of andrew hudson as local building inspector"
+  },
+  {
+   "motion": "Ratify the appointment of Samantha Tucker to the position of DPW Administrative Assistant.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the appointment of samantha tucker to the position of dpw administrative assistant"
+  },
+  {
+   "motion": "Approve the common victualer license for Dragonfly Garden Café, LLC at 3 Lancaster Avenue.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the common victualer license for dragonfly garden café, llc at 3 lancaster avenue"
+  },
+  {
+   "motion": "Appoint William Tyler to the three year term on the Cemetery Commission (joint vote of Selectmen and Cemetery Commissioners).",
+   "moved_by": "Mr. May",
+   "seconded_by": "Mr. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "vote: mr. mcquaid-aye, ms. luck-aye, ms. bertram - aye, mr. ebersole-aye, mr. toale- aye"
+  },
+  {
+   "motion": "Appoint Tom Alonzo as Town Clockwinder with a term to expire June 30, 2018.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint tom alonzo as town clockwinder with a term to expire june 30, 2018"
+  },
+  {
+   "motion": "Authorize Town Manager to sign the Massachusetts Department of Transportation Traffic Control Agreement #101529 as presented.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to authorize town manager to sign the massachusetts department of transportation traffic control agreement #101529 as presented"
+  },
+  {
+   "motion": "Approve the minutes of July 11 and July 18, 2017.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the board approved minutes of july 11 and july 18, 2017."
+  },
+  {
+   "motion": "Adjourn the meeting at 9:25 p.m.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn the meeting at 9:25 p.m."
   }
  ],
- "dropped_unquoted": 8,
- "note": "OCR extraction from macOS Vision. The text contains OCR artifacts in the second markers (2\"d, 2\"°, 20, 2\", 2\"'d) which are preserved verbatim in quotes as printed. All nine votes passed with either unanimous verbal affirmation (\"All in Favor\") or recorded individual ayes.",
- "cost_usd": 0.1039786
+ "dropped_unquoted": 2,
+ "note": "Text is OCR of a scanned page set with garbled characters and stamp text (RECEIVED & FILED). Votes are recorded as 'All in Favor' or as individual aye lists without a numeric tally, so outcomes are 'passed'. The Cemetery Commission (Tyler) vote is a joint vote with Cemetery Commissioners and is listed by the aye names printed. The minutes approval has no mover or seconder printed. The MBTA motion names a MassDOT Traffic Control Agreement while the discussion concerns the MBTA license. The 'Public Comment' label at the end is a remark by Mr. Ebersole, not a member of the public.",
+ "cost_usd": 0.01459254,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director jack rodriquenz reported the massdot website posted the route 13 project"
+  },
+  {
+   "name": "Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director brochu reported fy17 was a good year."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney stated the language referring to the superior court"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman (APDC)",
+   "status": "present",
+   "quote": "chairman richard mcgrath asked if there were any questions or comments."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "APDC Member",
+   "status": "present",
+   "quote": "apdc member cullen dwyer stated one issue that caused some confusion before was shutters"
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, stated he resides in the district."
+  },
+  {
+   "name": "Nathan Lockwood",
+   "status": "present",
+   "quote": "nathan lockwood, 91 main street, stated he is a homeowner in the district."
+  },
+  {
+   "name": "Jamie Anderson",
+   "status": "present",
+   "quote": "jamie anderson, 944 mass ave, noted the primary concern was the front appearance of a house."
+  },
+  {
+   "name": "Joslin Schneider",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "applicant joslin schneider noted the last agenda item was very insightful"
+  },
+  {
+   "name": "Lance May",
+   "role": "Chairman (Cemetery Commission)",
+   "status": "present",
+   "quote": "cemetery commissioners lance may and lorraine mendoza were present."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Cemetery Commissioner",
+   "status": "present",
+   "quote": "cemetery commissioners lance may and lorraine mendoza were present."
+  },
+  {
+   "name": "William Tyler",
+   "role": "nominee, Cemetery Commission",
+   "status": "present",
+   "quote": "mr. tyler, 5 graham street, stated he recently retired"
+  },
+  {
+   "name": "Andrew Hudson",
+   "role": "Local Building Inspector appointee",
+   "status": "present",
+   "quote": "mr. hudson introduced himself to the board stating he would like to bring in his knowledge of the field."
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Agricultural Commission appointee",
+   "status": "present",
+   "quote": "ryan stober stated agriculture has been in his blood since he was born."
+  },
+  {
+   "name": "Ashley Steele",
+   "role": "Agricultural Commission appointee",
+   "status": "not stated",
+   "quote": "ashley steele has been a resident for four years and attended lunenburg high school."
+  },
+  {
+   "name": "Samantha Tucker",
+   "role": "DPW Administrative Assistant appointee",
+   "status": "not stated",
+   "quote": "samantha tucker is originally from new york city and resides in shirley."
+  },
+  {
+   "name": "Jeff Mendoza",
+   "role": "Chairman (Agricultural Commission)",
+   "status": "not stated",
+   "quote": "chairman jeff mendoza stated the commissioners sadly accepted macmillan's resignation"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Town Clockwinder appointee",
+   "status": "not stated",
+   "quote": "appointment to town clockwinder- tom alonzo, 284 lancaster ave."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Ebersole and Mr. Toale will be the Selectmen representatives on the Charter Review committee; the other committees and Town Moderator will be contacted for recommendations.",
+   "quote": "mr. ebersole and mr. toale will be the selectmen representatives."
+  },
+  {
+   "decision": "Ms. Bertram asked that the water district report on the status of its water withdrawal permit increase; Mr. Toale wanted more information from Lancaster and the water district. No vote on the Lancaster letter.",
+   "quote": "ms. bertram would like the water district to report on where we are on the increase of the water withdrawal permit"
+  },
+  {
+   "decision": "Mr. Ebersole suggested one more pass at the APD guidelines, covering procedural and substantive issues.",
+   "quote": "he suggested one more pass at the guidelines."
+  },
+  {
+   "decision": "The Board signed thank you letters to outgoing committee members and a retiring constable (no vote recorded).",
+   "quote": "the board signed thank you letters to outgoing committee members (douglas macmillan and stephen schaff)"
+  },
+  {
+   "decision": "Board noted that budget revisions appearing in an accounts payable warrant are the point to act on them, so the Board is alerted before signing.",
+   "quote": "in the future if the budget revision is in the account payable warrant; that is the time to take action."
+  },
+  {
+   "decision": "A survey will be placed on the Town website to gather citizen input on the future color of the Town Hall.",
+   "quote": "a survey monkey will be placed on the town website about the future color of the town hall."
+  },
+  {
+   "decision": "Liaisons were encouraged to urge their boards to use the Town Counsel office hours.",
+   "quote": "it was suggested the liaisons should encourage their boards to take advantage of the office hours."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Route 13 project cost (MassDOT)",
+   "what_was_recorded": "DPW Director reported the Route 13 project was advertised at an approximate cost.",
+   "quote": "at a cost of approximately $1.4 million, was advertised on july 8th.",
+   "figures_as_printed": [
+    "$1.4 million"
+   ]
+  },
+  {
+   "topic": "FY17 total revenue collections",
+   "what_was_recorded": "Finance Director reported total FY17 collections as a share of estimates.",
+   "quote": "the total collections for fy17 were $37,110,671.82 or 101.07% of fy17 estimates through june 30, 2017.",
+   "figures_as_printed": [
+    "$37,110,671.82",
+    "101.07%"
+   ]
+  },
+  {
+   "topic": "Revenue above estimate",
+   "what_was_recorded": "Categories collected above estimate, including Motor Vehicle Excise.",
+   "quote": "motor vehicle excise (116.43% or $253,604.29 more)",
+   "figures_as_printed": [
+    "116.43%",
+    "$253,604.29",
+    "192.59%",
+    "$64,810.30",
+    "124.36%",
+    "$60,631.31",
+    "113.02%",
+    "$23,367.87",
+    "150.84%",
+    "$156,417.75"
+   ]
+  },
+  {
+   "topic": "Revenue below estimate",
+   "what_was_recorded": "Categories collected below estimate.",
+   "quote": "fines and forfeits (63.01% or $13,205.89 below)",
+   "figures_as_printed": [
+    "63.01%",
+    "$13,205.89",
+    "85.25%",
+    "$17,413.99",
+    "87.98%",
+    "$33,900.51",
+    "83.17%",
+    "$9,098.25"
+   ]
+  },
+  {
+   "topic": "Taxes below levy estimate",
+   "what_was_recorded": "Taxes collected below the levy estimate.",
+   "quote": "under taxes - we received 99.02% or $241,667.06 less than the levy estimate.",
+   "figures_as_printed": [
+    "99.02%",
+    "$241,667.06"
+   ]
+  },
+  {
+   "topic": "Tax lien revenue",
+   "what_was_recorded": "Tax lien revenue received that was not in the estimated tax levy.",
+   "quote": "we also received $96,616.58 in",
+   "figures_as_printed": [
+    "$96,616.58"
+   ]
+  },
+  {
+   "topic": "State aid above estimate",
+   "what_was_recorded": "State aid exceeded estimate due to charter tuition reimbursement.",
+   "quote": "$50,285.99 more than the state aid estimate due to an increase in our charter tuition reimbursement",
+   "figures_as_printed": [
+    "100.65%",
+    "$50,285.99"
+   ]
+  },
+  {
+   "topic": "FY17 expenditures",
+   "what_was_recorded": "Expended or encumbered share of budgeted expenditures as of June 30, 2017.",
+   "quote": "we expended/encumbered $36,811,166.27 (99.49%) of budgeted expenditures as of june 30, 2017.",
+   "figures_as_printed": [
+    "$36,811,166.27",
+    "99.49%"
+   ]
+  },
+  {
+   "topic": "Appropriation closeouts",
+   "what_was_recorded": "Total appropriation closeouts for FY17.",
+   "quote": "we had appropriation closeouts of $358,084.74.",
+   "figures_as_printed": [
+    "$358,084.74"
+   ]
+  },
+  {
+   "topic": "State assessments over cherry sheet",
+   "what_was_recorded": "State assessments were higher than estimates, largely school choice and charter tuition.",
+   "quote": "state assessments were $170,787 higher than the cherry sheet estimates.",
+   "figures_as_printed": [
+    "$170,787"
+   ]
+  },
+  {
+   "topic": "Unexpended balances by department",
+   "what_was_recorded": "Listed unexpended balances remaining at FY17 close.",
+   "quote": "on the expenditure side, unexpended balances remain in the following:",
+   "figures_as_printed": [
+    "$1733.96",
+    "$1,156.17",
+    "$5,804.53",
+    "$5,208.89",
+    "$6810",
+    "$3118.48",
+    "$12,449.69",
+    "$5187.17",
+    "$5739.27",
+    "$4,209.09",
+    "$120,674",
+    "$9,209",
+    "$43,369.39",
+    "$7,835.26",
+    "$13,194.05",
+    "$45,103.74"
+   ]
+  },
+  {
+   "topic": "Free Cash estimate",
+   "what_was_recorded": "Preliminary estimate of FY17 Free Cash.",
+   "quote": "the preliminary estimate for free cash for fy17 is around $850,000.",
+   "figures_as_printed": [
+    "$850,000"
+   ]
+  },
+  {
+   "topic": "Motor vehicle excise dedicated to pavement",
+   "what_was_recorded": "Annual dedication of motor vehicle excise to the pavement management plan.",
+   "quote": "$50,000 of motor vehicle excise has been dedicated annually to the pavement management",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "MBTA license fee (Summer Street)",
+   "what_was_recorded": "Annual license fee the Town pays to the MBTA; one-time administrative fee already paid.",
+   "quote": "the one time administrative fee of $1000 has already been paid.",
+   "figures_as_printed": [
+    "$1000"
+   ]
+  },
+  {
+   "topic": "MBTA permanent easement alternative",
+   "what_was_recorded": "Option to pay a one-time sum for a permanent easement instead of the annual fee.",
+   "quote": "pay $25,000 for a permanent easement.",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "Accounts payable warrants signed",
+   "what_was_recorded": "Board signed accounts payable and construction warrants.",
+   "quote": "the board signed accounts payable warrants in the amounts of $78,840.31; $45,333.68",
+   "figures_as_printed": [
+    "$78,840.31",
+    "$45,333.68",
+    "$378,331.56"
+   ]
+  },
+  {
+   "topic": "Payroll warrants signed",
+   "what_was_recorded": "Board signed payroll and payroll deduction warrants.",
+   "quote": "a payroll warrant in the amount of $611,479.85 and a payroll deduction warrant in the amount of $625,236.38.",
+   "figures_as_printed": [
+    "$611,479.85",
+    "$625,236.38"
+   ]
+  },
+  {
+   "topic": "Water Department commitment",
+   "what_was_recorded": "FY 2018 first quarter Water Department commitment presented.",
+   "quote": "water department commitment in the amount of $6,592.46.",
+   "figures_as_printed": [
+    "$6,592.46"
+   ]
+  },
+  {
+   "topic": "Community Compact grant for stormwater",
+   "what_was_recorded": "Stormwater Task Force may begin to use the Community Compact grant.",
+   "quote": "utilize the $25,000 community compact grant",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Internal transfers at fiscal year close to adjust appropriations to at or near zero.",
+   "outcome": "done (no amount printed)",
+   "amount_as_printed": "",
+   "quote": "some internal transfers were done to adjust all other appropriations to at or near zero at the close of the fiscal year."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Jack Rodriquenz",
+   "stated_role": "DPW Director",
+   "topic": "Route 13 project bid timing and cost",
+   "quote": "dpw director jack rodriquenz reported the massdot website posted the route 13 project"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "resident, 82 Highland Street",
+   "topic": "Architectural Preservation District guidelines",
+   "quote": "dave rodgers, 82 highland street, stated he resides in the district."
+  },
+  {
+   "speaker": "Nathan Lockwood",
+   "stated_role": "homeowner in the district, 91 Main Street",
+   "topic": "Architectural Preservation District guidelines",
+   "quote": "nathan lockwood, 91 main street, stated he is a homeowner in the district."
+  },
+  {
+   "speaker": "Jamie Anderson",
+   "stated_role": "944 Mass Ave",
+   "topic": "Architectural Preservation District guidelines",
+   "quote": "jamie anderson, 944 mass ave, noted the primary concern was the front appearance of a house."
+  },
+  {
+   "speaker": "Mr. Ebersole",
+   "stated_role": "Vice Chairman",
+   "topic": "Town anniversary",
+   "quote": "public comment: mr. ebersole reported tonight is the town's 289th anniversary."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "4th Quarter Financial Report FY2017",
+   "resolution": "received report",
+   "quote": "4 quarter financial report for fy2017",
+   "tags": [
+    "finance",
+    "revenue",
+    "FY17 close"
+   ]
+  },
+  {
+   "topic": "Resignation and Appointments to Agricultural Commission",
+   "resolution": "appointed Ryan Stober and Ashley Steele",
+   "quote": "resignation and appointments to agricultural commission:",
+   "tags": [
+    "appointments",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Town Manager Appointments: Local Building Inspector",
+   "resolution": "ratified Andrew Hudson",
+   "quote": "town manager appointments local building inspector- ms. lemieux reported andrew hudson",
+   "tags": [
+    "appointments",
+    "building"
+   ]
+  },
+  {
+   "topic": "DPW Administrative Assistant",
+   "resolution": "ratified Samantha Tucker",
+   "quote": "ms. lemieux moved on to the position of dpw administrative assistant.",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "APDC Continuation of Guidelines Review",
+   "resolution": "no action; one more pass suggested",
+   "quote": "architectural preservation district commission (apdc) /continuation of guidelines review",
+   "tags": [
+    "historic district",
+    "bylaw",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Dragonfly Garden Café common victualer license",
+   "resolution": "approved",
+   "quote": "dragonfly garden café ll.c- common victualer license application-3 lancaster ave.",
+   "tags": [
+    "licenses",
+    "business"
+   ]
+  },
+  {
+   "topic": "Cemetery Commission mutual appointment",
+   "resolution": "appointed William Tyler",
+   "quote": "mutual appointment to the cemetery commission with the cemetery commissioners",
+   "tags": [
+    "appointments",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Town Clockwinder appointment",
+   "resolution": "appointed Tom Alonzo",
+   "quote": "appointment to town clockwinder- tom alonzo, 284 lancaster ave.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Charter Review discussion and timeline",
+   "resolution": "discussed; Selectmen representatives named",
+   "quote": "charter review discussion and timeline",
+   "tags": [
+    "charter review",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "MBTA lease / Summer Street traffic control agreement",
+   "resolution": "Town Manager authorized to sign",
+   "quote": "sign mbta lease agreement for summer street construction project",
+   "tags": [
+    "MBTA",
+    "Summer Street",
+    "contracts"
+   ]
+  },
+  {
+   "topic": "Lancaster letter of support for Mass Works Grant",
+   "resolution": "discussed; no vote",
+   "quote": "town of lancaster letter of support for mass works grant",
+   "tags": [
+    "water",
+    "Lancaster",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "minutes/ warrants/action file issues",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported",
+   "quote": "town manager report:",
+   "tags": [
+    "Town Hall painting",
+    "union negotiations",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Thank-you letters and closing public comment",
+   "resolution": "no action",
+   "quote": "the board signed thank you letters to outgoing committee members (douglas macmillan and stephen schaff)",
+   "tags": [
+    "committees"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "MBTA Use and Occupancy License Agreement",
+   "where": "list",
+   "quote": "ms. lemieux presented the mbta use and occupancy license agreement."
+  },
+  {
+   "name": "Massachusetts Department of Transportation Traffic Control Agreement #101529",
+   "where": "text",
+   "quote": "massachusetts department of transportation traffic control agreement #101529 as presented"
+  },
+  {
+   "name": "4 Quarter Financial Report for FY2017",
+   "where": "text",
+   "quote": "4 quarter financial report for fy2017"
+  },
+  {
+   "name": "Town of Lancaster Letter of Support for Mass Works Grant",
+   "where": "text",
+   "quote": "town of lancaster letter of support for mass works grant"
+  },
+  {
+   "name": "Preservation Restriction Agreement (Mass Historical Commission and the Town)",
+   "where": "text",
+   "quote": "there is a preservation restriction agreement between mass historical commission and the town"
+  },
+  {
+   "name": "APDC guidelines document",
+   "where": "text",
+   "quote": "has the board read the entire guidelines document?"
+  },
+  {
+   "name": "APD bylaw",
+   "where": "text",
+   "quote": "mr. mcquaid referred to the apd bylaw wording"
+  },
+  {
+   "name": "Draft Notice of Intent for the new MS4 permit",
+   "where": "text",
+   "quote": "reviewed the draft notice of intent for the new ms4 permit"
+  },
+  {
+   "name": "Lunenburg Ledger article on the water district",
+   "where": "text",
+   "quote": "she referred to a recent article in the lunenburg ledger"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "appointments",
+  "FY17 finances",
+  "MBTA license",
+  "Summer Street project",
+  "Agricultural Commission",
+  "Architectural Preservation District",
+  "Cemetery Commission",
+  "charter review",
+  "Lancaster water permit",
+  "Town Hall painting",
+  "union negotiations",
+  "stormwater",
+  "town counsel",
+  "licenses"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux presented the mbta use and occupancy license agreement."
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

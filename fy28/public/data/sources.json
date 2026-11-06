@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04",
+ "generated": "2026-11-06",
  "origins": [
   {
    "id": "school",
@@ -60,11 +60,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 130 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 131 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4930 of these 4946 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4935 of these 4951 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -2087,6 +2087,26 @@
   },
   {
    "section": "theirs",
+   "id": "parks-information-request-2025",
+   "origin": "request",
+   "title": "The Parks & Recreation information request, 2025",
+   "blurb": "The email thread behind the Parks & Recreation reports. It came from TJ Loughlin’s own mailbox, not from a website; the decision to publish it is recorded in sources/data/redactions.csv.",
+   "items": [
+    {
+     "path": "correspondence/2025-08-07-parks-information-request-thread.pdf",
+     "title": "The request and the Facilities Director’s answers",
+     "stars": 2,
+     "what": "TJ Loughlin’s request of 7 August 2025 and the Facilities Director’s answers to 10 September 2025.",
+     "kind": "PDF",
+     "bytes": 452083,
+     "url": "/docs/correspondence/2025-08-07-parks-information-request-thread.pdf",
+     "count": 8,
+     "unit": "pages"
+    }
+   ]
+  },
+  {
+   "section": "theirs",
    "id": "finance-committee-2026-10-22-sped",
    "origin": "school",
    "title": "Special education funding, for the Finance Committee, 22 October 2026",
@@ -2657,9 +2677,9 @@
      "stars": 2,
      "what": "Written by us. One row per document that arrived by request rather than off a website and that the screen flagged or could not read: the decision (publish, redact, withhold), the rule, how much was removed, the reason and who decided. The raw copy of anything redacted or withheld is held privately; this register never holds a redacted value, only where one was.",
      "kind": "Data",
-     "bytes": 79260,
+     "bytes": 79693,
      "url": "/docs/data/redactions.csv",
-     "count": 109,
+     "count": 110,
      "unit": "rows",
      "textUrl": "/docs/data/redactions.csv"
     },
@@ -3212,9 +3232,9 @@
      "what": "Where the six Parks documents came from, the town’s filename for each, a sha256, where each is filed and why, which are system printouts and which are statements — and that the MUNIS report’s period is inferred.",
      "byRequest": true,
      "kind": "Notes",
-     "bytes": 4490,
+     "bytes": 5398,
      "url": "/docs/town-ledgers/account-details/PROVENANCE-parks-2025.md",
-     "count": 52,
+     "count": 65,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-parks-2025.md"
     },
@@ -3574,7 +3594,7 @@
      "stars": 3,
      "what": "The ELECTED OFFICIALS and APPOINTED OFFICIALS listing read as data, FY2022 to FY2025. Two thirds of the posts the town lists are unpaid seats on boards. It is NOT a headcount of town employees — a DPW labourer or a town hall clerk holds no appointed post — and it says so, because the wage list that would give a headcount stopped naming departments after FY2016.",
      "kind": "Notes",
-     "bytes": 13363,
+     "bytes": 13470,
      "url": "/docs/analyses/town-personnel.md",
      "count": 144,
      "unit": "lines",
@@ -3898,9 +3918,9 @@
      "stars": 2,
      "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
      "kind": "Data",
-     "bytes": 562939,
+     "bytes": 708130,
      "url": "/docs/data/suggested-reports-meetings.csv",
-     "count": 1237,
+     "count": 1573,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports-meetings.csv"
     },
@@ -3910,9 +3930,9 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 369960,
+     "bytes": 408860,
      "url": "/docs/data/board-transfers.csv",
-     "count": 616,
+     "count": 687,
      "unit": "rows",
      "textUrl": "/docs/data/board-transfers.csv"
     },
@@ -3922,9 +3942,9 @@
      "stars": 2,
      "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
      "kind": "Data",
-     "bytes": 277092,
+     "bytes": 343327,
      "url": "/docs/data/suggested-reports.csv",
-     "count": 326,
+     "count": 391,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports.csv"
     },
@@ -4078,9 +4098,9 @@
      "stars": 2,
      "what": "For every department-year in `report-index.csv`, its own pages read for a headcount in any of the six forms the town uses. Where there is no number the row carries a REASON — `mentions staff, states no number` or `no mention of staff on its own pages` — because those are different problems and a blank cannot tell them apart.",
      "kind": "Data",
-     "bytes": 60972,
+     "bytes": 59606,
      "url": "/docs/data/staffing-by-section.csv",
-     "count": 437,
+     "count": 436,
      "unit": "rows",
      "textUrl": "/docs/data/staffing-by-section.csv"
     },
@@ -4198,7 +4218,7 @@
      "stars": 2,
      "what": "The audit of the two readers above, one row per department per year. Every cell that is not a number is a to-do or an explanation, never a finding about the town. Rendered as a grid in notes/generated/STAFFING-COVERAGE.md.",
      "kind": "Data",
-     "bytes": 35949,
+     "bytes": 35955,
      "url": "/docs/data/staffing-coverage.csv",
      "count": 600,
      "unit": "rows",
@@ -4390,7 +4410,7 @@
      "stars": 2,
      "what": "One row per thread: the question a resident is following, which boards touch it, the match rules that find it in the record, when it was registered, and whether it has closed and on what vote.",
      "kind": "Data",
-     "bytes": 16855,
+     "bytes": 16892,
      "url": "/docs/data/threads.csv",
      "count": 22,
      "unit": "rows",
@@ -4844,7 +4864,7 @@
      "stars": 1,
      "what": "The companion to the small multiples, and the one that answers SIZE rather than movement: every department on one people axis, so the schools dwarf the rest the way they do in the budget. Spaced by YEAR and broken at any year a department published no figure, because these series have holes in them and an unbroken line would draw a record the town never printed.",
      "kind": "SVG",
-     "bytes": 11022,
+     "bytes": 10878,
      "url": "/docs/analyses/charts/town-personnel-all.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-all.svg"
     },
@@ -4854,7 +4874,7 @@
      "stars": 1,
      "what": "One small panel per department with two or more published years, each on its own scale and spaced by YEAR so a year the department printed no figure — the Council on Aging in FY2012, FY2013 and FY2021 — shows as the gap it is. A hollow point is a year dropped as a misreading and is never drawn through.",
      "kind": "SVG",
-     "bytes": 10359,
+     "bytes": 10430,
      "url": "/docs/analyses/charts/town-personnel-counts.svg",
      "textUrl": "/docs/analyses/charts/town-personnel-counts.svg"
     },
@@ -5537,7 +5557,7 @@
      "stars": 3,
      "what": "Every page across fifteen annual town reports that carries a table of figures, each with the SUBJECT read off its own headings and whether any dataset cites it. It maps the other direction from the rest of the backlog: from the pages to what is on them, rather than from datasets that already exist — so a table nobody has written an extractor for appears in the queue instead of being invisible. `state` is the work queue — `read`, `unread`, or `reversed` for a page whose OCR came out upside down, which is a re-OCR job rather than a reading job. `subject` is a GUESS from the headings and is there to group the queue, never to say what a figure means. See scripts/map_annual_report_pages.py.",
      "kind": "Data",
-     "bytes": 850795,
+     "bytes": 851711,
      "url": "/docs/data/annual-report-pages.csv",
      "count": 2332,
      "unit": "rows",
@@ -5573,9 +5593,9 @@
      "stars": 3,
      "what": "What the town HOLDS at 30 June — cash, receivables, warrants payable, reserves and undesignated fund balance — by fund type, transcribed by reading the rendered page rather than by OCR, which recovers zero of this page’s money tokens. Every other dataset here measures money moving; this one measures a stock. FY2011 so far: 61 figures, every column footing to the report’s own printed total, the identity the table states, and the special revenue plus enterprise fund equity tying to the special revenue schedule’s printed carried forward. See data/PROVENANCE-balance-sheet.md.",
      "kind": "Data",
-     "bytes": 260079,
+     "bytes": 260380,
      "url": "/docs/data/balance-sheet.csv",
-     "count": 1699,
+     "count": 1701,
      "unit": "rows",
      "textUrl": "/docs/data/balance-sheet.csv"
     },
@@ -5705,9 +5725,9 @@
      "stars": 3,
      "what": "One row per new document found by the daily re-walk of the listing pages the mirrors came from -- the district's budget page and the town's budget hub, town meeting and finance pages -- with the day it was first seen, its address and our copy. A first-seen date is an upper bound on posting, no better than the gap since the last walk. See scripts/watch_documents.py.",
      "kind": "Data",
-     "bytes": 11852,
+     "bytes": 13170,
      "url": "/docs/data/document-watch-events.csv",
-     "count": 62,
+     "count": 67,
      "unit": "rows",
      "textUrl": "/docs/data/document-watch-events.csv"
     },
@@ -5933,9 +5953,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1064685,
+     "bytes": 1065718,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4746,
+     "count": 4751,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -5957,9 +5977,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 596520,
+     "bytes": 597149,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4746,
+     "count": 4751,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -5969,9 +5989,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 530198,
+     "bytes": 530106,
      "url": "/docs/data/money-gaps.csv",
-     "count": 658,
+     "count": 659,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -5993,9 +6013,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 460212,
+     "bytes": 461018,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2942,
+     "count": 2947,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -6029,9 +6049,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 132452,
+     "bytes": 133509,
      "url": "/docs/data/table-semantics.csv",
-     "count": 209,
+     "count": 211,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -6089,7 +6109,7 @@
      "stars": 2,
      "what": "One row per report, 1959 to FY2025: its pages, the tables found in it, how many are in a dataset and whether that dataset is in the database, and the datasets it feeds. Generated by build_annual_report_coverage.py; its readable form is notes/reference/EXTRACTION-GAPS.md.",
      "kind": "Data",
-     "bytes": 38277,
+     "bytes": 38610,
      "url": "/docs/data/annual-report-coverage.csv",
      "count": 67,
      "unit": "rows",
@@ -6185,9 +6205,9 @@
      "stars": 2,
      "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
      "kind": "Data",
-     "bytes": 10794,
+     "bytes": 10939,
      "url": "/docs/data/annual-report-coverage-datasets.csv",
-     "count": 117,
+     "count": 119,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-coverage-datasets.csv"
     },
@@ -6257,7 +6277,7 @@
      "stars": 2,
      "what": "Which of the unread annual-report pages get extracted, in what order, and what lands when each batch does. A batch is a TABLE FAMILY rather than a set of pages, because the cost is writing an extractor and that is paid once per family however many pages it covers — forty-eight pages of special revenue funds are one job, not forty-eight. Page counts are derived from annual-report-pages.csv on every run so the plan cannot drift from the queue it plans; the batching, the order and the estimates are judgements. See scripts/build_ingest_plan.py.",
      "kind": "Data",
-     "bytes": 5649,
+     "bytes": 5648,
      "url": "/docs/data/ingest-plan.csv",
      "count": 13,
      "unit": "rows",
@@ -6785,7 +6805,7 @@
      "stars": 1,
      "what": "One row per video of a board and date that has more than one. `relation` says whether two postings are the same recording, an excerpt of it, or a separate recording, measured by shared six-word runs of their captions in BOTH directions; `newest` is the one the site links. Both are treated as valid and their minutes are merged. Written by reconcile_meeting_videos.py.",
      "kind": "Data",
-     "bytes": 20048,
+     "bytes": 20113,
      "url": "/docs/data/meeting-videos.csv",
      "count": 121,
      "unit": "rows",
@@ -7188,7 +7208,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 117325824,
+     "bytes": 117387264,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -7210,9 +7230,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3946146,
+     "bytes": 4023377,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7114,
+     "count": 7115,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -7361,6 +7381,18 @@
      "textUrl": "/docs/data/line-history.csv"
     },
     {
+     "path": "data/agentic-spend.csv",
+     "title": "What the scripted reading cost, job by job",
+     "stars": 3,
+     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
+     "kind": "Data",
+     "bytes": 930808,
+     "url": "/docs/data/agentic-spend.csv",
+     "count": 13376,
+     "unit": "rows",
+     "textUrl": "/docs/data/agentic-spend.csv"
+    },
+    {
      "path": "data/athletics-schedules.csv",
      "title": "Every game on the district’s athletic schedules, FY2022–FY2027",
      "stars": 3,
@@ -7383,18 +7415,6 @@
      "count": 5527,
      "unit": "rows",
      "textUrl": "/docs/data/dese-teacher-subject.csv"
-    },
-    {
-     "path": "data/agentic-spend.csv",
-     "title": "What the scripted reading cost, job by job",
-     "stars": 3,
-     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
-     "kind": "Data",
-     "bytes": 854489,
-     "url": "/docs/data/agentic-spend.csv",
-     "count": 12313,
-     "unit": "rows",
-     "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
      "path": "data/munis-school-ytd.csv",
@@ -7438,9 +7458,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 463941,
+     "bytes": 464799,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2706,
+     "count": 2711,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -8208,9 +8228,9 @@
      "stars": 2,
      "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
      "kind": "Data",
-     "bytes": 2606833,
+     "bytes": 2607915,
      "url": "/docs/data/searchable-pdfs.csv",
-     "count": 16288,
+     "count": 16294,
      "unit": "rows",
      "textUrl": "/docs/data/searchable-pdfs.csv"
     },
@@ -8220,9 +8240,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2598317,
+     "bytes": 2598864,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12237,
+     "count": 12239,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -8232,9 +8252,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1792933,
+     "bytes": 1793313,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12281,
+     "count": 12283,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -8280,9 +8300,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 615153,
+     "bytes": 615353,
      "url": "/docs/data/search-affinity.csv",
-     "count": 4362,
+     "count": 4363,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -8311,6 +8331,18 @@
      "textUrl": "/docs/data/fincom-presentation-tables.csv"
     },
     {
+     "path": "data/copy-status.csv",
+     "title": "Whether the publisher’s copy is still our copy",
+     "stars": 2,
+     "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
+     "kind": "Data",
+     "bytes": 422149,
+     "url": "/docs/data/copy-status.csv",
+     "count": 1243,
+     "unit": "rows",
+     "textUrl": "/docs/data/copy-status.csv"
+    },
+    {
      "path": "data/fund-balances-fincom.csv",
      "title": "Special revenue, Chapter 90 and trust fund balances from the Finance Committee’s files",
      "stars": 2,
@@ -8323,26 +8355,14 @@
      "textUrl": "/docs/data/fund-balances-fincom.csv"
     },
     {
-     "path": "data/copy-status.csv",
-     "title": "Whether the publisher’s copy is still our copy",
-     "stars": 2,
-     "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
-     "kind": "Data",
-     "bytes": 391175,
-     "url": "/docs/data/copy-status.csv",
-     "count": 1163,
-     "unit": "rows",
-     "textUrl": "/docs/data/copy-status.csv"
-    },
-    {
      "path": "data/link-status.csv",
      "title": "Whether each source document is still public",
      "stars": 2,
      "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
      "kind": "Data",
-     "bytes": 315548,
+     "bytes": 357833,
      "url": "/docs/data/link-status.csv",
-     "count": 1736,
+     "count": 1936,
      "unit": "rows",
      "textUrl": "/docs/data/link-status.csv"
     },
@@ -8364,9 +8384,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 167486,
+     "bytes": 173099,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 43,
+     "count": 44,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -8508,9 +8528,9 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 34931,
+     "bytes": 35360,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 216,
+     "count": 218,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
@@ -8700,9 +8720,9 @@
      "stars": 2,
      "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
      "kind": "Data",
-     "bytes": 8769,
+     "bytes": 9338,
      "url": "/docs/data/youtube-watch-events.csv",
-     "count": 75,
+     "count": 80,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-watch-events.csv"
     },
@@ -8761,9 +8781,9 @@
      "stars": 2,
      "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
      "kind": "Data",
-     "bytes": 3967,
+     "bytes": 4297,
      "url": "/docs/data/source-checks.csv",
-     "count": 122,
+     "count": 134,
      "unit": "rows",
      "textUrl": "/docs/data/source-checks.csv"
     },
@@ -8877,6 +8897,18 @@
      "textUrl": "/docs/data/ambulance-receipts.csv"
     },
     {
+     "path": "data/feed-watch-events.csv",
+     "title": "What appeared in those feeds",
+     "stars": 2,
+     "what": "Written by us. One row per item first seen, with when.",
+     "kind": "Data",
+     "bytes": 2026,
+     "url": "/docs/data/feed-watch-events.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/feed-watch-events.csv"
+    },
+    {
      "path": "data/athletics-roster-counts.csv",
      "title": "Players per team, where a coach made the roster public",
      "stars": 2,
@@ -8887,18 +8919,6 @@
      "count": 10,
      "unit": "rows",
      "textUrl": "/docs/data/athletics-roster-counts.csv"
-    },
-    {
-     "path": "data/feed-watch-events.csv",
-     "title": "What appeared in those feeds",
-     "stars": 2,
-     "what": "Written by us. One row per item first seen, with when.",
-     "kind": "Data",
-     "bytes": 1845,
-     "url": "/docs/data/feed-watch-events.csv",
-     "count": 11,
-     "unit": "rows",
-     "textUrl": "/docs/data/feed-watch-events.csv"
     },
     {
      "path": "data/budget-episodes.csv",
@@ -8918,9 +8938,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1668,
+     "bytes": 1699,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 51,
+     "count": 52,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -9447,7 +9467,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 920 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 925 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -13781,6 +13801,17 @@
      "upstream": "https://drive.google.com/file/d/1ULXk_7YVRsfvEUaO7tUCyvYc36XxVbOJ/view?usp=drive_link"
     },
     {
+     "path": "district-budget/docs/sc-meetings/2026-2027-fy28-budget-priorities.pdf",
+     "title": "FY28 Budget Priorities",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 273752,
+     "url": "/docs/district-budget/docs/sc-meetings/2026-2027-fy28-budget-priorities.pdf",
+     "textUrl": "/docs/district-budget/text/sc-meetings/2026-2027-fy28-budget-priorities.txt",
+     "upstream": "https://drive.google.com/file/d/1S8MN7H6EPSxnymMeyaQ-8CS8xfGSEpFz/view?usp=drive_link"
+    },
+    {
      "path": "district-budget/docs/sc-meetings/2024-2025-facilities-grounds-report.pdf",
      "title": "Facilities & Grounds Report",
      "stars": 1,
@@ -15241,6 +15272,17 @@
      "upstream": "https://drive.google.com/file/d/1lcQ_oBiot-6cV_vGjwNQwbtkhnF3LgEF/view?usp=drive_link"
     },
     {
+     "path": "district-budget/docs/sc-meetings/2026-2027-lunenburg-bullying-prevention-family-feedback-and-next-steps.pdf",
+     "title": "Lunenburg Bullying Prevention Family Feedback and Next Steps",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 321053,
+     "url": "/docs/district-budget/docs/sc-meetings/2026-2027-lunenburg-bullying-prevention-family-feedback-and-next-steps.pdf",
+     "textUrl": "/docs/district-budget/text/sc-meetings/2026-2027-lunenburg-bullying-prevention-family-feedback-and-next-steps.txt",
+     "upstream": "https://drive.google.com/file/d/1JpmbHGU3dtZRuZfEYd4wv-JJr_S5D45-/view?usp=drive_link"
+    },
+    {
      "path": "district-budget/docs/sc-meetings/2023-09-06-lunenburg-coaches-guidebook.pdf",
      "title": "Lunenburg Coaches Guidebook",
      "stars": 1,
@@ -15261,6 +15303,28 @@
      "url": "/docs/district-budget/docs/sc-meetings/2024-2025-lunenburg-dese-imr-report.pdf",
      "textUrl": "/docs/district-budget/text/sc-meetings/2024-2025-lunenburg-dese-imr-report.txt",
      "upstream": "https://drive.google.com/file/d/1fVhSpHYVAi4lPotM73jor-NlxdzDD97A/view?usp=drive_link"
+    },
+    {
+     "path": "district-budget/docs/sc-meetings/2026-2027-lunenburg-fy28-superintendent-recommended-budget-priorities.pdf",
+     "title": "Lunenburg FY28 Superintendent Recommended Budget Priorities",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 438154,
+     "url": "/docs/district-budget/docs/sc-meetings/2026-2027-lunenburg-fy28-superintendent-recommended-budget-priorities.pdf",
+     "textUrl": "/docs/district-budget/text/sc-meetings/2026-2027-lunenburg-fy28-superintendent-recommended-budget-priorities.txt",
+     "upstream": "https://drive.google.com/file/d/1q1fMYAeVA_rscJVgG2OenUNDt_LXIN6j/view?usp=drive_link"
+    },
+    {
+     "path": "district-budget/docs/sc-meetings/2026-2027-lunenburg-full-bullying-plan-with-proposed-changes.pdf",
+     "title": "Lunenburg Full Bullying Plan with Proposed Changes",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 760160,
+     "url": "/docs/district-budget/docs/sc-meetings/2026-2027-lunenburg-full-bullying-plan-with-proposed-changes.pdf",
+     "textUrl": "/docs/district-budget/text/sc-meetings/2026-2027-lunenburg-full-bullying-plan-with-proposed-changes.txt",
+     "upstream": "https://drive.google.com/file/d/1bTAKuQkNmzcl5o_86yhpLUb3akBncm3j/view?usp=drive_link"
     },
     {
      "path": "district-budget/docs/personnel/staff-directory/2026-09-25/lunenburg-high-school.html",
@@ -16887,6 +16951,17 @@
      "bytes": 158675,
      "url": "/docs/district-budget/docs/school-committee-page.html",
      "upstream": "https://www.lunenburgschools.net/school-committee-1"
+    },
+    {
+     "path": "district-budget/docs/sc-meetings/2026-2027-school-committee-agenda.pdf",
+     "title": "School Committee Agenda",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 135180,
+     "url": "/docs/district-budget/docs/sc-meetings/2026-2027-school-committee-agenda.pdf",
+     "textUrl": "/docs/district-budget/text/sc-meetings/2026-2027-school-committee-agenda.txt",
+     "upstream": "https://drive.google.com/file/d/1RGYyaEPrVmwo5rAQqz063hrkTwCDxj1p/view?usp=drive_link"
     },
     {
      "path": "district-budget/docs/sc-meetings/2026-2027-school-committee-agenda.pdf",
@@ -30987,7 +31062,8 @@
      "bytes": 64306,
      "url": "/docs/state-law/2026-10-08/new-oml-regulations-clean-version.pdf",
      "textUrl": "/docs/state-law/text/940-cmr-29.txt",
-     "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download"
+     "upstream": "https://www.mass.gov/doc/new-open-meeting-law-regulations-clean-version/download",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-10-6-2010-oml-2010-1-winchester-community-access-and-media.pdf",
@@ -31053,7 +31129,8 @@
      "bytes": 3580080,
      "url": "/docs/state-law/2026-10-08/determinations/determination-12-17-2010-oml-2010-6-gloucester-community-arts-charter-school-board-of-trustees.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2010-6.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcgJHX%C3%812drj5gwhAFGr0%C3%89dTuFA37HwitmmmFXl9aQLsLQ48H54VVFDsSJT7GsHX8UKuM5xmWCcknnf2%C3%89Q9xgIsg%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcgJHX%C3%812drj5gwhAFGr0%C3%89dTuFA37HwitmmmFXl9aQLsLQ48H54VVFDsSJT7GsHX8UKuM5xmWCcknnf2%C3%89Q9xgIsg%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-12-28-2010-oml-2010-7-walpole-board-of-selectmen.pdf",
@@ -31108,7 +31185,8 @@
      "bytes": 1055366,
      "url": "/docs/state-law/2026-10-08/determinations/determination-2-16-2011-oml-2011-12-northampton-city-council-committee-of-public-safety.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-12.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATx840yY9aCCJN5cEXR2xrXqdXZ3A7zQ5vmyuCExHzojc3dCBB9EqGBtgkMnzktx36xcejZce034kZWkxISmCeE%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATx840yY9aCCJN5cEXR2xrXqdXZ3A7zQ5vmyuCExHzojc3dCBB9EqGBtgkMnzktx36xcejZce034kZWkxISmCeE%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-4-26-2011-oml-2011-13-amherst-select-board.pdf",
@@ -31141,7 +31219,8 @@
      "bytes": 1327119,
      "url": "/docs/state-law/2026-10-08/determinations/determination-5-4-2011-oml-2011-15-melrose-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-15.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ac2xP6zsCK%C3%89i5SYWe1ZI%C3%89wtUfjMCnQXSDSQWDZ60%C3%81FVI1HoTnBeU%C3%89fZ0z8Pt%C3%89hbVd7g7F91ay3dW3jzpdEQn9sw%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Ac2xP6zsCK%C3%89i5SYWe1ZI%C3%89wtUfjMCnQXSDSQWDZ60%C3%81FVI1HoTnBeU%C3%89fZ0z8Pt%C3%89hbVd7g7F91ay3dW3jzpdEQn9sw%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-5-4-2011-oml-2011-16-wayland-board-of-selectmen.pdf",
@@ -31152,7 +31231,8 @@
      "bytes": 1071880,
      "url": "/docs/state-law/2026-10-08/determinations/determination-5-4-2011-oml-2011-16-wayland-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-16.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARJ2704ddtYkMWxaf2wOEVmYUwvSUFwDROig3UAZZLG5%C3%81et40GEJd7Ot3dULcjB6sgJoR0FTwH9THMGBqHRLBDU%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARJ2704ddtYkMWxaf2wOEVmYUwvSUFwDROig3UAZZLG5%C3%81et40GEJd7Ot3dULcjB6sgJoR0FTwH9THMGBqHRLBDU%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-5-19-2011-oml-2011-17-harvard-school-committee.pdf",
@@ -31163,7 +31243,8 @@
      "bytes": 2578911,
      "url": "/docs/state-law/2026-10-08/determinations/determination-5-19-2011-oml-2011-17-harvard-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-17.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeW4Q5v0XAxFtEKoFeIjRqvCf6m%C3%81KJ7nouMgg%C3%81OorDWJ3S7SqiVu%C3%81xQ4%C3%817fNhtinTuTBL%C3%81PxYHYZxbghdBmbBSw%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeW4Q5v0XAxFtEKoFeIjRqvCf6m%C3%81KJ7nouMgg%C3%81OorDWJ3S7SqiVu%C3%81xQ4%C3%817fNhtinTuTBL%C3%81PxYHYZxbghdBmbBSw%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-5-19-2011-oml-2011-18-harvard-school-committee.pdf",
@@ -31174,7 +31255,8 @@
      "bytes": 2800835,
      "url": "/docs/state-law/2026-10-08/determinations/determination-5-19-2011-oml-2011-18-harvard-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-18.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AatqdnN3aQKwKTvqiAPWY65yONlCWuxIYMMqdawDPe29jd%C3%81xJEb%C3%89uiwzh%C3%81%C3%89f0f0l6Mt17%C3%89KWO56s2TZvOP%C3%81PHY4%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AatqdnN3aQKwKTvqiAPWY65yONlCWuxIYMMqdawDPe29jd%C3%81xJEb%C3%89uiwzh%C3%81%C3%89f0f0l6Mt17%C3%89KWO56s2TZvOP%C3%81PHY4%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-5-25-2011-oml-2011-19-orange-cemetery-commission.pdf",
@@ -31240,7 +31322,8 @@
      "bytes": 1142942,
      "url": "/docs/state-law/2026-10-08/determinations/determination-6-8-2011-oml-2011-23-leicester-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-23.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXqvYHKL23zC5shbbiYn7SyQbwTX383S0eYNns4o%C3%894NaFOCTaVJCILqr1VxXHhSPU8DvUv34GzF3nDNTM3ycImg%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXqvYHKL23zC5shbbiYn7SyQbwTX383S0eYNns4o%C3%894NaFOCTaVJCILqr1VxXHhSPU8DvUv34GzF3nDNTM3ycImg%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-6-13-2011-oml-2011-24-dudley-board-of-selectmen.pdf",
@@ -31251,7 +31334,8 @@
      "bytes": 1255426,
      "url": "/docs/state-law/2026-10-08/determinations/determination-6-13-2011-oml-2011-24-dudley-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-24.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATw06f84pEFZ3UQwjMFLYSwCVYC%C3%89nf85PyvC4B86No52g7sWm2diEDkwVAHIKO0YmA9bIQPCCXA7AHMP0V1hAdQ%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATw06f84pEFZ3UQwjMFLYSwCVYC%C3%89nf85PyvC4B86No52g7sWm2diEDkwVAHIKO0YmA9bIQPCCXA7AHMP0V1hAdQ%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-6-17-2011-oml-2011-25-cotuit-board-of-fire-commissioners.pdf",
@@ -31295,7 +31379,8 @@
      "bytes": 1729953,
      "url": "/docs/state-law/2026-10-08/determinations/determination-7-25-2011-oml-2011-28-foxborough-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-28.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcfC8hMYJNb4FLP3Bfo9FqVM35OdoOLCLYs42Rvq6g07%C3%89%C3%816LJ%C3%89XVkfhoHSZLz8wky%C3%89PFT1I3oN58MzgP3OH5dUs%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcfC8hMYJNb4FLP3Bfo9FqVM35OdoOLCLYs42Rvq6g07%C3%89%C3%816LJ%C3%89XVkfhoHSZLz8wky%C3%89PFT1I3oN58MzgP3OH5dUs%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-7-25-2011-oml-2011-29-auburn-board-of-selectmen.pdf",
@@ -31306,7 +31391,8 @@
      "bytes": 2119146,
      "url": "/docs/state-law/2026-10-08/determinations/determination-7-25-2011-oml-2011-29-auburn-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-29.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aen%C3%89aQ6O3ANThTE5O%C3%81O48YFSFVN%C3%89xS4bCo9ZIy7C%C3%89pAVdXmsgpj0zd50AP9wVLIGUz3eIclFKTYEJ9ynlBTxIT8%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aen%C3%89aQ6O3ANThTE5O%C3%81O48YFSFVN%C3%89xS4bCo9ZIy7C%C3%89pAVdXmsgpj0zd50AP9wVLIGUz3eIclFKTYEJ9ynlBTxIT8%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-1-3-2011-oml-2011-3-newton-board-of-license-commissioners.pdf",
@@ -31339,7 +31425,8 @@
      "bytes": 1117282,
      "url": "/docs/state-law/2026-10-08/determinations/determination-7-25-2011-oml-2011-31-templeton-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-31.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AX%C3%81uHmu%C3%89%C3%81r2kLixxmaoUA2V%C3%81x4rFY0hg2GUvzPWMkEVKVOZyL2RWrovdwDOV62Sp%C3%816mk4Iabkga3Fqq36gJ4%C3%89Bc%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AX%C3%81uHmu%C3%89%C3%81r2kLixxmaoUA2V%C3%81x4rFY0hg2GUvzPWMkEVKVOZyL2RWrovdwDOV62Sp%C3%816mk4Iabkga3Fqq36gJ4%C3%89Bc%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-7-26-2011-oml-2011-32-templeton-board-of-selectmen.pdf",
@@ -31350,7 +31437,8 @@
      "bytes": 1564590,
      "url": "/docs/state-law/2026-10-08/determinations/determination-7-26-2011-oml-2011-32-templeton-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-32.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYER6kK%C3%89jjdqwrPxohLX5NjIGnYLfd%C3%813jkvWHz%C3%81L8HBgVBfRDR4i3E6y4TCOA4cBWovVlTCLbH69qIvhdmGvBlc%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYER6kK%C3%89jjdqwrPxohLX5NjIGnYLfd%C3%813jkvWHz%C3%81L8HBgVBfRDR4i3E6y4TCOA4cBWovVlTCLbH69qIvhdmGvBlc%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-7-25-2011-oml-2011-33-west-newbury-board-of-selectmen.pdf",
@@ -31372,7 +31460,8 @@
      "bytes": 4998774,
      "url": "/docs/state-law/2026-10-08/determinations/determination-8-4-2011-oml-2011-34-university-of-massachusetts-board-of-trustees.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-34.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT9AkL2aEkZD8bJQSAfsTXRdwN%C3%89EmgcN8IjcAespLPs7hAmggXrI4zl%C3%81pc3FeBJW1lRaOO0Ds%C3%819QlnF3gFf8mNM%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AT9AkL2aEkZD8bJQSAfsTXRdwN%C3%89EmgcN8IjcAespLPs7hAmggXrI4zl%C3%81pc3FeBJW1lRaOO0Ds%C3%819QlnF3gFf8mNM%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-8-22-2011-oml-2011-35-methuen-city-council.pdf",
@@ -31394,7 +31483,8 @@
      "bytes": 1330340,
      "url": "/docs/state-law/2026-10-08/determinations/determination-8-31-2011-oml-2011-36-sudbury-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-36.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AesTgjnLWQdYTFBMW4OlamOqvA4%C3%81Mc7GdBpYvE6NK9148pGGst4yHkynqgkLLCfVq6StDdooAypOBiki8%C3%81tFDnQ%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AesTgjnLWQdYTFBMW4OlamOqvA4%C3%81Mc7GdBpYvE6NK9148pGGst4yHkynqgkLLCfVq6StDdooAypOBiki8%C3%81tFDnQ%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-9-19-2011-oml-2011-37-yarmouth-removal-policy-procedure-committee.pdf",
@@ -31416,7 +31506,8 @@
      "bytes": 1139453,
      "url": "/docs/state-law/2026-10-08/determinations/determination-10-11-2011-oml-2011-38-wendell-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-38.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXUeNwJPITvNd27dc%C3%89W%C3%81NYhfD8hxI7RIcQz9M4qCox0Rn2J%C3%89bG95Y9wC8lUNFVTdYGxDHHO6mxwezjvqb%C3%89oV%C3%81As%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AXUeNwJPITvNd27dc%C3%89W%C3%81NYhfD8hxI7RIcQz9M4qCox0Rn2J%C3%89bG95Y9wC8lUNFVTdYGxDHHO6mxwezjvqb%C3%89oV%C3%81As%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-10-11-2011-oml-2011-39-brockton-water-commission.pdf",
@@ -31427,7 +31518,8 @@
      "bytes": 2009763,
      "url": "/docs/state-law/2026-10-08/determinations/determination-10-11-2011-oml-2011-39-brockton-water-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-39.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfRhumrrakFib%C3%81%C3%89T98bAnXbz6ms1HaJ8c65%C3%81Y8c4ZUHg7gU8MNtDFw89SbpeyTE63mZcNHkO8W097YBr%C3%81C6ho2M%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AfRhumrrakFib%C3%81%C3%89T98bAnXbz6ms1HaJ8c65%C3%81Y8c4ZUHg7gU8MNtDFw89SbpeyTE63mZcNHkO8W097YBr%C3%81C6ho2M%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-1-11-2011-oml-2011-4-marblehead-board-of-selectmen.pdf",
@@ -31449,7 +31541,8 @@
      "bytes": 1773142,
      "url": "/docs/state-law/2026-10-08/determinations/determination-10-19-2011-oml-2011-40-adams-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-40.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARfrnz1B1cU7jW3hCEFxfBlMib9x1FSBOuPYfjzrifiu5nsFXwBNbknv3NqdWPobGRpLECNmzoWi3Eo51nSJ8jc%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARfrnz1B1cU7jW3hCEFxfBlMib9x1FSBOuPYfjzrifiu5nsFXwBNbknv3NqdWPobGRpLECNmzoWi3Eo51nSJ8jc%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-10-20-2011-oml-2011-41-cohasset-board-of-water-commissioners.pdf",
@@ -31482,7 +31575,8 @@
      "bytes": 1730274,
      "url": "/docs/state-law/2026-10-08/determinations/determination-10-20-2011-oml-2011-43-blandford-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-43.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AckLWBsl12PK8d4XtRMOxJMYE46rEABcgheCdgiUj5%C3%895mD7rpqEs7D7KghSDnusJxbyEsm4CgRdxNAYPJsS6qf4%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AckLWBsl12PK8d4XtRMOxJMYE46rEABcgheCdgiUj5%C3%895mD7rpqEs7D7KghSDnusJxbyEsm4CgRdxNAYPJsS6qf4%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-10-31-2011-oml-2011-44-stoughton-school-committee.pdf",
@@ -31493,7 +31587,8 @@
      "bytes": 2573893,
      "url": "/docs/state-law/2026-10-08/determinations/determination-10-31-2011-oml-2011-44-stoughton-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-44.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aail4hwiIZMAMRletNKBheaZDiaPtAlof67BLwMwauFA9DAhYjvOxuh%C3%89MS5IYC1mgsoluJ6vlhaDeGEvdXlnQMw%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/Aail4hwiIZMAMRletNKBheaZDiaPtAlof67BLwMwauFA9DAhYjvOxuh%C3%89MS5IYC1mgsoluJ6vlhaDeGEvdXlnQMw%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-11-1-2011-oml-2011-45-gloucester-community-arts-charter-school-board-of-trustees.pdf",
@@ -31504,7 +31599,8 @@
      "bytes": 2091175,
      "url": "/docs/state-law/2026-10-08/determinations/determination-11-1-2011-oml-2011-45-gloucester-community-arts-charter-school-board-of-trustees.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-45.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQbvbXF7FbTebDwOrWrNOO5UV0%C3%81MCPlO93i4GM8ATLf72%C3%89YExjH14wWDq6VJKoaR4ZUo8xD%C3%89KD%C3%890Lo6d14MG7%C3%810%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQbvbXF7FbTebDwOrWrNOO5UV0%C3%81MCPlO93i4GM8ATLf72%C3%89YExjH14wWDq6VJKoaR4ZUo8xD%C3%89KD%C3%890Lo6d14MG7%C3%810%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-11-14-2011-oml-2011-46-easthampton-economic-development-and-industrial-commission.pdf",
@@ -31526,7 +31622,8 @@
      "bytes": 1110557,
      "url": "/docs/state-law/2026-10-08/determinations/determination-11-14-2011-oml-2011-47-ipswich-finance-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-47.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYRoF3aJ3gNjbzSc5tpDrpJC8TIocvioVD4at339KDjqc1sVBPv%C3%81%C3%891BR%C3%81xjPRIHDwvn3jcRseDcvJL9VAwtZxUM%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AYRoF3aJ3gNjbzSc5tpDrpJC8TIocvioVD4at339KDjqc1sVBPv%C3%81%C3%891BR%C3%81xjPRIHDwvn3jcRseDcvJL9VAwtZxUM%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-11-14-2011-oml-2011-48-john-d.-runkle-school-council.pdf",
@@ -31603,7 +31700,8 @@
      "bytes": 1547359,
      "url": "/docs/state-law/2026-10-08/determinations/determination-12-27-2011-oml-2011-53-wrentham-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-53.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZk0a5rYcGyP1ZV0NtIYM%C3%89PzNjQlIVQ40WGirsJeh6Df1HzSPXEh12kgvnNpN19EG8xn3oBKvSkLF6SRR7i%C3%89IaY%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AZk0a5rYcGyP1ZV0NtIYM%C3%89PzNjQlIVQ40WGirsJeh6Df1HzSPXEh12kgvnNpN19EG8xn3oBKvSkLF6SRR7i%C3%89IaY%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-12-27-2011-oml-2011-54-west-newbury-board-of-selectmen.pdf",
@@ -31636,7 +31734,8 @@
      "bytes": 1071330,
      "url": "/docs/state-law/2026-10-08/determinations/determination-12-27-2011-oml-2011-56-carver-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2011-56.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVRD1jJ13mGGVvsCaF8sJ29uP7OlcUkD3rpTXJa8J%C3%81S%C3%81SnRVgh73LsuuEvNbyNPYYCByaFER8wAAq6PpqHobu3s%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVRD1jJ13mGGVvsCaF8sJ29uP7OlcUkD3rpTXJa8J%C3%81S%C3%81SnRVgh73LsuuEvNbyNPYYCByaFER8wAAq6PpqHobu3s%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/determinations/determination-1-26-2011-oml-2011-6-westfield-city-council.pdf",
@@ -31702,7 +31801,8 @@
      "bytes": 4069972,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-13-2012-oml-2012-10-chatham-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-10.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUzppsqIQxQ%C3%89HZerr244e3iyoAdfaLl5uQWg2QBh%C3%89fld6xOJzDFVupwOoSrSlpwrfP3%C3%89AHtMQzBFgcO0ygOsD7U%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AUzppsqIQxQ%C3%89HZerr244e3iyoAdfaLl5uQWg2QBh%C3%89fld6xOJzDFVupwOoSrSlpwrfP3%C3%89AHtMQzBFgcO0ygOsD7U%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-9-2012-oml-2012-100-rowe-board-of-selectmen.pdf",
@@ -31724,7 +31824,8 @@
      "bytes": 1463556,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-16-2012-oml-2012-101-orleans-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-101.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaD5gi27rKw8PppDPinzKsXvKXZtCue0n%C3%89HnX7FUr05uf7j12QAjPH3xyn2oZB6Z53Qj6tKs67E%C3%81wKzCRB3V%C3%89yk%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaD5gi27rKw8PppDPinzKsXvKXZtCue0n%C3%89HnX7FUr05uf7j12QAjPH3xyn2oZB6Z53Qj6tKs67E%C3%81wKzCRB3V%C3%89yk%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-22-2012-oml-2012-102-chatham-golf-advisory-committee.pdf",
@@ -31746,7 +31847,8 @@
      "bytes": 1650222,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-22-2012-oml-2012-103-stoughton-board-of-assessors.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-103.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQ3to6U1w3OGFMDKb0MXdXG%C3%89tU8fuUfSL4ShTtU%C3%81%C3%81q%C3%89bE1WDDhpyMESZIAYqmCCRVHKFw5hAGWqnwssx9r9llT4%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AQ3to6U1w3OGFMDKb0MXdXG%C3%89tU8fuUfSL4ShTtU%C3%81%C3%81q%C3%89bE1WDDhpyMESZIAYqmCCRVHKFw5hAGWqnwssx9r9llT4%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-10-23-2012-oml-2012-104-west-newbury-board-of-selectmen.pdf",
@@ -31779,7 +31881,8 @@
      "bytes": 1268987,
      "url": "/docs/state-law/2026-10-09/determinations/determination-10-31-2012-oml-2012-106-becket-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-106.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcaDiSXe1ohzNcQZNtXu7bAdjctqe%C3%891V4aUWXGoCrQN1zkUnu6Gt%C3%89bEw3luZ57Wnkhh8ktE9Ci3JQCaJja0DdPk%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcaDiSXe1ohzNcQZNtXu7bAdjctqe%C3%891V4aUWXGoCrQN1zkUnu6Gt%C3%89bEw3luZ57Wnkhh8ktE9Ci3JQCaJja0DdPk%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-5-2012-oml-2012-107-templeton-board-of-selectmen.pdf",
@@ -31790,7 +31893,8 @@
      "bytes": 1412462,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-5-2012-oml-2012-107-templeton-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-107.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARjktoYMqrkeTYGE6ysm3NKJP9xCWw8%C3%81u%C3%89ZXIdHkriYeEkjDYbsd2pH8bO6AYmqAajHOOJleq0P80SEQGqGMU0E%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ARjktoYMqrkeTYGE6ysm3NKJP9xCWw8%C3%81u%C3%89ZXIdHkriYeEkjDYbsd2pH8bO6AYmqAajHOOJleq0P80SEQGqGMU0E%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-5-2012-oml-2012-108-templeton-board-of-selectmen.pdf",
@@ -31823,7 +31927,8 @@
      "bytes": 1294243,
      "url": "/docs/state-law/2026-10-09/determinations/determination-2-13-2012-oml-2012-11-chatham-town-manager-search-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-11.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVT%C3%81bR%C3%89Ihpb3VR%C3%81%C3%89Wk8cjWUECYaysMIzbR8rA3ZuuH1stZelsaA9XzJTPGCWG0W9rE0QswV9pNilCruKs39Z6Tw%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AVT%C3%81bR%C3%89Ihpb3VR%C3%81%C3%89Wk8cjWUECYaysMIzbR8rA3ZuuH1stZelsaA9XzJTPGCWG0W9rE0QswV9pNilCruKs39Z6Tw%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-11-19-2012-oml-2012-110-milford-school-committee.pdf",
@@ -31845,7 +31950,8 @@
      "bytes": 1357131,
      "url": "/docs/state-law/2026-10-09/determinations/determination-11-19-2012-oml-2012-111-weymouth-school-committee.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-111.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcqOIOJHGZIGIjwAjYCiVis23ziU0KAFy0cmGOEGVRnepXctzJZ7m7f8%C3%81cWswbTkYCx1A0TjGlHkohVFTMsHnuw%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AcqOIOJHGZIGIjwAjYCiVis23ziU0KAFy0cmGOEGVRnepXctzJZ7m7f8%C3%81cWswbTkYCx1A0TjGlHkohVFTMsHnuw%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-10-2012-oml-2012-112-montague-board-of-selectmen.pdf",
@@ -31878,7 +31984,8 @@
      "bytes": 1181186,
      "url": "/docs/state-law/2026-10-09/determinations/determination-12-17-2012-oml-2012-114-southampton-board-of-selectmen.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2012-114.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeP1QMBxXDhCYH0J%C3%81JnYg5aIgJWozMvnwl%C3%81RF%C3%814DUCwOQpZxeF6J6S1RJz5xiB5CBZijPhVlGjaP1zuta6AqDtA%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AeP1QMBxXDhCYH0J%C3%81JnYg5aIgJWozMvnwl%C3%81RF%C3%814DUCwOQpZxeF6J6S1RJz5xiB5CBZijPhVlGjaP1zuta6AqDtA%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-12-17-2012-oml-2012-115-randolph-school-committee.pdf",
@@ -63367,7 +63474,7 @@
    },
    {
     "name": "Capital Planning Committee",
-    "documents": 268
+    "documents": 269
    },
    {
     "name": "Cemetery Commission",
@@ -63399,7 +63506,7 @@
    },
    {
     "name": "Lunenburg Municipal Building Design Committee",
-    "documents": 168
+    "documents": 169
    },
    {
     "name": "School Building Committee Meeting",
@@ -63507,22 +63614,22 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12287,
-  "fetched": 12237,
-  "agendas": 7508,
-  "minutes": 4779,
+  "listed": 12289,
+  "fetched": 12239,
+  "agendas": 7509,
+  "minutes": 4780,
   "from": "2009-01-05",
   "to": "2026-11-23",
-  "textFiles": 12239,
+  "textFiles": 12241,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5720,
-  "groups": 32,
-  "bytes": 7342733960,
+  "documents": 5726,
+  "groups": 33,
+  "bytes": 7345669699,
   "loadBearing": 220
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 24 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 56 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

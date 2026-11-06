@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-03-26",
  "docid": "3987",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing",
+   "motion": "Close the public hearing on 654 and 658 Massachusetts Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -21,6 +21,150 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one procedural vote to close the hearing recorded with outcome.",
- "cost_usd": 0.0803065
+ "note": "The user gave the meeting date as 2018-03-26, but the minutes are headed April 9, 2018 (a continuation of the public hearing); the minutes' own date was used in the text. The received stamp reads \"APR 2 7 2010\", likely OCR for 2018. OCR errors: \"Site Pian\" (Plan), \"GEl\" (GEI), \"DDCG\" (DDCDG), and the header names \"Michael-Kay Jetfreys\" vs body \"Michael-Ray Jeffreys\" (body spelling used). Only one motion is recorded (close hearing, \"all aye\", no tally). No dollar figures, public comment, or executive session appear. The header lists Marjorie J. Boggio as Administrative Assistant, but the body does not name her as taking part, so she is not listed as an attendee.",
+ "cost_usd": 0.00710632,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "absent",
+   "quote": "absent: david prokowiew"
+  },
+  {
+   "name": "Gregory Roy",
+   "status": "present",
+   "role": "presenter, Ducharme & Dillis Civil Design Group Inc. (DDCDG)",
+   "quote": "presentation was by gregory roy, ducharme & dillis civil design group inc. (ddcdg), p.o. box 428, bolton, ma."
+  },
+  {
+   "name": "Steve Babineau",
+   "status": "present",
+   "role": "property owner/applicant",
+   "quote": "also in attendance was the property owner/applicant steve babineau with signature living, llc, 555 chase road,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant verbally withdrew the Traffic Impact, Environmental Impact, and Community Impact report waiver requests, since those reports were submitted that evening.",
+   "quote": "ddcdg verbally withdrew those three from the waivers listed above."
+  },
+  {
+   "decision": "Applicant will pave the first 20-25 feet of the Massachusetts Avenue driveway entrance and blend it into the gravel shoulder.",
+   "quote": "it was determined that ddcg will pave the first twenty/twenty-five feet (20-25') of the entrance and then blend it into the gravel shoulder."
+  },
+  {
+   "decision": "No 'No Parking' signage will be erected near the Massachusetts Avenue end; the Board will condition no parking, enforceable through future signage or pavement painting if necessary.",
+   "quote": "signage will not be erected for no parking near the massachusetts avenue end, but the board will condition no parking with the stipulation that it can be enforced"
+  },
+  {
+   "decision": "Board consensus to condition the approval on all outstanding comments of the reviewing engineer being addressed to his satisfaction.",
+   "quote": "board consensus was to condition that all outstanding comments of the reviewing engineer were addressed to his (reviewing engineer) satisfaction."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing (continued): site plan approval, three-family dwelling at 654 and 658 Massachusetts Avenue",
+   "resolution": "hearing closed 8:09 PM with conditions set",
+   "quote": "the hearing continuation was to hear and discuss an application for a site plan approval under § 250-8.4., code of the town of lunenburg",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "Massachusetts Avenue",
+    "three-family dwelling",
+    "driveway",
+    "stormwater"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stormwater Report, Revised 04/02/18",
+   "where": "list",
+   "quote": "stormwater report, revised 04/02/18"
+  },
+  {
+   "name": "Site Pian, Revised 04/02/18 (OCR; likely 'Plan')",
+   "where": "list",
+   "quote": "site pian, revised 04/02/18"
+  },
+  {
+   "name": "DDCDG Response Letter dtd 04/02/18",
+   "where": "list",
+   "quote": "ddcdg response letter dtd 04/02/18"
+  },
+  {
+   "name": "GEI Review Letter dtd 04/09/18",
+   "where": "list",
+   "quote": "gei review letter dtd 04/09/18"
+  },
+  {
+   "name": "Minutes/public hearings 2018/654_658 Mass Ave_04.09.18",
+   "where": "list",
+   "quote": "minutes/public hearings 2018/654_658 mass ave_04.09.18"
+  },
+  {
+   "name": "Graves Engineering, Inc. (GEI) review letter dated March 21, 2018",
+   "where": "text",
+   "quote": "graves engineering, inc. (gel) review letter dated march 21, 2018."
+  },
+  {
+   "name": "Traffic Impact Report",
+   "where": "text",
+   "quote": "a traffic impact report, environmental impact report, and community impact report were submitted as part of the april 2, 2018 response letter."
+  },
+  {
+   "name": "Environmental Impact Report",
+   "where": "text",
+   "quote": "a traffic impact report, environmental impact report, and community impact report were submitted as part of the april 2, 2018 response letter."
+  },
+  {
+   "name": "Community Impact Report",
+   "where": "text",
+   "quote": "a traffic impact report, environmental impact report, and community impact report were submitted as part of the april 2, 2018 response letter."
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "public hearing",
+  "Massachusetts Avenue",
+  "three-family dwelling",
+  "driveway and parking",
+  "stormwater",
+  "engineering review",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

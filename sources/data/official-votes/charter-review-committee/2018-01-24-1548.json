@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-01-24",
  "docid": "1548",
@@ -12,6 +12,256 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR minutes from Charter Review Committee, January 24, 2018. No formal votes are recorded. The minutes document discussion items and consensus points (e.g., \"Consensus to allow the Town Manager to appoint the Town Accountant\") but contain no motions with movers, seconders, or recorded outcomes. Minutes approval shows \"Changes recommended\" for the January 10 prior minutes, but no vote on approval is stated.",
- "cost_usd": 0.0804605
+ "note": "OCR text from a scanned page set; the minutes are partly garbled (e.g. \"ili.\", \"11.\", \"1co\", \"tererence\", \"Brainstorn\") and page 2 begins mid-sentence. Page 3 contains only the heading \"8. BOARD COMMENT/CONCERNS\" and nothing after it, so there is no adjournment and no end of meeting. No motions, votes, or roll-call results are recorded; consensus items and the minutes approval (\"Changes recommended\") are not votes. Public comment is \"none\" in both places. S. Archambault read a message from Tim Murphy (Town Moderator), who is not recorded as attending. Dollar figures are absent.",
+ "cost_usd": 0.005936619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative)"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "mark erickson (finance committee)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "michael-ray jeffreys (planning board), michael mackin (school committee representative)"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "michael-ray jeffreys (planning board), michael mackin (school committee representative)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "absent",
+   "quote": "absent: bob ebersole (selectman), steve archambault (community representative)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "absent",
+   "quote": "absent: bob ebersole (selectman), steve archambault (community representative)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus that the Town Manager appoints the Chief Financial Officer and acts in that capacity in the absence of such an appointment (resolving the Section 5-3(c) conflict with Section 4-2).",
+   "quote": "there was consensus that the town manager appoint the chief financial officer and act in that capacity in the absence of such an appointment"
+  },
+  {
+   "decision": "Consensus to allow the Town Manager to appoint the Town Accountant with the recommendation of the Board of Selectmen.",
+   "quote": "consensus to allow the town manager to appoint the town accountant with the recommendation of the board of"
+  },
+  {
+   "decision": "Section 5-3(m): the division of procurement is the Town Manager's responsibility.",
+   "quote": "the \"division of procurement\" is the town manager's responsibility."
+  },
+  {
+   "decision": "B. Ebersole will create two marked-up Charters, one with substantive changes and one without.",
+   "quote": "b. ebersole will create two marked-up charters: one with substantive changes and one without."
+  },
+  {
+   "decision": "Members with additional changes not already discussed are to forward them to B. Ebersole before the next meeting.",
+   "quote": "members interested in making additional changes not already discussed should forward that to b. ebersole before"
+  },
+  {
+   "decision": "Continue to communicate with boards, committees, and departments to identify organizational inefficiencies and needs.",
+   "quote": "continue to communicate with boards, committees, and departments to identify organizational"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Section 6-5 The Budget (charter language on budget presentation and funding sources)",
+   "what_was_recorded": "The board recommended deleting the budget-presentation language in Section 6-5 and replacing item c with a requirement to identify all other available sources of funding; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "section 6-5 - the budget. delete \"in the presentation of the budget, the town manager shall utilize modern concepts"
+  },
+  {
+   "topic": "Town finances checks and balances",
+   "what_was_recorded": "General discussion of checks and balances within town finances and of financial relationships, with B. Ebersole recommending continued discussion; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "general discussion about the checks and balances within town finances."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened at 7:02PM at Ritter Memorial Building",
+   "quote": "place: ritter memorial building, 960 massachusetts avenue time: 7:02pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "2. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board announcements",
+   "resolution": "none",
+   "quote": "3. board announcements none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Minutes approval (10 January)",
+   "resolution": "changes recommended; no vote recorded",
+   "quote": "4. minutes approval 10 january changes recommended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Responses from committees and boards; Board of Selectmen alternative name",
+   "resolution": "discussed; no action recorded",
+   "quote": "a. responses from committees/boards b. board of selectmen i. alternative name",
+   "tags": [
+    "charter review",
+    "board of selectmen"
+   ]
+  },
+  {
+   "topic": "Town Meeting schedule and communication",
+   "resolution": "listed for discussion; no action recorded",
+   "quote": "c. town meeting i. schedule of meetings ii. identify alternative days and times",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Elected boards with employees (accountable officers, employee review, termination)",
+   "resolution": "discussed; no action recorded",
+   "quote": "d. elected boards with employees i. accountable officers 11. employee review processes",
+   "tags": [
+    "personnel",
+    "elected boards"
+   ]
+  },
+  {
+   "topic": "Charter section review (Sections 4-2, 5-3, 6-5)",
+   "resolution": "language changes recommended; consensus on Chief Financial Officer and Town Accountant appointments",
+   "quote": "section 4-2(e) - recommended changing language so that it doesn't sound like the personnel board is involved in",
+   "tags": [
+    "charter review",
+    "town manager",
+    "finance",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Facilities, IT, and Town Clerk roles; Articles 1-4 and Article 5 onward",
+   "resolution": "discussed; no action recorded",
+   "quote": "m. erickson noted that information technology is not in the charter but it is a requirement.",
+   "tags": [
+    "facilities",
+    "information technology",
+    "town clerk"
+   ]
+  },
+  {
+   "topic": "Town survey",
+   "resolution": "discussed; no action recorded",
+   "quote": "t. burchfield forwarded a sample survey template via email prior to the meeting.",
+   "tags": [
+    "town survey"
+   ]
+  },
+  {
+   "topic": "Timeline, brainstorming, and meeting with Town Manager",
+   "resolution": "listed on agenda; no action recorded in text",
+   "quote": "j. establish timeline to complete review k. brainstorn",
+   "tags": [
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Action items before next meeting",
+   "resolution": "assigned: continue outreach; B. Ebersole to prepare two marked-up Charters",
+   "quote": "6. action items before next meeting",
+   "tags": [
+    "action items"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "none",
+   "quote": "7. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "heading only; no content printed",
+   "quote": "8. board comment/concerns",
+   "tags": [
+    "board comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sample survey template (forwarded by T. Burchfield via email)",
+   "where": "text",
+   "quote": "t. burchfield forwarded a sample survey template via email prior to the meeting."
+  },
+  {
+   "name": "Message forwarded by Tim Murphy (Town Moderator) on town manager termination process",
+   "where": "text",
+   "quote": "s. archambault read a message forwarded by tim murphy (town moderator)"
+  }
+ ],
+ "tags": [
+  "charter review",
+  "town manager",
+  "chief financial officer",
+  "town accountant",
+  "finance structure",
+  "town survey",
+  "town meeting",
+  "facilities",
+  "action items",
+  "no votes recorded"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

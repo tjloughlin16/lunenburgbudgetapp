@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-10-10",
  "docid": "5574",
@@ -12,31 +12,445 @@
  },
  "votes": [
   {
-   "motion": "Tell town attorney the Commission would like to reimburse Dan Proctor $13,870 based on documentation provided and ask whether the Commission has sufficient authority",
-   "moved_by": "",
+   "motion": "Tell town attorney the Commission would like to reimburse Dan Proctor $13,870, based on documentation provided and whether any additional documentation is required.",
    "seconded_by": "Troy D.",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "thatthe sewer commission agreed to tell town attorney thatthe commission would like to reimburse dan proctor$13,870, basedon documentation provided and whether any additional documentation is required, and further interviews of town employees. do we have. sufficient authority on ourown ordoes itneedto go to the board of selectman? discussion: none troy, joan, john-yes, joe, carl-no. motion passed 3-2"
+   "quote": "second: troy d. thatthe sewer commission agreed to tell town attorney thatthe commission would like to reimburse dan proctor$13,870"
   },
   {
-   "motion": "Tell counsel the Commission will not modify the privilege fee but will pursue investigating promises made and request that the applicant and DPW separately submit lists to determine the reimbursement value",
-   "moved_by": "",
+   "motion": "Tell counsel the Commission will not modify the privilege fee, but pursue investigating the promises made and a separate agreement to reimburse the applicant; applicant and DPW to separately list promises not kept.",
    "seconded_by": "John",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion that the commission tell counsel that we will not modify the privilege fee but wish to pursue investigating the promises made to make it right and come up with a separate agreementfrom the privilege fee to reimburse the applicant. in addition, we request that the applicant and dpw to separately come up with lists, without consulting one another, from their memories of what was promised and not done, so the commission can review the list to be used to determine the value and pursue with counsel howto go about reimbursing the applicant. john second. voteunanimous."
+   "quote": "motion that the commission tell counsel that we will not modify the privilege fee but wish to pursue investigating the promises made to make it right and come up with a separate agreement"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Reynolds",
    "seconded_by": "Troy D",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn: john reynolds second: troy d adjournedat 8:46pm vote -- unanimous"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1599225
+ "dropped_unquoted": 2,
+ "note": "OCR text with many run-together words and some garbled characters; quotes were checked against the printed wording. Mover of the 3-2 reimbursement motion and of the privilege-fee draft motion is not printed (only seconders). The 3-2 vote is printed as 'Troy, Joan, John-yes, Joe, Carl-no' with 'Motion passed 3-2'. Cari presided at the call to order and is not on the attendee list; her surname is not printed. Joe Anderson arrived at 7:06pm. Attendee roles are read from the header layout. Public comment: none. No transfers recorded.",
+ "cost_usd": 0.018308650000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe Anderson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "7:06pm - joe anderson arrived and took over chairing the meeting."
+  },
+  {
+   "name": "Cari",
+   "role": "presided at call to order in Joe's absence (surname not printed)",
+   "status": "present",
+   "quote": "called to order at 6:38 pm by cari, in joe's absence."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "roll call attendance taken with john, joan, troy and carl present."
+  },
+  {
+   "name": "Joan Pease",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call attendance taken with john, joan, troy and carl present."
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call attendance taken with john, joan, troy and carl present."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call attendance taken with john, joan, troy and carl present."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "barb introduced jane ranley as new minutes clerk"
+  },
+  {
+   "name": "Bruce Millette",
+   "role": "Guest",
+   "status": "present",
+   "quote": "6:30pm- bruce & pam millette, 189 cross rd sewer extension"
+  },
+  {
+   "name": "Pam Millette",
+   "role": "Guest",
+   "status": "present",
+   "quote": "6:30pm- bruce & pam millette, 189 cross rd sewer extension"
+  },
+  {
+   "name": "Deb Trumbull",
+   "role": "SWSS",
+   "status": "present",
+   "quote": "7:30pm-swss quarterly update-deb trumbull & john mohamed"
+  },
+  {
+   "name": "John Mohamed",
+   "role": "SWSS",
+   "status": "present",
+   "quote": "7:30pm-swss quarterly update-deb trumbull & john mohamed"
+  },
+  {
+   "name": "Paul Patrick Casey",
+   "role": "Flow Assessment",
+   "status": "absent",
+   "quote": "7:00pm- paul patrick casey, flow assessment - couldn't attend due to illness but can be at next meeting."
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk (new)",
+   "status": "present",
+   "quote": "business manager report- jane ranleyis ournew minute taker, here tonight."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Only the manhole work on the Weston & Sampson DPW systems scope is approved to proceed; Commission wants to see the RFQ before it goes out to quote; Barb to follow up with Jack.",
+   "quote": "only the manhole work hasbeen approved by the commissionto proceed."
+  },
+  {
+   "decision": "Joe asked both Troy and Carl to reach out to counsel on the privilege fee question.",
+   "quote": "joe asked both troyand carltoreach outto counsel."
+  },
+  {
+   "decision": "Grease Trap Regulation Compliance (Crossroads) tabled to next meeting after Commission wanted time to review counsel's email.",
+   "quote": "the commission wanted time to review. tabled to next meeting."
+  },
+  {
+   "decision": "Irrigation Meter Change tabled.",
+   "quote": "irrigation meter change - tabied."
+  },
+  {
+   "decision": "Barb will add sending the quarterly flow reports to SWSS to her quarterly process.",
+   "quote": "barbwill add sending the quarterly flow reports to swssto her quarterly"
+  },
+  {
+   "decision": "SWSS to give Joan a status on all spare parts (prices and availability) by end of week; SWSS to provide a schedule/checklist of preventive maintenance; John M. to obtain pricing on spare parts.",
+   "quote": "deb (swss) will get that to herby end of week."
+  },
+  {
+   "decision": "Joe will ask Jack for updates on work.",
+   "quote": "joewill askjackforupdates onwork."
+  },
+  {
+   "decision": "Flow assessment appointment (Paul Patrick Casey) carried to next meeting.",
+   "quote": "couldn't attend due to illness but can be at next meeting."
+  },
+  {
+   "decision": "Commission advised the Millettes that once they obtain documentation and a map of possible lot division, the Commission would review the request; they may also go directly to Town Meeting.",
+   "quote": "commission advised that when millettes obtain all documentation and map of possible lot division, the sewer"
+  },
+  {
+   "decision": "Joe to add an agenda item for the first November meeting on how to approach individual meetings with town counsel.",
+   "quote": "joe wants to add an agenda item for first november meeting to discuss how to approach individual meetings with town counsel."
+  },
+  {
+   "decision": "Joe to add a workshop item to the next agenda to determine who will attend from the Commission.",
+   "quote": "joe asked for workshop to be added to next agenda to determine who will attend from the commission."
+  },
+  {
+   "decision": "Notes to be taken from the Northern Data and April meeting, with a summary provided at the next meeting; Troy wants no pricing discussed, scope only.",
+   "quote": "notes will betaken and summary provided at the next meeting."
+  },
+  {
+   "decision": "Barb will talk to IT about putting Commission meeting recordings on the cloud.",
+   "quote": "barb will talk to it and also noted that recordings are always available on the public drive here at the dpw"
+  },
+  {
+   "decision": "Next meeting set for Oct. 31 (Halloween), as the Commission has a quorum; all can meet except Barb and Joe.",
+   "quote": "nextmeetingwill be on the 31s! (halloween) as we have a quorum."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Invoices signed by Commission",
+   "what_was_recorded": "The Commission signed off on invoices from Fitchburg and KPLaw.",
+   "figures_as_printed": [
+    "$12,150.40",
+    "$119"
+   ],
+   "quote": "commission signed offon invoices-fitchburg $12,150.40, kplaw$119."
+  },
+  {
+   "topic": "Privilege fee",
+   "what_was_recorded": "All present agreed not to modify the privilege fee based on the revised usage figure; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "all present agreed that we were not going to modify the privilege fee based on the revised"
+  },
+  {
+   "topic": "Commitment to Assessors of Privilege Fees FY 18",
+   "what_was_recorded": "Privilege fees for 15 Oak Ave and 120 West St. committed to the Assessors for the tax bills; no dollar amounts printed.",
+   "figures_as_printed": [],
+   "quote": "commitment to assessors of privilege fees fy 18 - 15 oak ave, 120 west st."
+  },
+  {
+   "topic": "Spare parts pricing",
+   "what_was_recorded": "John M. will obtain pricing on spare parts; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "john m. will obtain pricing on spareparts."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: Bruce & Pam Millette, 189 Cross Rd sewer extension",
+   "resolution": "discussed; Commission advised next steps; no vote",
+   "quote": "the millettes handed out gis printouts showing their property",
+   "tags": [
+    "sewer extension",
+    "Sewer Service Area",
+    "Town Meeting",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Appointment: Paul Patrick Casey, Flow Assessment",
+   "resolution": "absent; continued to next meeting",
+   "quote": "couldn't attend due to illness but can be at next meeting.",
+   "tags": [
+    "flow assessment"
+   ]
+  },
+  {
+   "topic": "SWSS quarterly update",
+   "resolution": "received; action items assigned",
+   "quote": "deb provided handout ofadditionalwork done during september 2017.",
+   "tags": [
+    "SWSS",
+    "pumps",
+    "preventive maintenance",
+    "flow meters"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; Jane Ranley introduced as new Minutes Clerk",
+   "quote": "barb introduced jane ranley as new minutes clerk, noting her appointment was ratified by selectmen on 10/3/17.",
+   "tags": [
+    "appointments",
+    "workshops"
+   ]
+  },
+  {
+   "topic": "DPW systems update: Weston & Sampson scope",
+   "resolution": "no vote; only manhole work approved; Barb to follow up",
+   "quote": "barbhanded out jack'sforwarded email from patcotton.",
+   "tags": [
+    "DPW",
+    "Weston & Sampson",
+    "RFQ",
+    "manhole"
+   ]
+  },
+  {
+   "topic": "380 Electric Ave car wash easement",
+   "resolution": "motion passed 3-2 to tell town attorney of reimbursement intent",
+   "quote": "380 electric ave. carwash easement discussion-joe updated joan about discussion from the 10/3 meeting",
+   "tags": [
+    "easement",
+    "reimbursement",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Privilege fee and 9/12 motion",
+   "resolution": "revised motion passed unanimously",
+   "quote": "barb asked that the commission review the motion of 9/12 that they'd received and needs to be finalized.",
+   "tags": [
+    "privilege fee",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Billing outsourcing next steps",
+   "resolution": "meeting 10/15 at 10am at Water Dept scheduled; no vote",
+   "quote": "there is a meeting 10/15 at 10amat waterdept, barb, troy & carl will meet with april at water district.",
+   "tags": [
+    "billing",
+    "Water District"
+   ]
+  },
+  {
+   "topic": "Irrigation meter change",
+   "resolution": "tabled",
+   "quote": "irrigation meter change - tabied.",
+   "tags": [
+    "irrigation meter"
+   ]
+  },
+  {
+   "topic": "Grease trap regulation compliance (Crossroads)",
+   "resolution": "tabled to next meeting",
+   "quote": "the commission wanted time to review. tabled to next meeting.",
+   "tags": [
+    "grease trap",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Commissioner's email of 8/12/17",
+   "resolution": "Troy's objection recorded in minutes; no further discussion",
+   "quote": "troy wanted it stated in the minutes that he objected about how the",
+   "tags": [
+    "contracts",
+    "SWSS contract",
+    "order of precedence"
+   ]
+  },
+  {
+   "topic": "Q1 demand notices and privilege fee commitment",
+   "resolution": "informational; commitment orders 11 and 12 signed by board members",
+   "quote": "order 11 isfor 15 oakave. order12isfor120west.",
+   "tags": [
+    "demand notices",
+    "privilege fees",
+    "Assessors"
+   ]
+  },
+  {
+   "topic": "Meeting reschedule",
+   "resolution": "next meeting set for Oct. 31",
+   "quote": "nextmeetingwill be on the 31s! (halloween) as we have a quorum.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Specialtown meeting warrant",
+   "resolution": "no action; no warrant issues to introduce",
+   "quote": "commission has no warrantissues to introduce.",
+   "tags": [
+    "warrant",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Minutes and invoices",
+   "resolution": "no minutes; invoices signed",
+   "quote": "commission signed offon invoices-fitchburg",
+   "tags": [
+    "invoices",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Highfield counsel inquiry",
+   "resolution": "Barb to check status with KP Law",
+   "quote": "in response to the inquiry, barb emailed counsel on highfield that the commission wanted them to proceed",
+   "tags": [
+    "counsel",
+    "Highfield"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "informational; Commission recordings to cloud discussed",
+   "quote": "public hearing forthe asian 5 electricis on 10/23/17 regarding public parking lot and addition.",
+   "tags": [
+    "public hearing",
+    "town code",
+    "recordings",
+    "town counsel office hours"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "agenda items requested; notes to follow",
+   "quote": "notes will betaken and summary provided at the next meeting.",
+   "tags": [
+    "agenda",
+    "counsel",
+    "Northern Data"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "public comment - no.",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GIS printouts (Millettes)",
+   "where": "list",
+   "quote": "handouts - millettes -gis printouts"
+  },
+  {
+   "name": "SWSS - September Work Update",
+   "where": "list",
+   "quote": "swss - september work update"
+  },
+  {
+   "name": "Jack's forwarded email from Pat Cotton",
+   "where": "text",
+   "quote": "barbhanded out jack'sforwarded email from patcotton."
+  },
+  {
+   "name": "List of action items from 6/27/17",
+   "where": "text",
+   "quote": "joanreadlistofactionitems from 6/27/17 and askedforupdates."
+  },
+  {
+   "name": "Motion of 9/12",
+   "where": "text",
+   "quote": "barb asked that the commission review the motion of 9/12 that they'd received and needs to be finalized."
+  },
+  {
+   "name": "Commissioner's email of 8/12/17",
+   "where": "text",
+   "quote": "commissioner's email of 8/12/17 - troy wanted it stated in the minutes"
+  },
+  {
+   "name": "Commitment to Assessors of Privilege Fees FY 18",
+   "where": "text",
+   "quote": "commitment to assessors of privilege fees fy 18 - 15 oak ave, 120 west st."
+  },
+  {
+   "name": "RFQ (Weston & Sampson scope)",
+   "where": "text",
+   "quote": "commission wantto see the rfq before they gooutforquote."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "sewer extension",
+  "Sewer Service Area",
+  "SWSS contract",
+  "DPW",
+  "easement reimbursement",
+  "privilege fee",
+  "town counsel",
+  "billing outsourcing",
+  "grease trap",
+  "meeting schedule",
+  "2017"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1,
+  "topics": 1
+ }
 }

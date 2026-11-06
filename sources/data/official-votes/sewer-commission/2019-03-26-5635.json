@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-03-26",
  "docid": "5635",
@@ -12,31 +12,350 @@
  },
  "votes": [
   {
-   "motion": "Change 380-390 Electric Ave. from a 2-bay service station to a warehouse",
+   "motion": "To change 380-390 Electric Ave. from a 2-bay service station to a warehouse.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: joan p. second: john r. to change the 380-390 electric ave. from a 2-bay service station to a warehouse. vote: unanimous"
   },
   {
-   "motion": "Approve the potential connection costs of $30,802.10 for 400 Electric Ave.",
+   "motion": "To approve the potential connection costs of $30,802.10 for 400 Electric Ave.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: joan p. to approve the potential connection costs of $30,802.10 for 400 electric ave. second: john r. vote: unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "To adjourn at 7:45pm.",
    "moved_by": "Ryan S.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: ryan s. to adjourn: 7:45pm an l prospectively suote ne jane l. ranley minutes clerk second: john r. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned minutes extracted via macOS Vision OCR. OCR artifacts present in the adjournment vote quote (garbled text between motion and second).",
- "cost_usd": 0.1013655
+ "note": "OCR text (macOS Vision). Page 2 begins mid-sentence and the minutes have no call to order, roll call, or approval of prior minutes. The closing lines near the adjournment motion are garbled by OCR (stray words between the motion and the seconder/vote). Attendance is not stated as a list; attendee status is 'not stated' except where a person spoke in the text. Vote outcomes are recorded as 'Unanimous'. Only one vote is on the release of 400 Electric Ave., and that was deferred, not voted.",
+ "cost_usd": 0.007253619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "not stated",
+   "quote": "carl replied that the commission's concern is with 2 sections"
+  },
+  {
+   "name": "Barb",
+   "status": "not stated",
+   "quote": "barb reported that town counsel said it can be done and the commission would need to sign off on it."
+  },
+  {
+   "name": "Joan P.",
+   "status": "not stated",
+   "quote": "motion: joan p. second: john r."
+  },
+  {
+   "name": "John R.",
+   "status": "not stated",
+   "quote": "motion: joan p. second: john r."
+  },
+  {
+   "name": "Ryan S.",
+   "status": "not stated",
+   "quote": "motion: ryan s. to adjourn: 7:45pm"
+  },
+  {
+   "name": "Joe",
+   "status": "not stated",
+   "quote": "joe asked john to talk to jack (dpw) about the manhole list and his day-to-day operations."
+  },
+  {
+   "name": "Dan",
+   "status": "present",
+   "quote": "dan replied that he would need to confirm with the buyer's attorney first and get back to"
+  },
+  {
+   "name": "Dave Rogers",
+   "status": "present",
+   "quote": "public comment-dave rogers, 82 highland street - was asking about sewer commission changes to the charter update."
+  },
+  {
+   "name": "Jane L. Ranley",
+   "status": "not stated",
+   "quote": "jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission will take its vote on releasing 400 Electric Ave. from the privilege fee at the 4/9 meeting, after Dan confirms with the buyer's attorney and Barb runs it by Town Counsel.",
+   "quote": "the commission will vote on the release at the 4/9 meeting."
+  },
+  {
+   "decision": "Commission asked Town Counsel for input on whether the sewer is considered a town facility, for the charter wording on full jurisdiction over town facilities.",
+   "quote": "and they have asked for town counsel's input on whether the sewer is considered a town facility."
+  },
+  {
+   "decision": "Carl and Joan will attend the 3/27 Water Commission meeting to discuss potential assistance with Irrigation Meter readings.",
+   "quote": "carl and joan plan to attend the 3/27 water commission meeting to discuss their potential assistance with irrigation meter readings."
+  },
+  {
+   "decision": "Maintenance plan to be placed on the next agenda once ready for discussion.",
+   "quote": "it is not yet ready for discussion and will be on the next agenda."
+  },
+  {
+   "decision": "Barb will draft a letter to grease trap/interceptor users reminding them of regulations and that inspections will be done, and send it before the next meeting.",
+   "quote": "barb will draft a letter and send before the next meeting."
+  },
+  {
+   "decision": "Barb will provide the most current electric bills to Nexamp so it can prepare a proposal to the Commission.",
+   "quote": "barb will provide these to them."
+  },
+  {
+   "decision": "Commission agreed to get Town Counsel input on the Board of Selectmen agenda statement about items not on the agenda.",
+   "quote": "and commission agreed to get input from town counsel."
+  },
+  {
+   "decision": "Joe asked John to talk to Jack (DPW) about the manhole list and his day-to-day operations.",
+   "quote": "joe asked john to talk to jack (dpw) about the manhole list and his day-to-day operations."
+  },
+  {
+   "decision": "Barb will ask him to attend the 4/9 meeting for discussion.",
+   "quote": "barb will ask him to come to the 4/9 meeting tor discussion."
+  },
+  {
+   "decision": "Barb will send out Town Counsel's response on the Town Charter issue when received.",
+   "quote": "she will send it out when she receives it."
+  },
+  {
+   "decision": "Agenda items set for 4/9 and future meetings: DPW tasks, Prospect St. expansion, Water Commission update, Town Counsel charter input, Wright-Pierce maintenance plan contract, O&M pump station and I/I RFP updates, 400 Electric document approval, grease trap audit plan, and SWSS.",
+   "quote": "for future meetings- discuss audit plan for grease trap inspections, swss to come in after the wright pierce maintenance plan kickoff."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reclassifying 380-390 Electric Ave. as a warehouse",
+   "what_was_recorded": "Barb said reclassifying the garage as a warehouse would reduce the connection fee and eliminate the privilege fee.",
+   "figures_as_printed": [
+    "$3770.90"
+   ],
+   "quote": "barb added that reclassifying the garage as a warehouse would reduce the connection fee to $3770.90 and eliminate the privilege fee."
+  },
+  {
+   "topic": "Privilege fee release for 400 Electric Ave.",
+   "what_was_recorded": "Original assessment has been paid and 400 Electric Ave. shows nothing owed; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the original assessment has been paid and 400 electric ave. shows nothing owed."
+  },
+  {
+   "topic": "Irrigation meter changeover start-up costs and fee collection",
+   "what_was_recorded": "Commission discussed the start-up costs and how the fees will be collected; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the commission further discussed the start-up costs and how the fees will be collected."
+  },
+  {
+   "topic": "Nexamp solar credit program",
+   "what_was_recorded": "Nexamp solar program would offer the town and residents a 15% discount on electricity; Commission asked to be added to the waiting list.",
+   "figures_as_printed": [
+    "15%"
+   ],
+   "quote": "nexamp is getting setup to do solar that the town and residents can take advantage of for a 15% discount on electricity"
+  },
+  {
+   "topic": "400 Electric Ave. potential connection costs",
+   "what_was_recorded": "Commission approved the potential connection costs for 400 Electric Ave. after Leominster approved the plan.",
+   "figures_as_printed": [
+    "$30,802.10"
+   ],
+   "quote": "motion: joan p. to approve the potential connection costs of $30,802.10 for 400 electric ave. second: john r. vote: unanimous"
+  },
+  {
+   "topic": "Reduction of fees for Dan Proctor",
+   "what_was_recorded": "John said he was glad the Commission was able to reduce fees for Dan Proctor based on additional information; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "public comment - john noted that he was glad that the commission was able to reduce fees for dan proctor"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street",
+   "topic": "Sewer commission changes to the charter update",
+   "quote": "public comment-dave rogers, 82 highland street - was asking about sewer commission changes to the charter update."
+  },
+  {
+   "speaker": "John",
+   "stated_role": "not stated",
+   "topic": "Reduction of fees for Dan Proctor",
+   "quote": "public comment - john noted that he was glad that the commission was able to reduce fees for dan proctor"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "380-390 Electric Ave. reclassification to warehouse",
+   "resolution": "approved",
+   "tags": [
+    "connection fee",
+    "privilege fee",
+    "Title V"
+   ],
+   "quote": "motion: joan p. second: john r. to change the 380-390 electric ave. from a 2-bay service station to a warehouse. vote: unanimous"
+  },
+  {
+   "topic": "Release of 400 Electric Ave. from privilege fee",
+   "resolution": "continued to 4/9 meeting",
+   "tags": [
+    "privilege fee",
+    "Town Counsel"
+   ],
+   "quote": "the commission will vote on the release at the 4/9 meeting."
+  },
+  {
+   "topic": "Public comment on charter update",
+   "resolution": "no action",
+   "tags": [
+    "charter",
+    "public comment"
+   ],
+   "quote": "public comment-dave rogers, 82 highland street - was asking about sewer commission changes to the charter update."
+  },
+  {
+   "topic": "Irrigation meter changeover",
+   "resolution": "discussed; Carl and Joan to attend 3/27 Water Commission meeting",
+   "tags": [
+    "irrigation meters",
+    "Water Commission"
+   ],
+   "quote": "carl reported that he communicated with mark bursch, water commission, to set up a meeting."
+  },
+  {
+   "topic": "Maintenance plan",
+   "resolution": "not ready; to next agenda",
+   "tags": [
+    "maintenance plan",
+    "Wright Pierce"
+   ],
+   "quote": "it is not yet ready for discussion and will be on the next agenda."
+  },
+  {
+   "topic": "Grease trap/interceptor inspections",
+   "resolution": "letter to be drafted; audit plan to be discussed",
+   "tags": [
+    "grease trap",
+    "inspections"
+   ],
+   "quote": "barb will draft a letter and send before the next meeting."
+  },
+  {
+   "topic": "Solar credit program (Nexamp)",
+   "resolution": "discussed; Barb to provide electric bills",
+   "tags": [
+    "solar",
+    "Nexamp"
+   ],
+   "quote": "nexamp has asked for the most current electric bills in order to provide a proposal to the commission."
+  },
+  {
+   "topic": "400 Electric Ave. approval status",
+   "resolution": "approved connection costs",
+   "tags": [
+    "connection costs",
+    "400 Electric Ave"
+   ],
+   "quote": "motion: joan p. to approve the potential connection costs of $30,802.10 for 400 electric ave. second: john r. vote: unanimous"
+  },
+  {
+   "topic": "West Street pump failure and SWSS report",
+   "resolution": "discussed; Town Counsel input sought",
+   "tags": [
+    "pump station",
+    "SWSS",
+    "manholes"
+   ],
+   "quote": "carl asked about the swss report on the west street pump failure on 2/28."
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "noted for 4/9 and future agendas",
+   "tags": [
+    "agenda",
+    "future meetings"
+   ],
+   "quote": "member agenda inputs for future meetings - for 4/9 - dpw tasks definition and expectations, prospect st."
+  },
+  {
+   "topic": "Public comment (John)",
+   "resolution": "no action",
+   "tags": [
+    "fees",
+    "public comment"
+   ],
+   "quote": "public comment - john noted that he was glad that the commission was able to reduce fees for dan proctor"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:45pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: ryan s. to adjourn: 7:45pm an l prospectively suote ne jane l. ranley minutes clerk second: john r. vote: unanimous"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Maintenance plan contract (provided by counsel) with Wright Pierce",
+   "where": "text",
+   "quote": "wright pierce has received the contract that counsel provided and their cfo is reviewing."
+  },
+  {
+   "name": "SWSS report on the West Street pump failure on 2/28",
+   "where": "text",
+   "quote": "carl asked about the swss report on the west street pump failure on 2/28."
+  },
+  {
+   "name": "Board of Selectmen agenda statement on items not on the agenda",
+   "where": "text",
+   "quote": "commission discussed whether or not the statement added to the board of selectmen agenda"
+  },
+  {
+   "name": "Nexamp solar credit program proposal",
+   "where": "text",
+   "quote": "commission discussed the solar credit program proposed by nexamp."
+  },
+  {
+   "name": "Current electric bills (for Nexamp proposal)",
+   "where": "text",
+   "quote": "nexamp has asked for the most current electric bills in order to provide a proposal to the commission."
+  },
+  {
+   "name": "Town Charter update / Town Counsel input on Charter",
+   "where": "text",
+   "quote": "barb replied that he did not have a clear response yet but she will send it out when she receives it."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "connection fees",
+  "privilege fee",
+  "400 Electric Ave",
+  "380-390 Electric Ave",
+  "Title V",
+  "charter",
+  "irrigation meters",
+  "Water Commission",
+  "grease traps",
+  "solar credit Nexamp",
+  "pump station West Street",
+  "SWSS",
+  "Wright Pierce maintenance plan",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

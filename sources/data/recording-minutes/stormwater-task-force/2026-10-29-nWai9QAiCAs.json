@@ -1,0 +1,332 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "stormwater-task-force",
+ "board": "Stormwater Task Force",
+ "video_title": "Stormwater Task Force",
+ "meeting_date": "2026-10-29",
+ "video_id": "nWai9QAiCAs",
+ "video_url": "https://www.youtube.com/watch?v=nWai9QAiCAs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/stormwater-task-force/2026-10-29-nWai9QAiCAs.json",
+  "sha256": "92c11d30aeeeb0704d38b77813daee4809ce8e13ea73218857b296529bfc9828",
+  "caption_lines": 335,
+  "segments": 3138
+ },
+ "recording": {
+  "duration_s": 7098,
+  "duration": "1:58",
+  "spoken_chars": 96810,
+  "words_approx": 16135
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10292026-8105",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/stormwater-task-force/2026-10-29-agenda-8105.txt",
+   "path": "sources/meetings/stormwater-task-force/2026-10-29-agenda-8105.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T21:35:48Z",
+  "cost_usd": 0.2738622
+ },
+ "minutes": {
+  "headline": "Stormwater task force found errors in its draft fee spreadsheet and agreed to fix it and meet again Wednesday.",
+  "summary": "The task force debriefed on its Select Board and Finance Committee presentations, then reviewed a member's spreadsheet of stormwater fees against current tax bills. Members found the fee column did not match the stated per-unit rate, agreed to drop the 10% cap column, simplify the sheet, and handle multi-unit properties as exceptions. They planned the public info session and town meeting presentations, and approved prior minutes and adjourned by roll call.",
+  "attendees": [
+   {
+    "name_as_heard": "John",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jenny",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Renee",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mark",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Bill",
+    "role": "member (DPW), remote"
+   },
+   {
+    "name_as_heard": "Jorice",
+    "role": "presenter (consultant)"
+   },
+   {
+    "name_as_heard": "Tim",
+    "role": "staff, minutes"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "fees",
+   "roads-and-dpw",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 6959,
+    "motion": "Approve the minutes of June 24th, August 12th, August 31st, September 8th, September 14th and September 21st, 2026",
+    "moved_by": "a member",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": true
+   },
+   {
+    "t": 7064,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1594,
+    "topic": "Stormwater fee per ERU",
+    "what_was_said": "The draft spreadsheet computes fees from a per-ERU rate and compares them with each property's current tax bill.",
+    "figures_as_heard": [
+     "$85 per ERU",
+     "14.39",
+     "4200"
+    ]
+   },
+   {
+    "t": 2427,
+    "topic": "Fee column mismatch",
+    "what_was_said": "Members checking rows found the fee column did not match the stated rate; the sheet was built on an older run tied to the proposed budget.",
+    "figures_as_heard": [
+     "7830",
+     "$481.3K",
+     "483K",
+     "$85"
+    ]
+   },
+   {
+    "t": 2699,
+    "topic": "Operating budget line versus utility",
+    "what_was_said": "If funded through the operating budget the stormwater line would have to rise, so tax bills would go up.",
+    "figures_as_heard": [
+     "100k",
+     "300,000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2324,
+    "decision": "Drop the 10% cap column from the spreadsheet and do not apply a cap."
+   },
+   {
+    "t": 3245,
+    "decision": "Rename columns (current tax, utility fee, impervious area), add use-code key and ERU explanation, keep street, owner and address."
+   },
+   {
+    "t": 3410,
+    "decision": "Put exceptions such as Carousel Lane on a separate tab."
+   },
+   {
+    "t": 5013,
+    "decision": "Meet by Zoom Wednesday at 6 pm to sign off on the corrected spreadsheet, after it is circulated by BCC."
+   },
+   {
+    "t": 5420,
+    "decision": "Put a formal task force vote on the warrant article on the next agenda."
+   },
+   {
+    "t": 5947,
+    "decision": "Post the public info session as a meeting with a town meeting presentation review item."
+   },
+   {
+    "t": 6304,
+    "decision": "Bill, John and Jenny to present at the public info session; Bill alone for town meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 199,
+    "t_end": 866,
+    "topic": "Debrief on Select Board and FinCom presentations and messaging",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 890,
+    "t_end": 1405,
+    "topic": "EPA MS4 permit enforcement and testing requirements",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1405,
+    "t_end": 4950,
+    "topic": "Review of non-residential stormwater fee spreadsheet and exceptions",
+    "resolution": "agreed to fix and reformat spreadsheet",
+    "tags": [
+     "fees",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4950,
+    "t_end": 5514,
+    "topic": "Scheduling sign-off meeting and formal vote on article",
+    "resolution": "Wednesday 6 pm Zoom set",
+    "tags": [
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 5514,
+    "t_end": 6900,
+    "topic": "Public info session and town meeting presentations",
+    "resolution": "presenters chosen",
+    "tags": [
+     "town-meeting",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 6938,
+    "t_end": 7090,
+    "topic": "Minutes, records requests, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Whether a member said the MS4-driven operating line cost; several figures such as the 7830 and 8395 fee-rate checks were garbled",
+   "Meeting-end vote details beyond ayes heard"
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 2366,
+    "kind": "condition",
+    "about": "A member would not send the spreadsheet out until the fee calculation is verified.",
+    "who": "a member",
+    "words_as_heard": "I don't want to send this out until we know it's right."
+   },
+   {
+    "t": 933,
+    "kind": "liability or legal",
+    "about": "EPA may follow up on towns not complying with the MS4 permit.",
+    "who": "the consultant",
+    "words_as_heard": "I just wouldn't want anyone to think that, you know, you could do nothing and and you might get away with it."
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 764,
+    "name_as_heard": "my spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "when we go over my spreadsheet with all that gory detail",
+    "shown": true
+   },
+   {
+    "t": 6959,
+    "name_as_heard": "the minutes that were posted",
+    "kind": "prior minutes",
+    "words_as_heard": "did anybody have an opportunity to go through the minutes that were posted?",
+    "shown": false
+   },
+   {
+    "t": 486,
+    "name_as_heard": "draft permit",
+    "kind": "application or permit",
+    "words_as_heard": "we're looking at the draft permit",
+    "shown": false
+   },
+   {
+    "t": 5559,
+    "name_as_heard": "the select board presentation",
+    "kind": "presentation",
+    "words_as_heard": "Is it going to be the select board presentation?",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stormwater-fee-impact",
+    "title": "Stormwater fee impact",
+    "question": "What would the proposed per-ERU stormwater fee cost businesses compared with their current tax bills?",
+    "t": 1508,
+    "words_as_heard": "compared to what they're paying today. We hit them with the storm water fee, what are they going to be paying compared to their levy.",
+    "data_in_play": [
+     "$85 per ERU",
+     "4200",
+     "14.39"
+    ],
+    "existing": "thread:stormwater-fee"
+   },
+   {
+    "slug": "stormwater-funding-options",
+    "title": "Stormwater funding options",
+    "question": "How would funding stormwater through the operating budget compare with a utility fee?",
+    "t": 2699,
+    "words_as_heard": "the current budget has 100k budgeted for storm water. Not enough. that line's got to be increased by 300,000.",
+    "data_in_play": [
+     "100k",
+     "300,000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Stormwater Task Force found that the fee column in its draft spreadsheet did not match the stated per-unit rate, and agreed to correct it.",
+    "t": 2427
+   },
+   {
+    "line": "Members agreed to drop the 10% cap column and not apply a cap.",
+    "t": 2324
+   },
+   {
+    "line": "Multi-unit properties such as Carousel Lane will go on a separate exceptions tab, and the columns will be renamed with a use-code key and ERU explanation.",
+    "t": 3410
+   },
+   {
+    "line": "The task force will meet by Zoom Wednesday at 6 pm to sign off on the corrected spreadsheet once it is circulated.",
+    "t": 5013
+   },
+   {
+    "line": "Presenters were chosen for the public info session and town meeting, and a formal task force vote on the warrant article goes on the next agenda.",
+    "t": 6304
+   }
+  ],
+  "why_it_matters": [
+   "The spreadsheet compares a proposed stormwater fee with each property's current tax bill, so errors in it would change what owners are told they would pay.",
+   "If stormwater were funded through the operating budget instead of a separate utility fee, the budget line would have to rise and tax bills would go up."
+  ],
+  "watch_next": [
+   "Zoom meeting Wednesday at 6 pm to sign off on the corrected spreadsheet, after it is circulated.",
+   "A formal task force vote on the warrant article, set for the next agenda, and the posted public info session."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T21:35:56Z",
+   "cost_usd": 0.0230291
+  }
+ }
+}

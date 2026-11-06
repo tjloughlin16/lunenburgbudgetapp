@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-09-25",
  "docid": "5612",
@@ -14,13 +14,285 @@
   {
    "motion": "Submit the Stabilization Funds Transfer warrants, with the correct numbers to be added prior to the 10/9 closing date.",
    "moved_by": "Joan P.",
-   "seconded_by": "Ryan S.",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion: joan p. second: ryan s. to submit the stabilization funds transfer warrants, with the correct numbers to be added prior to the 10/9 closing date. vote: unanimous"
+   "quote": "motion: joan p. second: ryan s. to submit the stabilization funds transfer warrants, with the correct numbers to be added prior to the 10/9 closing date. vote: unanimous",
+   "seconded_by": "Ryan S."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes from macOS Vision. One vote recorded with unanimous outcome.",
- "cost_usd": 0.0839535
+ "note": "Text is macOS Vision OCR of a partial record: page 1 starts mid-sentence and ends mid-sentence (\"2nd Public\"), so earlier and later content may be missing. No roll call or attendance list is printed; attendance is inferred only from who spoke or moved. Only one vote is recorded. The minutes approval and the regulation changes were not voted on. The clerk name \"Sane Ranley\" may be an OCR error and is kept as printed.",
+ "cost_usd": 0.006546819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl replied that the commission is looking at a number of regulation changes."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb confirmed that the trailer park is the only location that has the manual meters"
+  },
+  {
+   "name": "Joan",
+   "role": "",
+   "status": "present",
+   "quote": "joan added that the commission needs to consider the costs to all the users."
+  },
+  {
+   "name": "Ryan S.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: joan p. second: ryan s."
+  },
+  {
+   "name": "Mike",
+   "role": "",
+   "status": "present",
+   "quote": "mike asked questions regarding the meters and the connection fee."
+  },
+  {
+   "name": "Jim Carnivale",
+   "role": "Mike's father and original owner of the Park",
+   "status": "present",
+   "quote": "mike's father and original owner of the park, jim carnivale, explained how the meters were originally installed when the park was hooked up to sewer."
+  },
+  {
+   "name": "Sane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "sane ranley sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission will review and vote on the 9/11 and 9/18 minutes at the next meeting.",
+   "quote": "commission will review and vote on the 9/11 and 9/18 minutes at the next meeting"
+  },
+  {
+   "decision": "The Carnivales will check with Leominster Water about the trailer park meters and betterment fees.",
+   "quote": "the carnivale's will check with leominster water."
+  },
+  {
+   "decision": "Barb will send reminders to the engineering companies that have not responded about the I/I information and meeting invitation.",
+   "quote": "but has had no response, so she will send out reminders."
+  },
+  {
+   "decision": "Carl wants to discuss the Sewer Use Regs waiver clause further when all Commission members are present; no ruling made.",
+   "quote": "carl had some concerns and wants to discuss this further when all commission members are present."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trailer park annual meter fee",
+   "what_was_recorded": "A proposed regulation change would charge an annual fee for each meter the Commission must have read, in addition to the added cost of paid meter reading.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "one of the changes proposed is an annual $50 fee for any meter that the commission would need to have read."
+  },
+  {
+   "topic": "Trailer park meter upgrade",
+   "what_was_recorded": "The Commission discussed meter upgrade options and their costs for the trailer park; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the meter upgrade options and costs for the trailer park."
+  },
+  {
+   "topic": "Connection and re-connection fees",
+   "what_was_recorded": "Discussion of connection fees and a re-connection fee owed when a trailer is replaced; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "mike asked about the connection fees and noted that they also have to pay a re-connection fee when a trailer is replaced."
+  },
+  {
+   "topic": "Betterment fees for trailer park sewer hookup",
+   "what_was_recorded": "Discussion of betterment fees charged when the trailer park was hooked up for sewer; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "there was a discussion about the betterment fees charged when the trailer park was"
+  },
+  {
+   "topic": "Irrigation meter upgrade costs",
+   "what_was_recorded": "The Commission discussed costs to users for irrigation meter upgrades; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed ways to determine what irrigation meters are in use currently and costs to users for the upgrades."
+  },
+  {
+   "topic": "FY19 sewer legal fees",
+   "what_was_recorded": "The Commission needs a legal-fee rate for budgeting; the Town Manager said sewer legal history would set the budget; the board discussed using the average FY18 rate. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "carl said that the commission needs to have the rate for budgeting purposes."
+  },
+  {
+   "topic": "Billing outsourcing cost",
+   "what_was_recorded": "The Commission is still waiting on a number from Munis for billing outsourcing; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb reported that northern data had provided the file layout to munis but that we're still"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Stabilization funds transfers to be submitted as Special Town Meeting warrant articles (November 13).",
+   "amount_as_printed": "not printed",
+   "outcome": "Board voted unanimously to submit the warrants; numbers to be added before the 10/9 closing date.",
+   "quote": "barb said that the warrant closes 10/9 and the article would be for stabilization funds transfers."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Trailer park manual meters and Carnivale discussion",
+   "resolution": "discussed; Carnivales to check with Leominster Water",
+   "quote": "the commission and the carnivale's discussed asking leominster to install & read each trailer's",
+   "tags": [
+    "trailer park",
+    "manual meters",
+    "sewer billing"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Irrigation meters - selection and implementation",
+   "resolution": "discussed; no action",
+   "quote": "irrigation meters - selection, implementation discussions - joan called the lunenburg water department",
+   "tags": [
+    "irrigation meters"
+   ]
+  },
+  {
+   "topic": "Policy changes - irrigation, manual meters, connection charge, grease trap, sewer use waiver",
+   "resolution": "discussed; no action",
+   "quote": "policy changes - irrigation- commission discussed edits to the irrigation policy, and",
+   "tags": [
+    "regulations",
+    "irrigation policy",
+    "grease trap",
+    "waiver clause"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting November 13 warrant articles",
+   "resolution": "warrant submitted (passed unanimously)",
+   "quote": "special town meeting november 13 - warrant articles- barb said that the warrant closes 10/9",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Evaluation of past I/I work update",
+   "resolution": "update; reminders to be sent to engineering firms",
+   "quote": "evaluation of past inflow/infiltration (i/i) work- update - barb has sent the links",
+   "tags": [
+    "inflow infiltration",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Maintenance plan RFQ",
+   "resolution": "discussed; no action",
+   "quote": "maintenance plan discussion - commission discussed having barb send out a 2-line rfq",
+   "tags": [
+    "maintenance plan",
+    "RFQ",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "FY19 legal fees billing basis",
+   "resolution": "discussed; rate to be determined for budgeting",
+   "quote": "fy19 legal fees- billing basis update- commission discussed the 9/18 joint meeting",
+   "tags": [
+    "legal fees",
+    "budget",
+    "FY19"
+   ]
+  },
+  {
+   "topic": "Billing outsourcing",
+   "resolution": "update; no action",
+   "quote": "billing outsourcing - update and discussion - barb reported that northern data had provided",
+   "tags": [
+    "billing outsourcing",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Minutes of 9/11/18",
+   "resolution": "deferred to next meeting",
+   "quote": "minutes of 9/11/18 - carl had a question about one statement.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and proposed topics",
+   "resolution": "noted",
+   "quote": "upcoming meetings and proposed topics - 10/9 --engineering firms, 10/30-- public hearing",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stabilization Funds Transfer warrants",
+   "where": "text",
+   "quote": "to submit the stabilization funds transfer warrants, with the correct numbers to be added prior to the 10/9 closing date."
+  },
+  {
+   "name": "Irrigation Policy (edits)",
+   "where": "text",
+   "quote": "policy changes - irrigation- commission discussed edits to the irrigation policy, and"
+  },
+  {
+   "name": "Grease Trap Rules & Regulations",
+   "where": "text",
+   "quote": "grease trap rules & regulations- commission reviewed the chandes already agreed upon to present at the hearing."
+  },
+  {
+   "name": "Sewer Use Regs new Waiver clause",
+   "where": "text",
+   "quote": "sewer use regs new waiver clause - barb said that it was town counsel's input that"
+  },
+  {
+   "name": "I/I information on the Google Drive",
+   "where": "text",
+   "quote": "barb has sent the links to the l/l information on the google drive to the 3 engineering companies"
+  },
+  {
+   "name": "2-line RFQ to SWSS, Weston Sampson, Wright Pierce, Woodward & Curran, Stantec, Suez, & Tighe Bond",
+   "where": "text",
+   "quote": "commission discussed having barb send out a 2-line rfq to swss, weston sampson, wright pierce, woodward & curran, stantec, suez, & tighe bond."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "trailer park",
+  "manual meters",
+  "irrigation meters",
+  "inflow infiltration",
+  "billing outsourcing",
+  "legal fees",
+  "warrant articles",
+  "special town meeting",
+  "regulations",
+  "stabilization"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

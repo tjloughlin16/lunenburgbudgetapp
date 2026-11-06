@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-10-01",
  "docid": "994",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Variances for offset to groundwater from 4 feet to 3 feet and offset to foundation from 10 feet to 4 feet at 210 S. Row Road be approved",
+   "motion": "Approve the variances for 210 S. Row Road (offset to groundwater from 4 feet to 3 feet, offset to foundation from 10 feet to 4 feet), with a deed notice required if the existing well is kept as an agricultural well.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved and should the owner wish to keep the existing well as an agricultural well, a deed notion is required. • all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved and"
   },
   {
-   "motion": "The installed system at 89 West Street is for 4 bedroom and a total of nine rooms to be divided over the 3 existing structures",
+   "motion": "That the installed system is for 4 bedrooms and a total of nine rooms divided over the 3 existing structures (address cut off in scan).",
    "moved_by": "Jewell",
    "seconded_by": "Passions",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by passions, the board voted that the installed s system is for 4 bedroom and a total of nine rooms to be divided over the 3 existing structures. all in"
+   "quote": "after discussion and on motion by jewell and second by passions, the board voted that the installed s"
   },
   {
-   "motion": "Variances at 389 Highland Street be approved on the condition that this property be deed restricted",
+   "motion": "Approve the variances for 389 Highland Street, conditioned on the property being deed restricted.",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by fortin and second by jewell, the variances were approved on the condition that this property be deed restricted. all in favor."
+   "quote": "after discussion and on motion by fortin and second by jewell, the variances were approved on the condition"
   },
   {
-   "motion": "Variance at 169 Peninsula Drive be approved",
+   "motion": "Approve the variance for 169 Peninsula Drive (water line too close to the tank).",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "after discussion and on motion by fortin and second by jewell that the variance be approved. all in favor."
   },
   {
-   "motion": "Variance at 950 Chase Road be approved",
+   "motion": "Approve the variance for 950 Chase Road (15 +/- feet from the property line and 5 +/- feet from the common drive).",
    "moved_by": "Fortin",
    "seconded_by": "Passions",
    "outcome": "passed",
@@ -53,6 +53,168 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. One vote (89 West Street) has incomplete outcome text ending mid-word (\"All in\") but context and pattern indicate passage; quoted as appears in source.",
- "cost_usd": 0.0851145
+ "note": "Scanned OCR text with gaps: page 2 starts mid-sentence, and the address for the installed-system item (approved 4 bedrooms, nine rooms) is lost. Its vote text is truncated after 'All in', so 'passed' rests on that fragment and the item is marked as an unlabeled item. OCR typos: 'deed notion'. The minutes print no vote counts; 'All in favor' is recorded as passed. No attendance roll is printed, so board members appear only as motion makers. Public speakers were applicants and their agents, so they are listed as attendees, not public comment. The 'Received & Filed' stamp is dated Nov 26 2018, after the meeting date. No dollar figures appear.\"",
+ "cost_usd": 0.00488032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman george emond stated that he would be willing to have a system inspection completed"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Chris Comeau",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris comeau and julie webber met with the board."
+  },
+  {
+   "name": "Julie Webber",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris comeau and julie webber met with the board."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bob proctor met with the board."
+  },
+  {
+   "name": "Jewell",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "after discussion and on motion by jewell and second by fortin"
+  },
+  {
+   "name": "Fortin",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "after discussion and on motion by jewell and second by fortin"
+  },
+  {
+   "name": "Passions",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "on motion by fortin and second by passions, the variance was approved."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of September 17, 2018",
+   "resolution": "listed as approved; no motion recorded",
+   "quote": "minutes approved: september 17, 2018",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection report, 21 Townsend Harbor Road",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 21 townsend harbor road",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permit, 210 S. Row Road",
+   "resolution": "variances approved; permit signed",
+   "quote": "septic permits signed: 210 s. row road",
+   "tags": [
+    "septic",
+    "variance",
+    "well"
+   ]
+  },
+  {
+   "topic": "89 West Street, sewage discharge complaints",
+   "resolution": "discussed; no action recorded",
+   "quote": "chris comeau and julie webber met with the board. there have been complaints from the abutting",
+   "tags": [
+    "septic",
+    "complaint",
+    "ponding"
+   ]
+  },
+  {
+   "topic": "Unlabeled item, address cut off in scan (page 2)",
+   "resolution": "approved: installed system for 4 bedrooms and nine rooms",
+   "quote": "permit and obtain and certificate of compliance for his system. here are 3 structures on the site.",
+   "tags": [
+    "septic",
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "389 Highland Street",
+   "resolution": "variances approved with deed restriction",
+   "quote": "389 highland street dan proctor met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variance",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "169 Peninsula Drive",
+   "resolution": "variance approved",
+   "quote": "169 peninsula drive bob proctor met with the board.",
+   "tags": [
+    "variance",
+    "water line"
+   ]
+  },
+  {
+   "topic": "950 Chase Road, well",
+   "resolution": "variance approved",
+   "quote": "950 chase road the well at the above property has been drilled.",
+   "tags": [
+    "well",
+    "variance"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned; no motion recorded",
+   "quote": "meeting adjourned received & filed",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 21 Townsend Harbor Road",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 21 townsend harbor road"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic",
+  "Title 5",
+  "variances",
+  "well",
+  "groundwater",
+  "deed restriction",
+  "sewage complaint"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

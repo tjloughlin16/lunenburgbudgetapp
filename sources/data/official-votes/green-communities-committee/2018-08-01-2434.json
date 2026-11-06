@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2018-08-01",
  "docid": "2434",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "To adjourn the meeting.",
    "moved_by": "N.S.",
    "seconded_by": "L.M.",
    "outcome": "not stated",
@@ -21,6 +21,272 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text. One motion recorded with no explicit vote count or result stated. The meeting adjourned at 7:15 PM implying passage, but no formal vote result is printed.",
- "cost_usd": 0.0742045
+ "note": "OCR text of a typed/handwritten-style scan. Names are garbled in places (e.g. 'David Blatt.S.'; 'D.B.', 'D.S.', 'J.L.', 'N.S.', 'L.M.' and 'Dave' are initials or short forms, not fully resolved). The meeting is dated 8/1/18 in the header but the received stamp reads JUN 0 4 2019. The adjournment time reads '7;15' as printed. No vote tallies or results are printed for any motion, and the minutes record no vote on approving prior minutes. Kelly Brown, Dalton Ling, Kit (DPW), Kathy Hedrick, Town Manager Lemieux and Judit Earnst are named but are not recorded as attending. Two dollar lines (the funded projects list and the administrative line) are read from the printed list.",
+ "cost_usd": 0.0052875199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance: david blatt.s. john londa, karen chapman, liz murphy and neal sullivan"
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance: david blatt.s. john londa, karen chapman, liz murphy and neal sullivan"
+  },
+  {
+   "name": "Karen Chapman",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance: david blatt.s. john londa, karen chapman, liz murphy and neal sullivan"
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "not stated; signed the minutes as Respectfully Submitted",
+   "status": "present",
+   "quote": "in attendance: david blatt.s. john londa, karen chapman, liz murphy and neal sullivan"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance: david blatt.s. john londa, karen chapman, liz murphy and neal sullivan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes to be sent to Kathy Hedrick for the record.",
+   "quote": "it was noted that they should be sent to kathy hedrick for the record"
+  },
+  {
+   "decision": "Kelly Brown to reach out to John to coordinate the audit and project timing.",
+   "quote": "d.b. suggested kelly will reach out to john for this."
+  },
+  {
+   "decision": "Karen will proceed with the quarterly reports; the annual report is not allowed under the grant administration.",
+   "quote": "karen will proceed, but doing annual report is not allowed under the grant admin."
+  },
+  {
+   "decision": "Karen to speak with Town Manager Lemieux about the quarterly report work.",
+   "quote": "d.s. asked karen to speak with town manager lemieux about this."
+  },
+  {
+   "decision": "J.L. to obtain the MEI (solar usage) data; DPW to give John information.",
+   "quote": "j.l. will get the mei (solar usage) and dpw will give john info."
+  },
+  {
+   "decision": "John and Kit from DPW to coordinate with contractors on projects, with Kit doing most of the coordination.",
+   "quote": "john and kit from dpw will be coordinating with contractors on projects."
+  },
+  {
+   "decision": "Heat pump for the Ritter building was not approved for the grant.",
+   "quote": "heat pump for ritter building was not approved the cost of this was approximately $13,500"
+  },
+  {
+   "decision": "Next meeting set for late September or early October, focused on the lighting piece; Dave to check with Kelly on her availability.",
+   "quote": "dave will talk to kelly to see when she is available."
+  },
+  {
+   "decision": "Plastic-bag ban item dropped: the guest decided not to attend after the group saw the board has no control over it.",
+   "quote": "decided not to come after realizing we have no control over that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "New grant round total",
+   "what_was_recorded": "The town received a total for the new grant round, with almost all proposed items approved and one altered.",
+   "figures_as_printed": [
+    "$198,867"
+   ],
+   "quote": "the town received $198,867 in total for this new grant round"
+  },
+  {
+   "topic": "Funded projects list",
+   "what_was_recorded": "Thirteen funded project lines were read out, covering Turkey Hill, Town Hall, Ritter Memorial and Public Safety Building measures plus Town administrative costs.",
+   "figures_as_printed": [
+    "$16,206",
+    "$36,202",
+    "$4,057",
+    "$1,672",
+    "$2,150",
+    "$23,970",
+    "$2,625",
+    "$1,836",
+    "$3,314",
+    "$18,697",
+    "$43,138",
+    "$25,000",
+    "$20,000"
+   ],
+   "quote": "below is the list of projects funded:"
+  },
+  {
+   "topic": "Town administrative costs line",
+   "what_was_recorded": "A $20,000 line for Town administrative costs was among the funded items; final report and amendment writing may be charged to it.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "$20,000, town- administrative costs"
+  },
+  {
+   "topic": "Heat pump for Ritter building",
+   "what_was_recorded": "The approximate cost of a heat pump for the Ritter building, which was not approved for funding.",
+   "figures_as_printed": [
+    "$13,500"
+   ],
+   "quote": "heat pump for ritter building was not approved the cost of this was approximately $13,500"
+  },
+  {
+   "topic": "Grant payment schedule",
+   "what_was_recorded": "The town expects to receive 25% next week, then 50% once the first amount is spent and documented, with the final 25% paid on completion.",
+   "figures_as_printed": [
+    "25%",
+    "50%",
+    "25%"
+   ],
+   "quote": "we will likely receive 25% next week; once we spend that and document it we will receive the next 50%"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes review",
+   "resolution": "noted; minutes to be sent to Kathy Hedrick for the record",
+   "quote": "minutes were reviewed minutes-and it was noted that they should be sent to kathy hedrick for the record",
+   "tags": [
+    "minutes",
+    "records"
+   ]
+  },
+  {
+   "topic": "New grant round funding and project list",
+   "resolution": "noted; project list read",
+   "quote": "the town received $198,867 in total for this new grant round",
+   "tags": [
+    "grant",
+    "funding",
+    "energy efficiency"
+   ]
+  },
+  {
+   "topic": "Audit, utility and contractor coordination",
+   "resolution": "no action; Kelly Brown to contact John",
+   "quote": "kelly brown, will conduct audit and work with energy source, utility companies and a representative from our board",
+   "tags": [
+    "audit",
+    "contractors",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Pre-approval letters and standard contract",
+   "resolution": "noted; contract end date May 31, 2019",
+   "quote": "d.b. brought standard contract to meeting- may 31, 2019 is end date, everything must be complete and paid for by that date.",
+   "tags": [
+    "contract",
+    "deadline",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Heat pump for Ritter building",
+   "resolution": "not approved",
+   "quote": "heat pump for ritter building was not approved the cost of this was approximately $13,500",
+   "tags": [
+    "Ritter",
+    "heat pump",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Plastic bag ban meeting request",
+   "resolution": "dropped; no action",
+   "quote": "decided not to come after realizing we have no control over that.",
+   "tags": [
+    "plastic bags",
+    "outside request"
+   ]
+  },
+  {
+   "topic": "Quarterly and final reports",
+   "resolution": "Karen to proceed with quarterly reports; annual report not allowed; Karen to speak with Town Manager",
+   "quote": "j.l. raised the issue of quarterly report.",
+   "tags": [
+    "reporting",
+    "grant administration"
+   ]
+  },
+  {
+   "topic": "Project roles: solar usage data and DPW coordination",
+   "resolution": "assignments made",
+   "quote": "j.l. will get the mei (solar usage) and dpw will give john info.",
+   "tags": [
+    "solar",
+    "DPW",
+    "coordination"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment",
+   "quote": "no members of the public were present for comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for late September or early October, lighting focus",
+   "quote": "late september/early october for next meeting.",
+   "tags": [
+    "scheduling",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:15 (as printed); no tally recorded",
+   "quote": "motion to adjorn- n.s. seconded by l.m. 7;15",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Standard contract",
+   "where": "text",
+   "quote": "d.b. brought standard contract to meeting- may 31, 2019 is end date, everything must be complete and paid for by that date."
+  },
+  {
+   "name": "Quarterly report (grant reporting)",
+   "where": "text",
+   "quote": "j.l. raised the issue of quarterly report."
+  }
+ ],
+ "tags": [
+  "Green Communities",
+  "grant",
+  "energy efficiency",
+  "lighting",
+  "Ritter Memorial",
+  "Turkey Hill Elementary",
+  "Public Safety Building",
+  "Town Hall",
+  "quarterly reports",
+  "contract",
+  "solar",
+  "DPW",
+  "scheduling"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

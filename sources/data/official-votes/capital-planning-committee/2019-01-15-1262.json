@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2019-01-15",
  "docid": "1262",
@@ -12,6 +12,183 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe the committee's review and prioritization of capital requests and discussion of previous minutes, but contain no motions or recorded votes.",
- "cost_usd": 0.0698955
+ "note": "Scanned OCR text with jumbled attendance labels. Attendance is inferred from label order: the names line sits under Present, John Henshaw appears to be Absent, and Heather Lemieux and David Passios are Also Present. No motions or votes are recorded, so the votes list is empty. Public comment is recorded as \"none\". The minutes print the available funding target as $1,684,100.00 but the Town Manager provided $1,684,000; both are recorded as printed. No documents or exhibits are listed or named.",
+ "cost_usd": 0.00379612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "",
+   "status": "absent",
+   "quote": "joseph bilotta meeting room, town hall damon mcquaid, matthew allison, caroline griffis, heather sroka john henshaw"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager; david passios"
+  },
+  {
+   "name": "David Passios",
+   "role": "",
+   "status": "present",
+   "quote": "heather lemieux, town manager; david passios"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee prioritized FY2020 capital projects to meet the available funding total, leaving out the Vertex repairs and cutting the Master Plan request to $50,000.00.",
+   "quote": "the capital planning committee reviewed the requests and prioritized projects to meet the total in available funding."
+  },
+  {
+   "decision": "The committee reviewed priorities from the 12/04/2018 meeting and made changes.",
+   "quote": "reviewed priorities discussed at the previous meeting (12/04/2018) and made changes."
+  },
+  {
+   "decision": "Minutes of 11/06/2018 and 11/27/2018 need changes; they are to be sent to Heather Lemieux for final review with Heather Sroka and Damon McQuaid.",
+   "quote": "minutes from 11/06/2018 and 11/27/2018, changes needed and will be sent to heather lemieux"
+  },
+  {
+   "decision": "No future meetings are planned.",
+   "quote": "6. no future meetings planned"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2020 capital requests total",
+   "what_was_recorded": "Departments' capital requests for the FY2020 Capital Plan totaled $2,853,100.00.",
+   "figures_as_printed": [
+    "$2,853,100.00"
+   ],
+   "quote": "the total in capital requests from departments for the fy2020 capital plan totaled $2,853,100.00 and the"
+  },
+  {
+   "topic": "Available funding for FY2020",
+   "what_was_recorded": "The Town Manager provided $1,684,000 in available funding for FY2020.",
+   "figures_as_printed": [
+    "$1,684,000"
+   ],
+   "quote": "town manager provided an amount of $1,684,000 in available funding for fy2020."
+  },
+  {
+   "topic": "Vertex repairs not included",
+   "what_was_recorded": "Repairs to town facilities based on the Vertex Year 0-1 report, totaling $1,119,000.00, were not included in the funded projects.",
+   "figures_as_printed": [
+    "$1,119,000.00"
+   ],
+   "quote": "repairs to town facilities based on the vertex year 0-1 report totaling $1,119,000.00"
+  },
+  {
+   "topic": "Master Plan request cut",
+   "what_was_recorded": "The Master Plan request was cut from $100,000 to $50,000.00.",
+   "figures_as_printed": [
+    "$100,000",
+    "$50,000.00"
+   ],
+   "quote": "the master plan request was cut from $100,000 to $50,000.00"
+  },
+  {
+   "topic": "Available funding target",
+   "what_was_recorded": "The available funding target was $1,684,100.00 and was achieved with the reductions; this differs from the $1,684,000 the Town Manager provided.",
+   "figures_as_printed": [
+    "$1,684,100.00",
+    "$1,684,000"
+   ],
+   "quote": "the available funding target of $1,684,100.00 was achieved with these reductions."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 5:15",
+   "quote": "meeting called to order at 5:15 by mr. mcquaid",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "FY2020 capital requests and prioritization",
+   "resolution": "projects prioritized to meet available funding; Master Plan cut to $50,000.00",
+   "quote": "the total in capital requests from departments for the fy2020 capital plan totaled $2,853,100.00 and the",
+   "tags": [
+    "FY2020 capital plan",
+    "prioritization",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Priorities from previous meeting",
+   "resolution": "reviewed and changed",
+   "quote": "reviewed priorities discussed at the previous meeting (12/04/2018) and made changes.",
+   "tags": [
+    "capital priorities"
+   ]
+  },
+  {
+   "topic": "Minutes of 11/06/2018 and 11/27/2018",
+   "resolution": "changes needed; sent for final review, not approved",
+   "quote": "minutes from 11/06/2018 and 11/27/2018, changes needed and will be sent to heather lemieux",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Future meetings",
+   "resolution": "no future meetings planned",
+   "quote": "6. no future meetings planned",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:59",
+   "quote": "7. adjournment at 5:59",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "capital planning",
+  "FY2020 capital plan",
+  "budget prioritization",
+  "town facilities",
+  "master plan",
+  "minutes approval",
+  "Vertex report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

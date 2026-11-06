@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-02-11",
  "docid": "4045",
@@ -12,15 +12,184 @@
  },
  "votes": [
   {
-   "motion": "continue the Hearing to February 25th, 6:35 PM",
-   "outcome": "passed",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Tanner Cole",
+   "motion": "Continue the public hearing on 380-400 Electric Avenue to February 25th, 6:35 PM.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "T. Cole",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "p. bertram made motion to continue the hearing to february 25th, 6:35 pm, t. cole seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.010427599999999999
+ "note": "Only one recorded motion (the continuance); no other votes, budget figures or transfers appear in the text. Some extracted words have stray spaces (e.g., 'se rvice', 'wi ll'), so quotes avoid those spots or keep the printed spacing. Minutes are the Planning Board's hearing record for 2019-02-11.",
+ "cost_usd": 0.00363526,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant (Ducharme & Dillis Civil Design Group, Inc.)",
+   "status": "present",
+   "quote": "owners/applicants were represented by greg roy and frank mcpartlan, ducharme & dillis civil design group, inc."
+  },
+  {
+   "name": "Frank McPartlan",
+   "role": "representing the applicant (Ducharme & Dillis Civil Design Group, Inc.)",
+   "status": "present",
+   "quote": "owners/applicants were represented by greg roy and frank mcpartlan, ducharme & dillis civil design group, inc."
+  },
+  {
+   "name": "Daniel Proctor",
+   "role": "owner/applicant",
+   "status": "present",
+   "quote": "d. proctor noted that his business is not open on sundays."
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "owner/applicant",
+   "status": "not stated",
+   "quote": "owners/applicants are daniel and jean proctor, 1529 massachusetts avenue, lunenburg, ma."
+  },
+  {
+   "name": "Jeff Walsh",
+   "role": "review engineer, Graves Engineering, Inc. (GEI)",
+   "status": "present",
+   "quote": "review engineer jeff walsh, graves engineer, inc. (gei) noted this is a new sewer"
+  },
+  {
+   "name": "Richard Schreiner",
+   "role": "member of the public, 57 John Street",
+   "status": "present",
+   "quote": "richard schreiner, 57 john street- complained about noise and dust"
+  },
+  {
+   "name": "Sako Kalfayan",
+   "role": "member of the public, 44 John Street",
+   "status": "present",
+   "quote": "sako kalfayan, 44 john street- was in agreement with r. schreiner regarding the noise and lights."
+  },
+  {
+   "name": "Richard Trainque",
+   "role": "member of the public, 44 Otis Street",
+   "status": "present",
+   "quote": "richard trainque, 44 otis street- noted a storm drain installed by his father at 408 electric avenue."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Richard Schreiner",
+   "stated_role": "",
+   "topic": "noise and dust from gravel processing",
+   "quote": "richard schreiner, 57 john street- complained about noise and dust"
+  },
+  {
+   "speaker": "Sako Kalfayan",
+   "stated_role": "",
+   "topic": "noise and lights",
+   "quote": "sako kalfayan, 44 john street- was in agreement with r. schreiner regarding the noise and lights."
+  },
+  {
+   "speaker": "D. Proctor",
+   "stated_role": "",
+   "topic": "business hours and downsizing",
+   "quote": "d. proctor noted that his business is not open on sundays."
+  },
+  {
+   "speaker": "Richard Trainque",
+   "stated_role": "",
+   "topic": "storm drains and illegal pipes",
+   "quote": "richard trainque, 44 otis street- noted a storm drain installed by his father at 408 electric avenue."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: site plan modification, relocation and new building, 380-400 Electric Avenue",
+   "resolution": "continued to February 25, 2019",
+   "quote": "the hearing was to hear and discuss an application for",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "Electric Avenue",
+    "sewer",
+    "drainage",
+    "lighting",
+    "noise"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Site Plan Approval",
+   "where": "list",
+   "quote": "documents used at meeting: application for site plan approval"
+  },
+  {
+   "name": "Modification to Site Plan dated 1.21.19",
+   "where": "list",
+   "quote": "modification to site plan dated 1.21.19"
+  },
+  {
+   "name": "Graves Engineering, Inc. letter dated 2.9.19",
+   "where": "list",
+   "quote": "graves engineering, inc. letter dated 2.9.19"
+  },
+  {
+   "name": "Zoning Board of Appeals special permit for dimensional variation (common driveway width, 30 to 40 feet)",
+   "where": "text",
+   "quote": "zoning board of appeals special permit for dimensional variation for common driveway width from 30 to 40 feet"
+  },
+  {
+   "name": "ANR Plan for the proposed gas station and donut shop",
+   "where": "text",
+   "quote": "the property was subdivided via an anr plan for the proposed gas station and donut shop."
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "site plan modification",
+  "Electric Avenue",
+  "sewer manhole",
+  "drainage",
+  "noise",
+  "lighting",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

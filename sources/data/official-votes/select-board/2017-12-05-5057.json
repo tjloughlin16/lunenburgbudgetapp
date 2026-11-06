@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-12-05",
  "docid": "5057",
@@ -12,58 +12,398 @@
  },
  "votes": [
   {
-   "motion": "A liquor license violation did occur on September 21, 2017 at Embers Pizzeria",
+   "motion": "Find that a liquor license violation occurred on September 21 at Embers Pizzeria.",
    "moved_by": "R. Ebersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r. ebersole that a liquor license violation did occur on september 21% at embers pizzeria"
+  },
+  {
+   "motion": "Issue a written warning to Embers Pizzeria as this is the first offense.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole that a liquor license violation did occur on september 21% at embers pizzeria motion: r.ebersole that the board ",
-   "quote_taken_from_text": true
+   "quote": "motion: r.ebersole that the board issues a written warning as this is the first offense"
   },
   {
-   "motion": "The Board issues a written warning to Embers Pizzeria as this is the first offense",
+   "motion": "Approve the 2018 alcohol license renewals as presented by the Town Manager.",
    "moved_by": "R.Ebersole",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "to approve the alcohol license renewals for 2018 as presented by town manager"
+  },
+  {
+   "motion": "Approve the automatic amusement and jukebox license renewals (motion wording not printed).",
+   "moved_by": "",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole that the board issues a written warning as this is the first offense 2\": p. luck vote: all in favor"
+   "quote": "1 whalom road 2nd. p. luck vote: all in favor"
   },
   {
-   "motion": "To approve the alcohol license renewals for 2018 as presented by Town Manager",
-   "moved_by": "R.Ebersole",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: r.ebersole to approve the alcohol license renewals for 2018 as presented by town manager ms. lemieux read the following ",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "To approve the automatic amusement device and jukebox licenses as presented by Town Manager",
+   "motion": "Approve the above listed miscellaneous licenses as presented by the Town Manager.",
    "moved_by": "REbersole",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "to approve the above listed licenses as presented by town manager"
+  },
+  {
+   "motion": "Approve the Common Victualer license renewals and BYOB permits at a $25.00 fee (motion wording not printed).",
+   "moved_by": "",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: rebersole to approve the above listed licenses as presented by town manager mr. toale asked if there was a ",
-   "quote_taken_from_text": true
+   "quote": "byob permit fee $25.00 2nd. p. luck vote: all in favor"
   },
   {
-   "motion": "To approve the Class I, Class II and Class III 2018 Auto Dealer license renewals as presented by Town Manager",
+   "motion": "Approve the Class I, Class II and Class III 2018 auto dealer license renewals as presented by the Town Manager.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: p. luck to approve the class i, class il and class iii 2018 auto dealer license renewals as presented by town manager vote: all in favor"
+   "quote": "to approve the class i, class il and class iii 2018 auto dealer license renewals as presented by town manager"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole to adjourn the meeting 2\"d, p. luck vote: all in favor"
+   "quote": "to adjourn the meeting 2\"d, p. luck vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision scan. One vote for Common Victualers licenses was referenced (2nd. P. Luck Vote: All in Favor appeared mid-list on page 6) but the motion statement itself is not clearly recorded in the transcript, so it was omitted. Names show minor OCR variations (e.g., \"REbersole\" for \"R. Ebersole\" in one instance; \"R.Ebersole\" without space after period in others). All recorded votes passed unanimously.",
- "cost_usd": 0.1499345
+ "note": "OCR text of a scanned typed document with garbled words (e.g., 'Octoberand', 'Mis. Lemieux', 'Class Il', 'Passios kitchen', the Health Department official's name is unreadable). The accounts payable warrant amount is unreadable ('5 251.302'). The Embers Pizzeria section shows two motions and two 'All in Favor' results; the seconder assignment (P. Luck, D. McQuaid) is inferred from order, and outcome is recorded as 'passed' with no count printed. The alcohol renewal and miscellaneous license motions show no result. The amusement and common victualer votes have a second and result but no motion wording printed. The license transfer hearing text ends before any vote. Page 8 is blank.",
+ "cost_usd": 0.012119520000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman, Board of Selectmen/Licensing Authority",
+   "status": "present",
+   "quote": "jamie toale, chairman, board of selectmen/licensing authority"
+  },
+  {
+   "name": "P. Luck",
+   "role": "",
+   "status": "present",
+   "quote": "ms. luck asked if this was their first violation."
+  },
+  {
+   "name": "R. Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "mr. ebersole stated based on other hearings we have had, other establishments have established written policies"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "",
+   "status": "not stated",
+   "quote": "2nd: d. mcquaid vote: all in favor"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Kenneth Ricker",
+   "role": "Owner (Embers Pizzeria)",
+   "status": "present",
+   "quote": "owner kenneth ricker and officer john morreale jr. were sworn in"
+  },
+  {
+   "name": "John Morreale Jr.",
+   "role": "Officer",
+   "status": "present",
+   "quote": "owner kenneth ricker and officer john morreale jr. were sworn in"
+  },
+  {
+   "name": "John Mooradian",
+   "role": "Attorney, Demakis Law Offices, P.C.; representing the applicant",
+   "status": "present",
+   "quote": "attorney john mooradian of demakis law offices, p.c. and applicant/proposed manager tejalben patel"
+  },
+  {
+   "name": "Tejalben Patel",
+   "role": "applicant/proposed manager",
+   "status": "present",
+   "quote": "attorney john mooradian of demakis law offices, p.c. and applicant/proposed manager tejalben patel"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "resident, 40 Williams Drive",
+   "status": "present",
+   "quote": "katie adams, 40 williams drive, commented on the findings of the building reuse committee between the years"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board concurred on the date of January 9 for the Complete Streets public outreach workshop; Town Manager to inform the consultant and begin advertising it.",
+   "quote": "the board concurred on the date. ms. lemieux will inform the consultant and she will begin advertising"
+  },
+  {
+   "decision": "Board approved minutes of October 17, October 23, October and October 25, 2017, and signed warrants (no vote recorded).",
+   "quote": "the board approved minutes of october 17, october 23, octoberand october 25, 2017."
+  },
+  {
+   "decision": "Mr. Toale noted the Town Manager and he will meet to plan the charrette.",
+   "quote": "the town manager and he will be meeting to plan the charrette."
+  },
+  {
+   "decision": "Ricker to be notified of the written warning by mail.",
+   "quote": "mr. toale stated ricker would be notified by mail of the warning"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payroll warrant signed by the Board",
+   "what_was_recorded": "The Board signed a payroll warrant; the accounts payable warrant amount is garbled in the text and not readable.",
+   "figures_as_printed": [
+    "740, 137.30"
+   ],
+   "quote": "a payroll warant in the amount of 740, 137.30"
+  },
+  {
+   "topic": "Alcohol license renewal fees",
+   "what_was_recorded": "Annual fees for 2018 alcohol licenses as read by the Town Manager.",
+   "figures_as_printed": [
+    "$1,450.00",
+    "$700.00"
+   ],
+   "quote": "baker's whalom variety package store wine & malt $700.00"
+  },
+  {
+   "topic": "Automatic amusement and jukebox license fees",
+   "what_was_recorded": "Fee per device for automatic amusement and jukebox licenses.",
+   "figures_as_printed": [
+    "$35.00 EACH",
+    "$35 EACH"
+   ],
+   "quote": "jukebox license $35 each"
+  },
+  {
+   "topic": "Common Victualer and BYOB license fee",
+   "what_was_recorded": "Fee for Common Victualer licenses and BYOB permits.",
+   "figures_as_printed": [
+    "$25.00"
+   ],
+   "quote": "common victualers $25.00"
+  },
+  {
+   "topic": "FY2018 tax rate",
+   "what_was_recorded": "Department of Revenue certified the FY2018 tax rate, down from FY2017.",
+   "figures_as_printed": [
+    "$19.70",
+    "28 cents"
+   ],
+   "quote": "$19.70 per thousand dollars of valuation. this is down 28 cents from fiscal year 2017."
+  },
+  {
+   "topic": "Firefighter collective bargaining agreement",
+   "what_was_recorded": "Contract terms include a market adjustment for FY2018 wages and a cost of living increase for FY2019 and FY2020.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "there was a market adjustment for the fiscal year 2018 wages and a 2% cost of living increase"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the Salary Reserve line item in the current year's budget to cover the first year of the firefighter contract.",
+   "outcome": "approved by Special Town Meeting (reported at this meeting)",
+   "amount_as_printed": "$13,884.22",
+   "quote": "special town meeting approved the transfer of $13,884.22 from the salary reserve line item in the current year's budget to cover the first year of the contract."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Chairman Toale",
+   "stated_role": "Chairman",
+   "topic": "Special Election polls reminder",
+   "quote": "chairman toale reminded everyone the polls for the special election to state senate were still open until 8:00"
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Special Town Meeting and town buildings and land discussion",
+   "quote": "ms. luck thought it was wonderful to see so many citizens at the special town meeting and inspirational to"
+  },
+  {
+   "topic": "Lunenburg Family Giftmart holiday donation drive",
+   "quote": "the lunenburg family giftmart is planning their ninth annual event in mid-december by invitation only to"
+  },
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "resident, 40 Williams Drive",
+   "topic": "Findings of the building reuse committee 2013 to 2016",
+   "quote": "katie adams, 40 williams drive, commented on the findings of the building reuse committee between the years"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no further comment at close",
+   "quote": "public comment: chairman toale reminded everyone the polls for the special election to state senate were still open until 8:00",
+   "tags": [
+    "public comment",
+    "special election"
+   ]
+  },
+  {
+   "topic": "License violation hearing - Embers Pizzeria",
+   "resolution": "violation found; written warning issued",
+   "quote": "license violation hearing- embers pizzeria-84 lakefront drive",
+   "tags": [
+    "liquor license",
+    "hearing",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "License transfer hearing - Aayan Corp. d/b/a Hilltop Farms",
+   "resolution": "hearing opened; no vote recorded in the text",
+   "quote": "license transfer application for aayan corp. d/b/a hilltop farms, 1 main st. (formerly hadwen",
+   "tags": [
+    "liquor license",
+    "transfer",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Resignation of Assistant Town Clerk",
+   "resolution": "noted; position advertised internally",
+   "quote": "resignation of assistant town clerk, tina lepage",
+   "tags": [
+    "personnel",
+    "town clerk"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; Complete Streets date set; charrette and My Town Government noted",
+   "quote": "ms. lemieux reported the walking tour of the five municipal buildings was held on december",
+   "tags": [
+    "town facilities",
+    "charrette",
+    "complete streets",
+    "website"
+   ]
+  },
+  {
+   "topic": "Passios kitchen commercial permitting",
+   "resolution": "joint meeting recommended; no vote",
+   "quote": "she recommended a joint meeting between the board of health, sewer commission and this board to discuss the process",
+   "tags": [
+    "commercial kitchen",
+    "permitting",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; firefighter contract ratified",
+   "quote": "mis. lemieux announced the summer street project bids have been postponed until february 6, 2018.",
+   "tags": [
+    "summer street",
+    "tax rate",
+    "union contract"
+   ]
+  },
+  {
+   "topic": "2018 license renewals",
+   "resolution": "approved in several motions; two with no result printed",
+   "quote": "ms. lemieux began with the alcohol license renewals.",
+   "tags": [
+    "liquor license",
+    "renewals",
+    "common victualer",
+    "amusement"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "the board approved minutes of october 17, october 23, octoberand october 25, 2017.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "ms. luck reported the school committee met on november 16 and discussed fiscal year 2018 budget updates",
+   "tags": [
+    "school committee",
+    "zoning board",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:46 p.m.",
+   "quote": "the meeting adjourned at 7:46 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Hearing notice, Lunenburg Licensing Authority public hearing December 5, 2017 (read by Mr. Toale)",
+   "where": "text",
+   "quote": "mr. toale read the hearing notice: the lunenburg licensing authority will hold a public hearing on december"
+  },
+  {
+   "name": "Application submitted by Aayan Corporation d/b/a Hilltop Farms for transfer of Package Store Wine & Malt license",
+   "where": "text",
+   "quote": "on the application submitted by aayan corporation d/b/a hilltop farms, for a transfer of a package"
+  },
+  {
+   "name": "Complete Streets Prioritization Plan",
+   "where": "text",
+   "quote": "complete streets prioritization plan:"
+  },
+  {
+   "name": "Department of Revenue certification of FY2018 tax rate",
+   "where": "text",
+   "quote": "today we received certification from the department of revenue that the fiscal year 2018 tax rate was set at"
+  },
+  {
+   "name": "Collective bargaining agreement between the Lunenburg Professional Firefighters PPFM Local 4358A and the Town",
+   "where": "text",
+   "quote": "the ratification of the collective bargaining agreement between the lunenburg"
+  },
+  {
+   "name": "Minutes of October 17, October 23, October and October 25, 2017",
+   "where": "text",
+   "quote": "the board approved minutes of october 17, october 23, octoberand october 25, 2017."
+  }
+ ],
+ "tags": [
+  "liquor licenses",
+  "license hearing",
+  "license renewals",
+  "town facilities",
+  "charrette",
+  "complete streets",
+  "tax rate",
+  "firefighter contract",
+  "salary reserve transfer",
+  "public comment",
+  "minutes and warrants",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

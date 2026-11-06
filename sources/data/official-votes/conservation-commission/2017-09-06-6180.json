@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-09-06",
  "docid": "6180",
@@ -12,71 +12,428 @@
  },
  "votes": [
   {
-   "motion": "Issue negative determination on subsurface sewage disposal system at 22 Boucher Road with addition of wattles.",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
+   "motion": "Approve a negative determination for the 22 Boucher Road sewage disposal request, with the addition of the wattles survey-located.",
+   "moved_by": "KJ",
+   "seconded_by": "JR",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion for a negative determination with the addition of the wattles made by kj seconded by jr and unanimously approved."
   },
   {
-   "motion": "Allow removal of rock and placement of up to 60 yards of sand at town beach rehabilitation as a one-time approval.",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed unanimously",
+   "motion": "Allow removal of the rock, sand to be spread before the water, and up to 60 yards of sand at the town beach (one-time approval).",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "kj made a motion to allow the removal of the rock, to scape sand up before the water and to allow the sand up to 60 yards. this is a onetime approval and they would have to come before the commission next year if they want to add more sand. bp seconded and the commission voted unanimousiy"
+   "quote": "kj made a motion to allow the removal of the rock, to scape sand up before the water and to allow the sand up to 60 yards."
   },
   {
-   "motion": "Open a 53 G account for third-party engineer review of solar field project.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "there was a motion for mm to open a 53 g account by cl and a second by jr with a unanimous vote."
-  },
-  {
-   "motion": "Continue meeting on Settlers Solar project to September 20 with revised plan due no later than September 15.",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the meeting was continued to the 20th of september with consent of the applicant by a motion of jr and a second of kj. ci inquired as to a set back time for the submittal of the revised plan. it was agreed that it would be due no later than of september 15 or the meeting would be automatically continued. the motion was passed unanimously."
-  },
-  {
-   "motion": "Continue meeting on shed reconstruction project to September 20.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Bob Pease",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "the meeting was continued to the 20h by motion of cl and a second by bp."
-  },
-  {
-   "motion": "Approve order of conditions for single-family home construction at 961 Northfield Road.",
-   "moved_by": "Bob Pease",
-   "seconded_by": "",
-   "outcome": "passed unanimously",
+   "motion": "Approve an order of conditions for the 961 Northfield Road Lot #2 notice of intent.",
+   "moved_by": "BP",
+   "outcome": "passed",
    "procedural": false,
    "quote": "bp motioned to approve an order of conditions seconded and the commission voted unanimously."
   },
   {
-   "motion": "Open 53 G account for peer review of Reservoir Road riverfront assessment.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Open a 53G account so MM can arrange a third-party review of the Settlers Solar stormwater questions.",
+   "moved_by": "CL",
+   "seconded_by": "JR",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "there was a motion for mm to open a 53 g account by cl and a second by jr with a unanimous vote."
+  },
+  {
+   "motion": "Continue the 994 Northfield Road (Settlers Solar) hearing to September 20 with the applicant's consent.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the meeting was continued to the 20th of september with consent of the applicant by a motion of jr and a second of kj."
+  },
+  {
+   "motion": "Continue the 53 Peari Street hearing to the 20th.",
+   "moved_by": "CL",
+   "seconded_by": "BP",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the meeting was continued to the 20h by motion of cl and a second by bp."
+  },
+  {
+   "motion": "Approve a 53G peer review for Steve Powell at 155 Reservoir Road.",
+   "moved_by": "CL",
+   "seconded_by": "JR",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "a motion for the 53 g for a peer review for steve powell by a motion of cl and jr seconded and the commission vote unanimously."
   },
   {
    "motion": "Adjourn the meeting.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "moved_by": "CL",
+   "seconded_by": "KJ",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "the meeting adjourned at 9:39 pm with a motion from cl and a second from kj"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes; all votes recorded with outcomes stated or marked not stated where absent.",
- "cost_usd": 0.1288225
+ "note": "OCR of a scanned minutes page set with many typos and garbled header text (e.g. 'Conservation Commissio UNENBURG TOY'). Roll call and attendance were not recorded; statuses for board members are inferred from recorded actions or statements. Todd Dwyer has no recorded action. 'CI' appears once and is not attributed. The 'unanimousiy' and '20h' typos are read as 'unanimously' and '20th'. Motion results printed as 'unanimously' are recorded as 'passed'. Adjournment and the 53 Peari Street continuance have no printed result and are marked 'not stated'.",
+ "cost_usd": 0.011554020000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "note chairman bursch recused as the applicants representative is related to him. mr. luck chaired this hearing."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "todd dwyer, vice-chair"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "bp noted he has no objections to the added sand for safety."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "cl established that the addition is proposed to be to the bottom of the fence."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "jr expressed concerns that maybe they should take the rock out."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "kj made a motion to allow the removal of the rock, to scape sand up before the water and to allow the sand up to 60 yards."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "matthew s. marro, conservation administrator"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "greg bittner noted that a five year moratorium was approved by the bos"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "volunteer helping to clean and revitalize the beach, appearing on behalf of the Lions Club",
+   "status": "present",
+   "quote": "mark bursch appeared on behalf of the lions club as a volunteer who helps to clean the beach and revitalize."
+  },
+  {
+   "name": "Tim Beauchmin",
+   "role": "",
+   "status": "present",
+   "quote": "tim beauchmin appeared before the conservation commission."
+  },
+  {
+   "name": "Michael Tufts",
+   "role": "",
+   "status": "present",
+   "quote": "michael tufts appeared before the commission."
+  },
+  {
+   "name": "Glen Reinhardt",
+   "role": "represents himself",
+   "status": "present",
+   "quote": "glen reinhardt represents himself."
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "neil gorman appeared before the commission representing the applicant."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "",
+   "status": "present",
+   "quote": "rob oliva appeared before the commission he oriented the commission to the site"
+  },
+  {
+   "name": "Chris Clark",
+   "role": "",
+   "status": "present",
+   "quote": "chris clark noted that there area gaps pre-arraigned for the original 3 by 5 panels"
+  },
+  {
+   "name": "Brian pomeria",
+   "role": "owner of 571 Chase Road",
+   "status": "present",
+   "quote": "brian pomeria the owner was present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "CL wanted a follow-up letter to the commission on the condition of the sand and planned maintenance at the town beach (first sand application accepted).",
+   "quote": "he wanted follow-up letter to the commission on the condition of the sand and featured maintenance."
+  },
+  {
+   "decision": "The 48 Oak Ridge Road hearing was continued to the next regular meeting, when the applicant is expected to provide a new plan addressing all violations.",
+   "quote": "the meeting was continued to the next regular meeting when it is expected that a new plan addressing all violations will be provided by the applicant.."
+  },
+  {
+   "decision": "The 238 Townsend Harbor Road hearing (Fred Daley) was continued at the applicant's request.",
+   "quote": "to be continued at the applicants request"
+  },
+  {
+   "decision": "The applicant at 53 Peari Street agreed to look at whether the structure could be removed from the 30-foot zone.",
+   "quote": "the applicant agreed to look at his property to see if he could remove it from the 30-foot zone."
+  },
+  {
+   "decision": "The commission requested that the driveway turnaround be switched to keep it out of the buffer zone; the applicant also agreed to move boulders and add a wattle detail.",
+   "quote": "the commission requested to switch the driveway turnaround to keep it out of the buffer zone."
+  },
+  {
+   "decision": "The revised Settlers Solar plan is due no later than September 15, or the meeting will be automatically continued.",
+   "quote": "it was agreed that it would be due no later than of september 15 or the meeting would be automatically continued."
+  },
+  {
+   "decision": "MM will speak with Adam and Heather about using Graves Engineering for the Settlers Solar review.",
+   "quote": "mm will speak with adam and heather about using graves engineering."
+  },
+  {
+   "decision": "183 Hemlock Dr: a site inspection is scheduled for September 16; the owner is to be notified and the 20th will have an administrative hearing.",
+   "quote": "site inspection scheduled for september 16, mil to notify the owner and the 20th will have an administrative hearing."
+  },
+  {
+   "decision": "The commission agreed to walk the 571 Chase Road site on 9.16.17.",
+   "quote": "the commission agreed to walk the site on 9.16.17."
+  },
+  {
+   "decision": "MM will apprise the commission of the 93 Whalom Road status at the next meeting, as a follow-up is to be filed before then.",
+   "quote": "will apprise the commission of status at the next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "53G peer review fee account for Settlers Solar drainage review",
+   "what_was_recorded": "RB asked the commission to have a special engineer or third-party review the drainage questions under a 53G fund; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "rb was requesting the commission have a special engineer/third party review under a 53 g fund to examine the drainage questions."
+  },
+  {
+   "topic": "53G peer review for 155 Reservoir Road",
+   "what_was_recorded": "RB recommended opening a 53G account for Graves to review the riverfront recalculation; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "rb recommended we open a 53g and have graves review it."
+  },
+  {
+   "topic": "Previous enforcement fine at 48 Oak Ridge Road",
+   "what_was_recorded": "The applicant said he had paid the previous fine; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "that he paid the previous fine and was trying to finish applying for the permit."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Greg Bittner",
+   "topic": "five year moratorium approved by the BOS",
+   "quote": "greg bittner noted that a five year moratorium was approved by the bos"
+  },
+  {
+   "speaker": "Brian pomeria",
+   "topic": "571 Chase Road wetland cutting and material in brook",
+   "quote": "the owner spoke of material within the brook."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, announcements and public comment",
+   "resolution": "public comment noted; moratorium mentioned",
+   "quote": "greg bittner noted that a five year moratorium was approved by the bos",
+   "tags": [
+    "public comment",
+    "moratorium"
+   ]
+  },
+  {
+   "topic": "RFD: 22 Boucher Road, subsurface sewage disposal (Beauchmine plan SDS-552)",
+   "resolution": "negative determination approved with wattles added",
+   "quote": "motion for a negative determination with the addition of the wattles made by kj seconded by jr and unanimously approved.",
+   "tags": [
+    "request for determination",
+    "septic",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "RFD: Town beach rehabilitation, 265 Prospect Street (Lunenburg DPW and Lions Club)",
+   "resolution": "approved one-time rock removal and up to 60 yards of sand",
+   "quote": "kj made a motion to allow the removal of the rock, to scape sand up before the water and to allow the sand up to 60 yards.",
+   "tags": [
+    "request for determination",
+    "beach",
+    "sand"
+   ]
+  },
+  {
+   "topic": "RFD: 48 Oak Ridge Road, paver patio and decks (Michael Tufts)",
+   "resolution": "continued",
+   "quote": "the meeting was continued to the next regular meeting when it is expected that a new plan addressing all violations will be provided by the applicant..",
+   "tags": [
+    "request for determination",
+    "violations",
+    "patio"
+   ]
+  },
+  {
+   "topic": "RFD: 238 Townsend Harbor Road, tree cutting (Fred Daley)",
+   "resolution": "continued at applicant request",
+   "quote": "to be continued at the applicants request",
+   "tags": [
+    "request for determination",
+    "tree cutting"
+   ]
+  },
+  {
+   "topic": "RFD: 53 Peari Street, shed rebuild (Glen Reinhardt)",
+   "resolution": "continued to the 20th",
+   "quote": "the meeting was continued to the 20h by motion of cl and a second by bp.",
+   "tags": [
+    "request for determination",
+    "shed",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "NOI: 961 Northfield Road Lot #2, single family home (John and David Saliba)",
+   "resolution": "order of conditions approved",
+   "quote": "bp motioned to approve an order of conditions seconded and the commission voted unanimously.",
+   "tags": [
+    "notice of intent",
+    "single family home",
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "NOI: 994 Northfield Road, 6 MW solar field (Settlers Solar)",
+   "resolution": "continued to September 20; 53G third-party review opened",
+   "quote": "the meeting was continued to the 20th of september with consent of the applicant by a motion of jr and a second of kj.",
+   "tags": [
+    "notice of intent",
+    "solar",
+    "stormwater",
+    "53G"
+   ]
+  },
+  {
+   "topic": "Current business: enforcement",
+   "resolution": "site walk agreed; other items noted or pending",
+   "quote": "the commission agreed to walk the site on 9.16.17.",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance",
+   "resolution": "two certificates issued",
+   "quote": "key span energy, leominster-shirley road 208-611 issued",
+   "tags": [
+    "certificates of compliance"
+   ]
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "155 Reservoir Road 53G peer review approved",
+   "quote": "a motion for the 53 g for a peer review for steve powell by a motion of cl and jr seconded and the commission vote unanimously.",
+   "tags": [
+    "inspections",
+    "peer review",
+    "riverfront"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for September 20",
+   "quote": "next meeting for september 20th at the bilotta meeting room town hall 2nd floor at 7:00 pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:39 PM",
+   "quote": "the meeting adjourned at 9:39 pm with a motion from cl and a second from kj",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a Determination and plan entitled \"SUBSURFACE SEWAGE DISPOSAL SYSTEM\" by Beauchmine Engineering dated May 12, 2017, Plan Number SDS-552",
+   "where": "list",
+   "quote": "documents submitted for consideration were a request for a determination and a plan enttitled \"subsurface sewage disposal system\" by beauchmine enginerering dated may12, 2017"
+  },
+  {
+   "name": "Request for a Determination and orthophoto of the Town Beach",
+   "where": "list",
+   "quote": "documents submitted for consideration were a request for a determination and an orthophoto of the town beach."
+  },
+  {
+   "name": "Plan entitled \"SEWAGE DISPOSAL SYSTEM\" by Duhcarme and Dillis dated June 14, 2017, Plan Number 5445-SDS",
+   "where": "list",
+   "quote": "entitled \"sewage disposal system\" by duhcarme and dillis dated june 14, 2017"
+  },
+  {
+   "name": "Request for a Determination and orthophoto of the area of construction with scaled measurements (238 Townsend Harbor Road)",
+   "where": "list",
+   "quote": "documents submitted for consideration were a request for a determination and an orthophoto of the area of consutction with scaled measurements."
+  },
+  {
+   "name": "Notice of Intent and plan entitled \"SEWAGE DISPOSAL SYSTEM\" by David Ross dated May 2017, Plan Number L-13198",
+   "where": "list",
+   "quote": "documents submitted for consideration were a notie of intent and a plan entitled \"sewage disposal system\" by david ross dated may 2017 plan number l-13198"
+  },
+  {
+   "name": "Notice of Intent and plan entitled \"OVERALL SITE PLAN\" by David Ross dated August 2017, Plan Number L-13221WSD",
+   "where": "list",
+   "quote": "documents submitted for consideration were a notie of intent and a plan entitled \"overall site plan\" by david ross dated august 2017 plan number l-13221wsd"
+  },
+  {
+   "name": "Revised plans in the form of aerial photos showing some dimensions (53 Peari Street)",
+   "where": "text",
+   "quote": "he presented the commission with revised plans in the form or arial photos showing some dimensions."
+  },
+  {
+   "name": "Plans and pictures of pre-existing conditions (48 Oak Ridge Road)",
+   "where": "text",
+   "quote": "the commission examined the plans and pictures of pre-existing conditions."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "requests for determination",
+  "notice of intent",
+  "enforcement",
+  "beach",
+  "solar",
+  "53G peer review",
+  "certificates of compliance",
+  "septic",
+  "buffer zone"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents submitted for consideration were a request for a determination and a plan"
+ },
+ "dropped_unquoted_by_field": {}
 }

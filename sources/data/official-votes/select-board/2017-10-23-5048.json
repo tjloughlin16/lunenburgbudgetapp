@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-10-23",
  "docid": "5048",
@@ -12,39 +12,374 @@
  },
  "votes": [
   {
-   "motion": "Add an article to the Special Town Meeting warrant on 842R Chase Road to abate the taxes in relationship to a gift of the property to the Conservation Commission",
+   "motion": "Add an article to the Special Town Meeting warrant on 842R Chase Road to abate the taxes in relation to a gift of the property to the Conservation Commission.",
    "moved_by": "P. Bertram",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2'd. d. mcquaid to add an article to the special town meeting warrant on 842r chase road to abate the taxes in relationship to a gift of the property to the conservation commission vote: all in favor"
+   "quote": "to add an article to the special town meeting warrant on 842r chase road to abate the taxes in relationship to a gift of the property to the conservation commission"
   },
   {
-   "motion": "Appoint Jamie Toale as the voting member of the Worcester County Selectmen's Association and Phyllis Luck as the alternate voting member",
+   "motion": "Appoint Jamie Toale as the voting member of the Worcester County Selectmen's Association and Phyllis Luck as the alternate voting member.",
    "moved_by": "P. Bertram",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\":d. mcquaid to appoint jamie toale as the voting member of the worcester county selectmen's association and phyllis luck as the alternate voting member vote: all in favor"
+   "quote": "to appoint jamie toale as the voting member of the worcester county selectmen's association and phyllis luck as the alternate voting member"
   },
   {
-   "motion": "Appoint Jamie Toale as the BOS representative for the Finance Committee Appointing Committee",
+   "motion": "Appoint Jamie Toale as the BOS representative for the Finance Committee Appointing Committee.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2'd: p. luck to appoint jamie toale as the bos representative for the finance committee appointing committee vote: all in favor"
+   "quote": "to appoint jamie toale as the bos representative for the finance committee appointing committee"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting 2'°: p. luck vote: all in favor"
+   "quote": "to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; varied abbreviations for \"2nd\" appear across the document (2'd., 2\", 2'°)",
- "cost_usd": 0.11543450000000001
+ "note": "OCR text from a scanned page set (macOS Vision) with garbled characters, e.g. \"2'd\", \"DP W\", \"28'h\". Votes are recorded as \"All in Favor\" with no counts. The 2030 Massachusetts Ave item is cut off across pages with no outcome shown. The minutes do not show Mr. Toale's role or the seconder's status for the first Chase Road vote. No transfers are recorded.",
+ "cost_usd": 0.00912732,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "not present: robert ebersole, vice chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "karen brochu, finance director, was present to answer any questions regarding the warrant articles."
+  },
+  {
+   "name": "Jamie Toale",
+   "status": "present",
+   "quote": "mr. toale reported he and ms. lemieux have reviewed future agendas."
+  },
+  {
+   "name": "P. Bertram",
+   "status": "present",
+   "quote": "ms. bertram reminded all about the dedication ceremony in memory of peter charpentier"
+  },
+  {
+   "name": "D. McQuaid",
+   "status": "present",
+   "quote": "mr. mcquaid expanded on how community involvement and charrettes can be used effectively."
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "phyllis luck as the alternate voting member"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Lunenburg Boys and Girls Club Board Member",
+   "status": "present",
+   "quote": "tom alonzo, lunenburg boys and girls club board member, reminded all about shrieks and krieks at the"
+  },
+  {
+   "name": "Katey Adams",
+   "status": "present",
+   "quote": "katey adams, 70 williams drive, noted there was some demolition data in the tappe space needs study data."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will make all of its recommendations on warrant articles from the town meeting floor, rather than before it.",
+   "quote": "the board will make all their recommendations for warrant articles on town meeting floor."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Artificial turf field bond and revolving fund",
+   "what_was_recorded": "The school committed $40,000 and the Lunenburg Bengals $7,500 toward the twelve-year turf field bond, with those fees deposited into the revolving fund.",
+   "figures_as_printed": [
+    "$40,000",
+    "$7,500"
+   ],
+   "quote": "there is a twelve year bond on the turf field and the school has committed $40,000."
+  },
+  {
+   "topic": "Turf field debt service",
+   "what_was_recorded": "Current debt service on the turf field is about $75,000 a year for twelve years.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "the debt service payments we have right now are right around $75,000 annually for twelve years."
+  },
+  {
+   "topic": "Rental and lease receipts (MGL c. 40, s. 3)",
+   "what_was_recorded": "Anything over $10,000 in rental or lease receipts at year's end would revert to the general fund, but the fund never exceeds that amount.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "ms. brochu stated anything over $10,000 at year's end would revert to the general fund"
+  },
+  {
+   "topic": "Cell tower lease",
+   "what_was_recorded": "The cell tower lease is a general fund receipt that could be used to offset the debt service.",
+   "figures_as_printed": [],
+   "quote": "the cell tower lease; this is a general fund receipt but it could be used to offset the debt service"
+  },
+  {
+   "topic": "Quarterly financial report, tax lien revenue",
+   "what_was_recorded": "The tax levy collection figure includes tax lien revenue.",
+   "figures_as_printed": [
+    "$151,425.98"
+   ],
+   "quote": "this includes $151,425.98 in tax lien revenue"
+  },
+  {
+   "topic": "Quarterly financial report, expenditure surpluses",
+   "what_was_recorded": "Surpluses in liability insurance and workers compensation exist because rate increases came in below budget.",
+   "figures_as_printed": [],
+   "quote": "we have surpluses in both liability insurance and workers compensation due to lower than budgeted rate increases."
+  },
+  {
+   "topic": "Wallis Park and Commonwealth Places grant",
+   "what_was_recorded": "A MassDevelopment Commonwealth Places grant could provide a matching grant if a crowdfunding goal is reached; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "receive a matching grant amount from massdevelopment"
+  },
+  {
+   "topic": "Wallis Park citizen's petition",
+   "what_was_recorded": "The Selectman reached out about a citizen's petition to appropriate additional funds for Wallis Park; no amount was given.",
+   "figures_as_printed": [],
+   "quote": "citizen's petition to appropriate additional funds for wallis park"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Bertram",
+   "topic": "dedication ceremony and community events reminders",
+   "quote": "ms. bertram reminded all about the dedication ceremony in memory of peter charpentier"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Lunenburg Boys and Girls Club Board Member",
+   "topic": "Boys and Girls Club events and fundraiser",
+   "quote": "tom alonzo, lunenburg boys and girls club board member, reminded all about shrieks and krieks at the"
+  },
+  {
+   "speaker": "Katey Adams",
+   "topic": "demolition data in Tappe Space Needs Study",
+   "quote": "katey adams, 70 williams drive, noted there was some demolition data in the tappe space needs study data."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening) and event reminders",
+   "resolution": "no action",
+   "quote": "ms. bertram reminded all about the dedication ceremony in memory of peter charpentier",
+   "tags": [
+    "public comment",
+    "events"
+   ]
+  },
+  {
+   "topic": "Town Manager Report: disturbances to newly paved roads policy and DPW outreach",
+   "resolution": "reported",
+   "quote": "disturbances to newly paved roads policy and outreach by dpw director",
+   "tags": [
+    "roads",
+    "paving",
+    "public works"
+   ]
+  },
+  {
+   "topic": "842R Chase Road donation and tax abatement article",
+   "resolution": "approved adding article to Special Town Meeting warrant",
+   "quote": "842r chase road: town counsel has reviewed and provided two alternatives",
+   "tags": [
+    "Chase Road",
+    "conservation",
+    "warrant articles",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "NCDC Economic Development Council meeting report",
+   "resolution": "reported, no action",
+   "quote": "north central massachusetts development corporation (ncdc) economic development council",
+   "tags": [
+    "economic development",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Announcements: DLTA business workshops and Town Counsel office hours",
+   "resolution": "no action",
+   "quote": "reminder that the next workshop to discuss promoting local business is on monday, november 6th",
+   "tags": [
+    "economic development",
+    "events"
+   ]
+  },
+  {
+   "topic": "Board of Selectmen Goals",
+   "resolution": "discussed",
+   "quote": "identify desire for and type of economic development for lunenburg",
+   "tags": [
+    "goals",
+    "economic development",
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Calendar schedule for town facilities meetings",
+   "resolution": "discussed",
+   "quote": "mr. toale reported he and ms. lemieux have reviewed future agendas.",
+   "tags": [
+    "agenda",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "2030 Massachusetts Ave: Chapter 61B right of first refusal",
+   "resolution": "continued, outcome not stated",
+   "quote": "2030 massachusetts ave: chapter 61b right of first refusal",
+   "tags": [
+    "Chapter 61B",
+    "land",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Discussion of Special Town Meeting articles",
+   "resolution": "discussed, Board to make recommendations on town meeting floor",
+   "quote": "karen brochu, finance director, was present to answer any questions regarding the warrant articles.",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "artificial turf field",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Quarterly financial report, first quarter FY18",
+   "resolution": "received",
+   "quote": "ms. brochu reported on the 1st quarter of fiscal year 2018.",
+   "tags": [
+    "finance",
+    "quarterly report"
+   ]
+  },
+  {
+   "topic": "Worcester County Selectmen's Association voting member appointment",
+   "resolution": "approved",
+   "quote": "to appoint jamie toale as the voting member of the worcester county selectmen's association",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "BOS representative to Finance Committee Appointing Committee",
+   "resolution": "approved",
+   "quote": "to appoint jamie toale as the bos representative for the finance committee appointing committee",
+   "tags": [
+    "appointments",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Conservation Commission report",
+   "resolution": "reported, no action",
+   "quote": "ms. bertram reported conservation commission met last week.",
+   "tags": [
+    "conservation",
+    "solar",
+    "Eagle Scout project"
+   ]
+  },
+  {
+   "topic": "Charter Review Committee, Finance Committee hearing, and November schedule",
+   "resolution": "reported, no action",
+   "quote": "mr. toale reported the charter review committee will meet on the 25 in the ritter building",
+   "tags": [
+    "schedule",
+    "special town meeting",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "katey adams, 70 williams drive, noted there was some demolition data",
+   "tags": [
+    "public comment",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:43 p.m.",
+   "quote": "the meeting adjourned at 8:43 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Disturbances to Newly Paved Roads Policy",
+   "where": "text",
+   "quote": "disturbances to newly paved roads policy and outreach by dpw director"
+  },
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "to add an article to the special town meeting warrant on 842r chase road"
+  },
+  {
+   "name": "Tappe Space Needs Study",
+   "where": "text",
+   "quote": "noted there was some demolition data in the tappe space needs study data."
+  },
+  {
+   "name": "FY18 Tax Recap",
+   "where": "text",
+   "quote": "prior to the submittal of the fy18 tax recap"
+  },
+  {
+   "name": "Town pavement plan",
+   "where": "text",
+   "quote": "links to the new policy and pavement plan on the news scroll"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "842R Chase Road",
+  "conservation",
+  "roads paving",
+  "finance",
+  "quarterly report",
+  "appointments",
+  "artificial turf field",
+  "economic development",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

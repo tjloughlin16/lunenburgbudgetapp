@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2017-12-05",
  "docid": "2604",
@@ -12,15 +12,187 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from November 7th, 2017",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve the minutes of November 7, 2017.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes from november 7th, 2017 were read and approved unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract from macOS Vision. One procedural vote recorded: approval of prior minutes. Remainder of document is reports, discussions, and planning with no votes taken at this meeting.",
- "cost_usd": 0.0797885
+ "note": "OCR text of a scanned page with stray header text (\"IS INCORP\") and some garbled wording. Only one vote is recorded (approval of the November 7, 2017 minutes), with no mover or seconder printed. No votes are recorded for adjournment or for any other item. Public comment is not recorded. Attendance is taken from the call-to-order line only.",
+ "cost_usd": 0.00432272,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lantry",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:55. mcgrath, and dwyer present."
+  },
+  {
+   "name": "McGrath",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:55. mcgrath, and dwyer present."
+  },
+  {
+   "name": "Dwyer",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:55. mcgrath, and dwyer present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Lantry will request a revised quote from the plaque company with a discount for historical commissions and bulk orders.",
+   "quote": "she will request a revised quote with a discount for historical commissions and bulk orders."
+  },
+  {
+   "decision": "Next meeting set for January 2nd.",
+   "quote": "next meeting: january 2nd"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Annual commission budget",
+   "what_was_recorded": "The town manager's office confirmed the commission's budget for July 2017-July 2018.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "confirmed that the historic commission again has a budget of $3,000 for july 2017-july 2018."
+  },
+  {
+   "topic": "Town pound project encumbrance",
+   "what_was_recorded": "$500 from last year's budget has been encumbered for the town pound project.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "the amount of $500 from last year's budget has been encumbered for use on the town pound project"
+  },
+  {
+   "topic": "Bronze marker project reserve",
+   "what_was_recorded": "The remaining $2,500 was reserved/encumbered for the bronze marker project.",
+   "figures_as_printed": [
+    "$2,500"
+   ],
+   "quote": "remaining $2,500 was reserved/encumbered for the bronze marker project."
+  },
+  {
+   "topic": "Bronze plaque quotation and discount",
+   "what_was_recorded": "A plaque company quotation for 7x10 inch bronze plaques was obtained, and a revised quote with a discount is to be requested; leftover money is expected in the foundry account for future orders.",
+   "figures_as_printed": [],
+   "quote": "lantry got a quotation from plaque company for 7x10\" bronze plaques."
+  },
+  {
+   "topic": "Bronze marker purchase order",
+   "what_was_recorded": "Purchase order PO # 17002392 was obtained for $2,500 to be sent to Zimmerman Foundries.",
+   "figures_as_printed": [
+    "$2,500",
+    "PO # 17002392"
+   ],
+   "quote": "lantry obtained po # 17002392 in the amount of $2,500 to be sent to zimmerman foundries."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved",
+   "quote": "minutes from november 7th, 2017 were read and approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Old Business: commission budget",
+   "resolution": "reported, no action",
+   "quote": "lantry spoke with the town manager's office and confirmed that the historic commission again has a budget of",
+   "tags": [
+    "budget",
+    "encumbrance"
+   ]
+  },
+  {
+   "topic": "Historic Marker Project",
+   "resolution": "quote to be revised; PO obtained",
+   "quote": "lantry obtained po # 17002392 in the amount of $2,500 to be sent to zimmerman foundries.",
+   "tags": [
+    "bronze marker",
+    "budget"
+   ]
+  },
+  {
+   "topic": "New Member search",
+   "resolution": "fliers posted",
+   "quote": "new member search: lantry has posted fliers at the historic society.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "APDC update",
+   "resolution": "reported, no action",
+   "quote": "apdc update: mcgrath reported the support of the bos and town council in getting the rules and regulations",
+   "tags": [
+    "APDC",
+    "community preservation act"
+   ]
+  },
+  {
+   "topic": "Review of Mass Historic's Demo Delay Bylaw handbook",
+   "resolution": "discussed, no action; suggestions noted",
+   "quote": "review of mass historic's demo delay bylaw handbook:",
+   "tags": [
+    "demolition delay",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Selectmen's workshop form",
+   "resolution": "reviewed, no action",
+   "quote": "lantry reviewed the form she completed from the selectmen's workshop on the town board.",
+   "tags": [
+    "town board"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Mass Historic's Demo Delay Bylaw handbook",
+   "where": "text",
+   "quote": "review of mass historic's demo delay bylaw handbook:"
+  },
+  {
+   "name": "Form completed from the selectmen's workshop on the town board",
+   "where": "text",
+   "quote": "lantry reviewed the form she completed from the selectmen's workshop on the town board."
+  },
+  {
+   "name": "PO # 17002392",
+   "where": "text",
+   "quote": "lantry obtained po # 17002392 in the amount of $2,500 to be sent to zimmerman foundries."
+  },
+  {
+   "name": "Quotation from plaque company for 7x10\" bronze plaques",
+   "where": "text",
+   "quote": "lantry got a quotation from plaque company for 7x10\" bronze plaques."
+  }
+ ],
+ "tags": [
+  "historic commission",
+  "budget",
+  "bronze marker",
+  "demolition delay",
+  "APDC",
+  "membership",
+  "community preservation act",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

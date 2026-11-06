@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2017-07-27",
  "docid": "5748",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Allison",
    "seconded_by": "Jack Rodriquenz",
    "outcome": "passed",
@@ -21,6 +21,241 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: the motion to adjourn. The text states that prior minutes \"were accepted\" but contains no explicit motion, seconder, or vote language for that action, so it is not included per the rule against inferring votes from statements without formal motion language.",
- "cost_usd": 0.0836075
+ "note": "Minutes are plain text with several dates missing their month or day as printed (e.g., \"7 2017\", \"9 2018\", \"7 2018\"); reproduced as printed. Only one motion (adjournment) is recorded as voted; the June 8 minutes were \"accepted\" with no motion or vote stated, and the meeting schedule was \"confirmed\" without a recorded vote, so both are listed as decisions. No public comment section is printed. Town Manager Lemieux is referenced as having informed the SWTF but is not recorded as attending, so she is not listed as an attendee. The minutes name \"DCI Consultants\" and \"Design Consultants, Inc. (DCI)\"; treated as the same entity for Mike Clark's attendance.",
+ "cost_usd": 0.00604832,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, jack rabbitt, and jack rodriquenz present"
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, jack rabbitt, and jack rodriquenz present"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "jack rabbitt exited the meeting at 8:24 pm."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, jack rabbitt, and jack rodriquenz present"
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "of the Mass Watershed Coalition (MWC)",
+   "status": "present",
+   "quote": "ed himlan of the mass watershed coalition (mwc)"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "of Design Consultants, Inc. (DCI)",
+   "status": "present",
+   "quote": "mike clark, of design consultants, inc. (dci)"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Lunenburg Land Use Director",
+   "status": "present",
+   "quote": "lunenburg land use director, adam burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of the June 8, 2017 meeting were accepted (no vote recorded).",
+   "quote": "minutes of the june 8, 2017, meeting were accepted."
+  },
+  {
+   "decision": "The SWTF's review of the Stormwater Management Plan NOI with the Board of Selectmen will be held in October; Phyllis Luck will request it be put on the agenda.",
+   "quote": "it was determined that it would fit best to have a review with the bos in october."
+  },
+  {
+   "decision": "Phyllis Luck will request that the BOS review be put on the agenda.",
+   "quote": "phyllis will request that this be put on the agenda."
+  },
+  {
+   "decision": "Adam Burney agreed to create summaries of each MCM to facilitate the BOS presentation.",
+   "quote": "adam has agreed to create summaries of each mcm to facilitate this presentation."
+  },
+  {
+   "decision": "Minor changes were made to the NOI draft, including replacing “Planning Department” with “Land Use Department”.",
+   "quote": "a few minor changes were made, such as the replacement terminology of \"land use department\" for \"planning department\""
+  },
+  {
+   "decision": "Within MCM 6, the O&M responsible departments/entities will include Town Departments in addition to DPW Operations.",
+   "quote": "would include town departments in addition to the dpw operations"
+  },
+  {
+   "decision": "The BOS first wants the SWTF to focus on the “must do’s” with the available funds; low-hanging-fruit tasks will be undertaken if they are easy, good value, and move stormwater management forward.",
+   "quote": "it was discussed that the bos first wants the swtf to focus on the \"must do's\" with the available funds."
+  },
+  {
+   "decision": "The SWTF will discuss the consultant hiring for the Community Compact scope of work at its next meeting on 8/24/17.",
+   "quote": "the swtf will discuss at the next meeting to be held on 8/24/17."
+  },
+  {
+   "decision": "The third-quarter meeting schedule was confirmed as August 24, September 14, and 28; the October–December schedule will be discussed at the next meeting.",
+   "quote": "august 24, september 14, 28."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Compact Grant",
+   "what_was_recorded": "Town Manager Lemieux informed the SWTF that the executed contract documents for the $25,000 Community Compact Grant have been received, and the SWTF was advised to proceed with hiring a consultant.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "the fully executed contract documents for the $25,000 community compact grant"
+  },
+  {
+   "topic": "MCM cost estimates",
+   "what_was_recorded": "Cost estimates for the MCMs (attached) were discussed as first-look estimates of the Town's future compliance costs; no figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "cost estimates for mcm's (attached) were discussed."
+  },
+  {
+   "topic": "Available funds priority",
+   "what_was_recorded": "The BOS wants the SWTF to focus on must-do tasks with the available funds; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "focus on the \"must do's\" with the available funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "MS4 permit delay announcement",
+   "resolution": "announced",
+   "quote": "it was announced that the municipal separate storm sewer system (ms4) permit, originally to commence 7 2017, will be stayed until 7 2018.",
+   "tags": [
+    "MS4 permit",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "Minutes of June 8, 2017",
+   "resolution": "accepted",
+   "quote": "minutes of the june 8, 2017, meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Status of 2003 MS4 permit requirements",
+   "resolution": "discussed",
+   "quote": "there was a discussion on the status of the 2003 ms4 permit requirements, including:",
+   "tags": [
+    "MS4 permit",
+    "mapping",
+    "illicit discharge",
+    "record keeping"
+   ]
+  },
+  {
+   "topic": "Work beyond current MS4 permit",
+   "resolution": "discussed; focus on must-do items",
+   "quote": "there was a discussion about what the swtf may accomplish beyond the requirements of the current ms4 permit",
+   "tags": [
+    "water quality",
+    "lakes and ponds",
+    "priorities"
+   ]
+  },
+  {
+   "topic": "Final draft of NOI review",
+   "resolution": "reviewed; minor changes made",
+   "quote": "the final draft of the notice of intent (noi), now due 9 2018, was reviewed.",
+   "tags": [
+    "NOI",
+    "MCM 6",
+    "O&M"
+   ]
+  },
+  {
+   "topic": "BOS review request for SWMP NOI",
+   "resolution": "scheduled for October BOS review",
+   "quote": "there was a discussion on the board of selectmen's request for a review of the stormwater management plan (swmp) noi.",
+   "tags": [
+    "BOS",
+    "SWMP",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "MCM cost estimates",
+   "resolution": "discussed",
+   "quote": "cost estimates for mcm's (attached) were discussed.",
+   "tags": [
+    "costs",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Community Compact Grant and consultant",
+   "resolution": "to be discussed at next meeting",
+   "quote": "it was announced that town manager lemieux has informed the swtf that the fully executed contract documents",
+   "tags": [
+    "grant",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Meeting schedule, third quarter",
+   "resolution": "confirmed; Oct-Dec deferred",
+   "quote": "the meeting schedule was then confirmed for the third quarter",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:31 pm",
+   "quote": "motion to adjourn was made by matt allison at 8:31 pm; it was seconded by jack rodriquenz; all concurred.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Cost estimates for MCM’s (attached)",
+   "where": "text",
+   "quote": "cost estimates for mcm's (attached) were discussed."
+  },
+  {
+   "name": "Final draft of the Notice of Intent (NOI)",
+   "where": "text",
+   "quote": "the final draft of the notice of intent (noi), now due 9 2018, was reviewed."
+  },
+  {
+   "name": "Fully executed contract documents for the $25,000 Community Compact Grant",
+   "where": "text",
+   "quote": "the fully executed contract documents for the $25,000 community compact grant"
+  },
+  {
+   "name": "Stormwater Management Plan (SWMP) NOI",
+   "where": "text",
+   "quote": "there was a discussion on the board of selectmen's request for a review of the stormwater management plan (swmp) noi."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "Notice of Intent",
+  "water quality",
+  "Community Compact Grant",
+  "cost estimates",
+  "meeting schedule",
+  "BOS review"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "cost estimates for mcm's (attached) were discussed."
+ },
+ "dropped_unquoted_by_field": {}
 }

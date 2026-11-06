@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2017-09-21",
  "docid": "2975",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the August 17, 2017 meeting",
+   "motion": "Accept the minutes of the August 17, 2017 meeting.",
    "moved_by": "Caroline Fortin",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
@@ -20,55 +20,333 @@
    "quote": "caroline fortin made a motion to accept the minutes ; linda mcdonald seconded. all were in favor and the minutes were accepted."
   },
   {
-   "motion": "Accept the August 2017 financial report",
+   "motion": "Accept the August 2017 financials.",
    "moved_by": "Paul Doherty",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "paul doherty made a motion to accept the august 2017 financials; linda mcdonald seconded and all were in favor."
   },
   {
-   "motion": "Allow the Lunenburg Housing Authority to revise the maintenance fee schedule (Resolution 201713)",
+   "motion": "Adopt Resolution 201713 to allow the Authority to revise the maintenance fee schedule for move-outs, vandalism and related costs.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by deborah christen to allow the lunenburg housing authority to revise the maintenance fee schedule. seconded, linda mcdonald seconded the motion, and the motion was passed."
+   "quote": "resolved, motion made by deborah christen to allow the lunenburg housing authority to revise the maintenance fee schedule."
   },
   {
-   "motion": "Authorize the awarding and signing of documents for the snow removal contract renewal with Lakeview Nurseries in the total amount of $18,247.00 for 2017/2018, 2019/2020 and 2020/2021 seasons (Resolution 201714)",
+   "motion": "Exercise the option to renew the snow removal contract with Lakeview Nurseries for three seasons in the total amount of $18,247.00 and authorize signing of documents.",
    "moved_by": "Caroline Fortin",
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by caroline fortin to authorize the awarding and signing of any and all appropriate documents in connect ion with the snow removal contract option to renew for the 2017/2018, 2019/2020 and 2020/2021 seasons with lakeview nurseries in the total amount of $18,247.00. seconded, motion was seconded by deborah christen and all were in favor."
+   "quote": "resolved, motion made by caroline fortin to authorize the awarding and signing of"
   },
   {
-   "motion": "Award the window sash replacement project bid to Vareika Construction, Inc. in the amount of $47,300.00 (Resolution 201715)",
+   "motion": "Award the window sash replacement bid at the 667-1 elderly development to Vareika Construction, Inc. in the amount of $47,300.00 (Resolution 201715).",
    "moved_by": "Linda McDonald",
    "seconded_by": "Caroline Fortin",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by linda mcdonald to award the bid for the window sash replacement project at the 667 -1 elderly development to the lowest eligible and responsible bidder, vareika construction, inc. in the amount of $47,300.00. seconded, caroline fortin seconded the motion and the motion was passed by a unanimous vote."
+   "quote": "resolved, motion made by linda mcdonald to award the bid for the window sash"
   },
   {
-   "motion": "Accept the Substantial Completion of the building envelope repair at the Pearl Brook 667-1 elderly development (Resolution 201716)",
+   "motion": "Accept the Substantial Completion of the building envelope repair at the Pearl Brook 667-1 elderly development (Resolution 201716).",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by deborah christen to accept the substantial completion of the building envelope repair at the pearl brook 667 -1 elderly development. seconded, linda mcdonald seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "resolved, motion made by deborah christen to accept the substantial completion of"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:52 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 6:52 p.m. linda mcdonald seconded, all were in favor, and the meeting was adjourned."
+   "quote": "deborah christen made a motion to adjourn the meeting at 6:52 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded in the minutes have been extracted. The minutes are clear and complete.",
- "cost_usd": 0.1127535
+ "dropped_unquoted": 1,
+ "note": "The minutes are clean text with no missing pages or unrecorded votes. Every motion carries a recorded result. The chair's adjournment and the minutes approval are marked procedural. No heading introduces a documents list; document references are inline in the text.",
+ "cost_usd": 0.00749032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paul Doherty",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: paul doherty, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "linda mcdonald, member"
+  },
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "members absent: elizabeth murphy, chair"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present: peter proulx executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Executive Director will talk to residents about the deck and discuss other possible uses for the space.",
+   "quote": "the e.d. will talk to the residents about the deck and discuss other possible uses for the space."
+  },
+  {
+   "decision": "Final Completion of the building envelope work is to be placed on the agenda for next month, since not all documents were submitted.",
+   "quote": "all documents were not submitted; final completion will be on agenda for next month."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DHCD extra funding for capital items",
+   "what_was_recorded": "The Authority is receiving a little extra money from DHCD for capital items, listed as patio area, deck, community room roof reshingle and maintenance shed work.",
+   "figures_as_printed": [],
+   "quote": "we are receiving a little extra money from dhcd for capital items:"
+  },
+  {
+   "topic": "Reserves level",
+   "what_was_recorded": "Reserves are at 72.86%, described as much higher than they should be, with some money to be spent to use some up.",
+   "figures_as_printed": [
+    "72.86%"
+   ],
+   "quote": "much higher than should be; spending a little money to use some up."
+  },
+  {
+   "topic": "Budget variance (August 2017)",
+   "what_was_recorded": "The financials show the Authority is $11,084 ahead of budget, expected to be close to budget by year end.",
+   "figures_as_printed": [
+    "$11,084"
+   ],
+   "quote": "page f3 - $11,084 ahead of budget."
+  },
+  {
+   "topic": "Snow removal contract renewal with Lakeview Nurseries",
+   "what_was_recorded": "Resolution 201714 renews the snow removal contract for three additional seasons in a total amount.",
+   "figures_as_printed": [
+    "$18,247.00"
+   ],
+   "quote": "with lakeview nurseries in the total amount of $18,247.00"
+  },
+  {
+   "topic": "Window sash replacement bid award",
+   "what_was_recorded": "Resolution 201715 awards the window sash replacement contract at the 667-1 elderly development to the lowest eligible and responsible bidder, Vareika Construction, Inc.",
+   "figures_as_printed": [
+    "$47,300.00"
+   ],
+   "quote": "submitted the lowest eligible and responsible bid in the amount of $47,300.00"
+  },
+  {
+   "topic": "Maintenance fee schedule for move-outs and vandalism",
+   "what_was_recorded": "The Authority revises its replacement fees and charges for move-out damage, vandalism and light bulbs to recover current costs; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the authority has an obligation to recover the costs for damages and other"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Residents' comments",
+   "quote": "residents were present with comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared, meeting opened 6:35 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:35 p.m.",
+   "tags": [
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Minutes of August 17, 2017",
+   "resolution": "approved",
+   "quote": "the minutes of the august 17, 2017 meeting were presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "received; E.D. to talk with residents about deck",
+   "quote": "the e.d. will talk to the residents about the deck and discuss other possible uses for the space.",
+   "tags": [
+    "capital items",
+    "DHCD"
+   ]
+  },
+  {
+   "topic": "Financial Report (August 2017)",
+   "resolution": "accepted",
+   "quote": "paul doherty made a motion to accept the august 2017 financials",
+   "tags": [
+    "finance",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "Modernization Report",
+   "resolution": "received; building envelope repair completed",
+   "quote": "this project is completed.",
+   "tags": [
+    "modernization"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "received; no action",
+   "quote": "overall occupancy is at 100%; we have one vacancy coming in september.",
+   "tags": [
+    "occupancy",
+    "work orders"
+   ]
+  },
+  {
+   "topic": "Resolution 201713 - maintenance fee schedule revision",
+   "resolution": "passed",
+   "quote": "resolved, motion made by deborah christen to allow the lunenburg housing authority to revise the maintenance fee schedule.",
+   "tags": [
+    "fee schedule",
+    "move-outs",
+    "vandalism"
+   ]
+  },
+  {
+   "topic": "Resolution 201714 - snow removal contract renewal",
+   "resolution": "passed",
+   "quote": "resolution to exercise option to renew snow removal contract",
+   "tags": [
+    "snow removal",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Resolution 201715 - window sash replacement bid award",
+   "resolution": "passed unanimously",
+   "quote": "resolution authorizing the acceptance of the lowest bid for the window sash replacement",
+   "tags": [
+    "bid award",
+    "window replacement",
+    "Pearl Brook"
+   ]
+  },
+  {
+   "topic": "Resolution 201716 - substantial completion, building envelope repair",
+   "resolution": "passed unanimously",
+   "quote": "certificate of substantial completion for the building envelope",
+   "tags": [
+    "substantial completion",
+    "building envelope",
+    "Pearl Brook"
+   ]
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "no action",
+   "quote": "other correspondence: public housing notices",
+   "tags": [
+    "correspondence"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial Report (August 2017)",
+   "where": "text",
+   "quote": "financial report (august 2017):"
+  },
+  {
+   "name": "Monthly payroll",
+   "where": "text",
+   "quote": "monthly payroll was passed around for two board member signatures."
+  },
+  {
+   "name": "Work order report",
+   "where": "text",
+   "quote": "work order report included."
+  },
+  {
+   "name": "Maintenance fee schedule (attached list of fees)",
+   "where": "text",
+   "quote": "that the attached list of fees is revised to meet the current costs"
+  },
+  {
+   "name": "Resolution 201713",
+   "where": "text",
+   "quote": "resolution to allow the lunenburg housing authority"
+  },
+  {
+   "name": "Resolution 201714 (snow removal contract renewal)",
+   "where": "text",
+   "quote": "resolution to exercise option to renew snow removal contract"
+  },
+  {
+   "name": "List of six bids for window sash replacement (attached)",
+   "where": "text",
+   "quote": "the authority received six (6) bids to complete the work (see attached list)"
+  },
+  {
+   "name": "Resolution 201715 (window sash bid award)",
+   "where": "text",
+   "quote": "resolution authorizing the acceptance"
+  },
+  {
+   "name": "Resolution 201716 (substantial completion, building envelope repair)",
+   "where": "text",
+   "quote": "certificate of substantial completion for the building envelope"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "finance",
+  "reserves",
+  "capital items",
+  "DHCD",
+  "fee schedule",
+  "snow removal",
+  "bid award",
+  "window replacement",
+  "substantial completion",
+  "Pearl Brook",
+  "work orders",
+  "occupancy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "work order report included"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

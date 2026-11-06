@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-07-31",
  "docid": "5609",
@@ -12,39 +12,307 @@
  },
  "votes": [
   {
-   "motion": "Grant waivers to clean internal grease traps at the High School twice yearly, external grease trap once yearly, and internal grease traps at Turkey Hill Elementary and Lunenburg Primary twice yearly, as amended without contingencies",
+   "motion": "Give waivers as John Londa requested to clean the internal grease traps at the High School twice per year, external grease trap once per year, and internal grease traps at Turkey Hill Elementary and Lunenburg Primary twice per year, as amended without contingencies.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: carl l. second: ryan s. to give waivers as john londa requested to clean the internal grease traps at the high school twice per year, external grease trap once per year, and the internal grease traps at turkey hill elementary and lunenburg primary twice per year, as amended without contingencies. vote: unanimous"
+   "quote": "to give waivers as john londa requested to clean the internal grease traps at the high school twice per year"
   },
   {
-   "motion": "Assess a $25/day fee for non-compliance retroactive to 7/1/18",
+   "motion": "Go back to 7/1/18 to assess a $25/day fee for non-compliance (Sean Patricks grease trap matter).",
    "moved_by": "Ryan S.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: ryan s. to go back to 7/1/18 to assess $25/day fee for non-compliance. second: john r. vote: unanimous"
+   "quote": "to go back to 7/1/18 to assess $25/day fee for non-compliance."
   },
   {
-   "motion": "Accept the minutes of 7/10/18",
+   "motion": "Accept the minutes of 7/10/18.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: carl l. second: ryan s. to accept the minutes of 7/10/18. vote: unanimous"
+   "quote": "to accept the minutes of 7/10/18."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:20 pm.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: john r. to adjourn: 7:20 pm. second: carl l. vote: unanimous"
+   "quote": "motion: john r. to adjourn: 7:20 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd (===OCR macOS Vision===). All four votes clearly recorded with mover, seconder, and unanimous outcomes explicitly stated.",
- "cost_usd": 0.0498744
+ "note": "Single OCR page (page 1 only). The text begins mid-discussion, with no call to order, roll call or full attendance list, so attendance is inferred from speaking and voting. Votes are printed as \"Unanimous\" with no tallies. The \"Public Comment\" heading contains only Commission member reports and names no member of the public, so public_comment is empty. OCR errors are left as printed (e.g., \"tor\", \"I/l\", \"3 Mather backing her\"). \"John L.\" and \"John Londa\" may be the same person; they are listed separately as printed.",
+ "cost_usd": 0.00661972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "carl talked to town counsel about the sub-metering issue."
+  },
+  {
+   "name": "Ryan S.",
+   "status": "present",
+   "quote": "ryan met with jack at dpw to learn about the system."
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "motion: john r. to adjourn: 7:20 pm."
+  },
+  {
+   "name": "Joe",
+   "status": "present",
+   "quote": "joe will contact jack about mass. ave. manhole status."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported that the annual permits are all set and 1st tuesday reports have all come in."
+  },
+  {
+   "name": "John L.",
+   "status": "not stated",
+   "quote": "john l. replied that there has not been any problems and it is working correctly."
+  },
+  {
+   "name": "John Londa",
+   "status": "not stated",
+   "quote": "to give waivers as john londa requested to clean the internal grease traps at the high school twice per year"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission agreed to have Carl contact 2 or 3 engineering firms to meet with the Commission at a future time to discuss an evaluation of past I/I work.",
+   "quote": "commission agreed to have carl contact 2 or 3 engineering firms to meet with the commission at a future time"
+  },
+  {
+   "decision": "Commission reviewed the MWRA notice for the Town of Ashland and took no action.",
+   "quote": "commission reviewed notice and no action was necessary."
+  },
+  {
+   "decision": "Commission will invite Paul Casey (Flow Assessment) to the August 28th meeting.",
+   "quote": "commission will invite paul casey (flow assessment) to come to the august 28th meeting."
+  },
+  {
+   "decision": "The John Fitch Highway expenses discussion will be placed on the agenda for the next meeting.",
+   "quote": "discussion will be put on the agenda tor next meeting"
+  },
+  {
+   "decision": "Joe will contact Jack about the Mass. Ave. manhole status.",
+   "quote": "joe will contact jack about mass. ave. manhole status."
+  },
+  {
+   "decision": "Barb will look at the Munis quote in mid-August.",
+   "quote": "barb will be looking at the munis quote in mid-august."
+  },
+  {
+   "decision": "Commission is awaiting Town counsel input on the waiver clause, and the sub-metering policy item stays open pending counsel advice.",
+   "quote": "waiver clause - commission is awaiting town counsel input."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap non-compliance fee (Sean Patricks)",
+   "what_was_recorded": "A $50 fee was assessed with the non-compliance letter, and the Commission then moved to assess a $25/day fee back to 7/1/18.",
+   "figures_as_printed": [
+    "$50",
+    "$25/day"
+   ],
+   "quote": "barb sent a letter of non-compliance with a $50 fee assessed and not had a response from"
+  },
+  {
+   "topic": "FY19 legal fees billing basis",
+   "what_was_recorded": "The Commission is waiting for the Town Manager to answer on the flat rate for legal fees; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "commission is waiting for an answer from town manager concerning the flat rate."
+  },
+  {
+   "topic": "Munis quote",
+   "what_was_recorded": "Barb will look at the Munis quote in mid-August; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "barb will be looking at the munis quote in mid-august."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Grease trap waivers at schools",
+   "resolution": "waivers granted as amended",
+   "quote": "to give waivers as john londa requested to clean the internal grease traps at the high school twice per year",
+   "tags": [
+    "grease traps",
+    "waivers",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Evaluation of past I/I work",
+   "resolution": "Carl to contact 2 or 3 engineering firms",
+   "quote": "commission agreed to have carl contact 2 or 3 engineering firms to meet with the commission at a future time",
+   "tags": [
+    "inflow and infiltration",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Policy updates: manual meter and sub-metering, waiver clause",
+   "resolution": "continued, awaiting Town counsel",
+   "quote": "carl talked to town counsel about the sub-metering issue.",
+   "tags": [
+    "sub-metering",
+    "policy",
+    "legal"
+   ]
+  },
+  {
+   "topic": "FY19 legal fees billing basis",
+   "resolution": "continued, awaiting Town Manager",
+   "quote": "fy19 legal fees - billing basis",
+   "tags": [
+    "legal fees",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Grease trap regulation compliance (Sean Patricks)",
+   "resolution": "passed motion to assess $25/day fee back to 7/1/18",
+   "quote": "to go back to 7/1/18 to assess $25/day fee for non-compliance.",
+   "tags": [
+    "grease traps",
+    "enforcement",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Annual permits and 1st Tuesday reports",
+   "resolution": "no action; reported as complete",
+   "quote": "barb reported that the annual permits are all set and 1st tuesday reports have all come in.",
+   "tags": [
+    "permits",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Minutes of 7/10/18",
+   "resolution": "approved",
+   "quote": "to accept the minutes of 7/10/18.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "MWRA notice for Town of Ashland",
+   "resolution": "no action",
+   "quote": "mwra notice for town of ashland",
+   "tags": [
+    "MWRA",
+    "notice"
+   ]
+  },
+  {
+   "topic": "Flow assessment meeting attendance",
+   "resolution": "invite Paul Casey to August 28 meeting",
+   "quote": "commission will invite paul casey (flow assessment) to come to the august 28th meeting.",
+   "tags": [
+    "flow assessment"
+   ]
+  },
+  {
+   "topic": "John Fitch Highway expenses (Fitchburg)",
+   "resolution": "put on next meeting agenda",
+   "quote": "barb reported that she received information from fitchburg about the john fitch highway expenses",
+   "tags": [
+    "Fitchburg",
+    "highway expenses"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed for future agendas",
+   "quote": "members agenda inputs for future meetings - school grease traps, maintenance plan and documentation policies, business manager supervision responsibility.",
+   "tags": [
+    "agenda",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Public Comment heading (member reports)",
+   "resolution": "no action",
+   "quote": "public comment - ryan met with jack at dpw to learn about the system.",
+   "tags": [
+    "DPW",
+    "communication policy"
+   ]
+  },
+  {
+   "topic": "Action items: Mass. Ave. manhole and Munis quote",
+   "resolution": "assigned",
+   "quote": "joe will contact jack about mass. ave. manhole status.",
+   "tags": [
+    "manhole",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:20 pm",
+   "quote": "motion: john r. to adjourn: 7:20 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Carl L. suggested scope for I/l evaluation",
+   "where": "list",
+   "quote": "carl l. suggested scope for i/l evaluation"
+  },
+  {
+   "name": "Carl L. list of discussion points for Flow Assessment",
+   "where": "list",
+   "quote": "carl l. list of discussion points for flow assessment"
+  },
+  {
+   "name": "MWRA Notice for Town of Ashland",
+   "where": "text",
+   "quote": "mwra notice for town of ashland"
+  },
+  {
+   "name": "Munis quote",
+   "where": "text",
+   "quote": "barb will be looking at the munis quote in mid-august."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease traps",
+  "waivers",
+  "inflow and infiltration",
+  "sub-metering policy",
+  "legal fees",
+  "MWRA",
+  "flow assessment",
+  "Fitchburg",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-08-28",
  "docid": "5611",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the Minutes of 7/31/18",
+   "motion": "Accept the Minutes of 7/31/18.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: john r. to accept the minutes of 7/31/18. second: carl l. vote: unanimous"
   },
   {
-   "motion": "Accept the Minutes of 8/14/18",
+   "motion": "Accept the Minutes of 8/14/18.",
    "moved_by": "Ryan S.",
    "seconded_by": "John R.",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion: ryan s. to accept the minutes of 8/14/18. second: john r. vote: unanimous"
   },
   {
-   "motion": "Adjourn at 8:48 pm",
+   "motion": "Adjourn the meeting at 8:48 pm.",
    "moved_by": "Carl L.",
    "seconded_by": "Ryan S.",
    "outcome": "passed",
@@ -37,6 +37,283 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. All votes recorded as unanimous; no other motions voted on during this meeting.",
- "cost_usd": 0.08682050000000001
+ "note": "OCR of a scanned page; page 1 begins mid-sentence, so the opening discussion is partial. No roll call or attendance is recorded, so attendee status is inferred from speaking or moving roles. The minutes give no vote counts beyond \"Unanimous\". Some speaker roles are not printed.",
+ "cost_usd": 0.00625532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "carl added that they are most concerned about the whalom area."
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "john r. suggested that at the next pumping, he should have the pumper demonstrate whether it is level or not."
+  },
+  {
+   "name": "Ryan S.",
+   "status": "present",
+   "quote": "motion: ryan s. to accept the minutes of 8/14/18. second: john r. vote: unanimous"
+  },
+  {
+   "name": "Paul",
+   "status": "present",
+   "quote": "paul talked about issues with the graham street meter, level sensor and pressure velocity sensor."
+  },
+  {
+   "name": "Joe",
+   "status": "present",
+   "quote": "joe said he was disappointed that commission has not had any response from the selectmen regarding the"
+  },
+  {
+   "name": "John Londa",
+   "status": "present",
+   "quote": "john londa took a picture of the pipe in the external tank and believed that it"
+  },
+  {
+   "name": "John k.",
+   "status": "present",
+   "quote": "john k. has an irrigation meter and would like to know what the cost will be."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported that the munis quote is out."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission will wait to vote on the irrigation/manual meter selection until Joan is present.",
+   "quote": "commission will wait to vote on the meter selection when joan is present."
+  },
+  {
+   "decision": "Commission will wait to discuss the Fitchburg highway cost sharing further at the next meeting, after everyone has reviewed it.",
+   "quote": "commission will wait to discuss further at the next meeting when everyone has had a chance to review."
+  },
+  {
+   "decision": "Joe will talk with Heather about the legal billing.",
+   "quote": "joe will talk with heather about the legal billing."
+  },
+  {
+   "decision": "Barb is to confirm with Steve Malandrinos (IT) what is needed from Munis; Carl suggested this.",
+   "quote": "carl suggested that barb go to steve malandrinos(it) to confirm what we need from"
+  },
+  {
+   "decision": "Paul to put together a list of all equipment for the Commission.",
+   "quote": "paul offered to put together a list of all equipment for the commission."
+  },
+  {
+   "decision": "At the next pumping, the pumper is to demonstrate whether the pipe in the grease tank is level.",
+   "quote": "john r. suggested that at the next pumping, he should have the pumper demonstrate whether it is level or not."
+  },
+  {
+   "decision": "Carl is to send the four companies information and data; any interested company may come in to discuss the project with the Commission.",
+   "quote": "carl can send them information and data to look at and any companies interested could come in to discuss the project with the"
+  },
+  {
+   "decision": "Carl talked with Heather and the I/I evaluation work may go ahead since it is for engineering.",
+   "quote": "carl talked to heather and it is okay to go ahead since it is for engineering."
+  },
+  {
+   "decision": "Commission will discuss the pending item at its first meeting in September, as it is due to the Committee by the end of September.",
+   "quote": "commission will discuss this at the first meeting in september as it is due to the committee by the end of september."
+  },
+  {
+   "decision": "Commission to discuss whether the town should look at renting meters; Carl suggested this.",
+   "quote": "carl suggested that the commission discuss whether town should look at renting meters."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY19 legal fees",
+   "what_was_recorded": "Commission received two legal invoices and discussed the billing basis and the flat hourly fee.",
+   "figures_as_printed": [
+    "6 1/2 hours",
+    "$924",
+    ".3 hours",
+    "$114",
+    "$199/hour"
+   ],
+   "quote": "commission received 2 invoices -- 6 1/2 hours for $924, and .3 hours for $114."
+  },
+  {
+   "topic": "Legal billing flat fee",
+   "what_was_recorded": "Commission discussed the basis for the legal billing and the flat fee rate.",
+   "figures_as_printed": [
+    "$199/hour"
+   ],
+   "quote": "commission discussed the basis for the billing and the flat fee of $199/hour."
+  },
+  {
+   "topic": "Irrigation meter cost to users",
+   "what_was_recorded": "A resident asked the cost of an irrigation meter; Carl said the Commission should look at the total cost to users. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "john k. has an irrigation meter and would like to know what the cost will be."
+  },
+  {
+   "topic": "Flow meters buy vs rent",
+   "what_was_recorded": "Commission discussed the costs of buying meters versus renting them from Flow Assessment. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "commission discussed costs for buying meters vs renting meters and carl suggested"
+  },
+  {
+   "topic": "Munis billing outsourcing",
+   "what_was_recorded": "Barb reported the Munis quote is out; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "barb reported that the munis quote is out."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Joe",
+   "topic": "Selectmen liaison response and athletic field fees",
+   "quote": "joe said he was disappointed that commission has not had any response from the selectmen regarding the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Flow meter and I/I investigative work (Paul)",
+   "resolution": "discussed; no action recorded",
+   "quote": "based on their tests, paul said that the meters are running as intended.",
+   "tags": [
+    "flow meters",
+    "I/I",
+    "Graham Street",
+    "Whalom"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action recorded",
+   "quote": "joe said he was disappointed that commission has not had any response from the selectmen regarding the",
+   "tags": [
+    "public comment",
+    "liaison",
+    "athletic fields"
+   ]
+  },
+  {
+   "topic": "Lunenburg Schools grease trap design",
+   "resolution": "discussed; pumper to check level at next pumping",
+   "quote": "john r. suggested that at the next pumping, he should have the pumper demonstrate whether it is level or not.",
+   "tags": [
+    "grease trap",
+    "schools",
+    "pumping"
+   ]
+  },
+  {
+   "topic": "ZBA hearing 380-400 Electric Ave",
+   "resolution": "reported; no action recorded",
+   "quote": "carl reported that the zba approved the division, based on approval from all boards/committees involved.",
+   "tags": [
+    "ZBA",
+    "land division",
+    "Electric Ave"
+   ]
+  },
+  {
+   "topic": "Evaluation of past I/I work",
+   "resolution": "discussed; firms to be sent information",
+   "quote": "carl had contacted 4 companies.-- stantec, woodward & curran, suez, and tighe & bond.",
+   "tags": [
+    "I/I",
+    "consultants",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Irrigation and manual meters",
+   "resolution": "vote deferred until Joan is present",
+   "quote": "commission will wait to vote on the meter selection when joan is present.",
+   "tags": [
+    "irrigation meter",
+    "manual meters",
+    "lead",
+    "trailer park"
+   ]
+  },
+  {
+   "topic": "Fitchburg highway cost sharing",
+   "resolution": "continued to next meeting",
+   "quote": "commission will wait to discuss further at the next meeting when everyone has had a chance to review.",
+   "tags": [
+    "Fitchburg",
+    "cost sharing"
+   ]
+  },
+  {
+   "topic": "FY19 legal fees billing basis",
+   "resolution": "discussed; Joe to talk with Heather",
+   "quote": "commission received 2 invoices -- 6 1/2 hours for $924, and .3 hours for $114.",
+   "tags": [
+    "legal fees",
+    "billing",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Billing outsourcing (Munis)",
+   "resolution": "discussed; Barb to confirm needs with IT",
+   "quote": "barb reported that the munis quote is out.",
+   "tags": [
+    "Munis",
+    "outsourcing",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Minutes of 7/31/18",
+   "resolution": "approved",
+   "quote": "to accept the minutes of 7/31/18.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Minutes of 8/14/18",
+   "resolution": "approved without changes",
+   "quote": "motion: ryan s. to accept the minutes of 8/14/18.",
+   "tags": [
+    "minutes"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Data printouts and site pictures provided by Paul",
+   "where": "text",
+   "quote": "commission looked over and discussed data printouts and site pictures provided by paul."
+  },
+  {
+   "name": "Two legal invoices (6 1/2 hours for $924; .3 hours for $114)",
+   "where": "text",
+   "quote": "commission received 2 invoices -- 6 1/2 hours for $924, and .3 hours for $114."
+  },
+  {
+   "name": "Munis quote",
+   "where": "text",
+   "quote": "barb reported that the munis quote is out."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "I/I",
+  "flow meters",
+  "grease trap",
+  "ZBA",
+  "legal fees",
+  "irrigation meters",
+  "Munis",
+  "Fitchburg",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "commission looked over and discussed data printouts and site pictures provided by paul"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2018-11-28",
  "docid": "3170",
@@ -10,17 +10,172 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11282018-3170",
   "doc_url": "/docs/meetings/open-space-committee/2018-11-28-minutes-3170.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "No votes are recorded: the minutes approval and the adjournment are reported without any motion, second or vote count, so the votes list is empty. The minutes head the body as \"Open Space Ad Hoc Committee\". Some words are split by spacing in the source (e.g., \"p lan\", \"l and\"), and quotes use the text as printed. No dollar figures appear. The minutes name no documents list; the draft Plan, the letter, and two inventories appear only in the discussion text.",
+ "cost_usd": 0.00382122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Accept the November 7, 2018 minutes as amended",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the minutes of november 7, 2018 were reviewed and accepted as amended (spelling of member 's name)."
+   "name": "Brandon Kibbe",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, sarah cammer, karin menard, bob pease, richard brockelman"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, sarah cammer, karin menard, bob pease, richard brockelman"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, sarah cammer, karin menard, bob pease, richard brockelman"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, sarah cammer, karin menard, bob pease, richard brockelman"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, sarah cammer, karin menard, bob pease, richard brockelman"
+  },
+  {
+   "name": "Richard Brockelman",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, sarah cammer, karin menard, bob pease, richard brockelman"
+  },
+  {
+   "name": "Ashley Maillet",
+   "role": "Member (listed under Absent)",
+   "status": "absent",
+   "quote": "absent: ashley maillet"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Only one vote recorded in these minutes: approval of the prior meeting minutes. The motion to approve was not attributed to a specific member. No other motions or votes were recorded for the substantive discussions of the plan sections or other business.",
- "cost_usd": 0.0997675
+ "decisions": [
+  {
+   "decision": "The November 7, 2018 minutes were accepted as amended (spelling of a member's name), without a recorded motion.",
+   "quote": "the minutes of november 7, 2018 were reviewed and accepted as amended"
+  },
+  {
+   "decision": "The Committee made grammatical edits and basic corrections to the funding sources and responsible parties in Sections 7, 8 and 9 of the draft plan.",
+   "quote": "made grammatical edits and basic corrections to funding sources and responsible parties"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of November 7, 2018 minutes",
+   "resolution": "accepted as amended",
+   "quote": "the minutes of november 7, 2018 were reviewed and accepted as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of draft plan Sections 7, 8 and 9",
+   "resolution": "grammatical edits and corrections made",
+   "quote": "made grammatical edits and basic corrections to funding sources and responsible parties",
+   "tags": [
+    "open space plan",
+    "funding sources",
+    "responsible parties"
+   ]
+  },
+  {
+   "topic": "Parcel listing and town parcel database",
+   "resolution": "discussed; no action recorded",
+   "quote": "b. pease thought that all parcels should be listed and that it should be considered a need to have a town database",
+   "tags": [
+    "parcels",
+    "land use inventory"
+   ]
+  },
+  {
+   "topic": "Beach parking as a goal",
+   "resolution": "discussed; explained as addressed in Section 9b; no action recorded",
+   "quote": "and that he feels it should be listed as one.",
+   "tags": [
+    "beach parking",
+    "open space plan"
+   ]
+  },
+  {
+   "topic": "Identifiers for each parcel",
+   "resolution": "discussed; no action recorded",
+   "quote": "s. cammer mentioned that it would be helpful to have identifiers for each parcel.",
+   "tags": [
+    "parcels"
+   ]
+  },
+  {
+   "topic": "Draft letter to departments and committees",
+   "resolution": "noted; no action recorded",
+   "quote": "b. kibbe said he has drafted a letter to be sent to the various departments and committees with a draft copy of the",
+   "tags": [
+    "correspondence",
+    "open space plan"
+   ]
+  },
+  {
+   "topic": "Thanks to B. Kibbe for plan work",
+   "resolution": "no action",
+   "quote": "r. brockelman thanked the committee for all the work that has been done especially brandon for all the time and effort to get this plan completed.",
+   "tags": [
+    "open space plan"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:45 pm (no motion recorded)",
+   "quote": "meeting adjourned at 8:45 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Plan (open space plan, Sections 7, 8 and 9)",
+   "where": "text",
+   "quote": "with a draft copy of the plan."
+  },
+  {
+   "name": "Letter drafted by B. Kibbe to various departments and committees",
+   "where": "text",
+   "quote": "b. kibbe said he has drafted a letter to be sent to the various departments and committees with a draft copy of the"
+  },
+  {
+   "name": "Land use inventory from the Assessors' database",
+   "where": "text",
+   "quote": "he also mentioned that the inventory for owner and grant information has been amended and it will be a public document for residents to view."
+  },
+  {
+   "name": "Inventory for owner and grant information",
+   "where": "text",
+   "quote": "he also mentioned that the inventory for owner and grant information has been amended and it will be a public document for residents to view."
+  }
+ ],
+ "tags": [
+  "open space plan",
+  "parcel inventory",
+  "beach parking",
+  "draft plan review",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

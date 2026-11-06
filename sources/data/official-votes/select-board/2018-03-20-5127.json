@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-03-20",
  "docid": "5127",
@@ -12,39 +12,278 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session under M.G.L. c. 30 §21, Reason #3 to discuss strategy with respect to collective bargaining or litigation regarding Public Employees Committee health insurance changes, and to return to open session",
+   "motion": "Enter executive session under M.G.L. c. 30 §21, Reason #3 (Public Employees Committee negotiations for health insurance changes) and return to open session.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. mcquaid 2\"d: p. luck to enter executive session under m.g.l. c. 30 §21, reason #3: to discuss strategy with respect to collective bargaining or litigation, if an open meeting may have a detrimental effect on the goverment's bargaining or litigating position, and the chair declares so. (public employees committee negotiations for health insurance changes) and to return to open session. vote: mr. mequaid-aye, ms. luck -aye, mir. toale-aye"
+   "quote": "to enter executive session under m.g.l. c. 30 §21, reason #3: to discuss strategy with respect to collective bargaining or litigation"
   },
   {
-   "motion": "Exit Executive Session and enter Open Session",
-   "moved_by": "R. Ebersole",
+   "motion": "Exit executive session and enter open session.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r.ebersole 2\": d. mcquaid to exit executive session and enter open session vote: mr. mcquaid- aye, ms. luck -aye, mr. toale-aye, mr. ebersole- aye"
+   "quote": "to exit executive session and enter open session vote: mr. mcquaid- aye, ms. luck -aye, mr. toale-aye, mr. ebersole- aye"
   },
   {
-   "motion": "Enter Executive Session and adjourn immediately afterwards",
+   "motion": "Enter executive session (Interim Town Manager applications review) and adjourn immediately afterwards.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion:t. alonzo 2\": p. bertram to enter executive session and adjourn immediately afterwards vote: mr. alonzo- aye, ms. bertram - aye, mr. toale-aye"
+   "quote": "to enter executive session and adjourn immediately afterwards vote: mr. alonzo- aye, ms. bertram - aye, mr. toale-aye"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:00 p.m.",
    "moved_by": "T. Alonzo",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion:t. alonzo to adjourn the meeting at 9:00 p.m. 2\":p. bertram vote: mr. alonzo- aye, ms. bertram - aye, mr. toale- aye"
+   "quote": "to adjourn the meeting at 9:00 p.m. 2\":p. bertram vote: mr. alonzo- aye, ms. bertram - aye, mr. toale- aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. \"The Board concurred\" with a proposal on page 2 regarding hospital copayments was mentioned but no formal motion or vote was recorded for that item, so it is not included.",
- "cost_usd": 0.09533549999999999
+ "note": "Meeting date 2018-03-20 was supplied by the user; the minutes print no date (only a received stamp reading JUN 05 2019). The text holds two separate sessions: a pages 1-2 session (health insurance, with Mr. Toale presiding) and a page 3 subcommittee session (Interim Town Manager applications); neither body name is printed in the text. OCR errors include \"MeQuaid\", \"Mir. Toale\", \"goverment's\", \"orates\", and \"Elaine In Peterson\". Vote counts are not printed; outcomes are \"passed\" based on the listed aye votes. The page 3 motion to enter executive session \"and adjourn immediately afterwards\" is followed by interviews and discussion, so the sequence in the minutes is not fully consistent. The \"Board concurred\" item is a consensus direction, not a recorded motion. No public comment is recorded. Mr. Toale's first name appears only on the subcommittee list. Dollar figures are as printed.",
+ "cost_usd": 0.00936702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "",
+   "status": "present",
+   "quote": "mr. toale called the meeting to order at 6:32 p.m."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "vote: mr. mequaid-aye, ms. luck -aye, mir. toale-aye"
+  },
+  {
+   "name": "P. Luck",
+   "role": "",
+   "status": "present",
+   "quote": "vote: mr. mequaid-aye, ms. luck -aye, mir. toale-aye"
+  },
+  {
+   "name": "R.Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "mr. ebersole entered the meeting."
+  },
+  {
+   "name": "Sue Shillue",
+   "role": "President of Cook & Company",
+   "status": "present",
+   "quote": "ms. lemieux introduced sue shillue, president of cook & company and reported they have been meeting with"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Subcommittee member",
+   "status": "present",
+   "quote": "vote: mr. alonzo- aye, ms. bertram - aye, mr. toale- aye"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Subcommittee member",
+   "status": "present",
+   "quote": "vote: mr. alonzo- aye, ms. bertram - aye, mr. toale- aye"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the board interviewed adam burney at 6:00 p.m. and stephen delaney at 7:00 p.m."
+  },
+  {
+   "name": "Stephen Delaney",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the board interviewed adam burney at 6:00 p.m. and stephen delaney at 7:00 p.m."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board concurred that the presentation could go forward offering to keep the $200/$400 hospital copayment in exchange for not offering the mitigation plan.",
+   "quote": "would the board be in agreement with this proposal? the board concurred."
+  },
+  {
+   "decision": "Ms. Lemieux stated staff had the direction needed for the meeting with the PEC on the 26th (no vote recorded).",
+   "quote": "ms. lemieux stated they had what they needed for direction for their meeting with the pec on the 26t."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Health insurance rate increase with no plan changes",
+   "what_was_recorded": "Without plan changes, health insurance rates would rise 6.82%, effective July 1, 2018.",
+   "figures_as_printed": [
+    "6.82%"
+   ],
+   "quote": "if there are no changes to the plan, there would be a 6.82% increase in rates."
+  },
+  {
+   "topic": "Current plan copayments",
+   "what_was_recorded": "Specialist, emergency room, outpatient surgery and CAT scan copayments under the current plan were described.",
+   "figures_as_printed": [
+    "$25",
+    "$100",
+    "$150"
+   ],
+   "quote": "specialists are a flat $25 copayment. an emergency room visit is a $100 copayment."
+  },
+  {
+   "topic": "Proposed calendar-year deductible",
+   "what_was_recorded": "The plan design would add a calendar deductible of $250 per person, capped at $750 per family.",
+   "figures_as_printed": [
+    "$250/person",
+    "$750 per family"
+   ],
+   "quote": "basically the town would be adding a calendar deductible of $250/person and capped at $750 per family."
+  },
+  {
+   "topic": "GIC benchmark plan copayments",
+   "what_was_recorded": "Under the GIC benchmark plan, the primary care flat fee would be $20.00 and specialist visits would rise from $25 to $35.",
+   "figures_as_printed": [
+    "$20.00",
+    "$25",
+    "$35"
+   ],
+   "quote": "the flat fee is $20.00 visit. specialist office visits would go from $25 to $35."
+  },
+  {
+   "topic": "GIC benchmark hospital admission copayment",
+   "what_was_recorded": "Hospital admissions under the benchmark plan would be $300/$700 after the deductible is satisfied.",
+   "figures_as_printed": [
+    "$300/$700"
+   ],
+   "quote": "hospital admissions would go to $300/$700 after the deductible is satisfied."
+  },
+  {
+   "topic": "Option to keep $200/$400 hospital copayment",
+   "what_was_recorded": "Keeping the $200/$400 hospital copayment would add 0.2 percent to premium rates, a total 3.61 percent increase.",
+   "figures_as_printed": [
+    "$200/$400",
+    ".2 percent",
+    "3.61 percent"
+   ],
+   "quote": "that is a possibility and it would add .2 percent to the premium rates. we would be looking at a 3.61 percent increase."
+  },
+  {
+   "topic": "Retiree Medicare Part B premium reimbursement",
+   "what_was_recorded": "The Town pays 75% of the Medicare Part B premium, averaging $135/month per enrolled retiree and spouse; the presenter said this is becoming uncommon and should be addressed in negotiations.",
+   "figures_as_printed": [
+    "75%",
+    "$135/month"
+   ],
+   "quote": "currently the town is paying 75% of the medicare part b premium which on average is $135/month for every enrolled retiree and spouse."
+  },
+  {
+   "topic": "OPEB liability",
+   "what_was_recorded": "The presenter recommended working with an actuary to reduce the OPEB liability; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. shillue recommended working with an actuary to reduce the opeb liability."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: health insurance negotiations with PEC",
+   "resolution": "entered executive session under c. 30 §21 Reason #3; returned to open session",
+   "quote": "to enter executive session under m.g.l. c. 30 §21, reason #3: to discuss strategy with respect to collective bargaining or litigation",
+   "tags": [
+    "executive session",
+    "health insurance",
+    "union negotiations"
+   ]
+  },
+  {
+   "topic": "Health insurance plan design rate proposal (Cook & Company)",
+   "resolution": "presented; Board concurred with the $200/$400 hospital copayment option",
+   "quote": "ms. lemieux introduced sue shillue, president of cook & company and reported they have been meeting with",
+   "tags": [
+    "health insurance",
+    "plan design",
+    "GIC comparison",
+    "copayments"
+   ]
+  },
+  {
+   "topic": "Retiree Medicare Part B reimbursement and OPEB",
+   "resolution": "discussed; actuary recommended; no vote recorded",
+   "quote": "it's becoming more uncommon for municipalities to reimburse retirees and spouse for the medicare part b premium.",
+   "tags": [
+    "retiree benefits",
+    "Medicare Part B",
+    "OPEB"
+   ]
+  },
+  {
+   "topic": "Subcommittee executive session: Interim Town Manager applications",
+   "resolution": "entered executive session; adjourned immediately afterwards per motion",
+   "quote": "per m.g.l. c. 30a, §21; to consider or interview applicants for employment by a preliminary screening committee, if the chair declares that an open",
+   "tags": [
+    "interim town manager",
+    "hiring",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Interviews of Interim Town Manager applicants",
+   "resolution": "interviewed two applicants; members discussed the interviews afterward; no vote recorded",
+   "quote": "the board interviewed adam burney at 6:00 p.m. and stephen delaney at 7:00 p.m.",
+   "tags": [
+    "interim town manager",
+    "interviews",
+    "subcommittee"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Rate proposal for plan design, presented to the PEC",
+   "where": "text",
+   "quote": "ms. shillue presented a rate proposal they had presented to the pec to modify the plan design."
+  },
+  {
+   "name": "Presentation on the health insurance proposal",
+   "where": "text",
+   "quote": "we could go with this presentation and offer keeping the $200/$400 hospital copayment in exchange for not"
+  },
+  {
+   "name": "Interim Town Manager applications",
+   "where": "text",
+   "quote": "this shall not apply to any meeting regarding applicants who have passed a prior preliminary screening. (interim town manager applications review)"
+  }
+ ],
+ "tags": [
+  "health insurance",
+  "union negotiations",
+  "executive session",
+  "GIC benchmark plan",
+  "Medicare Part B",
+  "OPEB",
+  "interim town manager",
+  "subcommittee interviews"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

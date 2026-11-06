@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2018-01-09",
  "docid": "1880",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the December 12, 2017 COA meeting",
+   "motion": "Approve the minutes of the December 12, 2017 COA meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Sarah Grant",
    "outcome": "passed unanimously",
@@ -20,15 +20,234 @@
    "quote": "ms. digiacomo moved to approve the minutes from the december 12, 2017 coa meeting, sarah grant seconded. on vote, motioned carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Grant",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. digiacomo moved to adjourn the meeting, ms. grant seconded. on vote, motion carried unanimously."
+   "quote": "at 10:53 a.m., ms. digiacomo moved to adjourn the meeting, ms. grant seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR via macOS Vision. Two procedural votes recorded, both passed unanimously.",
- "cost_usd": 0.0862625
+ "dropped_unquoted": 1,
+ "note": "Text is OCR of a two-page minutes document. Page 1 ends mid-sentence in the SNAP item (\"two of which\") and page 2 begins mid-sentence (\"in order to encourage...\"), so a passage is missing and the SNAP report and the newsletter/forum item are incomplete. The minutes name both \"Mr. Lincoln\" and \"Ms. Lincoln\" for the same speaker; \"Mr. Lincoln\" is used here. No board roll call or member attendance list is printed, so member status is inferred from motions and comments. Two procedural votes are recorded, both unanimous with no numeric count. OCR also shows \"Mis. Doherty\", which is read as Ms. Doherty.",
+ "cost_usd": 0.00630032,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Board of Selectmen Liaison",
+   "status": "present",
+   "quote": "guests: jamie toale board of selectmen liaison, cheryl aubuchon eagle house supporters"
+  },
+  {
+   "name": "Cheryl Aubuchon",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: jamie toale board of selectmen liaison, cheryl aubuchon eagle house supporters"
+  },
+  {
+   "name": "Ms. DiGiacomo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. digiacomo moved to approve the minutes from the december 12, 2017 coa meeting"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sarah grant seconded. on vote, motioned carried unanimously."
+  },
+  {
+   "name": "Mr. Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. lincoln was told years ago by someone else that only people over age sixty should be allowed to participate in programs at the senior center."
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. doherty then went through her presentation, which highlights services and programs offered at the eagle house"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "Outreach Worker",
+   "status": "not stated",
+   "quote": "she and outreach worker pauline roy have been checking the suggestions."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Doherty will have Outreach Worker Pauline Roy look into the public-comment housing complaint with the Lunenburg Housing Authority.",
+   "quote": "ms. doherty said she'd have ms. roy look into the matter with the lunenburg housing authority to see what could be done."
+  },
+  {
+   "decision": "Ms. Doherty relayed the suggestion-box cleaning request for the main function room lights and ceiling fans to the DPW.",
+   "quote": "request to the dpw, and that an alcohol ink class is scheduled for february."
+  },
+  {
+   "decision": "The COA is to give its presentation to the Board of Selectmen at Town Hall on January 16, 2018, at 7:10 p.m.",
+   "quote": "the coa is to give their presentation to the board of selectmen at town hall on january 16, 2018, at 7:10 p.m."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA goals: Eagle House Supporters fundraising",
+   "what_was_recorded": "Mr. Lincoln reported the Eagle House Supporters have raised about $14,300 and suggested the board consider how that money could be used toward the goals.",
+   "figures_as_printed": [
+    "$14,300"
+   ],
+   "quote": "the eagle house supporters have raised approximately $14,300, and suggested the rest of the board think about how that money could be used toward the goals"
+  },
+  {
+   "topic": "Funding sources in the BOS presentation",
+   "what_was_recorded": "The Director's presentation cites the municipal budget, Formula Grant funding, Eagle House Supporters Inc. funding, and the gift fund as funding sources.",
+   "figures_as_printed": [],
+   "quote": "cites funding sources, i.e., the municipal budget, formula grant funding, and funding from the eagle house supporters inc., as well as the gift fund."
+  },
+  {
+   "topic": "Formula Grant use limits by age",
+   "what_was_recorded": "Ms. Doherty said Formula Grant funds may only be used for persons sixty and over, while anyone fifty and over may join programs at no membership fee.",
+   "figures_as_printed": [],
+   "quote": "formula grant funds are only to be used for persons sixty and over, however anyone age fifty and over is welcome to participate in programs"
+  },
+  {
+   "topic": "Security cameras funded by Formula Grant",
+   "what_was_recorded": "Ms. Doherty said security cameras funded by the Formula Grant are being purchased to watch the recreation area, parking lot, walkway and Kids Kingdom.",
+   "figures_as_printed": [],
+   "quote": "she's getting security cameras, funded by the formula grant, to watch over the recreation area"
+  },
+  {
+   "topic": "MART administrative assistant dispatch salary",
+   "what_was_recorded": "Ms. Doherty will attend a MART meeting on January 16, 2018 to discuss the dispatch portion of the administrative assistant's salary.",
+   "figures_as_printed": [],
+   "quote": "to discuss the dispatch portion of the administrative assistant's salary"
+  },
+  {
+   "topic": "MART proposed cuts and municipal budget increase",
+   "what_was_recorded": "Ms. Doherty said she will ask for an increase in the municipal budget to cover MART's proposed cuts.",
+   "figures_as_printed": [],
+   "quote": "she'll be asking for an increase in the municipal budget to cover mart's proposed cuts."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Aubuchon",
+   "stated_role": "Eagle House Supporters",
+   "topic": "Whalom Rd. housing, Pearl Brook Apartments windows and locks",
+   "quote": "ms. aubuchon expressed her dismay with the current windows at pearl brook apartments where she lives, and also said that there were no locks on the outside doors."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval (Dec 12, 2017)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: ms. digiacomo moved to approve the minutes from the december 12, 2017 coa meeting"
+  },
+  {
+   "topic": "Director's Report: BOS power point presentation",
+   "resolution": "presented; no action",
+   "tags": [
+    "presentation",
+    "board of selectmen",
+    "eagle house"
+   ],
+   "quote": "director's bos power point presentation: mr. lincoln commented that too often, when going before the board of selectmen"
+  },
+  {
+   "topic": "COA goals",
+   "resolution": "discussed; no action",
+   "tags": [
+    "goals",
+    "fundraising"
+   ],
+   "quote": "coa goals: ms. lincoln commented that the eagle house supporters have raised approximately $14,300"
+  },
+  {
+   "topic": "MART report",
+   "resolution": "reported; no action",
+   "tags": [
+    "transportation",
+    "MART",
+    "budget"
+   ],
+   "quote": "mart report: ms. doherty reported she's attending a meeting at mart scheduled for january 16, 2018,"
+  },
+  {
+   "topic": "SNAP report",
+   "resolution": "reported; no action",
+   "tags": [
+    "snap",
+    "grants"
+   ],
+   "quote": "snap: ms. doherty reported she's working on her first quarterly report to the department of transitional assistance."
+  },
+  {
+   "topic": "Notices and communications: BOS presentation date",
+   "resolution": "noted",
+   "tags": [
+    "board of selectmen",
+    "scheduling"
+   ],
+   "quote": "notices and communications: the coa is to give their presentation to the board of selectmen at town hall on january 16, 2018, at 7:10 p.m."
+  },
+  {
+   "topic": "Board comment: suggestion box",
+   "resolution": "discussed; no action",
+   "tags": [
+    "suggestion box",
+    "programs",
+    "trips"
+   ],
+   "quote": "board comment: ms. digiacomo discussed the suggestion box brought up at the last meeting, and asked if any suggestions had been made."
+  },
+  {
+   "topic": "Public comment: housing concerns",
+   "resolution": "Ms. Doherty referred matter to Housing Authority and staff follow-up",
+   "tags": [
+    "housing",
+    "public comment"
+   ],
+   "quote": "public comment: ms. aubuchon asked whether the new housing going in on whalom rd. would be senior housing."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:53 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "at 10:53 a.m., ms. digiacomo moved to adjourn the meeting, ms. grant seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's BOS power point presentation",
+   "where": "text",
+   "quote": "director's bos power point presentation: mr. lincoln commented that too often, when going before the board of selectmen"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "board of selectmen",
+  "budget",
+  "formula grant",
+  "MART transportation",
+  "SNAP",
+  "housing",
+  "suggestion box",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

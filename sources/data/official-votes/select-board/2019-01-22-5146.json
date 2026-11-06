@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-01-22",
  "docid": "5146",
@@ -12,28 +12,40 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes of December 4, 2018",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of december 4, 2018 were approved"
-  },
-  {
-   "motion": "To appoint Nancy Foss Yasko to the Cemetery Commission until the next election",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 6-0",
+   "motion": "To find that Chief and Bella are deemed dangerous dogs (dangerous-dog hearing, Thibodeau dogs).",
+   "moved_by": "D. MeQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "to appoint nancy foss yasko to the cemetery commission until the next election vote: mr. toale-aye, mr. mequaid-aye, ms. luck-aye, ms. adams-aye, mr. tyler-aye, ms. mendoza- aye"
+   "quote": "motion: d. mequaid 2nd: p. luck to find that chief and bella are deemed dangerous dogs"
   },
   {
-   "motion": "To follow the Land Use Director's recommendation to extend permit #15 until February 19, 2019",
+   "motion": "To impose the restrictions listed under c. 140 §157 on the dogs Chief and Bella (humane restraint, confinement, muzzling when removed, insurance of $100,000, and licensing in Lunenburg), as amended to require exterior confinement within 90 days (deadline April 16, 2019).",
+   "moved_by": "D. MeQuaid",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: d. mequaid 2nd: p. luck to impose the following restrictions: 1) that the dogs be humanely restrained;"
+  },
+  {
+   "motion": "To appoint Nancy Foss Yasko to the Cemetery Commission until the next election.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint nancy foss yasko to the cemetery commission until the next election vote: mr. toale-aye, mr. mequaid-aye"
+  },
+  {
+   "motion": "To follow the Land Use Director's recommendation to extend permit #15 (P.J. Keating earth removal) until February 19, 2019.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. mcquaid znd: p. luck to follow the land use director's recommendation to extend permit #15 until february 19,2019 vote: all in favor"
+   "quote": "motion: d. mcquaid znd: p. luck to follow the land use director's recommendation to extend permit #15 until february"
+  },
+  {
+   "motion": "Approve the minutes of December 4, 2018.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of december 4, 2018 were approved."
   },
   {
    "motion": "To adjourn the meeting at 7:32 p.m.",
@@ -41,10 +53,454 @@
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: d. mcquaid to adjourn the meeting at 7:32 p.m. 2°: p. luck vote: all in favor"
+   "quote": "motion: d. mcquaid to adjourn the meeting at 7:32 p.m."
   }
  ],
- "dropped_unquoted": 2,
- "note": "OCR minutes from macOS Vision. Item 3 of the dangerous dog restrictions motion (muzzling requirement) appears split across pages; full text reconstructed from minutes structure. Board of Selectmen meeting, January 22, 2019.\"",
- "cost_usd": 0.2041305
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) with garbled spots: 'MeQuaid' and 'znd' for 'Mr. McQuaid' and '2nd' appear as printed; page 16 is partly garbled. The first dangerous-dog motion has no printed result. The restrictions motion was followed by an amendment (90 days, April 16, 2019) and then 'Vote: All in Favor' with no count. Reconsideration of the January 8, 2019 vote has no recorded motion. The minutes approval has no printed motion or mover. The cemetery appointment vote lists six ayes without a stated count. Pages 12-17 are appended attachments (police report and ACO recommendations), not minutes proper. Name variants: Kathleen/Kathy Comeau, Susan/Suzanne Thibodeau. Hearing testimony from Stepton and Thibodeau is not recorded as public comment.",
+ "cost_usd": 0.01663902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Dean Tran",
+   "role": "Senator",
+   "status": "present",
+   "quote": "others present: senator dean tran, house representative jennifer benson, house"
+  },
+  {
+   "name": "Jennifer Benson",
+   "role": "House Representative",
+   "status": "present",
+   "quote": "others present: senator dean tran, house representative jennifer benson, house"
+  },
+  {
+   "name": "Stephan Hay",
+   "role": "House Representative",
+   "status": "present",
+   "quote": "representative stephan hay, kathleen comeau, animal control officer;"
+  },
+  {
+   "name": "Kathleen Comeau",
+   "role": "Animal Control Officer",
+   "status": "present",
+   "quote": "animal control officer kathy comeau, sgt. tocci and mr. stepton were sworn in."
+  },
+  {
+   "name": "Joshua Tocci",
+   "role": "Sergeant (reporting officer, police)",
+   "status": "present",
+   "quote": "sgt. tocci stated he believed the animal control officer left a slip of paper in her mailbox"
+  },
+  {
+   "name": "Jeremy Cohen",
+   "role": "Attorney, Boston Dog Lawyers",
+   "status": "present",
+   "quote": "attorney jeremy cohen, boston dog lawyers, stated part of the reason he comes to these"
+  },
+  {
+   "name": "Suzanne Thibodeau",
+   "role": "Owner (dog owner at hearing)",
+   "status": "present",
+   "quote": "attorney jeremy cohen, boston dog lawyers, and ms. suzanne thibodeau, 54 broadmeadow drive, came forward."
+  },
+  {
+   "name": "Richard Stepton",
+   "role": "Sworn in as witness; dog-bite victim",
+   "status": "present",
+   "quote": "animal control officer kathy comeau, sgt. tocci and mr. stepton were sworn in."
+  },
+  {
+   "name": "Alan Clapp",
+   "role": "Nexamp Development Manager representing Settler's Solar, LLC",
+   "status": "present",
+   "quote": "alan clapp, nexamp development manager representing settler's solar, llc, stated he is here"
+  },
+  {
+   "name": "Pam Porter",
+   "role": "not stated",
+   "status": "present",
+   "quote": "suzanne thibodeau, alan clapp, pam porter, steve"
+  },
+  {
+   "name": "Steve Mullaney",
+   "role": "Mullaney Engineering, representing P. J. Keating Co.",
+   "status": "present",
+   "quote": "steve mullaney, mullaney engineering, appeared on behalf of p. j. keating's permits #14 and #15."
+  },
+  {
+   "name": "Nancy Foss Yasko",
+   "role": "Cemetery Commission appointee",
+   "status": "present",
+   "quote": "ms. foss yasko, 146 west townsend road, stated it was her honor to be here"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Public commenter, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, cautioned the board on approving something that has not been fully vetted."
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Cemetery Commissioner",
+   "status": "present",
+   "quote": "cemetery commissioners present: bill tyler, lorraine mendoza"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Cemetery Commissioner",
+   "status": "present",
+   "quote": "cemetery commissioners present: bill tyler, lorraine mendoza"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members present: heather sroka, meredith weiss, jim laveck, carol archambault, wendy bertrand"
+  },
+  {
+   "name": "Meredith Weiss",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members present: heather sroka, meredith weiss, jim laveck, carol archambault, wendy bertrand"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members present: heather sroka, meredith weiss, jim laveck, carol archambault, wendy bertrand"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members present: heather sroka, meredith weiss, jim laveck, carol archambault, wendy bertrand"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee members present: heather sroka, meredith weiss, jim laveck, carol archambault, wendy bertrand"
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "he announced town manager lemieux was not present tonight due to her airline flight"
+  },
+  {
+   "name": "Officer Broc",
+   "role": "Police officer",
+   "status": "present",
+   "quote": "officer broc (who is in the back of the room) attempted to stop by as well."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to prepare a letter to Ms. Thibodeau on the dangerous-dog decision and get it to her as soon as possible.",
+   "quote": "mr. toale informed ms. thibodeau that we will prepare a letter and get it you as soon as possible."
+  },
+  {
+   "decision": "The 994 Northfield Road PILOT agreement to be scheduled on the next agenda after Town Counsel's review.",
+   "quote": "mr. toale stated he would schedule it on the next agenda following town counsel's review."
+  },
+  {
+   "decision": "Capital Plan to be presented at a February board meeting.",
+   "quote": "the capital plan will be presented at a february board meeting."
+  },
+  {
+   "decision": "Ms. Foss Yasko reminded to get sworn in before the next meeting.",
+   "quote": "the board congratulated ms. foss yasko and reminded her to get sworn in before the next"
+  },
+  {
+   "decision": "Questions on the Animal Control quarterly report deferred to the next meeting.",
+   "quote": "if there are any questions, we can follow up at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY19 state funding for Turkey Hill asbestos abatement",
+   "what_was_recorded": "The state delegation presented an oversized check to the Town for asbestos abatement at Turkey Hill Elementary School.",
+   "figures_as_printed": [
+    "$130,000"
+   ],
+   "quote": "the oversized $130,000 check to the town."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "An accounts payable warrant, a payroll warrant and a payroll deductions warrant were signed.",
+   "figures_as_printed": [
+    "$574,828.47",
+    "$777,317.42",
+    "$168,041.68"
+   ],
+   "quote": "an accounts payable warrant in the amount of $574,828.47, a payroll warrant in the amount of $777,317.42"
+  },
+  {
+   "topic": "Veterinary bills for Mr. Stepton's dog",
+   "what_was_recorded": "Mr. Stepton has spent $1400 on veterinarian bills, which Mr. Cohen asked about.",
+   "figures_as_printed": [
+    "$1400"
+   ],
+   "quote": "stepton has spent $1400 on veterinarian bills. that is a lot of money."
+  },
+  {
+   "topic": "Property tax rate proposal (Ms. Luck)",
+   "what_was_recorded": "Ms. Luck proposed reducing property taxes to 2% rather than 2.5%, citing the future Turkey Hill Elementary School cost; no action taken.",
+   "figures_as_printed": [
+    "2%",
+    "2.5%"
+   ],
+   "quote": "ms. luck would like to see property taxes reduced to 2% rather than 2.5% in advance of having"
+  },
+  {
+   "topic": "Insurance requirement for dangerous dogs",
+   "what_was_recorded": "The restriction requires the owner to provide proof of insurance of not less than $100,000.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "provides proof of insurance in an amount not less than $100,000 insuring the owner or keeper"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Burning permits announcement",
+   "speaker": "Ms. Luck",
+   "stated_role": "Clerk",
+   "quote": "ms. luck announced burning permits are now available for residents."
+  },
+  {
+   "topic": "PILOT agreement for 994 Northfield Road",
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "dave passios, 56 whiting street, cautioned the board on approving something that has not been fully vetted."
+  },
+  {
+   "topic": "PJ Keating quarry closure concerns",
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "dave passios, 56 whiting street, expressed concern about the pj keating quarry potentially becoming a problematic area in the future after being closed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment on burning permits",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "opening",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Presentation of FY19 state funding for Turkey Hill asbestos abatement",
+   "resolution": "received; oversized check photo",
+   "quote": "presentation by senator dean tran, representative jennifer benson, and representative",
+   "tags": [
+    "state funding",
+    "Turkey Hill",
+    "asbestos"
+   ]
+  },
+  {
+   "topic": "Dangerous dog public hearing, Thibodeau dogs Chief and Bella",
+   "resolution": "dogs found dangerous (result not printed); restrictions imposed 'passed'; letter to follow",
+   "quote": "dangerous dog public hearing: - owner susan thibodeau- 54 broadmeadow drive",
+   "tags": [
+    "dangerous dog",
+    "animal control",
+    "hearing",
+    "c.140 s.157"
+   ]
+  },
+  {
+   "topic": "Joint appointment with Cemetery Commission",
+   "resolution": "Nancy Foss Yasko appointed to Cemetery Commission until next election",
+   "quote": "joint appointment with the cemetery commission for cemetery commission vacancy",
+   "tags": [
+    "appointment",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "994 Northfield Road: reconsideration of right of first refusal and PILOT agreement",
+   "resolution": "reconsideration discussed, no motion recorded; PILOT to next agenda after Town Counsel review",
+   "quote": "meeting re: 994 northfield road:",
+   "tags": [
+    "Chapter 61",
+    "solar",
+    "PILOT",
+    "right of first refusal",
+    "Open Space"
+   ]
+  },
+  {
+   "topic": "Renewal of earth removal permits #14 and #15, P J Keating Co.",
+   "resolution": "permit #15 extended to February 19, 2019; permit #14 recommended for continuance",
+   "quote": "renewal of earth removal permits #14 and #15 -p j keating co.",
+   "tags": [
+    "earth removal",
+    "quarry",
+    "P.J. Keating"
+   ]
+  },
+  {
+   "topic": "Presentation of Capital Plan by Town Manager",
+   "resolution": "deferred to February board meeting",
+   "quote": "presentation of capital plan by town manager-",
+   "tags": [
+    "capital plan",
+    "town manager",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "December 4, 2018 minutes approved; warrants signed",
+   "quote": "minutes of december 4, 2018 were approved.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Board member remarks on property taxes and budget",
+   "resolution": "discussion only, no action",
+   "quote": "ms. luck would like to see property taxes reduced to 2% rather than 2.5% in advance of having",
+   "tags": [
+    "property taxes",
+    "budget",
+    "forecasting"
+   ]
+  },
+  {
+   "topic": "Department reports: Animal Control quarterly report",
+   "resolution": "referred to packet; questions to next meeting",
+   "quote": "department reports-aco quarterly report",
+   "tags": [
+    "animal control"
+   ]
+  },
+  {
+   "topic": "Next meeting schedule",
+   "resolution": "noted; next meeting February 5 unless quorum at Finance Committee",
+   "quote": "the next meeting is february 5 unless",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment on PJ Keating quarry closure",
+   "resolution": "no action",
+   "quote": "dave passios, 56 whiting street, expressed concern about the pj keating quarry potentially becoming a problematic area in the future after being closed.",
+   "tags": [
+    "quarry",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:32 p.m.",
+   "quote": "to adjourn the meeting at 7:32 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sgt. Tocci police report, dog bite incident of November 28, 2018 (Stepton / Thibodeau dogs)",
+   "where": "list",
+   "quote": "end of report. sgt. j. tocci"
+  },
+  {
+   "name": "ACO Kathleen Comeau recommendations to the Board of Selectmen (dangerous dog determination and restrictions under MGL c.140 s.157)",
+   "where": "list",
+   "quote": "based on the investigation, training, and experience of sgt. josh tocci, as well as my investigation and experience as the"
+  },
+  {
+   "name": "Memorandum from Land Use Director Adam Burney dated 22 January 2019 (earth removal permits #14 and #15)",
+   "where": "text",
+   "quote": "mr. toale read the memorandum from land use director adam burney dated 22 january 2019:"
+  },
+  {
+   "name": "Email from Town Counsel Adam Costa to Executive Assistant Peterson on the PILOT agreement",
+   "where": "text",
+   "quote": "mr. toale directed the board to the email from town counsel adam costa to executive"
+  },
+  {
+   "name": "PILOT agreement, 994 Northfield Road (Settler's Solar, LLC)",
+   "where": "text",
+   "quote": "he has not finished reviewing the pilot agreement."
+  },
+  {
+   "name": "Animal Control report in the Board's packet",
+   "where": "text",
+   "quote": "mr. toale referred the board to the animal control report in their packet."
+  },
+  {
+   "name": "Set of three plans submitted by S.J. Mullaney Engineering for P. J. Keating (permits #14 and #15)",
+   "where": "text",
+   "quote": "this information includes a set of three plans (2 relating to permit #14 and 1 relating to permit #15)."
+  },
+  {
+   "name": "Five Year Financial Forecast and Capital Plan (Town Manager)",
+   "where": "text",
+   "quote": "ms. lemeieux will be presenting her five year financial forecast and the capital plan to the finance committee this"
+  },
+  {
+   "name": "Certified letter returned unable to be delivered (dangerous dog file)",
+   "where": "text",
+   "quote": "a certified letter in the file here was sent and returned unable to be delivered"
+  },
+  {
+   "name": "Photographs of the wounded dog and of Mr. Stepton",
+   "where": "text",
+   "quote": "we have a lot of photos here, photos of the wounded dog and photos"
+  }
+ ],
+ "tags": [
+  "dangerous dog hearing",
+  "animal control",
+  "cemetery commission appointment",
+  "earth removal permits",
+  "P.J. Keating quarry",
+  "994 Northfield Road solar PILOT",
+  "Chapter 61 right of first refusal",
+  "capital plan",
+  "warrants",
+  "state funding Turkey Hill",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "reporting officer:"
+ },
+ "dropped_unquoted_by_field": {}
 }

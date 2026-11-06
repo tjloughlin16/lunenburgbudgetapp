@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-09-19",
  "docid": "5044",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Ratify the designees for the Charter Review Committee",
-   "moved_by": "P. Bertram",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram to ratify the designees for the charter review committee 2\"d: p. luck vote: all in favor"
-  },
-  {
-   "motion": "Ratify the appointment of Leeann Normandin as MART Van Driver",
-   "moved_by": "P. Bertram",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: p. bertram to ratity the appointment of leeann normandin as mart van driver 2nd, p. luck vote: all in favor"
-  },
-  {
-   "motion": "Approve Police Chief Marino's request and send a letter of support for the commercial truck traffic study and truck exclusion zones",
+   "motion": "To ratify the designees for the Charter Review Committee (Nancy Gray, Town Moderator appointment; Kathryn Adams, School Committee appointment).",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve police chief marino's request and send a letter of support for the commercial truck traffic study and truck exclusion zones 2\": p. luck vote: all in favor"
+   "quote": "motion: p. bertram to ratify the designees for the charter review committee"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To ratify the appointment of Leeann Normandin as MART Van Driver.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: p. bertram to ratity the appointment of leeann normandin as mart van driver"
+  },
+  {
+   "motion": "To approve Police Chief Marino's request and send a letter of support for the commercial truck traffic study and truck exclusion zones.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: p. bertram to approve police chief marino's request and send a letter of support for the commercial truck traffic study and truck exclusion zones"
+  },
+  {
+   "motion": "To adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -45,6 +45,546 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan (macOS Vision); minor OCR artifacts in names preserved verbatim (e.g. \\\"2\\\"d:\\\" for \\\"2nd:\\\", \\\"ratity\\\" for \\\"ratify\\\", \\\"themeeting\\\" as one word, \\\"Vote:All\\\" without space).\"",
- "cost_usd": 0.1135265
+ "note": "OCR text from a received-and-filed scan. Several names and words are OCR-garbled or misspelled in the printed minutes (e.g., Lemiuex, Bertam, Commisioner, ratity); quotes and names are kept as printed. Votes are recorded as 'All in Favor' with no numeric count. The Board signed the warrants and the Verizon amendment; these are recorded as decisions, not votes. Minutes signed by Elaine M. Peterson, Executive Assistant to the Town Manager. The Town Manager report and facilities update are long and are summarized as topics rather than one topic per subitem.",
+ "cost_usd": 0.01260962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "not present: jamie toale, chairman; damon mcquaid, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: jamie toale, chairman; damon mcquaid, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Chris Letarte",
+   "role": "",
+   "status": "present",
+   "quote": "chris letarte, 282 whalom road, has formed a group which includes his neighbors called friends of wallis"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair (Cable Access Committee)",
+   "status": "present",
+   "quote": "chair tom alonzo provided an update on their progress."
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "Superintendent (Lunenburg Water District)",
+   "status": "present",
+   "quote": "superintendent fran mcnamara noted chairman mark bursch and commisioner mark flagg were also present tonight"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Chairman (Lunenburg Water District)",
+   "status": "present",
+   "quote": "chairman mark bursch and commisioner mark flagg were also present tonight concerning questions"
+  },
+  {
+   "name": "Mark Flagg",
+   "role": "Commissioner (Lunenburg Water District)",
+   "status": "present",
+   "quote": "chairman mark bursch and commisioner mark flagg were also present tonight concerning questions"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director rodriquenz presented a fee for opening a road based on the function of the fee."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, 45 williams drive, wondered if there might be future space needs for students at turkey hill"
+  },
+  {
+   "name": "Garry Rhodes",
+   "role": "Building Commissioner",
+   "status": "not stated",
+   "quote": "building commissioner garry rhodes and land use director adam burney confirmed that we can place a technology"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "building commissioner garry rhodes and land use director adam burney confirmed that we can place a technology"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the first amendment to the Telecommunications Lease with Celleo Partnership d/b/a/Verizon Wireless, which addresses relocation of the tower site on the Middle/High School property.",
+   "quote": "the board signed the first amendment to the agreement. it addresses relocation of the tower site on the middle/high school property."
+  },
+  {
+   "decision": "The Board signed the accounts payable, construction, payroll and payroll deduction warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $1,096,586.56; a middle/high school construction warrant"
+  },
+  {
+   "decision": "Executive Session was not held this evening and was moved to October 10.",
+   "quote": "mr. ebersole announced the board would not be entering executive session this evening."
+  },
+  {
+   "decision": "Cable Access Committee chair to return to the Board when he has more to report on negotiations.",
+   "quote": "mr. alonzo stated he will come back to the board when he has more to report."
+  },
+  {
+   "decision": "Ebersole encouraged the Water District superintendent to communicate with DPW on the pavement plan.",
+   "quote": "he encouraged mcnamara to communicate with dpw."
+  },
+  {
+   "decision": "Ms. Lemieux to look into whether a letter of support can still be sent after the grant submission deadline.",
+   "quote": "ms. bertram asked if a letter of support could still be sent after the grant submission deadline. ms. lemieux will look into it."
+  },
+  {
+   "decision": "Keep the October 10 Boards & Committees Goals Workshop to start the conversation; send boards the Selectmen goals in advance, request their current goals, and ask for one designee per committee to speak at the workshop.",
+   "quote": "it was decided to keep the october 10 workshop to start the conversation and to send the boards the selectmen goals in advance"
+  },
+  {
+   "decision": "Ms. Bertram created a committee/board overview template and will email it to Ms. Lemieux.",
+   "quote": "ms. bertram created a committee/ board overview template and will email it to ms. lemieux."
+  },
+  {
+   "decision": "The Board stated it would not disapprove the Planning Board taking any legal action as necessary regarding the Nexamp special permit.",
+   "quote": "the board stated they would not disapprove the planning board taking any legal action as necessary regarding the special permit."
+  },
+  {
+   "decision": "Additional 24/7 Police Department coverage to be discussed in the next budget making process, as it would affect the current budget.",
+   "quote": "it was noted additional coverage would affect the current budget and should be discussed during the next budget making process."
+  },
+  {
+   "decision": "Ms. Lemieux will send a copy of the updated Traffic Rules and Orders to MassDOT for their files.",
+   "quote": "ms. lemieux will send a copy to massdot for their files."
+  },
+  {
+   "decision": "Board requested the fall Special Town Meeting be held Tuesday, November 28 instead of Monday, November 27; Ms. Lemieux to check availability of Town Moderator, Town Clerk and Legal Counsel.",
+   "quote": "ms. lemiuex will check with the availability of town moderator, town clerk and legal counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed four warrants: accounts payable, Middle/High School construction, payroll, and payroll deduction.",
+   "figures_as_printed": [
+    "$1,096,586.56",
+    "$110,234.99",
+    "$768,294.50",
+    "$156,734.15"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $1,096,586.56; a middle/high school construction warrant in the amount of $110,234.99; a payroll warrant in the amount of $768,294.50 and a payroll deduction warrant in the amount of $156,734.15."
+  },
+  {
+   "topic": "Cable license negotiation with Comcast",
+   "what_was_recorded": "Lunenburg seeks 5% of Comcast gross annual revenues for operations (up from 2.5%) and $240,000 in capital grants over 10 years (up from $115,000); Comcast responded with 5% and a $130,000 capital grant.",
+   "figures_as_printed": [
+    "5%",
+    "2.5%",
+    "$240,000",
+    "$115,000",
+    "$130,000"
+   ],
+   "quote": "lunenburg is seeking 5% of comcast's gross annual revenues as annual operation support for lunenburg's local access programming (up from 2.5% in the current license)"
+  },
+  {
+   "topic": "Cable subscriber rate increase",
+   "what_was_recorded": "Current operating rate is $2.60 per month per subscriber; if agreed it would rise to $5.20. Alonzo said this is the first increase in ten years.",
+   "figures_as_printed": [
+    "$2.60",
+    "$5.20"
+   ],
+   "quote": "mr. alonzo stated it is currently $2.60 per month per subscriber. if agreed upon, it would go to $5.20 per month per subscriber."
+  },
+  {
+   "topic": "Cable capital rate increase",
+   "what_was_recorded": "The capital portion would raise the subscriber rate from 29 to .62 per subscriber per month, as printed.",
+   "figures_as_printed": [
+    "29",
+    ".62"
+   ],
+   "quote": "that would raise the rate from 29 per subscriber per month to .62 per subscriber per month."
+  },
+  {
+   "topic": "Water permit and Lancaster supply",
+   "what_was_recorded": "Current permit allows 540,000 gallons per day; new permit review gives Lunenburg an average of 505,000 gallons per day; Lancaster anticipated 250,000 gallons per day, actual around 175,000; district exceeded limit by 7000 gallons per day last year.",
+   "figures_as_printed": [
+    "540,000 gallons per day",
+    "505,000 gallons per day",
+    "250,000 gallons per day",
+    "175,000",
+    "7000 gallons per day",
+    "65 gallons"
+   ],
+   "quote": "the new permit review gives lunenburg an average of 505,000 gallons per day, based on historical use from 2010-2015."
+  },
+  {
+   "topic": "Lancaster water rate",
+   "what_was_recorded": "Lancaster would pay the same rate as Lunenburg residents plus its own overhead costs; the MOU is not yet binding.",
+   "figures_as_printed": [],
+   "quote": "there is a memorandum of understanding between the water district and lancaster but there is nothing binding at this time."
+  },
+  {
+   "topic": "Pavement management override",
+   "what_was_recorded": "Ebersole noted the town approved a $5 million override for the pavement management plan.",
+   "figures_as_printed": [
+    "$5 million"
+   ],
+   "quote": "the town approved a $5 million override for the pavement management plan"
+  },
+  {
+   "topic": "Road and trench opening fees",
+   "what_was_recorded": "Current road opening fee is $100 and trench opening fee is $40.00; DPW recommended $50.00 per household per lateral cut and $100 per longitudinal cut, plus owner pays to restore the road. More work needed before finalizing.",
+   "figures_as_printed": [
+    "$100",
+    "$40.00",
+    "$50.00",
+    "$100"
+   ],
+   "quote": "currently the road opening fee is $100 and the trench opening fee is $40.00."
+  },
+  {
+   "topic": "DOER Green Communities technical assistance grant",
+   "what_was_recorded": "The Town was awarded a $5,000 DOER technical assistance grant for MRC consulting to prepare the Competitive Green Communities application.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "the town received notification last week that we were awarded a $5,000 department of energy resources"
+  },
+  {
+   "topic": "Town Hall mold abatement ductwork cleaning",
+   "what_was_recorded": "An HVAC contractor will clean air ducts; approximate cost $3,000.",
+   "figures_as_printed": [
+    "$3,000"
+   ],
+   "quote": "the approximate cost of that will be $3,000."
+  },
+  {
+   "topic": "Turkey Hill school capital costs",
+   "what_was_recorded": "Major renovations at Turkey Hill estimated at $4M; roof replacement identified for FY24 at $1M; MSBA reimbursement (about 50%) would push renovations to FY34.",
+   "figures_as_printed": [
+    "$4M",
+    "$1M",
+    "50%"
+   ],
+   "quote": "that mr. londa estimates will cost approximately $4m"
+  },
+  {
+   "topic": "Turkey Hill roof replacement",
+   "what_was_recorded": "Roof replacement identified for FY24 at $1M.",
+   "figures_as_printed": [
+    "$1M"
+   ],
+   "quote": "is identified for replacement in fy24 for $1m"
+  },
+  {
+   "topic": "District office space at Turkey Hill (2015 LPS Capital Plan)",
+   "what_was_recorded": "The 2015 LPS Capital Plan designated $15,000 to update space at Turkey Hill for district central offices.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "the 2015 lps capital plan designated $15,000 to update space at turkey hill for district central offices."
+  },
+  {
+   "topic": "Comprehensive building condition assessment cost",
+   "what_was_recorded": "There is a cost to perform the assessment; figures for the firms' proposals are awaited within two weeks. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there is a cost to perform these services and we are awaiting those figures which we should have within two weeks."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris Letarte",
+   "stated_role": "282 Whalom Road; formed Friends of Wallis Park",
+   "topic": "Wallis Park playground cleanup volunteers",
+   "quote": "chris letarte, 282 whalom road, has formed a group which includes his neighbors called friends of wallis"
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "45 Williams Drive",
+   "topic": "Turkey Hill future space needs and square footage",
+   "quote": "katey adams, 45 williams drive, wondered if there might be future space needs for students at turkey hill"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Wallis Park cleanup",
+   "resolution": "heard; Board thanked Letarte",
+   "quote": "chris letarte, 282 whalom road, has formed a group which includes his neighbors called friends of wallis",
+   "tags": [
+    "public comment",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Charter Review Committee designees",
+   "resolution": "ratified",
+   "quote": "motion: p. bertram to ratify the designees for the charter review committee",
+   "tags": [
+    "appointments",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Town Manager appointment: MART Van Driver",
+   "resolution": "approved",
+   "quote": "motion: p. bertram to ratity the appointment of leeann normandin as mart van driver",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $1,096,586.56",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Verizon telecommunications lease amendment",
+   "resolution": "signed",
+   "quote": "the board signed the first amendment to the agreement. it addresses relocation of the tower site",
+   "tags": [
+    "lease",
+    "telecom"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "postponed to October 10",
+   "quote": "mr. ebersole announced the board would not be entering executive session this evening.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Cable Access Committee: preliminary assessment of non-renewal",
+   "resolution": "update only; no vote; Alonzo to report back",
+   "quote": "chair tom alonzo provided an update on their progress.",
+   "tags": [
+    "cable",
+    "Comcast",
+    "license"
+   ]
+  },
+  {
+   "topic": "Lunenburg Water District Commissioners",
+   "resolution": "discussed; no action; Board thanked commissioners",
+   "quote": "superintendent fran mcnamara noted chairman mark bursch and commisioner mark flagg were also present tonight",
+   "tags": [
+    "water",
+    "Lancaster",
+    "permit"
+   ]
+  },
+  {
+   "topic": "Old Business: Board of Selectmen's Goals / October 10 workshop",
+   "resolution": "kept October 10 workshop; goals to be sent to boards",
+   "quote": "it was decided to keep the october 10 workshop to start the conversation",
+   "tags": [
+    "goals",
+    "workshop",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Economic Development next steps",
+   "resolution": "discussed; stakeholders suggested; no action",
+   "quote": "ms. bertram suggested setting a regular schedule and making it available to foster more participation.",
+   "tags": [
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Disturbances of Newly Paved Roads fee schedule",
+   "resolution": "no action; more work needed",
+   "quote": "dpw director rodriquenz presented a fee for opening a road based on the function of the fee.",
+   "tags": [
+    "fees",
+    "roads",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Police Chief request for letter of support: MRPC truck traffic study",
+   "resolution": "approved",
+   "quote": "motion: p. bertram to approve police chief marino's request and send a letter of support for the commercial truck traffic study and truck exclusion zones",
+   "tags": [
+    "traffic",
+    "police",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Action File Issues: Nexamp special permit; 24/7 police coverage",
+   "resolution": "no vote; coverage to budget process",
+   "quote": "ms. bertram reported planning board chair bittner was asking for input from the board regarding the nexamp proposal.",
+   "tags": [
+    "planning",
+    "Nexamp",
+    "police"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported",
+   "quote": "ms. luck reported the school committee is meeting tomorrow night.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager Report: Summer Street TIP, E-Permitting, DLTA grant, DOER grant, mold, records, painting, T-Mobile, dispatch, town counsel, special town meeting",
+   "resolution": "reported; special town meeting date discussed",
+   "quote": "summer street tip project:",
+   "tags": [
+    "town manager",
+    "grants",
+    "facilities",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Town Facilities Update",
+   "resolution": "informational; no action",
+   "quote": "town facilities update:",
+   "tags": [
+    "facilities",
+    "school buildings",
+    "space needs"
+   ]
+  },
+  {
+   "topic": "Public comment: Turkey Hill space needs",
+   "resolution": "heard; Board responded on space calculations",
+   "quote": "katey adams, 45 williams drive, wondered if there might be future space needs for students at turkey hill",
+   "tags": [
+    "public comment",
+    "space needs"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:27 p.m.",
+   "quote": "the meeting was adjourned at 8:27 p.m.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Police Chief Marino requesting support for a truck traffic survey by MRPC",
+   "where": "text",
+   "quote": "ms. lemieux directed the board to the letter from police chief marino requesting support for a truck traffic survey by mrpc"
+  },
+  {
+   "name": "Draft letter to Glenn Eaton, Executive Director at MRC",
+   "where": "text",
+   "quote": "ms. lemieux presented a draft letter to glenn eaton, executive director at mrc requesting the truck traffic study be performed."
+  },
+  {
+   "name": "Traffic Rules and Orders",
+   "where": "text",
+   "quote": "the traffic rules and orders can be posted on our website."
+  },
+  {
+   "name": "Committee/board overview template",
+   "where": "text",
+   "quote": "ms. bertram created a committee/ board overview template and will email it to ms. lemieux."
+  },
+  {
+   "name": "Tappe Space Needs Assessment",
+   "where": "text",
+   "quote": "the tappe space needs assessment has been updated and now includes all the current square footage"
+  },
+  {
+   "name": "Spreadsheet of current and projected square footage",
+   "where": "text",
+   "quote": "there is a spreadsheet that is available that identifies the current square footage and the projected square footage"
+  },
+  {
+   "name": "Preliminary figures for the Town Hall (building condition assessment), attached",
+   "where": "text",
+   "quote": "attached are some preliminary figures for the town hall."
+  },
+  {
+   "name": "Invitation to Bid (Town Hall Painting Project)",
+   "where": "text",
+   "quote": "the invitation to bid is available and will be due on wednesday, october 11"
+  },
+  {
+   "name": "Public Records Retention Schedule",
+   "where": "text",
+   "quote": "according to the public records retention schedule."
+  },
+  {
+   "name": "780 CMR Section 109.2",
+   "where": "text",
+   "quote": "780 cmr section 109.2 refers individuals to the municipality for the fees owed prior"
+  },
+  {
+   "name": "Memorandum of Understanding between the Lunenburg Water District and Lancaster",
+   "where": "text",
+   "quote": "there is a memorandum of understanding between the water district and lancaster but there is nothing binding at this"
+  },
+  {
+   "name": "Public Access Cable Committee (PACC) business plan",
+   "where": "text",
+   "quote": "we have been working with public access cable committee (pacc) on their business plan"
+  }
+ ],
+ "tags": [
+  "select board",
+  "cable access",
+  "Comcast",
+  "water district",
+  "Lancaster",
+  "town facilities",
+  "space needs",
+  "warrants",
+  "fee schedule",
+  "traffic",
+  "economic development",
+  "special town meeting",
+  "public comment",
+  "appointments",
+  "telecom lease"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

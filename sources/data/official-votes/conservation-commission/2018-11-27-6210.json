@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-11-27",
  "docid": "6210",
@@ -11,7 +11,143 @@
   "doc_url": "/docs/meetings/conservation-commission/2018-11-27-minutes-6210.pdf"
  },
  "votes": [],
- "dropped_unquoted": 0,
- "note": "No votes were taken. Minutes explicitly state: \"No votes were taken and discussion continued in the same location more as a workshop.\" The meeting was adjourned due to loss of quorum (Mr. Pease departed), not by motion.",
- "cost_usd": 0.0794475
+ "dropped_unquoted": 1,
+ "note": "No votes were recorded; the minutes state no votes were taken. The meeting was adjourned at 7:25 PM for lack of a quorum after Bob Pease left; no motion to adjourn is recorded. Initials (RB, CL, CC, BP, Cl) are interpreted as Richard Bursch, Carl Luck, Catie Childs, Bob Pease. Attendance is stated only in the call-to-order line; the header roster is not marked present or absent. No documents list heading is printed; documents are only referenced in narrative text.",
+ "cost_usd": 0.0034704199999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order by chairman bursch at 7 pm with the chairman, cl, cc and bp attending"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "call to order by chairman bursch at 7 pm with the chairman, cl, cc and bp attending"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "",
+   "status": "present",
+   "quote": "call to order by chairman bursch at 7 pm with the chairman, cl, cc and bp attending"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "mr. pease had to leave the meeting and the meeting was adjourned at 7:25 pm due to lack of a quorum."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "todd dwyer, vice-chair"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "not stated",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "not stated",
+   "quote": "kenneth jones conservation administrator"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "",
+   "status": "present",
+   "quote": "the meeting opened with joanna bilotta reviewing an email sent by cl to rb."
+  },
+  {
+   "name": "Ashley Braun",
+   "role": "607 Reservoir Road",
+   "status": "present",
+   "quote": "ashley braun 607 reservoir road was also present for the lsic and inquired about items 1 and 2 of the draft."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ashley Braun",
+   "stated_role": "607 Reservoir Road",
+   "topic": "LSIC draft items 1 and 2",
+   "quote": "ashley braun 607 reservoir road was also present for the lsic and inquired about items 1 and 2 of the draft."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "LSIC Lake Management plan workshop review",
+   "resolution": "discussed; no votes taken",
+   "quote": "workshop meeting - lsic lake management plan reviews for future filings with the conservation commission.",
+   "tags": [
+    "lake management",
+    "LSIC",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Adjournment for lack of quorum",
+   "resolution": "adjourned at 7:25 PM for lack of quorum",
+   "quote": "the meeting was adjourned at 7:25 pm due to lack of a quorum.",
+   "tags": [
+    "quorum",
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Post-adjournment LSIC discussion",
+   "resolution": "no action; continued as a workshop without votes",
+   "quote": "no votes were taken and discussion continued in the same location more as a workshop.",
+   "tags": [
+    "LSIC",
+    "workshop"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email sent by Cl to RB (LSIC input request)",
+   "where": "text",
+   "quote": "the meeting opened with joanna bilotta reviewing an email sent by cl to rb."
+  },
+  {
+   "name": "Wagner report",
+   "where": "text",
+   "quote": "rb inquired about the wagner report."
+  },
+  {
+   "name": "Annual report",
+   "where": "text",
+   "quote": "cl inquired about the annual report"
+  },
+  {
+   "name": "Draft revisions (LSIC order, red-lined items)",
+   "where": "text",
+   "quote": "rb reviewed the draft revisions and items that were red lined."
+  }
+ ],
+ "tags": [
+  "lake management",
+  "LSIC",
+  "workshop",
+  "quorum",
+  "drawdown",
+  "no votes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

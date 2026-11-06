@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-06-25",
  "docid": "1004",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Grant Mr. Bean additional time to explore septic system options for property at 27 Fire Road 15A",
+   "motion": "Grant Mr. Bean additional time to explore options for the septic system at 27 Fire Road 15A and meet with the board again on September 17, 2018 at 7:00 pm.",
    "moved_by": "Jewell",
    "seconded_by": "Mayhew",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "after much discussion and on motion by jewell and second by mayhew mr. bean was granted the additional time and will meet with the board again on september 17, 2018 at 7:00 pm."
   },
   {
-   "motion": "Grant variance for Presby septic system with 2-foot groundwater reduction at 498 Howard Street",
+   "motion": "Grant the variance for 498 Howard Street to allow a Presby system with a 2-foot groundwater reduction to keep the required grading.",
    "moved_by": "Jewell",
    "seconded_by": "Mayhew",
    "outcome": "passed",
@@ -29,6 +29,168 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0349041
+ "note": "OCR text from a scanned page set; page 3 is blank. The minutes-approved, Title 5 acknowledgment and septic-permit items are headings with no vote or detail recorded. The 27 Fire Road 15A motion gives no vote count. The name appears as both \"Loxi Calmes\" and \"Lexi Calmes\"; recorded as Loxi Calmes. \"Mr. Board\" on 27 Fire Road is likely an OCR or typing error. No dollar figures appear in the text. No public comment section is labelled.",
+ "cost_usd": 0.00490952,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ken Farbstein",
+   "role": "of the Niat Foundation",
+   "status": "present",
+   "quote": "ken farbstein, of the niat foundation, met with the board to discuss tobacco regulations."
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "School Superintendent",
+   "status": "present",
+   "quote": "also present loxi calmes, school superintendent."
+  },
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman george emond advised that the lunenburg board of health has historically not enacted regulations beyond state regulations."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Member",
+   "status": "present",
+   "quote": "member perry jewell stated that currently, there is a bill to change the smoking age to 21 statewide."
+  },
+  {
+   "name": "Mayhew",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "on motion by jewell and second by mayhew mr. bean was granted the"
+  },
+  {
+   "name": "Mr. Bean",
+   "role": "applicant for 27 Fire Road 15A (role not stated)",
+   "status": "present",
+   "quote": "mr. bean met with the board to further discuss the septic system currently on this property."
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "representing the owner of 498 Howard Street",
+   "status": "present",
+   "quote": "neil gorman met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jay Johnson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jay johnson and chang, owner of the property met with the board."
+  },
+  {
+   "name": "Chang",
+   "role": "owner of the property (The Lunch Box); referred to as Ms. Chang",
+   "status": "present",
+   "quote": "jay johnson and chang, owner of the property met with the board."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Order was sent to the owner of 64 Arbor Street regarding replacement of the septic system; the matter was not continued.",
+   "quote": "the order was sent to the owner with regard to the replacement of the septic system."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved (agenda heading)",
+   "resolution": "heading only; no vote or detail recorded",
+   "quote": "minutes approved: title 5 inspection reports acknowledged:",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection report, 943 Reservoir Road",
+   "resolution": "listed as acknowledged; no detail recorded",
+   "quote": "title 5 inspection reports acknowledged: 943 reservoir road",
+   "tags": [
+    "Title 5",
+    "septic systems"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "listed as signed; no detail recorded",
+   "quote": "septic permits signed: 498 howard street 2030 mass avenue 331 burrage street",
+   "tags": [
+    "septic systems",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Tobacco Regulations",
+   "resolution": "discussed; no action recorded",
+   "quote": "ken farbstein, of the niat foundation, met with the board to discuss tobacco regulations.",
+   "tags": [
+    "tobacco regulations",
+    "youth smoking",
+    "vaping"
+   ]
+  },
+  {
+   "topic": "64 Arbor Street septic order",
+   "resolution": "order sent to owner; matter not continued",
+   "quote": "the order was sent to the owner with regard to the replacement of the septic system.",
+   "tags": [
+    "septic systems",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "27 Fire Road 15A septic system",
+   "resolution": "additional time granted; to meet again September 17, 2018",
+   "quote": "mr. bean met with the board to further discuss the septic system currently on this property.",
+   "tags": [
+    "septic systems"
+   ]
+  },
+  {
+   "topic": "498 Howard Street variance",
+   "resolution": "variance granted",
+   "quote": "neil gorman met with the board on behalf of the owner.",
+   "tags": [
+    "variance",
+    "septic systems",
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "The Lunch Box (food service permit and sale of business)",
+   "resolution": "discussed; no action recorded",
+   "quote": "ms. chang would like to sell the business and retire.",
+   "tags": [
+    "food service permit",
+    "sale of business"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letters from Fitchburg and Leominster Board of Health in support of enacting regulations controlling the sale and pricing of flavored cigars and e-cigarettes",
+   "where": "list",
+   "quote": "mr. farbstein provided letters from fitchburg and leominster board of health in support of enacting regulations controlling the sale and pricing of flavored cigars and e-cigarettes."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "tobacco regulations",
+  "septic systems",
+  "Title 5",
+  "variance",
+  "food service permit",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. farbstein provided letters from fitchburg and leominster board of health"
+ },
+ "dropped_unquoted_by_field": {}
 }

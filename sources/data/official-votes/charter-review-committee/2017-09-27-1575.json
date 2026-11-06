@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2017-09-27",
  "docid": "1575",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 06 September 2017",
+   "motion": "Approve minutes from 06 September 2017.",
    "moved_by": "J. Toale",
    "seconded_by": "B. Ebersole",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion, j. toale to accepé minutes from 06 september 2017; second by b. ebersole; all aye."
   },
   {
-   "motion": "Establish an operating procedure of a supermajority (six out of nine members) as a voting requirement for major items",
+   "motion": "Adopt an operating procedure requiring a supermajority (six out of nine members) as the voting requirement for major items.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "S. Archambault",
    "outcome": "passed",
@@ -28,15 +28,227 @@
    "quote": "motion, m. jeffreys, to have an operating procedure of a supermajority (six out of nine members) as a voting requirement for major items; second, s. archambault; all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "S. Archambault",
    "seconded_by": "M. Erickson",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion, s. archambault to adjourn; second, m. erickson; all aye."
+   "quote": "motion, s. archambault to adjourn; second, m. erickson; all aye. 8:25pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision. Three votes recorded, all unanimous.",
- "cost_usd": 0.0833785
+ "note": "Text is macOS Vision OCR with spelling and spacing errors (e.g., 'accepé', 'Committec', 'Accouniant', 'I.exington'); quotes reproduce the OCR text as printed. Page 3 begins mid-list, and the Assign liaisons list (g) is partly on page 2 only. The minutes do not record whether the meeting was at Ritter Memorial Building or Town Hall; the header says Ritter and the schedule says Town Hall. No public comment, announcements, or dollar figures are recorded. The minutes end without a clerk or signature line.",
+ "cost_usd": 0.0047807200000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jamie toale (selectmen), michael-ray jeffreys (planning board), katie adams"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jamie toale (selectmen), michael-ray jeffreys (planning board), katie adams"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jamie toale (selectmen), michael-ray jeffreys (planning board), katie adams"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jamie toale (selectmen), michael-ray jeffreys (planning board), katie adams"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "michael mackin (school committee), terry burchfield (finance committee), mark erickson"
+  },
+  {
+   "name": "Terry Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "michael mackin (school committee), terry burchfield (finance committee), mark erickson"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terry burchfield (finance committee), mark erickson"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "steve archambault (community representative, nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "steve archambault (community representative, nancy gray (community representative)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Each committee member will reach out to the board or committee they represent before the next meeting.",
+   "quote": "each member will reach out to the board or committee they represent before the next meeting."
+  },
+  {
+   "decision": "Committee liaisons were assigned to unrepresented boards and committees (Burchfield, Archambault, Erickson, Mackin, Jeffreys, Gray, Adams, Toale).",
+   "quote": "g. assign liaisons for unrepresented boards"
+  },
+  {
+   "decision": "A small group will look into other towns' experience with forms of government and how towns get more residents to attend Town Meetings; B. Ebersole will contact Lexington, and M. Erickson, T. Burchfield and K. Adams will research other communities.",
+   "quote": "b. ebersole will contact i.exington; m. erickson; t. burchfield, and k. adams will research other communities."
+  },
+  {
+   "decision": "M. Mackin will provide the press release to the IT department.",
+   "quote": "m. mackin will provide the press relcase to the it department."
+  },
+  {
+   "decision": "M. Jeffreys will represent the Charter Review Committee at the town workshop in October.",
+   "quote": "m. jeffreys will represent the charter review committee at the town workshop in october."
+  },
+  {
+   "decision": "Invitations are to be sent to the Town Accountant and Town Manager to attend a future Charter Review Committee meeting.",
+   "quote": "t. burchfield and b. ebersole noted that we should send invitations to town accountant and town manager to come to the charter review committee meeting in the near future."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (06 September 2017)",
+   "resolution": "approved",
+   "quote": "motion, j. toale to accepé minutes from 06 september 2017; second by b. ebersole; all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Supermajority voting requirement for major changes",
+   "resolution": "approved",
+   "quote": "motion, m. jeffreys, to have an operating procedure of a supermajority (six out of nine members) as a voting requirement",
+   "tags": [
+    "voting",
+    "supermajority",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Proposed 4-phase committee approach: community engagement and research",
+   "resolution": "members to engage unrepresented boards before next meeting",
+   "quote": "each member will reach out to the board or committee they represent before the next meeting.",
+   "tags": [
+    "community engagement",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Areas of concern and interest with the charter",
+   "resolution": "discussed; Town Clerk, form of government and charter format to be looked into",
+   "quote": "m. erickson noted that the committee should look into the town clerk position and consider whether it",
+   "tags": [
+    "town clerk",
+    "form of government",
+    "charter format"
+   ]
+  },
+  {
+   "topic": "Identify areas of consensus",
+   "resolution": "no discussion",
+   "quote": "f. identify areas of consensus",
+   "tags": [
+    "consensus"
+   ]
+  },
+  {
+   "topic": "Assign liaisons for unrepresented boards",
+   "resolution": "liaisons assigned",
+   "quote": "g. assign liaisons for unrepresented boards",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Discuss community engagement process and press release",
+   "resolution": "draft press release to go to IT; discussed",
+   "quote": "m. mackin presented draft language for a press release about the charter review committee",
+   "tags": [
+    "press release",
+    "website",
+    "community engagement"
+   ]
+  },
+  {
+   "topic": "Small group research on other towns and forms of government",
+   "resolution": "research assigned",
+   "quote": "b. small group to look into other towns and their experience with different forms of government and how towns get more residents to attend town meetings.",
+   "tags": [
+    "town meeting",
+    "forms of government",
+    "research"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "invitations and workshop representation assigned",
+   "quote": "t. burchfield and b. ebersole noted that we should send invitations to town accountant and town manager",
+   "tags": [
+    "invitations",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "meetings are held at town hall, 7:00 pm, on the second and fourth wednesdays of the month, unless",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft press release about the Charter Review Committee",
+   "where": "text",
+   "quote": "m. mackin presented draft language for a press release about the charter review committee that directs"
+  },
+  {
+   "name": "Town charter (link to MA Commonwealth website)",
+   "where": "text",
+   "quote": "the link for the charter is to the ma commonwealth website, where it is officially located."
+  },
+  {
+   "name": "Codified charter and bylaws (company-codified, to be uploaded to new website)",
+   "where": "text",
+   "quote": "the bos hired a company to codify the charter and bylaws and that it will be uploaded to the new website"
+  }
+ ],
+ "tags": [
+  "charter review",
+  "supermajority voting",
+  "community engagement",
+  "liaisons",
+  "town clerk",
+  "form of government",
+  "town meeting",
+  "press release",
+  "website"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-10-30",
  "docid": "5600",
@@ -12,30 +12,277 @@
  },
  "votes": [
   {
-   "motion": "Assess privilege fee for 654 Mass Ave for $17,327.20",
+   "motion": "To access the privilege fee for 654 Mass Ave for $17,327.20.",
    "moved_by": "Carl L.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion: carl l. to access the privilege fee for 654 mass ave for $17,327.20. second: joe a. vote: unanimous"
   },
   {
-   "motion": "Accept the minutes of 10/9/18",
+   "motion": "To accept the minutes of 10/9/18.",
    "moved_by": "John R.",
    "outcome": "not stated",
    "procedural": true,
    "quote": "motion: john r. to accept the minutes of 10/9/18."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn at 7:21 pm.",
    "moved_by": "John R.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion: john r. to adjourn: 7:21 pm. second: joe a. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text (macOS Vision). Formatting ambiguity: the end of the document shows duplicate second/vote notation with both \"Joe A.\" and \"Carl L.\" listed separately with \"Vote: Unanimous\" for the same adjourn motion; treated as one motion seconded by Joe A. The minutes acceptance motion shows no recorded second or vote outcome.",
- "cost_usd": 0.1183435
+ "note": "OCR text (macOS Vision) with garbled passages (e.g., \"od staponminis, Which\", \"sumitted\", \"l/l\" and \"I/i\" for I/I). The text begins mid-sentence on page 1, so the opening header, date line and any attendance roll are missing. No attendance list is printed; attendance is inferred from members speaking or moving. The 10/9/18 minutes motion has no printed second or vote result. A stray \"Second: Carl L. Vote: Unanimous\" follows the adjournment with no printed motion, so it is not recorded as a vote. Public comment is recorded as none twice.",
+ "cost_usd": 0.005855819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe A.",
+   "role": "not printed",
+   "status": "present",
+   "quote": "joe read the proposed single meter policy, that the commission will only"
+  },
+  {
+   "name": "John R.",
+   "role": "not printed",
+   "status": "present",
+   "quote": "john gave a definition of inflow/infiltration and read the changes"
+  },
+  {
+   "name": "Barb",
+   "role": "not printed",
+   "status": "present",
+   "quote": "barb added for the tv audience that anyone can view these policy"
+  },
+  {
+   "name": "Carl L.",
+   "role": "not printed",
+   "status": "present",
+   "quote": "carl talked to town counsel who said that the scope draft could be posted"
+  },
+  {
+   "name": "Heather",
+   "role": "not printed",
+   "status": "present",
+   "quote": "heather made suggestions, including concerns with calling it a maintenance plan versus capital plan."
+  },
+  {
+   "name": "lane L. Calen",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "respectively sumitted, lane l. calen sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission will put the discussion of the I/i Evaluation RFP scope changes on the next agenda, when all members are present for a consensus.",
+   "quote": "commission decided to put the discussion of this issue on the next agenda, when all members are present for a consensus."
+  },
+  {
+   "decision": "The Commission will review the revised Maintenance Plan proposal verbiage at the next meeting, then send it out to 9 vendors.",
+   "quote": "commission will review the revised proposal verbiage at the next meeting and will then send it out to 9 vendors."
+  },
+  {
+   "decision": "The next Sewer Commission meeting will be 11/6/18, because Town Meeting is on the regular meeting night.",
+   "quote": "due to the town meeting being held on the regular meeting night, the next sewer commission meeting will be 11/6/18."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Privilege fee assessment, 654 Mass Ave",
+   "what_was_recorded": "The Commission voted to access a privilege fee for 654 Mass Ave in the stated amount.",
+   "figures_as_printed": [
+    "$17,327.20"
+   ],
+   "quote": "to access the privilege fee for 654 mass ave for $17,327.20."
+  },
+  {
+   "topic": "Meter reading fee for additional readings",
+   "what_was_recorded": "Additional readings caused by mis-reads or meter malfunction will incur a fee; credits are given in July and October billings.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "any additional readings caused by mis-reads or meter malfunction will incur a $25"
+  },
+  {
+   "topic": "Special Town Meeting warrant article on Reserve Capacity funds",
+   "what_was_recorded": "One warrant article concerns transferring Reserve Capacity funds collected to the Stabilization Fund; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "one warrant article regarding the transfer of the reserve capacity funds collected to the stabilization fund"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Policy changes read at public hearing (meter credits, $25 fee, meter upgrade by June 2019)",
+   "resolution": "discussed; no vote recorded",
+   "quote": "credits will be given in the july and october billings. any additional readings caused by mis-reads or meter malfunction will incur a $25",
+   "tags": [
+    "water meters",
+    "policy",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Single meter policy",
+   "resolution": "read; no vote recorded",
+   "quote": "joe read the proposed single meter policy, that the commission will only",
+   "tags": [
+    "water meters",
+    "sub-meters",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Connection Charge Policy with Inflow/Infiltration requirements",
+   "resolution": "read; no vote recorded",
+   "quote": "connection charge policy- with inflow/infiltration (i/i) requirements - john gave a definition",
+   "tags": [
+    "connection charge",
+    "inflow infiltration",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Grease Trap Rules & Regulations",
+   "resolution": "read; next public hearing November 27",
+   "quote": "grease trap rules & regulations-various clarifications including fee calculations and timing of assessments",
+   "tags": [
+    "grease trap",
+    "food establishments",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "announcements - none",
+   "tags": []
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting 11/13/18 warrant article",
+   "resolution": "reported; no vote recorded",
+   "quote": "special town meeting 11/13/18 warrant article - barb reported that there is one warrant article",
+   "tags": [
+    "town meeting",
+    "reserve capacity",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Inflow/Infiltration Evaluation RFP, proposed scope changes",
+   "resolution": "deferred to next agenda",
+   "quote": "inflow/infiltration (i/i) evaluation rfp -proposed changes to scope - commission will discuss carl's proposed changes",
+   "tags": [
+    "inflow infiltration",
+    "RFP",
+    "scope of work"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan proposal and vendor list",
+   "resolution": "revised wording to be reviewed next meeting, then sent to 9 vendors",
+   "quote": "maintenance plan proposal and vendor list - barb had forwarded carl's proposed maintenance plan proposal",
+   "tags": [
+    "maintenance plan",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Privilege fee assessment, 654 Mass Ave",
+   "resolution": "approved",
+   "quote": "privilege fee assessment - 654 mass ave.",
+   "tags": [
+    "privilege fee",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/9/18",
+   "resolution": "motion made to accept; result not printed",
+   "quote": "minutes 10/9/18 motion: john r. to accept the minutes of 10/9/18.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "noted; no action",
+   "quote": "member agenda inputs for future meetings - proposed changes to the l/l scope, maintenance plan",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:21 pm",
+   "quote": "to adjourn: 7:21 pm. second: joe a. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Single meter policy (proposed), new policy on restriction of sub-meters",
+   "where": "text",
+   "quote": "single meter policy-new policy on restriction of sub-meters - joe read the proposed single meter policy"
+  },
+  {
+   "name": "Connection Charge Policy with Inflow/Infiltration (I/I) requirements",
+   "where": "text",
+   "quote": "connection charge policy- with inflow/infiltration (i/i) requirements - john gave a definition"
+  },
+  {
+   "name": "Grease Trap Rules & Regulations",
+   "where": "text",
+   "quote": "grease trap rules & regulations-various clarifications including fee calculations and timing of assessments"
+  },
+  {
+   "name": "Special Town Meeting 11/13/18 warrant article",
+   "where": "text",
+   "quote": "special town meeting 11/13/18 warrant article - barb reported that there is one warrant article"
+  },
+  {
+   "name": "Inflow/Infiltration (I/i) Evaluation RFP, scope of work",
+   "where": "text",
+   "quote": "inflow/infiltration (i/i) evaluation rfp -proposed changes to scope"
+  },
+  {
+   "name": "Maintenance Plan proposal and vendor list",
+   "where": "text",
+   "quote": "maintenance plan proposal and vendor list - barb had forwarded carl's proposed maintenance plan proposal"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "water meters",
+  "policy changes",
+  "inflow and infiltration",
+  "grease trap",
+  "connection charge",
+  "maintenance plan",
+  "privilege fee",
+  "town meeting warrant",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

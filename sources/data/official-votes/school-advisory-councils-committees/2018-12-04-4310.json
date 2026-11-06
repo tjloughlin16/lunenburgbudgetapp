@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "school-advisory-councils-committees",
  "meeting_date": "2018-12-04",
  "docid": "4310",
@@ -12,15 +12,216 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes of 12/4/18 as circulated",
+   "motion": "Approve the minutes of 12/4/18 as circulated.",
    "moved_by": "Jim LaVeck",
    "seconded_by": "Jean Proctor",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: to approve the minutes of 12/4/18 as circulated ● motion by: jim laveck ● seconded by: jean proctor, the motion carried"
+   "quote": "seconded by: jean proctor, the motion carried"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. Note: The minutes contain a statement that \"AAC meeting could conduct meeting but could not vote\" due to low attendance, yet section 2 records a motion that \"carried.\" This is contradictory; however, the minutes explicitly state the motion carried, so it is recorded as passed.",
- "cost_usd": 0.09963449999999999
+ "note": "Plain extracted text, not a scan. The minutes say the committee could not vote due to low attendance, yet they also print 'the motion carried' on approving the minutes; recorded as passed and flagged here. The approved minutes are dated 12/4/18, the same as this meeting date. The next meeting is printed as 'Tuesday, January 15th, 2018' (year as printed). No adjournment motion is recorded; 'ADJOURNMENT 7:54pm' is printed. The present list gives 'James Bunnell' for Jim Bunnell and 'MJ Davis' for Mary Jean Davis. Board name in the request is School Advisory Councils Committees; the minutes title is Athletic Advisory Council.",
+ "cost_usd": 0.00564542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jim LaVeck",
+   "status": "present",
+   "quote": "jim laveck: lunenburg school committee, member, lhs aac chair"
+  },
+  {
+   "name": "Jim Bunnell",
+   "status": "present",
+   "quote": "jim bunnell: lunenburg schools athletic director, lhs aac vice-chair"
+  },
+  {
+   "name": "Mary Jean Davis",
+   "status": "present",
+   "quote": "mary jean davis: secretary"
+  },
+  {
+   "name": "Nicole Bourdelais",
+   "status": "present",
+   "quote": "present: nicole bourdelais, jean proctor, lynn walsh, jim laveck, mj davis, kim mannone, kim hedlund, james bunnell"
+  },
+  {
+   "name": "Jean Proctor",
+   "status": "present",
+   "quote": "present: nicole bourdelais, jean proctor, lynn walsh, jim laveck, mj davis, kim mannone, kim hedlund, james bunnell"
+  },
+  {
+   "name": "Lynn Walsh",
+   "status": "present",
+   "quote": "present: nicole bourdelais, jean proctor, lynn walsh, jim laveck, mj davis, kim mannone, kim hedlund, james bunnell"
+  },
+  {
+   "name": "Kim Mannone",
+   "status": "present",
+   "quote": "present: nicole bourdelais, jean proctor, lynn walsh, jim laveck, mj davis, kim mannone, kim hedlund, james bunnell"
+  },
+  {
+   "name": "Kim Hedlund",
+   "status": "present",
+   "quote": "present: nicole bourdelais, jean proctor, lynn walsh, jim laveck, mj davis, kim mannone, kim hedlund, james bunnell"
+  },
+  {
+   "name": "Dean DeFrancesco",
+   "status": "absent",
+   "quote": "absent: dean defrancesco, tammi york, jo weigold karma tousignant, eric short, terry montemurro"
+  },
+  {
+   "name": "Tammi York",
+   "status": "absent",
+   "quote": "absent: dean defrancesco, tammi york, jo weigold karma tousignant, eric short, terry montemurro"
+  },
+  {
+   "name": "Jo Weigold",
+   "status": "absent",
+   "quote": "absent: dean defrancesco, tammi york, jo weigold karma tousignant, eric short, terry montemurro"
+  },
+  {
+   "name": "Karma Tousignant",
+   "status": "absent",
+   "quote": "absent: dean defrancesco, tammi york, jo weigold karma tousignant, eric short, terry montemurro"
+  },
+  {
+   "name": "Eric Short",
+   "status": "absent",
+   "quote": "absent: dean defrancesco, tammi york, jo weigold karma tousignant, eric short, terry montemurro"
+  },
+  {
+   "name": "Terry Montemurro",
+   "status": "absent",
+   "quote": "absent: dean defrancesco, tammi york, jo weigold karma tousignant, eric short, terry montemurro"
+  },
+  {
+   "name": "Greg Dupuis",
+   "status": "present",
+   "quote": "guest attending: greg dupuis, president of the hockey booster"
+  },
+  {
+   "name": "Declan Fitzpatrick",
+   "status": "present",
+   "quote": "guest lhs student: declan fitzpatrick"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Scheduling activities for Winter break set as the topic for the next meeting.",
+   "quote": "topic for next meeting: scheduling activities for winter break"
+  },
+  {
+   "decision": "Basketball concession to consist of pre-packaged foods or donated restaurant food.",
+   "quote": "basketball concession will consist of pre-packaged foods or donated restaurant food"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fundraising",
+   "what_was_recorded": "Fundraising was recorded as the main topic carried over from last year; no dollar figures are printed.",
+   "quote": "fundraising is the main topic as continued from last year",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Booster club consolidation fundraising",
+   "what_was_recorded": "Future discussion that fundraising monies from consolidated booster clubs would be shared toward one unified purpose; no dollar figures are printed.",
+   "quote": "fundraising monies will be shared & will go towards one unified purpose",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and opening remarks",
+   "resolution": "no action; committee could meet but not vote due to low attendance",
+   "quote": "due to low attendance, aac meeting could conduct meeting but could not vote.",
+   "tags": [
+    "attendance",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of 12/4/18",
+   "resolution": "approved",
+   "quote": "seconded by: jean proctor, the motion carried",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business from previous meeting: AAC purpose and fundraising",
+   "resolution": "no action; fundraising continued from last year",
+   "quote": "fundraising is the main topic as continued from last year",
+   "tags": [
+    "fundraising",
+    "purpose"
+   ]
+  },
+  {
+   "topic": "Item 1: Holding games and practices during school vacations",
+   "resolution": "no action; research other districts' policies and coach input needed",
+   "quote": "regardless of which vacation, (xmas, spring vaca), - the policy should be consistent and added to the lhs handbook.",
+   "tags": [
+    "vacation policy",
+    "athletics",
+    "handbook"
+   ]
+  },
+  {
+   "topic": "Item 2: Student participation AAC representative",
+   "resolution": "discussed; no action",
+   "quote": "how do we continue to entice different student athletes each month?",
+   "tags": [
+    "students"
+   ]
+  },
+  {
+   "topic": "Item 3: Concession stand",
+   "resolution": "continued; awaiting Nashoba Board of Health",
+   "quote": "nadine/ john londa waiting to hear from the nashoba board of health to help us",
+   "tags": [
+    "concessions",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Item 4: Service opportunities for athletes",
+   "resolution": "discussed; no action",
+   "quote": "build a bed: proposed by jean proctor and lynn walsh.",
+   "tags": [
+    "volunteering",
+    "service"
+   ]
+  },
+  {
+   "topic": "Future topics",
+   "resolution": "listed for future meetings; no action",
+   "quote": "consolidating blue knight logos",
+   "tags": [
+    "jersey numbers",
+    "logos",
+    "booster clubs"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "athletics",
+  "school athletics advisory council",
+  "Lunenburg High School",
+  "booster clubs",
+  "fundraising",
+  "concessions",
+  "volunteering",
+  "school vacation policy",
+  "low attendance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

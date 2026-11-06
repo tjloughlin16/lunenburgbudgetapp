@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-11-29",
  "docid": "1388",
@@ -12,31 +12,291 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of the October 11, 2018 meeting as written",
+   "motion": "Approve the minutes of the October 11, 2018 meeting as written.",
    "moved_by": "Com. Mendoza",
    "seconded_by": "Com. Tyler",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "motion made by com. mendoza to accept the minutes as written, seconded by com. tyler , accepted unanimously"
+   "quote": "motion made by com. mendoza to accept the minutes as written, seconded by com. tyler , accepted unanimously."
   },
   {
-   "motion": "Accept the low bid of $6,146.00 from R.A. Powell Construction for excavation work and the low bid from P.D. Boucher for $7,625.00 for the foundation",
+   "motion": "Accept the low bid of $6 ,146.00 from R.A. Powell Construction for the foundation excavation work, and the low bid from P .D. Boucher for the foundation itself at $7,625.00.",
    "moved_by": "Com. Mendoza",
    "seconded_by": "Com. Tyler",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion was made by com. mendoza to accept the low bid of $6 ,146.00 from r.a. powell construction for the excavation work needed for the foundation, and a low bid from p .d. boucher for the foundation itself for $7,625.00, seconded by com. tyler. with no further discussion the motion passed unanimously"
+   "quote": "a motion was made by com. mendoza to accept the low bid of $6 ,146.00 from r.a. powell construction"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Com. Mendoza",
    "seconded_by": "Com. Tyler",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made by com. mendoza to adjourn, seconded by com. tyler , with no further discussion meeting was adjourned at 9:10 pm"
+   "quote": "a motion was made by com. mendoza to adjourn, seconded by com. tyler , with no further discussion meeting was adjourned at 9:10 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0897465
+ "note": "Chairman May was absent and the Clerk presided. Minutes record three motions, all with unanimous or stated passage; no roll-call counts printed. Town Manager is not named in the minutes.",
+ "cost_usd": 0.00516702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "meeting was called to order at 7:05 pm by clerk, william tyler ."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "other members there were vice chair lorraine mendoza."
+  },
+  {
+   "name": "May",
+   "role": "Chairman",
+   "status": "absent",
+   "quote": "chairman may was unable to attend due to illness."
+  },
+  {
+   "name": "Supt. Holman",
+   "role": "Supt.",
+   "status": "present",
+   "quote": "discussion with supt. holman concerning the beginning of construction on the new garage on holman st."
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "the town manager informed com. tyler that the new facebook page was up and running."
+  },
+  {
+   "name": "Sandy Chester",
+   "role": "not stated",
+   "status": "present",
+   "quote": "sandy chester inquired about the wreaths over america"
+  },
+  {
+   "name": "George Reichard",
+   "role": "donor",
+   "status": "not stated",
+   "quote": "a letter was read into the minutes, from george reichard who made a $2,500.00 donation to the commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Supt. Holman will obtain quotes for the cost of rules and regulations signs for both cemeteries.",
+   "quote": "supt. holman will get some quotes for the cost."
+  },
+  {
+   "decision": "The $2,500.00 donation from George Reichard will be placed in a special account to be drawn on for the signs and granite posts.",
+   "quote": "the $2,500.00 will be put in a special account so that we may draw from it to have the signs and granite posts purchased."
+  },
+  {
+   "decision": "The Commission agreed to go ahead with the foundation portion of the new garage on Holman St. rather than wait until spring.",
+   "quote": "after much discussion it was decided to go ahead with the foundation portion of the building."
+  },
+  {
+   "decision": "Placing a newspaper advertisement for the Columbarium in the Fitchburg Sentinel was deferred for the time being.",
+   "quote": "there was discussion on placing an add in the fitchburg sentinel for the columbarium. it was decided to wait for the time being."
+  },
+  {
+   "decision": "Participation in Wreaths Over America was determined not feasible for the Commission.",
+   "quote": "with 1,400 veterans it isn't feasible for us to participate."
+  },
+  {
+   "decision": "Discussion of cemetery rates was passed over until a later time.",
+   "quote": "discussion on cemetery rates were passed over until a later time."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "George Reichard donation for signs",
+   "what_was_recorded": "A $2,500.00 donation was received for signs listing the rules and regulations for both cemeteries, to be held in a special account.",
+   "figures_as_printed": [
+    "$2,500.00"
+   ],
+   "quote": "a letter was read into the minutes, from george reichard who made a $2,500.00 donation to the commission"
+  },
+  {
+   "topic": "Vouchers signed",
+   "what_was_recorded": "The Commissioner signed vouchers to Casella Waste Systems, Powell's, Triumph Modular and Lunenburg Ledger, totaling $1,967.87.",
+   "figures_as_printed": [
+    "$1,967.87"
+   ],
+   "quote": "lunenburg ledger (add for columbarium), totaling $1,967.87."
+  },
+  {
+   "topic": "Garage foundation bids",
+   "what_was_recorded": "The low bid of $6,146.00 from R.A. Powell Construction for excavation and the low bid of $7,625.00 from P.D. Boucher for the foundation were accepted.",
+   "figures_as_printed": [
+    "$6 ,146.00",
+    "$7,625.00"
+   ],
+   "quote": "a motion was made by com. mendoza to accept the low bid of $6 ,146.00 from r.a. powell construction"
+  },
+  {
+   "topic": "Columbarium newspaper advertisement price",
+   "what_was_recorded": "The Fitchburg Sentinel advertisement for the Columbarium would cost $50.00 per insertion; placement was deferred.",
+   "figures_as_printed": [
+    "$50.00"
+   ],
+   "quote": "the price will be $50.00 an insertion."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sandy Chester",
+   "stated_role": "",
+   "topic": "Wreaths Over America",
+   "quote": "sandy chester inquired about the wreaths over america"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of October 11, 2018 meeting",
+   "resolution": "approved as written",
+   "quote": "motion made by com. mendoza to accept the minutes as written, seconded by com. tyler , accepted unanimously.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "George Reichard donation for rules signs",
+   "resolution": "received; quotes to be obtained; funds set aside in special account",
+   "quote": "a letter was read into the minutes, from george reichard who made a $2,500.00 donation to the commission",
+   "tags": [
+    "donation",
+    "signs",
+    "rules and regulations"
+   ]
+  },
+  {
+   "topic": "New Facebook page",
+   "resolution": "no action; Town Manager to post photos",
+   "quote": "the town manager informed com. tyler that the new facebook page was up and running.",
+   "tags": [
+    "social media",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "ADA grant application for North Cemetery",
+   "resolution": "submitted; decision expected in December",
+   "quote": "the grant application for the ada handicap ramp, railings and parking lot at north cemetery was submitted to the town manager.",
+   "tags": [
+    "grant",
+    "ADA",
+    "North Cemetery"
+   ]
+  },
+  {
+   "topic": "Cemetery rates",
+   "resolution": "passed over until a later time",
+   "quote": "discussion on cemetery rates were passed over until a later time.",
+   "tags": [
+    "rates"
+   ]
+  },
+  {
+   "topic": "Vouchers signed",
+   "resolution": "signed by the Commissioner",
+   "quote": "the commissioner signed vouchers for casella waste systems- (dumpster), powell's (loam and seed)",
+   "tags": [
+    "vouchers",
+    "payments"
+   ]
+  },
+  {
+   "topic": "New garage construction on Holman St.",
+   "resolution": "approved foundation work by low bids; proceeding now",
+   "quote": "a motion was made by com. mendoza to accept the low bid of $6 ,146.00 from r.a. powell construction",
+   "tags": [
+    "garage",
+    "construction",
+    "bids"
+   ]
+  },
+  {
+   "topic": "Fall clean-up at both cemeteries",
+   "resolution": "no action; progress reported, behind due to early snow",
+   "quote": "discussion on the progress of the fall clean-up at both cemeteries with supt. holman.",
+   "tags": [
+    "clean-up",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Columbarium newspaper advertisement",
+   "resolution": "deferred",
+   "quote": "it was decided to wait for the time being.",
+   "tags": [
+    "columbarium",
+    "advertising"
+   ]
+  },
+  {
+   "topic": "Charter Review Committee",
+   "resolution": "no action; public hearing scheduled January 9, 2019",
+   "quote": "there is a public hearing on the proposed charter changes on jan. 9, 2019.",
+   "tags": [
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Wreaths Over America inquiry",
+   "resolution": "not feasible to participate",
+   "quote": "with 1,400 veterans it isn't feasible for us to participate.",
+   "tags": [
+    "veterans",
+    "wreaths"
+   ]
+  },
+  {
+   "topic": "Adjournment and next meeting",
+   "resolution": "adjourned at 9:10 pm; next meeting January 10, 2019",
+   "quote": "a motion was made by com. mendoza to adjourn, seconded by com. tyler , with no further discussion meeting was adjourned at 9:10 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from George Reichard (donation for signs)",
+   "where": "text",
+   "quote": "a letter was read into the minutes, from george reichard who made a $2,500.00 donation to the commission"
+  },
+  {
+   "name": "Grant application for ADA handicap ramp, railings and parking lot at North Cemetery",
+   "where": "text",
+   "quote": "the grant application for the ada handicap ramp, railings and parking lot at north cemetery was submitted to the town manager."
+  },
+  {
+   "name": "Building permit for new garage",
+   "where": "text",
+   "quote": "the building permit is active until april, but the commission felt that we should not wait until spring"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "donation",
+  "bids",
+  "garage construction",
+  "ADA grant",
+  "signs",
+  "columbarium",
+  "charter review",
+  "vouchers",
+  "Chairman absent"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

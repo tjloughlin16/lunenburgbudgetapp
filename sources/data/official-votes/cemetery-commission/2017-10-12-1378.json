@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2017-10-12",
  "docid": "1378",
@@ -12,41 +12,264 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the September 7 meeting",
+   "motion": "Accept the minutes of the September 7 meeting.",
    "moved_by": "Commissioner Mendoza",
    "seconded_by": "Commissioner May",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "upon a motion by commissioner mendoza to accept the minutes and a second by commissioner may, and with no further discussion, the motion passed unanimously"
+   "quote": "upon a motion by commissioner mendoza to accept the minutes and a second by commissioner may, and with no further discussion, the motion passed unanimously."
   },
   {
-   "motion": "Set the Columbarium Niche Wall rate at $1200.00 per niche, holding 2 cremations",
+   "motion": "Set the Columbarium Niche Wall rate at $1200.00 per niche (holds 2 cremations, includes engraving), with only Leominster Monument doing the engraving.",
    "moved_by": "Chairman May",
    "seconded_by": "Commissioner Tyler",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion by chairman may was made to set the rate of $1200.00 per niche, which would hold 2 cremations, and would also include the engraving. also in the motion was to have onl",
-   "quote_taken_from_text": true
+   "quote": "a motion by chairman may was made to set the rate of $1200.00 per niche, which would hold 2 cremations, and would also include the engraving."
   },
   {
-   "motion": "Pay for the new Ferris mower",
+   "motion": "Pay for the new Ferris mower, with the understanding that a letter stating the mower is Cemetery Dept property will follow.",
    "moved_by": "Commissioner May",
    "seconded_by": "Commissioner Tyler",
-   "outcome": "approved unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made by commissioner may to pay for the new mower, understanding that a letter would be forthcoming. the motion was seconded by commissioner tyler and w",
-   "quote_taken_from_text": true
+   "quote": "after some discussion a motion was made by commissioner may to pay for the new mower, understanding that a letter would be forthcoming."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Commissioner Tyler",
    "seconded_by": "Commissioner May",
-   "outcome": "adjourned",
+   "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made by commissioner tyler to adjourn, seconded by commissioner may, with no further discussion, the meeting was adjourned at 9:11 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned document; contains OCR errors in proper names (e.g., \"Lance May\" for Lance Alay, \"William Tyler\" for William Wyler, \"Coon\" for \"Town\"). All four votes are clearly recorded with motions, movers, seconders, and outcomes.",
- "cost_usd": 0.1657095
+ "note": "OCR text from a scanned page. Several OCR errors: header reads \"Coon of Zunenburg\", \"Lance D. Alay\", and \"William Wyler, Clerl\"; the body and signature read Lance May and William Tyler, which are used here. Dates read \"October 12**\" and \"October 10*\". \"Sheperd's\" is printed as shown. Vote outcomes are recorded as printed; the minutes give no vote count, only \"unanimously\" or \"approved\". The invoice approval is recorded without a stated motion, so it is listed as a decision, not a vote. The adjournment outcome is inferred from \"the meeting was adjourned\". Minutes were filed Nov 09 2017.",
+ "cost_usd": 0.00509472,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Commissioner; Clerk (signed minutes)",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Supt.",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager (invited guest)",
+   "status": "present",
+   "quote": "town manager heather lemieux was present as an invited guest and agreed to draft a letter"
+  },
+  {
+   "name": "Steven Archambault",
+   "role": "Charter Review Committee",
+   "status": "present",
+   "quote": "during public comment, steven archambault from the charter review committee, mentioned"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioner Tyler will draft a letter to Mr. Dunn about the adornments and bench at the South Cemetery that violate the Rules and Regulations under Chapter 310.",
+   "quote": "under old business, commissioner tyler stated that he would draft a letter to mr. dunn concerning the adornments and bench at the south cemetery"
+  },
+  {
+   "decision": "Chairman May will draft a letter to the Town Manager about Supt. Holman's availability for year-round burials once the Niche Wall is accessible in winter.",
+   "quote": "chairman may mentioned that he is going to draft a letter to the town manager concerning"
+  },
+  {
+   "decision": "Invoices presented by Supt. Holman (repairs to the old Ferris mower, tree work in the South Cemetery, shrub replacement) were approved, except the invoice for the new Ferris mower.",
+   "quote": "these were all approved with the exception of the new ferris mower."
+  },
+  {
+   "decision": "Town Manager Heather Lemieux agreed to draft a letter stating the new Ferris mower will be property of the Cemetery Dept and not used for any other purpose.",
+   "quote": "town manager heather lemieux was present as an invited guest and agreed to draft a letter"
+  },
+  {
+   "decision": "Town Manager will make sure Supt. Holman is included in Dept. Superintendent meetings in the future.",
+   "quote": "the town manager said she would make sure he is included in the future."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Columbarium Niche Wall rate",
+   "what_was_recorded": "Niche rate set at $1200.00 per niche, holding two cremations and including engraving, by the vote recorded above.",
+   "figures_as_printed": [
+    "$1200.00"
+   ],
+   "quote": "set the rate of $1200.00 per niche, which would hold 2 cremations, and would also include the engraving"
+  },
+  {
+   "topic": "Invoices presented by Supt. Holman",
+   "what_was_recorded": "Several invoices were presented and approved, except the invoice for the new Ferris mower; no dollar amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "supt. holman presented the commissioners with several invoices including repairs to the old ferris mower"
+  },
+  {
+   "topic": "New Ferris mower purchase",
+   "what_was_recorded": "The new Ferris mower was recently purchased from Sheperd's and the Commission voted to pay for it; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "an invoice for the new ferris mower recently purchased from sheperd's"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Steven Archambault",
+   "stated_role": "Charter Review Committee",
+   "topic": "Charter review process",
+   "quote": "during public comment, steven archambault from the charter review committee, mentioned that the review process would be beginning shortly, and we would be invited to participate."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of September 7 minutes",
+   "resolution": "approved",
+   "quote": "minutes from the september 7 meeting were reviewed and upon a motion by commissioner",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "quote": "no correspondence was received.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Public comment: Charter Review",
+   "resolution": "no action",
+   "quote": "steven archambault from the charter review committee, mentioned that the review process would be beginning shortly",
+   "tags": [
+    "charter review",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old Business: South Cemetery violations letter",
+   "resolution": "letter to be drafted by Commissioner Tyler",
+   "quote": "under old business, commissioner tyler stated that he would draft a letter to mr. dunn",
+   "tags": [
+    "rules and regulations",
+    "letters",
+    "south cemetery"
+   ]
+  },
+  {
+   "topic": "Columbarium installation and photo",
+   "resolution": "no action; photo suggested",
+   "quote": "the columbarium was installed on october 10* at the north cemetery under the direction of",
+   "tags": [
+    "columbarium",
+    "north cemetery"
+   ]
+  },
+  {
+   "topic": "Columbarium Niche Wall rates",
+   "resolution": "approved rate of $1200.00 per niche",
+   "quote": "a motion by chairman may was made to set the rate of $1200.00 per niche",
+   "tags": [
+    "columbarium",
+    "niche wall",
+    "rates",
+    "engraving"
+   ]
+  },
+  {
+   "topic": "Letter on year-round burials",
+   "resolution": "letter to be drafted by Chairman May",
+   "quote": "chairman may mentioned that he is going to draft a letter to the town manager",
+   "tags": [
+    "burials",
+    "letters",
+    "winter"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "approved except new Ferris mower",
+   "quote": "these were all approved with the exception of the new ferris mower.",
+   "tags": [
+    "invoices",
+    "equipment"
+   ]
+  },
+  {
+   "topic": "New Ferris mower",
+   "resolution": "payment approved; Town Manager to draft property letter",
+   "quote": "a motion was made by commissioner may to pay for the new mower, understanding that a letter would be forthcoming.",
+   "tags": [
+    "equipment",
+    "ferris mower",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Supt. attendance at Dept. Superintendent meetings",
+   "resolution": "Town Manager to include Supt. Holman",
+   "quote": "supt. holman mentioned that he would like to attend dept. superintendent meetings",
+   "tags": [
+    "staffing",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:11 pm",
+   "quote": "a motion was made by commissioner tyler to adjourn, seconded by commissioner may",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Rules and Regulations under Chapter 310",
+   "where": "text",
+   "quote": "concerning the adornments and bench at the south cemetery that are in violation of the rules and regulations under chapter 310."
+  },
+  {
+   "name": "Invoices (repairs to old Ferris mower, tree work in South Cemetery, shrub replacement, new Ferris mower)",
+   "where": "text",
+   "quote": "supt. holman presented the commissioners with several invoices including repairs to the old ferris mower, tree work in the south cemetery"
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "columbarium",
+  "niche wall",
+  "rates",
+  "invoices",
+  "equipment",
+  "ferris mower",
+  "charter review",
+  "letters",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

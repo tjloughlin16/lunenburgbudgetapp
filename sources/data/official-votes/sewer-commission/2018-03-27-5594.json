@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-03-27",
  "docid": "5594",
@@ -12,55 +12,391 @@
  },
  "votes": [
   {
-   "motion": "approve the proposed response to the OML complaint of 2/27/18 as drafted",
+   "motion": "Approve the proposed response to the OML complaint of 2/27/18 as drafted (Ebersole complaint).",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: carl l. second: john r. to approve the proposed response to the oml complaint of 2/27/18 as drafted. vote: aye-joe a,, john r., joan p., and carl l. abstain: troy d."
+   "quote": "motion: carl l. second: john r. to approve the proposed response to the oml complaint of 2/27/18 as drafted."
   },
   {
-   "motion": "approve the draft response to the OML complaint of 3/13/18 as modified",
+   "motion": "Approve the draft response to the 3/13/18 OML complaint (Daniels) as modified.",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: carl l. second: john r. to approve the draft response as modified. vote: aye-joe a., joan p., carl l., and john r. abstained: troy d."
+   "quote": "to approve the draft response as modified."
   },
   {
-   "motion": "increase the transfer to the Capital Reserve account from $22,000 to $29,000",
-   "moved_by": "Cari L.",
+   "motion": "Increase the transfer to the Capital Reserve account from $22,000 to $29,000.",
+   "moved_by": "Carl L.",
    "seconded_by": "John R.",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: cari l. second: john r. to increase the transfer to the capital reserve account from $22,000 to $29,000. vote: aye-joe a., joan p., carl l., and john r. abstained: troy d."
+   "quote": "to increase the transfer to the capital reserve account from $22,000 to $29,000."
   },
   {
-   "motion": "approve the FY19 budget as amended",
+   "motion": "Approve the budget as amended (FY19).",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: joan p. second: john r. to approve the budget as amended. vote: aye-joe a., joan p., carl l., and john r. abstained: troy d."
+   "quote": "to approve the budget as amended."
   },
   {
-   "motion": "remove warrant article 5, or pass it over if presented to Town Meeting",
+   "motion": "Remove article 5 (Tilton Ave sewer extension appropriation) from the Town Meeting warrant if it is not too late, or pass it over if it goes to Town Meeting.",
    "moved_by": "Carl L.",
    "seconded_by": "Troy D.",
-   "outcome": "passed 5-0",
+   "outcome": "Unanimous",
    "procedural": false,
-   "quote": "motion: carl l. second: troy d. to remove article 5 if it is not too late or to pass it over if it goes to town meeting. vote: unanimous"
+   "quote": "to remove article 5 if it is not too late or to pass it over if it goes to town meeting."
   },
   {
-   "motion": "enter Executive Session to discuss Highfield Village litigation",
-   "moved_by": "Troy",
-   "seconded_by": "John",
+   "motion": "Enter Executive Session at Town Hall for the Highfield Village agreement under MGL Chapter 30A, Section 21A(3), with no return to open session.",
+   "moved_by": "Troy D.",
+   "seconded_by": "John R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "troy so moved, john seconded. roll call vote to go into executive session: joe, aye, carl, aye, joan, aye, troy, aye and john, aye"
+   "quote": "troy so moved, john seconded. roll call vote to go into executive session: joe, aye, carl, aye, joan, aye, troy, aye and john, aye,"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Minor OCR inconsistencies noted: vote 3 shows moved_by as \"Cari L.\" in the motion line (likely OCR error for \"Carl L.\", which appears elsewhere in the same vote). Vote 6 shows moved_by and seconded_by without last initials as printed.",
- "cost_usd": 0.1573185
+ "note": "OCR of a scanned, signed minutes page (two pages, received and filed stamp APR 17 2018). Several OCR errors (e.g., 'tinancial', 'ada', 'tuture', 'Aye-Joe A,,'); quotes copied as OCR'd. The charter item's opening words are cut at the page 1/2 break, so the topic is recorded from the page 2 text. Attendance is not stated outright; commissioners are marked present from their votes and roll call. The adjournment has no recorded motion, so it is not listed as a vote. The OML complaint is dated 2/26/18 in the text but the response is described as 'OML complaint of 2/27/18' in the motion. Vote outcomes are read from the printed tallies; the Tilton article 5 vote is printed only as 'Unanimous'.",
+ "cost_usd": 0.00866012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe A.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "aye-joe a., joan p., carl l., and john r. abstained: troy d."
+  },
+  {
+   "name": "John R.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "troy so moved, john seconded. roll call vote to go into executive session: joe, aye, carl, aye, joan, aye, troy, aye and john, aye,"
+  },
+  {
+   "name": "Joan P.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "joan commented that she thought going through the minutes at the meeting was more efficient"
+  },
+  {
+   "name": "Carl L.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "carl asked if he personally had violated open meeting law by sending the subject emails to barb"
+  },
+  {
+   "name": "Troy D.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "troy so moved, john seconded."
+  },
+  {
+   "name": "Adam Costa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "adam's firm will be scheduling a oml training session for town employees and members"
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb replied that she had received the final agreement from counsel and has his check."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dan proctor inquired about progress in finalizing his restitution agreement."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bob ebersole came forward to clarify statements in the charter revision."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission took remedial action on the OML complaint by discussing the emails referenced in the draft response and filing all minutes noted in the complaint.",
+   "quote": "the commission took remedial action by discussing the emails referenced in the draft response and have filed all minutes noted in the complaint."
+  },
+  {
+   "decision": "Adam Costa will file the response to the OML complaint on 3/28/18.",
+   "quote": "adam replied that he will file the response on 3/28/18."
+  },
+  {
+   "decision": "Revisions to minutes are to be brought to a meeting for discussion, and minutes are to be approved within the next 3 public meetings or 30 days, whichever is longer.",
+   "quote": "he advised that revisions to minutes should be brought to a meeting for discussion and that"
+  },
+  {
+   "decision": "The Commission agreed to hold a discussion on setting up financial policies, to be added to a future agenda by Joe.",
+   "quote": "the commission agreed to have a discussion on setting up tinancial policies and joe will ada it to a tuture agenda."
+  },
+  {
+   "decision": "Commissioners signed the Order of Assessment for the collection of privilege fees (3 Rogers Way).",
+   "quote": "order of assessment- 3 rogers way -commissioners signed the order of assessment for the collection of privilege fees."
+  },
+  {
+   "decision": "The Chair will call a special meeting for April 3 at 7pm to discuss changes and clarifications to the Charter.",
+   "quote": "after having time to review the draft of the charter and will call a special meeting for april 3rd at 7pm to discuss changes and"
+  },
+  {
+   "decision": "Commission members may email comments to the charter review committee for consideration at the 4/5/18 public hearing.",
+   "quote": "commission can email comments to the charter review committee for consideration at"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY19 budget revenue deficit",
+   "what_was_recorded": "Carl reported a deficit in revenue from retained earnings and the capital reserve transfer, later cleared after a formula correction and lower Fitchburg rate.",
+   "figures_as_printed": [
+    "$ 39,000"
+   ],
+   "quote": "carl reported that it was found that there was a deficit of $ 39,000 in revenue from retained earnings and the capital reserve transfer."
+  },
+  {
+   "topic": "Fitchburg rate increase",
+   "what_was_recorded": "Fitchburg council may suggest an 8% increase rather than the 30% first thought.",
+   "figures_as_printed": [
+    "8%",
+    "30%"
+   ],
+   "quote": "he added that the fitchburg council is meeting and may be suggesting an 8% increase instead of the 30% that was first thought."
+  },
+  {
+   "topic": "Capital Reserve transfer target",
+   "what_was_recorded": "Commission increased the Capital Reserve transfer to the desired level of 3% of revenues.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "commission discussed the corrections to the budget and increased the amount of the capital reserve transfer to the desired 3% of revenues."
+  },
+  {
+   "topic": "Capital Reserve transfer amount",
+   "what_was_recorded": "Motion to raise the Capital Reserve transfer from $22,000 to $29,000 passed.",
+   "figures_as_printed": [
+    "$22,000",
+    "$29,000"
+   ],
+   "quote": "to increase the transfer to the capital reserve account from $22,000 to $29,000."
+  },
+  {
+   "topic": "Stabilization fund return of current funds",
+   "what_was_recorded": "Carl would like $10,000 in current funds returned to the Reserve Capacity stabilization fund; no vote recorded.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "carl would like the $10,000 in current funds to go back to the reserve capacity stabilization fund."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Increase the transfer to the Capital Reserve account (FY19 budget).",
+   "amount_as_printed": "$22,000 to $29,000",
+   "outcome": "passed 4-0-1",
+   "quote": "to increase the transfer to the capital reserve account from $22,000 to $29,000."
+  },
+  {
+   "description": "Return $10,000 in current funds to the Reserve Capacity stabilization fund (Town Meeting timing of stabilization transfers).",
+   "amount_as_printed": "$10,000",
+   "outcome": "requested by Carl; no vote recorded",
+   "quote": "carl would like the $10,000 in current funds to go back to the reserve capacity stabilization fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dan Proctor",
+   "stated_role": "not stated",
+   "topic": "restitution agreement progress",
+   "quote": "dan proctor inquired about progress in finalizing his restitution agreement."
+  },
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "not stated",
+   "topic": "charter revision and 4/5/18 public hearing",
+   "quote": "bob ebersole encourage residents to come to the april 5'h public charter review hearing."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "OML complaint response (Ebersole, 2/26/18)",
+   "resolution": "approved as drafted, 4-0-1",
+   "quote": "process involved in responding to an open meeting law (oml) complaint. he passed out copies of a proposed response",
+   "tags": [
+    "open meeting law",
+    "complaint",
+    "legal"
+   ]
+  },
+  {
+   "topic": "OML complaint response (Daniels, 3/13/18)",
+   "resolution": "approved as modified, 4-0-1",
+   "quote": "open meeting law complaint of 3/13/18 - adam passed out copies and reviewed the draft of his response",
+   "tags": [
+    "open meeting law",
+    "complaint",
+    "email"
+   ]
+  },
+  {
+   "topic": "Public comment: Dan Proctor restitution",
+   "resolution": "no action",
+   "quote": "public comment - dan proctor inquired about progress in finalizing his restitution agreement.",
+   "tags": [
+    "public comment",
+    "restitution"
+   ]
+  },
+  {
+   "topic": "FY19 budget",
+   "resolution": "budget approved as amended, 4-0-1",
+   "quote": "fy19 budget - joe and carl gave the presentation to fincom.",
+   "tags": [
+    "budget",
+    "FY19",
+    "capital reserve",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "Tilton Ave update",
+   "resolution": "no action; update only",
+   "quote": "tilton ave update - joe reported tilton ave, survey did not get 2/3rd of the street",
+   "tags": [
+    "Tilton Ave",
+    "sewer extension"
+   ]
+  },
+  {
+   "topic": "Town Meeting warrant articles",
+   "resolution": "article 5 removal motion passed unanimously; other items discussed",
+   "quote": "town meeting warrant articles - fy19 budget - timing of stabilization fund transfers",
+   "tags": [
+    "Town Meeting",
+    "warrant",
+    "stabilization",
+    "OPEB",
+    "Tilton Ave"
+   ]
+  },
+  {
+   "topic": "Minutes of 2/13/18",
+   "resolution": "discussed; no action recorded",
+   "quote": "minutes of 2/13/18 - joan commented that she thought going through the minutes at the meeting was more efficient",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Charter revision",
+   "resolution": "special meeting called for April 3; public hearing 4/5/18",
+   "quote": "after having time to review the draft of the charter and will call a special meeting for april 3rd at 7pm",
+   "tags": [
+    "charter",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Order of Assessment, 3 Rogers Way",
+   "resolution": "signed by commissioners",
+   "quote": "order of assessment- 3 rogers way -commissioners signed the order of assessment for the collection of privilege fees.",
+   "tags": [
+    "privilege fees",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "suggestions listed for future agendas",
+   "quote": "members agenda inputs for future meetings - suggestions for discussion put forward included:",
+   "tags": [
+    "agenda",
+    "future meetings"
+   ]
+  },
+  {
+   "topic": "Public comment: Bob Ebersole",
+   "resolution": "no action",
+   "quote": "public comment - bob ebersole encourage residents to come to the april 5'h public charter review hearing.",
+   "tags": [
+    "public comment",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Executive session: Highfield Village agreement",
+   "resolution": "entered executive session, not returning to open session",
+   "quote": "the chair requested a motion to enter into executive session at town hall for the highfield village agreement",
+   "tags": [
+    "executive session",
+    "Highfield Village",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:40pm",
+   "quote": "open meeting adjourned at 8:40pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Response Letter for 2/26/18 OML complaint - Adam Costa",
+   "where": "list",
+   "quote": "1.) draft response letter for 2/26/18 oml complaint - adam costa"
+  },
+  {
+   "name": "Draft Response Letter for 3/13/18 OML Complaint - Adam Costa",
+   "where": "list",
+   "quote": "2.) draft response letter for 3/13/18 oml complaint - adam costa"
+  },
+  {
+   "name": "OML complaint received from Robert Ebersole, dated 2/26/18",
+   "where": "text",
+   "quote": "oml complaint received from robert ebersole, dated 2/26/18, related to the commission's actions"
+  },
+  {
+   "name": "OML complaint received from Troy Daniels, dated 3/13/18",
+   "where": "text",
+   "quote": "response to the oml complaint received from troy daniels, dated 3/13/18 related to alleged e-mail violation"
+  },
+  {
+   "name": "Draft of the Charter",
+   "where": "text",
+   "quote": "after having time to review the draft of the charter and will call a special meeting for april 3rd"
+  },
+  {
+   "name": "Order of Assessment, 3 Rogers Way",
+   "where": "text",
+   "quote": "order of assessment- 3 rogers way -commissioners signed the order of assessment for the collection of privilege fees."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "open meeting law",
+  "FY19 budget",
+  "capital reserve",
+  "stabilization",
+  "Town Meeting warrant",
+  "Tilton Ave",
+  "charter revision",
+  "executive session",
+  "Highfield Village",
+  "public comment",
+  "restitution"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

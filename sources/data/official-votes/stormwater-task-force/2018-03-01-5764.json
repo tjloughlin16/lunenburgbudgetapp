@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2018-03-01",
  "docid": "5764",
@@ -12,24 +12,177 @@
  },
  "votes": [
   {
-   "motion": "Accept February 8, 2018 meeting minutes",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the february 8, 2018 meeting were accepted."
-  },
-  {
-   "motion": "Adjourn the meeting at 8:14 pm",
+   "motion": "To adjourn the meeting at 8:14 pm.",
    "moved_by": "J. Rodriquenz",
    "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j. rodriquenz to adjourn the meeting at 8:14 pm. respectfullly submitted, phyllis ",
-   "quote_taken_from_text": true
+   "quote": "motion: j. rodriquenz to adjourn the meeting at 8:14 pm. respectfullly submitted, phyllis luck, chair swtf member, bos 2\": m. allison vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are a scan (OCR). The text '2\": M. Allison' appears to be an OCR artifact of 'Seconded: M. Allison'.",
- "cost_usd": 0.1375825
+ "note": "Scanned text (macOS Vision OCR) with garbled words. Page 1 begins mid-report, so the opening of the minutes (including any attendance roll and the call to order) is missing. No attendance roll is printed. The seconder label reads '2\": M. Allison' in the OCR and is read as the seconder. The minutes' own vote result is printed only as 'All in Favor' with no count. Date conflict: the minutes accept the February 8, 2018 minutes and refer to '3 1 18 minutes' as a prior meeting, and they were received and filed in April 2018, so the meeting may be later than the 2018-03-01 date supplied. Adam and Newton Tedder are mentioned only in reference to a workshop, not as participants in this meeting, so they are not listed as attendees.",
+ "cost_usd": 0.00582802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Chair SWTF; Member, BOS",
+   "status": "present",
+   "quote": "phyllis luck reported on the central mass. regional stormwater coaltion (cmks we) steering committee"
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "representing DCI",
+   "status": "present",
+   "quote": "ed himlan, representing dci, reiterated the progress of their community compact grant award project"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "DCI",
+   "status": "not stated",
+   "quote": "ed himlan informed the group that the next step will involve mike clark of dci going out to look over these"
+  },
+  {
+   "name": "J. Rodriquenz",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "motion: j. rodriquenz to adjourn the meeting at 8:14 pm."
+  },
+  {
+   "name": "M. Allison",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "respectfullly submitted, phyllis luck, chair swtf member, bos 2\": m. allison vote: all in favor"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the February 8, 2018 meeting were accepted (no motion or vote recorded).",
+   "quote": "minutes of the february 8, 2018 meeting were accepted."
+  },
+  {
+   "decision": "Next step: Mike Clark of DCI to go out and look over the 27 ranked sites, suggest possible BMP techniques, and provide refined cost estimates.",
+   "quote": "ed himlan informed the group that the next step will involve mike clark of dci going out to look over these 27 ranked sites."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Priority BMP summary cost estimates",
+   "what_was_recorded": "The Priority BMPs Draft Summary carries approximate cost estimate ranges for each site; no dollar figures are printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "suggested bmp's, approximate cost estimate range, timing (which year targeted for completion)"
+  },
+  {
+   "topic": "Refined cost estimates for 27 ranked sites",
+   "what_was_recorded": "DCI's Mike Clark is to provide refined cost estimates for the 27 ranked sites after site visits; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "mike will suggest possible bmp techniques and provide refined cost estimates for these sites."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Stormwater workshop report",
+   "resolution": "reported; no action",
+   "quote": "adam felt this workshop worthwhile and was reassured that",
+   "tags": [
+    "MS4 permit",
+    "EPA",
+    "training"
+   ]
+  },
+  {
+   "topic": "Minutes of February 8, 2018",
+   "resolution": "accepted",
+   "quote": "minutes of the february 8, 2018 meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DCI outfall ranking and Community Compact grant project",
+   "resolution": "progress reviewed; members to check ranking; Mike Clark to visit 27 sites; Sunset Lane LS: 54-57 suggested for High priority",
+   "quote": "ed himlan informed the group that the next step will involve mike clark of dci going out to look over these 27 ranked sites.",
+   "tags": [
+    "outfalls",
+    "BMP",
+    "DCI",
+    "Community Compact grant",
+    "Lake Shirley"
+   ]
+  },
+  {
+   "topic": "CMRSWC Steering Committee report",
+   "resolution": "reported; no action",
+   "quote": "phyllis luck reported on the central mass. regional stormwater coaltion (cmks we) steering committee",
+   "tags": [
+    "CMRSWC",
+    "GIS",
+    "catch basins"
+   ]
+  },
+  {
+   "topic": "Upcoming conferences",
+   "resolution": "information only",
+   "quote": "new england water works association (newwa) spring conference will be held at the dcu center in",
+   "tags": [
+    "conferences"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; March 22 and May dates not determined",
+   "quote": "meeting schedule: it has not been determined if a second meeting will be held on march 22.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Individual maps of 5 sub-basins in Lunenburg (Catacunemaug Brook; Easter Brook; Hickory Hills Lake; Lake Shirley; Upper Mulpus Brook)",
+   "where": "list",
+   "quote": "he again passed out copies of the individual maps of 5 sub-basins in lunenburg, comprising approximately"
+  },
+  {
+   "name": "Priority BMP's Draft Summary map of the Town of Lunenburg (25 Priority BMP's identified)",
+   "where": "list",
+   "quote": "also included was a priority bmp's draft summary map of the town of lunenburg with 25 priority bmp's identified."
+  },
+  {
+   "name": "Priority BMPs Draft Summary (DCI)",
+   "where": "list",
+   "quote": "also provided was the priority bmps draft summary, which dci had passed out at the last swtf meeting"
+  },
+  {
+   "name": "Steering Committee minutes (CMRSWC, meeting of 2/13/18)",
+   "where": "text",
+   "quote": "she will forward a copy of the steering committee minutes as soon as approved"
+  },
+  {
+   "name": "3/1/18 minutes (pertinent attachments)",
+   "where": "text",
+   "quote": "see 3 1 18 minutes for pertinent attachments"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "outfalls",
+  "BMP",
+  "DCI",
+  "Community Compact grant",
+  "CMRSWC",
+  "Lake Shirley",
+  "conferences",
+  "EPA"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he again passed out copies of the individual maps of 5 sub-basins"
+ },
+ "dropped_unquoted_by_field": {}
 }

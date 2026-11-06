@@ -1,0 +1,590 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2018-05-08",
+ "video_id": "zjrhSBOFH_Y",
+ "video_url": "https://www.youtube.com/watch?v=zjrhSBOFH_Y",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2018-05-08-zjrhSBOFH_Y.json",
+  "sha256": "eeab26a22d3eccbff753b480d53fc44a25aacacbaf402e892e8843945cdabaf6",
+  "caption_lines": 342,
+  "segments": 2657
+ },
+ "recording": {
+  "duration_s": 7307,
+  "duration": "2:01",
+  "spoken_chars": 96355,
+  "words_approx": 16059
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05082018-5107",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-05-08-agenda-5107.txt",
+   "path": "sources/meetings/select-board/2018-05-08-agenda-5107.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082018-5107",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-05-08-minutes-5107.txt",
+   "path": "sources/meetings/select-board/2018-05-08-minutes-5107.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T20:09:31Z",
+  "cost_usd": 0.2238598
+ },
+ "minutes": {
+  "headline": "Board imposed a two-week liquor license suspension on JNM Sports Bar after finding four violations",
+  "summary": "The Select Board held a violation hearing for JNM Sports Bar, found violations of the license regulations and imposed a two-week suspension. It approved a manager and beneficial-interest change for Mickey Shay's, an auto show, an arts festival entertainment license and beach appointments. It then reviewed progress on board and town manager goals and entered executive session on the town manager's contract.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. McQuade",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Bursch",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Sergeant Hebert",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Chief Moreno",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 107,
+    "speaker_as_heard": "Julia Callahan",
+    "stated_role": "resident",
+    "topic": "Objected to being cut off at last week's public comment; raised student and staff safety concerns about more traffic on the school campus if the Passios building becomes a town hall."
+   },
+   {
+    "t": 200,
+    "topic": "The police chief announced a charity basketball game on June 14 to raise funds for AEDs for the police department."
+   },
+   {
+    "t": 6994,
+    "speaker_as_heard": "Michael ray Jeffries",
+    "stated_role": "resident",
+    "topic": "Thanked the town manager and a departing board member; suggested big signs announcing elections and events."
+   },
+   {
+    "t": 7158,
+    "speaker_as_heard": "Katie Adams",
+    "stated_role": "resident",
+    "topic": "Urged economic development to prioritize helping existing small businesses grow."
+   }
+  ],
+  "tags": [
+   "capital",
+   "economic-development",
+   "executive-session",
+   "facilities",
+   "legal",
+   "personnel",
+   "public-comment",
+   "public-safety",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 1426,
+    "motion": "Find violations of regulations 1.03, 1.04, 1.05 and 1.08 by JNM Sports Bar",
+    "moved_by": "mr. Sergeant",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1930,
+    "motion": "Impose a three-week suspension, later amended to two weeks starting June 10",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2262,
+    "motion": "Approve change of manager and beneficial interest for Mickey Shay's",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2435,
+    "motion": "Approve the Auto Show request for Memorial Drive on June 6",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2593,
+    "motion": "Approve entertainment license and rain date for the Lunenburg Arts Festival",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2659,
+    "motion": "Ratify the town manager's appointments of beach coordinator and lifeguards",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7263,
+    "motion": "Enter executive session on non-union contract negotiations (town manager's contract), not to return to public session",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 4541,
+    "topic": "Facilities account FY19",
+    "what_was_said": "The approved FY19 budget includes additional money in the facilities account for deferred maintenance.",
+    "figures_as_heard": [
+     "$40,000"
+    ]
+   },
+   {
+    "t": 4541,
+    "topic": "FY19 capital plan",
+    "what_was_said": "Capital plan includes DPW roof work, asbestos abatement at Turkey Hill and demolition of a modular classroom.",
+    "figures_as_heard": [
+     "65,000"
+    ]
+   },
+   {
+    "t": 5780,
+    "topic": "Tax title collections",
+    "what_was_said": "Tax title receipts rose in the last two months and over the prior year.",
+    "figures_as_heard": [
+     "104 thousand nine hundred and thirty-four dollars",
+     "two hundred and thirty one thousand two hundred sixty dollars"
+    ]
+   },
+   {
+    "t": 6707,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "A warrant was signed for accounts payable, plus a water commitment.",
+    "figures_as_heard": [
+     "149 thousand eighty nine thousand sixty-two cents",
+     "$7,612.40"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2680,
+    "decision": "Cultural council appointment postponed until more appointments are ready."
+   },
+   {
+    "t": 6958,
+    "decision": "Quarterly financial report held to the next meeting."
+   },
+   {
+    "t": 5657,
+    "decision": "Board to hold a goal-setting workshop by July for next year's goals."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 107,
+    "topic": "Announcements and vacancies",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 107,
+    "t_end": 306,
+    "topic": "Public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 306,
+    "t_end": 2149,
+    "topic": "JNM Sports Bar license violation hearing",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 2149,
+    "t_end": 2680,
+    "topic": "Licenses, auto show, arts festival, appointments",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2680,
+    "t_end": 2927,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 2927,
+    "t_end": 3031,
+    "topic": "Open meeting law violation follow-up",
+    "resolution": "informational",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 3031,
+    "t_end": 6686,
+    "topic": "Board and town manager goals review",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "facilities",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 6686,
+    "t_end": 6967,
+    "topic": "Warrants and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 6967,
+    "t_end": 7304,
+    "topic": "Public comment and executive session",
+    "resolution": "voted",
+    "tags": [
+     "public-comment",
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call and the executive session vote count were incomplete",
+   "Names of several speakers garbled"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1488,
+    "about": "Licensee's attorney disputed that the regulations were violated.",
+    "sides": "licensee's representative against the board's finding",
+    "words_as_heard": "I don't know how you could possibly make a finding that that's been violated",
+    "kind": "public criticism"
+   },
+   {
+    "t": 1979,
+    "about": "Members disagreed over length of suspension.",
+    "sides": "one member for three weeks, others for two",
+    "words_as_heard": "at what point do gives the individual lose their entitlement to a liquor license",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 152,
+    "kind": "safety",
+    "about": "More traffic on the school campus could affect student and staff safety.",
+    "who": "a resident",
+    "words_as_heard": "bringing more traffic onto the school campus could pose unforeseen consequences for student and staff safety and security"
+   },
+   {
+    "t": 6472,
+    "kind": "liability or legal",
+    "about": "Employee handbook helps avoid or handle lawsuits.",
+    "who": "a member",
+    "words_as_heard": "the handbook is important to avoid lawsuits or to handle a lawsuit"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 3031,
+    "name_as_heard": "town manager's goals and status updates",
+    "kind": "report",
+    "words_as_heard": "the town manager's goals and status updates are in your package",
+    "shown": true
+   },
+   {
+    "t": 4287,
+    "name_as_heard": "inventory of assets",
+    "kind": "spreadsheet",
+    "words_as_heard": "rudimentary inventory of assets which is in your Google Drive",
+    "shown": true
+   },
+   {
+    "t": 5718,
+    "name_as_heard": "draft tax title policy and procedure",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "a draft tax title policy and procedure",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board found JNM Sports Bar in violation of four license regulations after a hearing.",
+    "t": 1426
+   },
+   {
+    "line": "The Board imposed a suspension, first moved at three weeks and amended to two weeks starting June 10.",
+    "t": 1930
+   },
+   {
+    "line": "The Board approved a manager and beneficial-interest change for Mickey Shay's.",
+    "t": 2262
+   },
+   {
+    "line": "The Board approved the Auto Show request for Memorial Drive and the Arts Festival entertainment license with a rain date.",
+    "t": 2435
+   },
+   {
+    "line": "The Board ratified the town manager's beach coordinator and lifeguard appointments; the quarterly financial report was held to the next meeting.",
+    "t": 2659
+   }
+  ],
+  "why_it_matters": [
+   "The suspension means JNM Sports Bar cannot operate under its liquor license for two weeks, and the finding of violations goes on its licensing record with the town.",
+   "The goals review and the FY19 facilities and capital items show where town budget money, mostly taxes, is going for building upkeep such as the DPW roof and Turkey Hill asbestos work."
+  ],
+  "watch_next": [
+   "Quarterly financial report, held to the Board's next meeting (t=6958).",
+   "Board goal-setting workshop for next year's goals, planned by July (t=5657)."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T20:09:36Z",
+   "cost_usd": 0.023395100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082018-5107",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2018-05-08-minutes-5107.txt",
+   "path": "sources/meetings/select-board/2018-05-08-minutes-5107.pdf"
+  },
+  "official_sha256": "7872883bf83358b072cf19e61a290d3244c328a09f5eb757f59f0dc455579b89",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the main liquor-license votes, the auto show, the Arts Festival license, and the key figures and decisions, with most differences coming from misheard names and garbled figures. The main difference is that our minutes record a ratification vote on beach coordinator and lifeguard appointments and a postponed Cultural Council appointment, and the official minutes show neither, while the official minutes add a task-force decision and several public commenters.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 6,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Violation finding against the sports bar",
+    "ours": "Find violations of regulations 1.03, 1.04, 1.05 and 1.08 by JNM Sports Bar — passed",
+    "official": "motion; r.ebersole 2nd: p. bertram to find there was a violation of 1.03(j), 1.04 (a), 1.05 (e) and 1.08 (a) and 1.08 (f)",
+    "note": "Same finding and outcome; the establishment name (JNM vs J & M's) is a caption rendering.",
+    "t": 1426
+   },
+   {
+    "kind": "agree",
+    "about": "Suspension amended to two weeks from June 10",
+    "ours": "Impose a three-week suspension, later amended to two weeks starting June 10 — passed",
+    "official": "to suspend the license for a three week period beginning june 10",
+    "note": "Both show a three-week motion beginning June 10; the official structured summary says it was amended to two weeks, matching ours, though the quoted line is the original motion.",
+    "t": 1930
+   },
+   {
+    "kind": "agree",
+    "about": "Change of manager and beneficial interest, Mickey Sheas",
+    "ours": "Approve change of manager and beneficial interest for Mickey Shay's — passed",
+    "official": "to approve the change of manager and beneficial interest as submitted 2nd: p. bertram vote: all in favor",
+    "note": "Same vote and outcome; name spelling differs only.",
+    "t": 2262
+   },
+   {
+    "kind": "agree",
+    "about": "Auto Show on Memorial Drive June 6",
+    "ours": "Approve the Auto Show request for Memorial Drive on June 6 — passed",
+    "official": "to approve the auto show on memorial drive on wednesday, june 6th 2nd: p. bertram vote: all in favor",
+    "note": "Same approval.",
+    "t": 2435
+   },
+   {
+    "kind": "agree",
+    "about": "Entertainment license and rain date, Arts Festival",
+    "ours": "Approve entertainment license and rain date for the Lunenburg Arts Festival — passed",
+    "official": "and raindate of june 10th vote: all in favor",
+    "note": "Same approval; official gives dates June 9 with rain date June 10.",
+    "t": 2593
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ratify town manager's appointments of beach coordinator and lifeguards",
+    "ours": "Ratify the town manager's appointments of beach coordinator and lifeguards — passed",
+    "official": "",
+    "note": "This vote appears in our minutes but the official minutes provided record no such vote; a person should check the official minutes for it.",
+    "t": 2659
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cultural council appointment",
+    "ours": "Cultural council appointment postponed until more appointments are ready.",
+    "official": "laura brzozski, 21 francis ave., and minna schoulten, 3 oak ave., presented the request of the cultural council",
+    "note": "Official only shows the Cultural Council request being presented and no postponement decision; check the official minutes for the outcome.",
+    "t": 2680
+   },
+   {
+    "kind": "agree",
+    "about": "Quarterly financial report moved to next meeting",
+    "ours": "Quarterly financial report held to the next meeting.",
+    "official": "the quarterly financial report will be reviewed at the next meeting.",
+    "note": "Same decision.",
+    "t": 6958
+   },
+   {
+    "kind": "agree",
+    "about": "Goal-setting workshop by July",
+    "ours": "Board to hold a goal-setting workshop by July for next year's goals.",
+    "official": "he would like to set next year's goals for the board in workshop by july so they can begin to work on them.",
+    "note": "Same decision.",
+    "t": 5657
+   },
+   {
+    "kind": "agree",
+    "about": "Facilities account FY19",
+    "ours": "Facilities account FY19: $40,000",
+    "official": "fy2019 approved budget included an additional $40,000 in the facilities account to address deferred maintenance projects.",
+    "note": "Same figure.",
+    "t": 4541
+   },
+   {
+    "kind": "agree",
+    "about": "FY19 capital plan figure",
+    "ours": "FY19 capital plan: 65,000",
+    "official": "including $65,000 to address the dpw roof, asbestos abatement at turkey hill, and demolition of a modular classroom.",
+    "note": "Same figure.",
+    "t": 4541
+   },
+   {
+    "kind": "caption_error",
+    "about": "Tax title collections",
+    "ours": "104 thousand nine hundred and thirty-four dollars, two hundred and thirty one thousand two hundred sixty dollars",
+    "official": "in just the last two months, a total of $104,934.96 has been on tax title properties.",
+    "note": "First part matches $104,934; the trailing garbled cents/extra amount is a caption artifact.",
+    "official_reading": "$104,934.96",
+    "t": 5780
+   },
+   {
+    "kind": "caption_error",
+    "about": "Accounts payable warrant",
+    "ours": "149 thousand eighty nine thousand sixty-two cents",
+    "official": "an accounts payable warrant in the amount of $149,089.62 was presented.",
+    "note": "Garbled rendering of $149,089.62.",
+    "official_reading": "$149,089.62",
+    "t": 6707
+   },
+   {
+    "kind": "agree",
+    "about": "4th quarter water commitment",
+    "ours": "$7,612.40",
+    "official": "the 4th quarter water commitment of $7,612.40 was presented",
+    "note": "Same figure; ours attached it to the warrant line.",
+    "t": 6707
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Task force decision",
+    "ours": "",
+    "official": "our next step as a board is to develop a task force, whether it's a business or economic development task force",
+    "note": "Decision on a business/economic development task force is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mr. McQuade",
+    "ours": "Mr. McQuade (member)",
+    "official": "mr. mcquaid stated previously when we suspended for two weeks we were dealing with intoxication with people on the premises,",
+    "note": "Misheard surname.",
+    "official_reading": "Mr. McQuaid",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Chief Moreno",
+    "ours": "Chief Moreno (presenter)",
+    "official": "police chief marino reported hannah anderson is organizing a grassroots effort to raise funding for purchasing",
+    "note": "Misheard surname.",
+    "official_reading": "Police Chief Marino",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Sergeant Hebert",
+    "ours": "Sergeant Hebert (presenter)",
+    "official": "he invited the licensee, melissa thibodeau and her attorney donna pawluk to come forward as well as the police department officer, sergeant jack hebert.",
+    "note": "Same person; spelling aside, effectively matches.",
+    "official_reading": "Sergeant Jack Hebert",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mrs. Bertram",
+    "ours": "Mrs. Bertram (member)",
+    "official": "ms. bertram stated she would be more amenable to a two week given the violations that we have identified.",
+    "note": "Same person; title differs.",
+    "official_reading": "Ms. Bertram",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee Mr. Bursch",
+    "ours": "Mr. Bursch (member)",
+    "official": "mr. ebersole thanked everyone who came out to annual town meeting on last saturday.",
+    "note": "Likely a misheard Mr. Ebersole, but verify; also official lists Mr. Toale presiding and Phyllis Luck absent.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees and public commenters",
+    "ours": "",
+    "official": "julia callahan, 24 beal street, commented in regards to transforming the passios building into town offices and",
+    "note": "Official lists public commenters (Callahan, Jeffreys, Adams), licensee and attorney, and applicants, not in our attendee list.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T20:11:20Z",
+   "cost_usd": 0.0555131
+  }
+ }
+}

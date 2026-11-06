@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2018-08-16",
  "docid": "1886",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Recommend Barbara Brown be appointed to the Council on Aging for a three year term beginning in September 2018",
+   "motion": "Recommend Barbara Brown be appointed to the Council on Aging for a three year term beginning September 2018.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. lincoln moved to recommend barbara brown be appointed to the council on aging for a three year term beginning in september of 2018, ms. digiacomo seconded. on vote, motion carried unanimously."
+   "quote": "mr. lincoln moved to recommend barbara brown be appointed to the council on aging for a three year term"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Moisan",
    "outcome": "passed unanimously",
@@ -29,6 +29,115 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0159176
+ "note": "Single-page text with no dollar figures and no public comment entries. The minutes-approval section is blank, and the closing line 'Approved by those in attendance' records no motion or vote on approving these minutes. Votes shown are the recorded motions only; the Talent Bank forms are named in discussion but not listed as documents.",
+ "cost_usd": 0.00311152,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson pete lincoln, jacquelyn dwyer, cheryl moisan, betty digiacomo, diane nowd, deb lincoln, sarah grant"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, jacquelyn dwyer, cheryl moisan, betty digiacomo, diane nowd, deb lincoln, sarah grant"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, jacquelyn dwyer, cheryl moisan, betty digiacomo, diane nowd, deb lincoln, sarah grant"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, jacquelyn dwyer, cheryl moisan, betty digiacomo, diane nowd, deb lincoln, sarah grant"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, jacquelyn dwyer, cheryl moisan, betty digiacomo, diane nowd, deb lincoln, sarah grant"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, jacquelyn dwyer, cheryl moisan, betty digiacomo, diane nowd, deb lincoln, sarah grant"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson pete lincoln, jacquelyn dwyer, cheryl moisan, betty digiacomo, diane nowd, deb lincoln, sarah grant"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "absent",
+   "quote": "judy tarbell, kevin mcnally, jane rabbitt"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "absent",
+   "quote": "judy tarbell, kevin mcnally, jane rabbitt"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "absent",
+   "quote": "judy tarbell, kevin mcnally, jane rabbitt"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Council on Aging board member vacancy recommendation to the Board of Selectmen",
+   "resolution": "recommended Barbara Brown for appointment, unanimous",
+   "quote": "mr. lincoln moved to recommend barbara brown be appointed to the council on aging for a three year term",
+   "tags": [
+    "appointments",
+    "vacancy",
+    "talent bank",
+    "board of selectmen"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting set",
+   "quote": "next meeting: tuesday, september 11, 2018 at 9:30 a.m.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Talent Bank forms",
+   "where": "text",
+   "quote": "two talent bank forms were submitted for the seat left vacant by brian guenard"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "board member appointment",
+  "vacancy",
+  "talent bank",
+  "board of selectmen recommendation",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-11-08",
  "docid": "2206",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 2 (Raise and Appropriate Transfer for New Growth to Special Purpose Stabilization Fund)",
+   "motion": "Recommend approval at the Special Town Meeting (Article 2, transfer of new growth funds to the Special Purpose Stabilization Fund).",
    "moved_by": "John Henshaw",
    "seconded_by": "Hannah Anderson",
    "outcome": "passed 6-0",
@@ -20,7 +20,7 @@
    "quote": "john making a motion that the committee recommend approval at the special town meeting. hannah second. vote 6-0"
   },
   {
-   "motion": "Approve the revised Investment Policy Statement for the town of Lunenburg",
+   "motion": "Approve the revised Investment Policy Statement for the town of Lunenburg.",
    "moved_by": "John Henshaw",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 6-0",
@@ -28,7 +28,7 @@
    "quote": "john motion to approve the revised investment policy statement for the town of lunenburg. jay second. vote 6-0"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Henshaw",
    "seconded_by": "Jay Simeone",
    "outcome": "passed 6-0",
@@ -37,6 +37,305 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. Three votes extracted from pages 3, 4, and 6. Article 2 and Investment Policy votes are substantive; adjournment is procedural. All votes recorded with explicit counts (6-0).",
- "cost_usd": 0.0880835
+ "note": "OCR text with errors and gaps: the top of page 2 starts mid-sentence; Article 3 is cut off; Article 4 is not printed; the headings for items 7 and 10 are missing (the liaison list and 'From the Public None' are inferred from position); page 6 is partial. Votes are recorded only as 'Vote 6-0' and '6-0'. The Town Manager is referred to only as 'she'/'Town Manager' and is not named, so is not listed as an attendee. Mr. Cassidy is mentioned but not shown as present. Next-meeting line OCR reads 'Deember' and is recorded as printed.",
+ "cost_usd": 0.008152920000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin,"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin,"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "hannah anderson, secretary"
+  },
+  {
+   "name": "Michelle Walton",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin,"
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, george martin,"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "michelle walton, george martin, jay simeone"
+  },
+  {
+   "name": "Marc Luescher",
+   "status": "absent",
+   "quote": "absent: marc luescher"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Dave Rogers",
+   "status": "present",
+   "quote": "mr. dave rogers, 82 highland street, gave handouts prior to the meeting for his pubic"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, asked, what the committees' thoughts are on new"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 8 passed over because the Town Manager found someone to do it at no cost.",
+   "quote": "article 8 passing over because the town manager found someone to do it for nothing."
+  },
+  {
+   "decision": "Article 11 (Demolition Delay): committee to wait until Special Town Meeting to vote individually, and present any committee recommendation at STM.",
+   "quote": "the finance committee has decided to wait until special town meeting to vote individually but if we decide as a"
+  },
+  {
+   "decision": "Agenda items 4 and 5 (member projects status; terminology and definitions) skipped until the December 13, 2018 meeting.",
+   "quote": "skip until next meeting on december 13, 2018"
+  },
+  {
+   "decision": "Minutes for review by Jay and Michelle postponed to the December 13, 2018 meeting.",
+   "quote": "minutes for review by jay and michelle postponed for december 13, 2018 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 1 software maintenance transfer (e-permitting)",
+   "what_was_recorded": "Town Manager said a $25,500 software maintenance invoice for the e-permitting software would be covered by a transfer from the Liability Insurance Account, since the grant-funded software went live in August.",
+   "figures_as_printed": [
+    "$25,500"
+   ],
+   "quote": "it was for $25,500 for the e-permitting software that the town received a grant for last year"
+  },
+  {
+   "topic": "Article 1 library pilot reading program transfer",
+   "what_was_recorded": "A $7,200 transfer from the Salary Reserve Account to the Library Department was described to fund a 5th grade pilot reading program through the rest of FY19.",
+   "figures_as_printed": [
+    "$7,200"
+   ],
+   "quote": "the amount transferred to the library is $7,200 to run the program"
+  },
+  {
+   "topic": "Article 2 new growth transfer to Special Purpose Stabilization Fund",
+   "what_was_recorded": "Town Manager gave a total of $199,227 from additional local aid, new growth, personal property, change in state assessments and cherry sheet offsets to be raised and transferred to the stabilization fund.",
+   "figures_as_printed": [
+    "$199,227"
+   ],
+   "quote": "for a total of $199,227. the recommendation would be to raise and appropriate transfer"
+  },
+  {
+   "topic": "Facilities budget increase",
+   "what_was_recorded": "Town Manager noted an additional $40k was put into the facilities budget this year, and said more money would not help without DPW staff to maintain buildings.",
+   "figures_as_printed": [
+    "$40k"
+   ],
+   "quote": "we did put an additional $40k into the facilities budget this year"
+  },
+  {
+   "topic": "Article 3 DPW collective bargaining first-year funding",
+   "what_was_recorded": "Article 3 (first year of the DPW collective bargaining agreement) was reduced from an amount over $10,000; the minutes are cut off here.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "there was a reduction in that amount from over $10,000"
+  },
+  {
+   "topic": "New growth as recurring revenue (illustration)",
+   "what_was_recorded": "Terri gave an example of new growth budgeted at $300k that could come in at $330k, leaving $30k extra, or at $270k, leaving a $30k shortfall.",
+   "figures_as_printed": [
+    "$300k",
+    "$330k",
+    "$30k",
+    "$270k"
+   ],
+   "quote": "that we would have $300k budgeted in new growth but then actually have"
+  },
+  {
+   "topic": "Grant application for self-evaluation and transition plan",
+   "what_was_recorded": "Town Manager reported applying for grant funding of $162,000 for the town's self-evaluation and transition plan and public facilities and open space projects.",
+   "figures_as_printed": [
+    "$162,000"
+   ],
+   "quote": "applied for grant funding for $162,000 to update the towns self-evaluation and transition"
+  },
+  {
+   "topic": "Chapter 90 funding",
+   "what_was_recorded": "Town Manager reported additional Ch. 90 funding bringing the total to about $498K.",
+   "figures_as_printed": [
+    "$498K"
+   ],
+   "quote": "received additional in ch. 90 funding bring the total to about $498k"
+  },
+  {
+   "topic": "School grant",
+   "what_was_recorded": "Superintendent received a grant for $6500 from Creating Robust Language Rich Environments for All Students.",
+   "figures_as_printed": [
+    "$6500"
+   ],
+   "quote": "received a grant for $6500 from"
+  },
+  {
+   "topic": "Girl Scouts meeting fee at LMHS (public comment)",
+   "what_was_recorded": "Mr. Rogers said Girl Scouts were being charged $200+ to meet at the LMHS, and argued there would be no extra utility cost.",
+   "figures_as_printed": [
+    "$200+"
+   ],
+   "quote": "the girl scouts were being charged $200+ to meet at the"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Line-item transfer for e-permitting software maintenance, from the Liability Insurance Account to the technology budget (Article 1, Special Town Meeting).",
+   "amount_as_printed": "$25,500",
+   "outcome": "discussed; no committee vote recorded",
+   "quote": "it was for $25,500 for the e-permitting software that the town received a grant for last year"
+  },
+  {
+   "description": "Transfer from the Salary Reserve Account to the Library Department for a 5th grade pilot reading program (Article 1, Special Town Meeting).",
+   "amount_as_printed": "$7,200",
+   "outcome": "discussed; no committee vote recorded",
+   "quote": "the other transfer is from the salary reserve account to the library department to cover"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Dave Rogers",
+   "stated_role": "82 Highland street",
+   "topic": "school fees, budget checks, and school salary account",
+   "quote": "mr. dave rogers, 82 highland street, gave handouts prior to the meeting for his pubic"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "new growth as one-time vs recurring revenue; facilities maintenance vs stabilization fund",
+   "quote": "dave passios, 56 whiting street, asked, what the committees' thoughts are on new"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "called to order at 7:00 pm; recorded and televised",
+   "quote": "the chair called the meeting to order at 7:00 pm."
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "public comment heard from two residents; Beacon copy circulated",
+   "quote": "a copy of the beacon came in the mail and was passed around for other finance"
+  },
+  {
+   "topic": "Special Town Meeting articles and voting procedures",
+   "resolution": "Articles 1 and 2 discussed; Article 2 recommended 6-0; Article 8 passed over; Article 11 deferred to STM; other articles no direct financial impact",
+   "quote": "review special town meeting articles and voting procedures, votes may be taken."
+  },
+  {
+   "topic": "Status of member projects, dashboards, website data",
+   "resolution": "skipped until December 13, 2018",
+   "quote": "review status of member projects, ie, dashboards, website data"
+  },
+  {
+   "topic": "Terminology and definitions for website inclusion",
+   "resolution": "skipped until December 13, 2018",
+   "quote": "review terminology and definitions for website inclusion"
+  },
+  {
+   "topic": "Amended Investment Policy Statement",
+   "resolution": "approved 6-0",
+   "quote": "review of amended investment policy statement; vote to be taken"
+  },
+  {
+   "topic": "Committee liaison reports and coming events",
+   "resolution": "reported; capital plan dates and school updates given; item number not printed in the text",
+   "quote": "coming events- police and fire do their capital plans on"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "postponed to December 13, 2018",
+   "quote": "minutes for review by jay and michelle postponed for december 13, 2018 meeting."
+  },
+  {
+   "topic": "Town Manager and Financial Officer reports",
+   "resolution": "grant and Ch. 90 funding reported; no action",
+   "quote": "applied for grant funding for $162,000 to update the towns self-evaluation and transition"
+  },
+  {
+   "topic": "From the Public and Committee",
+   "resolution": "none",
+   "quote": "from the public none"
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "next meeting listed as December 13, 2018 (Special Town Meeting)",
+   "quote": "deember 13, 2018 (special town meeting)"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 8:37pm",
+   "quote": "john made a motion to adjourn. jay seconded the motion."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "The Beacon (copy)",
+   "where": "list",
+   "quote": "a copy of the beacon came in the mail and was passed around for other finance committee members to look at."
+  },
+  {
+   "name": "Handouts given by Mr. Dave Rogers",
+   "where": "text",
+   "quote": "gave handouts prior to the meeting for his pubic"
+  },
+  {
+   "name": "Amended Investment Policy Statement",
+   "where": "text",
+   "quote": "review of amended investment policy statement; vote to be taken"
+  },
+  {
+   "name": "List of Special Town Meeting warrant articles with position fill-ins (prepared by John)",
+   "where": "text",
+   "quote": "john made a list of the warrant articles with a fill in spot to say why"
+  },
+  {
+   "name": "Google docs form instructions (Town Manager)",
+   "where": "text",
+   "quote": "town manager put together a page or two of instructions on filling"
+  },
+  {
+   "name": "Entry Plan Survey",
+   "where": "text",
+   "quote": "there is a entry plan survey that anyone in"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "special town meeting",
+  "warrant articles",
+  "new growth",
+  "stabilization fund",
+  "investment policy",
+  "school budget",
+  "facilities",
+  "grants",
+  "transfers",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "new communications:"
+ },
+ "dropped_unquoted_by_field": {}
 }

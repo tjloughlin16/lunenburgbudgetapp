@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2019-01-24",
  "docid": "2165",
@@ -12,15 +12,292 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of January 10, 2019",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Marc Luescher",
+   "motion": "Accept the minutes of January 10, 2019.",
+   "moved_by": "John",
+   "seconded_by": "Marc",
    "outcome": "passed 7-0",
    "procedural": true,
    "quote": "john motion to accept the minutes of january 10, 2019. marc second. voted 7-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned text; one vote recorded (approval of prior minutes).",
- "cost_usd": 0.08373449999999999
+ "note": "Text is OCR of scanned pages (macOS Vision); some words are garbled and page 5 holds only the submission line. One motion is recorded (approval of the January 10, 2019 minutes, 7-0). No adjournment motion is printed. Items 7 (Public Comment) and 8 (Next Meetings) appear only as headings with no content, so they are not listed as topics. Heather Lemieux is printed as \"Guest: Heather Lemieux, TM\" and is referred to in the text both as \"Heather\" and as the Town Manager; the minutes use the two interchangeably, so the role is recorded as printed. The two presentations are described as attached but their contents are not in the text.",
+ "cost_usd": 0.00750432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "terri burchfield, chairman john henshaw, vice-chairman lunenburg, ma 01462-0135"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, jay simeone, george martin"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, jay simeone, george martin"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, jay simeone, george martin"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, jay simeone, george martin"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, jay simeone, george martin"
+  },
+  {
+   "name": "George Martin",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher, jay simeone, george martin"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Guest, TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Jack",
+   "role": "director of the DPW",
+   "status": "present",
+   "quote": "jack, director of the dpw, answered they are past their"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, asked to go back to engine fours page first"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "",
+   "status": "not stated",
+   "quote": "karen brochu commented near the end of the meeting, from fy22-fy23"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Wait for Chief Sullivan in a couple of weeks to bring back the question of why the town is not eligible for the grant money, instead of speculating.",
+   "quote": "it was agreed to wait for chief sullivan in a couple of weeks to bring that question back instead of speculating."
+  },
+  {
+   "decision": "Not to amend the May town meeting vote on the engine/ladder truck borrowing, but keep that vote, because borrowing later would carry a projected higher interest rate.",
+   "quote": "the decision was made not to amend that but keep that vote because if we have to borrow a year down the road"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stabilization fund deposit",
+   "what_was_recorded": "Terri clarified the stabilization line means depositing free cash to maintain 5%, not depositing 5% of free cash.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "deposit free cash in the amount of 5%"
+  },
+  {
+   "topic": "New growth revenue",
+   "what_was_recorded": "New growth has exceeded the forecast by about fifteen hundred thousand dollars; the trend ranged 360K-487K with last year around 472K.",
+   "figures_as_printed": [
+    "fifteen hundred thousand dollars",
+    "360K-487K",
+    "472K"
+   ],
+   "quote": "the new growth has exceeded that by some fifteen hundred thousand dollars"
+  },
+  {
+   "topic": "State aid to schools (Chapter 70) and general government",
+   "what_was_recorded": "The governor's proposal is already $200K more for Lunenburg FY20, with a 2.7% increase in unrestricted general government and in Chapter 70.",
+   "figures_as_printed": [
+    "$200K",
+    "2.7%"
+   ],
+   "quote": "the governor proposal is already $200k more for lunenburg fy20"
+  },
+  {
+   "topic": "Retirement assessment",
+   "what_was_recorded": "The forecast assumes the retirement assessment rises 10% per year, which John noted would double it about every 7 years.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "10% increase per year which would be a doubling of that every 7 years then?"
+  },
+  {
+   "topic": "Free cash",
+   "what_was_recorded": "Last fall's free cash surplus stands at 1.5 million; the forecast sets aside $100K for stabilization, $200K for the special purpose stabilization, and $150K for OPEB.",
+   "figures_as_printed": [
+    "1.5 million",
+    "$100K",
+    "$200K",
+    "$150K"
+   ],
+   "quote": "$100k for stabilization, $200k for the special purpose stabilization, and $150k for opeb account"
+  },
+  {
+   "topic": "Debt service drop-offs FY22-FY24",
+   "what_was_recorded": "Regular debt service falls about $50K from FY22-FY23 and about $120K from FY23-FY24; excludable debt drops by a million dollars FY23-24.",
+   "figures_as_printed": [
+    "$50K",
+    "$120K",
+    "a million dollars"
+   ],
+   "quote": "approximately a $50k reduction in our regular debt services"
+  },
+  {
+   "topic": "DPW fuel tanks",
+   "what_was_recorded": "The fuel tank cost is really $330K, with $110K from a previous capital article that has not been expended; the tanks are past their 25-year life span but not leaking.",
+   "figures_as_printed": [
+    "$330K",
+    "$110K"
+   ],
+   "quote": "terri clarified the cost for the fuel tanks at the dpw is really $330k, so the $110k"
+  },
+  {
+   "topic": "Unexpended capital balance",
+   "what_was_recorded": "The $167K in unexpended capital comes from $130K of asbestos abatement funds from the FY19 state budget and $25K from the police department (fingerprint machine received free from the state), plus minor closed-out lines.",
+   "figures_as_printed": [
+    "$167K",
+    "$130K",
+    "$25K"
+   ],
+   "quote": "terri asked for the town manager to speak on the $167k in unexpended capital"
+  },
+  {
+   "topic": "Fire engine/ladder truck borrowing",
+   "what_was_recorded": "A resident said the town is borrowing roughly $400k it hoped not to borrow; the $130K was not specifically designated to avoid borrowing.",
+   "figures_as_printed": [
+    "$400k",
+    "$130K"
+   ],
+   "quote": "we are borrowing roughly $400k that we hoped not to be borrowing at all"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Hannah Anderson",
+   "stated_role": "",
+   "topic": "PTO events and thanks to volunteers",
+   "quote": "hannah anderson, january 26'h the lunenburg pto is hosting a skate party at roll on america"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Three new positions",
+   "quote": "through you i would like to get the three new positions so i can get the designation right as they are prescribed."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Fire grant eligibility and engine truck borrowing",
+   "quote": "asked to go back to engine fours page first and asked why we are not been eligible for the grant money that we have gone after."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "called to order at 7:00 pm, recorded and televised",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "public comment heard; no new communications",
+   "quote": "new communications: none",
+   "tags": [
+    "communications",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager presents 5 year Financial Forecast & Capital Plan recommendation",
+   "resolution": "presented and discussed; no vote recorded",
+   "quote": "town manager presents 5 year financial forecast & capital plan recommendation",
+   "tags": [
+    "financial forecast",
+    "capital plan",
+    "free cash",
+    "debt service",
+    "retirement assessment",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "Committee/Department Updates",
+   "resolution": "updates reported by members; no vote",
+   "quote": "4. committee/department updates",
+   "tags": [
+    "committees",
+    "schools",
+    "public works",
+    "fire"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 7-0 (minutes of January 10, 2019)",
+   "quote": "john motion to accept the minutes of january 10, 2019. marc second. voted 7-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager/Financial Officer Reports",
+   "resolution": "heading only; no content recorded",
+   "quote": "6. town manager/financial officer reports",
+   "tags": [
+    "reports"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town of Lunenburg Financial Forecast Presentation",
+   "where": "list",
+   "quote": "town of lunenburg financial forecast presentation"
+  },
+  {
+   "name": "Town of Lunenburg Capital Investment Plan Presentation",
+   "where": "list",
+   "quote": "town of lunenburg capital investment plan presentation"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "five year forecast",
+  "capital plan",
+  "free cash",
+  "stabilization",
+  "debt service",
+  "retirement assessment",
+  "state aid",
+  "fire truck borrowing",
+  "DPW fuel tanks",
+  "unexpended capital",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {}
 }

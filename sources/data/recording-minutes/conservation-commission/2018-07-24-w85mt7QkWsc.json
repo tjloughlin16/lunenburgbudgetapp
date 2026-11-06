@@ -1,0 +1,247 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2018-07-24",
+ "video_id": "w85mt7QkWsc",
+ "video_url": "https://www.youtube.com/watch?v=w85mt7QkWsc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2018-07-24-w85mt7QkWsc.json",
+  "sha256": "d8d5ca2a473a75ebc626ab51e9d80b11aa0d8bf93f00634411e860560f63f1b3",
+  "caption_lines": 214,
+  "segments": 1570
+ },
+ "recording": {
+  "duration_s": 4548,
+  "duration": "1:15",
+  "spoken_chars": 56396,
+  "words_approx": 9399
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07242018-6203",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2018-07-24-agenda-6203.txt",
+   "path": "sources/meetings/conservation-commission/2018-07-24-agenda-6203.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T19:11:01Z",
+  "cost_usd": 0.1938055
+ },
+ "minutes": {
+  "headline": "Commission heard the lake weed survey and treatment plan; a motion to approve was made, result not audible.",
+  "summary": "The commission reviewed the lake management contractor's pretreatment survey and proposed herbicide areas. Members questioned treating areas with only native plants, and the contractor defended the plan under the lake management plan. A motion to approve was made, but the captions do not carry the vote. A Gilchrist Street conservation easement alternative was previewed for the next agenda, and a resident asked about a beach sand violation.",
+  "attendees": [
+   {
+    "name_as_heard": "Richard burr SH",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "plug wire",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Dominic",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 48,
+    "topic": "Chair called for public comment at the start; none was given."
+   },
+   {
+    "t": 3729,
+    "topic": "Lakefront residents spoke in support of the treatment plan and the contractor."
+   },
+   {
+    "t": 4184,
+    "topic": "A resident asked why a neighbor across the lake was allowed sand on a beach when his own was found in violation; commission explained pre-existing beaches are allowed."
+   },
+   {
+    "t": 4352,
+    "topic": "Resident praised the contractor and noted lake association membership dues are unpaid by many."
+   }
+  ],
+  "tags": [
+   "legal",
+   "planning-and-zoning",
+   "public-comment",
+   "recreation"
+  ],
+  "votes": [
+   {
+    "t": 3772,
+    "motion": "Approve the proposed lake treatment plan, with the contractor to recheck some areas; seconded.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 4478,
+    "motion": "Motion to adjourn to the next meeting.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 966,
+    "topic": "Herbicide treatment area and cost",
+    "what_was_said": "A member asked whether treating less area could cut cost; the contractor later agreed a perimeter treatment in one area would cost less."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 4012,
+    "decision": "The Gilchrist Street easement alternative will go on the next meeting's agenda for a possible recommendation to the selectmen."
+   },
+   {
+    "t": 3355,
+    "decision": "Contractor to send the commission an updated treatment map if areas change."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 74,
+    "topic": "Call to order, quorum, public comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 74,
+    "t_end": 3830,
+    "topic": "Lake pretreatment survey and herbicide treatment plan",
+    "resolution": "motion to approve made; outcome not audible",
+    "tags": [
+     "legal",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 3861,
+    "t_end": 4180,
+    "topic": "Gilchrist Street conservation easement alternative",
+    "resolution": "informational; to next agenda",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4184,
+    "t_end": 4460,
+    "topic": "Resident questions on beach sand and lake association",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 4478,
+    "t_end": 4540,
+    "topic": "Adjournment and pollinator habitat event announcement",
+    "resolution": "informational",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote result on the treatment plan motion",
+   "Several stretches of the lake discussion are garbled",
+   "Roll call names are mangled"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2855,
+    "about": "Contractor and a member disagreed over questioning the lake management plan criteria and treating native-plant areas.",
+    "sides": "a member questioning the criteria versus the contractor defending the plan",
+    "words_as_heard": "I'm tired of it I mean this is our plan I'm done talking run approve it or not",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1305,
+    "kind": "liability or legal",
+    "about": "Whether the neighboring town's order of conditions requires approval of the treatment area.",
+    "who": "a member",
+    "words_as_heard": "the order of the accordance requires the notification quickly requires approval then the order conditions"
+   },
+   {
+    "t": 3124,
+    "kind": "liability or legal",
+    "about": "The order is expiring so issues go to the Notice of Intent refiling.",
+    "who": "a commission member",
+    "words_as_heard": "they're going to have to refile them I know it or notice of intent in the fault"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 74,
+    "name_as_heard": "the pretreatment survey",
+    "kind": "report",
+    "words_as_heard": "we have received the pretreatment survey and that's what we'll be discussing tonight",
+    "shown": true
+   },
+   {
+    "t": 139,
+    "name_as_heard": "lake management plan",
+    "kind": "report",
+    "words_as_heard": "in line with our management plan the typical management program",
+    "shown": false
+   },
+   {
+    "t": 1350,
+    "name_as_heard": "email from the Shirley agent",
+    "kind": "letter or email",
+    "words_as_heard": "I have an email from the age of surely will copy the Chairman",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Conservation Commission reviewed the lake contractor's pretreatment survey and proposed herbicide treatment areas.",
+    "t": 74
+   },
+   {
+    "line": "Members questioned treating areas with only native plants; the contractor defended the plan under the lake management plan.",
+    "t": 966
+   },
+   {
+    "line": "A motion to approve the treatment plan, with some areas to be rechecked, was made and seconded; the captions do not carry the vote.",
+    "t": 3772
+   },
+   {
+    "line": "The contractor is to send the commission an updated treatment map if areas change.",
+    "t": 3355
+   },
+   {
+    "line": "A Gilchrist Street conservation easement alternative will go on the next agenda for a possible recommendation to the selectmen.",
+    "t": 4012
+   }
+  ],
+  "why_it_matters": [
+   "The treatment plan decides how much of the lake is treated with herbicide, and treating a smaller area, such as a perimeter, would cost less.",
+   "The outcome of the vote is not in the record as captioned, so whether the plan was approved should be confirmed against the official minutes."
+  ],
+  "watch_next": [
+   "The next meeting's agenda, where the Gilchrist Street easement alternative may draw a recommendation to the selectmen.",
+   "The official minutes, for the result of the vote on the lake treatment plan."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T19:11:08Z",
+   "cost_usd": 0.0218171
+  }
+ }
+}

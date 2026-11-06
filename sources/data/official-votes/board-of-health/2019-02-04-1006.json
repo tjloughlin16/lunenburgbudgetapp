@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2019-02-04",
  "docid": "1006",
@@ -12,31 +12,216 @@
  },
  "votes": [
   {
-   "motion": "Approve the groundwater variance from four feet to three feet at 120 Highland Street",
+   "motion": "Approve the 120 Highland Street groundwater variance from four feet to three feet.",
    "moved_by": "Jewell",
    "seconded_by": "Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by mayhew, the board approved the variance. roll call vote, all in favor."
+   "quote": "after discussion and on motion by jewell and second by mayhew, the board approved the variance."
   },
   {
-   "motion": "Allow the existing septic tank at 748 Page Street to remain subject to specified conditions",
+   "motion": "Allow the existing 1,500 gallon septic tank to remain at 748 Page Street on four listed conditions, with variances approved.",
    "moved_by": "Mayhew",
    "seconded_by": "Fortin",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "after discussion and on motion by mayhew and second by fortin, the board voted to allow the existing tank to remain on the following conditions: 1- the installer of the replacement system certify that the existing tank is wate r tight and in good condition; 2- the well be tested by agent jim garreffi 3- well tested to ensure a sanitary seal by a certified well driller 4- the property be deed restricted as a two (2) bedroom house. roll call vote: emond - yes, jewell - yes, passios - no, fortin - yes, mayhew - yes. variances approved."
+   "quote": "after discussion and on motion by mayhew and second by fortin, the board voted to allow the existing tank to remain on the following conditions:"
   },
   {
-   "motion": "Approve the 2020 Budget as amended",
+   "motion": "Approve the 2020 Budget as amended (5% increase to Nashoba Associated Boards of Health; 4 additional hours per week for the Administrative Assistant salary line).",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by fortin and second by jewell, the budget was approved, as amended. roll call vote, all in favor."
+   "quote": "on motion by fortin and second by jewell, the budget was approved, as amended."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1199915
+ "note": "Text is extracted with spacing and typo artifacts (e.g., \"syst em\", \"wate r\", \"REGUALTIONS\"); quotes were kept verbatim as printed where possible. No vote recorded for approval of the January 7, 2019 minutes (heading only), and no motion recorded for adjournment at 8:30 pm, so neither is listed as a vote. No public comment section is recorded; applicants who appeared are listed as attendees. The 120 Highland Street vote is recorded only as \"all in favor\" with no count. No dollar figures are printed in the text.",
+ "cost_usd": 0.00437172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios (remotely), paul fortin, warren mayhew"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios (remotely), paul fortin, warren mayhew"
+  },
+  {
+   "name": "David Passios",
+   "role": "Board member",
+   "status": "remote",
+   "quote": "present: george emond, perry jewell, david passios (remotely), paul fortin, warren mayhew"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios (remotely), paul fortin, warren mayhew"
+  },
+  {
+   "name": "Warren Mayhew",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, david passios (remotely), paul fortin, warren mayhew"
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "representing the owner (120 Highland Street)",
+   "status": "present",
+   "quote": "jack maloney met with the board on behalf of the owner."
+  },
+  {
+   "name": "Chris Knuth",
+   "role": "representing the owner (748 Page Street)",
+   "status": "present",
+   "quote": "chris knuth met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "On the Septic Loan matter (expanded use of Septic Loan Repair Program money, letter to Town Counsel drafted by Chairman Emond), the board determined no further action was necessary at this time.",
+   "quote": "after discussion, it was determined that no further action was necessary on this matter at this time."
+  },
+  {
+   "decision": "The Board of Health takes no position and offers no opinion on the discussions surrounding cannabis/marijuana regulations.",
+   "quote": "as far as the board is concerned, the board of health does not take any position or offer any opinions"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2020 Budget",
+   "what_was_recorded": "The 2020 Budget was available for review and included a 5% increase to the Nashoba Associated Boards of Health and 4 added hours per week to the Administrative Assistant salary line; the budget was approved as amended.",
+   "figures_as_printed": [
+    "5%",
+    "4 hours per week"
+   ],
+   "quote": "the 2020 budget was available for review including an increase of 5% to the nashoba associated boards of health"
+  },
+  {
+   "topic": "Septic Loan Repair Program money",
+   "what_was_recorded": "Chairman Emond had drafted a letter to Town Counsel about expanded use of existing Septic Loan Repair Program money; no further action was taken. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "several months ago, chairman george emond drafted a letter to town counsel with regard to the expanded use of the existing septic loan repair program money."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (heading only; no motion recorded)",
+   "quote": "minutes approved: january 7, 2019",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 20 eastern avenue 157 whalom road",
+   "tags": [
+    "title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "listed as signed; no discussion recorded",
+   "quote": "septic permits signed: 120 highland street 120 highland street",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "120 Highland Street septic variance",
+   "resolution": "approved (groundwater variance 4 ft to 3 ft)",
+   "quote": "after discussion and on motion by jewell and second by mayhew, the board approved the variance.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "748 Page Street septic and well",
+   "resolution": "approved with four conditions; existing septic tank may remain (4-1)",
+   "quote": "after discussion and on motion by mayhew and second by fortin, the board voted to allow the existing tank to remain on the following conditions:",
+   "tags": [
+    "variance",
+    "septic",
+    "well",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "2020 Budget",
+   "resolution": "approved as amended",
+   "quote": "the 2020 budget was available for review including an increase of 5% to the nashoba associated boards of health",
+   "tags": [
+    "budget",
+    "nashoba",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Septic Loan",
+   "resolution": "no further action",
+   "quote": "after discussion, it was determined that no further action was necessary on this matter at this time.",
+   "tags": [
+    "septic loan",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Proposed cannabis regulations",
+   "resolution": "no position taken; board declined to comment",
+   "quote": "proposed cannabis regualtions the members of the board where provided with the proposed cannabis regulations",
+   "tags": [
+    "cannabis",
+    "planning board",
+    "marijuana"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed Cannabis Regulations (as drafted by the Planning Board)",
+   "where": "text",
+   "quote": "the members of the board where provided with the proposed cannabis regulations as draft ed by the planning board."
+  },
+  {
+   "name": "2020 Budget",
+   "where": "text",
+   "quote": "the 2020 budget was available for review including an increase of 5% to the nashoba associated boards of health"
+  },
+  {
+   "name": "Title 5 inspection reports (six addresses acknowledged)",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 20 eastern avenue 157 whalom road"
+  }
+ ],
+ "tags": [
+  "septic",
+  "title 5",
+  "variance",
+  "well",
+  "budget",
+  "nashoba",
+  "septic loan",
+  "cannabis",
+  "board of health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

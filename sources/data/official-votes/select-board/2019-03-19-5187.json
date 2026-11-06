@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-03-19",
  "docid": "5187",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "To adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "D. McQuaid",
    "seconded_by": "K. Adams",
    "outcome": "passed",
@@ -21,6 +21,257 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of Select Board minutes from 2019-03-19. Page 3 contains unreadable OCR artifacts but the adjournment vote on page 4 is legible. This was a discussion meeting about town facilities consolidation; no votes were taken on substantive matters, only the procedural adjournment vote at the end.",
- "cost_usd": 0.0856995
+ "note": "Text is OCR from scanned pages. Page 3's top lines are garbled and unreadable. The dollar figure from Mr. Londa is cut off at the page break and shows only as \\\"$4\\\". Only one motion is recorded (adjournment), with no vote count printed, only \\\"all in Favor\\\". The signature block names both \\\"Claire M. Peterson\\\" and \\\"Elaine M. Peterson\\\". Received and filed stamp reads MAY 15 2019.",
+ "cost_usd": 0.00622912,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager, adam burney, land use director; jim"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager, adam burney, land use director; jim"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "marino, police chief; john londa, facilities director; steve malandrinos, it director;"
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "marino, police chief; john londa, facilities director; steve malandrinos, it director;"
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "marino, police chief; john londa, facilities director; steve malandrinos, it director;"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "sullivan, fire chief; jo mclaughlin, pacc coordinator; ellen griffin, asst. town clerk;"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "PACC Coordinator",
+   "status": "present",
+   "quote": "sullivan, fire chief; jo mclaughlin, pacc coordinator; ellen griffin, asst. town clerk;"
+  },
+  {
+   "name": "Ellen Griffin",
+   "role": "Asst. Town Clerk",
+   "status": "present",
+   "quote": "sullivan, fire chief; jo mclaughlin, pacc coordinator; ellen griffin, asst. town clerk;"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits Coordinator",
+   "status": "present",
+   "quote": "nancy forest, payroll & benefits coordinator; kathy herrick, town clerk; myleen mallari,"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "Town Clerk",
+   "status": "present",
+   "quote": "nancy forest, payroll & benefits coordinator; kathy herrick, town clerk; myleen mallari,"
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Treasurer/Collector",
+   "status": "present",
+   "quote": "nancy forest, payroll & benefits coordinator; kathy herrick, town clerk; myleen mallari,"
+  },
+  {
+   "name": "Sally Deming",
+   "role": "Asst. Treasurer/Collector",
+   "status": "present",
+   "quote": "sally deming, asst. treasurer/collector; louise paquette, administrative"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "sally deming, asst. treasurer/collector; louise paquette, administrative"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Principal Assessing Clerk",
+   "status": "present",
+   "quote": "sheila craigen, principal assessing clerk; jack rodriquenz, dpw director; kit"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "sheila craigen, principal assessing clerk; jack rodriquenz, dpw director; kit"
+  },
+  {
+   "name": "Kit Walker",
+   "role": "Facilities Technician",
+   "status": "present",
+   "quote": "walker, facilities technician; elaine peterson, executive asst.; marjorie boggio, planning"
+  },
+  {
+   "name": "Elaine Peterson",
+   "role": "Executive Asst.",
+   "status": "present",
+   "quote": "walker, facilities technician; elaine peterson, executive asst.; marjorie boggio, planning"
+  },
+  {
+   "name": "Marjorie Boggio",
+   "role": "Planning Board Administrative Asst.",
+   "status": "present",
+   "quote": "walker, facilities technician; elaine peterson, executive asst.; marjorie boggio, planning"
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "Building Admin. Asst.",
+   "status": "present",
+   "quote": "lisa normandin, building admin. asst.; samantha tucker, dpw"
+  },
+  {
+   "name": "Samantha Tucker",
+   "role": "DPW Admin. Asst.",
+   "status": "present",
+   "quote": "lisa normandin, building admin. asst.; samantha tucker, dpw"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "admin. asst.; debbie lincoln, susanna jewell"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "",
+   "status": "present",
+   "quote": "admin. asst.; debbie lincoln, susanna jewell"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC Members",
+   "status": "present",
+   "quote": "pacc members: pete lincoln, steve walker, steve archambault"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC Members",
+   "status": "present",
+   "quote": "pacc members: pete lincoln, steve walker, steve archambault"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC Members",
+   "status": "present",
+   "quote": "pacc members: pete lincoln, steve walker, steve archambault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board plans to place articles on the Annual Town Meeting warrant requesting approval for a detailed study of the costs of consolidating offices, PACC studio space and school administration at the TCP.",
+   "quote": "articles will be on the annual town meeting to request approval to conduct a detailed study of what"
+  },
+  {
+   "decision": "Board is scheduling one more focus group meeting with abutters (Library, Senior Center, Teen Center) to the property.",
+   "quote": "they are also scheduling one more focus group meeting with \"abutters,\" (library, senior center, teen center)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "TCP facility needs and the Tappe study",
+   "what_was_recorded": "Mr. Londa said the TCP has many needs and the Tappe study has gaps such as roof replacement; he believed a dollar figure (cut off in the text) was relevant.",
+   "figures_as_printed": [
+    "$4"
+   ],
+   "quote": "mr. londa stated on the school side, the tcp has many needs. the tappe study addressed many things, but there are holes in that study like roof replacement and such. he believed the $4"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Lincoln",
+   "stated_role": "",
+   "topic": "seniors and TCP as a site",
+   "quote": "mr. lincoln stated by the 2020 census, 30% of our town population will be aged 60 years or"
+  },
+  {
+   "speaker": "Steve Walker",
+   "stated_role": "PACC Members",
+   "topic": "PACC studio at TCP",
+   "quote": "steve walker asked about making a real studio and have the ability to cover more meetings with"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Town facilities and consolidating town offices at the T.C. Passios Building (TCP)",
+   "resolution": "discussed with staff and PACC; no action taken beyond the adjournment motion",
+   "quote": "mr. toale called the meeting to order at 1:00 p.m. and stated the main purpose today was to meet",
+   "tags": [
+    "TCP",
+    "town hall",
+    "Ritter building",
+    "consolidation",
+    "facilities"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tappe study (TCP)",
+   "where": "text",
+   "quote": "the tappe study addressed many things, but there are holes in that study like roof replacement and such."
+  }
+ ],
+ "tags": [
+  "town facilities",
+  "TCP consolidation",
+  "Town Hall",
+  "Ritter Building",
+  "PACC studio",
+  "seniors access",
+  "building conditions",
+  "HVAC",
+  "storage",
+  "parking"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

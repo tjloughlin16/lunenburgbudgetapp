@@ -71,10 +71,10 @@ def myrec():
 
 def sources():
     want = {
-        'town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf': ('MyRec Program Sales Report, FY2025', 'the department’s registration system, by records request'),
+        'town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf': ('MyRec Program Sales Report, FY2025', 'the department’s registration system, by emailed request'),
         'town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf': ('MyRec Membership Sales Report, FY2025', 'the same'),
-        'town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf': ('Grounds-maintenance bid, year one from 1 July 2024', 'a contractor, by records request'),
-        'town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-parks.pdf': ('FY2024 year-to-date budget report, Parks, with journal detail', 'MUNIS, by records request; image only'),
+        'town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf': ('Grounds-maintenance bid, year one from 1 July 2024', 'a contractor, by emailed request'),
+        'town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-parks.pdf': ('FY2024 year-to-date budget report, Parks, with journal detail', 'MUNIS, by emailed request; image only'),
         'town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx': ('FY26 special-revenue report, 31 March 2026', 'MUNIS, by records request'),
         'town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx': ('FY26 budget report through June (period 12), general fund', 'MUNIS, by records request'),
     }

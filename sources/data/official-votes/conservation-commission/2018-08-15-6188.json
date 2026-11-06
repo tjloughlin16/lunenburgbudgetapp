@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-08-15",
  "docid": "6188",
@@ -12,66 +12,365 @@
  },
  "votes": [
   {
-   "motion": "Continue the Notice of Intent hearing for the Nault property at 141 Hemlock Road to September 5, 2018 at 7 PM",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Continue the Mike Nault continued Notice of Intent (141 Hemlock Road) to the September 5 2018 meeting at 7 PM at the applicant's request.",
+   "moved_by": "KJ",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "the meeting was continued by request of the applicant to the september 5 2017 meeting at 7 pm by a motion of kj and a second by jr with a unanimous vote."
   },
   {
-   "motion": "Issue a standard Order of Conditions for the Ialeggio property addition, septic, grading and wetland restoration at 564 Page Street",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Issue a standard Order of Conditions for the Tim Ialeggio Notice of Intent (564 Page Street).",
+   "moved_by": "BP",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "bp moved for a standard order. cc seconded and the commission unanimously approved the motion"
   },
   {
-   "motion": "Continue the Hickory Hills Association drawdown management plan hearing to September 5, 2018 at 7 PM",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "this was continued to the meeting of september 5, 2018 at 7 pm by a motion of kj and a second by cc. the vote was approved by four of five members with commissioner jack rabbitt recusing himself from the matter.",
-   "quote_taken_from_text": true
+   "motion": "Continue the Hickory Hills Association Notice of Intent (drawdown management plan) to September 5, 2018 at 7 PM.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed, four of five members (Rabbitt recused)",
+   "procedural": false,
+   "quote": "this was continued to the meeting of september 5, 2018 at 7 pm by a motion of kj and a second by cc."
   },
   {
-   "motion": "Issue a negative determination for the deck placement at 55 Spring Street",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed",
+   "motion": "Issue a negative determination for the Loretta Godfrey deck at 55 Spring Street.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "kj moved for a negative determination. bp seconded and the commission unanimously approved"
   },
   {
-   "motion": "Issue a standard Order of Conditions for grading to accommodate a septic system at 986 Fischer Road, with the condition that blueberry bushes be planted at the toe of slope to establish a vegetative buffer",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Issue a standard Order of Conditions for the Jeanne Clark septic grading at 986 Fischer Road, with the added condition that blueberry bushes be planted at the toe of slope to the wetland resource area.",
+   "moved_by": "BP",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bp moved for a standard order with the added condition of blueberry bushes will be planted at the toe of slope to the wetland resource area to establish a vegetative buffer. jr seconded and the commission voted unanimously."
+   "quote": "bp moved for a standard order with the added condition of blueberry bushes will be planted at the toe of slope"
   },
   {
-   "motion": "Continue the rolling dock request for 667 Reservoir Road to September 5, 2018 at 7 PM",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "continued to the september 5, 2018 meeting at 7 pm b y a motion of kj and a second of cc and a unanimous vote to approve the motion",
-   "quote_taken_from_text": true
+   "motion": "Continue the David King request for determination (rolling dock, 667 Reservoir Road) to the September 5, 2018 meeting at 7 PM.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "continued to the september 5, 2018 meeting at 7 pm b y a motion of kj and a second of cc and a unanimous vote to approve"
   },
   {
-   "motion": "Establish October 3, 2018 as the hearing date for the Powell Stone and Gravel Notice of Intent with filing deadline of September 18, 2018 at 11:30 AM",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Establish October 3, 2018 as the hearing date for the Powell Stone and Gravel Notice of Intent, with the filing deadline at the office of 9/18/18 by 11:30 AM.",
+   "moved_by": "BP",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bp moved to establish a deadline of oct 3, 2018 as the date of the hearing for the notice of intent which would make the deadline for fili ng the notice of intent with the office as 9/18/18 by 11:30 am. cc seconded with a unanimous vote",
-   "quote_taken_from_text": true
+   "quote": "bp moved to establish a deadline of oct 3, 2018 as the date of the hearing for the notice of intent"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. Minutes legible; minor OCR typo noted (Ialeggio spelled \"Illegiao\" in one instance, \"Illeggio\" elsewhere). One date reference states \"September 5 2017\" where context confirms 2018 is correct.",
- "cost_usd": 0.0976235
+ "note": "Text is typed extraction, not a scan; all votes readable. Limits: the Nault continuance reads \"September 5 2017\" while the meeting is 2018 (printed as is). No roll-call, minutes-approval, adjournment, or executive-session votes appear. No public comment is recorded under the Public Comment heading. Marro's presence is inferred from his speaking (\"MM\"); the attendance line names only members. Tim Ialeggio appears as \"Tim Ialeggio\" in the notice and \"Mr Illegiao\" in the narrative. The Gilchrest item records no outcome. Votes that were continued or deferred carry the motion's result as printed.",
+ "cost_usd": 0.009649020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "call to order vice chair dwyer presiding- all members present except chiarman bursch and mr. luck"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair, presiding",
+   "status": "present",
+   "quote": "call to order vice chair dwyer presiding- all members present except chiarman bursch and mr. luck"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "absent",
+   "quote": "call to order vice chair dwyer presiding- all members present except chiarman bursch and mr. luck"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order vice chair dwyer presiding- all members present except chiarman bursch and mr. luck"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order vice chair dwyer presiding- all members present except chiarman bursch and mr. luck"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order vice chair dwyer presiding- all members present except chiarman bursch and mr. luck"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order vice chair dwyer presiding- all members present except chiarman bursch and mr. luck"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted that the deadline for removal of the driveway was met and there was"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "applicant, MJN Realty Trust",
+   "status": "not stated",
+   "quote": "a public meeting on a continued notice of intent by mike nault of mjn realty trust"
+  },
+  {
+   "name": "Tim Ialeggio",
+   "role": "applicant, representing himself",
+   "status": "present",
+   "quote": "mr illegiao attended representing himself."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "appeared before the commission for the proposed deck",
+   "status": "present",
+   "quote": "steve marsden appeared before the commission for the proposed deck with was proposed to be cantilevered"
+  },
+  {
+   "name": "Loretta Godfrey",
+   "role": "applicant, request for determination",
+   "status": "not stated",
+   "quote": "a request for a determination by loretta godfrey for the placement of a deck at 55 spring street"
+  },
+  {
+   "name": "Jeanne Clark",
+   "role": "applicant, request for determination",
+   "status": "not stated",
+   "quote": "a request for a determination by jeanne clark for the grading to accommodate a septic system at 986 fischer road"
+  },
+  {
+   "name": "Dan Romero",
+   "role": "representing the applicant, David Ross",
+   "status": "present",
+   "quote": "dan romero from david ross appeared and represented the applicant."
+  },
+  {
+   "name": "David King",
+   "role": "applicant, request for determination",
+   "status": "not stated",
+   "quote": "a request for a determination by david king for the placement of a rolling dock at 667 reservoir road"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "appeared before the commission",
+   "status": "present",
+   "quote": "brian marchetti appeared before the commission to narrate the current site conditions"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Matthew Marro (MM) will send a doodle poll to the members for dates and times the commission could walk the Nault site with Mr. Nault.",
+   "quote": "mm indicated he would send a doodle poll to the members for dates and times the commission could walk with mr nault."
+  },
+  {
+   "decision": "The commission will prioritize completing the small town forest cleanup and gate at Robbs Hill; KJ will work on the gate and MM is gathering quotes for the cleanup work.",
+   "quote": "bp expressed that the commission should prioritize getting the small town forest cleanup and gate completed first."
+  },
+  {
+   "decision": "Review and approval of the August 1, 2018 minutes was deferred to the next meeting.",
+   "quote": "minutes of previous meetings - review and approval of - august 1, 2018 this will be discussed at the next meeting"
+  },
+  {
+   "decision": "The Agent's Report and action items were deferred to the next meeting.",
+   "quote": "agents report /action items : - to be discussed at next meeting."
+  },
+  {
+   "decision": "The commission will speak to the Chair about the open space committee's search for a replacement for Mr. Dwyer.",
+   "quote": "the commission indicated they will speak to the chair as he does regularly attend the meetings."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continued Notice of Intent, Mike Nault, 141 Hemlock Road",
+   "resolution": "continued to September 5 2018 meeting; site walk to be scheduled",
+   "quote": "a public meeting on a continued notice of intent by mike nault of mjn realty trust for the construction of a single family home within the buffer zone at 141 hemlock road.",
+   "tags": [
+    "notice of intent",
+    "buffer zone",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent, Tim Ialeggio, 564 Page Street",
+   "resolution": "standard Order of Conditions approved unanimously",
+   "quote": "bp moved for a standard order. cc seconded and the commission unanimously approved the motion",
+   "tags": [
+    "notice of intent",
+    "order of conditions",
+    "septic",
+    "wetland restoration"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent, Hickory Hills Association, drawdown management plan",
+   "resolution": "continued to September 5 2018; Rabbitt recused",
+   "quote": "this was continued to the meeting of september 5, 2018 at 7 pm by a motion of kj and a second by cc.",
+   "tags": [
+    "notice of intent",
+    "lake",
+    "drawdown",
+    "recusal"
+   ]
+  },
+  {
+   "topic": "Request for determination, Loretta Godfrey, 55 Spring Street deck",
+   "resolution": "negative determination approved unanimously",
+   "quote": "kj moved for a negative determination. bp seconded and the commission unanimously approved",
+   "tags": [
+    "request for determination",
+    "deck",
+    "cantilevered"
+   ]
+  },
+  {
+   "topic": "Request for determination, Jeanne Clark, 986 Fischer Road septic grading",
+   "resolution": "standard order approved with blueberry bush planting condition",
+   "quote": "bp moved for a standard order with the added condition of blueberry bushes will be planted at the toe of slope",
+   "tags": [
+    "request for determination",
+    "septic",
+    "grading",
+    "vegetative buffer"
+   ]
+  },
+  {
+   "topic": "Request for determination, David King, 667 Reservoir Road rolling dock",
+   "resolution": "continued to September 5 2018 meeting",
+   "quote": "continued to the september 5, 2018 meeting at 7 pm b y a motion of kj and a second of cc and a unanimous vote to approve",
+   "tags": [
+    "request for determination",
+    "dock"
+   ]
+  },
+  {
+   "topic": "Violations and enforcement actions",
+   "resolution": "no vote on most; Powell Stone and Gravel hearing deadline set",
+   "quote": "eo 255 sunset lane mm noted that the deadline for removal of the driveway was met and there was",
+   "tags": [
+    "enforcement",
+    "erosion",
+    "clearing",
+    "gravel operation"
+   ]
+  },
+  {
+   "topic": "Powell Stone and Gravel enforcement order, Notice of Intent deadline",
+   "resolution": "hearing set for October 3 2018; filing deadline 9/18/18 11:30 AM",
+   "quote": "bp moved to establish a deadline of oct 3, 2018 as the date of the hearing for the notice of intent",
+   "tags": [
+    "enforcement",
+    "notice of intent",
+    "deadline"
+   ]
+  },
+  {
+   "topic": "New business, proposed Eagle Scout project",
+   "resolution": "no action; KJ to update commission",
+   "quote": "proposed eagle scout project kj is working with an eagle scout for trail cleaning and marking on the hollis road property",
+   "tags": [
+    "eagle scout",
+    "trail",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Old business, Robbs Hill management update",
+   "resolution": "no vote; cleanup and gate prioritized",
+   "quote": "robbs hill management update- mm is attempting to have a site walk date established with gary gouldrup.",
+   "tags": [
+    "town forest",
+    "gate",
+    "cleanup",
+    "site walk"
+   ]
+  },
+  {
+   "topic": "Land exchange on Gilchrest, updates",
+   "resolution": "reviewed; no action recorded",
+   "quote": "mm reviewed the conservation restriction/land donation combination with the commission.",
+   "tags": [
+    "land exchange",
+    "conservation restriction",
+    "land donation"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings, August 1 2018",
+   "resolution": "deferred to next meeting",
+   "quote": "minutes of previous meetings - review and approval of - august 1, 2018 this will be discussed at the next meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Certificates of compliance, extension permits, agent's report, committee reports, legal updates",
+   "resolution": "no items presented; agent's report deferred",
+   "quote": "agents report /action items : - to be discussed at next meeting.",
+   "tags": [
+    "certificates of compliance",
+    "extension permit",
+    "agent report"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent, remedial plan narrative by Nourse Environmental, and remediation blueprint by Soils Smith Designs",
+   "where": "list",
+   "quote": "documents for consideration of approval was a notice of intent, a remedial plan narrative by nourse environmental and a remdiation blueprint by soils smith designs"
+  },
+  {
+   "name": "Request for a determination form and a plan by Marsden Engineering",
+   "where": "list",
+   "quote": "documents presented for consideration of approval was a request for a determination form and a plan by marsden engineering."
+  },
+  {
+   "name": "Notice of Intent and a blueprint by David E. Ross and Associates entitled \"Sewage Disposal System\"",
+   "where": "list",
+   "quote": "documents for consideration of approval was a notice of intent, and a blueprint by david e. ross and associates entitled"
+  },
+  {
+   "name": "Conservation restriction/land donation combination (Gilchrest land exchange)",
+   "where": "text",
+   "quote": "mm reviewed the conservation restriction/land donation combination with the commission."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "notice of intent",
+  "request for determination",
+  "enforcement",
+  "order of conditions",
+  "Robbs Hill",
+  "land exchange",
+  "Hemlock Road",
+  "Page Street",
+  "Fischer Road",
+  "Spring Street",
+  "Reservoir Road",
+  "continuances"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents for consideration of approval was a notice of intent"
+ },
+ "dropped_unquoted_by_field": {}
 }

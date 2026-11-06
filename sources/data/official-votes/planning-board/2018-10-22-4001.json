@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-10-22",
  "docid": "4001",
@@ -12,15 +12,220 @@
  },
  "votes": [
   {
-   "motion": "close the hearing",
+   "motion": "Accept Article 14 (deleting duplicated definitions from Section 250-2.1), as moved by K. Chenis; the motion was retracted after a point of order that the Hearing was not yet closed.",
+   "moved_by": "K. Chenis",
+   "seconded_by": "D. Prokowiew",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "k. chenis made motion to accept, seconded by d. prokowiew, all aye."
+  },
+  {
+   "motion": "Close the Hearing.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "k. chenis made a motion to close the hearing, seconded by t. cole, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One motion early in the document (K. Chenis to accept Article 14, seconded by D. Prokowiew) was retracted before a vote was taken, so it is not included. The minutes record no other votes.",
- "cost_usd": 0.0815635
+ "note": "Readable text, no scan issues. Minutes are unsigned-looking but otherwise complete. The motion on Article 14 was retracted, so no result is recorded for it. Article 12 is labelled \"(iv)\" a second time in the text; it is recorded here as Article 12 per its draft-warrant number. The Article 15 amendments are described as planned for Town Meeting, not voted. The documents list heading is \"Documents used at hearing:\"; its second entry is a filing path for these minutes, so it is not recorded as a document. No dollar figures appear. The Chair is shown in the header with no name. Marjorie J. Boggio appears only in the letterhead and is not recorded as attending.",
+ "cost_usd": 0.00496112,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "David Passios",
+   "role": "",
+   "status": "present",
+   "quote": "david passios, 56 whiting street, noted a point of order that the board cannot vote to accept until the hearing is closed."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "carl luck, 50 sunset lane- inquired as to the work accomplished by the board since this bylaw was put in place in may 2017."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "she does not support the town growing its economy on drug use."
+  },
+  {
+   "name": "Jim Laveck",
+   "role": "",
+   "status": "present",
+   "quote": "jim laveck, lancaster avenue - asked why no lighting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Planning Board is submitting five articles for the November 2018 Special Town Meeting.",
+   "quote": "the planning board is submitting five articles for november 2018 special town meeting."
+  },
+  {
+   "decision": "Two Article 15 items will be amended on the Town Meeting floor: add Board of Selectmen to 4.1.N(3) and remove Veterinary Hospital from the Tri Town Smart Growth District.",
+   "quote": "these two items will be amended on town meetin g floor to add board of selectmen to 4.1.n(3) and remove veterinary hospital from the tri town smart growth district."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "point of order on accepting Article 14 before hearing closed",
+   "quote": "david passios, 56 whiting street, noted a point of order that the board cannot vote to accept until the hearing is closed."
+  },
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "50 Sunset Lane",
+   "topic": "Board work since the marijuana bylaw of May 2017; timing of market",
+   "quote": "carl luck, 50 sunset lane- inquired as to the work accomplished by the board since this bylaw was put in place in may 2017."
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "Williams Drive",
+   "topic": "opposition to recreational marijuana moratorium extension",
+   "quote": "she does not support the town growing its economy on drug use."
+  },
+  {
+   "speaker": "Jim Laveck",
+   "stated_role": "Lancaster Avenue",
+   "topic": "why sign lighting is not allowed",
+   "quote": "jim laveck, lancaster avenue - asked why no lighting."
+  },
+  {
+   "speaker": "David Passios",
+   "stated_role": "",
+   "topic": "sign offsets measured from road centre or right-of-way",
+   "quote": "david passios- inquired if the street offsets are from the center of the road."
+  },
+  {
+   "speaker": "David Passios",
+   "stated_role": "",
+   "topic": "whether Article 12 repeats the article voted down in May 2018",
+   "quote": "david passios- inquired if this article was different than that voted down at town meeting may 2018."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Article 14: Section 250-2.1 definitions",
+   "resolution": "motion to accept retracted; no action",
+   "quote": "this article deletes definitions from 2.1 that are duplicated in the use table in 4. 1.",
+   "tags": [
+    "definitions",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Article 15: Section 250-4.1.G use table (Single and Two-Family Dwelling, Village Center)",
+   "resolution": "discussed; two items to be amended on Town Meeting floor",
+   "quote": "k. chenis questioned if 4.1.n(3), earth removal sp (special permit) should come under the board of selectmen.",
+   "tags": [
+    "use table",
+    "special permit",
+    "village center"
+   ]
+  },
+  {
+   "topic": "Article 16: Temporary moratorium on recreational marijuana sale and distribution (Section 250-4.15)",
+   "resolution": "discussed; no vote recorded",
+   "quote": "this article extends the moratorium on the sale and distribution of recreational marijuana",
+   "tags": [
+    "marijuana",
+    "moratorium"
+   ]
+  },
+  {
+   "topic": "Article 13: Section 250-6.5 signs, by-right free-standing sign in commercial districts",
+   "resolution": "discussed; no vote recorded",
+   "quote": "this article will be beneficial for existing small businesses.",
+   "tags": [
+    "signs",
+    "commercial districts"
+   ]
+  },
+  {
+   "topic": "Article 12 (labelled (iv) in the text): Section 250-8.3 Board of Appeals special permit timeline",
+   "resolution": "discussed; no vote recorded",
+   "quote": "this article will clean up 8.3. for special permits to make the planning board",
+   "tags": [
+    "board of appeals",
+    "special permit",
+    "MGL c. 40A"
+   ]
+  },
+  {
+   "topic": "Close public hearing",
+   "resolution": "passed; hearing closed 9:09 PM",
+   "quote": "hearing closed 9:09 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Zoning Warrant Articles",
+   "where": "list",
+   "quote": "documents used at hearing: zoning warrant articles minutes/public hearings 2018/tm warrant article 10.22.18"
+  },
+  {
+   "name": "Complete texts for all Planning Board Articles (on file in the Planning Office)",
+   "where": "text",
+   "quote": "(complete texts for all planning board articles are on file in the planning office.)"
+  },
+  {
+   "name": "Draft warrant (Article numbering)",
+   "where": "text",
+   "quote": "(article 14- numbered as such on the draft warrant)"
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "town meeting warrant",
+  "zoning",
+  "recreational marijuana",
+  "signs",
+  "special permits",
+  "board of appeals",
+  "November 2018 special town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

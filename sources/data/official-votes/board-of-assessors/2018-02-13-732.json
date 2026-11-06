@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2018-02-13",
  "docid": "732",
@@ -12,31 +12,229 @@
  },
  "votes": [
   {
-   "motion": "Approve current expense vouchers, payroll, abatements, warrants, commitments, and January 9, 2018 minutes",
+   "motion": "Approve current expense vouchers, payroll, abatements, warrants, commitments and the January 9, 2018 minutes.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and january 9, 2018 minutes."
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and january 9, 2018 minutes.",
+   "seconded_by": ""
   },
   {
-   "motion": "Begin reviewing the twenty abatement applications at the next meeting",
+   "motion": "Meet again on March 6, 2018 at 5:45 pm.",
    "moved_by": "",
-   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board approved to begin reviewing them at the next meeting."
-  },
-  {
-   "motion": "Meet on March 6, 2018 at 5:45 pm",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "board voted to meet on march 6, 2018 2018 at 5:45 pm."
+   "quote": "board voted to meet on march 6, 2018 2018 at 5:45 pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract from macOS Vision. Minutes are legible and votes are recorded.",
- "cost_usd": 0.0262072
+ "note": "Scanned minutes read by OCR. Page 2 begins mid-sentence and the warrant-article notice is cut off at the page break. The OCR of the Town Clerk stamp and the signature is garbled. The attendee roles come from the list order in the opening paragraph (roles precede names, e.g., 'Chairman, Louis Franco'), so Rena Swezey's role is inferred as Board Member. The approval of vouchers and minutes and the meeting-date vote record no motion, mover, seconder or vote count. The adjournment at 7:06pm has no recorded vote, so it is not listed. No public comment section is printed.",
+ "cost_usd": 0.00539452,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, richard letarte,"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, richard letarte,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, town manager,"
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, town manager,"
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, harald scheid, associate assessor, joshua gendron, town manager,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "joshua gendron, town manager, heather lemieux and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "heather lemieux and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOA requested that a follow-up item on RRG's service contract be added to the agenda because no Associate Assessor was assigned to Lunenburg.",
+   "quote": "the boa requested that a follow-up item be added to the agenda due to the lack of an associate assessor assigned to service the town of lunenburg."
+  },
+  {
+   "decision": "Board position: it does not wish to implement 'telepresence' in its office during the present contract period; may revisit only if many other towns adopt it with positive results.",
+   "quote": "we do not wish to be \"anywhere near the cutting edge\" in implementing this technology in our office."
+  },
+  {
+   "decision": "Louise Paquette was asked, on behalf of the Board, to keep track of hours RRG serviced in Lunenburg so any shortfall is recouped during the contract period.",
+   "quote": "requested, on behalf of the board, that louise keep track of the hours serviced in this capacity by rrg,"
+  },
+  {
+   "decision": "The Board approved beginning review of the 20 abatement applications at the next meeting.",
+   "quote": "the board approved to begin reviewing them at the next meeting."
+  },
+  {
+   "decision": "The Board took no action at this time to submit any warrant articles for the May 5, 2018 Annual Town Meeting.",
+   "quote": "no action taken at this time by the boa to submit any articles."
+  },
+  {
+   "decision": "One V1 statutory exemption application was reviewed and granted.",
+   "quote": "one v1 application reviewed and granted in the amount of $400.00."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemption (V1 application)",
+   "what_was_recorded": "One V1 statutory exemption application was reviewed and granted for a set amount.",
+   "quote": "one v1 application reviewed and granted in the amount of $400.00.",
+   "figures_as_printed": [
+    "$400.00"
+   ]
+  },
+  {
+   "topic": "2018 motor vehicle excise commitments",
+   "what_was_recorded": "The 2018-01 excise commitment and a 7th commitment for 2017 were reported with their dollar totals.",
+   "quote": "the total 2018-01 commitment of 11,615 bills is $1,390,762.50 and also 7th commitment for 2017 is in the amount of $12,135.09 for 322 bills.",
+   "figures_as_printed": [
+    "$1,390,762.50",
+    "$12,135.09"
+   ]
+  },
+  {
+   "topic": "FY19 new growth revenue estimate",
+   "what_was_recorded": "The assessor estimated FY19 new growth revenue and reported the figure to the Town Manager and Accountant; he called it his best estimate pending building permits.",
+   "quote": "harald estimated that the \"new growth revenue\" to be $375,000 for fy19",
+   "figures_as_printed": [
+    "$375,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, payroll, abatements, warrants, commitments and minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and january 9, 2018 minutes.",
+   "tags": [
+    "approvals",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "RRG Assessment Services contract: telepresence and office coverage",
+   "resolution": "discussed; follow-up added to agenda; hours tracking directed",
+   "quote": "the boa requested that a follow-up item be added to the agenda due to the lack of an associate assessor assigned to service the town of lunenburg.",
+   "tags": [
+    "RRG contract",
+    "telepresence",
+    "staffing coverage"
+   ]
+  },
+  {
+   "topic": "Statutory exemptions",
+   "resolution": "one V1 application granted",
+   "quote": "one v1 application reviewed and granted in the amount of $400.00.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Abatement applications",
+   "resolution": "twenty received; review to begin at next meeting",
+   "quote": "louise reported that we are in receipt of twenty (20) abatement applications",
+   "tags": [
+    "abatements"
+   ]
+  },
+  {
+   "topic": "Warrant articles for May 5, 2018 Annual Town Meeting",
+   "resolution": "no action taken to submit articles",
+   "quote": "louise reported that she received this notice of the submission of warrant articles",
+   "tags": [
+    "warrant articles",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Caucus reminder and board membership",
+   "resolution": "no action; Richard Letarte to continue serving",
+   "quote": "richard letarte informed the boa that he wishes to continue to serve on the board.",
+   "tags": [
+    "caucus",
+    "board membership"
+   ]
+  },
+  {
+   "topic": "2018 Motor Vehicle Excise Tax commitment",
+   "resolution": "reported",
+   "quote": "2018 motor vehicle excise tax: louise reported that the issue date for bills will be february 27, 2018.",
+   "tags": [
+    "motor vehicle excise"
+   ]
+  },
+  {
+   "topic": "FY19 DOR revaluation inspections and new growth",
+   "resolution": "reported",
+   "quote": "harald reported that the fy19 dor revaluations inspections will be in full force this year",
+   "tags": [
+    "revaluation",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "meeting set for March 6, 2018 at 5:45 pm",
+   "quote": "board voted to meet on march 6, 2018 2018 at 5:45 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of the submission of warrant articles (Warrant for the May 5, 2018 Annual Town Meeting)",
+   "where": "text",
+   "quote": "louise reported that she received this notice of the submission of warrant articles and reads as follows:"
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "abatements",
+  "RRG Assessment Services contract",
+  "telepresence",
+  "staffing coverage",
+  "motor vehicle excise",
+  "new growth",
+  "revaluation",
+  "warrant articles",
+  "statutory exemptions",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

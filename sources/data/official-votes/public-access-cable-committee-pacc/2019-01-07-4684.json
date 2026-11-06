@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2019-01-07",
  "docid": "4684",
@@ -12,31 +12,211 @@
  },
  "votes": [
   {
-   "motion": "Approve meeting minutes from December 10, 2018",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "committee reviewed and approved the minutes."
-  },
-  {
-   "motion": "Raise the salaries for Meadow Galbo and Kevin Boussom from ten dollars an hour to twelve dollars an hour",
+   "motion": "Raise the salaries of Meadow Galbo and Kevin Boussom from ten dollars an hour to twelve dollars an hour.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the committee made a motion to raise the salaries for meadow galbo and kevin boussom from ten dollars an hour to twelve dollars an hour. the committee passed the moti on."
+   "quote": "the committee made a motion to raise the salaries for meadow galbo and kevin boussom from ten dollars an hour to twelve dollars an hour.",
+   "seconded_by": ""
   },
   {
-   "motion": "Approve the budget with changes made by the committee",
-   "outcome": "approved",
+   "motion": "Approve the new budget after the committee's changes to last year's budget.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion to approve the new budget was made and approved."
+   "quote": "changes were made and a motion to approve the new budget was made and approved.",
+   "seconded_by": ""
   },
   {
-   "motion": "Allow Steve to make the changes to the budget and present it to the Town Manager",
+   "motion": "Allow Steve to make the committee's changes to the FY20 budget and present it to the Town Manager.",
+   "moved_by": "",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "the committee made a motion to allow steve to make the changes the committee made to the budget and present it to the town manager."
+   "quote": "the committee made a motion to allow steve to make the changes the committee made to the budget and present it to the town manager.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1010265
+ "note": "Text extracted from a document; no scan issues noted. Motions on salary raise and FY20 plan have no mover, seconder or tally recorded. The minutes approval of Dec. 10 minutes is recorded as \"reviewed and approved\" without a motion, so it is listed as a decision, not a vote. The salary motion is printed as \"passed the moti on\" and is recorded as passed without a tally. The FY20 motion outcome is not stated. The adjournment has no recorded motion.",
+ "cost_usd": 0.00412282,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, peter lincoln, and steve archambault."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, peter lincoln, and steve archambault."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, peter lincoln, and steve archambault."
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, peter lincoln, and steve archambault."
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, faith beall, peter lincoln, and steve archambault."
+  },
+  {
+   "name": "Jo Mclaughlin",
+   "role": "Non-members",
+   "status": "present",
+   "quote": "non-members: jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee approved the minutes of Dec. 10, 2018; no motion is recorded for this approval.",
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "decision": "Jo was asked to contact Access A/V and request other quotes for the wireless microphones.",
+   "quote": "the committee asked jo to reach out to access a/v and ask for other quotes."
+  },
+  {
+   "decision": "The committee will bring corrections to the FY18 report to the next meeting.",
+   "quote": "the committee will bring corrections to the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "December ending balance",
+   "what_was_recorded": "The manager reported the ending balance for December.",
+   "figures_as_printed": [
+    "$157,248.08"
+   ],
+   "quote": "ending balance of dec is $157,248.08."
+  },
+  {
+   "topic": "Salary raise for Meadow Galbo and Kevin Boussom",
+   "what_was_recorded": "The committee moved to raise two employees' hourly pay from ten dollars to twelve dollars an hour.",
+   "figures_as_printed": [
+    "ten dollars an hour",
+    "twelve dollars an hour"
+   ],
+   "quote": "the committee made a motion to raise the salaries for meadow galbo and kevin boussom from ten dollars an hour to twelve dollars an hour."
+  },
+  {
+   "topic": "Wireless microphone quote",
+   "what_was_recorded": "Jo presented a quote for new wireless microphones, and the committee asked for other quotes; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "jo presented the committee a quote for new wireless microphones."
+  },
+  {
+   "topic": "Budget review and approval",
+   "what_was_recorded": "The committee reviewed last year's budget, made changes, and approved a new budget; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "changes were made and a motion to approve the new budget was made and approved."
+  },
+  {
+   "topic": "FY20 budget planning",
+   "what_was_recorded": "The committee started planning the FY20 budget and moved to have Steve present its changes to the Town Manager; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the committee started to plan the budget for fy20."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Cable company legislation affecting Public Access payments",
+   "quote": "cable companies are trying to pass a law where they do not have to pay as much to public access channels."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no action; Mass Access planning strategic meetings noted",
+   "tags": [
+    "public comment",
+    "legislation"
+   ],
+   "quote": "cable companies are trying to pass a law where they do not have to pay as much to public access channels."
+  },
+  {
+   "topic": "Review and approve minutes of Dec. 10, 2018",
+   "resolution": "approved (no motion recorded)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received; salary raise motion passed",
+   "tags": [
+    "staffing",
+    "equipment",
+    "broadcasting",
+    "finance"
+   ],
+   "quote": "ending balance of dec is $157,248.08."
+  },
+  {
+   "topic": "Budget discussion",
+   "resolution": "approved new budget",
+   "tags": [
+    "budget"
+   ],
+   "quote": "committee was given last year's budget to review."
+  },
+  {
+   "topic": "FY20 budget discussion",
+   "resolution": "motion to have Steve present changes to Town Manager; outcome not stated",
+   "tags": [
+    "budget",
+    "FY20"
+   ],
+   "quote": "the committee started to plan the budget for fy20."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:56pm; next meeting Feb 4",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned at 7:56pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft of the FY18 report",
+   "where": "text",
+   "quote": "jo presented the committee with a draft of the fy18 report."
+  },
+  {
+   "name": "Last year's budget",
+   "where": "text",
+   "quote": "committee was given last year's budget to review."
+  }
+ ],
+ "tags": [
+  "public access",
+  "cable",
+  "budget",
+  "FY20",
+  "salaries",
+  "wireless microphones",
+  "FY18 report",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

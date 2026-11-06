@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2019-01-30",
  "docid": "5789",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 8:51 pm.",
    "moved_by": "M. Allison",
    "seconded_by": "Jack Rabbitt",
    "outcome": "passed",
@@ -21,6 +21,234 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd but readable throughout. One procedural vote recorded (adjournment).",
- "cost_usd": 0.08442350000000001
+ "note": "OCR text, with garbled passages (e.g., 'lere was nothing else in the proposals or Cost Beymatar'; the Task Force Chair's suggestion that the consultant articulate items is cut off), so the wording there is incomplete. Only one vote is recorded (adjournment, 'All in Favor' with no count). The minutes name Town Manager Lemieux, DPW Director Rodriquenz and Land Use Director Burney as attending the January 23 meeting, not clearly this one, so their status is 'not stated'. The minutes say the DCI proposals and cost estimator are 'attached' but do not print a list heading. Text also says Burney asked the record show his opposition, which I recorded as a budget item, not a decision. Stamp reads RECEIVED & FILED MAR 0 4 2019.",
+ "cost_usd": 0.00583412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Phyllis Luck",
+   "role": "Task Force Chair (SWTF Chair)",
+   "status": "present",
+   "quote": "task force chair, phyllis luck, began the discussion by reviewing the recent meetings held on the design"
+  },
+  {
+   "name": "M. Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: m. allison to adjourn the meeting at 8:51 pm."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "2nd. jack rabbitt vote: all in favor"
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "which was attended by town manager lemieux"
+  },
+  {
+   "name": "Rodriquenz",
+   "role": "Director of Public Works (DPW) Director",
+   "status": "not stated",
+   "quote": "director rodriquenz, land use director adam burney, and swtf chair phyllis luck"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "land use director burney asked that it be included in the record that he is opposed to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The SWTF agreed to begin, at its next meeting, a discussion on creating a plan for the future entity to replace the SWTF, delivering a report to the November Town Meeting, recommendations, and an array of funding source options.",
+   "quote": "the swtf agreed to begin, at its next meeting, a discussion on:"
+  },
+  {
+   "decision": "The Town Manager requested that the Stormwater Utility topic be addressed at the next SWTF meeting.",
+   "quote": "the town manager requested that this topic be addressed at the next swtf meeting"
+  },
+  {
+   "decision": "SWTF members expressed interest in setting up a meeting with the Town Manager; all agreed a focused discussion beforehand is essential.",
+   "quote": "swtf members expressed an interest in setting up a meeting with the town manager; all agreed that a focused"
+  },
+  {
+   "decision": "Meeting schedule set: January 30, February 28, and March 28, with a possible meeting with the Town Manager on an uncertain date; any additional first-quarter 2019 meetings to be on the second Thursday of the month.",
+   "quote": "meeting schedule: january 30, february 28, and march 28. possible meeting with town manager, date uncertain."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DCI YEAR ONE proposal cost reduction",
+   "what_was_recorded": "All agreed the YEAR ONE proposal cost was too high, and the Town Manager asserted it had to be reduced from $74,000 to $50,000.",
+   "figures_as_printed": [
+    "$74,000",
+    "$50,000"
+   ],
+   "quote": "the town manager asserted that the cost had to be reduced from $74,000 to $50,000."
+  },
+  {
+   "topic": "Consultant meeting set-aside",
+   "what_was_recorded": "The Task Force Chair suggested scaling back costs by reducing the $12,150 set aside for Consultants interacting with the Task Force, by holding fewer meetings before June 30.",
+   "figures_as_printed": [
+    "$12,150"
+   ],
+   "quote": "reducing the $12,150 set aside for consultants"
+  },
+  {
+   "topic": "Public Outreach and Education funds",
+   "what_was_recorded": "Town officials felt the funds allocated for Public Outreach and Education should be eliminated, with the volunteer SWTF assuming MCM One and Two tasks; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "the funds allocated for public outreach and education should be eliminated"
+  },
+  {
+   "topic": "Year 1 Annual Report cost versus prior contracts",
+   "what_was_recorded": "The Year 1 estimator's Task #2 Annual Report is $5,500, while the 2016-17 report was quoted at $2,000 and the 2017-2018 report at $2,200; members asked why the cost more than doubled.",
+   "figures_as_printed": [
+    "$5,500",
+    "$2,000",
+    "$2,200"
+   ],
+   "quote": "task #2 calls out an annual report for $5,500."
+  },
+  {
+   "topic": "Duplicate SWMP update line items",
+   "what_was_recorded": "Task #3 (Annual SWMP Update) and Task 11 (SWMP) are each costed at $5,000, which appears redundant.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "task #3 calls for annual stormwater management plan (swmp) update at $5,000."
+  },
+  {
+   "topic": "Five Year Cost Estimator overall",
+   "what_was_recorded": "The estimator costs were agreed to exceed the Town's ability to pay and should be reduced; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "which costs all agree the town should try to reduce, as they exceed the town's ability to pay."
+  },
+  {
+   "topic": "Host Community Agreement funds for MS4 compliance",
+   "what_was_recorded": "Land Use Director Burney asked the record show he opposes, and questions the legality of, using Host Community Agreement monies from Marijuana Establishments for Phase II Permit compliance or any operating expense; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "using monies from host community agreements with marijuana establishments to fund compliance with the phase ii permit"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of DCI proposals and 5 Year Cost Estimator",
+   "resolution": "discussed; consultant face-to-face meeting needed",
+   "quote": "reviewing the recent meetings held on the design consultants inc. (dci) proposals for year one",
+   "tags": [
+    "DCI",
+    "MS4 permit",
+    "cost estimator"
+   ]
+  },
+  {
+   "topic": "Stormwater Management Plan status",
+   "resolution": "briefly discussed; no action",
+   "quote": "the status of completion of the stormwater management plan (swmp), was briefly discussed.",
+   "tags": [
+    "SWMP",
+    "MS4 permit"
+   ]
+  },
+  {
+   "topic": "Five Year Cost Estimator line items",
+   "resolution": "discussed; questions left open; costs to be reduced",
+   "quote": "the five year cost estimator was then discussed.",
+   "tags": [
+    "cost estimator",
+    "budget cuts"
+   ]
+  },
+  {
+   "topic": "Stormwater Utility",
+   "resolution": "referred to next SWTF meeting",
+   "quote": "the town manager requested that this topic be addressed at the next swtf meeting",
+   "tags": [
+    "stormwater utility"
+   ]
+  },
+  {
+   "topic": "Funding sources and transition to future entity",
+   "resolution": "to begin discussion at next meeting",
+   "quote": "the swtf has begun to discuss the transition of this work",
+   "tags": [
+    "funding sources",
+    "future entity"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "schedule set",
+   "quote": "meeting schedule: january 30, february 28, and march 28.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:51 pm",
+   "quote": "motion: m. allison to adjourn the meeting at 8:51 pm.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Design Consultants Inc. (DCI) proposals for YEAR ONE of Municipal Separate Storm Sewer System (MS4) Permit",
+   "where": "list",
+   "quote": "these documents are attached."
+  },
+  {
+   "name": "Five Year Cost Estimator (DCI)",
+   "where": "list",
+   "quote": "these documents are attached."
+  },
+  {
+   "name": "Minutes of the January 16, 2019 meeting",
+   "where": "text",
+   "quote": "the minutes of the january 16, 2019 meeting summarized that meeting."
+  },
+  {
+   "name": "Contract dated March 21, 2017 (2016-17 Annual Report)",
+   "where": "text",
+   "quote": "in reviewing the contract dated march 21, 2017, the preparation of the 2016-17 annual report was quoted at a cost of $2,000."
+  },
+  {
+   "name": "Annual Report quote dated May 1, 2018 (2017-2018 Annual Report)",
+   "where": "text",
+   "quote": "on may 1, 2018, the preparation of the 2017-2018 annual report was quoted at $2,200."
+  },
+  {
+   "name": "Stormwater Management Plan (SWMP)",
+   "where": "text",
+   "quote": "the status of completion of the stormwater management plan (swmp), was briefly discussed."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "SWMP",
+  "DCI consultants",
+  "cost estimator",
+  "budget cuts",
+  "funding sources",
+  "stormwater utility",
+  "meeting schedule",
+  "Phase II permit",
+  "host community agreements"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "these documents are attached"
+ },
+ "dropped_unquoted_by_field": {}
 }

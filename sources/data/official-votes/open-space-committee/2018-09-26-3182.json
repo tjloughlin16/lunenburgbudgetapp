@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2018-09-26",
  "docid": "3182",
@@ -12,19 +12,265 @@
  },
  "votes": [
   {
-   "motion": "Remove a Conservation Commission member and add an At-Large Member",
+   "motion": "Approve the minutes of 8/22/18.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "topic i. minutes of 8/22/18 were reviewed and approved."
+  },
+  {
+   "motion": "Remove a Conservation Commission member from the committee and add an At-Large Member.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "a motion to change committee was made. the motion was to remove a conservation commission member and add on a n at-large member; it was seconded, and all were in favor."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "the meeting was called to close, seconded, and adjourned at 9:04pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1044245
+ "note": "Text is a clean extraction with no scan issues, but the minutes are thin on votes: the approval of the 8/22/18 minutes records no motion, mover, or tally; the membership motion records only \"all were in favor\" with no mover, seconder, or count; the adjournment records \"seconded\" with no mover. No public comment section is printed. Section 5 and plan-section assignment details are partly garbled in extraction; recorded as printed.",
+ "cost_usd": 0.00632242,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brandon Kibbe",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Richard Brockelman",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: dennis mannone"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: karin menard, ashley maillet"
+  },
+  {
+   "name": "Ashley Maillet",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: karin menard, ashley maillet"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed to schedule a planning charrette for October 16 at 7pm; the next Open Space meeting, post-charrette, is October 24.",
+   "quote": "the committee agreed to schedule a charrette for october 16 @7pm."
+  },
+  {
+   "decision": "B. Kibbe confirmed with the EEA that the plan may be a 7-year plan instead of a 5-year plan.",
+   "quote": "b. kibbe confirmed we can have a 7-year plan instead of a 5-year plan."
+  },
+  {
+   "decision": "The Committee is comfortable with members from other boards participating as members despite rotating attendance.",
+   "quote": "the committee is comfortable with their participation as members."
+  },
+  {
+   "decision": "D. Prokowiew to take the membership change to the Planning Board; the position will likely be advertised and candidates approved by the Planning Board.",
+   "quote": "the position will likely be advertised and the candidates will need to be approved by the planning board."
+  },
+  {
+   "decision": "Plan section assignments: Section 3 done; Section 4 to be ready for the next meeting; D. Prokowiew and B. Kibbe to work on Section 1 (accomplishments of last plan, goals and objectives, survey results).",
+   "quote": "section 3-done; section 4-almost done, will have for next meeting"
+  },
+  {
+   "decision": "K. Menard to look into Section 5 parks, see what is there, and describe where the deficiencies are.",
+   "quote": "k. menard will be looking into it and seeing what is there, and describe where the deficiencies are."
+  },
+  {
+   "decision": "Maps will be reviewed at the charrette.",
+   "quote": "maps will be reviewed at the charrette."
+  },
+  {
+   "decision": "B. Kibbe to look into scheduling the charrette; the next meeting on the 24th will include reviewing drafts of the Plan sections and maps.",
+   "quote": "b. kibbe will look into scheduling the charrette"
+  },
+  {
+   "decision": "The Committee cannot produce an accessibility deliverable for the next Select Board meeting or in time for the ADA grant, but the document may help future grant applications.",
+   "quote": "the committee cannot produce a deliverable about accessibility for the next select board meeting or in time for this grant"
+  },
+  {
+   "decision": "Committee to try to obtain the schools' ADA plan.",
+   "quote": "we should see if we can get it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beach improvements",
+   "what_was_recorded": "A cost question was raised for beach improvements (parking and lake frontage), asking whether it could cost about $500,000.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "need: parking, lake frontage (could it cost about $500,000?)"
+  },
+  {
+   "topic": "ADA grant",
+   "what_was_recorded": "A Committee member reported the Town has an ADA grant that is due shortly; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the town has an ada grant that is due shortly"
+  },
+  {
+   "topic": "Grant eligibility from OS&RP",
+   "what_was_recorded": "The OS&RP connection gives the Town eligibility for other grant programs; no amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "allows the town eligibility for other grant programs that rely"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 8/22/18",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "topic i. minutes of 8/22/18 were reviewed and approved."
+  },
+  {
+   "topic": "Committee membership",
+   "resolution": "motion passed to swap a Conservation Commission seat for an At-Large member; Planning Board to act",
+   "tags": [
+    "membership",
+    "at-large",
+    "planning board"
+   ],
+   "quote": "a motion to change committee was made. the motion was to remove a conservation commission member"
+  },
+  {
+   "topic": "Compiled survey results",
+   "resolution": "presented; no action",
+   "tags": [
+    "survey",
+    "residents"
+   ],
+   "quote": "b. kibbe presented the open space survey results."
+  },
+  {
+   "topic": "Trends and draft of needs/plan (Topics IV/V)",
+   "resolution": "needs and ideas identified; no action",
+   "tags": [
+    "needs",
+    "trails",
+    "beach",
+    "ADA",
+    "plan"
+   ],
+   "quote": "needs identified, and potential ideas for a plan were identified by the committee through discussion."
+  },
+  {
+   "topic": "Value of a planning charrette (Topic VI)",
+   "resolution": "charrette scheduled for October 16 at 7pm",
+   "tags": [
+    "charrette",
+    "schedule"
+   ],
+   "quote": "the committee agreed to schedule a charrette for october 16 @7pm."
+  },
+  {
+   "topic": "Review revisions to assigned plan sections (Topic VII)",
+   "resolution": "status reported; assignments made",
+   "tags": [
+    "plan sections",
+    "assignments"
+   ],
+   "quote": "section 3-done; section 4-almost done, will have for next meeting"
+  },
+  {
+   "topic": "Review maps (Topic VIII)",
+   "resolution": "deferred to the charrette",
+   "tags": [
+    "maps"
+   ],
+   "quote": "topic viii: review maps- maps will be reviewed at the charrette."
+  },
+  {
+   "topic": "ADA self-evaluation discussion (Topic IX)",
+   "resolution": "discussed; action items for park and plan updates",
+   "tags": [
+    "ADA",
+    "accessibility",
+    "parks"
+   ],
+   "quote": "topic ix: ada self-evaluation discussion - the ada portion of the os&rp was discussed."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "08/22/18 Minutes",
+   "where": "list",
+   "quote": "documents used at meeting:"
+  },
+  {
+   "name": "Open Space survey results",
+   "where": "text",
+   "quote": "b. kibbe presented the open space survey results."
+  },
+  {
+   "name": "Open Space and Recreation Plan (OS&RP)",
+   "where": "text",
+   "quote": "do an open space and recreation plan (os&rp)."
+  },
+  {
+   "name": "ADA appendix to the OS&RP",
+   "where": "text",
+   "quote": "the ada appendix to the os&rp has three parts"
+  }
+ ],
+ "tags": [
+  "open space",
+  "OS&RP",
+  "committee membership",
+  "survey results",
+  "charrette",
+  "ADA accessibility",
+  "grants",
+  "beach improvements",
+  "parks and trails",
+  "maps"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

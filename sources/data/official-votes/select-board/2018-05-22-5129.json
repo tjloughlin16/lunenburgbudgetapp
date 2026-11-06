@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-05-22",
  "docid": "5129",
@@ -12,21 +12,164 @@
  },
  "votes": [
   {
-   "motion": "Approve the proposed land-exchange plan subject to adding a fifteen-foot easement to be conveyed to the Conservation Commission",
+   "motion": "Approve the proposed plan subject to adding a fifteen-foot easement to be conveyed to the Conservation Commission (Kevin Hill land exchange, Gilchrist Street).",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 3-0-1",
    "procedural": false,
-   "quote": "to approve the proposed plan subject to adding a fifteen-foot easement to be conveyed to the conservation commission vote: ms. adams- abstain, mr. mequaid-aye, mr. ebersole-aye, mr. toale-aye"
+   "quote": "motion: r. ebersole 2nd: d. mcquaid to approve the proposed plan subject to adding a fifteen-foot easement to be conveyed to the conservation commission"
   },
   {
-   "motion": "Adjourn from executive session",
+   "motion": "Adjourn from executive session (OCR text is garbled: 'to dajourn trom cave session').",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "to dajourn trom cave session vote: ms. adams- aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document; second motion's text contains apparent OCR errors ('dajourn trom cave session' likely represents 'adjourn from closed/executive session' but exact wording unclear)",
- "cost_usd": 0.1463755
+ "note": "Scanned OCR text with errors: the adjournment motion line is garbled ('to dajourn trom cave session'), the board member name appears as both 'McQuaid' and 'MeQuaid', and the page-3 plan text is map labels only. The header says Select Board but the text refers to the Board of Selectmen and a Conservation Commission portion. No dollar figures appear in the text. The first motion's mover and seconder are printed; the adjournment motion's mover is not printed. The 9:05 p.m. adjournment has no recorded motion and is not counted as a vote. Board members' roles are not printed. Attendance is only partly stated (the 'Also present' line plus the vote lines).",
+ "cost_usd": 0.00468192,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Chairman, Conservation Commission",
+   "status": "not stated",
+   "quote": "conservation commission members: richard bursch, chairman; todd dwyer, vice chairman, bob pease,"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice Chairman, Conservation Commission",
+   "status": "not stated",
+   "quote": "conservation commission members: richard bursch, chairman; todd dwyer, vice chairman, bob pease,"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member, Conservation Commission",
+   "status": "not stated",
+   "quote": "bob pease, member; ken jones, member"
+  },
+  {
+   "name": "Ken Jones",
+   "role": "Member, Conservation Commission",
+   "status": "not stated",
+   "quote": "bob pease, member; ken jones, member"
+  },
+  {
+   "name": "Ms. Adams",
+   "role": "board member",
+   "status": "present",
+   "quote": "vote: ms. adams- abstain, mr. mequaid-aye, mr. ebersole-aye, mr. toale-aye"
+  },
+  {
+   "name": "D. McQuaid",
+   "role": "board member",
+   "status": "present",
+   "quote": "vote: ms. adams- abstain, mr. mequaid-aye, mr. ebersole-aye, mr. toale-aye"
+  },
+  {
+   "name": "R. Ebersole",
+   "role": "board member",
+   "status": "present",
+   "quote": "vote: ms. adams- abstain, mr. mequaid-aye, mr. ebersole-aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Toale",
+   "role": "board member",
+   "status": "present",
+   "quote": "vote: ms. adams- abstain, mr. mequaid-aye, mr. ebersole-aye, mr. toale-aye"
+  },
+  {
+   "name": "Kevin Hill",
+   "role": "property owner (referenced; not stated as attending)",
+   "status": "not stated",
+   "quote": "mr. hill offered to move the trail but this wasn't going to work due to"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Kevin Hill land exchange, Gilchrist Street (Mulpus Brook and trail)",
+   "resolution": "approved plan with fifteen-foot easement, 3-0-1",
+   "quote": "mr. burney reported he was approached by kevin hill last november about two pieces of property for sale on",
+   "tags": [
+    "land exchange",
+    "Gilchrist Street",
+    "conservation easement",
+    "trail",
+    "Mulpus Brook"
+   ]
+  },
+  {
+   "topic": "Rule of Necessity for members with possible conflicts",
+   "resolution": "members invoked Rule of Necessity; no objection; voting proceeded",
+   "quote": "mr. toale and mr. mcquaid stated that although being hickory hills landowners and possibly being within 300",
+   "tags": [
+    "Rule of Necessity",
+    "conflict of interest",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:05 p.m.",
+   "quote": "the meeting was adjourned at 9:05 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed plan (Gilchrist Street land exchange; lot map on page 3)",
+   "where": "text",
+   "quote": "to approve the proposed plan subject to adding a fifteen-foot easement to be conveyed to the conservation commission"
+  }
+ ],
+ "tags": [
+  "land exchange",
+  "Gilchrist Street",
+  "conservation easement",
+  "Mulpus Brook",
+  "trail",
+  "Conservation Commission",
+  "Rule of Necessity",
+  "Zoning Board of Appeals",
+  "joint session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

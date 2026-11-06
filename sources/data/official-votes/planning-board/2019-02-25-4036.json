@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-02-25",
  "docid": "4036",
@@ -12,23 +12,248 @@
  },
  "votes": [
   {
-   "motion": "Approve Modification to Site Plan Approval for 380-400 Electric Avenue",
+   "motion": "Approve the Modification to Site Plan Approval for 380-400 Electric Avenue, with standard conditions and a condition tied to a final letter from Jeffrey Walsh, Graves Engineering, Inc.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
    "quote": "p. bertram made motion to approve the modification to site plan approval, t. cole seconded, all aye."
   },
   {
-   "motion": "Appoint P. Bertram to Board position on the Open Space Ad Hoc Committee",
+   "motion": "Appoint P. Bertram to the vacant Planning Board position on the Open Space Ad Hoc Committee.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "t. cole made motion to appoint p. bertram, p. bertram seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0965115
+ "note": "Text extraction, not a scan. Two motions with votes recorded (\"all aye\", no numeric count, so outcome recorded as passed). No procedural votes (minutes tabling, adjournment) have a recorded motion, so they are logged as decisions or topics, not votes. The minutes name \"Chair B. Kibbe\" although Matthew Allison is listed as Chair; this is recorded as printed. The minutes also contain typos such as \"K. Chen is\" and \"utiliz ing\". Several items are \"see separate minutes\" and their content is not in this text. The 380-400 Electric Avenue approval is conditioned on a letter from Jeffrey Walsh, Graves Engineering, Inc.; he did not appear, so he is not listed as an attendee.",
+ "cost_usd": 0.00495162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: matthew allison"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "B. Kibbe",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "but chair b. kibbe noted the committee was happy in its current role."
+  },
+  {
+   "name": "Daniel Proctor",
+   "role": "1529 Massachusetts Avenue",
+   "status": "not stated",
+   "quote": "daniel proctor, 1529 massachusetts avenue - noted in past business interactions with mrpc he feels there has been a lack of transparency and credibility."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of 02/11/19 (190 Electric Avenue, 380-400 Electric Avenue, and 02/11/19) were tabled because the Board was down a member and K. Chenis was absent from those meetings.",
+   "quote": "all minutes tabled due to the board being down a member"
+  },
+  {
+   "decision": "The ANR Plan for 205 Sunset Lane will be presented at the March 4, 2019 Board meeting, because K. Chenis recused himself.",
+   "quote": "as k. chenis recused himself, the plan will be presented at the march 4, 2019 board meeting."
+  },
+  {
+   "decision": "The Open Space Ad Hoc Committee will remain an ad hoc committee; the Committee was happy in its current role, and further discussion may follow as P. Bertram attends its meetings.",
+   "quote": "more discussion may possibly take place as p. bertram begins attending the committee meetings."
+  },
+  {
+   "decision": "DLTA project discussion continues at the March 4, 2019 Board meeting.",
+   "quote": "more discussion will take place at the march 4, 2019 board meeting."
+  },
+  {
+   "decision": "Discussion of Town Building Re-Use continues on March 4th and 25th, and the Select Board will be invited to participate in the conversation.",
+   "quote": "the select board will be invited to participate in the conversation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MRPC consultants and community block grant funds",
+   "what_was_recorded": "T. Cole said MRPC often uses consultants, that he is hesitant to use MRPC because of alleged mismanagement of community block grants and funds and over-invoicing; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "t. cole noted that quite often mrpc has consultants doing the work."
+  },
+  {
+   "topic": "District Local Technical Assistance (DLTA) possible projects",
+   "what_was_recorded": "Possible DLTA projects, such as a walkability study, were discussed; no costs or amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "district l ocal technical assistance (dlta) - possible projects were discussed, e.g. walkability study.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Daniel Proctor",
+   "stated_role": "1529 Massachusetts Avenue",
+   "topic": "MRPC transparency and credibility",
+   "quote": "daniel proctor, 1529 massachusetts avenue - noted in past business interactions with mrpc he feels there has been a lack of transparency and credibility."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plan: 205 Sunset Lane",
+   "resolution": "continued to March 4, 2019 meeting (K. Chenis recused)",
+   "tags": [
+    "ANR",
+    "recusal",
+    "Sunset Lane"
+   ],
+   "quote": "as k. chenis recused himself, the plan will be presented at the march 4, 2019 board meeting."
+  },
+  {
+   "topic": "Public hearing: Board Warrant Article",
+   "resolution": "see separate minutes",
+   "tags": [
+    "warrant article",
+    "public hearing"
+   ],
+   "quote": "board warrant article- see separate minutes"
+  },
+  {
+   "topic": "Public hearing: 190 Electric Avenue",
+   "resolution": "see separate minutes",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "Electric Avenue"
+   ],
+   "quote": "190 electric avenue- see separate minutes"
+  },
+  {
+   "topic": "Public hearing: 380-400 Electric Avenue site plan modification",
+   "resolution": "approved, with conditions",
+   "tags": [
+    "site plan",
+    "Electric Avenue",
+    "public hearing"
+   ],
+   "quote": "p. bertram made motion to approve the modification to site plan approval, t. cole seconded, all aye."
+  },
+  {
+   "topic": "Board representative to Open Space Ad Hoc Committee",
+   "resolution": "P. Bertram appointed",
+   "tags": [
+    "appointment",
+    "open space"
+   ],
+   "quote": "t. cole made motion to appoint p. bertram, p. bertram seconded, all aye."
+  },
+  {
+   "topic": "Minutes approval (02/11/19 items)",
+   "resolution": "tabled",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "all minutes tabled due to the board being down a member"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Charter Review Committee hearing noted for February 27, 2019",
+   "tags": [
+    "committees",
+    "charter review"
+   ],
+   "quote": "charter review committee- hearing scheduled for february 27, 2019."
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "no action; Town Counsel proposal, DLTA discussion, Town Caucus noted",
+   "tags": [
+    "zoning",
+    "DLTA",
+    "MRPC",
+    "town caucus"
+   ],
+   "quote": "lunenburg code, section 250- 5.6.- proposal being worked on by town counsel."
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "no action; scheduling and drafts noted",
+   "tags": [
+    "zoning",
+    "earth removal",
+    "solar",
+    "parking",
+    "master plan",
+    "economic development"
+   ],
+   "quote": "earth removal permitting- a. burney working on draft"
+  },
+  {
+   "topic": "Board comment: input on Town Building Re-Use",
+   "resolution": "discussion continued to March 4 and 25; Select Board to be invited",
+   "tags": [
+    "town building",
+    "Select Board",
+    "community planning"
+   ],
+   "quote": "the select board will be invited to participate in the conversation."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:22 PM (no motion recorded)",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 8:22 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 205 Sunset Lane",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 205 sunset lane"
+  }
+ ],
+ "tags": [
+  "site plan",
+  "Electric Avenue",
+  "ANR",
+  "open space committee",
+  "MRPC",
+  "DLTA",
+  "zoning",
+  "town building re-use",
+  "minutes approval",
+  "appointment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

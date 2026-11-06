@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-01-08",
  "docid": "987",
@@ -12,15 +12,143 @@
  },
  "votes": [
   {
-   "motion": "Approve the variances for 99 Boucher Road",
+   "motion": "Approve the variances requested for the 99 Boucher Road septic replacement system (offset to groundwater reduced from four feet to three feet, and reduced inlet and outlet tees).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variances were approved. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09896749999999999
+ "note": "Plain-text extraction of a short set of minutes. Votes: only the 99 Boucher Road variance motion has a recorded motion and result. No motion is recorded for approving the December 5, 2017 minutes, for lifting the 245 West Street cease and desist (recorded as board agreement, so logged as a decision), or for adjournment. The second heading reads \"99 BOUCER ROAD\" (misspelled); it is treated as the same matter as \"99 Boucher Road\". No public comment section is printed; the applicant and resident appearances are logged as attendees, not public comment. Board members' roles are not printed.",
+ "cost_usd": 0.0037439200000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Perry Jewell",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "present: george emond, perry jewell and paul fortin"
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "representing the owner (99 Boucher Road)",
+   "status": "present",
+   "quote": "bob proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Gerald Lane",
+   "status": "present",
+   "quote": "gerald lane met with the board."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi provided an update on the possible use of the tc passios school cafeteria as a community kitchen."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to lift the cease and desist order on the outdoor wood fired burner at 245 West Street for a limited time, to ascertain whether the air pollution problem had been solved. Any move of the burner, raising of the stack or trimming of trees requires a request to Agent Jim Garreffi for approval, and Garreffi is to be present when the burner is lit.",
+   "quote": "the board agreed to lift the cease and desist under the condition that it would only be for a limited time to ascertain"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Worcester Food Hub kitchen use cost",
+   "what_was_recorded": "Agent Garreffi reported that the regional Worcester Food Hub kitchen has a nominal cost for use, relayed as an hourly rate.",
+   "figures_as_printed": [
+    "$25/hour"
+   ],
+   "quote": "the kitchen has a nominal cost ($25/hour)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "approved (December 5, 2017 minutes; no motion recorded)",
+   "quote": "minutes approved: december 5, 2017",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 60 south row road 401 hollis road 28 kimball street",
+   "tags": [
+    "septic",
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "Septic permits signed - 99 Boucher Road",
+   "resolution": "signed",
+   "quote": "septic permits signed: 99 boucher road",
+   "tags": [
+    "septic",
+    "permits"
+   ]
+  },
+  {
+   "topic": "99 Boucher Road septic system variances",
+   "resolution": "variances approved",
+   "quote": "this system would be considered a failure due to the estimated high ground water.",
+   "tags": [
+    "septic",
+    "variance",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "245 West Street outdoor wood fired burner - air pollution",
+   "resolution": "cease and desist lifted on conditions for a limited time",
+   "quote": "there have been ongoing issues with an outdoor wood fired burner on the site.",
+   "tags": [
+    "air pollution",
+    "cease and desist",
+    "wood-fired burner",
+    "310CMR 7.00"
+   ]
+  },
+  {
+   "topic": "TC Passios School Cafeteria as community kitchen",
+   "resolution": "update received; no action recorded",
+   "quote": "agent jim garreffi provided an update on the possible use of the tc passios school cafeteria as a community kitchen.",
+   "tags": [
+    "community kitchen",
+    "food licensing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "septic",
+  "variance",
+  "Title 5",
+  "air pollution",
+  "cease and desist",
+  "wood-fired burner",
+  "community kitchen",
+  "food licensing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

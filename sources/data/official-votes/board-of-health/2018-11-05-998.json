@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-11-05",
  "docid": "998",
@@ -12,23 +12,182 @@
  },
  "votes": [
   {
-   "motion": "Pursue the 64 Arbor Street septic matter in housing court",
+   "motion": "Pursue the 64 Arbor Street septic enforcement matter in housing court.",
    "moved_by": "Fortin",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by fortin and second by passios, the board voted to pursue this mater in housing court. all in favor"
+   "quote": "after discussion and on motion by fortin and second by passios, the board voted to pursue this mater in housing court. all in favor."
   },
   {
-   "motion": "Approve the variance to reduce groundwater offset from 5 feet to 3 feet for the septic system at 398 Sunset Lane",
+   "motion": "Approve the variance at 398 Sunset Lane reducing the groundwater offset from 5 feet to 3 feet.",
    "moved_by": "Jewell",
    "seconded_by": "Passions",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passions the variance was approved. all in"
+   "quote": "after discussion and on motion by jewell and second by passions the variance was approved. all in"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. \"MINUTES APPROVED\" heading lists two prior meeting dates but includes no explicit motion or outcome language, so not recorded as a vote.",
- "cost_usd": 0.09558349999999999
+ "note": "OCR text from a two-page scan with garbled spots. Page 2 begins mid-sentence; the variance is attributed to 398 Sunset Lane by context only (the page does not name the property). The variance motion's text is cut off at the page break (\"All in\"), so the 'passed' outcome is inferred from 'the variance was approved'. Vote counts are not printed; only 'All in favor' appears for the 64 Arbor Street vote. Spellings 'mater', 'Passions' and 'Passios' are as printed. No attendance roll is printed. The adjournment ('Meeting adjourned') has no recorded motion, so it is not recorded as a vote. The minutes approval has no recorded motion. No dollar figures appear. Stamp reads RECEIVED & FILED NOV 26 2018.",
+ "cost_usd": 0.00425562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dan Proctor",
+   "role": "on behalf of the owner (as printed)",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "agent",
+   "status": "not stated",
+   "quote": "the owner advised agent, jim garreffi, that"
+  },
+  {
+   "name": "Fortin",
+   "role": "not printed (made motion)",
+   "status": "present",
+   "quote": "after discussion and on motion by fortin and second by passios"
+  },
+  {
+   "name": "Passios",
+   "role": "not printed (seconded motion)",
+   "status": "present",
+   "quote": "after discussion and on motion by fortin and second by passios"
+  },
+  {
+   "name": "Jewell",
+   "role": "not printed (made motion)",
+   "status": "present",
+   "quote": "after discussion and on motion by jewell and second by passions the variance was approved."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agent Garreffi recommended that the 64 Arbor Street matter be pursued in housing court; the board then voted on it (see votes).",
+   "quote": "agent garreffi has recommended that this matter be"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved (October 1, 2018 and October 15, 2018)",
+   "resolution": "listed as approved; no vote recorded",
+   "quote": "minutes approved: october 1, 2018 october 15, 2018",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged (nine properties listed)",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed: 64 Arbor Street",
+   "resolution": "board voted to pursue matter in housing court",
+   "quote": "septic permits signed: 64 arbor street",
+   "tags": [
+    "septic",
+    "enforcement",
+    "housing court"
+   ]
+  },
+  {
+   "topic": "398 Sunset Lane Title 5 well testing and variance",
+   "resolution": "variance approved",
+   "quote": "dan proctor met with the board on behalf of the owner.",
+   "tags": [
+    "Title 5",
+    "well testing",
+    "variance",
+    "groundwater offset"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 47 Cliffview Terrace",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 9 Prospect Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 76 Sunset Lane",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 7 White Tail Crossing",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 398 Sunset Lane",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 9 Pleasant Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 950 Chase Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 350 West Townsend Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Title 5 inspection report, 26 Windward Terrace",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 47 cliffview terrace 9 prospect street 76 sunset lane"
+  },
+  {
+   "name": "Order to repair/replace septic system, 64 Arbor Street, issued June 19, 2018",
+   "where": "text",
+   "quote": "an order was issued to repair/replace the septic system for the above property on june 19, 2018"
+  },
+  {
+   "name": "Title 5 prepared by Dan Proctor, 398 Sunset Lane",
+   "where": "text",
+   "quote": "mr. proctor prepared a title 5 on the above property."
+  },
+  {
+   "name": "Letter to owner of 392 Sunset Lane (abutting property) requesting well access",
+   "where": "text",
+   "quote": "a letter was sent to the owner of the abutting property requesting access to test the well"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variance",
+  "housing court",
+  "well testing",
+  "enforcement",
+  "Board of Health"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }

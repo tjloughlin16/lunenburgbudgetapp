@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-03-19",
  "docid": "990",
@@ -12,31 +12,192 @@
  },
  "votes": [
   {
-   "motion": "Approve variances for the 54 Maple Parkway septic system",
+   "motion": "Approve the variances for 54 Maple Parkway (offset to groundwater, offset to wetlands, depth of pump chamber), with the requirement that the board receives a professional engineer's plan for the retaining wall that complies with Title 5.",
    "moved_by": "Passios",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by passios and second by jewell, the variances were approved with the requirement that the board receives a plan from a professional engineer for the construction of the retaining wall that complies with title 5. all in favor."
+   "quote": "after discussion and on motion by passios and second by jewell, the variances were approved with the requirement that the board receives a plan"
   },
   {
-   "motion": "Approve variances for the 932 Lancaster Avenue septic system",
+   "motion": "Approve the request for 932 Lancaster Avenue (minutes print 'the budget was approved'; the item concerns a septic voluntary upgrade with variances, so the printed word is likely an error).",
    "moved_by": "Jewell",
    "seconded_by": "Pa",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and seconded by pa the budget was approved. all in favor."
+   "quote": "after discussion and on motion by jewell and seconded by pa the budget was approved. all in favor."
   },
   {
-   "motion": "Deny the request to further develop the property at 143 Rolling Acres with additional rooms",
+   "motion": "Deny the request to further develop 143 Rolling Acres with additional rooms, even if a bedroom deed restriction were in place.",
    "moved_by": "Jewell",
    "seconded_by": "Passions",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by passions the request to further develop this property with additional rooms was denied even if a bedroom deed restriction was in place. all in favor."
+   "quote": "after further discussion and on motion by jewell and second by passions the request to further develop this property with additional rooms was denied even if a bedroom deed restriction was in place."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. One seconded-by name appears incomplete (\"Pa\" likely for \"Passios\"), and one motion outcome states \"the budget was approved\" which appears to be an OCR error for \"the variances/plan was approved\" based on context, but quote is verbatim as scanned. No formal adjournment motion recorded.",
- "cost_usd": 0.023251599999999997
+ "note": "Scanned page OCR (macOS Vision) with several OCR errors (e.g., 'mumber', 'hathrooms'). No roll call or attendance list is printed, so attendance is inferred from named participation. The minutes name 'Passios' in the first motion and 'Passions' in the 143 Rolling Acres motion; likely the same member, recorded as printed. The 932 Lancaster motion says 'the budget was approved', which appears to be a wording error for the septic upgrade request; recorded as printed. The vote outcomes are 'All in favor' with no count printed. The minutes carry a RECEIVED & FILED stamp dated JUL 16 2018 although the meeting date is 2018-03-19. Adjournment at 8:20 pm was not a motion, so it is not recorded as a vote.",
+ "cost_usd": 0.00398812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chairman Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman emond explained how we determine a bedroom by local definition as well as the fact that"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "member dave passios stated that he would like the board to be able to do something with the funds in"
+  },
+  {
+   "name": "Jewell",
+   "role": "Member (as printed: Jewell; no title given)",
+   "status": "present",
+   "quote": "after discussion and on motion by passios and second by jewell, the variances were approved"
+  },
+  {
+   "name": "Pa",
+   "role": "Member (as printed: Pa; no title given)",
+   "status": "present",
+   "quote": "after discussion and on motion by jewell and seconded by pa the budget was approved. all in favor."
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "jack maloney met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jason Spinosa",
+   "role": "owner of the property (143 Rolling Acres)",
+   "status": "present",
+   "quote": "jason spinosa, the owner of the property as well as jim lavasseur, builder, were present at the"
+  },
+  {
+   "name": "Jim Lavasseur",
+   "role": "builder",
+   "status": "present",
+   "quote": "jason spinosa, the owner of the property as well as jim lavasseur, builder, were present at the"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "agent",
+   "status": "not stated",
+   "quote": "if he wanted to speak with agent jim garreffi or meet back with the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board required that 932 Lancaster Avenue use monolithic tanks and rubber boots as included in the proposed plan.",
+   "quote": "monolithic tanks and rubber boots are included in the proposed plan and are required by the board."
+  },
+  {
+   "decision": "Board agreed that written permission from State Officials would be necessary before septic loan program funds could be used for restroom facilities at the Town's parks.",
+   "quote": "after discussion, the board agreed that written permission from state officials would be necessary."
+  },
+  {
+   "decision": "Mr. Spinosa was advised he was welcome to speak with agent Jim Garreffi or to meet back with the board should circumstances change.",
+   "quote": "if he wanted to speak with agent jim garreffi or meet back with the"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Septic loan program fund",
+   "what_was_recorded": "Member Passios asked whether the septic loan program fund could be used for restroom facilities at the Town's parks; the chair noted clear guidelines on permitted uses and the board required written State permission. No dollar amounts were printed.",
+   "figures_as_printed": [],
+   "quote": "member dave passios stated that he would like the board to be able to do something with the funds in"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Title 5 inspection reports acknowledged (335 Highland Street; 241 Arbor Street)",
+   "resolution": "acknowledged, no action recorded",
+   "quote": "title 5 inspection reports acknowledged: 335 highland street 241 arbor street",
+   "tags": [
+    "Title 5",
+    "inspection reports"
+   ]
+  },
+  {
+   "topic": "Septic permits signed (54 Maple Parkway with conditions; 932 Lancaster Avenue)",
+   "resolution": "listed as signed; see related votes",
+   "quote": "septic permits signed: 54 maple parkway with conditions 932 lancaster avenue",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "54 Maple Parkway septic variances",
+   "resolution": "approved with engineer plan condition",
+   "quote": "after discussion and on motion by passios and second by jewell, the variances were approved with the requirement that the board receives a plan",
+   "tags": [
+    "variances",
+    "groundwater",
+    "wetlands",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "932 Lancaster Avenue septic upgrade",
+   "resolution": "approved (as printed 'the budget was approved'), with monolithic tanks and rubber boots required",
+   "quote": "after discussion and on motion by jewell and seconded by pa the budget was approved. all in favor.",
+   "tags": [
+    "variances",
+    "septic upgrade",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "143 Rolling Acres bedroom addition",
+   "resolution": "denied",
+   "quote": "after further discussion and on motion by jewell and second by passions the request to further develop this property with additional rooms was denied",
+   "tags": [
+    "bedroom count",
+    "septic capacity",
+    "deed restriction"
+   ]
+  },
+  {
+   "topic": "Septic loan program fund use",
+   "resolution": "no motion; board agreed written State permission needed",
+   "quote": "after discussion, the board agreed that written permission from state officials would be necessary.",
+   "tags": [
+    "septic loan program",
+    "town parks"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 Regulations (310 CMR 15), including the bedroom definition",
+   "where": "text",
+   "quote": "mr. spinosa stated that he had read title 5 regulations and it was his opinion as well as his attorney's"
+  },
+  {
+   "name": "310 CMR 15 (septic system standard for four-bedroom home at 143 Rolling Acres)",
+   "where": "text",
+   "quote": "this property currently has a four bedroom septic system that complies with 310cmr 15"
+  }
+ ],
+ "tags": [
+  "septic",
+  "Title 5",
+  "variances",
+  "bedroom count",
+  "septic loan program",
+  "groundwater",
+  "Board of Health"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

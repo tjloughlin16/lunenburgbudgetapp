@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2017-11-30",
  "docid": "1379",
@@ -12,23 +12,218 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the October 12 meeting",
-   "moved_by": "Lance May",
-   "seconded_by": "Lorraine Mendoza",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the October 12 meeting.",
+   "moved_by": "Chairman May",
+   "seconded_by": "Vice-Chairman Mendoza",
+   "outcome": "passed",
    "procedural": true,
    "quote": "upon a motion by chairman may to accept the minutes, seconded by vice-chairman mendoza, and with no further discussion, the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Lance May",
-   "seconded_by": "Lorraine Mendoza",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Chairman May",
+   "seconded_by": "Vice Chairman Mendoza",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made by chairman may to adjourn, seconded by vice chairman mendoza, the meeting was adjourned at 9:30 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; two procedural votes recorded. Note: header shows OCR errors (Lorrame menoosa → Lorraine Mendoza, Dice-chair → Vice-chair) but minutes text is legible.",
- "cost_usd": 0.1133435
+ "note": "OCR of the header is garbled (\"Lorrame menoosa, Dice-chair\"); the Vice-Chairman is taken to be Lorraine Mendoza from the attendance line. Dates such as \"October 12'\" and \"November 27*\" are OCR text with stray marks. The minutes give no agenda. The Town accountant who gave the update is unnamed. Heather Lemieux, Steve Malandrinos and Kenneth and Bruce Chester are named but did not take part, so they are not listed as attendees. No dollar transfers were recorded.",
+ "cost_usd": 0.00476692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chairman (also listed as Commissioner)",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Supt.",
+   "status": "present",
+   "quote": "members present were commissioners lance may, lorraine mendoza, william tyler and cemetery supt. todd holman."
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "a member of the Charter Review Committee",
+   "status": "present",
+   "quote": "nancy gray, a member of the charter review committee appeared before the commission to discuss"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to direct the Chairman to follow up with Town Manager Heather Lemieux should no reply be received to the November 27 letter.",
+   "quote": "agreed to direct the chairman to follow-up with her should no reply be received."
+  },
+  {
+   "decision": "The Charter Review Committee is to contact the Commission for a time and date for a meeting.",
+   "quote": "it was decided to have the charter review committee contact us for a time and date for a meeting."
+  },
+  {
+   "decision": "Bids for the lettering of the niches at the new Columbarium will be opened and awarded at the January meeting.",
+   "quote": "bids for the lettering of the niches at the new columbarium will be opened and awarded at the january meeting."
+  },
+  {
+   "decision": "The Rules and Regulations will be amended to include rates for the new Niches in the Columbarium.",
+   "quote": "it was decided that the rules and regulations will be amended to include rates for the new niches in the columbarium."
+  },
+  {
+   "decision": "Steve Malandrinos, IT director, will be contacted to reflect the changes in the Rules and Regulations on the Town's website.",
+   "quote": "also, steve malandrinos, it director, will be contacted to reflect the changes in our"
+  },
+  {
+   "decision": "Whether the prisoners from the Worcester County House of Correction might be available in the Spring was discussed; no decision recorded.",
+   "quote": "it was also discussed whether the prisoners might be available in the spring."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Article balance",
+   "what_was_recorded": "Following an update from the Town accountant, the remaining balance in the Capital Article was reported.",
+   "figures_as_printed": [
+    "$4892.87"
+   ],
+   "quote": "there is $4892.87 left in the capital article."
+  },
+  {
+   "topic": "Remaining expenses to be subtracted from the Capital Article",
+   "what_was_recorded": "Two expenses remain to be subtracted: loam and an outhouse used by prisoners from the Worcester County House of Correction while working at the cemeteries.",
+   "figures_as_printed": [
+    "$422.00",
+    "$100.00"
+   ],
+   "quote": "the only expenses left to be subtracted are $422.00 for loam and $100.00 for the outhouse the prisoners from the worcester county house of correction use while working at the cemeteries."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Nancy Gray",
+   "stated_role": "a member of the Charter Review Committee",
+   "topic": "Charter Review Committee involvement",
+   "quote": "nancy gray, a member of the charter review committee appeared before the commission to discuss our involvement in the process."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of October 12 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "upon a motion by chairman may to accept the minutes, seconded by vice-chairman mendoza, and with no further discussion, the motion passed unanimously."
+  },
+  {
+   "topic": "Chairman May's letter to Town Manager on Winter burials",
+   "resolution": "chair to follow up if no reply",
+   "tags": [
+    "winter burials",
+    "town manager",
+    "columbarium"
+   ],
+   "quote": "chairman may's letter to town manager heather lemieux was discussed concerning supt. holmans"
+  },
+  {
+   "topic": "Charter Review Committee involvement",
+   "resolution": "Charter Review Committee to contact the Commission to set a meeting",
+   "tags": [
+    "charter review"
+   ],
+   "quote": "it was decided to have the charter review committee contact us for a time and date for a meeting."
+  },
+  {
+   "topic": "Account expenses and Capital Article",
+   "resolution": "no action; balance and remaining expenses reported",
+   "tags": [
+    "capital article",
+    "budget",
+    "expenses"
+   ],
+   "quote": "account expenses was the next topic, and with an update from the town accountant, there is"
+  },
+  {
+   "topic": "Columbarium niche lettering bids",
+   "resolution": "bids to be opened and awarded at January meeting",
+   "tags": [
+    "columbarium",
+    "bids"
+   ],
+   "quote": "bids for the lettering of the niches at the new columbarium will be opened and awarded at the january meeting."
+  },
+  {
+   "topic": "Rules and Regulations niche rates",
+   "resolution": "Rules and Regulations to be amended; website to be updated",
+   "tags": [
+    "rules and regulations",
+    "columbarium",
+    "website"
+   ],
+   "quote": "it was decided that the rules and regulations will be amended to include rates for the new niches in the columbarium."
+  },
+  {
+   "topic": "Letters of thanks to Supt. Holman",
+   "resolution": "noted",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "kenneth chester and bruce chester both wrote letters of thanks for supt. holman in regards to their"
+  },
+  {
+   "topic": "Boy Scout project at North Cemetery",
+   "resolution": "no action; progress reported",
+   "tags": [
+    "boy scouts",
+    "north cemetery",
+    "veterans"
+   ],
+   "quote": "the boy scout project is almost completed at north cemetery, with concrete poured and benches to"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Chairman May's letter to Town Manager Heather Lemieux (concerning Supt. Holman's availability for Winter burials)",
+   "where": "text",
+   "quote": "chairman may's letter to town manager heather lemieux was discussed concerning supt. holmans"
+  },
+  {
+   "name": "November 27 letter sent to the Town Manager, Heather Lemieux",
+   "where": "text",
+   "quote": "the november 27* letter that was sent to the town manager, heather lemieux, and agreed to direct the"
+  },
+  {
+   "name": "Letters of thanks from Kenneth Chester and Bruce Chester",
+   "where": "text",
+   "quote": "kenneth chester and bruce chester both wrote letters of thanks for supt. holman in regards to their"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "columbarium",
+  "capital article",
+  "rules and regulations",
+  "charter review",
+  "winter burials",
+  "boy scouts",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

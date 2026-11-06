@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee-appointing-committee",
  "meeting_date": "2018-08-27",
  "docid": "2049",
@@ -12,15 +12,83 @@
  },
  "votes": [
   {
-   "motion": "Appoint Michelle Walton",
-   "moved_by": "Jaime Toale",
-   "seconded_by": "Heather Sroka",
+   "motion": "Appoint Michelle Walton to the committee.",
+   "moved_by": "Mr. Toale",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "mr. toale made a motion to appoint ms. walton, ms. sroka seconded. there were no other motions, and the committee voted unanimously to appoint her."
+   "procedural": false,
+   "quote": "mr. toale made a motion to appoint ms. walton, ms. sroka seconded. there were no other motions, and the committee voted unanimously to appoint her.",
+   "seconded_by": "Ms. Sroka"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd (macOS Vision) and readable. One vote recorded.",
- "cost_usd": 0.10091449999999999
+ "note": "OCR text of a single page; the header lists two members but does not give a roll call, and the chair is not named as such (Mr. Murphy is only shown distributing the agenda). The meeting date in the record is 2018-08-27; the text shows only a receipt stamp dated OCT 29 2018. Vote was recorded as unanimous without a count.",
+ "cost_usd": 0.00200942,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jaime Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "jaime toale, selectman"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka, school committee"
+  },
+  {
+   "name": "Mr. Murphy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. murphy distributed an agenda."
+  },
+  {
+   "name": "David Passios",
+   "role": "applicant from the talent bank",
+   "status": "present",
+   "quote": "the applicants were interviewed: david passios rhonda lisio michelle walton"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "applicant from the talent bank",
+   "status": "present",
+   "quote": "the applicants were interviewed: david passios rhonda lisio michelle walton"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "applicant from the talent bank",
+   "status": "present",
+   "quote": "the applicants were interviewed: david passios rhonda lisio michelle walton"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Interviews of talent bank applicants",
+   "resolution": "appointed Michelle Walton",
+   "quote": "the sole item on the agenda was interviewing 3 applicants from the talent bank.",
+   "tags": [
+    "interviews",
+    "talent bank",
+    "appointment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "appointments",
+  "talent bank",
+  "interviews",
+  "committee vacancy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

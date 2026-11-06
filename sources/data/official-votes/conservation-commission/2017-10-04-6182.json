@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-10-04",
  "docid": "6182",
@@ -12,79 +12,468 @@
  },
  "votes": [
   {
-   "motion": "Allow Renee Trachimas to utilize Robbs Hill property for the Sunrise Stables Harvest Ride on October 29th",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Todd Dwyer",
+   "motion": "Allow the Sunrise Stables Harvest Ride to use the Robbs hill property on 10/29.",
+   "moved_by": "KJ",
+   "seconded_by": "TD",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "kj moved to allow permission. td seconded and the commission voted unanimously."
   },
   {
-   "motion": "Approve insignificant change to goat shed location at 91 Gilchrest Street pending revised sketch",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Bob Pease",
+   "motion": "Approve the insignificant change to move the previously approved goat shed at 91 Gilchrest Street, pending a revised sketch by TD.",
+   "moved_by": "",
+   "seconded_by": "BP",
    "outcome": "not stated",
    "procedural": false,
    "quote": "motion to approve insignificant change pending revised sketch by td with a second by bp."
   },
   {
-   "motion": "Negative determination for septic system at 183 South Row Road with replanting outlined on updated plan",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Bob Pease",
+   "motion": "Issue a negative determination for the septic system within the buffer zone at 183 South Row Road, with replanting outlined on an updated plan.",
+   "moved_by": "TD",
+   "seconded_by": "BP",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "td moved for a negative determination with replanting outlined on an updated plan with a second by bp and a unanimous vote."
   },
   {
-   "motion": "Negative determination for septic system replacement at 99 Pleasant Street",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Todd Dwyer",
+   "motion": "Issue a negative determination for the septic replacement within the buffer zone at 99 Pleasant Street.",
+   "moved_by": "KJ",
+   "seconded_by": "TD",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion for a negative by kj and a second by td with a unanimous visit."
   },
   {
-   "motion": "Continue determination request for paver patio and decks at 48 Oak Ridge Road until October 18th with notice for administrative hearing",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Todd Dwyer",
+   "motion": "Continue the request for a determination for 48 Oak Ridge Road to October 18, with notice for an administrative hearing.",
+   "moved_by": "JR",
+   "seconded_by": "TD",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "continued until october 18' with a notice for an administrative hearing. by a motion of jr and a second by td and a unanimous vote with a time line."
+   "quote": "by a motion of jr and a second by td and a unanimous vote with a time line."
   },
   {
-   "motion": "Continue hearing on Notice of Intent for Settlers Solar construction until October 18th to address pollinator plantings, conservation restriction, monitoring and DEP comments",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Todd Dwyer",
+   "motion": "Continue the Settlers Solar Notice of Intent hearing to the October 18th meeting.",
+   "moved_by": "Ku",
+   "seconded_by": "TD",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "the hearing was continued to the october 18th meeting to address the pollinator plantings, the conservation restriction, the monitoring and the resolution of dep's comments. motion by ku and a second by td"
+   "quote": "motion by ku and a second by td"
   },
   {
-   "motion": "Not pursue the Chapter 61 release request at 2030 Mass Ave",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Todd Dwyer",
-   "outcome": "passed",
+   "motion": "Not pursue the Chapter 61 release request for 2030 Mass Ave.",
+   "moved_by": "KJ",
+   "seconded_by": "TD",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the commission decided to not pursue the release request by motion of kj and a second by td."
   },
   {
-   "motion": "Accept three-year extension permit for 811 Chase Road with condition that taxes are up to date",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
+   "motion": "Accept the three-year extension permit for 811 Chase Road, with the condition that taxes are up to date.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
    "outcome": "not stated",
    "procedural": false,
    "quote": "kj motion to accept with the condition taxes are up to date. second by bp."
   },
   {
-   "motion": "Accept minutes of meetings from August 2 and September 20",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
+   "motion": "Accept the minutes of the 8/2 and 9/20 meetings.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
    "outcome": "not stated",
    "procedural": true,
    "quote": "kj moved to accept the 812 minutes with a second by bp."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Vote #6 shows mover as \"Ku\" (likely OCR error for Kenneth Jones/KJ). Vote #4 shows \"unanimous visit\" which is likely an OCR error for \"unanimous vote\". Several outcomes not explicitly stated in minutes; these marked \"not stated\".",
- "cost_usd": 0.1089435
+ "note": "OCR text of a scanned page set; many names and figures are garbled and reproduced as printed (e.g., 'Mr. Luc' for Carl Luck, 'Ku' for a motion-maker, '812 minutes' for 8/2 minutes, 'unanimous visit', 'Mir. Oliva'). Most votes print no motion-maker or no outcome count; outcomes are recorded only where the minutes print 'unanimous'. No adjournment motion or time is printed, so adjournment is omitted as a topic and vote. No dollar figures are printed anywhere in the text.",
+ "cost_usd": 0.010709020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "called to order by chairman bursch at 7 pm with all members in attendance except mr. luc"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "richard bursch, chair todd dwyer, vice-chair bob pease carl luck jack rabbitt kenneth jones"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "with all members in attendance except mr. luc"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commission member",
+   "status": "absent",
+   "quote": "called to order by chairman bursch at 7 pm with all members in attendance except mr. luc"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "with all members in attendance except mr. luc"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "with all members in attendance except mr. luc"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "matthew s. marro, conservation administrator"
+  },
+  {
+   "name": "John Fortune",
+   "role": "presenter to the commission",
+   "status": "present",
+   "quote": "john fortune appeared before the commission and gave a brief presentation on dam modifications"
+  },
+  {
+   "name": "Renee Trachimas",
+   "role": "requesting permission for Sunrise Stables Harvest Ride",
+   "status": "not stated",
+   "quote": "renee trachimas is requesting permission to utilize the robbs hill property"
+  },
+  {
+   "name": "Tom Petersen",
+   "role": "property owner, 91 Gilchrest Street (insignificant change)",
+   "status": "not stated",
+   "quote": "tom petersen is looking to shift the previously approved shed to behind the barn"
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "representing the applicant, 99 Pleasant Street",
+   "status": "present",
+   "quote": "bob proctor outlined the system and the relation to the wetland."
+  },
+  {
+   "name": "Michael Tuffs",
+   "role": "applicant, 48 Oak Ridge Road",
+   "status": "not stated",
+   "quote": "a continued request for a determination by michael tuffs for the construction of a paver patio"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "representing the applicant (Settlers Solar)",
+   "status": "present",
+   "quote": "rob oliva appeared representing the applicant."
+  },
+  {
+   "name": "William Gustus",
+   "role": "owner of the property (Settlers Solar)",
+   "status": "present",
+   "quote": "the owner of the property ( william gustus) indicated that he was open to it."
+  },
+  {
+   "name": "Ron Smith",
+   "role": "public, Settlers Solar hearing",
+   "status": "present",
+   "quote": "ron smith expressed concerns about maintenance of the detention basin and the frequency of the mowing."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission decided to keep the Town Committee Overview form as is.",
+   "quote": "discussion of town committee overview form - the commission decided to keep it as is."
+  },
+  {
+   "decision": "Commission decided to forward a recommendation of Catie Childs for new member recruitment, citing her experience on a commission.",
+   "quote": "after some discussion the commission decided to forward a recommendation of catie childs due to her experience of being on a commission."
+  },
+  {
+   "decision": "BP was appointed as the conservation representative to the open space committee (994 Northfield Road open space acquisition).",
+   "quote": "bp was appointed as a conservation representative to the open space committee"
+  },
+  {
+   "decision": "KJ volunteered to attend the October 10 goals meeting with the BOS.",
+   "quote": "rb requested a member to go to a goals meeting on october 10 with the bos. kj volunteered."
+  },
+  {
+   "decision": "Site inspection set for 10/14/17 for the Stone Farm Certificates of Compliance.",
+   "quote": "certificates of compliance - stone farm - site inspection set for 10/14/17."
+  },
+  {
+   "decision": "Tax taking parcels to be researched.",
+   "quote": "the tax taking parceis to be researched."
+  },
+  {
+   "decision": "Commissioners will email MM a list in the morning regarding use of money for DEP's approval.",
+   "quote": "the commissioners will email mm a list in the morning."
+  },
+  {
+   "decision": "MM will re-email DEP for a response on the North Leominster Rod and Gun Club matter.",
+   "quote": "mm will re-email dep as he has not received a response."
+  },
+  {
+   "decision": "RB requested a map of any areas worked on for the Sunrise Stables ride.",
+   "quote": "rb request a map of any areas worked on."
+  },
+  {
+   "decision": "MM recommended a three-year extension for the 811 Chase Road permit.",
+   "quote": "mm recommended a three year extension."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Use of money for DEP's approval (call from Keating)",
+   "what_was_recorded": "Kendra from Keating called MM about use of money for DEP's approval; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "kendra from keating called mm today regarding use of money for dep's approval."
+  },
+  {
+   "topic": "Fines and permit holds (legal update)",
+   "what_was_recorded": "Counsel to review the commission's ability to hold permits on fines; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "counsel will be reviewing abilities to hold permits on fines"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Fortune",
+   "stated_role": "",
+   "topic": "dam modifications at Hickory Hills lake dam",
+   "quote": "john fortune appeared before the commission and gave a brief presentation on dam modifications"
+  },
+  {
+   "speaker": "Ron Smith",
+   "stated_role": "",
+   "topic": "Settlers Solar detention basin maintenance and mowing",
+   "quote": "ron smith expressed concerns about maintenance of the detention basin and the frequency of the mowing."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action",
+   "quote": "kj updated the commission on a brush fire incident on the pleasant street area. it burned about 5 acres.",
+   "tags": [
+    "announcements",
+    "brush fire",
+    "bridge dedication"
+   ]
+  },
+  {
+   "topic": "Public comment: dam modifications, Hickory Hills lake dam",
+   "resolution": "heard presentation, no action",
+   "quote": "john fortune appeared before the commission and gave a brief presentation on dam modifications",
+   "tags": [
+    "dam",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Sunrise Stables Harvest Ride permission",
+   "resolution": "approved",
+   "quote": "kj moved to allow permission. td seconded and the commission voted unanimously.",
+   "tags": [
+    "event permission",
+    "Robbs hill"
+   ]
+  },
+  {
+   "topic": "Notice of Insignificant Change, 91 Gilchrest Street (goat shed move)",
+   "resolution": "approved pending revised sketch",
+   "quote": "motion to approve insignificant change pending revised sketch by td with a second by bp.",
+   "tags": [
+    "insignificant change",
+    "wetlands",
+    "setback"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, septic system, 183 South Row Road (Petrius Contracting)",
+   "resolution": "negative determination with replanting",
+   "quote": "td moved for a negative determination with replanting outlined on an updated plan with a second by bp and a unanimous vote.",
+   "tags": [
+    "septic",
+    "buffer zone",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Request for determination, septic replacement, 99 Pleasant Street (Bob Proctor)",
+   "resolution": "negative determination",
+   "quote": "motion for a negative by kj and a second by td with a unanimous visit.",
+   "tags": [
+    "septic",
+    "buffer zone",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Continued request for determination, 48 Oak Ridge Road (Michael Tuffs)",
+   "resolution": "continued to October 18",
+   "quote": "continued until october 18' with a notice for an administrative hearing.",
+   "tags": [
+    "patio",
+    "decks",
+    "buffer zone",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent, Settlers Solar 6 MW solar field",
+   "resolution": "continued to October 18",
+   "quote": "the hearing was continued to the october 18th meeting to address the pollinator plantings",
+   "tags": [
+    "solar",
+    "stormwater",
+    "conservation restriction",
+    "continued hearing"
+   ]
+  },
+  {
+   "topic": "Current business: violations (enforcement actions and fines)",
+   "resolution": "updates, no action",
+   "quote": "mm reviewed the email from owners rep.",
+   "tags": [
+    "enforcement",
+    "violations",
+    "fines"
+   ]
+  },
+  {
+   "topic": "New business: 994 Northfield Road open space acquisition and Chapter 61B",
+   "resolution": "BP appointed conservation representative",
+   "quote": "bp was appointed as a conservation representative to the open space committee",
+   "tags": [
+    "open space",
+    "chapter 61B",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Town Committee Overview form",
+   "resolution": "kept as is",
+   "quote": "discussion of town committee overview form - the commission decided to keep it as is.",
+   "tags": [
+    "committee",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Chapter 61 release request, 2030 Mass Ave",
+   "resolution": "not pursued",
+   "quote": "the commission decided to not pursue the release request by motion of kj and a second by td.",
+   "tags": [
+    "chapter 61",
+    "release request"
+   ]
+  },
+  {
+   "topic": "Old business: new member recruits",
+   "resolution": "recommendation forwarded for Catie Childs",
+   "quote": "after some discussion the commission decided to forward a recommendation of catie childs due to her experience of being on a commission.",
+   "tags": [
+    "membership",
+    "recruitment"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance, Stone Farm",
+   "resolution": "site inspection set for 10/14/17",
+   "quote": "certificates of compliance - stone farm - site inspection set for 10/14/17.",
+   "tags": [
+    "certificate of compliance",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Extension permit, 811 Chase Road",
+   "resolution": "three-year extension accepted with tax condition",
+   "quote": "mm recommended a three year extension.",
+   "tags": [
+    "extension permit",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings, 8/2 and 9/20",
+   "resolution": "accepted",
+   "quote": "kj moved to accept the 812 minutes with a second by bp.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports: agent's report and action items",
+   "resolution": "no votes; status updates",
+   "quote": "forest cutting plan progress - final plans approved by dcr and contract language changed.",
+   "tags": [
+    "inspections",
+    "forest cutting plan",
+    "legal updates",
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for October 18, 2017",
+   "quote": "next meeting for october 18, 2017 at the ritter land use building",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a determination and plans by soils smith, entitled septic design/determination dated 8/30/17 as a 20 scale plan",
+   "where": "list",
+   "quote": "septic design/determination dated 8/30/17 as a 20 scale plan"
+  },
+  {
+   "name": "Request for a determination and plans by soils smith, Bob Proctor 99 Pleasant Street dated 5/4/17 as a 20 scale plan",
+   "where": "list",
+   "quote": "bob proctor 99 pleasant street dated 5/4/17 as a 20 scale plan"
+  },
+  {
+   "name": "Notice of Intent and plans by David Ross and Associates entitled \"Settlers Solar\" dated 8/17",
+   "where": "list",
+   "quote": "notice of intent and plans by david ross and associates"
+  },
+  {
+   "name": "Vegetation management plan submitted to the planning board (Settlers Solar)",
+   "where": "text",
+   "quote": "there has been a vegetation management plan submitted to the planning board."
+  },
+  {
+   "name": "Violation letter sent out by Adam Burney (155 Reservoir Road)",
+   "where": "text",
+   "quote": "mm outlined the violation lefter adam burney sent out"
+  },
+  {
+   "name": "Email from owners rep (70 Oak Ridge Road)",
+   "where": "text",
+   "quote": "mm reviewed the email from owners rep."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "septic",
+  "buffer zone",
+  "solar",
+  "hearings",
+  "enforcement",
+  "open space",
+  "chapter 61",
+  "minutes",
+  "OCR scan"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for the commission's review was"
+ },
+ "dropped_unquoted_by_field": {}
 }

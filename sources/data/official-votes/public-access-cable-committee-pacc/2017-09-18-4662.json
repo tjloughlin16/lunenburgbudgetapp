@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2017-09-18",
  "docid": "4662",
@@ -12,14 +12,150 @@
  },
  "votes": [
   {
-   "motion": "approve meeting minutes from Aug. 14, 2017",
+   "motion": "Approve the minutes of the Aug. 14, 2017 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "review and approve meeting minutes from aug. 14, 2017. 1. committee reviewed and approved the minut",
-   "quote_taken_from_text": true
+   "quote": "committee reviewed and approved the minutes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted via OCR (macOS Vision). Explicit vote counts and mover/seconder names not recorded in the minutes.",
- "cost_usd": 0.1029825
+ "note": "OCR text of a single-page set of minutes. The approval of the Aug. 14, 2017 minutes is recorded without a printed mover, seconder, or vote count, so the outcome is recorded as passed on the words \"reviewed and approved.\" The adjournment has no recorded motion and is not listed as a vote. No documents are listed or named.",
+ "cost_usd": 0.0030366200000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members present were jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The cable access committee and board of selectmen will review the Comcast offer and come up with a counter offer.",
+   "quote": "the cable access committee and board of selectman will review the offer and come up with a counter offer,"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Available budget",
+   "what_was_recorded": "The available budget at the end of July was reported.",
+   "figures_as_printed": [
+    "$155,988.34"
+   ],
+   "quote": "available budget ending in the month of july was $155,988.34"
+  },
+  {
+   "topic": "Comcast offer",
+   "what_was_recorded": "The Comcast lawyer approved a 5% capital increase and a 130,000 payment spread out over 10 years.",
+   "figures_as_printed": [
+    "5%",
+    "130,000"
+   ],
+   "quote": "the comcast lawyer approved the 5% capital increase and 130,000 payment spread out over 10 years."
+  },
+  {
+   "topic": "Expenses deducted from budget",
+   "what_was_recorded": "Coordinator Jo shared several expenses that will be deducted from the budget; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "jo shared several expenses that will be deducted from the budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Public comments",
+   "quote": "public comments: 1. no comments."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order at 6:04pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting called to order at 6:04pm."
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comments: 1. no comments."
+  },
+  {
+   "topic": "Approve minutes of Aug. 14, 2017",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "committee reviewed and approved the minutes."
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "noted",
+   "tags": [
+    "coordinator",
+    "programming",
+    "budget"
+   ],
+   "quote": "rhonda is continuing training with emily and will start recording meetings on her own."
+  },
+  {
+   "topic": "Business and cable advisory committee update",
+   "resolution": "counter offer to be prepared",
+   "tags": [
+    "Comcast",
+    "franchise",
+    "capital"
+   ],
+   "quote": "the comcast lawyer approved the 5% capital increase and 130,000 payment spread out over 10 years."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:45pm; next meeting Oct 2nd",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting adjourned at 6:45pm."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access cable",
+  "PACC",
+  "Comcast",
+  "budget",
+  "coordinator report",
+  "minutes approval",
+  "programming"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

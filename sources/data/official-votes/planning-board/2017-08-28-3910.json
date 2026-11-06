@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-08-28",
  "docid": "3910",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Grant waiver from site plan approval to Walker Orthodontics at 119 Massachusetts Avenue",
+   "motion": "Grant waiver from site plan approval for Walker Orthodontics, 119 Massachusetts Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, k. chenis, to grant waiver from site p lan approval, second, d. prokowiew, all aye",
-   "quote_taken_from_text": true
+   "quote": "motion, k. chenis, to grant waiver from site p lan approval, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Grant waiver from site plan approval for 84 Lakefront Avenue",
+   "motion": "Grant waiver from site plan approval for 84 Lakefront Avenue (patio expansion).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -29,7 +28,7 @@
    "quote": "motion, m. jeffreys, to grant waiver from site plan approval, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Approve conditions for decision at 40 Pioneer Drive & 98 Leominster Shirley Road",
+   "motion": "Approve the conditions for the decision on 40 Pioneer Drive & 98 Leominster Shirley Road.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -37,31 +36,294 @@
    "quote": "motion, k. chenis, to approve the above conditions, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Land Use Director send letter of support to Zoning Board of Appeals for pre-existing drive",
+   "motion": "Land Use Director to send the Zoning Board of Appeals a letter of support for the pre-existing drive outlined in the original Plan.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion, k. chenis, that the land use director send the zoni ng board of appeals a letter of support for the pre-existing drive outlined in the original plan, second, d. prokowiew, all aye."
+   "quote": "the pre-existing drive outlined in the original plan, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Accept minutes from prior meetings",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "all minutes accepted."
-  },
-  {
-   "motion": "Postpone discussion of Definitions and Use Table",
+   "motion": "Postpone Definitions and Use Table.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
-   "procedural": false,
+   "procedural": true,
    "quote": "k. chenis, motion to postpone definitions and use table, second, m. jeffreys, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1082955
+ "note": "Plain text extraction with no scan issues. No dollar figures, transfers, or public comment appear in the text. The minutes approval and the endorsement of the ANR plan and 671 Reservoir Road decision carry no recorded motion, so they are listed as decisions rather than votes. The adjournment at 9:56 PM has no recorded motion. Vote outcomes are printed as \"all aye\", recorded here as \"passed\".",
+ "cost_usd": 0.007425019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "John Saliba",
+   "role": "Applicant (ANR Plan, 961 & 994 Northfield Road)",
+   "status": "not stated",
+   "quote": "the applicants, john and david saliba, were represented by neil gorman, david ross associates."
+  },
+  {
+   "name": "David Saliba",
+   "role": "Applicant (ANR Plan, 961 & 994 Northfield Road)",
+   "status": "not stated",
+   "quote": "the applicants, john and david saliba, were represented by neil gorman, david ross associates."
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "representing the applicants (David Ross Associates)",
+   "status": "present",
+   "quote": "the applicants, john and david saliba, were represented by neil gorman, david ross associates."
+  },
+  {
+   "name": "Matthew Fournier",
+   "role": "President, Elite Construction and Design, Inc., representing the applicant (Walker Orthodontics)",
+   "status": "present",
+   "quote": "the applicant, walker orthodontics, was represented by matthew fournier, president, elite construction and design, inc."
+  },
+  {
+   "name": "Kenneth Ricker",
+   "role": "Applicant (Embers Pizzeria, 84 Lakefront Avenue)",
+   "status": "present",
+   "quote": "the applicant, kenneth ricker owns embers pizzeria on the lakefront."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board endorsed the ANR Plan for 961 & 994 Northfield Road (parcel swap putting the golf course on 994 Northfield Road property).",
+   "quote": "the plan was endorsed by the board."
+  },
+  {
+   "decision": "The Board endorsed the decision for 671 Reservoir Road.",
+   "quote": "decision endorsed by board."
+  },
+  {
+   "decision": "The Board will send a letter to the Zoning Board of Appeals recommending approval for the third drive (40 Pioneer Drive & 98 Leominster Shirley Road).",
+   "quote": "the board will send a letter to the zoning board of appeals recommending approval for the third drive."
+  },
+  {
+   "decision": "All minutes were accepted (08/14/17 minutes, including 40 Pioneer Drive & 98 Leominster Shirley Road and 675 Reservoir Road).",
+   "quote": "minutes approval: all minutes accepted."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan, 961 & 994 Northfield Road (Saliba)",
+   "resolution": "endorsed by Board",
+   "quote": "the plan was endorsed by the board.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "golf course",
+    "Northfield Road"
+   ]
+  },
+  {
+   "topic": "Request for Waiver, Walker Orthodontics, 119 Massachusetts Avenue",
+   "resolution": "waiver granted",
+   "quote": "request for waiver - walker orthodontics, 119 massachusetts avenue",
+   "tags": [
+    "site plan waiver",
+    "parking lot",
+    "Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "Request for Waiver, 84 Lakefront Avenue (Embers Pizzeria)",
+   "resolution": "waiver granted",
+   "quote": "request for waiver - 84 lakefront avenue",
+   "tags": [
+    "site plan waiver",
+    "patio",
+    "seating",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Public hearing, 40 Pioneer Drive & 98 Leominster Shirley Road",
+   "resolution": "conditions approved; letter of support to ZBA",
+   "quote": "40 pioneer drive & 98 leominster shirley road - see separate minutes.",
+   "tags": [
+    "public hearing",
+    "driveway",
+    "fire department connection",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "994 Northfield Road",
+   "resolution": "see separate minutes",
+   "quote": "994 northfield road- see separate minutes",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "all minutes accepted",
+   "quote": "minutes approval: all minutes accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "capital planning committee- initial meeting for fy2019 held august 15th.",
+   "tags": [
+    "committee reports",
+    "capital planning",
+    "stormwater",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "671 Reservoir Road endorsed; O'Brien litigation update; Definitions and Use Table postponed",
+   "quote": "decision endorsed by board.",
+   "tags": [
+    "litigation",
+    "O'Brien Homes",
+    "zoning bylaw",
+    "use table"
+   ]
+  },
+  {
+   "topic": "Notices & communications, 2030 Massachusetts Avenue, Ch. 61B",
+   "resolution": "no action",
+   "quote": "communication provided to board for its review prior to discussion at a board meeting.",
+   "tags": [
+    "Chapter 61B",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "september 11- permit review, 5 & 9 electric avenue",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items: Complete Streets",
+   "resolution": "no action",
+   "quote": "ongoing items: complete streets",
+   "tags": [
+    "complete streets"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "quote": "m. jeffreys noted to the board that he plans on talking to the board about school student involvement.",
+   "tags": [
+    "schools",
+    "students"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:56 PM (no motion recorded)",
+   "quote": "adjournment: 9:56 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan- 961 & 994 Northfield Rd",
+   "where": "list",
+   "quote": "anr plan- 961 & 994 northfield rd"
+  },
+  {
+   "name": "Request for Waiver, Walker Orthodontics, 119 Massachusetts Avenue",
+   "where": "list",
+   "quote": "request for waiver, walker orthodontics, 119 massachusetts avenue"
+  },
+  {
+   "name": "Request for Waiver, 84 Lakefront Avenue",
+   "where": "list",
+   "quote": "request for waiver, 84 lakefront avenue"
+  },
+  {
+   "name": "Minutes- 08/14/17; 08/14/17, 40 Pioneer Drive & 98 Leominster Shirley Road; 08/14/17, 675 Reservoir Road",
+   "where": "list",
+   "quote": "minutes- 08/14/17; 08/14/17, 40 pioneer drive & 98 leominster shirley road; 08/14/17, 675 reservoir road"
+  },
+  {
+   "name": "Board Decision, 675 Reservoir Road",
+   "where": "list",
+   "quote": "board decision, 675 reservoir road"
+  },
+  {
+   "name": "Letter, Bowmar & Larkin, Real Property at 2030 Massachusetts Avenue",
+   "where": "list",
+   "quote": "letter, bowmar & larkin, real property at 2030 massachusetts avenue"
+  },
+  {
+   "name": "Minutes/2017/08.28.17",
+   "where": "list",
+   "quote": "minutes/2017/08.28.17"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "site plan waiver",
+  "zoning",
+  "public hearing",
+  "driveway",
+  "minutes approval",
+  "O'Brien Homes litigation",
+  "committee reports",
+  "Northfield Road",
+  "Lakefront Avenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

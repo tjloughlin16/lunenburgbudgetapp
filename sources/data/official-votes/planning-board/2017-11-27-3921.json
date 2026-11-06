@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-11-27",
  "docid": "3921",
@@ -12,39 +12,296 @@
  },
  "votes": [
   {
-   "motion": "Approve the Special Permit for 1 Main Street with condition that construction be completed within 30 days of commencement",
+   "motion": "Approve the Special Permit for 1 Main Street with plans as presented, with a condition that construction be completed within 30 days from the start of construction.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed 5-0",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "m. jeffreys, motion amended, that from the time construction begins to construction completion, a period of no more than 30 days elapse, second amended, d. prokowiew, all aye."
   },
   {
-   "motion": "Approve the 5 & 9 Electric Avenue Asian Imperial plan and supersede the 2011 Decision, removing Conditions #1–12, retaining #13–15, and adding new conditions for site striping, handicap accommodations, fire lanes, lighting, and construction hours",
+   "motion": "Approve the 5 & 9 Electric Avenue Asian Imperial plan and supersede the 2011 Decision, removing Conditions #1 through #12, leaving #13 through #15, and adding the listed new conditions.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed 5-0",
+   "outcome": "passed (all aye)",
    "procedural": false,
-   "quote": "k. chenis, motion to approve the 5 & 9 electric avenue asian imperial plan and supersede the 2011 decision with the following, remove conditions #1 through #12; leave conditions #13 through #15, and add the following conditions: abide by approvals of all other town boards and commissions, striping of all lots, including handicapped spots, add handicap signage to existing lot, fire lanes to be installed and striped as required by the fire chief, the spotlight at the south side of the building will be removed no later than the completion of phase 2, all new lighting will be dark sky compliant, construction hours will be between 7 and 4, monday through friday, and after january 1st they will include 8 to 12 on saturdays, no construction on sundays and holidays, second, d. prokowiew, all aye."
+   "quote": "k. chenis, motion to approve the 5 & 9 electric avenue asian imperial plan and supersede the 2011 decision with the following"
   },
   {
-   "motion": "Grant all requested waivers for the 1 Main Street Special Permit application",
+   "motion": "Grant all requested waivers for the 1 Main Street special permit public hearing.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed 5-0",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "m. jeffreys, motion, to grant all requested waivers, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Close the Public Hearing for 1 Main Street",
+   "motion": "Close the 1 Main Street public hearing.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
-   "outcome": "passed 5-0",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "d. prokowiew, motion to close public hearing, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one instance of potential OCR ambiguity on page 2 where \"vote was required - no. All aye.\" appears separated by page break from the prior minutes approval section, but the four substantive and procedural votes listed are all clearly recorded.\"",
- "cost_usd": 0.06996290000000001
+ "note": "OCR text with garbled words (header reads 'Michael-Kay detreys, Mbr.'; 'Mi. leffreys', 'D. Prokowien'). The 1 Main Street public hearing has separate minutes; its motions are recorded here in the main minutes. Vote outcomes are recorded as 'all aye' (no numeric counts printed). The 994 Northfield Road fragment 'vote was required - no. All aye.' has no identifiable motion and was not recorded as a vote. 'All minutes accepted' and adjournment at 8:22 PM have no recorded motion, so they are not votes. No dollar figures or public comment appear in the text.",
+ "cost_usd": 0.01391532,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director marjorie j. boggio administrative assistant"
+  },
+  {
+   "name": "Gregory Bittner",
+   "status": "absent",
+   "quote": "absent: gregory bittner"
+  },
+  {
+   "name": "Philip Arcidiacono",
+   "role": "applicant/owner",
+   "status": "present",
+   "quote": "application presented by applicant/owner philip arcidiacono, lunenburg village realty inc., box 681, concord, ma."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All minutes accepted (meeting minutes of 11/13/17 listed), without a recorded motion.",
+   "quote": "minutes approval: all minutes accepted."
+  },
+  {
+   "decision": "Board skipped the Constructive Approval Request agenda item, as it is reserved for an executive session based on the current situation.",
+   "quote": "the board skipped over this agenda item as this is reserved for an executive session based on the current situation."
+  },
+  {
+   "decision": "Per process, an as-built will be required for close-out of the 5 & 9 Electric Avenue project.",
+   "quote": "per process, an as built will be required for close out of the project."
+  },
+  {
+   "decision": "Board consensus that the Route 2A Overlay District should be eliminated.",
+   "quote": "board consensus was that the route 2a overlay district should be eliminated."
+  },
+  {
+   "decision": "Minor edits will be made to the Water Supply Protection Overlay District.",
+   "quote": "minor edits will be made to water supply protection overlay district."
+  },
+  {
+   "decision": "Tri Town Overlay District to be left as it is.",
+   "quote": "tri town overlay district- leave as it."
+  },
+  {
+   "decision": "Floodplain Overlay District recommended not to be changed.",
+   "quote": "floodplain overlay district - recommended not changing."
+  },
+  {
+   "decision": "Charter Review placed as a discussion item at the December 11 Board meeting.",
+   "quote": "charter review- will be a discussion item at the december 11t board meeting."
+  },
+  {
+   "decision": "Complete Streets removed from the agenda.",
+   "quote": "complete streets- remove from agenda"
+  },
+  {
+   "decision": "Solar Energy Systems (Code 250-4.15) placed on the January 8 agenda.",
+   "quote": "§250-4.15. solar energy systems- place on january 8'n agenda."
+  },
+  {
+   "decision": "Registered Marijuana Dispensaries (Code 250-4.16) tabled to December 11.",
+   "quote": "code §250-4.16. registered marijuana dispensaries- tabled to december 11#7"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "1 Main Street special permit (public hearing 6:35 to 6:48 PM, separate minutes)",
+   "resolution": "approved with plans as presented, 30-day construction condition; waivers granted; hearing closed",
+   "quote": "m. jeffreys, motion amended, that from the time construction begins to construction completion, a period of no more than 30 days elapse, second amended, d. prokowiew, all aye.",
+   "tags": [
+    "special permit",
+    "public hearing",
+    "signage",
+    "conditions"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "all minutes accepted",
+   "quote": "minutes approval: all minutes accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "charter review committee. committee reviewing articles 1 and 2 of the charter.",
+   "tags": [
+    "committees",
+    "charter review",
+    "agricultural commission"
+   ]
+  },
+  {
+   "topic": "994 Northfield Road, Settlers Solar, endorse decision",
+   "resolution": "decision previously endorsed; no action",
+   "quote": "endorse decision-decision previously endorsed and recorded with the town clerk.",
+   "tags": [
+    "solar",
+    "decision endorsement"
+   ]
+  },
+  {
+   "topic": "Constructive approval request",
+   "resolution": "skipped; reserved for executive session",
+   "quote": "the board skipped over this agenda item as this is reserved for an executive session based on the current situation.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "5 & 9 Electric Avenue, Asian Imperial site plan",
+   "resolution": "approved; 2011 decision superseded with new conditions",
+   "quote": "k. chenis, motion to approve the 5 & 9 electric avenue asian imperial plan and supersede the 2011 decision with the following",
+   "tags": [
+    "site plan",
+    "conditions",
+    "2011 decision"
+   ]
+  },
+  {
+   "topic": "Definitions and Use Table (zoning overlay districts)",
+   "resolution": "discussed; consensus to eliminate Route 2A overlay; other districts left or edited; Summer Street and Lake Whalom still open",
+   "quote": "definitions and use table- a. burney covered the six overlay districts;",
+   "tags": [
+    "zoning",
+    "overlay districts",
+    "bylaw",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "scheduled, tabled, or removed from agenda",
+   "quote": "charter review- will be a discussion item at the december 11t board meeting.",
+   "tags": [
+    "charter review",
+    "economic development",
+    "solar",
+    "marijuana dispensaries",
+    "complete streets"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "board comment/concerns: m. jeffreys, as a new board member, expressed his appreciation",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:22 PM (no motion recorded)",
+   "quote": "adjournment: 8:22 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 11/13/17",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/13/17 11/13/17, 234 summer street 11/13/17,5 & 9 electric avenue 11/13/17, stm warrant article 5 & 9 electric avenue, 2011 decision definitions and use table, draft minutes/2017/11.27.17"
+  },
+  {
+   "name": "11/13/17, 234 Summer Street",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/13/17 11/13/17, 234 summer street 11/13/17,5 & 9 electric avenue 11/13/17, stm warrant article 5 & 9 electric avenue, 2011 decision definitions and use table, draft minutes/2017/11.27.17"
+  },
+  {
+   "name": "11/13/17,5 & 9 Electric Avenue",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/13/17 11/13/17, 234 summer street 11/13/17,5 & 9 electric avenue 11/13/17, stm warrant article 5 & 9 electric avenue, 2011 decision definitions and use table, draft minutes/2017/11.27.17"
+  },
+  {
+   "name": "11/13/17, STM Warrant Article",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/13/17 11/13/17, 234 summer street 11/13/17,5 & 9 electric avenue 11/13/17, stm warrant article 5 & 9 electric avenue, 2011 decision definitions and use table, draft minutes/2017/11.27.17"
+  },
+  {
+   "name": "5 & 9 Electric Avenue, 2011 Decision",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/13/17 11/13/17, 234 summer street 11/13/17,5 & 9 electric avenue 11/13/17, stm warrant article 5 & 9 electric avenue, 2011 decision definitions and use table, draft minutes/2017/11.27.17"
+  },
+  {
+   "name": "Definitions and Use Table, DRAFT",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/13/17 11/13/17, 234 summer street 11/13/17,5 & 9 electric avenue 11/13/17, stm warrant article 5 & 9 electric avenue, 2011 decision definitions and use table, draft minutes/2017/11.27.17"
+  },
+  {
+   "name": "Minutes/2017/11.27.17",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/13/17 11/13/17, 234 summer street 11/13/17,5 & 9 electric avenue 11/13/17, stm warrant article 5 & 9 electric avenue, 2011 decision definitions and use table, draft minutes/2017/11.27.17"
+  },
+  {
+   "name": "Application for Special Permit",
+   "where": "list",
+   "quote": "documents used: application for special permit minutes/public hearings 2017/1 main street. 11.27.17"
+  },
+  {
+   "name": "Minutes/public hearings 2017/1 Main Street. 11.27.17",
+   "where": "list",
+   "quote": "documents used: application for special permit minutes/public hearings 2017/1 main street. 11.27.17"
+  },
+  {
+   "name": "APDC regulations (effective December 1, 2017)",
+   "where": "text",
+   "quote": "the apdc regulations become effective december 1, 2017"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "special permit",
+  "public hearing",
+  "site plan",
+  "zoning",
+  "overlay districts",
+  "charter review",
+  "economic development",
+  "solar energy",
+  "marijuana dispensaries",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

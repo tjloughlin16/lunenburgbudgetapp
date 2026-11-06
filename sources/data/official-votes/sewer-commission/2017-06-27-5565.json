@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-06-27",
  "docid": "5565",
@@ -12,71 +12,503 @@
  },
  "votes": [
   {
-   "motion": "Assess a privilege fee of $11,551.47 for 120 West Street",
+   "motion": "Assess a privilege fee of $11,551.47 for 120 West Street.",
    "moved_by": "Joan P.",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: joan p. to assess a privilege fee of $11,551.47 for 120 west street discussion: none second: joe a. vote: unanimous"
+   "quote": "to assess a privilege fee of $11,551.47 for 120 west street discussion: none second: joe a. vote: unanimous"
   },
   {
-   "motion": "Approve the application and hiring of Emily effective 6/29 after requisite 10 days posted, to be appointed by Heather and ratified by the BOS",
+   "motion": "Approve the application/hiring of Emily effective 6/29 after requisite 10 days posted, to be appointed by Heather and ratified by the BOS at their next meeting on 7/11.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: joan p. second: troy d. to approve the application/hiring of emily effective 6/29 after requisite 10 days"
+   "quote": "to approve the application/hiring of emily effective 6/29 after requisite 10 days posted, to be appointed by heather and ratified by the bos at their next meeting on 7/11."
   },
   {
-   "motion": "Amend the motion to include a pay rate of $16.26/hour",
+   "motion": "Amend the hiring motion to include a pay rate of $16.26/hour.",
    "moved_by": "Troy D.",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: troy d. second: joe a. to amend the motion to include pay rate of $16.26/hour discussion: none vote - unanimous"
+   "quote": "to amend the motion to include pay rate of $16.26/hour discussion: none vote - unanimous"
   },
   {
-   "motion": "Approve the minutes of 12/30/16",
+   "motion": "Approve the minutes of 12/30/16 (as printed; the clerk later noted the date should be 12/13/16).",
    "moved_by": "Joe A.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: joe a. to approve the minutes of 12/30/16 discussion: none second: troy d. vote: unanimous"
+   "quote": "to approve the minutes of 12/30/16 discussion: none second: troy d. vote: unanimous"
   },
   {
-   "motion": "Approve the minutes of 5/30/2017 as amended",
+   "motion": "Approve the minutes of the 5/30/2017 as amended.",
    "moved_by": "Joe A.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous (Joan P. abstained)",
    "procedural": true,
-   "quote": "motion: joe a. second: troy d. to approve the minutes of the 5/30/2017 as amended discussion: none vote - unanimous (joan p. abstained)"
+   "quote": "to approve the minutes of the 5/30/2017 as amended discussion: none vote - unanimous (joan p. abstained)"
   },
   {
-   "motion": "Approve the minutes of 2/28/2017",
+   "motion": "Approve the minutes of 2/28/2017.",
    "moved_by": "Joe A.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: joe a. to approve the minutes of 2/28/2017 discussion: none second: troy d. vote: unanimous"
+   "quote": "to approve the minutes of 2/28/2017 discussion: none second: troy d. vote: unanimous"
   },
   {
-   "motion": "Approve the minutes of 12/13/2016",
-   "moved_by": "Joe A.",
+   "motion": "Approve the minutes of 12/13/2016.",
+   "moved_by": "Joe A",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: joe a second: troy d. to approve the minutes of 12/13/2016 discussion: none vote: unanimous"
+   "quote": "to approve the minutes of 12/13/2016 discussion: none vote: unanimous"
   },
   {
-   "motion": "Adjourn at 8:50 PM",
+   "motion": "Adjourn the meeting at 8:50pm.",
    "moved_by": "Joe A.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn: joe a. to adjourn at 8:50pm discussion: none second: troy d. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Eight votes recorded. Note: The first minutes approval vote lists the date as 12/30/16, later corrected to 12/13/2016, with a separate vote on the corrected date (votes 4 and 7 above). The Emily Lehto hiring motion (vote 2) does not have an explicit vote outcome recorded; only the subsequent amendment motion (vote 3) shows a recorded vote result.\"",
- "cost_usd": 0.14602149999999997
+ "note": "OCR text from a stamped scan (Received & Filed Oct 12 2017). Some OCR noise (e.g., \"I/l\", \"ail\"). The motion to hire Emily Lehto shows no recorded result for the original motion; only the pay-rate amendment has a recorded vote. The 12/30/16 minutes motion is printed as such and the clerk later notes the correct date is 12/13/2016. Minutes end with \"Respectfully submitted,\" and no signature name.",
+ "cost_usd": 0.00834362,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), joe anderson, joan pease, troy daniels, barb lefebvre (business manager); absent: john reynolds"
+  },
+  {
+   "name": "Joe Anderson",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), joe anderson, joan pease, troy daniels, barb lefebvre (business manager); absent: john reynolds"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), joe anderson, joan pease, troy daniels, barb lefebvre (business manager); absent: john reynolds"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), joe anderson, joan pease, troy daniels, barb lefebvre (business manager); absent: john reynolds"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: carl luck (chair), joe anderson, joan pease, troy daniels, barb lefebvre (business manager); absent: john reynolds"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "",
+   "status": "absent",
+   "quote": "attendees: carl luck (chair), joe anderson, joan pease, troy daniels, barb lefebvre (business manager); absent: john reynolds"
+  },
+  {
+   "name": "Deb Trumbull",
+   "role": "Guest, Small Water Systems",
+   "status": "present",
+   "quote": "guests: small water systems: deb trumbull, al packard, john mohammed; bob proctor"
+  },
+  {
+   "name": "Al Packard",
+   "role": "Guest, Small Water Systems",
+   "status": "present",
+   "quote": "guests: small water systems: deb trumbull, al packard, john mohammed; bob proctor"
+  },
+  {
+   "name": "John Mohammed",
+   "role": "Guest, Small Water Systems",
+   "status": "present",
+   "quote": "guests: small water systems: deb trumbull, al packard, john mohammed; bob proctor"
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "on behalf of his client (Upland Ave Extension)",
+   "status": "present",
+   "quote": "robert proctor passed out a sketch on behalf of his client. the client would like"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "",
+   "status": "absent",
+   "quote": "jack rodriquenz sent an email to the commission but will not be attending this evening."
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "bob ebersole came forward and stated that social media policies are currently being worked on by the selectmen"
+  },
+  {
+   "name": "Emily Lehto",
+   "role": "Minute Clerk applicant",
+   "status": "not stated",
+   "quote": "the commission discussed approving the application for emily lehto and the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission would like an update from Jack Rodriquenz on the infiltration and leak report, on whether a remedy plan has been received, and on its timeframe.",
+   "quote": "the commission would like an update from jack on the report last week of significant infiltration and leaks and if a plan to remedy has been received"
+  },
+  {
+   "decision": "Al Packard will meet with Jack Rodriquenz and a plan on what needs to be in stock (spare parts inventory) will be developed.",
+   "quote": "al p. will meet with jack r. and a plan on what needs to be in stock will be developed."
+  },
+  {
+   "decision": "Debbie (Deb Trumbull) agreed to add the order of precedence to the contract, and agreed dish installation is covered under the manhole seals paragraph and pipe and manhole issues are covered under the contract.",
+   "quote": "debbie agreed to the addition of the order of precedence as proposed into the contract."
+  },
+  {
+   "decision": "The Small Water Systems contract will be discussed further at future meetings.",
+   "quote": "the contract will be discussed further at future meetings."
+  },
+  {
+   "decision": "Barb L. will work on the Small Water Systems contract document and send it to Deb.",
+   "quote": "barb l. will work on the document and send to deb"
+  },
+  {
+   "decision": "The Commission agreed the Upland Ave sewer extension appears straightforward and consistent with the CWMP; the applicant may pursue neighbor outreach if decided.",
+   "quote": "the commission agreed that it appears straightforward and consistent with the cwmp."
+  },
+  {
+   "decision": "Barb L. will check with Counsel on which betterment would be used to assess the 50% privilege fee for Upland Ave.",
+   "quote": "barb l. will check with counsel."
+  },
+  {
+   "decision": "Troy D. accepted the assignment to work as liaison on the 380 Electric Ave proposal.",
+   "quote": "troy d. accepted the assignment to work as liaison on this project."
+  },
+  {
+   "decision": "Barb L. will get clarification on Leominster's estimated cost and gather information on all the pump stations for future consideration (380 Electric Ave).",
+   "quote": "barb l. will get clarification on leominster's estimated cost and will gather information on ail the pump stations for future consideration."
+  },
+  {
+   "decision": "Barb will send certified letters to food service establishments without a grease trap annual permit submittal as of 6/30.",
+   "quote": "barb will send out certified letters to those without submittal as of 6/30."
+  },
+  {
+   "decision": "The Commission will hold off on a decision about a Facebook page while the Selectmen work on social media policies.",
+   "quote": "bob ebersole came forward and stated that social media policies are currently being worked on by the selectmen and to hold off on the decision."
+  },
+  {
+   "decision": "Because the Minute Clerk position was posted at 10-15 hours per month, the hours cannot be increased for the summer.",
+   "quote": "decided that since it was posted as such it cannot be increased."
+  },
+  {
+   "decision": "The Quarterly Communications meeting with Town Manager/BOS Liaison/DPW Director is postponed until the meeting with the Town Manager, Selectmen representative and DPW Director has occurred.",
+   "quote": "the meeting will be postponed until the meeting with the town manager, selectmen representative and dpw director has occurred"
+  },
+  {
+   "decision": "The Commission discussed meeting with Flow Assessment, possibly in August.",
+   "quote": "the commission discussed the benefits of meeting with flow assessment, possibly in august."
+  },
+  {
+   "decision": "The election of Commission Officials is delayed until the first meeting in August.",
+   "quote": "the election of commission officials will be delayed until the first meeting in august."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Privilege fee, 120 West Street",
+   "what_was_recorded": "The Commission voted to assess a privilege fee of the stated amount for 120 West Street.",
+   "figures_as_printed": [
+    "$11,551.47"
+   ],
+   "quote": "to assess a privilege fee of $11,551.47 for 120 west street discussion: none second: joe a. vote: unanimous"
+  },
+  {
+   "topic": "Business Manager report, Q4 EOY commitment",
+   "what_was_recorded": "The Q4 end-of-year commitment was reported and signed by the Commission.",
+   "figures_as_printed": [
+    "$904.10"
+   ],
+   "quote": "the q4 eoy commitment is $904.10 and was signed by the commission."
+  },
+  {
+   "topic": "Invoices reviewed",
+   "what_was_recorded": "Two invoices were reviewed, from Fitchburg and Koppelman.",
+   "figures_as_printed": [
+    "$13,341.04",
+    "$1003"
+   ],
+   "quote": "two invoices were reviewed: fitchburg $13,341.04 and koppelman $1003."
+  },
+  {
+   "topic": "Minute Clerk pay rate",
+   "what_was_recorded": "The hiring motion was amended to include a pay rate for the Minute Clerk.",
+   "figures_as_printed": [
+    "$16.26/hour"
+   ],
+   "quote": "to amend the motion to include pay rate of $16.26/hour discussion: none vote - unanimous"
+  },
+  {
+   "topic": "Upland Ave privilege fee",
+   "what_was_recorded": "A 50% privilege fee for the Upland Ave sewer extension was discussed, including which betterment would be used to assess it; no dollar figure was printed.",
+   "figures_as_printed": [
+    "50%"
+   ],
+   "quote": "there was a question on which betterment would be used to assess the 50%"
+  },
+  {
+   "topic": "380 Electric Ave, Leominster estimated cost",
+   "what_was_recorded": "Clarification of Leominster's estimated cost was assigned to Barb L.; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "barb l. will get clarification on leominster's estimated cost"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Troy D.",
+   "stated_role": "",
+   "topic": "Support for DPW Director and improving relationships",
+   "quote": "troy d. spoke about the discussion at the last meeting and of his support of the dpw director and of improving relationships."
+  },
+  {
+   "speaker": "Bob Ebersole",
+   "stated_role": "",
+   "topic": "Social media policy and Facebook page",
+   "quote": "bob ebersole came forward and stated that social media policies are currently being worked on by the selectmen"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "announced; officer election delayed to August",
+   "quote": "the election of commission officials will be delayed until the first meeting in august.",
+   "tags": [
+    "officers",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "troy d. spoke about the discussion at the last meeting and of his support of the dpw director",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Operations & System Management, I/I reduction",
+   "resolution": "update requested from Jack Rodriquenz",
+   "quote": "the commission would like an update from jack on the report last week of significant infiltration and leaks",
+   "tags": [
+    "infiltration",
+    "inflow",
+    "operations"
+   ]
+  },
+  {
+   "topic": "Small Water Systems contract renewal",
+   "resolution": "continued; to be discussed further; Barb L. to revise document",
+   "quote": "the contract will be discussed further at future meetings.",
+   "tags": [
+    "small water systems",
+    "contract",
+    "spare parts"
+   ]
+  },
+  {
+   "topic": "Upland Ave Extension",
+   "resolution": "Commission agreed it appears straightforward; Barb L. to check with Counsel",
+   "quote": "the commission agreed that it appears straightforward and consistent with the cwmp.",
+   "tags": [
+    "sewer extension",
+    "privilege fee",
+    "CWMP"
+   ]
+  },
+  {
+   "topic": "380 Electric Ave Proposal",
+   "resolution": "no update; liaison assigned; Barb L. to gather information",
+   "quote": "there is no update. troy d. accepted the assignment to work as liaison on this project.",
+   "tags": [
+    "380 Electric Ave",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Grease Trap Compliance Issues",
+   "resolution": "certified letters to be sent by Barb",
+   "quote": "barb will send out certified letters to those without submittal as of 6/30.",
+   "tags": [
+    "grease trap",
+    "permits",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Privilege Fee Assessment, 120 West Street",
+   "resolution": "approved",
+   "quote": "to assess a privilege fee of $11,551.47 for 120 west street discussion: none second: joe a. vote: unanimous",
+   "tags": [
+    "privilege fee",
+    "120 West Street"
+   ]
+  },
+  {
+   "topic": "Communications, Facebook page",
+   "resolution": "held; deferred to Selectmen social media policy",
+   "quote": "to hold off on the decision.",
+   "tags": [
+    "social media",
+    "facebook"
+   ]
+  },
+  {
+   "topic": "Minute Clerk Posting",
+   "resolution": "hiring of Emily Lehto approved with pay rate amendment",
+   "quote": "to amend the motion to include pay rate of $16.26/hour discussion: none vote - unanimous",
+   "tags": [
+    "hiring",
+    "minute clerk"
+   ]
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "Q4 commitment signed; FY18 Flow Assessment contract signed",
+   "quote": "the q4 eoy commitment is $904.10 and was signed by the commission.",
+   "tags": [
+    "budget",
+    "contracts",
+    "flow assessment"
+   ]
+  },
+  {
+   "topic": "Quarterly Communications meeting with Town Manager/BOS Liaison/DPW Director",
+   "resolution": "postponed",
+   "quote": "the meeting will be postponed until the meeting with the town manager, selectmen representative and dpw director has occurred",
+   "tags": [
+    "communications",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Minutes, Invoices and Action File Issues",
+   "resolution": "minutes approved (12/30/16 as printed, 5/30/2017 as amended, 2/28/2017, 12/13/2016); invoices reviewed",
+   "quote": "to approve the minutes of 2/28/2017 discussion: none second: troy d. vote: unanimous",
+   "tags": [
+    "minutes",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Permits to connect",
+   "resolution": "two permits listed; no vote recorded",
+   "quote": "permits to connect - there are two permits:17 cross road and 324 electric ave.",
+   "tags": [
+    "permits",
+    "connections"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:50pm",
+   "quote": "motion to adjourn: joe a. to adjourn at 8:50pm discussion: none second: troy d. vote: unanimous",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Jack Rodriquenz dated 6/27 (regarding Small Water Systems)",
+   "where": "text",
+   "quote": "joan read the section of jack's email of 6/27 pertaining to swss"
+  },
+  {
+   "name": "Sketch for Upland Ave sewer extension",
+   "where": "text",
+   "quote": "robert proctor passed out a sketch on behalf of his client."
+  },
+  {
+   "name": "Annual Permit status (grease trap), on Google Drive",
+   "where": "text",
+   "quote": "annual permit status is on google drive."
+  },
+  {
+   "name": "Letter to those who do not submit grease trap permits by deadline",
+   "where": "text",
+   "quote": "the commission discussed the letter to be sent to those who do not submit by deadline."
+  },
+  {
+   "name": "Small Water Systems contract",
+   "where": "text",
+   "quote": "the group went on to review and discuss the contract where some concerns were raised"
+  },
+  {
+   "name": "Comprehensive Wastewater Management Plan (CWMP)",
+   "where": "text",
+   "quote": "consistent with the cwmp."
+  },
+  {
+   "name": "Q4 EOY commitment",
+   "where": "text",
+   "quote": "the q4 eoy commitment is $904.10 and was signed by the commission."
+  },
+  {
+   "name": "Flow Assessment contract for FY18",
+   "where": "text",
+   "quote": "the flow assessment contract for fy18 was signed by carl l."
+  },
+  {
+   "name": "Invoices from Fitchburg ($13,341.04) and Koppelman ($1003)",
+   "where": "list",
+   "quote": "two invoices were reviewed: fitchburg $13,341.04 and koppelman $1003."
+  },
+  {
+   "name": "Minutes of 12/30/16 (corrected to 12/13/16), 5/30/17 and 2/28/17",
+   "where": "list",
+   "quote": "the minutes from 12/30/16 (corrected to 12/13/16), 5/30/17 and"
+  },
+  {
+   "name": "Social Media Policies (being worked on by the Selectmen)",
+   "where": "text",
+   "quote": "social media policies are currently being worked on by the selectmen"
+  },
+  {
+   "name": "Permit applications to connect: 17 Cross Road and 324 Electric Ave",
+   "where": "text",
+   "quote": "permits to connect - there are two permits:17 cross road and 324 electric ave."
+  },
+  {
+   "name": "Application of Emily Lehto for Minute Clerk",
+   "where": "text",
+   "quote": "the commission discussed approving the application for emily lehto and the"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "small water systems contract",
+  "privilege fee",
+  "grease trap",
+  "infiltration",
+  "Upland Ave extension",
+  "380 Electric Ave",
+  "hiring",
+  "minutes approval",
+  "social media policy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "two invoices were reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

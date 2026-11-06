@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-09-25",
  "docid": "3915",
@@ -12,31 +12,252 @@
  },
  "votes": [
   {
-   "motion": "Accept the deminimis change as documented",
+   "motion": "Accept the deminimis change for Unitil, 357 Electric Avenue, as documented (separating pole storage and transformer storage drainage design).",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "motion, k. chenis, to accept the deminimis change as documented, second, m. allison, all aye,"
   },
   {
-   "motion": "Recommend to Board of Selectmen that 2030 Massachusetts Avenue be retained for economic development through eco-tourism, trails, and recreation",
+   "motion": "Recommend to the Board of Selectmen that 2030 Massachusetts Avenue be retained for purposes of economic development through eco-tourism, trails, stand-alone recreation, etc.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "motion made, d. prokowiew, that board recommend to the board of selectmen that the property be retained for purposes of economic development through eco-tourism, trails, stand-alone recreation, etc., second, m. jeffreys, all aye,"
-  },
-  {
-   "motion": "Approve prior meeting minutes from 08/30/17, 09/11/17, and 09/12/17",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes approval: all minutes accepted"
+   "quote": "motion made, d. prokowiew, that board recommend to the board of selectmen that the property be retained for purposes of economic development through eco-tourism"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1097945
+ "note": "Scanned OCR text with errors. Board member names in the letterhead block are garbled (e.g. 'Pockovie', 'Jeffieys'); names are taken from the body's Present line. The OCR reads 'Jnitil' for Unitil in the document list. The minutes body says '09/12/17, Economic Development Workshop' but the document list says '09/11/17, Economic Development Workshop'; both are recorded as printed. Matt Marro (Conservation Administrator) and Jeffrey Walsh (Graves Engineering) are mentioned only as having reviewed the plans, so they are not listed as attendees. Heather Bowen appears only in a minutes-edit note, not as public comment at this meeting. The minutes record no dollar figures. Adjournment has no recorded motion.",
+ "cost_usd": 0.0071936199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys (arrived 6:45 pm), adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys (arrived 6:45 pm), adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys (arrived 6:45 pm), adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys (arrived 6:45 pm), adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "michael-ray jeffreys (arrived 6:45 pm), adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys (arrived 6:45 pm), adam r. burney"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel (Mead, Talerman, and Costa, LLC)",
+   "status": "present",
+   "quote": "attorney costa introduced himself to the board and informed the board that he will hold monthly office hours in town hall."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "representing the applicant (Unitil)",
+   "status": "present",
+   "quote": "represented by j. rheault, presented a request to separate the pole storage and transformer storage drainage design."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All minutes listed under Minutes Approval were accepted (08/30/17 Executive Session; 09/11/17; 09/12/17 Economic Development Workshop with an edit to read 'residential kitchen').",
+   "quote": "minutes approval: all minutes accepted"
+  },
+  {
+   "decision": "The Definitions and Use Table was tabled.",
+   "quote": "definitions and use table- tabled"
+  },
+  {
+   "decision": "Requests for Town Counsel attendance at a Board meeting are to be coordinated through the Town Manager.",
+   "quote": "any request for town counsel attendance at a board meeting should be coordinated through the town manager."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointments: Town Counsel introduction",
+   "resolution": "no action; office hours announced",
+   "quote": "town counsel, adam costa- mead, talerman, and costa, llc became town counsel effective july 1, 2017.",
+   "tags": [
+    "town counsel",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Deminimis change, Unitil, 357 Electric Avenue",
+   "resolution": "approved as documented",
+   "quote": "jamie rheault- deminimis change, unitil, 357 electric avenue- the applicant,",
+   "tags": [
+    "deminimis change",
+    "Unitil",
+    "drainage",
+    "petro barrier"
+   ]
+  },
+  {
+   "topic": "Public hearing: 994 Northfield Road",
+   "resolution": "see separate minutes",
+   "quote": "public hearing: 994 northfield road-see separate minutes",
+   "tags": [
+    "public hearing",
+    "994 Northfield Road"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "all minutes accepted",
+   "quote": "minutes approval: all minutes accepted",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "capital planning committee- committee finalizing spreadsheet for departments.",
+   "tags": [
+    "committees",
+    "capital planning",
+    "stormwater",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Director's items: 2030 Massachusetts Avenue, Ch. 61B",
+   "resolution": "recommendation to Board of Selectmen to retain property passed",
+   "quote": "2030 massachusetts avenue, ch. 61b- at the september 19t open space ad hoc committee, the committee voted to waive",
+   "tags": [
+    "Chapter 61B",
+    "open space",
+    "2030 Massachusetts Avenue",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Director's items: Definitions and Use Table",
+   "resolution": "tabled",
+   "quote": "definitions and use table- tabled",
+   "tags": [
+    "zoning",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no date set for alternate bylaw workshop; October and November dates listed",
+   "quote": "there was board discussion of scheduling an alternate date for a bylaw workshop at the ritter memorial building. no date was set.",
+   "tags": [
+    "meeting schedule",
+    "bylaw workshop"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "no action",
+   "quote": "ongoing items: economic development complete streets",
+   "tags": [
+    "economic development",
+    "complete streets"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "m. allison noted he will be attending the recreational marijuana session in worcester on october 3rd.",
+   "tags": [
+    "marijuana",
+    "training"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:00 PM (no motion recorded)",
+   "quote": "adjournment: 10:00 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Unitil Petro Barrier Update, Electronic Mail dated 09.20.17",
+   "where": "list",
+   "quote": "jnitil petro barrier update, electronic mail dated 09.20.17"
+  },
+  {
+   "name": "Minutes 08/30/17, Executive Session",
+   "where": "list",
+   "quote": "minutes- 08/30/17, executive session 09/11/17 09/11/17, economic development workshop"
+  },
+  {
+   "name": "Minutes 09/11/17",
+   "where": "list",
+   "quote": "minutes- 08/30/17, executive session 09/11/17 09/11/17, economic development workshop"
+  },
+  {
+   "name": "Minutes 09/11/17, Economic Development Workshop",
+   "where": "list",
+   "quote": "minutes- 08/30/17, executive session 09/11/17 09/11/17, economic development workshop"
+  },
+  {
+   "name": "Removal of Chapter 61 from 2030 Massachusetts Avenue, Board of Selectmen Memo dated 08,30.17",
+   "where": "list",
+   "quote": "removal of chapter 61 from 2030 massachusetts avenue, board of selectmen memo dated 08,30.17"
+  },
+  {
+   "name": "Minutes/2017/09.25.17",
+   "where": "list",
+   "quote": "minutes/2017/09.25.17"
+  },
+  {
+   "name": "Definitions and Use Table",
+   "where": "text",
+   "quote": "definitions and use table- tabled"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "deminimis change",
+  "Unitil",
+  "petro barrier",
+  "Chapter 61B",
+  "open space",
+  "2030 Massachusetts Avenue",
+  "definitions and use table",
+  "zoning",
+  "town counsel",
+  "meeting schedule",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-12-07",
  "docid": "5058",
@@ -12,15 +12,250 @@
  },
  "votes": [
   {
-   "motion": "To approve the alternate date of December 16 for the Salvation Army tollbooth fundraiser in the event of inclement weather on December 9th",
+   "motion": "Approve the alternate date of December 16 for the Salvation Army tollbooth fundraiser in the event of inclement weather on December 9.",
    "moved_by": "P. Bertram",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram to approve the alternate date of december 16** for the salvation army tollbooth fundraiser in the event of inclement weather on december 9th vote: all in favor"
+   "quote": "to approve the alternate date of december 16** for the salvation army tollbooth fundraiser in the event of inclement weather on december 9th vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; one clear vote recorded. The remainder of the meeting was a charrette (planning session) on town facilities with small-group discussions; no other votes taken.",
- "cost_usd": 0.0984585
+ "note": "OCR text from a scan with garbled lines: the fundraiser item heading reads oddly (\"Malinge Aerative date for Siration Army Tolboth Kundraiser\"), and the motion's second is not printed. The vote is recorded only as \"All in Favor\" with no tally. No votes were taken on the charrette. Public comment: the minutes say there was none. The first name of Chairman Toale is not printed. Some attendee names may be OCR-affected. The board name and meeting header are not in the extracted text.",
+ "cost_usd": 0.00676332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman toale thanked everyone for coming, noting this is the first of several opportunities for residents to"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam burney, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam burney, land use director"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Troy Daniels",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Melissa Smith",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Laura Brzozski",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "John Londa",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Pat Callahan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Maureen Dupuis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Michelle Belleza",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Kathy Hochard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Karen Fischer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Katie Adams",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "Doug McQuaid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "others attending: dave rodgers, troy daniels, melissa smith, laura brzozski, john londa, pat callahan,"
+  },
+  {
+   "name": "P. Bertram",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "motion: p. bertram to approve the alternate date of december 16** for the salvation army tollbooth fundraiser"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Staff directed that the board take the ideas listed at the charrette, look for common themes, and refocus them for another future discussion, with a timeline to be set.",
+   "quote": "mr. burney stated we need to take what we listed tonight, look for common themes and refocus for another future discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of changes to town buildings",
+   "what_was_recorded": "Participants said the cost of any change to the buildings must be understood before deciding anything.",
+   "figures_as_printed": [],
+   "quote": "we need to understand how much this is going to cost to make any changes to anything."
+  },
+  {
+   "topic": "Demolition cost of old Primary School",
+   "what_was_recorded": "A group asked what the demolition cost would be for the old Primary School and suggested a controlled Fire Dept. burn to save money.",
+   "figures_as_printed": [],
+   "quote": "what is the demolition cost? have the fire dept. do a controlled burn to demo it; save money."
+  },
+  {
+   "topic": "Town Hall arts center grants",
+   "what_was_recorded": "A group proposed an Arts and Cultural Center in Town Hall, noting grants are available and asking the cost.",
+   "figures_as_printed": [],
+   "quote": "town hall: an arts and cultural center; there are grants available, what is the cost?"
+  },
+  {
+   "topic": "Cost assessments of options",
+   "what_was_recorded": "It was noted that cost assessments of ten different options cannot be requested because it is too expensive, so the options were to be narrowed.",
+   "figures_as_printed": [],
+   "quote": "it was noted we can't request cost assessments of ten different options as it is too expensive."
+  },
+  {
+   "topic": "Amazon Smile charitable donations",
+   "what_was_recorded": "Suggested setting up an Amazon Smile account for a charitable organization so that a share of every sale goes to the non-profit, to help pay for the work.",
+   "figures_as_printed": [
+    ".05%"
+   ],
+   "quote": "in order to pay for this, smile. amazon.com allows you to set up an account for a charitable organization where .05% from every sale goes to the non-profit"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Alternate date for Salvation Army tollbooth fundraiser",
+   "resolution": "approved alternate date of December 16",
+   "quote": "to approve the alternate date of december 16** for the salvation army tollbooth fundraiser in the event of inclement weather on december 9th",
+   "tags": [
+    "fundraiser",
+    "date change",
+    "weather"
+   ]
+  },
+  {
+   "topic": "Town Facilities Charrette",
+   "resolution": "discussion, no action; ideas to be refocused for a future discussion",
+   "quote": "town facilities charrette: town manager lemieux thanked everyone for coming.",
+   "tags": [
+    "charrette",
+    "town buildings",
+    "public input",
+    "town center"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Color coded zoning map and districts on the wall",
+   "where": "text",
+   "quote": "he explained the color coded zoning map and districts on the wall and handouts to the attendees."
+  },
+  {
+   "name": "Handouts to the attendees",
+   "where": "text",
+   "quote": "he explained the color coded zoning map and districts on the wall and handouts to the attendees."
+  },
+  {
+   "name": "Detailed report on Town buildings (September)",
+   "where": "text",
+   "quote": "we received a detailed report on town buildings in september."
+  }
+ ],
+ "tags": [
+  "charrette",
+  "town buildings",
+  "Town Hall",
+  "Ritter Memorial",
+  "Brooks House",
+  "T.C. Passios",
+  "old Primary School",
+  "Village District",
+  "fundraiser",
+  "public input"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he explained the color coded zoning map and districts on the wall and handouts to the attendees"
+ },
+ "dropped_unquoted_by_field": {}
 }

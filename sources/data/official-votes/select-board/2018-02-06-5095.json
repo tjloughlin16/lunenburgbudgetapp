@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-02-06",
  "docid": "5095",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Bill Lakso to the Historical Commission with term to expire June 30, 2021",
+   "motion": "Appoint Bill Lakso to the Historical Commission with a term to expire June 30, 2021.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -20,32 +20,418 @@
    "quote": "to appoint bill lakso to the historical commission with a term to expire june 30, 2021 vote: all in favor"
   },
   {
-   "motion": "Ratify the appointment of James Barrett as Council on Aging Van Driver",
+   "motion": "Ratify the appointment of James Barrett as Council on Aging Van Driver.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to ratify the appointment of james barrett as council on aging van driver 2nd: p. luck vote:",
-   "quote_taken_from_text": true
+   "quote": "to ratify the appointment of james barrett as council on aging van driver 2nd: p. luck vote: all in favor"
   },
   {
-   "motion": "Approve the Lunenburg Arts Festival on June 9, 2018 from 10 am to 3 pm on Memorial Drive, subject to approval by all public safety departments and the Board of Health",
+   "motion": "Approve the request to hold the Lunenburg Arts Festival on June 9, 2018 from 10 am to 3 pm on Memorial Drive with the condition that all public safety departments approve the request, as amended to add Board of Health approval.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the request to hold the lunenburg arts festival on june 9, 2018 from 10 am to 3 pm on memorial drive with the condition that all public safety departments approve the request discussion: is there a rain date? ms. brzozski stated it will occur rain or shine. dave passios, board of health member asked the motion include the board of health for approval due to food being served ms. bertram amended her motion to include the board of health. ms. luck seconded the amendment. vote: all in favor"
+   "quote": "to approve the request to hold the lunenburg arts festival on june 9, 2018 from 10 am to 3 pm on memorial drive with the condition that all public safety departments approve the request"
   },
   {
-   "motion": "Plow the sidewalk on Mass. Ave. for the remainder of the season while continuing discussions with MassDOT and Town Counsel",
+   "motion": "That the sidewalk on Mass. Ave. be plowed for the remainder of this season while continuing to discuss with MassDOT and Town Counsel.",
    "moved_by": "I. bertram",
-   "seconded_by": "f. Luck",
+   "seconded_by": "L: f. Luck",
    "outcome": "passed",
    "procedural": false,
    "quote": "that the sidewalk on mass. ave. be plowed for the remainder of this season while continuing to discuss with massdot and town counsel vote: all in favor"
+  },
+  {
+   "motion": "Approve the minutes of February 6 and February 13, 2018.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of february 6 and february 13, 2018 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document; minor character recognition errors in mover/seconder names (possible \"I. bertram\" for P. Bertram, \"f. Luck\" for P. Luck). All four votes clearly recorded and readable.",
- "cost_usd": 0.1480955
+ "note": "Scan read via macOS Vision OCR and heavily garbled in places: the top line of page 2 is unreadable; the sidewalk motion's mover and seconder print as 'I. bertram' and 'L: f. Luck' (likely P. Bertram and P. Luck, recorded as printed); '$4/0,000' and 'perfomred' are OCR errors kept verbatim. The Arts Festival motion was amended to add Board of Health and then passed by one vote. The minutes record no vote on the Executive Session or the 3% raise. The 'Minutes of February 6 and February 13, 2018 were approved' line names no mover, second or count, so it is recorded as procedural with outcome passed. Page 5 is blank.",
+ "cost_usd": 0.01248222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "mr. ebersole congratulated the finance director and town manager for all the work involved to have a clean audit."
+  },
+  {
+   "name": "P. Bertram",
+   "role": "Board member (printed as Ms. Bertram in the text)",
+   "status": "present",
+   "quote": "ms. bertram agreed as well and thanked mr. serreti for his work."
+  },
+  {
+   "name": "P. Luck",
+   "role": "Board member (referred to as Selectman Luck)",
+   "status": "present",
+   "quote": "ms. luck reported she attended the town manager's budget presentation to the finance committee"
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "applicant for Historical Commission appointment",
+   "status": "present",
+   "quote": "mr. lakso introduced himself and stated he has lived here 43 years."
+  },
+  {
+   "name": "Laura Brzozoski",
+   "role": "Cultural Council Chair",
+   "status": "present",
+   "quote": "cultural council chair laura brzozoski, 21 francis avenue, presented a request to host an arts festival"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Board of Health member",
+   "status": "present",
+   "quote": "dave passios, board of health member asked the motion include the board of health for approval due to food being served"
+  },
+  {
+   "name": "Frank Serreti",
+   "role": "representing Powers & Sullivan (per the agenda heading)",
+   "status": "present",
+   "quote": "frank serreti introduced elizabeth stevens, a senior accountant, who perfomred the majority of the audit work."
+  },
+  {
+   "name": "Elizabeth Stevens",
+   "role": "senior accountant, Powers & Sullivan",
+   "status": "present",
+   "quote": "frank serreti introduced elizabeth stevens, a senior accountant, who perfomred the majority of the audit work."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director karen brochu wanted to clarify some items on the management report from powers & sullivan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the grant of utility easement to Fitchburg Gas & Electric Light Co. and Verizon New England at 1079 Massachusetts Avenue, after legal counsel and Land Use Director review.",
+   "quote": "the grant of easement has been reviewed by legal counsel and the site plan was reviewed by the land use director. the board signed the easement."
+  },
+  {
+   "decision": "The Board signed the accounts payable, payroll, payroll deductions and school warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $179,416.05; a payroll warrant in the amount of $740,748.41, a payroll deductions warrant in the amount of $164,198.14 and a school warrant in the amount of $1331.20."
+  },
+  {
+   "decision": "Following the Executive Session on the Town Manager's one-year performance review, Ms. Lemieux was awarded a 3% pay increase (reported by Mr. Ebersole; no vote recorded in these minutes).",
+   "quote": "mr. ebersole reported the board held an executive session following the town manager's one year performance evaluation/review and as a result, ms. lemieux has been awarded a 3% pay increase."
+  },
+  {
+   "decision": "Selectman Luck and the Town Manager will look into adding a MART shuttle stop at Tri-Town Landing.",
+   "quote": "selectman luck and i will be looking into this option with mart."
+  },
+  {
+   "decision": "Public comment: no speakers at the opening public comment period.",
+   "quote": "public comment: there was none."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Manager pay increase after performance review",
+   "what_was_recorded": "The Town Manager was awarded a 3% pay increase following the Executive Session review.",
+   "figures_as_printed": [
+    "3%"
+   ],
+   "quote": "as a result, ms. lemieux has been awarded a 3% pay increase."
+  },
+  {
+   "topic": "Total receivables on the books (mostly sewer betterments)",
+   "what_was_recorded": "The auditor reported a large receivable on the books in excess of $6.8 million, mostly sewer betterments.",
+   "figures_as_printed": [
+    "$6.8 million"
+   ],
+   "quote": "the town has a large receivable on the books in excess of $6.8 million; the majority of that relates to sewer betterments."
+  },
+  {
+   "topic": "MSBA receivables for the Primary School",
+   "what_was_recorded": "There is $3.7 million in receivables from the MSBA, of which $2.6 million was for the Primary School.",
+   "figures_as_printed": [
+    "$3.7 million",
+    "$2.6 million"
+   ],
+   "quote": "there is $3.7 million worth of receivables from the massachusetts school building authority (msba); $2.6 million of that was for the primary school."
+  },
+  {
+   "topic": "MSBA fixed-fee reimbursement on Primary School bond",
+   "what_was_recorded": "The Primary School project was reimbursed under an old fixed-fee method at around $4/0,000 per year, fully paid off in 2023.",
+   "figures_as_printed": [
+    "$4/0,000 per year"
+   ],
+   "quote": "reimburse a fixed fee for the life of the bond; around $4/0,000 per year."
+  },
+  {
+   "topic": "Middle/High School MSBA receivable",
+   "what_was_recorded": "The Town had a $1.1 million receivable on the $73 million Middle/High School project, reimbursed at 59% by the MSBA.",
+   "figures_as_printed": [
+    "$1.1 million",
+    "$73 million",
+    "59%"
+   ],
+   "quote": "the town also had a receivable for $1.1 million on the middle/high school project. that is a $73 million project being reimbursed at 59% by the msba."
+  },
+  {
+   "topic": "Tax liens and foreclosures balance",
+   "what_was_recorded": "The tax liens and foreclosures balance has grown by $360,000 since 2014 and now stands at $1.2 million, representing uncollected free cash.",
+   "figures_as_printed": [
+    "$360,000",
+    "$1.2 million"
+   ],
+   "quote": "that balance has increased by $360,000 since 2014"
+  },
+  {
+   "topic": "Real estate tax collection rate",
+   "what_was_recorded": "The Town has a 98% success rate collecting real estate taxes.",
+   "figures_as_printed": [
+    "98%"
+   ],
+   "quote": "he did note the town had a 98% success rate of collecting real estate taxes."
+  },
+  {
+   "topic": "Revenue collected and expenditures through December 31, 2017",
+   "what_was_recorded": "The Town had collected 50.86% of estimated revenues and expended 49.4% of budgeted expenditures through December 31, 2017.",
+   "figures_as_printed": [
+    "50.86%",
+    "49.4%"
+   ],
+   "quote": "we have collected 50.86% of estimated revenues through december 31, 2017. we have expended 49.4% of budgeted expenditures"
+  },
+  {
+   "topic": "Local receipt categories above estimate",
+   "what_was_recorded": "Departmental Revenue-Schools, Fees, Fines & Forfeits, and Penalties and Interest collections were running above estimate.",
+   "figures_as_printed": [
+    "93.77%",
+    "60.11%",
+    "72.95%",
+    "70.95%"
+   ],
+   "quote": "one is departmental revenue -schools (93.77%), fees (60.11%), fines & forfeits (72.95%), and penalties and interest (70.95%)."
+  },
+  {
+   "topic": "Town Clerk budget overrun",
+   "what_was_recorded": "The Town Clerk is the only department head expected to go over budget, due to increased elections in 2018.",
+   "figures_as_printed": [],
+   "quote": "the only department head who has expressed her budget will go over is the town clerk due to increased elections in 2018."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a payroll warrant, a payroll deductions warrant and a school warrant.",
+   "figures_as_printed": [
+    "$179,416.05",
+    "$740,748.41",
+    "$164,198.14",
+    "$1331.20"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $179,416.05; a payroll warrant in the amount of $740,748.41, a payroll deductions warrant in the amount of $164,198.14 and a school warrant in the amount of $1331.20."
+  },
+  {
+   "topic": "MART reimbursement model for dispatching",
+   "what_was_recorded": "MART changed the dispatching reimbursement back to 33% of direct costs to operate the van, with dispatcher scheduling time now counted as a direct cost.",
+   "figures_as_printed": [
+    "33%"
+   ],
+   "quote": "mart has changed the reimbursement model for dispatching back to 33%"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "topic": "Arts festival congratulations; property condition assessments",
+   "quote": "dave passios, 56 whiting street, congratulated the cultural council for bringing forward the arts festival. he asked ms. lemieux when the property condition assessments for turkey hill elementary and eagle house would be available."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no speakers",
+   "quote": "public comment: there was none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements: Town Manager pay increase",
+   "resolution": "reported; 3% raise awarded after executive session",
+   "quote": "mr. ebersole reported the board held an executive session following the town manager's one year performance evaluation/review",
+   "tags": [
+    "personnel",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Appointment: Historical Commission (Bill Lakso)",
+   "resolution": "approved",
+   "quote": "to appoint bill lakso to the historical commission with a term to expire june 30, 2021",
+   "tags": [
+    "appointments",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Town Manager appointment: COA van driver (James E. Barrett)",
+   "resolution": "ratified",
+   "quote": "to ratify the appointment of james barrett as council on aging van driver",
+   "tags": [
+    "appointments",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Cultural Council arts festival request",
+   "resolution": "approved with conditions; Board of Health added by amendment",
+   "quote": "to approve the request to hold the lunenburg arts festival on june 9, 2018 from 10 am to 3 pm on memorial drive",
+   "tags": [
+    "arts festival",
+    "cultural council",
+    "event permit"
+   ]
+  },
+  {
+   "topic": "Powers & Sullivan audit for year ending June 30, 2017",
+   "resolution": "presented; no action recorded",
+   "quote": "frank serreti introduced elizabeth stevens, a senior accountant, who perfomred the majority of the audit work.",
+   "tags": [
+    "audit",
+    "financial management"
+   ]
+  },
+  {
+   "topic": "Grant of utility easement at 1079 Massachusetts Avenue",
+   "resolution": "Board signed the easement",
+   "quote": "the board signed the easement.",
+   "tags": [
+    "easement",
+    "cell tower",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Sidewalk plowing on Mass. Ave.",
+   "resolution": "approved",
+   "quote": "that the sidewalk on mass. ave. be plowed for the remainder of this season while continuing to discuss with massdot and town counsel",
+   "tags": [
+    "sidewalks",
+    "snow removal",
+    "MassDOT"
+   ]
+  },
+  {
+   "topic": "Quarterly financial report",
+   "resolution": "received; Board thanked Finance Director",
+   "quote": "the board thanked ms. brochu for her report.",
+   "tags": [
+    "quarterly report",
+    "revenue",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants signed; minutes approved",
+   "quote": "minutes of february 6 and february 13, 2018 were approved.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational",
+   "quote": "business-town partnership meeting: the next scheduled meeting between the business community and town officials will be on february 26th at 10:00 a.m. at the library.",
+   "tags": [
+    "MART",
+    "special events",
+    "FY2019 budget",
+    "town facilities"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational; no action",
+   "quote": "action items: there were none.",
+   "tags": [
+    "committees",
+    "school committee",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Public comment (closing) and Board schedule",
+   "resolution": "one speaker; schedule reviewed",
+   "quote": "dave passios, 56 whiting street, congratulated the cultural council for bringing forward the arts festival.",
+   "tags": [
+    "public comment",
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Management Report from Powers & Sullivan (audit for year ending June 30, 2017)",
+   "where": "text",
+   "quote": "finance director karen brochu wanted to clarify some items on the management report from powers & sullivan covered earlier in the evening."
+  },
+  {
+   "name": "Grant of Utility Easement to Fitchburg Gas & Electric Light Co. & Verizon New England at 1079 Massachusetts Avenue",
+   "where": "text",
+   "quote": "grant of utility easement to fitchburg gas & electric light co. & verizon new england at 1079 massachusetts avenue"
+  },
+  {
+   "name": "Site plan for Verizon cell tower at the Middle/High School field",
+   "where": "text",
+   "quote": "the site plan was reviewed by the land use director"
+  },
+  {
+   "name": "Cultural Council arts festival request (Lunenburg Arts Festival)",
+   "where": "text",
+   "quote": "cultural council chair laura brzozoski, 21 francis avenue, presented a request to host an arts festival"
+  },
+  {
+   "name": "Town Manager's Fiscal Year 2019 Budget Message and Preliminary Budget Proposal",
+   "where": "text",
+   "quote": "the town manager's fiscal year 2019 budget message and preliminary budget proposal are on the town website"
+  },
+  {
+   "name": "Property Condition Assessments (Turkey Hill Elementary and Eagle House)",
+   "where": "text",
+   "quote": "the property condition assessments were uploaded the day after our last meeting"
+  },
+  {
+   "name": "Transportation Service Contract (MART)",
+   "where": "text",
+   "quote": "the transportation service contract is still in draft form and will be discussed again at their next meeting on march 27th."
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "arts festival",
+  "audit",
+  "easement",
+  "sidewalks",
+  "quarterly financial report",
+  "warrants",
+  "MART",
+  "FY2019 budget",
+  "town facilities"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-01-14",
  "docid": "4022",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Accept the requested sign waiver for the awning at 119 Massachusetts Avenue.",
+   "motion": "Accept the requested sign waiver for 119 Massachusetts Avenue as documented (P. Bertram recused).",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": false,
    "quote": "k. chenis made motion to accept the requested sign waiver as documented, t. cole seconded, all aye."
   },
   {
-   "motion": "Approve the requested waiver from site plan approval for barn construction at Dick's Market Garden.",
+   "motion": "Approve the requested site plan waiver for Dick’s Market Garden, 554 Lancaster Avenue.",
    "moved_by": "T. Cole",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": false,
    "quote": "t. cole made motion to approve requested waiver for dick's market garden, k. chenis, seconded, all aye."
   },
   {
-   "motion": "Accept the minutes of the December 10, 2018 meeting.",
+   "motion": "Accept the minutes of 12/10/18.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
-   "quote": "d. prokowiew made motion to accept, k. chenis seconded, all aye."
+   "quote": "12/10/18- d. prokowiew made motion to accept, k. chenis seconded, all aye."
   },
   {
-   "motion": "Accept the minutes of the December 10, 2018 meeting regarding 151-181 Leominster Shirley Road.",
+   "motion": "Accept the minutes of 12/10/18, 151-181 Leominster Shirley Road.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed 4-0",
@@ -44,47 +44,359 @@
    "quote": "k. chenis made motion to accept, d. prokowiew seconded, vote passed 4-0, t. cole abstained."
   },
   {
-   "motion": "Accept the minutes of the December 10, 2018 Executive Session.",
+   "motion": "Accept the executive session minutes of 12/10/18.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
-   "quote": "d. prokowiew made motion to accept, k. chenis seconded, all aye."
+   "quote": "12/10/18, executive session- d. prokowiew made motion to accept, k. chenis seconded, all aye."
   },
   {
-   "motion": "Accept the minutes of the December 11, 2018 meeting.",
+   "motion": "Accept the minutes of 12/11/18.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "d. prokowiew made motion to accept, t. cole seconded, vote passed 3-0, p. bertram and k. chenis abstained."
+   "quote": "12/11/18- d. prokowiew made motion to accept, t. cole seconded, vote passed 3-0, p. bertram and k. chenis abstained."
   },
   {
-   "motion": "Accept the minutes of the January 3, 2019 meeting.",
+   "motion": "Accept the minutes of 01/03/19.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
-   "quote": "k. chenis made motion to accept, d. prokowiew seconded, all aye."
+   "quote": "01/03/19- k. chenis made motion to accept, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "Accept the minutes of the January 3, 2019 Executive Session.",
+   "motion": "Accept the executive session minutes of 01/03/19.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": true,
-   "quote": "d. prokowiew made motion to accept, k. chenis seconded, all aye."
+   "quote": "01/03/19, executive session- d. prokowiew made motion to accept, k. chenis seconded, all aye."
   },
   {
-   "motion": "Enter Executive Session pursuant to M.G.L. c. 30A, §21, #3, to discuss litigation strategy regarding O'Brien Homes Inc. et al v. Town of Lunenburg et al. and related appeals, and not to return to Regular Session.",
+   "motion": "Enter executive session under M.G.L. c. 30A, §21, #3 to discuss litigation strategy (O’Brien Homes matters) and not return to regular session.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
-   "outcome": "passed",
+   "outcome": "roll call, all five aye",
    "procedural": true,
    "quote": "d. prokowiew made motion, k. chenis seconded, roll call vote - p. bertram, aye; t. cole, aye; k. chenis, aye; d. prokowiew, aye; m. allison, aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.055011800000000007
+ "dropped_unquoted": 1,
+ "note": "Text extract with stray spacing and line breaks (figures such as \"$100,00 0\" printed as shown). The 190 Electric Avenue public hearing is in separate minutes and is not in this text. The 01/08/19 minutes are noted as not completed. No motion to adjourn is recorded (only the time 9:17 PM). Several votes record \"all aye\" with no count. Outcomes are as printed.",
+ "cost_usd": 0.00942659,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew (arrived 6:50 pm), kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew (arrived 6:50 pm), kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew (arrived 6:50 pm), kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew (arrived 6:50 pm), kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew (arrived 6:50 pm), kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew (arrived 6:50 pm), kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Stephen Violette",
+   "role": "applicant representative, Dick’s Market Garden",
+   "status": "not stated",
+   "quote": "applicant dick's market garden represented by stephen violette."
+  },
+  {
+   "name": "John Maura",
+   "status": "not stated",
+   "quote": "john maura informed the board that barn construction will be partially state -funded through a grant"
+  },
+  {
+   "name": "K. Adams",
+   "role": "",
+   "status": "present",
+   "quote": "k. adams, williams drive- opined that transporter, testing and research are still on-site drugs"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed that more information is needed from the CCC before finalizing the recreational marijuana bylaw.",
+   "quote": "board agreed that more information is needed from the ccc."
+  },
+  {
+   "decision": "Board consensus to hold a bylaw workshop on January 22 at 6:30 PM at the Ritter Memorial Building; A. Burney to ask whether a CCC representative can attend.",
+   "quote": "board consensus was to schedule a workshop for january 22nd, 6:30 pm, ritter memorial building."
+  },
+  {
+   "decision": "A. Burney will ask whether someone from the CCC can attend the workshop.",
+   "quote": "a. burney will inquire to see if someone from the ccc would be able to attend."
+  },
+  {
+   "decision": "Population profile accuracy item added to the January 22 Board meeting for discussion.",
+   "quote": "this will be added for discussion purposes to the board's january 22nd meeting."
+  },
+  {
+   "decision": "Board members to give their requested Bylaw changes (Cluster Development) to A. Burney.",
+   "quote": "board members to provide their requested bylaw changes to a. burney."
+  },
+  {
+   "decision": "Charter ratification-period question (calendar days) to be discussed at the next Board meeting.",
+   "quote": "the board wants to discuss this at its next meeting."
+  },
+  {
+   "decision": "Earth Removal and Land Use Guidebook items tabled.",
+   "quote": "earth removal- tabled land use guidebook- tabled"
+  },
+  {
+   "decision": "Earth Removal Permitting tabled under ongoing items.",
+   "quote": "earth removal permitting- tabled"
+  },
+  {
+   "decision": "Village at Flat Hill drainage review and enforcement item taken off the agenda.",
+   "quote": "village at flat hill, drainage review & enforcement- take off agenda"
+  },
+  {
+   "decision": "February 11 meeting scheduled for hearing continuations for Powell Stone & Gravel and Borrego Solar.",
+   "quote": "february 11- hearing continuations for powell stone & gravel and borrego solar"
+  },
+  {
+   "decision": "A. Burney to prepare a Master Plan application for District Local Technical Assistance through MRPC.",
+   "quote": "a. burney will put together a master plan application for district local technical assistance through mrpc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan update funding request",
+   "what_was_recorded": "A. Burney was to meet the Capital Planning Committee to request funds to update and implement the Master Plan.",
+   "figures_as_printed": [
+    "$100,00 0"
+   ],
+   "quote": "a. burney meeting with the capi tal planning committee tomorrow to request $100,00 0 to update and implement the master plan."
+  },
+  {
+   "topic": "Barn construction at 554 Lancaster Avenue, state grant",
+   "what_was_recorded": "Barn construction will be partially state-funded through an AIP grant; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "john maura informed the board that barn construction will be partially state -funded through a grant"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "K. Adams",
+   "stated_role": "",
+   "topic": "recreational marijuana bylaw, transporter and testing uses",
+   "quote": "k. adams, williams drive- opined that transporter, testing and research are still on-site drugs"
+  },
+  {
+   "speaker": "K. Adams",
+   "stated_role": "",
+   "topic": "consistency in government on marijuana",
+   "quote": "does not want marijuana given more opportunities than other uses."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Waiver request, 119 Massachusetts Avenue (awning sign)",
+   "resolution": "waiver accepted",
+   "quote": "application received for awning sign to be attached to the building at 119 massachusetts avenue.",
+   "tags": [
+    "site plan",
+    "sign",
+    "waiver"
+   ]
+  },
+  {
+   "topic": "Waiver request, 554 Lancaster Avenue (barn)",
+   "resolution": "waiver approved",
+   "quote": "applicant seeking waiver from site plan approval for barn construction for washing /prepping vegetables for storage",
+   "tags": [
+    "site plan",
+    "agriculture",
+    "waiver"
+   ]
+  },
+  {
+   "topic": "Public hearing, 190 Electric Avenue",
+   "resolution": "see separate minutes",
+   "quote": "public hearing: 190 electric avenue- see separate minutes",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Recreational marijuana zoning bylaw draft",
+   "resolution": "workshop scheduled for January 22; CCC input sought",
+   "quote": "board consensus was to schedule a workshop for january 22nd, 6:30 pm, ritter memorial building.",
+   "tags": [
+    "zoning",
+    "recreational marijuana",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 12/10/18, 12/11/18, 01/03/19 and executive sessions; 01/08/19 not completed",
+   "quote": "12/10/18- d. prokowiew made motion to accept, k. chenis seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; Charter question to next meeting",
+   "quote": "charter review committee- hearing held last wednesday.",
+   "tags": [
+    "committee",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Director's items (Master Plan, Cluster Development, Earth Removal, Land Use Guidebook, Solar)",
+   "resolution": "discussed; some items tabled or no report",
+   "quote": "a. burney will put together a master plan application for district local technical assistance through mrpc.",
+   "tags": [
+    "master plan",
+    "cluster development",
+    "earth removal",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "january 28- k. chenis will not be available.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "Earth Removal tabled; Village at Flat Hill taken off agenda",
+   "quote": "earth removal permitting- tabled",
+   "tags": [
+    "earth removal",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard",
+   "quote": "pushing for consistency in gov ernment and does not want marijuana given more opportunities than other uses.",
+   "tags": [
+    "public comment",
+    "marijuana"
+   ]
+  },
+  {
+   "topic": "Executive session, O’Brien Homes litigation",
+   "resolution": "entered executive session; not returning to regular session",
+   "quote": "m. allison requested a motion pursuant to m.g.l. c. 30a, §21, #3, to discuss strategy with respect to litigation",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "regular session adjourned 9:17 PM",
+   "quote": "adjournment: regular session- 9:17 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 12/10/18, 151-181 Leominster Shirley Road",
+   "where": "list",
+   "quote": "12/10/18, 151-181 leominster shirley road"
+  },
+  {
+   "name": "Minutes 12/10/18, Executive Session",
+   "where": "list",
+   "quote": "12/10/18, executive session"
+  },
+  {
+   "name": "Minutes 12/11/18",
+   "where": "list",
+   "quote": "12/11/18- d. prokowiew made motion to accept, t. cole seconded"
+  },
+  {
+   "name": "Minutes 01/03/19",
+   "where": "list",
+   "quote": "01/03/19- k. chenis made motion to accept, d. prokowiew seconded"
+  },
+  {
+   "name": "Minutes 01/03/19, Executive Session",
+   "where": "list",
+   "quote": "01/03/19, executive session- d. prokowiew made motion to accept"
+  },
+  {
+   "name": "Request for Waiver, 119 Massachusetts Avenue",
+   "where": "list",
+   "quote": "request for waiver, 119 massachusetts avenue"
+  },
+  {
+   "name": "Request for Waiver, 554 Lancaster Avenue",
+   "where": "list",
+   "quote": "request for waiver, 554 lancaster avenue"
+  },
+  {
+   "name": "Draft Bylaw, Recreational Marijuana",
+   "where": "list",
+   "quote": "draft bylaw, recreational marijuana"
+  },
+  {
+   "name": "Packet showing proposed barn location",
+   "where": "text",
+   "quote": "board members were provided with a packet showing proposed barn location."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "recreational marijuana",
+  "site plan waiver",
+  "agricultural barn",
+  "minutes approval",
+  "executive session",
+  "litigation",
+  "master plan",
+  "committee reports",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "documents_and_exhibits": 1
+ }
 }

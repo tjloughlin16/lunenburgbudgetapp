@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-02-13",
  "docid": "5096",
@@ -12,15 +12,361 @@
  },
  "votes": [
   {
-   "motion": "To enter Executive Session under M.G.L. c. 30 §21, Reason #2, to conduct contract negotiations with non-union personnel, and to adjourn immediately",
+   "motion": "Enter executive session under M.G.L. c. 30 §21, Reason #2, to conduct contract negotiations (Town Manager Contract) and adjourn immediately.",
    "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: r.ebersole 2'°: p. bertram to enter executive session under m.g.l. c. 30 §21, reason #2: to conduct contract negotiations with non-union personnel if any open meeting may have a detrimental effect on the government's bargaining position and the chair declares so and to adjourn immediately. (town manager contract) vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram -aye, mr. ebersole- aye, mr. toale-aye"
+   "quote": "to enter executive session under m.g.l. c. 30 §21, reason #2: to conduct contract negotiations with non-union personnel"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. One OCR artifact: \"2'°\" appears to represent \"2nd\" (seconded by).",
- "cost_usd": 0.1124235
+ "note": "OCR text from scanned pages. Page 2 begins mid-sentence, so the start of the Vertex discussion is cut off. The speaker of the OPEB paragraph at the top of page 4 is not identifiable from the text. Page 5 is blank. No vote on approving prior minutes, adjournment, or the return from executive session is recorded. Ms. Lemieux's title is not printed. The Vertex attendance line names Steve Kirby and Phillip Russo as \"of Vertex\", and the later line says \"Vertex Companies\".",
+ "cost_usd": 0.01006212,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram -aye, mr. ebersole- aye, mr. toale-aye"
+  },
+  {
+   "name": "Ms. Bertram",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram -aye, mr. ebersole- aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram -aye, mr. ebersole- aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "status": "present",
+   "quote": "vote: mr. mcquaid-aye, ms. luck- aye, ms. bertram -aye, mr. ebersole- aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale noted that the next steps were for the board to evaluate the data and come up with some recommendations for the town to look at."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux stated she expected them within two to three weeks."
+  },
+  {
+   "name": "Eric Nelson",
+   "role": "Vice President, Vertex",
+   "status": "present",
+   "quote": "eric nelson, vice president, steve kirby and phillip russo of vertex presented a summary of the property"
+  },
+  {
+   "name": "Steve Kirby",
+   "role": "of Vertex",
+   "status": "present",
+   "quote": "mr. eric nelson, mr. steve kirby and mr. philip russo are with us tonight from vertex companies to present"
+  },
+  {
+   "name": "Phillip Russo",
+   "role": "of Vertex",
+   "status": "present",
+   "quote": "mr. eric nelson, mr. steve kirby and mr. philip russo are with us tonight from vertex companies to present"
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, stated opeb, bmp, mpo; you all know what this is, but please clarify for"
+  },
+  {
+   "name": "Julia Callahan",
+   "status": "present",
+   "quote": "julia callahan, 24 beal street, stated article 1 was amended at town meeting to add eagle house and turkey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reviewed the list of action items and sorted each into a future agenda item, a workshop, or removal from the list.",
+   "quote": "the board reviewed the following items to determine if they should be a future agenda item or workshop."
+  },
+  {
+   "decision": "Municipal towing contract removed from the action list; Ms. Lemieux to consult with the public safety departments.",
+   "quote": "municipal towing contract- remove from list; ms. lemieux will consult with the public safety"
+  },
+  {
+   "decision": "Ms. Bertram's Middle/High school repairs concern to be a future agenda item.",
+   "quote": "she would like this as a future agenda item as the responses to the questions were not satisfactory."
+  },
+  {
+   "decision": "Ms. Lemieux forwarded the action file questions to the School Superintendent and will look into them.",
+   "quote": "ms. lemieux stated she forwarded those questions on to the school superintendent and she will be looking into it."
+  },
+  {
+   "decision": "Charrette schedule to be a future agenda item so the public can be informed in advance.",
+   "quote": "ms. bertram believed the board should come up with a schedule on charrettes so people can be informed in advance and requested this be a future agenda item."
+  },
+  {
+   "decision": "Vertex property condition assessment report to be posted on the town website as soon as possible.",
+   "quote": "ms. lemieux stated it will put on the website as soon as possible."
+  },
+  {
+   "decision": "Ms. Lemieux to look up the town's bonding capacity and report back.",
+   "quote": "ms. lemieux stated she would have to look that up."
+  },
+  {
+   "decision": "Next steps for the town buildings recorded: prioritized strategy by the Town, then RFQ, advertisement, briefing, proposal review and designer selection.",
+   "quote": "develop prioritized general strategy for future use of 7 town buildings-"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Vertex property condition assessment appropriation",
+   "what_was_recorded": "Ms. Lemieux said the Town Meeting appropriation for the property condition assessments was $50,000, in answer to a question on what Vertex was paid.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "ms. lemieux stated the appropriation at town meeting was $50,000."
+  },
+  {
+   "topic": "Lunenburg Primary School repair costs",
+   "what_was_recorded": "Immediate repairs were put at $1,027,280 and short term repairs at $775,000 for the Primary School.",
+   "figures_as_printed": [
+    "$1,027,280",
+    "$775,000"
+   ],
+   "quote": "total immediate repairs would amount to $1,027,280. short term repairs came in at $775,000."
+  },
+  {
+   "topic": "Ritter Memorial Building repair costs",
+   "what_was_recorded": "Immediate repairs were put at $170,297 and short term repairs at $190,496, with potential extra costs for hazardous materials abatement.",
+   "figures_as_printed": [
+    "$170,297",
+    "$190,496"
+   ],
+   "quote": "total immediate repairs would amount to $170,297 and short term repairs would cost $190,496."
+  },
+  {
+   "topic": "TC Passios repair costs",
+   "what_was_recorded": "Immediate repairs were put at $794,000 and short term repairs at $2,173,000 for TC Passios.",
+   "figures_as_printed": [
+    "$794,000",
+    "$2,173,000"
+   ],
+   "quote": "immediate repairs total $794,000. short term repairs totalled $2,173,000."
+  },
+  {
+   "topic": "Summer Street road project bid",
+   "what_was_recorded": "The Summer Street bid came in $1.2 M under the office estimate.",
+   "figures_as_printed": [
+    "$1.2 M"
+   ],
+   "quote": "the low bid came in $1.2 m under the office estimate."
+  },
+  {
+   "topic": "Summer Street low bid award",
+   "what_was_recorded": "The apparent low bid from Baltazar Contractors of Ludlow was $7,105,195.",
+   "figures_as_printed": [
+    "$7,105,195"
+   ],
+   "quote": "the apparent low bid was from baltazar contractors of ludlow in the amount of $7,105,195."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The Board signed an accounts payable warrant of this amount.",
+   "figures_as_printed": [
+    "$392,313.08"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $392,313.08."
+  },
+  {
+   "topic": "Middle/High school HVAC and ceiling panel payments",
+   "what_was_recorded": "Ms. Bertram asked that payments on the HVAC system and ceiling panels be flagged on warrants and asked whether costs were being assumed that should not be; she would not support the final contractor payment release.",
+   "figures_as_printed": [],
+   "quote": "she also requested any payments on the hvac system and ceiling panels to be flagged on the warrants."
+  },
+  {
+   "topic": "OPEB cost sharing",
+   "what_was_recorded": "OPEB insurance cost shares were described: the Town pays 75% and the retired employee pays 25%.",
+   "figures_as_printed": [
+    "75%",
+    "25%"
+   ],
+   "quote": "it is generally insurance coverage and the town pays 75% and the (retired) employee pays 25%."
+  },
+  {
+   "topic": "Bonding capacity",
+   "what_was_recorded": "A resident asked what the town's bonding capacity is; Ms. Lemieux would have to look it up. No figure was given.",
+   "figures_as_printed": [],
+   "quote": "mr. rodgers asked what our bonding capacity is."
+  },
+  {
+   "topic": "Summer Street budget adjustments",
+   "what_was_recorded": "Ms. Bertram raised concern about the Summer Street bid coming in under budget and what adjustments would be needed; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "she is a little concerned about the summer street project bid coming in under budget and what adjustments would be needed for that."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "Lions Club pancake breakfast announcement",
+   "quote": "ms. luck announced the lions club pancake breakfast at the senior center tomorrow morning from 8-10:30"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "OPEB, Five Year Forecast, Vertex cost, assessment report timing, bonding capacity",
+   "quote": "dave rodgers, 82 highland street, stated opeb, bmp, mpo; you all know what this is, but please clarify for"
+  },
+  {
+   "speaker": "Julia Callahan",
+   "stated_role": "",
+   "topic": "Timeline for Eagle House and Turkey Hill assessments",
+   "quote": "julia callahan, 24 beal street, stated article 1 was amended at town meeting to add eagle house and turkey"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "announcement only, no action",
+   "tags": [
+    "announcement",
+    "public comment"
+   ],
+   "quote": "ms. luck announced the lions club pancake breakfast at the senior center tomorrow morning from 8-10:30"
+  },
+  {
+   "topic": "Appointments: Vertex property condition assessments",
+   "resolution": "presented; Board thanked Vertex, no action recorded",
+   "tags": [
+    "property condition assessments",
+    "capital planning",
+    "Vertex Companies"
+   ],
+   "quote": "eric nelson, vice president, steve kirby and phillip russo of vertex presented a summary of the property"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received report",
+   "tags": [
+    "town facilities",
+    "Summer Street road project",
+    "business partnership"
+   ],
+   "quote": "summer street road reconstruction project award:"
+  },
+  {
+   "topic": "Current Business 1: Workshop on action items",
+   "resolution": "items sorted into agenda, workshop, or removal",
+   "tags": [
+    "action items",
+    "agenda planning"
+   ],
+   "quote": "the board reviewed the following items to determine if they should be a future agenda item or workshop."
+  },
+  {
+   "topic": "Current Business 2: Minutes, warrants and action file issues",
+   "resolution": "accounts payable warrant signed; Middle/High school concern to future agenda",
+   "tags": [
+    "warrants",
+    "school repairs",
+    "action file"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $392,313.08."
+  },
+  {
+   "topic": "Current Business 3: Committee reports",
+   "resolution": "reports received, no action",
+   "tags": [
+    "stormwater",
+    "committee reports",
+    "OPEB"
+   ],
+   "quote": "ms. luck reported the stormwater task force met on february 8th."
+  },
+  {
+   "topic": "Ms. Bertram MPO report",
+   "resolution": "reported, no action",
+   "tags": [
+    "transportation",
+    "MPO",
+    "Summer Street"
+   ],
+   "quote": "ms. bertram reported montachusett planning organization (mpo) had a meeting and there is an amendment"
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "questions answered; charrette schedule requested for future agenda",
+   "tags": [
+    "public comment",
+    "OPEB",
+    "bonding",
+    "assessment report"
+   ],
+   "quote": "dave rodgers, 82 highland street, stated opeb, bmp, mpo; you all know what this is, but please clarify for"
+  },
+  {
+   "topic": "Executive session: Town Manager contract",
+   "resolution": "entered executive session, passed 5-0",
+   "tags": [
+    "executive session",
+    "town manager contract"
+   ],
+   "quote": "to enter executive session under m.g.l. c. 30 §21, reason #2: to conduct contract negotiations with non-union personnel"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Five Year Forecast (prepared by Ms. Lemieux)",
+   "where": "text",
+   "quote": "when ms. lemieux prepared the five year forecast, we could not see it."
+  },
+  {
+   "name": "Community Compact grant final report",
+   "where": "text",
+   "quote": "the community compact grant final report will include glossy maps we can use"
+  },
+  {
+   "name": "Article 1 (Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 1 was amended at town meeting to add eagle house and turkey"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $392,313.08."
+  },
+  {
+   "name": "Property condition assessments (PCAs) written reports",
+   "where": "text",
+   "quote": "the written assessments of turkey hill elementary and eagle house have yet to"
+  },
+  {
+   "name": "Assessment & Needs Study (Tappe Associates)",
+   "where": "text",
+   "quote": "assessment & needs study- tappe associates- complete"
+  }
+ ],
+ "tags": [
+  "property condition assessments",
+  "Vertex Companies",
+  "capital plan",
+  "town buildings",
+  "Summer Street road project",
+  "warrants",
+  "action items",
+  "OPEB",
+  "MPO",
+  "public comment",
+  "executive session",
+  "town manager contract"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-07-12",
  "docid": "1434",
@@ -12,31 +12,231 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from June 20, 2018 meeting as written",
-   "moved_by": "Lance May",
-   "seconded_by": "Lorraine Mendoza",
+   "motion": "Accept the minutes of the June 20, 2018 meeting as written.",
+   "moved_by": "Chairman May",
+   "seconded_by": "Commissioner Mendoza",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "on a motion by chairman may, seconded by commissioner mendoza, and with no errors or omissions and no further discussion, it was voted unanimously to accept the minutes as written."
   },
   {
-   "motion": "Decline paying M&M Services invoices totaling $1080.00 for backhoe use and have Chairman May draft a letter to the Town Manager regarding equipment availability",
-   "moved_by": "William Tyler",
-   "seconded_by": "Lorraine Mendoza",
+   "motion": "Decline paying M&M Services backhoe invoices totaling $1080.00, seek an understanding from the Town Manager on pre-arranged equipment availability, and have Chairman May draft a letter to the Town Manager.",
+   "moved_by": "Commissioner Tyler",
+   "seconded_by": "Commissioner Mendoza",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "a motion was made by commissioner tyler to decline paying these invoices that totaled $1080.00 and seek to reach an understanding from the town manager when their equipment is needed and pre-arranged, but unavailable for use. also, in the motion was to have chairman may draft a letter to the town manager on this subject. motion was seconded by commissioner mendoza, and with no further discussion, it was voted unanimously to approve the motion."
+   "quote": "a motion was made by commissioner tyler to decline paying these invoices that totaled $1080.00 and seek to reach an understanding from the town manager"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Lorraine Mendoza",
-   "seconded_by": "William Tyler",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Commissioner Mendoza",
+   "seconded_by": "Commission Tyler",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "a motion was made to adjourn by commissioner mendoza, seconded by commission tyler"
+   "quote": "a motion was made to adjourn by commissioner mendoza, seconded by commission tyler . meeting was adjourned at 9:30 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All three votes are clearly recorded. Vote 3 quote contains an apparent typo (\\\"Commission Tyler\\\" instead of \\\"Commissioner Tyler\\\"), but is quoted exactly as printed in the minutes.",
- "cost_usd": 0.1290795
+ "note": "Typed minutes, no scan issues. No public comment or correspondence was reported. Only the backhoe-invoice motion records a vote count word (\"unanimously\"); the adjournment motion records no result beyond the meeting ending at 9:30 pm.",
+ "cost_usd": 0.005202119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was called to order at 7:00 pm by chairman lance may."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present were vice-chair lorraine mendoza, clerk william tyler and superintendent todd holman."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present were vice-chair lorraine mendoza, clerk william tyler and superintendent todd holman."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "present were vice-chair lorraine mendoza, clerk william tyler and superintendent todd holman."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioner Tyler will follow up with the Town Manager on the Facebook page discussed at the June 20 meeting.",
+   "quote": "commission tyler said he would follow-up with the town manager on the facebook page that was discussed at the june 20 meeting."
+  },
+  {
+   "decision": "The Commission is to meet with the Historical Commission on July 31, 2018 at 7:00 pm at the Ritter building for a hearing on the Holman St. demolition application.",
+   "quote": "the cemetery commission is scheduled to meet with the historical commission on july 31, 2018 at 7:00 pm at the ritter building"
+  },
+  {
+   "decision": "The Montachusett Regional Planning Commission future-growth matter remains pending and will be followed up at a future meeting.",
+   "quote": "the subject of future growth with the montachusett regional planning commission, is still pending and will be followed up at a future meeting."
+  },
+  {
+   "decision": "Commissioner Tyler will follow up with more research on excavation and burial safety issues.",
+   "quote": "commissioner tyler will follow up with more research on the subject."
+  },
+  {
+   "decision": "Commissioner Tyler will determine how to obtain seasonal help for the Superintendent next year and report back at the next meeting.",
+   "quote": "commissioner tyler is in the process of determining how to get seasonal help for the superintendent next year, through any means necessary. he will report"
+  },
+  {
+   "decision": "There will be no meeting in August; the next meeting is set for September 13, 2018 at the Lunenburg Public Library Conference room.",
+   "quote": "there will be no meeting in august"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "M&M Services backhoe invoices",
+   "what_was_recorded": "Invoices from M&M Services for backhoe use, for three burials when DPW equipment was unavailable, totaled $1080.00; the Commission voted to decline paying them.",
+   "figures_as_printed": [
+    "$1080.00"
+   ],
+   "quote": "these invoices that totaled $1080.00 and seek to reach an understanding from the town manager"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of June 20, 2018 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "first order of business was approval of minutes from the june 20, 2018 meeting."
+  },
+  {
+   "topic": "Old Business: M&M Services backhoe invoices",
+   "resolution": "declined payment; letter to Town Manager",
+   "tags": [
+    "invoices",
+    "backhoe",
+    "DPW",
+    "Town Manager"
+   ],
+   "quote": "a motion was made by commissioner tyler to decline paying these invoices that totaled $1080.00 and seek to reach an understanding from the town manager"
+  },
+  {
+   "topic": "Technology: Facebook page",
+   "resolution": "follow-up assigned to Commissioner Tyler",
+   "tags": [
+    "technology",
+    "Facebook"
+   ],
+   "quote": "commission tyler said he would follow-up with the town manager on the facebook page that was discussed at the june 20 meeting."
+  },
+  {
+   "topic": "Holman St. building demolition",
+   "resolution": "joint hearing scheduled July 31, 2018",
+   "tags": [
+    "demolition",
+    "Historical Commission",
+    "Holman St."
+   ],
+   "quote": "the cemetery commission is scheduled to meet with the historical commission on july 31, 2018 at 7:00 pm at the ritter building"
+  },
+  {
+   "topic": "Handicap access plans, Niche Wall at North Cemetery",
+   "resolution": "no action; nothing to report",
+   "tags": [
+    "accessibility",
+    "North Cemetery",
+    "niche wall"
+   ],
+   "quote": "there was nothing to report on the handicap access plans for the niche wall at north cemetery."
+  },
+  {
+   "topic": "Montachusett Regional Planning Commission future growth",
+   "resolution": "pending; to be followed up",
+   "tags": [
+    "regional planning"
+   ],
+   "quote": "the subject of future growth with the montachusett regional planning commission, is still pending and will be followed up at a future meeting."
+  },
+  {
+   "topic": "Safety handouts: excavation and burials",
+   "resolution": "research assigned to Commissioner Tyler",
+   "tags": [
+    "safety",
+    "excavation",
+    "burials"
+   ],
+   "quote": "chairman may presented the commission with several handouts regarding safety issues as it applies to excavation and burials."
+  },
+  {
+   "topic": "Seasonal help for the Superintendent",
+   "resolution": "report back at next meeting",
+   "tags": [
+    "staffing",
+    "seasonal help"
+   ],
+   "quote": "commissioner tyler is in the process of determining how to get seasonal help for the superintendent next year"
+  },
+  {
+   "topic": "Superintendent report: headstones and grounds",
+   "resolution": "received; no action",
+   "tags": [
+    "headstones",
+    "Eagle Scout",
+    "mowing",
+    "North Cemetery"
+   ],
+   "quote": "superintendent holman reported that the headstone straightening project by a member of troop 1728 for his eagle scout project is complete"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no August meeting; next meeting September 13, 2018",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meeting is scheduled for september 13, 2018 at the lunenburg public library conference room."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:30 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting was adjourned at 9:30 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handouts regarding safety issues as it applies to excavation and burials",
+   "where": "text",
+   "quote": "chairman may presented the commission with several handouts regarding safety issues as it applies to excavation and burials."
+  },
+  {
+   "name": "Demolition application filed with the Building Inspector (Holman St. building)",
+   "where": "text",
+   "quote": "for a hearing on the demolition application that was filed with the building inspector"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "backhoe invoices",
+  "M&M Services",
+  "DPW",
+  "headstones",
+  "Eagle Scout",
+  "seasonal staffing",
+  "Holman St. demolition",
+  "Historical Commission",
+  "safety",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

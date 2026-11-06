@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2018-10-25",
  "docid": "2980",
@@ -12,46 +12,304 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of the September 20, 2018 meeting",
+   "motion": "Accept the minutes of the September 20, 2018 meeting.",
    "moved_by": "Caroline Fortin",
-   "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "caroline fortin made a motion to accept the minutes ; linda mcdonald seconded. all were in favor and the minutes were accepted."
+   "quote": "caroline fortin made a motion to accept the minutes ; linda mcdonald seconded. all were in favor and the minutes were accepted.",
+   "seconded_by": "Linda McDonald"
   },
   {
-   "motion": "accept the September 2018 financial reports",
+   "motion": "Accept the September 2018 financial reports.",
    "moved_by": "Caroline Fortin",
-   "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": false,
-   "quote": "caroline fortin made a motion to accept the september 2018 financial reports. linda mcdonald seconded; all were in favor."
+   "quote": "caroline fortin made a motion to accept the september 2018 financial reports. linda mcdonald seconded; all were in favor.",
+   "seconded_by": "Linda McDonald"
   },
   {
-   "motion": "submit Revision 1 to the FY2018 4001 Operating Budget for State-Aided Housing to DHCD to correct any budget to actual variance greater than 10% per the DHCD PMR guidelines",
+   "motion": "Submit Revision 1 to the FY2018 4001 Operating Budget for State-Aided Housing to DHCD to correct any budget to actual variance greater than 10%.",
    "moved_by": "Linda McDonald",
-   "seconded_by": "Deborah A.H. Christen",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion made by linda mcdonald to submit revision 1 to the fy2018 4001 operating budget for state-aided housing to dhcd, to correct any budget to actual variance greater than 10% per the dhcd pmr guidelines. seconded, deborah a.h. christen seconded the motion, and the motion was passed by a unanimous vote."
+   "quote": "resolved, motion made by linda mcdonald to submit revision 1 to the fy2018 4001 operating budget for state-aided housing to dhcd",
+   "seconded_by": "Deborah A.H. Christen"
   },
   {
-   "motion": "write off $1,472.94 as uncollectible debts",
+   "motion": "Write off $1,472.94 as uncollectible debts (Resolution 201816).",
    "moved_by": "Caroline Fortin",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion made by caroline fortin to write off $1,472.94 as uncollectible debts."
+   "quote": "resolved, motion made by caroline fortin to write off $1,472.94 as uncollectible debts.",
+   "seconded_by": ""
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:57 p.m.",
    "moved_by": "Deborah Christen",
-   "seconded_by": "Caroline Fortin",
    "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 6:57 p.m. caroline fortin seconded, all were in favor, and the meeting was adjourned."
+   "quote": "deborah christen made a motion to adjourn the meeting at 6:57 p.m. caroline fortin seconded, all were in favor, and the meeting was adjourned.",
+   "seconded_by": "Caroline Fortin"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Resolution 201816 records a motion but no seconding or outcome; the text ends abruptly after stating the motion and continues to section 9 on the next page.",
- "cost_usd": 0.1211885
+ "dropped_unquoted": 1,
+ "note": "Text extraction is clean; no scan. Votes are recorded for the minutes approval, the financial report, Resolution 201815, the adjournment, and a write-off motion with no result stated. Resolution 201816 has no seconder and no vote result. No public comment speakers are named (resident participation was not requested). The write-off list is referenced as attached but is not reproduced in the text.",
+ "cost_usd": 0.00690742,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: deborah a.h. christen, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "linda mcdonald, member"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "paul doherty, vice chair"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Interim Executive Director",
+   "status": "present",
+   "quote": "also present: benjamin gold, interim executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meetings for November and December were changed to November 14 and December 13.",
+   "quote": "the meetings for november and december will be changed to november 14 th and december 13th respectfully."
+  },
+  {
+   "decision": "Payroll provider changed from Vision Payroll to Harpers, so all five housing authorities will use the same company.",
+   "quote": "we are changing from vision payroll to harpers for payroll, so all five housing authorities will use the same company."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves were reported at 37.49% in the September 2018 financial report.",
+   "figures_as_printed": [
+    "37.49%"
+   ],
+   "quote": "page f2 - reserves are at 37.49%."
+  },
+  {
+   "topic": "Rent collections",
+   "what_was_recorded": "Rents were reported as under, with the authority waiting on the DHCD subsidy; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "page f3 - we are under on rents, waiting on dhcd subsidy."
+  },
+  {
+   "topic": "Maintenance costs",
+   "what_was_recorded": "Maintenance was reported as over due to three vacancies requiring more work; utilities were fine. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "maintenance is over due to three vacancies requiring more work than usually needed"
+  },
+  {
+   "topic": "FY2018 4001 operating budget revision",
+   "what_was_recorded": "Ben Gold reviewed the budget changes needed to stay within the DHCD 10% rule; the board passed Resolution 201815 authorizing Revision 1.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "ben gold went over the budget changes needed to be within the dhcd 10% rule."
+  },
+  {
+   "topic": "Write-off of unrecoverable tenant debts",
+   "what_was_recorded": "Tenants who vacated owed a total of $1,472.94 as of September 30, 2018, aged 90 days; the board moved to write it off as uncollectable.",
+   "figures_as_printed": [
+    "$1,472.94",
+    "September 30, 2018",
+    "90 days"
+   ],
+   "quote": "those persons vacating owed $1,472.94 as of september 30, 2018 ( see attached list)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened 6:41 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:41 p.m.",
+   "tags": [
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Minutes of September 20, 2018 meeting",
+   "resolution": "approved",
+   "quote": "the minutes of the september 20, 2018 meeting were presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "no action; informational",
+   "quote": "the executive director report:",
+   "tags": [
+    "executive director",
+    "FHA/LHA",
+    "Leominster",
+    "payroll",
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Financial Report (September 2018)",
+   "resolution": "accepted",
+   "quote": "financial report (september 2018):",
+   "tags": [
+    "finance",
+    "reserves",
+    "rents"
+   ]
+  },
+  {
+   "topic": "Modernization Report",
+   "resolution": "no action",
+   "quote": "no on-going projects.",
+   "tags": [
+    "modernization"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "no action; informational",
+   "quote": "we are 100% occupied.",
+   "tags": [
+    "occupancy",
+    "applications"
+   ]
+  },
+  {
+   "topic": "New Business: FY2018 4001 operating budget revision",
+   "resolution": "Resolution 201815 passed unanimously",
+   "quote": "fy2018 4001 operating budget revision 1 submission",
+   "tags": [
+    "budget revision",
+    "DHCD",
+    "PMR"
+   ]
+  },
+  {
+   "topic": "New Business: write-off of quarterly unrecoverable debts",
+   "resolution": "motion made; no result recorded",
+   "quote": "resolution to write-off quarterly unrecoverable debts",
+   "tags": [
+    "debt write-off",
+    "rent arrears"
+   ]
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "received; no action",
+   "quote": "9. other correspondence: • phn notices • nahro october newsletter",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "no resident participation requested.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:57 p.m.",
+   "quote": "deborah christen made a motion to adjourn the meeting at 6:57 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN Notices",
+   "where": "list",
+   "quote": "9. other correspondence: • phn notices • nahro october newsletter"
+  },
+  {
+   "name": "NAHRO October Newsletter",
+   "where": "list",
+   "quote": "9. other correspondence: • phn notices • nahro october newsletter"
+  },
+  {
+   "name": "Financial Report (September 2018)",
+   "where": "text",
+   "quote": "financial report (september 2018):"
+  },
+  {
+   "name": "Executive Director Report",
+   "where": "text",
+   "quote": "the executive director report:"
+  },
+  {
+   "name": "Work Order report",
+   "where": "text",
+   "quote": "work order report included."
+  },
+  {
+   "name": "FY2018 4001 Operating Budget Revision 1 (Resolution 201815)",
+   "where": "text",
+   "quote": "fy2018 4001 operating budget revision 1 submission"
+  },
+  {
+   "name": "Resolution 201816 write-off of quarterly unrecoverable debts",
+   "where": "text",
+   "quote": "resolution to write-off quarterly unrecoverable debts"
+  },
+  {
+   "name": "Attached list of vacated tenants' debts as of September 30, 2018",
+   "where": "text",
+   "quote": "those persons vacating owed $1,472.94 as of september 30, 2018 ( see attached list)."
+  },
+  {
+   "name": "DHCD Performance Management Review (PMR) guidelines",
+   "where": "text",
+   "quote": "per dhcd's performance management review (pmr) guidelines,"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "DHCD",
+  "budget revision",
+  "debt write-off",
+  "rent arrears",
+  "payroll",
+  "meeting schedule",
+  "executive director",
+  "occupancy"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

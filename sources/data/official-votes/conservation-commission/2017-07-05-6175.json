@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-07-05",
  "docid": "6175",
@@ -12,63 +12,345 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing for Mark Pinard's replacement of stone steps and gravel stabilization work at 58 Hemlock Drive to July 19, 2017 at 7 PM in the Bilotta Meeting Room",
+   "motion": "Continue the 58 Hemlock Drive hearing (Mark Pinard, Request for A Determination) to July 19, 2017 at 7 PM in the Bilotta meeting room.",
    "moved_by": "KJ",
    "seconded_by": "RB",
-   "outcome": "unanimously approved",
-   "procedural": true,
+   "outcome": "passed unanimously",
+   "procedural": false,
    "quote": "kj moved to continue to july 19, 2017 at 7 pm in the bilotta meeting room, rb seconded and the commission voted unanimously to approve the motion."
   },
   {
-   "motion": "Continue the hearing for Joe Esposito's septic system grading work at 22 Boucher Road until July 19, 2017 at the Bilotta Meeting Room",
+   "motion": "Continue the 22 Boucher Road hearing (Joe Esposito) to July 19, 2017 at the applicant's request.",
    "moved_by": "RB",
    "seconded_by": "BP",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "the meeting was continued until the 19th of july, 2017 at the bilotta meeting room at the request of the applicant by a motion of rb. and a second by bp and a unanimous vote to approve the motion."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "the meeting was continued until the 19th of july, 2017 at the bilotta meeting room at the request of the applicant by a motion of rb."
   },
   {
-   "motion": "Continue the hearing for Celico Partnership DBA Verizon Wireless's 75-foot monopole installation at 1079 Mass Ave to July 19 at the Bilotta Meeting Room",
+   "motion": "Continue the 1079 Mass Ave hearing (Celico Partnership DBA Verizon Wireless, monopole) because the plan was not received, to the July 19 meeting in the Bilotta meeting room.",
    "moved_by": "BP",
    "seconded_by": "RB",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "bp moved to continue and rb seconded and the commission voted unanimously to continue to july 1g'h at the bilotta meeting room and a unanimous vote to approve the motion."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "bp moved to continue and rb seconded and the commission voted unanimously to continue to july 1g'h at the bilotta meeting room"
   },
   {
-   "motion": "Approve with a standard Order of Conditions for Michael Pirolli's retaining wall reconstruction at 43 Island Rd",
+   "motion": "Approve the 43 Island Rd Notice of Intent (Michael Pirolli, retaining wall) with a standard Order of Conditions.",
    "moved_by": "RB",
    "seconded_by": "KJ",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion to approve with a standard order of conditions by rb with a second by kj and a unanimous vote to approve the motion."
   },
   {
-   "motion": "Issue a standard Order for Daniel and Jean Proctor's car wash and bus parking area construction at 380, 390 and 400 Electric Ave",
+   "motion": "Issue a standard Order for the 380, 390 and 400 Electric Ave Notice of Intent (Daniel and Jean Proctor), with the plan modifications presented.",
    "moved_by": "BP",
    "seconded_by": "Ku",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "motion to issue a standard order by bp and a second by ku and a unanimous vote of approve the motion."
   },
   {
-   "motion": "Continue the hearing for Jeffry Viviano's dock and tree house work at 338 Sunset Lane to July 19, 2017 at 7 PM in the Bilotta Meeting Room",
+   "motion": "Continue the 338 Sunset Lane hearing (Jeffry Viviano, amended Notice of Intent) with the applicant's permission to July 19, 2017 at 7 PM in the Bilotta meeting room.",
    "moved_by": "RB",
    "seconded_by": "KJ",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "the hearing with the applicants permission was continued to july 19th 2017 in the bilotta meeting room at 7 pm by a motion or rb and a second by kj and a unanimous vote to approve the motion."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "by a motion or rb and a second by kj and a unanimous vote to approve the motion."
   },
   {
-   "motion": "Adjourn the meeting at 8:22 PM",
+   "motion": "Adjourn the meeting at 8:22 PM.",
    "moved_by": "BP",
    "seconded_by": "KJ",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "the meeting was adjourned at 8:22 pm with a motion by bp and a second by kj with a unanimous vote by the commission to approve the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes with minor artifacts (e.g., \"July 1g'h\" for July 19, \"Ku\" likely an error for KJ, \"motion or RB\" likely \"motion of RB\"). All votes are readable and identified.",
- "cost_usd": 0.1150905
+ "note": "OCR-extracted text with errors (e.g., 'Juiy', 'treasure', 'Icc@lunenburgonline', 'July 1g'h', 'Ku', 'Meetig'); names read as printed, with variants noted: Viviano/Vivano, and the Electric Ave motion's second is printed as 'Ku'. The minutes contain no recorded vote approving prior minutes. Carl Luck and Matthew S. Marro appear only in the letterhead/header and are not recorded as attending, so they are omitted. Joe Esposito, Celico Partnership, Daniel and Jean Proctor, Michael Pirolli and Jeffry Viviano are named as applicants but no appearance is recorded for them. The 'Communications' and 'New Business' headings have no recorded content beyond the schedule line. Per-item motions for hearing continuances are recorded with the vote text; the 58 Hemlock Drive item says 'On July 15, 2017' for the site visit as printed.",
+ "cost_usd": 0.009774220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair; acting Chair",
+   "status": "present",
+   "quote": "mr. dwyer acting chair called to order. bp, rb,kj,jr present"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mr. dwyer acting chair called to order. bp, rb,kj,jr present"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "mr. dwyer acting chair called to order. bp, rb,kj,jr present"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "present",
+   "quote": "mr. dwyer acting chair called to order. bp, rb,kj,jr present"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "mr. dwyer acting chair called to order. bp, rb,kj,jr present"
+  },
+  {
+   "name": "Mark Pinard",
+   "role": "represented himself",
+   "status": "present",
+   "quote": "mark pinard appeared to represent himself."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "representing Michael Pirolli",
+   "status": "present",
+   "quote": "chris anderson appeared to represent michael pirolli."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "of Ducharme and Dillis; presented plan updates",
+   "status": "present",
+   "quote": "greg roy of ducharme and dillis presented updates to the commission of the plans"
+  },
+  {
+   "name": "Jeff Vivano",
+   "role": "",
+   "status": "present",
+   "quote": "jeff vivano appeared to the commission: regarding the dock he did go to the board of selectmen"
+  },
+  {
+   "name": "David King",
+   "role": "",
+   "status": "present",
+   "quote": "david king appeared and asked information of the commission with respect for 667 reservoir"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "At the 58 Hemlock Drive hearing, the meeting was continued to allow the applicant to submit a plan showing no expansion and adding measurements.",
+   "quote": "the meeting was continued to allow the applicant to submit a plan showing no expansion and adding measurements."
+  },
+  {
+   "decision": "The Commission would perform a follow-up site visit at 58 Hemlock Drive on July 15, 2017.",
+   "quote": "the commission noted they would perform a follow up site visit. on july 15, 2017."
+  },
+  {
+   "decision": "For the 338 Sunset Lane hearing, the applicant was asked to come back with a plan showing the location of the proposed tree house.",
+   "quote": "they asked him to come back with a plan."
+  },
+  {
+   "decision": "Stated Commission position at public comment: no new beaches, but open to re-establishing an existing beach shown in historical ortho photos; not in favor of a permanent boat house within the 30 and 50 foot no touch zones.",
+   "quote": "the commission noted that they do not allow new beaches but will be open to the re-establishment of an existing beach which is shown in historical ortho photos."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trust accounts",
+   "what_was_recorded": "Bob Pease (BP) reported a meeting with the treasurer about access to and what is allowed regarding the town's trust accounts; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "bp had a meeting with the treasure and detailed access mm now has and is working on what is allowed regarding the trust accounts."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "BP",
+   "stated_role": "",
+   "topic": "Trust accounts and treasurer meeting",
+   "quote": "bp had a meeting with the treasure and detailed access mm now has and is working on what is allowed regarding the trust accounts."
+  },
+  {
+   "speaker": "JR",
+   "stated_role": "",
+   "topic": "Car show",
+   "quote": "jr spoke about the car show held the previous week."
+  },
+  {
+   "speaker": "KJ",
+   "stated_role": "",
+   "topic": "Pollinator habitat",
+   "quote": "kj spoke of the pollinator habitat and that it appears to be doing well and growing well due to the cooperative weather."
+  },
+  {
+   "speaker": "David King",
+   "stated_role": "",
+   "topic": "667 Reservoir: beach, retaining wall and boat house",
+   "quote": "david king appeared and asked information of the commission with respect for 667 reservoir and outlined several items they wanted to do upon buying the home."
+  },
+  {
+   "speaker": "JR",
+   "stated_role": "",
+   "topic": "Resident's rolling dock installed before filing",
+   "quote": "jr spoke about a resident that had a rolling dock installed prior to filing and ra and will be coming into the office to file retroactively."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order; members present noted",
+   "quote": "call to order - mr. dwyer acting chair called to order. bp, rb,kj,jr present",
+   "tags": [
+    "procedure",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Announcements and opening public comment",
+   "resolution": "no action",
+   "quote": "public comment- bp had a meeting with the treasure and detailed access mm now has and is working on what is",
+   "tags": [
+    "public comment",
+    "trust accounts",
+    "car show",
+    "pollinator habitat"
+   ]
+  },
+  {
+   "topic": "Public hearing: 58 Hemlock Drive (Mark Pinard), stone steps and gravel under deck",
+   "resolution": "continued to July 19, 2017",
+   "quote": "work entails replacement of stone steps and adding gravel under a deck for stabilization at 58 hemlock drive by mark pinard.",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "hearing",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Public hearing: 22 Boucher Road (Joe Esposito), septic grading in riverfront",
+   "resolution": "continued to July 19, 2017 at applicant's request",
+   "quote": "work entails grading for a septic system within the riverfront at 22 boucher road by",
+   "tags": [
+    "wetlands",
+    "riverfront",
+    "request for determination",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Continued hearing: 1079 Mass Ave (Celico Partnership DBA Verizon Wireless), 75 foot monopole",
+   "resolution": "continued (plan not received)",
+   "quote": "work entails the installation of a 75 foot monopole within the 100 foot buffer zone.",
+   "tags": [
+    "wetlands",
+    "buffer zone",
+    "notice of intent",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent: 43 Island Rd (Michael Pirolli), retaining wall on Hickory Hills Lake",
+   "resolution": "approved with standard Order of Conditions",
+   "quote": "motion to approve with a standard order of conditions by rb with a second by kj and a unanimous vote to approve the motion.",
+   "tags": [
+    "enforcement history",
+    "retaining wall",
+    "shore",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent: 380, 390 and 400 Electric Ave (Daniel and Jean Proctor), car wash and bus parking",
+   "resolution": "standard Order issued",
+   "quote": "motion to issue a standard order by bp and a second by ku and a unanimous vote of approve the motion.",
+   "tags": [
+    "riverfront",
+    "buffer zone",
+    "stormwater",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Continued public hearing to amend NOI: 338 Sunset Lane (Jeffry Viviano), boulder, tree house and dock",
+   "resolution": "continued to July 19, 2017 with applicant's permission",
+   "quote": "the hearing with the applicants permission was continued to july 19th 2017 in the bilotta meeting room at 7 pm",
+   "tags": [
+    "buffer zone",
+    "dock",
+    "tree house",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Enforcement: 183 Hemlock Dr",
+   "resolution": "continued to July 19",
+   "quote": "183 hemlock dr - continued from june 7 continued to july 19",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for July 19, 2017 at 7:00 PM",
+   "quote": "next meeting for july 19, 2017 at 7:00 pm in the bilotta meetig room 2nd floor 17",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment at meeting close: 667 Reservoir",
+   "resolution": "no action; Commission stated positions",
+   "quote": "the commission noted they would not be in favor of a permanent structure with the 30 and 50 foot no touch zones.",
+   "tags": [
+    "public comment",
+    "beach",
+    "boat house",
+    "no touch zone"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:22 PM",
+   "quote": "the meeting was adjourned at 8:22 pm with a motion by bp and a second by kj with a unanimous vote by",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent and plan entitled \"Site Plan \" by Hannigan Engineering dated June 26 2017 (1079 Mass Ave)",
+   "where": "list",
+   "quote": "documents presented to the commission for consideration was a notice of intent and a plan entitled \"site plan \" by hannigan engineering dated june 26 2017."
+  },
+  {
+   "name": "Notice of Intent by Daniel and Jean Proctor and plan by Ducharme and Dillis with final revision date July 5 2017 (updated after meeting final plans July 10, 2017)",
+   "where": "list",
+   "quote": "documents presented to the commission for consideration was a notice of intent by daniel and jean proctor and a plan by ducharme and dillis with a final revision date of july 5 2017 (updated"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands protection",
+  "requests for determination",
+  "notice of intent",
+  "order of conditions",
+  "continuances",
+  "enforcement",
+  "public comment",
+  "Hemlock Drive",
+  "Electric Ave",
+  "Mass Ave",
+  "riverfront",
+  "buffer zone",
+  "Sunset Lane",
+  "Boucher Road",
+  "Island Rd",
+  "trust accounts"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented to the commission for consideration was"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2018-07-17",
  "docid": "737",
@@ -12,23 +12,242 @@
  },
  "votes": [
   {
-   "motion": "to approve current expense vouchers, abatements, warrants, commitments, June 5, 2017 minutes and payroll",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, June 5, 2017 minutes and payroll.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, june 5\", 2017 minutes and payroll."
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, june 5"
   },
   {
-   "motion": "to meet on August 14, 2018 at 5:45 pm",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Meet on August 14, 2018 at 5:45 pm.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "board voted to meet on august 14, 2018 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0677376
+ "note": "No attendance roll, no public comment heading, and no motion/second or vote count recorded for the approval item or the meeting-date item; both are recorded with outcome 'not stated'. The OCR text is partly garbled (signature line, a stray quote mark after 'June 5'). Attorney Erb's appearance is recorded as an attendee, not as public comment. 'Harald' and 'Rich' are referenced without a stated role.",
+ "cost_usd": 0.00598192,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Attorney Erb",
+   "role": "representing Garth & Colleen W. Stillman and Low Places Ranch, LLC",
+   "status": "present",
+   "quote": "attorney erb spoke on behalf of garth & colleen w. stillman and low places ranch, llc."
+  },
+  {
+   "name": "Jeffrey A. Powell",
+   "role": "LLC's Manager",
+   "status": "not stated",
+   "quote": "(jeffrey a. powell, llc's manager)"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor, Office of the Board of Assessor",
+   "status": "present",
+   "quote": "louise reported that one additional supplemental re bill was mailed on june 18, 2018 for new construction in the amount of $10,181.67."
+  },
+  {
+   "name": "Joshua",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joshua presented the upcoming atb case regarding properties located at 508 & 516 new west townsend rd."
+  },
+  {
+   "name": "Rich",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rich offered to work on this project as the town has seen an increase in agricultural type of businesses."
+  },
+  {
+   "name": "Harald",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "that harald will review the documentation and address the certificate request."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOA will review the Stillman / Low Places Ranch correspondence, and Harald will review the documentation and address the Certificate request.",
+   "quote": "the boa will review the correspondence and assured attorney erb that harald will review the documentation and address the certificate request."
+  },
+  {
+   "decision": "Louise will forward the property tax exemption eligibility information to the Senior Center.",
+   "quote": "louise will forward this information with the senior center."
+  },
+  {
+   "decision": "Louise will notify Public Safety that the data collectors from Real Estate Research Consultants, Inc will be out and about.",
+   "quote": "louise will notify public safety that the data collectors will be out and about."
+  },
+  {
+   "decision": "Rich will work on the farm excise tax project; Louise will speak with RRC about how they handle valuations and farm excise tax in other communities.",
+   "quote": "louise will speak with rrc in regards to how they handle the valuations and farm excise tax with other communities."
+  },
+  {
+   "decision": "The BOA agreed to reduce the values on 508 & 516 New West Townsend Rd and to grant an abatement upon receiving a Certified Withdrawal from the ATB, settling on the FY17 ATB Settlement.",
+   "quote": "the boa agreed to reduce the values on both properties and an abatement will be granted upon receiving a"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental RE bill for new construction",
+   "what_was_recorded": "One additional supplemental RE bill was mailed June 18, 2018 for new construction.",
+   "figures_as_printed": [
+    "$10,181.67"
+   ],
+   "quote": "louise reported that one additional supplemental re bill was mailed on june 18, 2018 for new construction in the amount of $10,181.67."
+  },
+  {
+   "topic": "ATB settlement, 508 & 516 New West Townsend Rd sale price",
+   "what_was_recorded": "Both properties were sold for a total of $150,000, the basis for the FY17 ATB settlement recommendation.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "both properties were sold for a total of $150,000."
+  },
+  {
+   "topic": "Chapter 61A land transfer, conveyance tax and roll back tax",
+   "what_was_recorded": "The affidavit states the transfer will not give rise to a conveyance tax or roll back tax; counsel seeks a Certificate that none is due.",
+   "figures_as_printed": [],
+   "quote": "therefore the transfer will not give rise to a conveyance tax or roll back tax."
+  },
+  {
+   "topic": "Farm excise tax and machinery/equipment valuation in personal property tax",
+   "what_was_recorded": "The Board is reviewing how machinery and equipment values (excluding farm animals) are calculated for personal property tax; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the board is reviewing the procedure in calculating values for machinery / equipment"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of expense vouchers, abatements, warrants, commitments, minutes and payroll",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, june 5",
+   "tags": [
+    "approvals",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Attorney Erb request re Chapter 61A land sale (Stillman / Low Places Ranch)",
+   "resolution": "BOA to review; Harald to address Certificate request",
+   "quote": "attorney erb spoke on behalf of garth & colleen w. stillman and low places ranch, llc.",
+   "tags": [
+    "Chapter 61A",
+    "conveyance tax",
+    "roll back tax",
+    "affidavit"
+   ]
+  },
+  {
+   "topic": "Supplemental RE bill for new construction",
+   "resolution": "reported, no action",
+   "quote": "louise reported that one additional supplemental re bill was mailed on june 18, 2018",
+   "tags": [
+    "supplemental tax bill",
+    "new construction"
+   ]
+  },
+  {
+   "topic": "Property tax exemption eligibility requirements",
+   "resolution": "reviewed; Louise to forward to Senior Center",
+   "quote": "louise reviewed with the boa the eligibility requirements for property tax exemptions available to lunenburg residents",
+   "tags": [
+    "exemptions",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Forms of List inspections",
+   "resolution": "reported; Louise to notify Public Safety",
+   "quote": "the forms of list were recently picked up by real estate research consultants, inc",
+   "tags": [
+    "forms of list",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Farm excise tax",
+   "resolution": "Rich to work on project; Louise to contact RRC",
+   "quote": "the board is reviewing the procedure in calculating values for machinery / equipment",
+   "tags": [
+    "farm excise",
+    "personal property tax",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "FY17 ATB settlement, 508 & 516 New West Townsend Rd",
+   "resolution": "settlement agreed; abatement on Certified Withdrawal",
+   "quote": "the boa agreed to reduce the values on both properties and an abatement will be granted upon receiving a",
+   "tags": [
+    "ATB",
+    "abatement",
+    "settlement"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for August 14, 2018 at 5:45 pm; adjourned 7:00 pm",
+   "quote": "board voted to meet on august 14, 2018 at 5:45 pm. meeting adjourned at 7:00 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter to the Board dated June 14, 2018 (Attorney Erb)",
+   "where": "text",
+   "quote": "follow up on a letter he sent to the board on june 14, 2018."
+  },
+  {
+   "name": "Signed Affadavit / Purchase and Sales Agreement (285E Goodrich St., Map 129, Parcel 1)",
+   "where": "text",
+   "quote": "the letter included a signed affadavit / purchase and sales agreement to purchase land presently owned by the stillmans."
+  },
+  {
+   "name": "Property tax exemption eligibility requirements (attachment)",
+   "where": "text",
+   "quote": "louise reviewed with the boa the eligibility requirements for property tax exemptions available to lunenburg residents which must be met as of july 1, 2018. (see attachment)"
+  },
+  {
+   "name": "Application for Excise on Farm Animals, Machinery and Equipment (State Tax Form F.A.E.M.E)",
+   "where": "text",
+   "quote": "an application for excise on farm animals, machinery and equipment (state tax form f.a.e.m.e) must be filed"
+  },
+  {
+   "name": "Annual Forms of List",
+   "where": "text",
+   "quote": "the forms of list were recently picked up by real estate research consultants, inc"
+  },
+  {
+   "name": "Certified Withdrawal from the ATB",
+   "where": "text",
+   "quote": "upon receiving a certified withdrawal from the atb."
+  }
+ ],
+ "tags": [
+  "property tax",
+  "abatement",
+  "Chapter 61A",
+  "conveyance tax",
+  "farm excise",
+  "tax exemptions",
+  "ATB settlement",
+  "Forms of List",
+  "supplemental tax bill"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

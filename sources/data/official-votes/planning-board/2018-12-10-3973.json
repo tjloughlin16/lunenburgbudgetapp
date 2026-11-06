@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-12-10",
  "docid": "3973",
@@ -12,23 +12,128 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session pursuant to M.G.L. c. 30A, §21, #3 to discuss litigation strategy in O'Brien Homes Inc. cases, not to return to Regular Session",
+   "motion": "Enter Executive Session pursuant to M.G.L. c. 30A, §21, #3 to discuss litigation strategy (O'Brien Homes v. Town of Lunenburg), and not return to Regular Session.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion to enter executive session pursuant to m.g.l. c. 30a, §21, #3, to discuss strategy with respect to litigation, where an open me eting may have a detrimental effect on the government's litigating position, and the chair so declares, namely o'brien homes inc. et al v. town of lunenburg et al., land court docket nos. 13-misc-477878 to 13-misc-477887 and o'brien homes, inc. v. town of lunenburg planning board, et al., appeals court docket no. 2018 -p-1520, not to enter back into regular session. so moved by k. chenis, seconded by p. bertram, roll call vote- p. bertram, aye; t. cole, aye; d. prokowiew, aye; k. chenis, aye; m. allison, ay e."
+   "quote": "so moved by k. chenis, seconded by p. bertram, roll call vote- p. bertram, aye; t. cole, aye; d. prokowiew, aye; k. chenis, aye"
   },
   {
-   "motion": "Adjourn Executive Session",
+   "motion": "Adjourn Executive Session.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "P. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "d. prokowiew made motion to adjourn executive session, p. bertram seconded, roll call vote- p. bertram, aye; t. cole, aye; k. chenis, aye; d. prokowiew, aye; m. allison, aye."
+   "quote": "d. prokowiew made motion to adjourn executive session, p. bertram seconded, roll call vote- p. bertram, aye; t. cole, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "This document is an executive session meeting. Only procedural motions to enter and adjourn the session are recorded, with no substantive votes on matters of business (the executive session discussions are summarized but no formal votes on those topics are documented).",
- "cost_usd": 0.1145525
+ "note": "Executive session minutes only; no public comment, no dollar figures printed, and no substantive vote recorded. Start time 10:06 PM and adjournment 10:50 PM as printed. Marjorie J. Boggio appears only in the letterhead and is not named as present, so she is not listed. The text is a plain-text extraction with some broken words (for example 'ay e', 'M ember'), read as printed.",
+ "cost_usd": 0.00370432,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed that its priorities to take to the next meeting with O'Brien Homes would be access to Town Forest, protection of the wetlands and Mulpus, and an over-55 component.",
+   "quote": "board agreed that priorities to take to the next meeting would be access to town forest, protection of the wetlands and mulpus, and an over-55 component."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial impact of O'Brien Homes development on the Town",
+   "what_was_recorded": "T. Cole noted the executive session discussion included the financial impact to the Town from the single family homes; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "t. cole noted the discussion included environmental impacts and the financial impact to the town from the single family homes."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "O'Brien Homes litigation and development discussion (executive session)",
+   "resolution": "entered executive session; discussed density, affordability, Town Forest and wetlands; priorities agreed for next meeting; no recorded vote on substance",
+   "quote": "board chair m. allison requested a motion to enter executive session pursuant to m.g.l. c. 30a, §21, #3, to discuss strategy with respect to litigation",
+   "tags": [
+    "litigation",
+    "O'Brien Homes",
+    "executive session",
+    "density",
+    "affordability",
+    "Town Forest"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Code of Lunenburg, §250-4.1 (affordability component)",
+   "where": "text",
+   "quote": "obh will be subject to the affordability component under code of lunenburg, §250- 4.1."
+  },
+  {
+   "name": "O'Brien Homes Inc. et al v. Town of Lunenburg et al., Land Court Docket Nos. 13-MISC-477878 to 13-MISC-477887",
+   "where": "text",
+   "quote": "o'brien homes inc. et al v. town of lunenburg et al., land court docket nos. 13-misc-477878 to 13-misc-477887"
+  },
+  {
+   "name": "O'Brien Homes, Inc. v. Town of Lunenburg Planning Board, et al., Appeals Court Docket No. 2018-P-1520",
+   "where": "text",
+   "quote": "o'brien homes, inc. v. town of lunenburg planning board, et al., appeals court docket no. 2018 -p-1520"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "O'Brien Homes",
+  "Planning Board",
+  "Town Forest",
+  "wetlands",
+  "Mulpus",
+  "affordable housing",
+  "over-55 housing",
+  "density"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

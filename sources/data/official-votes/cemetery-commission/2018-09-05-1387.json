@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-09-05",
  "docid": "1387",
@@ -12,6 +12,129 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This was a Cemetery Commission workshop meeting consisting entirely of discussions. No motions were made and no votes were recorded. Topics discussed included building demolition, garage construction, budget issues, and a past commissioner's donation, but the minutes contain no language indicating any formal votes (no \"moved by,\" \"seconded by,\" \"voted,\" \"passed,\" etc.).",
- "cost_usd": 0.0788025
+ "note": "Minutes record no motions or votes, so no votes are listed. Adjournment at 9:10 PM is stated without a recorded motion. No public comment section is printed. No dollar figures are printed. Text is extracted, not a scan.",
+ "cost_usd": 0.00244022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance D. May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was called to order a 7:00 pm by chairman may."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "other members present were vice chair, lorraine mendoza and clerk, william tyler."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "other members present were vice chair, lorraine mendoza and clerk, william tyler."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A donation from a past Commissioner was taken under advisement, to be discussed at a future meeting.",
+   "quote": "under new business, a donation from a past commissioner was discussed and will be taken under advisement to be discussed at a future meeting."
+  },
+  {
+   "decision": "The Commission intends to invite a member of the Charter Review Committee to a future meeting.",
+   "quote": "the commission is aware of the meetings of the charter review committee and intends on inviting a member to a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2018 budget issues",
+   "what_was_recorded": "2018 budget issues were discussed, along with IT and the new website; no figures printed.",
+   "quote": "2018 budget issues were discussed, along with it and the new website.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Cemetery building demolition",
+   "resolution": "discussed; no action recorded",
+   "quote": "discussion ensued concerning the cemetery building demolition and a report by commissioner tyler was presented which included a timetable for demolition",
+   "tags": [
+    "demolition",
+    "asbestos",
+    "windows"
+   ]
+  },
+  {
+   "topic": "Garage construction with Montachusett Regional Vocational High School",
+   "resolution": "no action; ongoing work noted",
+   "quote": "the commission is also working with the montachusett regional vocational high school for a schedule for the construction of a garage on the site of the former cemetery office.",
+   "tags": [
+    "garage",
+    "vocational school",
+    "construction"
+   ]
+  },
+  {
+   "topic": "2018 budget, IT and new website",
+   "resolution": "discussed; no action recorded",
+   "quote": "2018 budget issues were discussed, along with it and the new website.",
+   "tags": [
+    "budget",
+    "IT",
+    "website"
+   ]
+  },
+  {
+   "topic": "Fall cleanup schedule",
+   "resolution": "no action; Superintendent working on schedule",
+   "quote": "the superintendent is working on his schedule for the fall cleanup, in conjunction with the worcester county sheriff's dept.",
+   "tags": [
+    "fall cleanup",
+    "sheriff",
+    "inmates"
+   ]
+  },
+  {
+   "topic": "Charter Review Committee",
+   "resolution": "noted; intends to invite a member",
+   "quote": "the commission is aware of the meetings of the charter review committee and intends on inviting a member to a future meeting.",
+   "tags": [
+    "charter review"
+   ]
+  },
+  {
+   "topic": "New Business: donation from past Commissioner",
+   "resolution": "taken under advisement; deferred to a future meeting",
+   "quote": "under new business, a donation from a past commissioner was discussed and will be taken under advisement to be discussed at a future meeting.",
+   "tags": [
+    "donation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Report by Commissioner Tyler including a timetable for demolition and information on removal of windows before demolition (asbestos abatement)",
+   "where": "text",
+   "quote": "a report by commissioner tyler was presented which included a timetable for demolition"
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "demolition",
+  "asbestos",
+  "budget",
+  "website",
+  "IT",
+  "fall cleanup",
+  "donation",
+  "workshop meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-01-15",
  "docid": "5135",
@@ -12,31 +12,356 @@
  },
  "votes": [
   {
-   "motion": "Ratify Ramon Cabrera's appointment as Reserve Police Officer",
-   "outcome": "passed",
+   "motion": "To ratify the Town Manager appointment of Ramon Cabrera to Reserve Police Officer.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: d. mcquaid to ratify the town manager appointment of ramon cabrera to reserve police officer 2nd. p. luck vote: all in favor"
+   "quote": "to ratify the town manager appointment of ramon cabrera to reserve police officer 2nd. p. luck vote: all in favor"
   },
   {
-   "motion": "Ratify Donald Farrar's appointment as Interim Local Inspector",
-   "outcome": "passed",
+   "motion": "To ratify the Town Manager appointment of Donald Farrar to Interim Local Inspector.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2nd:p. luck to ratify the town manager appointment of donald farrar to interim local inspector vote: all in favor"
+   "quote": "to ratify the town manager appointment of donald farrar to interim local inspector vote: all in favor"
   },
   {
-   "motion": "Sign the bond anticipation note for the Middle/High School construction loan",
-   "outcome": "passed",
+   "motion": "To sign the bond anticipation note for the Middle/House School construction loan.",
    "moved_by": "D. McQuaid",
    "seconded_by": "P. Luck",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: d. mcquaid 2n°: p. luck to sign the bond anticipation note for the middle/high school construction loan vote: all in favor"
+   "quote": "to sign the bond anticipation note for the middle/high school construction loan vote: all in favor"
+  },
+  {
+   "motion": "Approve the minutes of November 7 and November 20, 2018 (no mover, seconder or tally printed).",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of november 7 and november 20, 2018 were approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted scan (macOS Vision). One OCR error preserved verbatim in quote: '2n°' for '2nd' in bond vote section.",
- "cost_usd": 0.1262135
+ "note": "OCR text from a scanned original; several passages are garbled (for example 'Mr. Loale', 'Respectully submittea', and pages 3 to 5 with broken words), so quotes are taken as the OCR prints them. Motions were recorded for three appointments and bond items; the approval of the November 2018 minutes is recorded without a motion, mover, or tally. The joint-meeting discussion records no votes. The minutes do not print a documents list heading.",
+ "cost_usd": 0.010444920000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman, Board of Selectmen",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; damon mcquaid, vice chairman;"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk, Board of Selectmen",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member, Board of Selectmen",
+   "status": "present",
+   "quote": "phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam burney, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam burney, land use director"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Chair, Architectural Preservation District Commission (APDC)",
+   "status": "present",
+   "quote": "richard mcgrath, chair; (and historical commission) cullen dwyer"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "APDC member (and Historical Commission)",
+   "status": "present",
+   "quote": "richard mcgrath, chair; (and historical commission) cullen dwyer"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "APDC member",
+   "status": "present",
+   "quote": "mr. corcoran stated we definitely want to save them."
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "APD member",
+   "status": "present",
+   "quote": "apd member jim laveck entered the meeting"
+  },
+  {
+   "name": "Rebecca Lantry",
+   "role": "Chair, Historical Commission",
+   "status": "absent",
+   "quote": "historical commission members not present: rebecca lantry, chair; c. william lakso,"
+  },
+  {
+   "name": "C. William Lakso",
+   "role": "Historical Commission member",
+   "status": "absent",
+   "quote": "historical commission members not present: rebecca lantry, chair; c. william lakso,"
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Historical Commission member",
+   "status": "absent",
+   "quote": "historical commission members not present: rebecca lantry, chair; c. william lakso,"
+  },
+  {
+   "name": "Chuck Venezia",
+   "role": "President, Historical Society",
+   "status": "present",
+   "quote": "historical society members present: chuck venezia, president; bill tyler, vice president"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Vice President, Historical Society",
+   "status": "present",
+   "quote": "historical society members present: chuck venezia, president; bill tyler, vice president"
+  },
+  {
+   "name": "Ramon Cabrera",
+   "role": "Officer (reserve police officer appointment)",
+   "status": "present",
+   "quote": "mr. cabrera stated he moved around a lot as a kid but"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief marino reported cabrera has completed police training academy."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Toale said he would schedule the skate park project (Action File Issue) as a future agenda item, following Ms. Luck's request for reevaluation.",
+   "quote": "mr. toale stated he would schedule this as a future agenda item."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond anticipation note for Middle/High School construction loan",
+   "what_was_recorded": "Routine renewal of the bond for the Middle/High School construction loan at a stated principal and interest rate.",
+   "figures_as_printed": [
+    "$2,100,000.00",
+    "2.4%"
+   ],
+   "quote": "routine renewal of the bond for the middle/high school construction loan in the amount of $2,100,000.00 with an interest rate of 2.4%"
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was signed in the stated amount.",
+   "figures_as_printed": [
+    "$225,033.77"
+   ],
+   "quote": "an accounts payable warrant in the amount of $225,033.77 was signed."
+  },
+  {
+   "topic": "Skate park project and taxpayer burden",
+   "what_was_recorded": "Ms. Luck said the project was presented as not burdening taxpayers and raised insurance and tax concerns; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "the project was presented as something that would not burden the taxpayers"
+  },
+  {
+   "topic": "Central MA Regional Stormwater Coalition costs",
+   "what_was_recorded": "Ms. Luck reported the coalition's work on EPA and DEP Ms4 permit requirements is going to be expensive; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "it is going to be expensive and they are creating"
+  },
+  {
+   "topic": "Old Primary School repair cost",
+   "what_was_recorded": "The APDC letter said unchecked damage to the Old Primary School may become too costly to repair; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "this damage may be too costly to repair, and lead to the total demolition of the structure."
+  },
+  {
+   "topic": "Funding for detailed plans for TC Passios offices",
+   "what_was_recorded": "Mr. Toale said the town hopes to ask Town Meeting for funding for detailed plans so an actual cost to move offices to the TC Passios is provided; no dollar figure given.",
+   "figures_as_printed": [],
+   "quote": "to provide funding for detailed plans for the tc passios, so an actual cost to move offices there is provided"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there was none at this time"
+  },
+  {
+   "topic": "Appointment: Reserve Police Officer Ramon Cabrera",
+   "resolution": "ratified",
+   "tags": [
+    "appointments",
+    "police"
+   ],
+   "quote": "to ratify the town manager appointment of ramon cabrera to reserve police officer"
+  },
+  {
+   "topic": "Appointment: Interim Local Building Inspector Donald Farrar",
+   "resolution": "ratified",
+   "tags": [
+    "appointments",
+    "building inspector"
+   ],
+   "quote": "to ratify the town manager appointment of donald farrar to interim local inspector"
+  },
+  {
+   "topic": "Bond anticipation note, Middle/High School construction loan",
+   "resolution": "signed",
+   "tags": [
+    "bond",
+    "school construction",
+    "borrowing"
+   ],
+   "quote": "to sign the bond anticipation note for the middle/high school construction loan"
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "minutes approved; accounts payable warrant signed",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "minutes of november 7 and november 20, 2018 were approved."
+  },
+  {
+   "topic": "Action file issue: skate park project",
+   "resolution": "to be scheduled as a future agenda item",
+   "tags": [
+    "skate park",
+    "town land",
+    "taxes"
+   ],
+   "quote": "mr. toale stated he would schedule this as a future agenda item."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports given, no action",
+   "tags": [
+    "committee reports",
+    "stormwater",
+    "charter review",
+    "planning board",
+    "capital planning"
+   ],
+   "quote": "ms. luck attended the central ma regional stormwater coalition, steering committee meeting,"
+  },
+  {
+   "topic": "Joint meeting: Old Primary School and Brooks House (APDC, Historical Commission, Historical Society)",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "historic preservation",
+    "APD bylaw",
+    "Old Primary School",
+    "Brooks House",
+    "town offices",
+    "joint meeting"
+   ],
+   "quote": "the apdc therefore recommends that the board of selectmen seek to lease or sell these two properties as soon as possible."
+  },
+  {
+   "topic": "Board meeting schedule",
+   "resolution": "reviewed, no action",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "mr. toale reviewed the board's upcoming meeting schedule."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "APDC letter to the Board of Selectmen, signed by Richard McGrath, APDC Chair (undated in minutes)",
+   "where": "text",
+   "quote": "the architectural preservation district commission is charged with preserving historical structures in the"
+  },
+  {
+   "name": "Architectural Preservation District (APD) bylaw",
+   "where": "text",
+   "quote": "town is in violation of the apd bylaw with respect to the old primary school."
+  },
+  {
+   "name": "APD Guidelines, page 18 (Demolition by Neglect)",
+   "where": "text",
+   "quote": "page 18 of the apd guidelines explains more about demolition by neglect and how the ap dc should handle the situation when it arises."
+  },
+  {
+   "name": "Tappe Study",
+   "where": "text",
+   "quote": "arising from the tappe study, that was not going to work"
+  },
+  {
+   "name": "Request for Proposals (prior RFP for town buildings)",
+   "where": "text",
+   "quote": "we did put out a request for proposals, but it did not have any incentives"
+  },
+  {
+   "name": "Accounts payable warrant, $225,033.77",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $225,033.77 was signed."
+  },
+  {
+   "name": "Bond anticipation note, Middle/High School construction loan",
+   "where": "text",
+   "quote": "to sign the bond anticipation note for the middle/high school construction loan"
+  },
+  {
+   "name": "Minutes of November 7 and November 20, 2018",
+   "where": "text",
+   "quote": "minutes of november 7 and november 20, 2018 were approved."
+  },
+  {
+   "name": "Capital Planning report",
+   "where": "text",
+   "quote": "mr. mcquaid reported capital planning met and a full report will be presented next week."
+  }
+ ],
+ "tags": [
+  "appointments",
+  "police reserve officer",
+  "building inspector",
+  "bond anticipation note",
+  "warrants",
+  "minutes",
+  "skate park",
+  "committee reports",
+  "historic preservation",
+  "APD bylaw",
+  "Old Primary School",
+  "Brooks House",
+  "town offices",
+  "TC Passios",
+  "joint meeting",
+  "2019"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

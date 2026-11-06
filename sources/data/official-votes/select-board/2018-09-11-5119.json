@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-09-11",
  "docid": "5119",
@@ -12,31 +12,398 @@
  },
  "votes": [
   {
-   "motion": "To offer multiple conceptual designs for Town Hall consolidation instead of pursuing a single plan",
+   "motion": "Offer more than one conceptual Town Hall plan for the Town to consider and take a more bifurcated approach.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
-   "outcome": "failed 1-4",
+   "outcome": "failed, 1 in favor (Adams), 4 against",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: p. luck that we offer more than one conceptual town hall plan for the town to consider and take a more bifurcated approach discussion: mr. mcquaid believed this would set them back another year in order to get more funding for more designs. ms. adams stated some components of this popped up at previous town meetings and was voted down, she would be willing to give it a year. if we bring these things forward and they are voted no, we are wasting that same year. mr. ebersole was not in favor of this motion. mr. toale believed they have investigated this and brought several concepts forward and been asked with support to get more data. he believed we have gotten enough data at this point for this particular concept. he stated he would not support the motion. vote: 1 in favor (adams), 4 against"
+   "quote": "motion: k. adams 2nd: p. luck that we offer more than one conceptual town hall plan for the town to consider and take a more bifurcated approach"
   },
   {
-   "motion": "To approve the conceptual plan for Town Hall consolidation and request design options that eliminate the unallocated space, record storage space, and rear section",
+   "motion": "Approve the conceptual plan and request added options of eliminating the unallocated space and the record storage space and moving areas to eliminate the space behind it.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to approve the conceptual plan and request added options of eliminating the unallocated space and the record storage space and moving areas to eliminate the space behind it discussion: ms. adams expressed concern about student safety/security and the traffic flow with the proposal at t c passios. she did not feel there was enough research into the impact of using this building 10- 15 years in the future. ms. luck noted the old primary school is not on this campus; we do not have to put a school on this property. ms. adams stated there are a lot of costs associated with putting a school in a different location. vote: 4 in favor, 1 against (adams)"
+   "quote": "motion: r. ebersole 2nd: d. mcquaid to approve the conceptual plan and request added options of eliminating the unallocated space",
+   "quote_taken_from_text": true
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
-   "outcome": "passed unanimously",
+   "outcome": "passed, all in favor",
    "procedural": true,
    "quote": "motion: r.ebersole to adjourn the meeting 2nd: d.mcquaid vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted text from macOS Vision",
- "cost_usd": 0.17539100000000002
+ "note": "OCR text from a scanned page set with several garbled passages: the page 4 five-year cost table totals and the page 5 per-building table do not map cleanly to buildings, so those figures are recorded as printed with the caveat. The attendance line for Adam Burney is ambiguous (it may be a second title for Adam Costa or a separate Land Use Director). The presenter's surname appears as Lieneck, Leneck and Leineck; Lieneck is used as first printed. Vote on the Town Hall alternate plan is printed as '1 in Favor (Adams), 4 Against' with no mover-set label beyond the motion block. No vote recorded for accepting the August 21 minutes or for signing the AP warrant.",
+ "cost_usd": 0.009533119999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid,"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel, land use director"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director (as the line reads; OCR layout ambiguous)",
+   "status": "present",
+   "quote": "adam costa, town counsel, land use director adam burney"
+  },
+  {
+   "name": "Paul Lieneck",
+   "role": "of Haynes, Leneck & Smith (presenter)",
+   "status": "present",
+   "quote": "paul lieneck of haynes, leneck & smith reported lappe associates had previously done a town"
+  },
+  {
+   "name": "Jerry Beck",
+   "role": "of The Revolving Museum",
+   "status": "present",
+   "quote": "ms. lemieux introduced jerry beck of the revolving museum to provide a brief overview of what they"
+  },
+  {
+   "name": "Senator Dean Tran",
+   "role": "Senator",
+   "status": "present",
+   "quote": "senator dean tran gave an update on the earmarks that were submitted through the state legislature."
+  },
+  {
+   "name": "Brian Rossi",
+   "role": "resident, 715 Northfield Road",
+   "status": "present",
+   "quote": "brian rossi, 715 northfield road, spoke about illegal dumping at the donation box area at the"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "resident, 82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, stated it was very important the town residents have a feeling of"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "resident, Island Road",
+   "status": "present",
+   "quote": "dave macdonald, island road, stated he works in retail construction."
+  },
+  {
+   "name": "Helen Obermeyer Simmons",
+   "role": "resident, 323 Northfield Road",
+   "status": "present",
+   "quote": "helen obermeyer simmons, 323 northfield road, stated jerry beck is a visionary and it would be great"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minutes preparer)",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of August 21, 2018 accepted with a correction (\"more\" added on the second to last page under the Quarterly Financial Report); no motion recorded.",
+   "quote": "minutes of august 21, 2018 were accepted with a correction (\"more\" added) on the second to last page"
+  },
+  {
+   "decision": "Mr. Leineck (Haynes, Leneck & Smith) will return with the requested Town Hall designs at a later date.",
+   "quote": "mr. leineck will return with the requested designs at a later date."
+  },
+  {
+   "decision": "Ms. Lemieux will look into adding a place on the Town website for residents to submit photos.",
+   "quote": "ms. lemieux will look into that. she added photos taken around the community would be welcomed."
+  },
+  {
+   "decision": "School Committee Chair Sroka will contact Mr. Toale to arrange a meeting time on the athletic field user fees.",
+   "quote": "school committee chair sroka will contact mr. toale to arrange a meeting time."
+  },
+  {
+   "decision": "Chair stated any short-term use of TC Passios space would be up to the Town Manager; long-term use is built into the planning process (statement, no vote).",
+   "quote": "mr. toale stated any short term use would be up to the town manager; long term it gets built into our"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Turkey Hill Elementary asbestos removal earmark (state FY19 budget)",
+   "what_was_recorded": "Senator Tran reported securing asbestos removal funding for Turkey Hill Elementary and said he will work to have it awarded by the end of the calendar year.",
+   "figures_as_printed": [
+    "$130,000"
+   ],
+   "quote": "we were able to secure the turkey hill elementary school asbestos removal funding in the amount of $130,000"
+  },
+  {
+   "topic": "Capital Facility Bond Bill projects",
+   "what_was_recorded": "Senator Tran listed Capital Facility Bond Bill projects secured for the Town: Eagle House HVAC, Town Hall handicap ramp, Public Works renovations, Public Library LED lighting, and a feasibility/cost estimation study for the Old Primary School.",
+   "figures_as_printed": [
+    "$25,000",
+    "$27,000",
+    "$65,000",
+    "$40,000",
+    "$40,000"
+   ],
+   "quote": "under the capital facility bond bill we were able to secure the following projects; $25,000 for hvac"
+  },
+  {
+   "topic": "Economic Development Bond Bill projects",
+   "what_was_recorded": "Senator Tran listed Economic Development Bond Bill amounts for downtown facades and streetscapes, redevelopment of the gas station at 925 Massachusetts Avenue, and a community service kitchen.",
+   "figures_as_printed": [
+    "$450,000",
+    "$300,000",
+    "$250,000"
+   ],
+   "quote": "under the economic development bond bill, $450,000 to revitalize the facades and streetscapes"
+  },
+  {
+   "topic": "Eagle House Old Fashioned Ham and Bean supper prices",
+   "what_was_recorded": "Mr. Toale announced supper prices; proceeds benefit Eagle House Senior Community Center programs.",
+   "figures_as_printed": [
+    "$8.00",
+    "$5.00"
+   ],
+   "quote": "the cost is $8.00 for adults and $5.00 for children."
+  },
+  {
+   "topic": "Five-year maintenance/repair costs for five buildings (Vertex assessments)",
+   "what_was_recorded": "Ms. Lemieux reported Town Hall five-year costs and how much is already budgeted in FY19 or covered by grant; the Five Year Costs table totals were printed but the OCR layout is garbled.",
+   "figures_as_printed": [
+    "$184,945",
+    "$32,575",
+    "$34,710",
+    "$431,715",
+    "$376,303",
+    "$1,875,619",
+    "$3,661,464",
+    "$6,530,046"
+   ],
+   "quote": "ms. lemieux pointed out that out of the $184,945 for town hall, $32,575 is currently budgeted in the"
+  },
+  {
+   "topic": "Ritter Memorial condensing boilers funded by Green Communities grant",
+   "what_was_recorded": "Ms. Lemieux said the Green Communities grant will pay to replace Ritter condensing boilers, reducing listed costs.",
+   "figures_as_printed": [
+    "$34,710"
+   ],
+   "quote": "$34,710 will be paid out of the green communities grant to replace condensing boilers in the ritter"
+  },
+  {
+   "topic": "Maintenance and repairs already in budget or grants",
+   "what_was_recorded": "Listed items: Town Hall chimney repair, Town Hall 2nd floor restroom in FY19 budget, Town Hall handicap ramp, Old Primary School asbestos test and feasibility study, Turkey Hill asbestos earmark, Ritter boilers, and an additional FY19 operating budget amount for deferred maintenance.",
+   "figures_as_printed": [
+    "$5,575",
+    "$9,000",
+    "$27,000",
+    "$40,000",
+    "$130,000",
+    "$34,710",
+    "$40,000"
+   ],
+   "quote": "town facilities-additional $40,000 in fy19 operating budget to address deferred maintenance"
+  },
+  {
+   "topic": "Building-by-building figures for maintenance (OCR table on page 5)",
+   "what_was_recorded": "A table of per-building amounts for Town Hall, Ritter, Brooks, Old Primary and TC Passios was printed; the OCR text is too garbled to map each figure to a building reliably.",
+   "figures_as_printed": [
+    "$50,863.25",
+    "$25,957.87",
+    "$4,778.30",
+    "$1,348.97",
+    "$65,500.57",
+    "$37,209.66",
+    "$0.00",
+    "$4,750.00",
+    "$0.00",
+    "$86,435.56",
+    "$13,653.59",
+    "$28.30",
+    "-$20,934.99"
+   ],
+   "quote": "town hall ritter brooks old primary tc passios $50,863.25 $25,957.87 $4,778.30 $1,348.97 $65,500.57"
+  },
+  {
+   "topic": "Accounts payable warrant signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant.",
+   "figures_as_printed": [
+    "$229,231.94"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $229,231.94"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Thanks for Stillman Country Fair booth",
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "quote": "ms. luck thanked everyone who attended the stillman country fair as well as the volunteers who made"
+  },
+  {
+   "topic": "Photos for new town website",
+   "speaker": "Ms. Adams",
+   "stated_role": "Member",
+   "quote": "ms. adams stated a resident had inquired if people could submit other photos for the new town website."
+  },
+  {
+   "topic": "State earmarks update",
+   "speaker": "Senator Dean Tran",
+   "stated_role": "Senator",
+   "quote": "senator dean tran gave an update on the earmarks that were submitted through the state legislature."
+  },
+  {
+   "topic": "Illegal dumping at donation boxes, Lunenburg Crossing",
+   "speaker": "Brian Rossi",
+   "stated_role": "resident, 715 Northfield Road",
+   "quote": "brian rossi, 715 northfield road, spoke about illegal dumping at the donation box area at the"
+  },
+  {
+   "topic": "Cost of facilities problem and end result",
+   "speaker": "Dave Rodgers",
+   "stated_role": "resident, 82 Highland Street",
+   "quote": "dave rodgers, 82 highland street, stated it was very important the town residents have a feeling of"
+  },
+  {
+   "topic": "School construction cost and other towns' process",
+   "speaker": "Dave MacDonald",
+   "stated_role": "resident, Island Road",
+   "quote": "dave macdonald, island road, stated he works in retail construction."
+  },
+  {
+   "topic": "Revolving Museum and short-term space use",
+   "speaker": "Helen Obermeyer Simmons",
+   "stated_role": "resident, 323 Northfield Road",
+   "quote": "helen obermeyer simmons, 323 northfield road, stated jerry beck is a visionary and it would be great"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action; opened with Pledge, moment of silence, public comment and senator's earmark update",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance."
+  },
+  {
+   "topic": "Initial conceptual design for consolidated municipal offices at TC Passios",
+   "resolution": "presented by Haynes, Leneck & Smith; later motion on conceptual plan",
+   "quote": "presentation of initial conceptual design for consolidated municipal offices at the tc passios building"
+  },
+  {
+   "topic": "Requests for use of space at TC Passios (Shapiro SEBC, Revolving Museum)",
+   "resolution": "discussed; Town Manager to coordinate; no vote",
+   "quote": "requests for use of space at the tc passios building:"
+  },
+  {
+   "topic": "Revolving Museum overview",
+   "resolution": "presented; no action",
+   "quote": "ms. lemieux introduced jerry beck of the revolving museum to provide a brief overview of what they"
+  },
+  {
+   "topic": "Town Facilities Workshop",
+   "resolution": "presented and discussed; no action recorded",
+   "quote": "ms. lemieux presented the following:"
+  },
+  {
+   "topic": "Town Hall conceptual plan motions",
+   "resolution": "alternate-plan motion failed 1-4; approve conceptual plan with added options passed 4-1; designer to return",
+   "quote": "mr. leineck will return with the requested designs at a later date."
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes of Aug 21 accepted with correction; AP warrant signed",
+   "quote": "6. minutes/ warrants/ action file issues"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received; no action",
+   "quote": "ms. adams reported the planning board continued and then closed their hearing for settlers solar."
+  },
+  {
+   "topic": "Public comment (second round)",
+   "resolution": "no action; comments on TC Passios, school fields, facilities costs",
+   "quote": "dave rodgers, 82 highland street, stated it was very important the town residents have a feeling of"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:18 p.m.",
+   "quote": "the meeting adjourned at 9:18 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Five Year Costs for Five Buildings chart (Vertex study/assessment)",
+   "where": "text",
+   "quote": "five year costs for five buildings"
+  },
+  {
+   "name": "Vertex Property Condition Assessments (Town Hall, Ritter, Passios, old Primary)",
+   "where": "text",
+   "quote": "presentation by vertex on the property condition assessments for"
+  },
+  {
+   "name": "Haynes, Leneck & Smith proposal (conceptual design)",
+   "where": "text",
+   "quote": "you can accept haynes, leineck & smith's proposal tonight"
+  },
+  {
+   "name": "Town Facilities Workshop discussion topics outline",
+   "where": "text",
+   "quote": "ms. lemieux presented the following:"
+  }
+ ],
+ "tags": [
+  "town hall",
+  "TC Passios building",
+  "municipal offices",
+  "facilities",
+  "capital plan",
+  "state earmarks",
+  "bond bills",
+  "school fields",
+  "Revolving Museum",
+  "public comment",
+  "minutes",
+  "Select Board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

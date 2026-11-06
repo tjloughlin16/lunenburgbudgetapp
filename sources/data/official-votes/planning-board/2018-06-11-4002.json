@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-06-11",
  "docid": "4002",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "close the Hearing",
+   "motion": "Close the public hearing on 1054 Northfield Road.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -21,6 +21,99 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0902495
+ "note": "Text is a single page of minutes with OCR noise in the header. The DPW email quotation is cut off mid-sentence, and the minutes record no board deliberation, conditions or decision on the tree-removal and driveway request, only the motion to close the hearing. No dollar figures appear. The minutes do not show approval status.",
+ "cost_usd": 0.00275702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "board member t. cole disclosed that he owns property at 1083 northfield road."
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Brian Burns",
+   "role": "Owner/Applicant",
+   "status": "present",
+   "quote": "owners/applicants brian and erica burns made the presentation."
+  },
+  {
+   "name": "Erica Burns",
+   "role": "Owner/Applicant",
+   "status": "present",
+   "quote": "owners/applicants brian and erica burns made the presentation."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: tree cutting and driveway at 1054 Northfield Road (Map 036, Parcel 0032)",
+   "resolution": "hearing closed 6:48 PM; no board decision recorded in these minutes",
+   "quote": "the hearing was to hear and discuss a request for the cutting of trees and construction of a driveway at 1054 northfield road",
+   "tags": [
+    "scenic road",
+    "tree removal",
+    "stone wall",
+    "driveway",
+    "public hearing",
+    "Northfield Road"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scenic Road Application",
+   "where": "list",
+   "quote": "documents used at meeting: scenic road application"
+  },
+  {
+   "name": "Electronic mail from the DPW Director/Tree Warden",
+   "where": "text",
+   "quote": "a. burney noted an electronic mail from the dpw director/tree warden stating"
+  }
+ ],
+ "tags": [
+  "public hearing",
+  "scenic road",
+  "tree removal",
+  "shade trees",
+  "stone wall",
+  "driveway",
+  "Northfield Road"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-08-21",
  "docid": "5117",
@@ -12,82 +12,599 @@
  },
  "votes": [
   {
-   "motion": "Approve the Special One Day Alcohol License for Stillman Country Fair on September 8 with rain date of September 15",
-   "moved_by": "R. Ebersole",
+   "motion": "Approve the Special One Day Alcohol License for Stillman Country Fair on September 8h with a rain date of September 15th, as amended so the license is not released until the other documents are provided.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r.ebersole 2nd: d. mcquaid to approve the special one day alcohol license for stillman country fair on september 8h with a rain date of september 15th discussion: mr. eb",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to approve the special one day alcohol license for stillman country fair on september 8h with a rain date of september 15th"
   },
   {
-   "motion": "Appoint Barbara Brown to the Council on Aging with term to expire June 30, 2021",
-   "moved_by": "R. Ebersole",
+   "motion": "Motion on hours raised by Mr. Lorenzo and Mr. Ayers (motion text not legible in the extract; page 2 starts mid-discussion).",
+   "outcome": "passed, 4 in favor, 1 opposed (Adams)",
+   "procedural": false,
+   "quote": "vote: 4 in favor, 1 opposed (adams)"
+  },
+  {
+   "motion": "Appoint Barbara Brown to the Council on Aging with a term to expire June 30, 2021.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r.ebersole 2nd: d. mcquaid to appoint barbara brown to the council on aging with a term to expire june 30, 2021 vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint barbara brown to the council on aging with a term to expire june 30, 2021"
   },
   {
-   "motion": "Extend permit #32 until December 31, 2018 and require plans for portion to continue mining and closure plan for unpermitted area on Map 146, parcel 8",
+   "motion": "Extend Powell Sand & Gravel permit #32 to December 31, 2018, requiring a plan for the mined portion and a closure plan for the unpermitted Map 146, parcel 8 area within three months; amended so the Map 146, parcel 8 closure requirements go into a Planning Board site plan review.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\": d. mcquaid to extend permit #32 until december 31, 2018 and require a plan for the portion of the property that will be continued to be mined and a closure plan for the unpermitted area on map 146, parcel 8, to be submitted within three months discussion: brian marchetti, mccarty engineering, inc., stated after the last meeting he had wanted to meet out there with mr. rhodes to review the pit as it stands now and to see exactly what would be ===page 8=== banking. mr. marchetti prop",
-   "quote_taken_from_text": true
+   "quote": "to extend permit #32 until december 31, 2018 and require a plan for the portion of the property"
   },
   {
-   "motion": "Amend policy Section 1.05 Standards of Conduct to change word 'team' to 'Board' and 'decisions' to 'votes'",
-   "moved_by": "R. Ebersole",
+   "motion": "Strike current section #10 under Procedures for Remote Participation (Section 2.02).",
+   "moved_by": "REbersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to strike current section #10 under procedures for remote participation"
+  },
+  {
+   "motion": "Change the word \"team\" to \"Board\" and \"decisions\" to \"votes\" in the first bulleted line of Section 1.05 Standards of Conduct.",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. ebersole motioned to change the word \"team,\" to \"board,\" and \"decisions\" to \"votes\", in the first bulleted line, mr. mcquaid seconded both changes."
+  },
+  {
+   "motion": "Add the word \"sufficient\" to the Section 1.05 bullet reading \"make decisions only after all sufficient facts on a question have been presented or discussed.\"",
+   "moved_by": "R.Ebersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to add the word \"sufficient\" to the following bullet as follows:"
+  },
+  {
+   "motion": "Approve the listed policy sections as amended tonight (1.05, 1.08, 1.09, 2.01, 2.02, 2.07, 4.19, 5.04, 5.05, 6.01, 7.11), plus the Flag Policy and Chapter 61/61A/61B Policy.",
+   "moved_by": "REbersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the following sections as amended tonight: section 1.05 standards of conduct; section 1.08"
+  },
+  {
+   "motion": "Confirm Jamie Toale as the MPO subregion 3 representative and Kara Minar as the MPO alternate.",
+   "moved_by": "REbersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to confirm the designation of jamie toale as the mpo subregion 3 representative and the mpo alternate"
+  },
+  {
+   "motion": "Approve the Special Town Meeting date on the proposed calendar (motion wording not legible in the extract; OCR garbled).",
+   "moved_by": "R.Ebersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r.ebersole iscussion: ms. adams alad hath lan opecial town meeting mode i was and town fine"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": true,
-   "quote": "mr. ebersole motioned to change the word \"team,\" to \"board,\" and \"decisions\" to \"votes\", in the first bulleted line, mr. mcquaid seconded both changes. vote: all in favor"
-  },
-  {
-   "motion": "Add the word 'sufficient' to policy Section 1.05 bullet: 'make decisions only after all sufficient facts on a question have been presented or discussed'",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r.ebersole 2nd: d. mcquaid to add the word \"sufficient\" to the following bullet as follows: \"make decisions only after all sufficient facts on a question have been presented or discussed;\" vote: all in favor"
-  },
-  {
-   "motion": "Strike current section #10 under Procedures for Remote Participation",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rebersole to strike current section #10 under procedures for remote participation 2ng: d. mcquaid vote: all in favor"
-  },
-  {
-   "motion": "Approve multiple policy sections as amended: Sections 1.05, 1.08, 1.09, 2.01, 2.02, 2.07, 4.19, 5.04, 5.05, 6.01, 7.11, Flag Policy, and Chapter 61/61A/61B Policy",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rebersole 2nd: d. mcquaid to approve the following sections as amended tonight: section 1.05 standards of conduct; section 1.08 meeting procedures; section 1.09 agenda; section 2.01 access to town counsel; section 2.02 remote participation; section 2.07 appointments; section 4.19 gasoline storage-storage of inflammables; section 5.04 toll booth/boot drive policy; section 5.05 disturbances to newly paved roads; section 6.01 boston post cane; section 7.11 cori policy. flag policy, chapter 61/61a/61b policy vote: all in favor"
-  },
-  {
-   "motion": "Confirm designation of Jamie Toale as MPO subregion 3 representative and Kara Minar as MPO alternate",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: rebersole 2nd: d. mcquaid to confirm the designation of jamie toale as the mpo subregion 3 representative and the mpo alternate as kara minar vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r.ebersole to adjourn the meeting the meeting adjourned at 9:58 p.m.",
-   "quote_taken_from_text": true
+   "quote": "motion: r.ebersole to adjourn the meeting"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan; minor OCR errors present in names (REbersole, 2nG, 2rd, 2\\\") preserved as they appear in the scanned minutes.",
- "cost_usd": 0.1710215
+ "dropped_unquoted": 0,
+ "note": "Text is OCR of a scan with gaps: page 1 header is truncated; page 2 opens mid-discussion, so the hours item (Lorenzo/Ayers) has no visible motion text; page 6 opens mid-letter, so the Keating letter's author and reader are not named. Some text is garbled (Special Town Meeting motion, the second on Remote Participation). In the earth removal discussion, positions on permits #14-19, 27-30 and 42 are stated but no motion or vote on them appears in the extract; the only recorded vote is on permit #32. The Stillman vote's amendment is recorded in the text. Vote outcomes are as printed (\"All in Favor\" read as passed).",
+ "cost_usd": 0.01746622,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale stated in accordance with the"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "status": "present",
+   "quote": "mr. ebersole asked if a license was issued on the property last year."
+  },
+  {
+   "name": "D. McQuaid",
+   "status": "present",
+   "quote": "mr. mcquaid seconded the amendment."
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck asked if they have talked to the police chief about details on site that"
+  },
+  {
+   "name": "Ms. Adams",
+   "status": "present",
+   "quote": "ms. adams stated 8:00 p.m. felt kind of late for herself."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "ms. lemieux stated those who drove on chase road (rte. 13) may have noticed that the line striping was done"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director/Town Accountant",
+   "status": "present",
+   "quote": "finance director karen brochu reported total budgeted revenues for fiscal year 2018 were 1.9% higher than our"
+  },
+  {
+   "name": "Julia Stillman",
+   "status": "not stated",
+   "quote": "julia stillman did not present on behalf of the application."
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "barbara brown, 39 carousel lane, has lived in town for 50 years."
+  },
+  {
+   "name": "Mr. Lorenzo",
+   "status": "present",
+   "quote": "mr. lorenzo and mr. ayers thanked the board and exited the meeting."
+  },
+  {
+   "name": "Mr. Ayers",
+   "status": "present",
+   "quote": "mr. lorenzo and mr. ayers thanked the board and exited the meeting."
+  },
+  {
+   "name": "Aidan Moore",
+   "status": "present",
+   "quote": "aidan moore, aidan swift, griffin caiozzo and anthony caiozzo reported on their fundraising progress."
+  },
+  {
+   "name": "Aidan Swift",
+   "status": "present",
+   "quote": "aidan moore, aidan swift, griffin caiozzo and anthony caiozzo reported on their fundraising progress."
+  },
+  {
+   "name": "Griffin Caiozzo",
+   "status": "present",
+   "quote": "aidan moore, aidan swift, griffin caiozzo and anthony caiozzo reported on their fundraising progress."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "status": "present",
+   "quote": "anthony caiozzo, 1091 massachusetts avenue, reported the pace of their fundraising has been accelerating."
+  },
+  {
+   "name": "Greg Roy",
+   "status": "present",
+   "quote": "greg roy, 105 chestnut street, stated we need to develop what we have so we can create a construction and"
+  },
+  {
+   "name": "Commissioner Rhodes",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "commissioner rhodes reported on 395 goodrich street (permit# 32)."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "McCarty Engineering, Inc.",
+   "status": "present",
+   "quote": "brian marchetti, mccarty engineering, inc., stated after the last meeting he had wanted to"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Section 1.13 Designer Selection Procedures left as is until another dedicated place for it is determined.",
+   "quote": "it was decided to leave it as is until another dedicated place for it is determined."
+  },
+  {
+   "decision": "Section 2.07 Appointments, Section 4.02 BYOB and Section 4.03 One Day Liquor Licenses tabled until a liquor licensing workshop is held.",
+   "quote": "section 2.07 appointments; section 4.02 byob; and section 4.03 one day liquor licenses; were tabled until"
+  },
+  {
+   "decision": "Council on Aging contract with MART postponed to the September 4 meeting at the Town Manager's request.",
+   "quote": "she requested to postpone this item until the september 4* meeting."
+  },
+  {
+   "decision": "Board directed the skate park group to check in periodically to keep the Board apprised.",
+   "quote": "mr. toale requested the group check in periodically to keep the board apprised."
+  },
+  {
+   "decision": "Town Manager asked IT Director Steve Malandrinos to attend the next Selectmen's meeting to discuss features of the new town website.",
+   "quote": "i have asked it director steve malandrinos to"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Skate park fundraising totals",
+   "what_was_recorded": "Skate park group reported $3,000 newly raised, $18,000 in cash donations and $23,000 in-kind donations to date.",
+   "figures_as_printed": [
+    "$3,000",
+    "$18,000",
+    "$23,000"
+   ],
+   "quote": "they have a total of $18,000 in cash donations and $23,000 in-kind donations."
+  },
+  {
+   "topic": "Skate park conceptual design price ranges",
+   "what_was_recorded": "Concept A by Pilla Designs was priced in the $400,000 range, split between in-kind and cash; a Spohn Ranch design was in the $300,000 range.",
+   "figures_as_printed": [
+    "$400,000",
+    "$200,000",
+    "$200,000",
+    "$300,000"
+   ],
+   "quote": "the first one (concept a) by pilla designs was in the $400,000 range ($200,000 in-kind and $200,000 in cash)."
+  },
+  {
+   "topic": "FY2018 revenues versus estimates",
+   "what_was_recorded": "Total budgeted revenues for FY2018 came in 1.9% above estimates, about $746,058, and expenditures came in 1.7% below original estimates.",
+   "figures_as_printed": [
+    "1.9%",
+    "$746,058",
+    "1.7%"
+   ],
+   "quote": "reported total budgeted revenues for fiscal year 2018 were 1.9% higher than our estimates, which translates into $746,058"
+  },
+  {
+   "topic": "Appropriation and assessment closeouts",
+   "what_was_recorded": "Appropriation and assessment closeouts totalled $689,738, including assessments under the cherry sheet estimates.",
+   "figures_as_printed": [
+    "$689,738",
+    "$290,875"
+   ],
+   "quote": "we had appropriation and assessment closeouts of $689,738."
+  },
+  {
+   "topic": "Local receipts variance",
+   "what_was_recorded": "Local receipts came in $527,353 above estimate; motor vehicle excise collected $207,186 more and penalties and interest $135,040 more than estimated.",
+   "figures_as_printed": [
+    "$527,353",
+    "$207,186",
+    "$135,040"
+   ],
+   "quote": "we collected $207,186 more than estimated in motor vehicle excise taxes."
+  },
+  {
+   "topic": "Tax lien revenue",
+   "what_was_recorded": "Aggressive tax lien collection produced $511,238 in tax lien revenue.",
+   "figures_as_printed": [
+    "$511,238"
+   ],
+   "quote": "we received $511,238 in tax lien revenue."
+  },
+  {
+   "topic": "State aid shortfall",
+   "what_was_recorded": "State aid came in 98.4% or $137,375 less than estimate, mostly the unpaid 40S (Smart Growth) reimbursement.",
+   "figures_as_printed": [
+    "98.4%",
+    "$137,375"
+   ],
+   "quote": "as far as state aid, we received 98.4% or $137,375 less than the state aid estimate."
+  },
+  {
+   "topic": "Assessments under cherry sheet estimates",
+   "what_was_recorded": "Assessments were $290,875 less than the cherry sheet estimates.",
+   "figures_as_printed": [
+    "$290,875"
+   ],
+   "quote": "we actually had $290,875 less in assessments less than the cherry sheet estimates."
+  },
+  {
+   "topic": "Departmental closeouts",
+   "what_was_recorded": "General Government closeouts $22,698, Public Safety $86, 977, Education $50,302, and Health, Council on Aging and Veterans $37,638.",
+   "figures_as_printed": [
+    "$22,698",
+    "$86, 977",
+    "$50,302",
+    "$37,638"
+   ],
+   "quote": "on the general government side there were appropriation closeouts of $22,698"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$123,479.62",
+    "$581,522.45",
+    "$403,258.47"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $123,479.62"
+  },
+  {
+   "topic": "Cost of survey for earth removal permit #32",
+   "what_was_recorded": "Engineer said a survey of the sixteen acres would cost thousands of dollars, so an aerial photo was proposed instead.",
+   "figures_as_printed": [
+    "thousands of dollars"
+   ],
+   "quote": "as a survey for the sixteen acres would run into the thousands of dollars."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "topic": "ADA compliance and future meeting location",
+   "quote": "ms. adams stated she got an email today from town manager lemieux regarding ada compliance for the town"
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "Town Manager",
+   "topic": "Chase Road (Rte. 13) line striping and surface problem",
+   "quote": "ms. lemieux stated those who drove on chase road (rte. 13) may have noticed that the line striping was done"
+  },
+  {
+   "speaker": "Greg Roy",
+   "stated_role": "105 Chestnut Street",
+   "topic": "Skate park construction and maintenance budget",
+   "quote": "greg roy, 105 chestnut street, stated we need to develop what we have so we can create a construction and"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (ADA compliance, Chase Road striping)",
+   "resolution": "no action; informational",
+   "quote": "ms. adams stated she got an email today from town manager lemieux regarding ada compliance for the town",
+   "tags": [
+    "ADA",
+    "meeting location",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Special One Day Alcohol License, Stillman Country Fair",
+   "resolution": "approved with condition (license not released until documents provided)",
+   "quote": "to approve the special one day alcohol license for stillman country fair on september 8h with a rain date of september 15th",
+   "tags": [
+    "liquor license",
+    "event"
+   ]
+  },
+  {
+   "topic": "Council on Aging vacancy interview, Barbara Brown",
+   "resolution": "appointed to term ending June 30, 2021",
+   "quote": "council on aging vacancy interview- term to expire june 30, 2021",
+   "tags": [
+    "appointment",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Hours item raised by Mr. Lorenzo and Mr. Ayers",
+   "resolution": "voted 4-1 (start of item cut off in extract)",
+   "quote": "mr. lorenzo and mr. ayers thanked the board and exited the meeting.",
+   "tags": [
+    "hours"
+   ]
+  },
+  {
+   "topic": "Skate Park Committee update",
+   "resolution": "no action; board asked for periodic check-ins",
+   "quote": "aidan moore, aidan swift, griffin caiozzo and anthony caiozzo reported on their fundraising progress.",
+   "tags": [
+    "skate park",
+    "fundraising",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Town Manager report (Summer Street, website, grants, TC Passios, announcements)",
+   "resolution": "informational",
+   "quote": "summer street road reconstruction project update from massdot:",
+   "tags": [
+    "Summer Street",
+    "MassDOT",
+    "website",
+    "grants",
+    "TC Passios",
+    "dispatch"
+   ]
+  },
+  {
+   "topic": "Earth removal permit renewals (Powell and Keating)",
+   "resolution": "Permit #32 extended to Dec 31, 2018; other permits: no recorded vote in extract",
+   "quote": "ms. lemieux reported the board met earlier this month and continued discussion to tonight.",
+   "tags": [
+    "earth removal",
+    "Keating",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Powell Sand & Gravel earth removal permit #32 and Map 146 parcel 8",
+   "resolution": "extended three months; closure requirements referred to Planning Board site plan review",
+   "quote": "commissioner rhodes reported on 395 goodrich street (permit# 32).",
+   "tags": [
+    "earth removal",
+    "Goodrich Street"
+   ]
+  },
+  {
+   "topic": "Selectmen policies review (Sections 1.05 to 7.11)",
+   "resolution": "several sections approved as amended; 2.07, 4.02, 4.03 tabled; 1.13 left as is; others pending",
+   "quote": "review and possible votes to amend the following selectmen policies:",
+   "tags": [
+    "policies",
+    "standards of conduct",
+    "CORI",
+    "meeting procedures"
+   ]
+  },
+  {
+   "topic": "Flag Policy and Chapter 61/61A/61B first refusal policy",
+   "resolution": "approved as amended",
+   "quote": "review new flag policy: mr. toale requested the policy apply to united states flags:",
+   "tags": [
+    "flag policy",
+    "Chapter 61",
+    "first refusal"
+   ]
+  },
+  {
+   "topic": "MPO subregion 3 representative and alternate",
+   "resolution": "confirmed Jamie Toale as representative and Kara Minar as alternate",
+   "quote": "email from the mrpc transportation coordinator stating that ayer, harvard, lunenburg and shirley need to vote",
+   "tags": [
+    "MPO",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Council on Aging contract with MART",
+   "resolution": "postponed to September 4 meeting",
+   "quote": "ms. lemieux reported legal counsel is reviewing the contract.",
+   "tags": [
+    "MART",
+    "contract",
+    "Council on Aging"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting date",
+   "resolution": "approved",
+   "quote": "discussion and vote on special town meeting date",
+   "tags": [
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "minutes of August 7, 2018 signed; warrants signed; no action file issues",
+   "quote": "the board signed minutes of august 7, 2018.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational",
+   "quote": "ms. luck reported the storm water task force is going to host the next meeting",
+   "tags": [
+    "stormwater",
+    "school website",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Department reports: 4th quarter financial report",
+   "resolution": "informational",
+   "quote": "department reports- 4' quarter financial report",
+   "tags": [
+    "finance",
+    "FY2018",
+    "revenues"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "informational",
+   "quote": "mr. toale reviewed the upcoming meeting schedule for september 4, 11, 18, 2018.",
+   "tags": [
+    "schedule",
+    "workshops"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:58 p.m.",
+   "quote": "the meeting adjourned at 9:58 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed calendar (in the packet) for Special Town Meeting date",
+   "where": "text",
+   "quote": "mr. toale referred the board to the proposed calendar in the packet."
+  },
+  {
+   "name": "Keating Company letter requesting one-year renewal of eleven earth removal permits (undated)",
+   "where": "text",
+   "quote": "accordingly, keating respectfully asks that you renew for one year in the customary"
+  },
+  {
+   "name": "Draft new earth removal bylaw presented by Land Use Director Adam Burney",
+   "where": "text",
+   "quote": "keating was encouraged by land use director adam burney's workshop presentation of the draft new bylaw that he"
+  },
+  {
+   "name": "Earth Removal Ordinance",
+   "where": "text",
+   "quote": "as enacted, the purpose of the current earth removal ordinance"
+  },
+  {
+   "name": "Building Commissioner's earth removal permit recommendations",
+   "where": "text",
+   "quote": "permit #28-on the westerly side of reservoir road near round road containing an area of"
+  },
+  {
+   "name": "Memorandum from Executive Assistant Peterson on remote participation",
+   "where": "text",
+   "quote": "there is a memorandum from executive assistant peterson concerning remote participation that is required by the"
+  },
+  {
+   "name": "Suggested edits to Selectmen policies following the workshop",
+   "where": "text",
+   "quote": "ms. lemieux referred the board to the suggested edits following the workshop on policies on"
+  },
+  {
+   "name": "Flag Policy (Town of Lunenburg)",
+   "where": "text",
+   "quote": "review new flag policy: mr. toale requested the policy apply to united states flags:"
+  },
+  {
+   "name": "MGL Chapter 61, 61A, 61B First Refusal Procedure",
+   "where": "text",
+   "quote": "mgl chapter 61, 61a, 61b first refusal procedure"
+  },
+  {
+   "name": "MRPC email on MPO subregion 3 representative vote",
+   "where": "text",
+   "quote": "email from the mrpc transportation coordinator stating that ayer, harvard, lunenburg and shirley need to vote"
+  },
+  {
+   "name": "Department Reports - 4th Quarter Financial Report (FY2018)",
+   "where": "text",
+   "quote": "department reports- 4' quarter financial report"
+  },
+  {
+   "name": "MassDOT update on Summer Street Road Reconstruction Project",
+   "where": "text",
+   "quote": "summer street road reconstruction project update from massdot:"
+  },
+  {
+   "name": "Skate park sample conceptual designs",
+   "where": "text",
+   "quote": "they presented some sample skate park conceptual designs."
+  }
+ ],
+ "tags": [
+  "earth removal",
+  "liquor license",
+  "appointments",
+  "selectmen policies",
+  "skate park",
+  "finance",
+  "MassDOT",
+  "town website",
+  "MPO",
+  "Town Meeting",
+  "council on aging",
+  "FY2018 close-out"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. toale referred the board to the proposed calendar in the packet."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,498 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board Meeting",
+ "meeting_date": "2018-02-12",
+ "video_id": "BvDd7iAPByQ",
+ "video_url": "https://www.youtube.com/watch?v=BvDd7iAPByQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2018-02-12-BvDd7iAPByQ.json",
+  "sha256": "92529f49d40bc5439381f0e8799942cfa5a29562aaa70c79555479846d39258b",
+  "caption_lines": 221,
+  "segments": 1659
+ },
+ "recording": {
+  "duration_s": 4720,
+  "duration": "1:18",
+  "spoken_chars": 59543,
+  "words_approx": 9923
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02122018-3981",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2018-02-12-agenda-3981.txt",
+   "path": "sources/meetings/planning-board/2018-02-12-agenda-3981.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122018-3981",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2018-02-12-minutes-3981.txt",
+   "path": "sources/meetings/planning-board/2018-02-12-minutes-3981.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T22:19:33Z",
+  "cost_usd": 0.2400733
+ },
+ "minutes": {
+  "headline": "Planning Board approved a golf course land swap and a third driveway at 40 Pioneer Drive.",
+  "summary": "The board approved an ANR plan swapping land between the Settlers Crossing golf course and an abutting owner. It closed the public hearing and approved a modified site plan restoring a third driveway at 40 Pioneer Drive. It heard committee and director reports, went through the draft zoning bylaw changes (marijuana, Summer Street use table) headed for Town Meeting, and moved the March 12 meeting to March 19 because of caucus night.",
+  "attendees": [
+   {
+    "name_as_heard": "mr. chairman",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Adam",
+    "role": "planning director"
+   },
+   {
+    "name_as_heard": "Marjorie",
+    "role": "planning office staff"
+   },
+   {
+    "name_as_heard": "mr. Barrett",
+    "role": "member"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "economic-development",
+   "housing",
+   "planning-and-zoning",
+   "public-safety",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 175,
+    "motion": "Approve the ANR plan for 994 Northfield Road (golf course parcel swap)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1009,
+    "motion": "Close the public hearing for 40 Pioneer Drive",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1122,
+    "motion": "Approve the site plan modification for 40 Pioneer Drive, carrying over all original conditions except the hydrant condition and the existing-driveway condition",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3876,
+    "motion": "Reschedule the March 12 meeting to March 19",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4700,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1359,
+    "topic": "Stormwater best management practices cost estimates",
+    "what_was_said": "Consultants will propose designs with a cost estimate for each practice so the town can base capital budgeting on them.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1567,
+    "topic": "Green Communities grant round",
+    "what_was_said": "The next grant round has a March deadline, and grant funds cannot buy street lights but can pay to upgrade them to LED after purchase.",
+    "figures_as_heard": [
+     "March 9th"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3827,
+    "decision": "Board agreed to hold the March 12 meeting on March 19 instead; the amended schedule is Feb 26, Mar 19 and Mar 26."
+   },
+   {
+    "t": 4410,
+    "decision": "Board favored a workshop meeting every other month, with dates to be decided at the next meeting."
+   },
+   {
+    "t": 3384,
+    "decision": "Public hearing on the zoning bylaw package tentatively set for March 26, likely as three articles."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 64,
+    "topic": "Roll call and public comment",
+    "resolution": "none offered",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 64,
+    "t_end": 307,
+    "topic": "ANR plan, 994 Northfield Road golf course parcel swap",
+    "resolution": "voted, approved",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 307,
+    "t_end": 1166,
+    "topic": "Public hearing, 40 Pioneer Drive site plan modification (third driveway)",
+    "resolution": "voted, approved with conditions carried over",
+    "tags": [
+     "planning-and-zoning",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1166,
+    "t_end": 1274,
+    "topic": "Minutes approval",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1274,
+    "t_end": 1612,
+    "topic": "Committee reports (stormwater, charter review, Green Communities)",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 1612,
+    "t_end": 2265,
+    "topic": "Director's items: economic development, senior housing, solar, survey",
+    "resolution": "informational",
+    "tags": [
+     "economic-development",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 2265,
+    "t_end": 3635,
+    "topic": "Draft zoning bylaw: marijuana, Summer Street uses, article structure",
+    "resolution": "no resolution; public hearing set tentatively",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3635,
+    "t_end": 3963,
+    "topic": "Rescheduling March 12 meeting",
+    "resolution": "voted",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 3963,
+    "t_end": 4390,
+    "topic": "Marijuana and solar zoning priorities",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4390,
+    "t_end": 4712,
+    "topic": "Board concerns: workshops, chairs meeting, town counsel hours, adjournment",
+    "resolution": "voted adjourn",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Captions garbled during the minutes approval, so whether the minutes were formally approved is not clear.",
+   "Vote counts are not stated for any vote."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 693,
+    "kind": "safety",
+    "about": "Fire chief's concern about how old and new sprinkler systems will work together in the expanded building.",
+    "who": "a member and the applicant's representative",
+    "words_as_heard": "the concerns that the fire chief have revolve around how the two systems play together and what happens when an old system is merged with a new system"
+   },
+   {
+    "t": 544,
+    "kind": "safety",
+    "about": "Fire department access to the hydrant over snow and ice absent a driveway.",
+    "who": "the applicant's representative",
+    "words_as_heard": "they're not gonna plow grass so they said well we want a fire hydrant up closer to the building"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 64,
+    "name_as_heard": "A&R plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "the A&R plan that we presented to you is simply a parcel swap",
+    "shown": true
+   },
+   {
+    "t": 437,
+    "name_as_heard": "approved plan and modified plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "one is the plan that was approved and the other one is the modified plan",
+    "shown": true
+   },
+   {
+    "t": 693,
+    "name_as_heard": "the fire chief's letter",
+    "kind": "letter or email",
+    "words_as_heard": "the fire chief's letter that mentioned the sprinkler system",
+    "shown": false
+   },
+   {
+    "t": 1190,
+    "name_as_heard": "minutes for January 22nd 2018",
+    "kind": "prior minutes",
+    "words_as_heard": "any comments on the minutes for January 22nd 2018",
+    "shown": false
+   },
+   {
+    "t": 2478,
+    "name_as_heard": "draft use table",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "I sent around a draft",
+    "shown": true
+   },
+   {
+    "t": 4204,
+    "name_as_heard": "guidance document from the cannabis Control Commission",
+    "kind": "memo",
+    "words_as_heard": "I sent a guidance document out maybe a month ago",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stormwater-program-costs",
+    "title": "Stormwater program costs",
+    "question": "What will the 25 ranked stormwater outfall fixes cost the town?",
+    "t": 1294,
+    "words_as_heard": "they're going to take those 25 and and propose designed best management practices with a cost estimate for each",
+    "data_in_play": [
+     "25"
+    ],
+    "existing": "thread:stormwater-fee"
+   },
+   {
+    "slug": "street-light-led-conversion",
+    "title": "Street light LED conversion",
+    "question": "What would upgrading the street lights to LED cost and save?",
+    "t": 1567,
+    "words_as_heard": "the option of upgrading the street lights to LED",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "watch_next": [
+   "Public hearing on the draft zoning bylaw package, tentatively set for March 26, likely as three articles.",
+   "Next meeting to set dates for a workshop meeting every other month; the amended schedule is Feb 26, Mar 19 and Mar 26."
+  ],
+  "what_happened": [
+   {
+    "line": "The board approved an ANR plan swapping land between the Settlers Crossing golf course parcel and an abutting owner.",
+    "t": 175
+   },
+   {
+    "line": "The board closed the public hearing for 40 Pioneer Drive and approved a modified site plan restoring a third driveway.",
+    "t": 1009
+   },
+   {
+    "line": "The approval carries over all original conditions except the hydrant condition and the existing-driveway condition.",
+    "t": 1122
+   },
+   {
+    "line": "The board went through draft zoning bylaw changes for Town Meeting, including marijuana and the Summer Street use table, with no resolution reached.",
+    "t": 2265
+   },
+   {
+    "line": "The board voted to move the March 12 meeting to March 19 because of caucus night.",
+    "t": 3876
+   }
+  ],
+  "why_it_matters": [
+   "The zoning bylaw changes on marijuana and Summer Street uses would go to Town Meeting as articles, so residents will be asked to vote on what land uses are allowed.",
+   "Stormwater cost estimates are meant to feed capital budgeting, and a Green Communities grant round with a March deadline could shift street light upgrade costs off the town budget, mostly taxes."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T22:19:38Z",
+   "cost_usd": 0.023535099999999996
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122018-3981",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2018-02-12-minutes-3981.txt",
+   "path": "sources/meetings/planning-board/2018-02-12-minutes-3981.pdf"
+  },
+  "official_sha256": "0be2fd2bee73a0682ff21178f8dd98dcb061c0990720aed53755d600d6675bcf",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the March 12 to March 19 reschedule and on approval of the 40 Pioneer Drive modification. They differ on how the ANR plan was handled and on which items each one includes. The main thing to check is the ANR plan: our minutes record a passed vote, and the official minutes say only \"endorsed by the board\" with no vote.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "ANR plan for 994 Northfield Road",
+    "ours": "Approve the ANR plan for 994 Northfield Road (golf course parcel swap) — passed",
+    "official": "anr plan endorsed by the board.",
+    "note": "Our minutes record a passed vote; the official minutes record an endorsement with no vote, so check the recording for whether a motion and vote occurred.",
+    "t": 175
+   },
+   {
+    "kind": "discrepancy",
+    "about": "40 Pioneer Drive site plan modification: conditions carried over",
+    "ours": "Approve the site plan modification for 40 Pioneer Drive, carrying over all original conditions except the hydrant condition and the existing-driveway condition — passed",
+    "official": "k. chenis made a motion to approve the modification to the site plan and carry over all conditions of the august 28, 2017 special permit",
+    "note": "Both record a passed approval, but the official summary lists the excluded conditions as #2 and #5 and does not name them. Check that #2 and #5 are the hydrant and existing-driveway conditions.",
+    "t": 1122
+   },
+   {
+    "kind": "agree",
+    "about": "Reschedule March 12 meeting to March 19",
+    "ours": "Reschedule the March 12 meeting to March 19 — passed",
+    "official": "d. prokowiew made a motion to move the march 12 board meeting to march 19, 6:30 pm, town hall, seconded by m. allison, all aye.",
+    "note": "Both record the same motion passing.",
+    "t": 3876
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Close public hearing for 40 Pioneer Drive",
+    "ours": "Close the public hearing for 40 Pioneer Drive — passed",
+    "official": "",
+    "note": "The official minutes in this extract do not record a vote to close the hearing, so check the full official minutes.",
+    "t": 1009
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Green Communities grant round date",
+    "ours": "Green Communities grant round: March 9th",
+    "official": "",
+    "note": "The official minutes do not mention the Green Communities grant.",
+    "t": 1567
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Zoning bylaw package hearing March 26",
+    "ours": "Public hearing on the zoning bylaw package tentatively set for March 26, likely as three articles.",
+    "official": "",
+    "note": "The official minutes have no record of this scheduling decision.",
+    "t": 3384
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Workshop meeting every other month",
+    "ours": "Board favored a workshop meeting every other month, with dates to be decided at the next meeting.",
+    "official": "",
+    "note": "The official minutes do not record this discussion.",
+    "t": 4410
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Covenant release for Blueberry Hill Subdivision",
+    "ours": "",
+    "official": "covenant release- blueberry hill subdivision (taken out of order) - signed by board.",
+    "note": "Our minutes do not mention this item.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Marijuana dispensaries item removed from future agendas",
+    "ours": "",
+    "official": "§250-4.16. registered marijuana dispensaries- can be taken off future agendas.",
+    "note": "Our minutes do not record this decision about agendas.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Adam, planning director, attending",
+    "ours": "Adam (planning director)",
+    "official": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney",
+    "note": "Adam R. Burney, Land Use Director, matches the planning director named Adam.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Barrett",
+    "ours": "mr. Barrett (member)",
+    "official": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney",
+    "note": "No Barrett is on the official roster. This is probably a misheard name, likely Bittner, but check the recording.",
+    "official_reading": "Gregory Bittner",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other members present",
+    "ours": "",
+    "official": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney",
+    "note": "Our minutes name only the chair, Adam, Marjorie and Barrett. The other members are not named in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Marjorie, planning office staff",
+    "ours": "Marjorie (planning office staff)",
+    "official": "",
+    "note": "The official minutes do not list Marjorie.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicant representatives",
+    "ours": "",
+    "official": "applicants represented by neil gorman, david e. ross associates.",
+    "note": "Our minutes do not name the applicant's representatives.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T22:20:28Z",
+   "cost_usd": 0.038335100000000004
+  }
+ }
+}

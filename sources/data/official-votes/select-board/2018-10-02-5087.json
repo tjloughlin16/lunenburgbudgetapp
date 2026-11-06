@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-10-02",
  "docid": "5087",
@@ -12,36 +12,28 @@
  },
  "votes": [
   {
-   "motion": "Ratify the appointment of Jack Wagner as full-time police officer effective October 11, 2018 and Gage Russell as full-time police officer effective October 12, 2018",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "moton. n. spersole to ratify the appointment of jack wagner to full-time police officer effective october 11, 2018 and the appointment of gage russell as full-time"
-  },
-  {
-   "motion": "Ratify the appointment of Garry Rhodes as Interim Building Commissioner",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to ratify the appointment of garry rhodes as interim building commissioner vote: all in favor"
-  },
-  {
-   "motion": "Form a new Building Reuse Committee to be called the Municipal Building and Land Use Committee",
+   "motion": "Ratify the appointment of Jack Wagner as full-time police officer effective October 11, 2018 and of Gage Russell as full-time police officer effective October 12, 2018",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "failed 1-4",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "mr. ebersole moved the question. vote: 1 in favor (adams), opposed- 4"
+   "quote": "to ratify the appointment of jack wagner to full-time police officer effective october 11, 2018 and the appointment of gage russell as full-time police officer effective october 12, 2018"
   },
   {
-   "motion": "Amend the closing date of the Special Town Meeting warrant until 5:00 p.m. on October 11, 2018",
+   "motion": "Ratify the re-appointment of Garry Rhodes as Interim Building Commissioner",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to amend the closing date of the special town meeting warrant until 5:00 p.m. on october 11, 2018 vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointment of garry rhodes as interim building commissioner vote: all in favor"
+  },
+  {
+   "motion": "Move the question on the TC Passios discussion (the underlying motion text is not recorded)",
+   "moved_by": "Mr. Ebersole",
+   "seconded_by": "",
+   "outcome": "failed, 1 in favor (Adams), Opposed- 4",
+   "procedural": false,
+   "quote": "mr. ebersole moved the question. vote: 1 in favor (adams), opposed- 4"
   },
   {
    "motion": "Authorize the Chair to sign the disclosure statement for disposition of the Gilchrist Street property",
@@ -49,15 +41,23 @@
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to authorize the chair to sign the disclosure statement for disposition of the gilchrist street property vote: 4 in favor, 1 opposed (adams)"
+   "quote": "to authorize the chair to sign the disclosure statement for disposition of the gilchrist street property vote: 4 in favor, 1 opposed (adams)"
   },
   {
-   "motion": "Sign the union contract with the Public Employees Local 39 Union Laborers International of North America (DPW Unit)",
+   "motion": "Sign the union contract with the Public Employees Local 39 Union",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: d. mcquaid to sign the union contract with the public employees local 39 union vote: all in favor"
+   "quote": "to sign the union contract with the public employees local 39 union vote: all in favor"
+  },
+  {
+   "motion": "Amend the closing date of the Special Town Meeting warrant to 5:00 p.m. on October 11, 2018",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "D. McQuaid",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to amend the closing date of the special town meeting warrant until 5:00 p.m. on october 11, 2018 vote: all in favor"
   },
   {
    "motion": "Approve the minutes of September 26, 2018 with the corrections",
@@ -65,10 +65,605 @@
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole to approve the september 26, 2018 with the corrections 2nd: p. luck vote: all in favor"
+   "quote": "to approve the september 26, 2018 with the corrections 2nd: p. luck vote: all in favor"
+  },
+  {
+   "motion": "Approve the minutes of August 14 and September 4, 2018 (no motion text recorded)",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "the board approved minutes of august 14 and september 4, 2018."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. Vote 1 contains OCR errors: \"Moton. n. spersole\" appears to be OCR corruption for \"Motion by R. Ebersole\"; moved_by field corrected to reflect intended name based on consistent formatting throughout minutes. Vote 3 (Building Reuse Committee) lacks explicit motion statement; mover inferred as Adams from her proposal, but recorded as moved implicitly without formal \"Motion: X\" introduction.",
- "cost_usd": 0.1604985
+ "note": "OCR scan (macOS Vision) with garbled passages: page 2 opens mid-sentence (the support group speaker is not named in the visible text); the mover line for the police appointment ratification on page 3 is garbled (\"Moton. n. spersole\") so no mover is recorded; the Option 2 and Option 3 budget tables are partly cut off and component labels are unreadable; the payroll warrant on page 14 is truncated; the mutual aid discussion has no recorded motion in the visible text; the Gilchrest property is spelled both \"Gilchrest\" and \"Gilchrist\" in the minutes; no adjournment motion is visible.",
+ "cost_usd": 0.019362619999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk; phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; james marino, police chief; adam burney, land use director"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; james marino, police chief; adam burney, land use director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; james marino, police chief; adam burney, land use director"
+  },
+  {
+   "name": "Paul Lieneck",
+   "role": "of Haynes, Lieneck & Smith",
+   "status": "present",
+   "quote": "presentation of conceptual designs and budget cost statements for consolidated municipal offices at the tc passios building by paul lieneck of haynes, lieneck & smith"
+  },
+  {
+   "name": "Lynne Man",
+   "role": "representing a group of concerned people that either abut conservation land or use these resources",
+   "status": "present",
+   "quote": "lynne man, 463 burrage street, representing a group of concerned people that either abut conservation"
+  },
+  {
+   "name": "Daron Massey",
+   "role": "",
+   "status": "present",
+   "quote": "daron massey, 300 holman street, stated there was a group working on increasing community"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Noise bylaw article to be placed on the special town meeting warrant.",
+   "quote": "this article will be placed on the special town meeting warrant."
+  },
+  {
+   "decision": "Board invited Land Use Director Burney back to its workshop in two weeks to finalize the special events permit draft.",
+   "quote": "the board invited mr. burney back to their workshop in two weeks to finalize it."
+  },
+  {
+   "decision": "Additional funding for a schematic design for the TC Passios Building (Article 13) was deferred to Annual Town Meeting in May 2019.",
+   "quote": "it was decided to wait until annual town meeting in may 2019."
+  },
+  {
+   "decision": "Board signed a letter of commendation and citation for John Hazelrigg.",
+   "quote": "the board signed the letter and citation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "TC Passios hazardous materials abatement and demolition unit rates",
+   "what_was_recorded": "Lieneck set abatement and demolition unit costs per square foot from the Vertex and Tappe studies.",
+   "quote": "he determined a cost of $11/square foot for the hazardous materials abatement based on the study by the vertex",
+   "figures_as_printed": [
+    "$11/square foot",
+    "$9/square foot",
+    "$6.20/square foot",
+    "$8.5/square foot",
+    "22,500 square feet"
+   ]
+  },
+  {
+   "topic": "TC Passios alteration unit rates",
+   "what_was_recorded": "Alteration costs were taken from 2016 with a two-year escalator and scope increase, giving per-square-foot rates by system.",
+   "quote": "escalator and scope of work increase as follows: $20/square foot for roofing, $8/square foot for plumbing systems",
+   "figures_as_printed": [
+    "$20/square foot",
+    "$8/square foot",
+    "$18/square foot",
+    "$11/square foot"
+   ]
+  },
+  {
+   "topic": "TC Passios total construction cost per square foot",
+   "what_was_recorded": "Total per-square-foot construction figure including contingency, general conditions, overhead and profit, and bonds/insurance/permits.",
+   "quote": "$168/square foot is what that calculated out to and includes 5% for design and pricing contingency, 10%",
+   "figures_as_printed": [
+    "$168/square foot",
+    "5%",
+    "10%",
+    "5%",
+    "3%"
+   ]
+  },
+  {
+   "topic": "Costs excluded from TC Passios construction budgets",
+   "what_was_recorded": "Budgets exclude professional services, abatement monitoring, Clerk of the Works, administrative, financing and other costs, with estimates given.",
+   "quote": "abatement monitoring (estimated at 15-20%), clerk of the works (estimated at $12,000-$15,000/month),",
+   "figures_as_printed": [
+    "8-10%",
+    "15-20%",
+    "$12,000-$15,000/month"
+   ]
+  },
+  {
+   "topic": "Option 1 construction budget (Building with Rental Space and Expansion Space)",
+   "what_was_recorded": "Option 1 construction budget table; component labels are garbled in the OCR, and the printed figures are listed here as they appear.",
+   "quote": "construction budget: cost $ 16,100 14,400 549,850 8,374,800 $ 500,000 $ 9,455,150",
+   "figures_as_printed": [
+    "$ 16,100",
+    "14,400",
+    "549,850",
+    "8,374,800",
+    "$ 500,000",
+    "$ 9,455,150"
+   ]
+  },
+  {
+   "topic": "Option 2 construction budget (Building with Expansion Space)",
+   "what_was_recorded": "Option 2 construction budget table; component labels are garbled in the OCR, and the printed figures are listed here as they appear.",
+   "quote": "construction budget: cost $ 86,700 78,030 479,250 7,188,720 $ 350.000 $ 8,182,700",
+   "figures_as_printed": [
+    "$ 86,700",
+    "78,030",
+    "479,250",
+    "7,188,720",
+    "$ 350.000",
+    "$ 8,182,700"
+   ]
+  },
+  {
+   "topic": "Option 3 construction budget (Building to Space Program)",
+   "what_was_recorded": "Only part of the Option 3 budget table is legible; the printed site work and total figures are listed.",
+   "quote": "$ 350,000 $ 7,403,330 site work construction",
+   "figures_as_printed": [
+    "$ 350,000",
+    "$ 7,403,330"
+   ]
+  },
+  {
+   "topic": "Cost of demolishing the entire Passios building",
+   "what_was_recorded": "Lieneck stated the cost to demolish the entire building in response to a question from Ms. Luck.",
+   "quote": "ms. luck inquired what the cost of demolishing the entire building would cost. mr. lieneck stated it was around $1.2 million.",
+   "figures_as_printed": [
+    "$1.2 million"
+   ]
+  },
+  {
+   "topic": "Turkey Hill asbestos abatement cost comparison",
+   "what_was_recorded": "Ms. Lemieux asked whether the Turkey Hill asbestos abatement project was used for the Passios $11/square foot figure; Lieneck said no.",
+   "quote": "ms. lemieux asked if he used the turkey hill elementary asbestos abatement project to come to his figures of $11/square foot for the passios",
+   "figures_as_printed": [
+    "$11/square foot"
+   ]
+  },
+  {
+   "topic": "Weathervane replacement cost",
+   "what_was_recorded": "The replacement cost for the Town Hall weathervane is awaited before a property loss claim can be filed; no figure is printed.",
+   "quote": "the replacement cost, which is needed prior to submitting a property loss claim.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ADA Planning and Project Grants request",
+   "what_was_recorded": "Total funding request for the ADA Planning and Project Grants; award or denial notice expected by December 3, 2018.",
+   "quote": "the total funding request for both the ada planning and project grants is $130,485.",
+   "figures_as_printed": [
+    "$130,485"
+   ]
+  },
+  {
+   "topic": "Complete Streets Tier 3 grant request",
+   "what_was_recorded": "Total request submitted to MassDOT for the Complete Streets Tier 3 projects.",
+   "quote": "the total request for funding was $375,602 for the projects as outlined at the september 18 selectmen's meeting.",
+   "figures_as_printed": [
+    "$375,602"
+   ]
+  },
+  {
+   "topic": "Motor vehicle excise commitments",
+   "what_was_recorded": "Assessors' motor vehicle commitments to be sent out October 4th.",
+   "quote": "motor vehicle commitments will be sent out october 4th totaling $79,779.",
+   "figures_as_printed": [
+    "$79,779"
+   ]
+  },
+  {
+   "topic": "Free Cash certification",
+   "what_was_recorded": "Finance Director submitted year-end reports with a Free Cash balance to be certified.",
+   "quote": "has since submitted with a balance of $1.53m to be certified as free cash.",
+   "figures_as_printed": [
+    "$1.53M"
+   ]
+  },
+  {
+   "topic": "Donations to the School Committee",
+   "what_was_recorded": "School Committee announced two donations, one for the Stillman Fair and one for a Nature's Classroom scholarship.",
+   "quote": "they announced a $2295 donation from the stillman fair and a $450 donation from the cooneys' for a nature's classroom scholarship.",
+   "figures_as_printed": [
+    "$2295",
+    "$450"
+   ]
+  },
+  {
+   "topic": "Payroll deductions warrant",
+   "what_was_recorded": "A payroll deductions warrant in the amount printed was part of the minutes/warrants item; the page is truncated so any vote is not visible.",
+   "quote": "payroll deductions warrant in the amount of $589,132.13.",
+   "figures_as_printed": [
+    "$589,132.13"
+   ]
+  },
+  {
+   "topic": "Water District intermunicipal agreement with Lancaster",
+   "what_was_recorded": "The Water District seeks an IMA with Lancaster to sell water to help defray its capital costs; the Board discussed general support with language still to be crafted.",
+   "quote": "the water district would like to enter into an intermunicipal agreement (ima) with the town of lancaster to sell water to help defray capital costs of the water district.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Turkey Hill asbestos abatement funds re-appropriation",
+   "what_was_recorded": "Capital Planning Committee will discuss priorities for re-appropriating funds previously appropriated for the Turkey Hill asbestos abatement project; no figure printed.",
+   "quote": "they will discuss a list of priorities for use of the funds appropriated towards the turkey hill elementary school asbestos abatement project",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Salary survey funding (Article 7)",
+   "what_was_recorded": "Special Town Meeting article to raise, appropriate, borrow or transfer a sum for a salary survey; no amount printed.",
+   "quote": "raises and appropriates, borrows, or transfers from available funds, a sum of money to fund a salary survey",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Passios schematic design funding (Article 13)",
+   "what_was_recorded": "Discussion was to ask for additional funding for a schematic design for the TC Passios Building; no amount printed.",
+   "quote": "the only discussion was to ask for additional funding for a schematic design for the t c passios building.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Thanks to community for support",
+   "speaker": "Ms. Luck",
+   "stated_role": "Member",
+   "quote": "ms. luck stated she was dropping juice off at the boys and girls club/teen center"
+  },
+  {
+   "topic": "Moratorium on forestry stewardship projects; Small Town Forest and Robbs Hill harvesting",
+   "speaker": "Lynne Man",
+   "stated_role": "representing a group of concerned people that either abut conservation land or use these resources",
+   "quote": "was concerned about the forest stewardship plan and felt selective harvesting is akin to logging."
+  },
+  {
+   "topic": "Support group for addicted persons; programs, events and fundraiser",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "she presented a history of their programs to date."
+  },
+  {
+   "topic": "Community engagement; co-crafting noise bylaw and special event permit",
+   "speaker": "Daron Massey",
+   "stated_role": "",
+   "quote": "he requested the board allow the public to engage in co-crafting those two documents with the police chief and land use director"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard, no action",
+   "quote": "ms. luck stated she was dropping juice off at the boys and girls club/teen center",
+   "tags": [
+    "public comment",
+    "forestry",
+    "support group"
+   ]
+  },
+  {
+   "topic": "Appointments: police officers and Interim Building Commissioner",
+   "resolution": "ratified",
+   "quote": "police chief marino recommended two officers to be appointed to full-time.",
+   "tags": [
+    "appointments",
+    "police",
+    "building"
+   ]
+  },
+  {
+   "topic": "Presentation of TC Passios conceptual designs and budget cost statements",
+   "resolution": "presented; discussed; no action; further discussion needed",
+   "quote": "presentation of conceptual designs and budget cost statements for consolidated municipal offices at the tc passios building by paul lieneck of haynes, lieneck & smith",
+   "tags": [
+    "TC Passios",
+    "municipal offices",
+    "budget",
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; updates given",
+   "quote": "town manager report update about the town hall weathervane:",
+   "tags": [
+    "town manager",
+    "weathervane",
+    "grants",
+    "Summer Street",
+    "Chase Road",
+    "capital plan",
+    "department reports",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Old business: Proposed Town-wide Noise Bylaw",
+   "resolution": "discussed; to Special Town Meeting warrant",
+   "quote": "1. discussion about proposed town-wide noise bylaw",
+   "tags": [
+    "noise bylaw",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Old business: Entertainment License and Special Event Permit",
+   "resolution": "discussed; Burney to return to workshop in two weeks",
+   "quote": "2. discussion about entertainment license and proposed special event permit",
+   "tags": [
+    "special events",
+    "alcohol",
+    "marijuana"
+   ]
+  },
+  {
+   "topic": "Old business: Police Mutual Aid Agreement with Middlesex",
+   "resolution": "discussed; no recorded vote in visible text",
+   "quote": "discussion about police mutual aid agreement with middlesex",
+   "tags": [
+    "police",
+    "mutual aid"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant closing date",
+   "resolution": "amended to 5:00 p.m. October 11, 2018",
+   "quote": "to amend the closing date of the special town meeting warrant until 5:00 p.m. on october 11, 2018",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Current business: joint workshop with School Committee",
+   "resolution": "discussed; topics suggested",
+   "quote": "discussion about scheduling a workshop meeting with the school committee and topics to discuss at that meeting",
+   "tags": [
+    "school committee",
+    "joint meeting",
+    "TC Passios"
+   ]
+  },
+  {
+   "topic": "Authorize Chair to sign Gilchrest Street disclosure statement",
+   "resolution": "passed 4-1",
+   "quote": "to authorize the chair to sign the disclosure statement for disposition of the gilchrist street property vote: 4 in favor, 1 opposed (adams)",
+   "tags": [
+    "property disposition",
+    "Gilchrest Street"
+   ]
+  },
+  {
+   "topic": "Sign DPW union contract (Local 39)",
+   "resolution": "signed",
+   "quote": "sign union contract with public employees local 39 union laborers international of north",
+   "tags": [
+    "union",
+    "DPW",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "discussed; Passios schematic funding deferred to May 2019",
+   "quote": "discussion about special town meeting warrant articles including articles the board may add to",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "salary administration",
+    "zoning",
+    "marijuana moratorium",
+    "plastic bags"
+   ]
+  },
+  {
+   "topic": "Citation for heroism (John Hazelrigg)",
+   "resolution": "letter and citation signed",
+   "quote": "the board signed a letter of commendation and a citation to lunenburg resident john hazelrigg",
+   "tags": [
+    "citation",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file: Water District IMA with Lancaster",
+   "resolution": "minutes approved; IMA discussed",
+   "quote": "the board approved minutes of august 14 and september 4, 2018.",
+   "tags": [
+    "minutes",
+    "water",
+    "Lancaster IMA",
+    "payroll warrant"
+   ]
+  },
+  {
+   "topic": "Department report: ACO quarterly report",
+   "resolution": "no comments",
+   "quote": "the board had no comments on the report other than it was interesting.",
+   "tags": [
+    "ACO",
+    "department reports"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted",
+   "quote": "the board will be meeting october 9 and 16 and hold a joint meeting with the finance committee on",
+   "tags": [
+    "schedule",
+    "Finance Committee",
+    "School Committee"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "ms. adams reported she has been attending the planning board meetings",
+   "tags": [
+    "marijuana moratorium",
+    "MART",
+    "School Committee",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard; Chair noted future feedback points",
+   "quote": "he requested the board allow the public to engage in co-crafting those two documents",
+   "tags": [
+    "public comment",
+    "noise bylaw",
+    "special events",
+    "business development"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Conceptual construction budgets document (Haynes, Lieneck & Smith)",
+   "where": "list",
+   "quote": "mr. lieneck referred the board to the conceptual construction budgets document first."
+  },
+  {
+   "name": "Tappe Architects study",
+   "where": "text",
+   "quote": "mr. toale noted the tappe architects study used 13 criteria that the building reuse committee gave"
+  },
+  {
+   "name": "Vertex Companies study and quote",
+   "where": "text",
+   "quote": "the vertex companies quote of $6.20/square foot for the entire building demolition in 2018 and"
+  },
+  {
+   "name": "Amendments to the Salary Administration Plan Bylaw (dated October 22, 2018)",
+   "where": "text",
+   "quote": "to amend §70.17, 70.21, and 70.28, as shown on a document entitled"
+  },
+  {
+   "name": "Draft Special Town Meeting warrant",
+   "where": "text",
+   "quote": "ms. lemieux presented a draft of the special town meeting warrant."
+  },
+  {
+   "name": "Second draft of the Special Events permits",
+   "where": "text",
+   "quote": "land use director burney referred the board to the second draft of the special events permits."
+  },
+  {
+   "name": "Draft noise bylaw",
+   "where": "text",
+   "quote": "police chief marino reviewed the draft bylaw with town counsel and attorney costa had some"
+  },
+  {
+   "name": "Disclosure Statement for disposition of Gilchrest Street property",
+   "where": "text",
+   "quote": "authorize chairman to sign disclosure statement for disposition of gilchrest street property"
+  },
+  {
+   "name": "Union agreement with Public Employees Local 39 (DPW Unit)",
+   "where": "text",
+   "quote": "ms. lemieux presented the union agreement for signatures."
+  },
+  {
+   "name": "Memorandum of Agreement (July)",
+   "where": "text",
+   "quote": "the board had signed the memorandum of agreement back in july."
+  },
+  {
+   "name": "Complete Streets Tier 3 project application and supporting documents",
+   "where": "text",
+   "quote": "the complete streets tier 3 project application and supporting documents were successfully uploaded"
+  },
+  {
+   "name": "ADA Planning and Project Grants applications",
+   "where": "text",
+   "quote": "the total funding request for both the ada planning and project grants is $130,485."
+  },
+  {
+   "name": "Letter of support from Representative Benson's office",
+   "where": "text",
+   "quote": "representative benson's office provided a letter of support that was also included in the application."
+  },
+  {
+   "name": "Water District intermunicipal agreement (IMA) with the Town of Lancaster",
+   "where": "text",
+   "quote": "the water district would like to enter into an intermunicipal agreement (ima) with the town of lancaster"
+  },
+  {
+   "name": "ACO quarterly report",
+   "where": "text",
+   "quote": "department reports-aco quarterly report"
+  },
+  {
+   "name": "Building Reuse Committee minutes",
+   "where": "text",
+   "quote": "she read all the minutes of building reuse meetings and they never studied"
+  },
+  {
+   "name": "Sentinel & Enterprise legal notice (Special Town Meeting warrant extension)",
+   "where": "text",
+   "quote": "notice was run in today's sentinel & enterprise with an extension of the date/time to submit warrant"
+  }
+ ],
+ "tags": [
+  "TC Passios building",
+  "consolidated municipal offices",
+  "budget and construction costs",
+  "police appointments",
+  "noise bylaw",
+  "special event permit",
+  "police mutual aid",
+  "forestry stewardship",
+  "special town meeting",
+  "school committee",
+  "union contract",
+  "public comment",
+  "Town Manager report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. lieneck referred the board to the conceptual construction budgets document"
+ },
+ "dropped_unquoted_by_field": {}
 }

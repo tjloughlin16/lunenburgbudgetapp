@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2017-09-28",
  "docid": "5750",
@@ -12,29 +12,266 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of the August 24, 2017 meeting",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "minutes of the august 24, 2017, meeting were accepted."
-  },
-  {
-   "motion": "approve the proposal for the Lunenburg Sub-basin Project",
-   "outcome": "passed",
-   "procedural": false,
+   "motion": "Approve the Design Consultants Inc. proposal for the sub-basin mapping and prioritization work, estimated at $35,000, to be funded by the $25,000 Community Compact Grant supplemented from the DPW Stormwater budget.",
    "moved_by": "Jack Rabbitt",
    "seconded_by": "Matt Allison",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "a motion was made by jack rabbitt to approve this proposal, it was seconded by matt allison, all voted in favor."
   },
   {
-   "motion": "adjourn the meeting",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matt Allison",
    "seconded_by": "Jack Rabbitt",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion to adjourn was made by matt allison at 7:54 pm; it was seconded by jack rabbitt; all concurred."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1072825
+ "note": "OCR text of a scanned packet with stamps and noise (e.g., 'confeRK 8FB6GE'). Only one substantive motion carried a recorded vote count wording ('all voted in favor', 'all concurred'); no numeric tally is printed. The acceptance of the August 24 minutes has no recorded motion. Phyllis Luck's role comes from the DCI letter's addressee line. Page 3-4 DCI letter is OCR text with some garbled words; figures are taken as printed.",
+ "cost_usd": 0.00877592,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Allison",
+   "role": "member",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Chairperson (as addressed in the DCI letter)",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "with matt allison, phyllis luck, and jack rabbitt present."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Lunenburg Land Use Director",
+   "status": "present",
+   "quote": "lunenburg land use director, adam burney, mike clark of design consultants inc. (dci),"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "representing Design Consultants Inc. (DCI)",
+   "status": "present",
+   "quote": "lunenburg land use director, adam burney, mike clark of design consultants inc. (dci),"
+  },
+  {
+   "name": "Ed Himlan",
+   "role": "representing the Mass Watershed Coalition (MWC)",
+   "status": "present",
+   "quote": "and ed himlan of the mass watershed coalition (mwc)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of the August 24, 2017 meeting were accepted; no motion or vote is recorded.",
+   "quote": "minutes of the august 24, 2017, meeting were accepted."
+  },
+  {
+   "decision": "Task Force members will document their use of coalition resources and forward it to the Town Manager.",
+   "quote": "task force members will document their use of coalition resources and forward same to the town manager"
+  },
+  {
+   "decision": "Phyllis Luck will contact Town Manager Lemieux to determine next steps on the approved proposal.",
+   "quote": "phyllis luck will contact town manager lemieux to determine next steps."
+  },
+  {
+   "decision": "Adam Burney will identify and document illicit discharge removal procedures using the CMRSWC template, which the DPW will then need to adopt.",
+   "quote": "mr. burney will work with the dpw, therefore, to identify procedures to be used."
+  },
+  {
+   "decision": "The MRPC data collection application will be placed on the Task Force agenda again for the next meeting.",
+   "quote": "the task force will put it on the agenda once again for the next meeting."
+  },
+  {
+   "decision": "Adam Burney will prepare a PowerPoint overview of the new MS4 Permit and NOI, available by 10/9, for discussion at the 10/12 SWTF meeting.",
+   "quote": "this presentation will be available by 10/9 and will be discussed further at the swtf meeting of 10/12."
+  },
+  {
+   "decision": "The fourth-quarter meeting schedule was confirmed: October 12, a presentation to the BOS on 10/17, and regular meetings on November 9 and December 7, at 6:30 pm in the Ritter Building upper conference room unless noted.",
+   "quote": "the meeting schedule was then confirmed for the fourth quarter"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Community Compact Grant and estimated cost of the sub-basin mapping work",
+   "what_was_recorded": "The Community Compact Grant award is $25,000 against an estimated cost of $35,000 for the work, with the balance to be supplemented from DPW funds.",
+   "quote": "the estimated cost of this work is $35,000. as the grant is $25,000, it will be supplemented by some",
+   "figures_as_printed": [
+    "$25,000",
+    "$35,000"
+   ]
+  },
+  {
+   "topic": "DPW Stormwater budget available to supplement the grant",
+   "what_was_recorded": "About $40,000 is available in the DPW budget for Stormwater work and is to be used to supplement the grant.",
+   "quote": "of the $40,000 available in the dpw budget for stormwater work.",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Design Consultants Inc. proposal fees",
+   "what_was_recorded": "The DCI proposal letter states the total estimated fees for the Lunenburg sub-basin project.",
+   "quote": "the total estimated fees for this project are thirty five thousand dollars ($35,000).",
+   "figures_as_printed": [
+    "Thirty Five Thousand Dollars ($35,000)"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: CMRSWC steering committee, annual meeting, and Westford training",
+   "resolution": "no action",
+   "quote": "it was announced that the next steering committee meeting of the central mass regional",
+   "tags": [
+    "coalition",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Town Manager inquiry on value of CMRSWC membership",
+   "resolution": "members to document coalition use",
+   "quote": "task force members will document their use of coalition resources and forward same to the town manager",
+   "tags": [
+    "coalition",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Minutes of August 24, 2017",
+   "resolution": "accepted (no motion recorded)",
+   "quote": "minutes of the august 24, 2017, meeting were accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Community Compact Grant sub-basin mapping proposal",
+   "resolution": "proposal approved",
+   "quote": "there was a discussion on the community compact grant $25,000 award",
+   "tags": [
+    "grant",
+    "stormwater",
+    "consultants"
+   ]
+  },
+  {
+   "topic": "MS4 permit record keeping and illicit discharge procedures",
+   "resolution": "not addressed; Burney to draft procedures",
+   "quote": "the status of record keeping and reporting for the 2003 ms4 permit was briefly discussed.",
+   "tags": [
+    "MS4 permit",
+    "illicit discharge"
+   ]
+  },
+  {
+   "topic": "MRPC data collection application",
+   "resolution": "not addressed; carried to next agenda",
+   "quote": "brian doherty of mrc advised that they have created a tool for data collection and cataloging",
+   "tags": [
+    "data collection",
+    "mapping"
+   ]
+  },
+  {
+   "topic": "2018 MS4 Permit and NOI presentation to the BOS",
+   "resolution": "Burney to prepare slide presentation",
+   "quote": "there was a brief discussion of the october 17 presentation of the notice of intent (noi) for the",
+   "tags": [
+    "MS4 permit",
+    "NOI",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Town website redesign",
+   "resolution": "no action; await new site",
+   "quote": "phyllis luck reached out to it director steve malandrinos about website work",
+   "tags": [
+    "website",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Creation of utilities",
+   "resolution": "no action; awaiting Town attorney",
+   "quote": "matt allison is waiting for word from the town's attorney on the creation of utilities.",
+   "tags": [
+    "utilities",
+    "legal"
+   ]
+  },
+  {
+   "topic": "Fourth-quarter meeting schedule",
+   "resolution": "confirmed",
+   "quote": "the meeting schedule was then confirmed for the fourth quarter",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:54 pm",
+   "quote": "motion to adjourn was made by matt allison at 7:54 pm",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposal letter from Design Consultants Inc. dated September 27, 2017, re: Proposed Lunenburg Sub-basin Project",
+   "where": "list",
+   "quote": "design consultants inc. (dci), and its teaming partner, the massachusetts watershed coalition (mwc), are please to submit this proposal"
+  },
+  {
+   "name": "2017 fee schedule (enclosure to DCI letter)",
+   "where": "text",
+   "quote": "encl 2017 fee schedule"
+  },
+  {
+   "name": "CMRSWC template for illicit discharge procedures",
+   "where": "text",
+   "quote": "using the cmrswc template, available on their website, which"
+  },
+  {
+   "name": "Notice of Intent (NOI) for the 2018 MS4 Permit, prepared by DCI",
+   "where": "text",
+   "quote": "of intent (noi) for this permit, which has already been prepared by dci."
+  },
+  {
+   "name": "Power point slide show overview of the new MS4 Permit",
+   "where": "text",
+   "quote": "will prepare a power point slide show to provide an overview of the new municipal separate"
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "Community Compact grant",
+  "Design Consultants Inc.",
+  "CMRSWC coalition",
+  "illicit discharge",
+  "NOI",
+  "website",
+  "meeting schedule",
+  "DPW budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mike clark and ed himlan reviewed their proposal from the meeting of 8/24, attached"
+ },
+ "dropped_unquoted_by_field": {}
 }

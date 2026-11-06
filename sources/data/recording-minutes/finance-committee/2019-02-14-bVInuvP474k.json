@@ -1,0 +1,483 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2019-02-14",
+ "video_id": "bVInuvP474k",
+ "video_url": "https://www.youtube.com/watch?v=bVInuvP474k",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2019-02-14-bVInuvP474k.json",
+  "sha256": "af83f5798ca3a7ec87506ae69de6accbe1ae8830f63049c00ec0978a38ba6927",
+  "caption_lines": 300,
+  "segments": 2767
+ },
+ "recording": {
+  "duration_s": 6251,
+  "duration": "1:44",
+  "spoken_chars": 77366,
+  "words_approx": 12894
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02142019-2166",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-02-14-agenda-2166.txt",
+   "path": "sources/meetings/finance-committee/2019-02-14-agenda-2166.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02142019-2166",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-02-14-minutes-2166.txt",
+   "path": "sources/meetings/finance-committee/2019-02-14-minutes-2166.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T15:20:22Z",
+  "cost_usd": 0.2528629
+ },
+ "minutes": {
+  "headline": "Finance Committee heard the FY20 preliminary budget and debated replacing DPW fuel tanks versus a fuel card program.",
+  "summary": "The town manager presented the FY20 preliminary budget, covering revenues, state aid, expenditures, new positions, reserves and the capital plan. Members asked about the HR position, free cash, fire overtime and OPEB. A long discussion of the DPW fuel tank replacement included a resident's fuel card alternative; the January minutes were moved and seconded.",
+  "attendees": [
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "chief sullivan",
+    "role": "fire chief"
+   },
+   {
+    "name_as_heard": "george",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mark",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "john",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 2574,
+    "speaker_as_heard": "dave rogers",
+    "stated_role": "resident",
+    "topic": "Asked about fire overtime, criticised the OPEB contribution, and asked about the fuel tank capital cost."
+   },
+   {
+    "t": 5178,
+    "speaker_as_heard": "mr rogers",
+    "stated_role": "resident",
+    "topic": "Proposed a fuel card program instead of replacing the tanks."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "chapter-70",
+   "debt",
+   "free-cash",
+   "health-insurance",
+   "hiring",
+   "public-comment",
+   "public-safety",
+   "retirement",
+   "roads-and-dpw",
+   "staffing",
+   "state-aid",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 6152,
+    "motion": "Accept the minutes of January 9th.",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 6238,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 150,
+    "topic": "Free cash uses",
+    "what_was_said": "Free cash goes to capital, open liability costs, regular stabilization and special purpose stabilization, not operating budget.",
+    "figures_as_heard": [
+     "910 000",
+     "a hundred and fifty thousand",
+     "a hundred thousand",
+     "200 000"
+    ]
+   },
+   {
+    "t": 294,
+    "topic": "Snow and ice deficit",
+    "what_was_said": "Budget includes deficit funding for FY19 snow and ice.",
+    "figures_as_heard": [
+     "150 000",
+     "275 thousand seven hundred and twenty dollars",
+     "131 000"
+    ]
+   },
+   {
+    "t": 566,
+    "topic": "Chapter 70 and state aid",
+    "what_was_said": "Governor's proposal adds Chapter 70 and unrestricted aid; total state aid estimate stated.",
+    "figures_as_heard": [
+     "221 669 dollars",
+     "9 million 250 358",
+     "17686"
+    ]
+   },
+   {
+    "t": 885,
+    "topic": "FY20 overall expenditure increase",
+    "what_was_said": "Overall increase with schools the largest share.",
+    "figures_as_heard": [
+     "1 million 260",
+     "667 dollars",
+     "504 753"
+    ]
+   },
+   {
+    "t": 1303,
+    "topic": "Health insurance",
+    "what_was_said": "Target assumed an 8 percent increase; the rate range is now capped at 5 percent, with renewal due end of February.",
+    "figures_as_heard": [
+     "eight percent",
+     "5 increase",
+     "116 183 dollars"
+    ]
+   },
+   {
+    "t": 1348,
+    "topic": "Retirement assessment",
+    "what_was_said": "The county retirement assessment rose mainly because of unfunded liability.",
+    "figures_as_heard": [
+     "132 539 dollars",
+     "10.8 percent"
+    ]
+   },
+   {
+    "t": 2840,
+    "topic": "OPEB contribution",
+    "what_was_said": "Resident questioned depositing free cash into OPEB; members defended it as a sign of taking the liability seriously.",
+    "figures_as_heard": [
+     "150 000",
+     "40 million dollars"
+    ]
+   },
+   {
+    "t": 3887,
+    "topic": "DPW fuel tank replacement",
+    "what_was_said": "The DPW director gave estimates for removal, replacement and engineering against the capital plan amount.",
+    "figures_as_heard": [
+     "two hundred twenty thousand dollars",
+     "two hundred ninety four",
+     "330 000 dollars",
+     "36 000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5718,
+    "decision": "Members agreed more information on the fuel card alternative would be gathered before Town Meeting."
+   },
+   {
+    "t": 6172,
+    "decision": "Next meeting set for February 21st with the council on aging, library and land use."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 64,
+    "topic": "Opening and public comment",
+    "resolution": "no comment",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 64,
+    "t_end": 1763,
+    "topic": "FY20 preliminary budget presentation",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "state-aid",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 1763,
+    "t_end": 2574,
+    "topic": "Committee questions on HR position, free cash, public safety",
+    "resolution": "informational",
+    "tags": [
+     "staffing",
+     "hiring",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 2574,
+    "t_end": 3335,
+    "topic": "Public questions on fire overtime and OPEB",
+    "resolution": "informational",
+    "tags": [
+     "public-safety",
+     "retirement",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 3335,
+    "t_end": 6070,
+    "topic": "DPW fuel tank replacement and fuel card alternative",
+    "resolution": "informational, more information to come",
+    "tags": [
+     "capital",
+     "roads-and-dpw",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 6070,
+    "t_end": 6280,
+    "topic": "Updates, minutes, next meeting, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The vote count on the minutes was not captured.",
+   "Some figures such as the assistant town manager total cost and fuel tank estimates are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 3377,
+    "kind": "liability or legal",
+    "about": "Aged underground fuel tanks create insurance issues.",
+    "who": "the DPW director",
+    "words_as_heard": "there are insurance issues at this time"
+   },
+   {
+    "t": 5011,
+    "kind": "safety",
+    "about": "Police chief warned that relying on commercial stations could be dangerous in emergencies.",
+    "who": "the police chief",
+    "words_as_heard": "this is a situation where i find it that could become very dangerous if we don't uh do the right thing here"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 0,
+    "name_as_heard": "revenue and expenditure sheet and the omnibus budget",
+    "kind": "budget document",
+    "words_as_heard": "a copy of the revenue and expenditure sheet and the omnibus budget",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "dpw-fuel-tank-replacement",
+    "title": "DPW fuel tank replacement",
+    "question": "What will replacing the DPW fuel tanks cost compared with a fuel card program?",
+    "t": 3335,
+    "words_as_heard": "the 220 thousand dollars in the capital plan for the new fuel tanks",
+    "data_in_play": [
+     "220 thousand",
+     "330 000",
+     "294"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "opeb-deposits",
+    "title": "OPEB trust deposits",
+    "question": "How much should the town deposit into the OPEB trust given the liability?",
+    "t": 2840,
+    "words_as_heard": "how much are we going to contribute to that",
+    "data_in_play": [
+     "150 000",
+     "40 million"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee heard the town manager's FY20 preliminary budget, covering revenues, state aid, expenditures, new positions, reserves and the capital plan.",
+    "t": 64
+   },
+   {
+    "line": "Members and a resident discussed replacing the DPW fuel tanks against a fuel card program; members agreed to gather more information before Town Meeting.",
+    "t": 5718
+   },
+   {
+    "line": "Health insurance was budgeted on an assumed increase, but the rate range is now capped lower, with the renewal due at the end of February.",
+    "t": 1303
+   },
+   {
+    "line": "A resident questioned putting free cash into OPEB; members defended the contribution as a sign of taking the liability seriously.",
+    "t": 2840
+   },
+   {
+    "line": "No votes on the budget were taken; the next meeting is set for February 21st with the council on aging, library and land use.",
+    "t": 6172
+   }
+  ],
+  "why_it_matters": [
+   "The FY20 budget sets most of the town's spending and the tax bill that follows, and the schools are the largest share of the increase.",
+   "The fuel tank choice is a capital cost that Town Meeting may be asked to fund, so the comparison with a fuel card program could change what voters are asked to approve."
+  ],
+  "watch_next": [
+   "February 21st meeting: council on aging, library and land use budgets.",
+   "Information on the fuel card alternative, due before Town Meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T15:20:28Z",
+   "cost_usd": 0.0228531
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02142019-2166",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2019-02-14-minutes-2166.txt",
+   "path": "sources/meetings/finance-committee/2019-02-14-minutes-2166.pdf"
+  },
+  "official_sha256": "519dd35bce83daceaa3dd4ba59b2427143c2a0784126fb70a26bc88061d96bdf",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the headline OPEB and $220K fuel tank figures and on having no recorded votes or transfers, but they otherwise cover different parts of the discussion. The main difference is that our minutes record a decision to gather more information on fuel cards before Town Meeting, which the official minutes do not mention.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 1,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote; transfers are also none in both."
+   },
+   {
+    "kind": "agree",
+    "about": "OPEB contribution of $150,000 and liability over $40 million",
+    "ours": "OPEB contribution: 150 000, 40 million dollars",
+    "official": "around but more than $40 million and we are going to contribute $150k to put towards opeb.",
+    "note": "Both give a $150K OPEB contribution and a liability over $40 million.",
+    "t": 2840
+   },
+   {
+    "kind": "agree",
+    "about": "DPW fuel tank project total of $220,000",
+    "ours": "DPW fuel tank replacement: two hundred twenty thousand dollars",
+    "official": "i am here to present some soid and detailed numbers for the $220k in",
+    "note": "Both give $220K for the fuel tank project.",
+    "t": 3887
+   },
+   {
+    "kind": "caption_error",
+    "about": "Fuel tank in-house estimate or related figure ($330,000 / 36,000 / two hundred ninety four)",
+    "ours": "two hundred twenty thousand dollars, two hundred ninety four, 330 000 dollars, 36 000",
+    "official": "that came to $110-$120k.",
+    "note": "The official minutes give no $330,000, $294 or $36,000 figure for the fuel tank. These are likely misheard renderings of figures such as $170K, $3400 or $20-25K, but the match is uncertain, so check the recording.",
+    "official_reading": "$110-$120k",
+    "t": 3887
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Fuel card alternative decision",
+    "ours": "Members agreed more information on the fuel card alternative would be gathered before Town Meeting.",
+    "official": "",
+    "note": "Our minutes record a decision to gather more information on fuel cards. The official minutes list no decisions and only mention WEX fuel card savings of $60-$280K. Check the recording for whether this was an agreed action.",
+    "t": 5718
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting set for February 21",
+    "ours": "Next meeting set for February 21st with the council on aging, library and land use.",
+    "official": "",
+    "note": "The official minutes as given do not record the next meeting date or agenda.",
+    "t": 6172
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Snow and ice deficit figures",
+    "ours": "Snow and ice deficit: 150 000, 275 thousand seven hundred and twenty dollars, 131 000",
+    "official": "",
+    "note": "The official minutes have no snow and ice deficit discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash uses and other budget figures (Chapter 70, FY20 increase, health insurance, retirement)",
+    "ours": "Chapter 70 and state aid: 221 669 dollars, 9 million 250 358, 17686; FY20 overall expenditure increase: 1 million 260, 667 dollars, 504 753; Health insurance: eight percent, 5 increase, 116 183 dollars; Retirement assessment: 132 539 dollars, 10.8 percent",
+    "official": "",
+    "note": "The official minutes print none of these figures. They give only a general note that Free Cash increased, with no dollar amount.",
+    "t": 566
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fuel tank cost breakdown and WEX savings",
+    "ours": "",
+    "official": "you divide $170k by 50 and roughly get $3400 per year",
+    "note": "The official minutes give a detailed fuel tank cost breakdown ($50K removal, $20-25K engineering, $170K over 50 years) and $60-$280K WEX savings, which our minutes lack."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Assistant town manager salary and benefits",
+    "ours": "",
+    "official": "noted that if it is benefited with health care then it would be an additional $24k.",
+    "note": "Our minutes do not mention the $60K assistant town manager position or the $24K benefit cost."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Tax Title foreclosure fees and retiree health costs",
+    "ours": "",
+    "official": "so $8k is the fees with that.",
+    "note": "Our minutes do not mention the $8K Tax Title fees or the $1.5 million retiree health costs."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "town manager (town manager); chief sullivan (fire chief); george (member); mark (member); john (member)",
+    "official": "present: terri burchfield, john henshaw, michelle walton, marc luescher, george martin",
+    "note": "Our minutes name only five attendees, with 'mark' likely being Marc Luescher. The official minutes list five members present, two absent, plus staff. Chief Sullivan and the town manager appear in both. Check that Mark is Marc Luescher and that Terri and Michelle were present."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T15:21:37Z",
+   "cost_usd": 0.0422631
+  }
+ }
+}

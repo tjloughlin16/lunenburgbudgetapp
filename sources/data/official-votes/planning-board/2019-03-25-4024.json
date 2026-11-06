@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-03-25",
  "docid": "4024",
@@ -12,71 +12,494 @@
  },
  "votes": [
   {
-   "motion": "table Building Re-Use discussion to April 8, 2019",
+   "motion": "Table the Building Re-Use discussion to April 8, 2019.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "k. chenis made motion to table to april 8, 2019, t. cole seconded, all aye."
   },
   {
-   "motion": "approve the request for DLTA spending and send a letter of support",
+   "motion": "Approve the request for DLTA spending and send a letter of support to the Select Board for an ADA self-evaluation and transition project.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "k. chenis made motion to approve the request for dlta spending and send a letter of support, t. cole seconded, all aye."
   },
   {
-   "motion": "nominate T. Cole to the Land Acquisition Committee",
+   "motion": "Nominate T. Cole as the Planning Board's representative to the Land Acquisition Committee.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "k. chenis made motion to nominate t. cole, t. cole seconded, all aye."
   },
   {
-   "motion": "approve minutes from 03/04/19 for 190 Electric Avenue",
+   "motion": "Approve the 03/04/19 minutes for 190 Electric Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "k. chenis made motion to approve, t. cole seconded, all aye."
+   "quote": "03/04/19, 190 electric avenue- k. chenis made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "approve minutes from 03/04/19 for 400 Electric Avenue",
+   "motion": "Approve the 03/04/19 minutes for 400 Electric Avenue.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "k. chenis made motion to approve, t. cole seconded, all aye."
+   "quote": "03/04/19, 400 electric avenue- k. chenis made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "approve minutes from 03/04/19 for Warrant Articles",
+   "motion": "Approve the 03/04/19 Warrant Articles minutes.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "k. chenis made motion to approve, t. cole seconded, all aye."
+   "quote": "03/04/19, warrant articles- k. chenis made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "approve minutes from 03/04/19 general meeting",
+   "motion": "Approve the 03/04/19 minutes.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
-   "quote": "k. chenis made motion to approve, t. cole seconded, all aye."
+   "quote": "03/04/19- k. chenis made motion to approve, t. cole seconded, all aye."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "k. chenis made motion to adjourn, t. cole seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Eight votes taken. No votes failed. Minutes note that votes were NOT taken on the February 11 and February 25 meeting minutes (those are explicitly listed as \"Vote not taken\").",
- "cost_usd": 0.0968485
+ "note": "Text extraction, not a scan. Votes are recorded as 'all aye' with no numeric count. Several words are split by stray spaces (e.g. 'R oss', 'Avenu e', 'B oard'); quotes keep the printed form. The 205 Sunset Lane item records no vote because of lack of quorum (K. Chenis recused). Marjorie J. Boggio appears only in the letterhead, not as taking part, so she is omitted. Times: meeting called 6:30 PM, adjourned 9:20 PM.",
+ "cost_usd": 0.011851120000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: paula bertram"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "presenter, David E. R oss Associates",
+   "status": "present",
+   "quote": "plan presented by neil gorman, david e. r oss associates."
+  },
+  {
+   "name": "Daron Massey",
+   "status": "present",
+   "quote": "daron massey, 300 holman street - he noted he has filed two citizen petitions; one for adding a use"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "speaking as Board of Health member",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street (speaking as board of health member)"
+  },
+  {
+   "name": "Kathy Wnuk",
+   "status": "present",
+   "quote": "kathy wnuk, 503 holman street - asked why this discussion was taking place"
+  },
+  {
+   "name": "Steve Weaver",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street - alleged that d. massey's past events were illegally held"
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "status": "present",
+   "quote": "michael ray jeffreys, 1170 massachusetts avenu e- opined that these guidelines are in response to mr. massey"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo , 284 lancaster avenue- the guidelines are vague."
+  },
+  {
+   "name": "Katey Adams",
+   "status": "present",
+   "quote": "katey adams, williams drive- opined that in general, residential properties are not open to the general public."
+  },
+  {
+   "name": "H. Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "to allow for participation by the town manager , h. lemieux ."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The joint appointment with the Board of Selectmen for a Board vacancy was cancelled.",
+   "quote": "joint appointment with the board of selectmen for appointment to board vacancy- cancelled."
+  },
+  {
+   "decision": "The 205 Sunset Lane driveway plan will be placed on the 4/8/19 Board agenda; no vote was taken due to lack of quorum.",
+   "quote": "plan will be placed on the 4/8/19 board agenda."
+  },
+  {
+   "decision": "The Board will review the two citizen petitions of Daron Massey for discussion at the April 8 meeting.",
+   "quote": "k. chenis noted the board would need time to review these two petitions for discussion at the next board meeting on april 8th."
+  },
+  {
+   "decision": "All site plans listed (380-400 Electric Avenue, 400 Electric Avenue, 190 Electric Avenue) were endorsed by the Board; no separate vote is recorded.",
+   "quote": "plan endorsement: all site plans below endorsed by board."
+  },
+  {
+   "decision": "The proposed Lunenburg Code Section 250 - 5.6 update article will be heard at an upcoming public hearing.",
+   "quote": "the proposed article will be heard at an upcoming public hearing."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DLTA ADA self-evaluation and transition project",
+   "what_was_recorded": "The Town Manager asked for a Select Board letter of support for an ADA project under DLTA, and the Board approved the request for DLTA spending; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "k. chenis made motion to approve the request for dlta spending and send a letter of support, t. cole seconded, all aye."
+  },
+  {
+   "topic": "Master Plan grant",
+   "what_was_recorded": "Master planning could qualify for a state grant that could fund a portion of the Master Plan; the application is due by end of May. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "master planning could possibly qualify for a grant from the executive office of energy and environmental affairs."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Special event permits and citizen petitions",
+   "speaker": "Daron Massey",
+   "stated_role": "",
+   "quote": "daron massey, 300 holman street - he noted he has filed two citizen petitions; one for adding a use for farming and artistic events in lunenburg"
+  },
+  {
+   "topic": "Department head meeting on events",
+   "speaker": "Dave Passios",
+   "stated_role": "speaking as Board of Health member",
+   "quote": "had the understanding that d. massey's 3 events were already discussed at a department head meeting, with no feedback to d. massey."
+  },
+  {
+   "topic": "Cease and desist letter and why discussed",
+   "speaker": "Kathy Wnuk",
+   "stated_role": "",
+   "quote": "asked why this discussion was taking place as a cease and desist letter from special events was sent to d. massey from the building commissioner."
+  },
+  {
+   "topic": "Past events legality",
+   "speaker": "Steve Weaver",
+   "stated_role": "",
+   "quote": "alleged that d. massey's past events were illegally held, so why would he be able to get permits for events now?"
+  },
+  {
+   "topic": "Guidelines in response to Massey property",
+   "speaker": "Michael Ray Jeffreys",
+   "stated_role": "",
+   "quote": "opined that these guidelines are in response to mr. massey and his property."
+  },
+  {
+   "topic": "Four permits excessive",
+   "speaker": "Steve Weaver",
+   "stated_role": "",
+   "quote": "feels 4 permits for one location are excessive."
+  },
+  {
+   "topic": "Guidelines are vague",
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "quote": "the guidelines are vague. multi-day events that require overnight camping, sanitary facilities, etc. should be strictly regulated."
+  },
+  {
+   "topic": "Online advertising of events",
+   "speaker": "Kathy Wnuk",
+   "stated_role": "",
+   "quote": "when events start being advertised online and on facebook, this is not someone having a party or a wedding."
+  },
+  {
+   "topic": "Residential properties not open to public",
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "quote": "opined that in general, residential properties are not open to the general public."
+  },
+  {
+   "topic": "Guidance on open space",
+   "speaker": "Daron Massey",
+   "stated_role": "",
+   "quote": "daron massey requested the board's guidance on protecting his remaining open space that is under his personal ownership."
+  },
+  {
+   "topic": "Two events annually sufficient",
+   "speaker": "Steve Weaver",
+   "stated_role": "",
+   "quote": "feels 2 events annually are sufficient."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Joint appointment with Board of Selectmen",
+   "resolution": "cancelled",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "joint appointment with the board of selectmen for appointment to board vacancy- cancelled."
+  },
+  {
+   "topic": "205 Sunset Lane driveway plan",
+   "resolution": "discussed, no vote (lack of quorum); placed on 4/8/19 agenda",
+   "tags": [
+    "driveway",
+    "subdivision",
+    "fire department"
+   ],
+   "quote": "the board discussed the plan, but did not take a vote due to lack of quorum."
+  },
+  {
+   "topic": "Daron Massey special event permits and petitions (public comment)",
+   "resolution": "discussed; petitions to April 8 meeting",
+   "tags": [
+    "special events",
+    "citizen petition",
+    "public comment"
+   ],
+   "quote": "daron massey, 300 holman street - he noted he has filed two citizen petitions; one for adding a use"
+  },
+  {
+   "topic": "Building Re-Use",
+   "resolution": "tabled to April 8, 2019",
+   "tags": [
+    "building re-use"
+   ],
+   "quote": "k. chenis made motion to table to april 8, 2019, t. cole seconded, all aye."
+  },
+  {
+   "topic": "Special Event Permit Guidelines (large public events)",
+   "resolution": "discussed, no action",
+   "tags": [
+    "special events",
+    "guidelines",
+    "zoning"
+   ],
+   "quote": "board discussion ensued on the special event permit guidelines."
+  },
+  {
+   "topic": "DLTA ADA self-evaluation project",
+   "resolution": "approved request and letter of support",
+   "tags": [
+    "DLTA",
+    "ADA",
+    "MRPC"
+   ],
+   "quote": "district local technical assistance (dlta) - taken out of order to allow for participation"
+  },
+  {
+   "topic": "Land Acquisition Committee appointment",
+   "resolution": "T. Cole nominated as Board representative",
+   "tags": [
+    "land acquisition",
+    "Northfield Road"
+   ],
+   "quote": "board appointment to land acquisition committee - the town has been offered the purchase"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 03/04/19 minutes; others not voted",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "vote not taken on above minutes"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "tags": [
+    "committees",
+    "charter review",
+    "storm water"
+   ],
+   "quote": "charter review committee- final charter draft approved."
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "site plans endorsed; Code 5.6 article to public hearing",
+   "tags": [
+    "site plan endorsement",
+    "zoning code"
+   ],
+   "quote": "plan endorsement: all site plans below endorsed by board."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; K. Chenis unavailable April 8",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "april 8- k. chenis not available."
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "no action; Master Plan grant noted",
+   "tags": [
+    "master plan",
+    "grant",
+    "zoning code"
+   ],
+   "quote": "mgl, ch. 41, section 81d, master plan- master planning could possibly qualify for a grant"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:20 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "k. chenis made motion to adjourn, t. cole seconded, all aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "205 Sunset Lane Driveway Plan",
+   "where": "list",
+   "quote": "documents used at meeting: 205 sunset lane driveway plan"
+  },
+  {
+   "name": "Minutes 02/11/19, 190 Electric Avenue",
+   "where": "list",
+   "quote": "minutes: 02/11/19, 190 electric avenue"
+  },
+  {
+   "name": "Minutes 02/11/19, 380-400 Electric Avenue",
+   "where": "list",
+   "quote": "02/11/19, 380-400 electric avenue"
+  },
+  {
+   "name": "Minutes 02/11/19, 400 Electric Avenue",
+   "where": "list",
+   "quote": "02/11/19, 400 electric avenue"
+  },
+  {
+   "name": "Minutes 02/11/19, 151-181 Leominster Shirley Road",
+   "where": "list",
+   "quote": "02/11/19, 151-181 leominster shirley road"
+  },
+  {
+   "name": "Minutes 02/11/19",
+   "where": "list",
+   "quote": "151-181 leominster shirley road 02/11/19 02/25/19"
+  },
+  {
+   "name": "Minutes 02/25/19",
+   "where": "list",
+   "quote": "151-181 leominster shirley road 02/11/19 02/25/19"
+  },
+  {
+   "name": "Minutes 02/25/19, 190 Electric Avenue",
+   "where": "list",
+   "quote": "02/25/19, 190 electric avenue"
+  },
+  {
+   "name": "Minutes 02/25/19, 380-400 Electric Avenue",
+   "where": "list",
+   "quote": "02/25/19, 380-400 electric avenue"
+  },
+  {
+   "name": "Minutes 02/25/19, Town Meeting Warrant Article",
+   "where": "list",
+   "quote": "02/25/19, town meeting warrant article"
+  },
+  {
+   "name": "Minutes 03/04/19",
+   "where": "list",
+   "quote": "02/25/19, town meeting warrant article 03/04/19 03/04/19, 190 electric avenue"
+  },
+  {
+   "name": "Minutes 03/04/19, 190 Electric Avenue",
+   "where": "list",
+   "quote": "03/04/19, 190 electric avenue"
+  },
+  {
+   "name": "Minutes 03/04/19, 400 Electric Avenue",
+   "where": "list",
+   "quote": "03/04/19, 400 electric avenue"
+  },
+  {
+   "name": "Minutes 03/04/19, Warrant Articles",
+   "where": "list",
+   "quote": "03/04/19, warrant articles"
+  },
+  {
+   "name": "Minutes 03/04/19 (second listing)",
+   "where": "list",
+   "quote": "03/04/19, warrant articles 03/04/19 special event permit guidelines - draft"
+  },
+  {
+   "name": "Special Event Permit Guidelines - DRAFT",
+   "where": "list",
+   "quote": "special event permit guidelines - draft"
+  },
+  {
+   "name": "Warrant article, Lunenburg Code Section 250 - 5.6., Update (prepared by Town Counsel)",
+   "where": "text",
+   "quote": "lunenburg code, section 250 - 5.6., update- a warrant article, prepared by town counsel, was provided to the b oard."
+  },
+  {
+   "name": "Flowchart (Special Event Permit Guidelines)",
+   "where": "text",
+   "quote": "both k. chenis and t. cole suggested the flowchart be more detailed"
+  },
+  {
+   "name": "Citizen petitions filed by Daron Massey (farming and artistic events use; special event guidelines)",
+   "where": "text",
+   "quote": "he noted he has filed two citizen petitions; one for adding a use for farming and artistic events in lunenburg"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "special event permits",
+  "zoning",
+  "DLTA",
+  "ADA",
+  "land acquisition",
+  "minutes approval",
+  "site plan endorsement",
+  "driveway plan",
+  "master plan",
+  "public comment",
+  "lack of quorum"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

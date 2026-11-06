@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-03-20",
  "docid": "5101",
@@ -12,39 +12,532 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager appointment of Jacob Lachance as Full-time Police officer effective March 30, 2018",
-   "moved_by": "P. Bertram",
-   "seconded_by": "R. Ebersole",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: p. bertram 2nd: r.ebersole to ratify the town manager appointment of jacob lachance as full-time police officer effective march 30, 2018 vote: all in favor"
-  },
-  {
-   "motion": "Authorize the final payment to Shawmut and authorize the Chair to sign the closeout and to pursue further investigations with the engineer responsible for designing the heating system and the engineer responsible relating to the roof",
+   "motion": "Authorize the final payment to Shawmut, authorize the Chair to sign the closeout, and pursue further investigations with the engineers responsible for the heating system and the roof (Middle/High School project).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\": p. bertram to authorize the final payment to shawmut and authorize the chair to sign the closeout and to pursue further investigations with the engineer responsible for designing the heating system and the engineer responsible relating to the roof"
+   "quote": "to authorize the final payment to shawmut and authorize the chair to sign the closeout and to pursue"
   },
   {
-   "motion": "Adopt the Pregnant Workers Fairness Act Policy",
+   "motion": "Ratify the Town Manager appointment of Jacob Lachance as Full-time Police Officer effective March 30, 2018.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "R.Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of jacob lachance as full-time police officer effective march 30, 2018"
+  },
+  {
+   "motion": "Adopt the Pregnant Workers Fairness Act Policy.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"*: p. bertram to adopt the pregnant workers fairness act policy discussion: ms. bertram asked where the above wording originated from. ms. lemieux stated labor counsel. vote: all in favor"
+   "quote": "to adopt the pregnant workers fairness act policy"
   },
   {
-   "motion": "Enter Executive Session under M.G.L. c. 30 §21, Reason #3 to discuss strategy with respect to collective bargaining or litigation regarding Public Employees Local Union 39, DPW Employees, and to adjourn afterwards",
+   "motion": "Approve the minutes of March 6, 2018 (no motion or mover recorded).",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes of march 6, 2018 were approved."
+  },
+  {
+   "motion": "Enter Executive Session under M.G.L. c. 30 §21, Reason #3 (collective bargaining with Public Employees Local Union 39, DPW Employees), and adjourn afterwards.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed 5-0",
+   "outcome": "passed (five ayes listed)",
    "procedural": true,
-   "quote": "motion: r. ebersole 2\": p. bertram to enter executive session under m.g.l. c. 30 §21, reason #3; to discuss strategy with respect to collective bargaining or litigation, if an open meting may have a detrimental effect on the goverment's bargaining or litigating position, and the chair declares so. (public employees local union 39, dpw employees) and to adjourn afterwards vote: ms. mcquaid- aye, ms. luck-aye, ms. bertram-aye, mr. ebersole- aye, mr. toale- aye"
+   "quote": "to enter executive session under m.g.l. c. 30 §21, reason #3;"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. Four votes recorded: two full Board approvals, one with outcome not stated, and one procedural Executive Session vote with roll-call tally.",
- "cost_usd": 0.1014755
+ "note": "OCR text (macOS Vision) of a scanned minutes packet with garbled characters (e.g., \"Elaie. Peterson\", \"meting\", \"Gilehrest\"). Page 1 header is truncated, so the attendance line is partial. Article 21 text is not printed, and the reference to it is only in discussion. The school closeout motion has a mover and seconder but no printed result. The minutes approval has no motion or count printed; it is recorded as a vote only because the text says \"were approved\". The Pregnant Workers item's heading is cut across pages 6-7. Executive session minutes are separate and were not in the text. Vote counts are given as printed; no count was printed for the 'All in Favor' votes or the executive session motion (five ayes listed).",
+ "cost_usd": 0.01483302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. mcquaid- aye, ms. luck-aye, ms. bertram-aye, mr. ebersole- aye, mr. toale- aye"
+  },
+  {
+   "name": "Ms. McQuaid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. mcquaid- aye, ms. luck-aye, ms. bertram-aye, mr. ebersole- aye, mr. toale- aye"
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. mcquaid- aye, ms. luck-aye, ms. bertram-aye, mr. ebersole- aye, mr. toale- aye"
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. mcquaid- aye, ms. luck-aye, ms. bertram-aye, mr. ebersole- aye, mr. toale- aye"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: ms. mcquaid- aye, ms. luck-aye, ms. bertram-aye, mr. ebersole- aye, mr. toale- aye"
+  },
+  {
+   "name": "Representative Jennifer Benson",
+   "role": "Representative",
+   "status": "present",
+   "quote": "update from representative jennifer benson"
+  },
+  {
+   "name": "Ms. Calmes",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. calmes stated we are responding back to you to answer your questions as we near closing out the building"
+  },
+  {
+   "name": "John Londa",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "malandrinos, it director; john londa, facilities director"
+  },
+  {
+   "name": "Mr. Malandrinos",
+   "role": "IT Director",
+   "status": "present",
+   "quote": "malandrinos, it director; john londa, facilities director"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief marino introduced officer lachance."
+  },
+  {
+   "name": "Jacob Lachance",
+   "role": "Full-time Police Officer (appointee)",
+   "status": "not stated",
+   "quote": "town manager appointment: jacob lachance- full-time police officer"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux reported we received 202 responses."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "ms. lemieux asked land use director adam burney to speak to the planning board articles."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "resident, 56 Whiting Street",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, asked with the relocation of the earth day event, have all the appropriate"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "resident, 45 Williams Drive",
+   "status": "present",
+   "quote": "katey adams, 45 williams drive, stated she has attended all the meetings and charrettes"
+  },
+  {
+   "name": "Greg Bitter",
+   "role": "Planning Board Chair, 129 Pleasant Street",
+   "status": "present",
+   "quote": "greg bitter, 129 pleasant street, planning board chair, voiced frustration that he wasn't called on"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Social media question kept as an agenda item allowing 20 minutes, not a workshop.",
+   "quote": "after some discussion it was decided to keep it as an agenda item allowing 20 minutes."
+  },
+  {
+   "decision": "Agricultural Commission invited to discuss economic development that night, as well as the Planning Board.",
+   "quote": "it was also decided to invite the agricultural commission for discussion as it relates to economic development that night as well as the planning board."
+  },
+  {
+   "decision": "Sidewalk plowing on Massachusetts Ave. update continued; Ms. Lemieux to report at a later date.",
+   "quote": "due to lack of information from massdot, ms. lemieux will report at a later date."
+  },
+  {
+   "decision": "Mr. Toale to set up the Talent Bank booth at the Earth Day event.",
+   "quote": "mr. toale will set up the talent bank booth."
+  },
+  {
+   "decision": "Ms. Lemieux to let the Earth Day event coordinator know about the Parks Commission purview and the Wallis Park relocation question.",
+   "quote": "ms. lemieux will let the coordinator of the event know."
+  },
+  {
+   "decision": "Schedule: workshop proposal to be worked on for April 10; regular business April 17; next Board meeting April 3.",
+   "quote": "we will work on a workshop proposal for april 10th"
+  },
+  {
+   "decision": "Board signed the seasonal alcohol license renewal form (no licenses disapproved or not renewed).",
+   "quote": "the board signed the seasonal alcohol license renewal form."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Heating system (HVAC) problems at Middle/High School",
+   "what_was_recorded": "Ms. Bertram said, based on information, the town has spent about $5000 so far trying to resolve HVAC problems.",
+   "figures_as_printed": [
+    "$5000"
+   ],
+   "quote": "based on information it appears we have spent $5000 so far trying to resolve problems with this system"
+  },
+  {
+   "topic": "Final payment to Shawmut (Middle/High School project closeout)",
+   "what_was_recorded": "Motion to authorize the final payment to Shawmut and the Chair to sign the closeout; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "to authorize the final payment to shawmut and authorize the chair to sign the closeout and to pursue"
+  },
+  {
+   "topic": "Accounts payable, payroll and payroll deductions warrants",
+   "what_was_recorded": "Board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant in the amounts printed.",
+   "figures_as_printed": [
+    "$373,684.73",
+    "$777,903.06",
+    "$160,526.45"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $373,684.73; a payroll warrant in the amount of $777,903.06 and a payroll deductions warrant in the amount of $160,526.45."
+  },
+  {
+   "topic": "Final payment warrant, Middle/High school project",
+   "what_was_recorded": "Board signed the final payment warrant for the Middle/High school project.",
+   "figures_as_printed": [
+    "$172, 455.23"
+   ],
+   "quote": "the board also signed the final payment warrant for the middle/high school project in the amount of $172, 455.23."
+  },
+  {
+   "topic": "Rescission of remaining borrowing authorizations (Articles 17-19)",
+   "what_was_recorded": "Warrant articles proposed to rescind remaining borrowing authorizations for sewer construction and the Lane Property purchase.",
+   "figures_as_printed": [
+    "$838,675",
+    "$300,000",
+    "$256,000"
+   ],
+   "quote": "to see if the town will vote to rescind the sum of $838,675, the remaining borrowing"
+  },
+  {
+   "topic": "State aid (Chapter 70 and unrestricted general government aid)",
+   "what_was_recorded": "Representative Benson reported the Governor's budget includes about a 3% increase in Chapter 70 funding and about a 3.5% increase in unrestricted general government aid for Lunenburg.",
+   "figures_as_printed": [
+    "3%",
+    "3.5%"
+   ],
+   "quote": "governor baker has included in his budget about a 3% increase in chapter 70 funding for lunenburg and about"
+  },
+  {
+   "topic": "Circuit breaker funding",
+   "what_was_recorded": "Representative Benson said she is working to increase circuit breaker funding for this fiscal year; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she has also been working to increase circuit breaker funding for this fiscal year as part of our additional revenues."
+  },
+  {
+   "topic": "Residential energy bills (Unitil)",
+   "what_was_recorded": "Ms. Bertram said residents are concerned about rising energy bills from Unitil; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "concerned about the increase in their energy bills from unitil."
+  },
+  {
+   "topic": "Regional Animal Control Facility feasibility and cost estimate",
+   "what_was_recorded": "Architectural and engineering RFP would fund a feasibility study, conceptual design and cost estimate; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "complete a feasibility study, conceptual design, and cost estimate for a new regional"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Earth Day event relocation",
+   "quote": "dave passios, 56 whiting street, asked with the relocation of the earth day event, have all the appropriate boards been contacted with the change?"
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "45 Williams Drive",
+   "topic": "economic development survey and next steps",
+   "quote": "katey adams, 45 williams drive, stated she has attended all the meetings and charrettes and there are some common themes rising from them."
+  },
+  {
+   "speaker": "Greg Bitter",
+   "stated_role": "Planning Board Chair, 129 Pleasant Street",
+   "topic": "Planning Board role in economic development",
+   "quote": "greg bitter, 129 pleasant street, planning board chair, voiced frustration that he wasn't called on to participate in the discussion about economic development."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. toale announced the public is invited to the presentation of the boston post cane to clarence goguen",
+   "tags": [
+    "announcements",
+    "boston post cane",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "quote": "public comment: there was none at this time",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Update from Representative Jennifer Benson",
+   "resolution": "no action",
+   "quote": "representative benson reported at the end of july 2017 she was appointed as chair to the joint committee on",
+   "tags": [
+    "state legislature",
+    "state aid",
+    "housing bill",
+    "unitil"
+   ]
+  },
+  {
+   "topic": "Middle/High School Building Project Closeout",
+   "resolution": "motion made, result not stated",
+   "quote": "middle/high school building project closeout",
+   "tags": [
+    "school building",
+    "closeout",
+    "hvac",
+    "roof leak",
+    "projector screens",
+    "shawmut"
+   ]
+  },
+  {
+   "topic": "Town Manager appointment: Jacob Lachance, full-time police officer",
+   "resolution": "ratified",
+   "quote": "town manager appointment: jacob lachance- full-time police officer",
+   "tags": [
+    "police",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action",
+   "quote": "earth day event: at the march 6th meeting i reported that the earth day event organized by kim mayhew of",
+   "tags": [
+    "earth day",
+    "business partnership",
+    "dla grant",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "RFP for architectural and engineering conceptual design, regional animal control facility",
+   "resolution": "no action",
+   "quote": "a request for proposals was sent out on march 2nd with a deadline for submission of march 19th.",
+   "tags": [
+    "rfp",
+    "animal control",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Old business: plowing of sidewalk on Massachusetts Ave.",
+   "resolution": "continued",
+   "quote": "due to lack of information from massdot, ms. lemieux will report at a later date.",
+   "tags": [
+    "sidewalks",
+    "massdot"
+   ]
+  },
+  {
+   "topic": "Old business: Economic Development Survey and next steps",
+   "resolution": "discussion, no action",
+   "quote": "ms. lemieux reported we received 202 responses.",
+   "tags": [
+    "economic development",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Current business 1: Annual Town Meeting warrant articles",
+   "resolution": "discussion, no action",
+   "quote": "ms. lemieux reported these are warrant articles we have received to date.",
+   "tags": [
+    "town meeting warrant",
+    "articles",
+    "zoning",
+    "brooks house",
+    "agricultural commission"
+   ]
+  },
+  {
+   "topic": "Current business 2: Pregnant Workers Fairness Act Policy",
+   "resolution": "adopted",
+   "quote": "to adopt the pregnant workers fairness act policy",
+   "tags": [
+    "personnel policy",
+    "pregnancy accommodation"
+   ]
+  },
+  {
+   "topic": "Current business 3: seasonal alcohol license renewal signatures",
+   "resolution": "signed",
+   "quote": "the board signed the seasonal alcohol license renewal form.",
+   "tags": [
+    "alcohol licenses"
+   ]
+  },
+  {
+   "topic": "Current business 4: social media policy, workshop or agenda item",
+   "resolution": "agenda item, 20 minutes",
+   "quote": "discussion whether social media should be a workshop or agenda item",
+   "tags": [
+    "social media",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Current business 5: minutes, warrants and action file",
+   "resolution": "warrants signed; minutes approved",
+   "quote": "minutes of march 6, 2018 were approved.",
+   "tags": [
+    "warrants",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "ms. luck reported the zoning board of appeals is meting on the 28th.",
+   "tags": [
+    "committee reports",
+    "school committee vacancy",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard three speakers",
+   "quote": "dave passios, 56 whiting street, asked with the relocation of the earth day event, have all the appropriate",
+   "tags": [
+    "public comment",
+    "earth day",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; adjourned 9:06 p.m.",
+   "quote": "to enter executive session under m.g.l. c. 30 §21, reason #3;",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Town Meeting warrant Article 1 (regular written reports)",
+   "where": "list",
+   "quote": "article 1. to see if the town will vote to hear and/or accept the regular written reports of the town"
+  },
+  {
+   "name": "Annual Town Meeting warrant Article 20 (Brooks House conveyance, citizen petition)",
+   "where": "list",
+   "quote": "article 20. to see if the town will vote to authorize the board of selectmen to convey the building"
+  },
+  {
+   "name": "Annual Town Meeting warrant Article 25 (Special Town Meeting, Code Chapter 81)",
+   "where": "list",
+   "quote": "article 25. to see if the town will vote to amend the code of lunenburg, chapter 81"
+  },
+  {
+   "name": "Annual Town Meeting warrant Article 26 (Salary Administration Plan, Chapter 70)",
+   "where": "list",
+   "quote": "article 26. to see if the town will vote to amend the code of lunenburg, chapter 70 entitled"
+  },
+  {
+   "name": "Annual Town Meeting warrant Article 27 (Agricultural Commission membership, Chapter 12)",
+   "where": "list",
+   "quote": "article 27. to see if the town will vote to amend the code of lunenburg, chapter 12, article viii,"
+  },
+  {
+   "name": "Planning Board zoning articles 28-32 (zoning bylaw and map; full wording over 60 pages, available at Town Hall)",
+   "where": "list",
+   "quote": "articles 28 - 32 are planning board articles amending the zoning bylaw and map."
+  },
+  {
+   "name": "Pregnant Workers Fairness Act Policy",
+   "where": "text",
+   "quote": "to adopt the pregnant workers fairness act policy"
+  },
+  {
+   "name": "Economic Development Survey (202 responses)",
+   "where": "text",
+   "quote": "discussion on economic development survey and next steps"
+  },
+  {
+   "name": "Request for Proposals for Architectural & Engineering Conceptual Design Services for Regional AC Facility (sent March 2, 2018)",
+   "where": "text",
+   "quote": "a request for proposals was sent out on march 2nd with a deadline for submission of march 19th."
+  },
+  {
+   "name": "Governor's housing bill (4075), later redrafted as H4290",
+   "where": "text",
+   "quote": "she moved on to the governor's housing bill (4075)"
+  },
+  {
+   "name": "Letter from Select Board to the chairs of the Housing committees",
+   "where": "text",
+   "quote": "benson asked for a copy of the letter sent to the chairs so she can compare it to what the redraft"
+  },
+  {
+   "name": "Charter Review Committee draft charter and report",
+   "where": "text",
+   "quote": "their report and draft charter are on the town website"
+  },
+  {
+   "name": "Seasonal alcohol license renewal form",
+   "where": "text",
+   "quote": "the board signed the seasonal alcohol license renewal form."
+  },
+  {
+   "name": "Accounts payable warrant, payroll warrant and payroll deductions warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $373,684.73; a payroll warrant in the amount of $777,903.06 and a payroll deductions warrant in the amount of $160,526.45."
+  },
+  {
+   "name": "Final payment warrant, Middle/High school project",
+   "where": "text",
+   "quote": "the board also signed the final payment warrant for the middle/high school project in the amount of $172, 455.23."
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting warrant",
+  "school building closeout",
+  "hvac",
+  "police appointment",
+  "economic development",
+  "state aid",
+  "executive session",
+  "public comment",
+  "charter review",
+  "earth day",
+  "warrants",
+  "zoning articles"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux reported these are warrant articles we have received to date."
+ },
+ "dropped_unquoted_by_field": {}
 }

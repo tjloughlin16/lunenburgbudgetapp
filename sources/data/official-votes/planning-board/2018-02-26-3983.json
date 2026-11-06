@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-02-26",
  "docid": "3983",
@@ -12,31 +12,301 @@
  },
  "votes": [
   {
-   "motion": "rescind the Blueberry Hill subdivision",
+   "motion": "Rescind the Blueberry Hill subdivision.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "M. Allison",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": false,
    "quote": "m. jeffreys made a motion to rescind the blueberry hill subdivision, seconded by m. allison, all aye."
   },
   {
-   "motion": "accept the de-minimis change at Lunenburg Water District, 496 Massachusetts Avenue",
+   "motion": "Accept the de-minimis change requested by Lunenburg Water District, 496 Massachusetts Avenue.",
    "moved_by": "M. Allison",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "all aye",
    "procedural": false,
    "quote": "m. allison made a motion to accept the de-minimis change, seconded by m. jeffreys, all aye."
   },
   {
-   "motion": "approve the minutes from 2/12/18 and 2/12/18 Public Hearing",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "approved",
+   "motion": "Approve the minutes of 2/12/18 and the 2/12/18 Public Hearing.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes approval: 2/12/18, 2/12/18 public hearing- all minutes approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; readable. Three votes recorded: two substantive motions and one procedural minutes approval.",
- "cost_usd": 0.0863975
+ "note": "Text is OCR of a scan with garbled passages (e.g., the Wernick paragraph and 'senter District CD)'), and a stray '17' and 'EVICATED' artifact on pages 1-2. Charter Review item says 'G. Bitter' while attendance lists Gregory Bittner; likely the same person, recorded as printed. The 'all aye' votes give no numeric count. The minutes approval has no recorded mover or seconder. No motion is recorded for adjournment. Dollar figures: none printed. The 961 Northfield Road hearing is in separate minutes not included here. Ron Koivu's role is printed only as 'Presented by'.",
+ "cost_usd": 0.00663962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: kenneth chenis, david prokowiew"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "absent: kenneth chenis, david prokowiew"
+  },
+  {
+   "name": "Ron Koivu",
+   "role": "Presented by (Harbor Classic Homes, 45 Lawrence Street, Pepperell, MA)",
+   "status": "present",
+   "quote": "anr plan: 155 & 167 reservoir road- presented by ron koivu, harbor classic homes, 45 lawrence street,"
+  },
+  {
+   "name": "Al Wernick",
+   "role": "owner of Bad Larry's located at 1 Main Street",
+   "status": "present",
+   "quote": "al wernick (owner of bad larry's located at 1 main street)-."
+  },
+  {
+   "name": "M. Boggio",
+   "role": "Administrative Assistant (Marjorie J. Boggio)",
+   "status": "present",
+   "quote": "m. boggio noted that for the office to comply with the statutory filing timeframe of decisions"
+  },
+  {
+   "name": "G. Bitter",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "g. bitter asked if any discussion was held regarding the green community task force becoming the green committee."
+  },
+  {
+   "name": "B. Ebersole",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "b. ebersole noted a charge would come from the board of selectmen."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board endorsed the ANR plan for 155 & 167 Reservoir Road, a land swap moving lot lines.",
+   "quote": "plan endorsed by board."
+  },
+  {
+   "decision": "Board consensus to continue discussion of allowing the Board Chair to sign Board decisions on behalf of individual members, with full Board attendance.",
+   "quote": "board consensus was to continue discussion with full board attendance."
+  },
+  {
+   "decision": "Warrant articles for the Definitions and Use Table were sent to Town Counsel for review.",
+   "quote": "definitions and use table: warrant articles sent to town counsel for review."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Al Wernick",
+   "stated_role": "owner of Bad Larry's located at 1 Main Street",
+   "topic": "illuminated signs in Village Center District windows",
+   "quote": "a. wernick stated that he opened bad larrys approximately two years ago."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plan: 155 & 167 Reservoir Road",
+   "resolution": "endorsed by Board",
+   "tags": [
+    "ANR",
+    "lot lines",
+    "Reservoir Road"
+   ],
+   "quote": "anr plan: 155 & 167 reservoir road- presented by ron koivu, harbor classic homes, 45 lawrence street,"
+  },
+  {
+   "topic": "Public hearing: 961 Northfield Road, Blueberry Hill",
+   "resolution": "subdivision rescinded by motion (see separate minutes)",
+   "tags": [
+    "subdivision",
+    "public hearing"
+   ],
+   "quote": "public hearing: 961 northfield road, blueberry hill. see separate minutes."
+  },
+  {
+   "topic": "Appointment: Lunenburg Water District de-minimis change",
+   "resolution": "de-minimis change accepted",
+   "tags": [
+    "site plan",
+    "Lunenburg Water District",
+    "de-minimis"
+   ],
+   "quote": "lunenburg water district, 496 massachusetts avenue- the board received a request for a de-minimis change"
+  },
+  {
+   "topic": "Appointment: Al Wernick, Bad Larry's illuminated signs",
+   "resolution": "discussed; no action",
+   "tags": [
+    "signs",
+    "Village Center District",
+    "zoning relief"
+   ],
+   "quote": "al wernick (owner of bad larry's located at 1 main street)-."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 2/12/18 and 2/12/18 Public Hearing minutes",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approval: 2/12/18, 2/12/18 public hearing- all minutes approved."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "tags": [
+    "committees"
+   ],
+   "quote": "capital planning committee-done for the year"
+  },
+  {
+   "topic": "Agricultural Commission Board Liaison",
+   "resolution": "passed over",
+   "tags": [
+    "liaison"
+   ],
+   "quote": "agricultural commission: board liaison- passed over"
+  },
+  {
+   "topic": "Director's items: Board decisions filing",
+   "resolution": "continued; Board consensus to discuss with full attendance",
+   "tags": [
+    "board decisions",
+    "town clerk",
+    "filing"
+   ],
+   "quote": "board decisions: m. boggio noted that for the office to comply with the statutory filing timeframe"
+  },
+  {
+   "topic": "Sign Bylaw §250-6.5 (taken out of order)",
+   "resolution": "edits suggested by Land Use Director; no action recorded",
+   "tags": [
+    "sign bylaw",
+    "zoning",
+    "ZBA"
+   ],
+   "quote": "sign bylaw- (taken out of order)- edits were suggested by a. burney as a result of a previous board"
+  },
+  {
+   "topic": "Definitions and Use Table warrant articles",
+   "resolution": "sent to Town Counsel for review",
+   "tags": [
+    "warrant articles",
+    "zoning",
+    "use table"
+   ],
+   "quote": "definitions and use table: warrant articles sent to town counsel for review."
+  },
+  {
+   "topic": "Ongoing items: Solar, Sign Bylaw, Economic Development, Recreational Marijuana",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "solar",
+    "sign bylaw",
+    "economic development",
+    "marijuana"
+   ],
+   "quote": "economic development- meeting held this date with businesses."
+  },
+  {
+   "topic": "Board comment: student volunteers for town offices",
+   "resolution": "no action; information expected end of March",
+   "tags": [
+    "volunteers"
+   ],
+   "quote": "m. jeffreys spoke to some of the town offices that may benefit from student"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:16 PM (no motion recorded)",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment: 8:16 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 2/12/18, 2/12/18 Public Hearing",
+   "where": "list",
+   "quote": "minutes- 2/12/18, 2/12/18 public hearing"
+  },
+  {
+   "name": "ANR Plan Application, 155 & 167 Reservoir Road",
+   "where": "list",
+   "quote": "anr plan application, 155 & 167 reservoir road"
+  },
+  {
+   "name": "Request for De-Minimis Change, Lunenburg Water District, 496 Massachusetts Avenue",
+   "where": "list",
+   "quote": "request for de-minimis change, lunenburg water district, 496 massachusetts avenue"
+  },
+  {
+   "name": "Minutes/2018/02.26.18",
+   "where": "list",
+   "quote": "minutes/2018/02.26.18"
+  },
+  {
+   "name": "Code of the Town of Lunenburg, §250-4.17 (Village Center District H.(3)(d))",
+   "where": "text",
+   "quote": "code of the town of lunenburg, §250-4.17. village center district h.(3)(d) allows barber poles, but"
+  },
+  {
+   "name": "Separate minutes for the 961 Northfield Road, Blueberry Hill public hearing",
+   "where": "text",
+   "quote": "public hearing: 961 northfield road, blueberry hill. see separate minutes."
+  },
+  {
+   "name": "Planning Board warrant articles (Use Table, Definitions, Water Supply Protection, Solar, RMD, Marijuana Moratorium)",
+   "where": "text",
+   "quote": "there will be three planning board articles."
+  }
+ ],
+ "tags": [
+  "zoning",
+  "signs",
+  "ANR",
+  "subdivision",
+  "warrant articles",
+  "marijuana",
+  "solar",
+  "minutes approval",
+  "Village Center District",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting."
+ },
+ "dropped_unquoted_by_field": {}
 }

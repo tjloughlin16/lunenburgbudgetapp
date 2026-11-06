@@ -1,0 +1,582 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "sewer-commission",
+ "board": "Sewer Commission",
+ "video_title": "Sewer Commission",
+ "meeting_date": "2018-09-25",
+ "video_id": "A0aKkcDC5e8",
+ "video_url": "https://www.youtube.com/watch?v=A0aKkcDC5e8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/sewer-commission/2018-09-25-A0aKkcDC5e8.json",
+  "sha256": "69d151a2ac5e0b5d26f7b82252528d8769765dfc925d3e19ac556bf1b9eca0b1",
+  "caption_lines": 266,
+  "segments": 2022
+ },
+ "recording": {
+  "duration_s": 5679,
+  "duration": "1:34",
+  "spoken_chars": 73587,
+  "words_approx": 12264
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09252018-5612",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2018-09-25-agenda-5612.txt",
+   "path": "sources/meetings/sewer-commission/2018-09-25-agenda-5612.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09252018-5612",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2018-09-25-minutes-5612.txt",
+   "path": "sources/meetings/sewer-commission/2018-09-25-minutes-5612.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T18:03:35Z",
+  "cost_usd": 0.2033197
+ },
+ "minutes": {
+  "headline": "Sewer Commission heard a trailer park owner on manual meters and fees; hearings planned for late Oct and Nov.",
+  "summary": "The commission met with the owner and former owner of a mobile home park whose individually read sewer meters the town wants to stop reading, and explained a proposed annual fee and meter standards. Members then discussed irrigation meters, draft policies, a waiver clause, warrant articles for the special town meeting, an engineering RFQ, and legal fee budgeting. They voted to submit warrant articles and the 9/11 minutes were discussed for approval.",
+  "attendees": [
+   {
+    "name_as_heard": "Barb",
+    "role": "sewer administrator (staff)"
+   },
+   {
+    "name_as_heard": "Carl",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jane",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ryan",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 20,
+    "topic": "Mobile home park owner (Wayland/Whalum village) asked about manual meter changes, the proposed annual fee, upgrade costs, connection and reconnect fees, and how costs fall on fixed-income residents."
+   },
+   {
+    "t": 742,
+    "topic": "Former park owner explained why the park installed individual meters, for leak detection, and raised betterment fees charged per unit."
+   },
+   {
+    "t": 5598,
+    "topic": "A commissioner reminded listeners the sewer system receives no tax dollars (this was a commissioner statement, not resident comment)."
+   }
+  ],
+  "tags": [
+   "budget",
+   "fees",
+   "legal",
+   "policy",
+   "public-comment",
+   "town-meeting",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 4386,
+    "motion": "Submit sewer warrant articles (stabilization transfers) with correct numbers before the warrant closes October 9th",
+    "moved_by": "",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5149,
+    "motion": "Approve minutes of 9/11 (9/18 minutes reviewed but not voted)",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 5642,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 468,
+    "topic": "Annual fee for manual-read meters",
+    "what_was_said": "Draft regulation would charge an annual fee for any meter the town must read or maintain off its system.",
+    "figures_as_heard": [
+     "fifty dollar annual fee",
+     "$50 fee"
+    ]
+   },
+   {
+    "t": 1172,
+    "topic": "Meter upgrade cost",
+    "what_was_said": "Upgrading meters to electronically readable could cost each user additional money.",
+    "figures_as_heard": [
+     "300 dollars",
+     "$350"
+    ]
+   },
+   {
+    "t": 638,
+    "topic": "Reconnect fee",
+    "what_was_said": "Park owner said he paid a connection fee again when replacing a mobile home.",
+    "figures_as_heard": [
+     "$1,000 reconnect fee"
+    ]
+   },
+   {
+    "t": 1527,
+    "topic": "Connection fees apartments",
+    "what_was_said": "Staff said new apartments paid per-building connection fees, negotiated through the zoning board.",
+    "figures_as_heard": [
+     "24,000",
+     "23 thousand per building"
+    ]
+   },
+   {
+    "t": 2183,
+    "topic": "Betterment fees",
+    "what_was_said": "Park owner objected to betterment charged per unit.",
+    "figures_as_heard": [
+     "$4,500",
+     "well over $100,000",
+     "25 betterment units"
+    ]
+   },
+   {
+    "t": 4300,
+    "topic": "Special town meeting sewer warrant articles",
+    "what_was_said": "Stabilization transfers (reserve capacity and sewer bank) to go on the November 13 special town meeting warrant with numbers filled in after FY18 close.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4749,
+    "topic": "FY19 legal fees",
+    "what_was_said": "Commissioners want a fixed hourly rate set from calendar-year actual billable hours to budget legal costs, differing from the town manager's email summary.",
+    "figures_as_heard": [
+     "160 billable hours",
+     "200"
+    ]
+   },
+   {
+    "t": 3304,
+    "topic": "Cost of base system for meter reading",
+    "what_was_said": "Discussed treating the base reading system as an enterprise asset recovered like betterments from users.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4344,
+    "description": "Sewer stabilization transfers (reserve capacity and sewer bank) to the fall special town meeting",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only; vote to submit articles"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 3107,
+    "decision": "Draft policy will refer generically to an 'approved meter' so the meter definition does not hold up the policy."
+   },
+   {
+    "t": 3046,
+    "decision": "Staff to ask the contract water operator whether they can identify meter types in the field, and to ask for meter photos with applications."
+   },
+   {
+    "t": 4620,
+    "decision": "Barb to draft a short RFQ for a maintenance plan and send it to the seven engineering firms."
+   },
+   {
+    "t": 5511,
+    "decision": "Tentative plan: public hearings at end of October and November 30; budget Nov 11; no meeting Dec 25."
+   },
+   {
+    "t": 4196,
+    "decision": "Waiver clause deferred to a future agenda when absent members attend."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 2418,
+    "topic": "Mobile home park meters and fees",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2449,
+    "t_end": 3512,
+    "topic": "Irrigation meters reference checks and cost allocation",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 3513,
+    "t_end": 4300,
+    "topic": "Policy changes and waiver clause",
+    "resolution": "referred to future agenda",
+    "tags": [
+     "policy",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4300,
+    "t_end": 4407,
+    "topic": "Special town meeting warrant",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 4407,
+    "t_end": 4749,
+    "topic": "Inflow/infiltration data and maintenance plan RFQ",
+    "resolution": "Barb to draft RFQ",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4749,
+    "t_end": 5149,
+    "topic": "FY19 legal fees",
+    "resolution": "no resolution",
+    "tags": [
+     "legal",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 5149,
+    "t_end": 5429,
+    "topic": "Minutes",
+    "resolution": "discussed",
+    "tags": []
+   },
+   {
+    "t_start": 5429,
+    "t_end": 5663,
+    "topic": "Upcoming meetings, comment, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote count on warrant articles and minutes",
+   "Whether 9/11 minutes were formally approved",
+   "Speaker identity throughout"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4196,
+    "about": "A member objected to a blanket waiver clause in the regulations.",
+    "sides": "one member against the waiver clause proposal",
+    "words_as_heard": "you might as well not have regulations because there's there's nothing controlling a future commission",
+    "kind": "members disagree"
+   },
+   {
+    "t": 4857,
+    "about": "Dispute over whether the town manager's email accurately summarized the legal fee agreement.",
+    "sides": "members who attended the meeting versus a member who did not",
+    "words_as_heard": "this summary by the town manager is inaccurate is a little misleading",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 4196,
+    "kind": "condition",
+    "about": "Member wants the waiver clause discussed with absent members present.",
+    "who": "a member",
+    "words_as_heard": "I have some serious concerns about it"
+   },
+   {
+    "t": 1256,
+    "kind": "safety",
+    "about": "Upgraded meters could remove the ability to detect leaks by hand.",
+    "who": "park owner",
+    "words_as_heard": "I won't be able to tell if someone has a leak or not"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 3513,
+    "name_as_heard": "red marked up draft policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "you're talking about the red one is some red marked up one",
+    "shown": true
+   },
+   {
+    "t": 4321,
+    "name_as_heard": "warrant article handout",
+    "kind": "warrant article",
+    "words_as_heard": "I do have a handout but it's just a generic initial",
+    "shown": true
+   },
+   {
+    "t": 4749,
+    "name_as_heard": "town manager's email summary",
+    "kind": "letter or email",
+    "words_as_heard": "I did send out her email where she recapped",
+    "shown": true
+   },
+   {
+    "t": 5149,
+    "name_as_heard": "minutes of 9/11 and 9/18",
+    "kind": "prior minutes",
+    "words_as_heard": "we have both 911 and 918",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "sewer-fee-schedule",
+    "title": "Sewer fee schedule",
+    "question": "What fees, including meter fees and connection fees, do sewer users pay and why?",
+    "t": 468,
+    "words_as_heard": "fifty dollar annual fee for anyone with a manual read meter",
+    "data_in_play": [
+     "$50 fee",
+     "300 dollars",
+     "24,000"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "sewer-retained-earnings",
+    "title": "Sewer enterprise reserves",
+    "question": "What reserves and stabilization transfers are going to the special town meeting?",
+    "t": 4344,
+    "words_as_heard": "we were going to save stabilization transfers to the fall meeting",
+    "data_in_play": [
+     "reserve capacity",
+     "sewer bank"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "sewer-indirect-costs",
+    "title": "Sewer legal costs",
+    "question": "How should FY19 legal fees be budgeted?",
+    "t": 4749,
+    "words_as_heard": "we need to have a fixed rate",
+    "data_in_play": [
+     "160 billable hours"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission voted to submit sewer warrant articles, stabilization transfers, for the November 13 special town meeting, with numbers to be filled in before the warrant closes October 9.",
+    "t": 4386
+   },
+   {
+    "line": "The commission heard the owner and a former owner of a mobile home park on a proposed annual fee for meters the town must read by hand and on meter upgrade costs.",
+    "t": 468
+   },
+   {
+    "line": "Members deferred a waiver clause to a future agenda, and agreed the draft policy will refer to an 'approved meter' without waiting on a meter definition.",
+    "t": 4196
+   },
+   {
+    "line": "Barb will draft a short RFQ for a maintenance plan and send it to seven engineering firms.",
+    "t": 4620
+   },
+   {
+    "line": "Tentative schedule: public hearings at the end of October and on November 30, a budget meeting November 11, and no meeting December 25.",
+    "t": 5511
+   }
+  ],
+  "why_it_matters": [
+   "Sewer users with individually read meters, including residents of mobile home parks, could face a new annual fee or meter upgrade costs if the draft regulation is adopted.",
+   "The stabilization transfers on the November 13 special town meeting warrant are a vote residents will be asked to take, and the commission's statement that the sewer system receives no tax dollars means these costs fall on sewer users."
+  ],
+  "watch_next": [
+   "Warrant closes October 9 for the November 13 special town meeting; transfer numbers are to be filled in after FY18 close.",
+   "Public hearings on the draft meter policy at the end of October and on November 30, with the budget meeting November 11."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T18:03:40Z",
+   "cost_usd": 0.025133100000000002
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09252018-5612",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2018-09-25-minutes-5612.txt",
+   "path": "sources/meetings/sewer-commission/2018-09-25-minutes-5612.pdf"
+  },
+  "official_sha256": "642e7655bef00bc05160ab92af8ebeb2d298e1f1c22f187d1802798f80072d70",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the stabilization warrant vote and the $50 manual-read meter fee, and both defer the waiver clause. Our minutes carry many dollar figures and several decisions the official minutes omit, and the engineering-firm action differs (RFQ vs reminders), so check the recording.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 2,
+   "only_in_ours": 8,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to submit stabilization transfer warrant articles before 10/9 closing",
+    "ours": "Submit sewer warrant articles (stabilization transfers) with correct numbers before the warrant closes October 9th — passed",
+    "official": "motion: joan p. second: ryan s. to submit the stabilization funds transfer warrants, with the correct numbers to be added prior to the 10/9 closing date. vote: unanimous",
+    "note": "Both records show the vote passing, with numbers to be added before the 10/9 close.",
+    "t": 4386
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Special Town Meeting date for stabilization articles",
+    "ours": "",
+    "official": "barb said that the warrant closes 10/9 and the article would be for stabilization funds transfers.",
+    "note": "The official minutes give the Special Town Meeting date as November 13 in the structured summary; ours does not state a date and says 'fall special town meeting'.",
+    "t": 4344
+   },
+   {
+    "kind": "agree",
+    "about": "Annual fee for manually read meters",
+    "ours": "fifty dollar annual fee, $50 fee",
+    "official": "one of the changes proposed is an annual $50 fee for any meter that the commission would need to have read.",
+    "note": "Both give $50.",
+    "t": 468
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meter upgrade cost figures",
+    "ours": "Meter upgrade cost: 300 dollars, $350",
+    "official": "the commission discussed the meter upgrade options and costs for the trailer park.",
+    "note": "Official prints no dollar figure for meter upgrades; ours has $300/$350, which are inconsistent with each other and should be checked against the recording.",
+    "t": 1172
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reconnect fee of $1,000",
+    "ours": "Reconnect fee: $1,000 reconnect fee",
+    "official": "mike asked about the connection fees and noted that they also have to pay a re-connection fee when a trailer is replaced.",
+    "note": "Official mentions a re-connection fee but prints no amount.",
+    "t": 638
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Connection fees for apartments",
+    "ours": "Connection fees apartments: 24,000, 23 thousand per building",
+    "official": "",
+    "note": "Official prints no apartment connection fee figures.",
+    "t": 1527
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Betterment fee figures",
+    "ours": "Betterment fees: $4,500, well over $100,000, 25 betterment units",
+    "official": "there was a discussion about the betterment fees charged when the trailer park was",
+    "note": "Official mentions betterment fee discussion but prints no figures.",
+    "t": 2183
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "FY19 legal fee figures",
+    "ours": "FY19 legal fees: 160 billable hours, 200",
+    "official": "carl said that the commission needs to have the rate for budgeting purposes.",
+    "note": "Official discusses the legal rate but prints no figures.",
+    "t": 4749
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Draft policy refers to 'approved meter'",
+    "ours": "Draft policy will refer generically to an 'approved meter' so the meter definition does not hold up the policy.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3107
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ask water operator to identify meter types and request meter photos",
+    "ours": "Staff to ask the contract water operator whether they can identify meter types in the field, and to ask for meter photos with applications.",
+    "official": "the commission discussed ways to determine what irrigation meters are in use currently and costs to users for the upgrades.",
+    "note": "Official notes only a general discussion of determining meters in use, with no decision recorded.",
+    "t": 3046
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Engineering firms: RFQ vs reminders",
+    "ours": "Barb to draft a short RFQ for a maintenance plan and send it to the seven engineering firms.",
+    "official": "but has had no response, so she will send out reminders.",
+    "note": "Ours records an RFQ for a maintenance plan; official records reminders about I/I information and meeting invitation. Check the recording to see whether these are separate items.",
+    "t": 4620
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Tentative meeting and hearing schedule",
+    "ours": "Tentative plan: public hearings at end of October and November 30; budget Nov 11; no meeting Dec 25.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5511
+   },
+   {
+    "kind": "agree",
+    "about": "Waiver clause deferred until all members present",
+    "ours": "Waiver clause deferred to a future agenda when absent members attend.",
+    "official": "carl had some concerns and wants to discuss this further when all commission members are present.",
+    "note": "Both defer the waiver clause until absent members attend.",
+    "t": 4196
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Carnivales to check with Leominster Water",
+    "ours": "",
+    "official": "the carnivale's will check with leominster water.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes of 9/11 and 9/18 to be reviewed next meeting",
+    "ours": "",
+    "official": "commission will review and vote on the 9/11 and 9/18 minutes at the next meeting",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendees",
+    "ours": "Barb, Carl, Jane, Ryan",
+    "official": "motion: joan p. second: ryan s.",
+    "note": "Ours lists Jane; official lists Joan, who moved the motion, so likely a misheard name, but verify. Official also lists Mike and Jim Carnivale as public participants and the clerk, which ours omits.",
+    "t": 4386
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T18:04:37Z",
+   "cost_usd": 0.0434471
+  }
+ }
+}

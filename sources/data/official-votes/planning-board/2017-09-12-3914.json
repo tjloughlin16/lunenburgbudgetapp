@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-09-12",
  "docid": "3914",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the Planning Board meeting",
+   "motion": "To adjourn the Planning Board meeting.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -21,6 +21,306 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes from macOS Vision. One procedural vote: adjournment. The remainder of the document is discussion of economic development strategy with no motions voted on.",
- "cost_usd": 0.08451049999999999
+ "note": "Scanned minutes read by OCR, so some words and names are garbled (e.g., 'Healher', 'Prokowiew', 'Bolion'); names are given as printed in the Present/Also Present lines. Titled 'Economic Development Workshop' under the Planning Board letterhead; the only recorded vote is the adjournment motion. The discussion was informational and no other motions were recorded. No dollar figures appear in the text. The minutes list no documents heading; the presentation and bylaws are only referenced in discussion.",
+ "cost_usd": 0.00745962,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: kenneth chenis"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members jamie toale, robert ebersole, paula bertram, phyllis luck, damon mcquaid, and town manager healher lemieux"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members jamie toale, robert ebersole, paula bertram, phyllis luck, damon mcquaid, and town manager healher lemieux"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members jamie toale, robert ebersole, paula bertram, phyllis luck, damon mcquaid, and town manager healher lemieux"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members jamie toale, robert ebersole, paula bertram, phyllis luck, damon mcquaid, and town manager healher lemieux"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "also present: select board members jamie toale, robert ebersole, paula bertram, phyllis luck, damon mcquaid, and town manager healher lemieux"
+  },
+  {
+   "name": "Healher Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: select board members jamie toale, robert ebersole, paula bertram, phyllis luck, damon mcquaid, and town manager healher lemieux"
+  },
+  {
+   "name": "Heather Bowen",
+   "role": "Farmers' Market Manager-in-Training",
+   "status": "present",
+   "quote": "heather bowen, 188 flat hill road - the boards need to be aware of what is being discussed on facebook."
+  },
+  {
+   "name": "Marie Martin",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "marie martin, 54 longwood drive - expressed her appreciation to the boards for their work and commitment."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "katey adams, williams drive - feels economic development should be encouraged towards both municipal and private"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street - asked for clarification on the village center district bylaw;"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street - stated as we talk about the town center and what we can do with what we have"
+  },
+  {
+   "name": "Kaley Adams",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "kaley adams; 45 williams drive - related how the bolion community combined art with farming"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Slide 8, titled \"Community Desires\", will be renamed \"Community Comments\" for clarification if the presentation is posted to the Town web.",
+   "quote": "slide 8, \"community desires\", will be renamed \"community comments\" for clarificalion in the even"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town website update grant",
+   "what_was_recorded": "Town Manager noted grant money has been received to update the Town website to make it more user-friendly.",
+   "figures_as_printed": [],
+   "quote": "h. lemieux noted that grant money has been received lo update the town website, making it more user-friendly."
+  },
+  {
+   "topic": "Electric cost charged by Unitil",
+   "what_was_recorded": "R. Ebersole said discussion is needed about the high electric cost Unitil charges residents, which affects where people choose to live.",
+   "figures_as_printed": [],
+   "quote": "there also needs to be discussion about the high electric cost that unitil is charging residents"
+  },
+  {
+   "topic": "Solar as revenue",
+   "what_was_recorded": "M. Jeffreys asked whether solar could be a form of revenue for the Town; no figures were given.",
+   "figures_as_printed": [],
+   "quote": "possibly solar as a form of revenue?"
+  },
+  {
+   "topic": "Cost of economic development next steps",
+   "what_was_recorded": "Further discussion covered what economic development next steps would cost; no figures were recorded.",
+   "figures_as_printed": [],
+   "quote": "further discussion ensued about how to proceed for economic development, what the next steps are, what would it cost, etc."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "D. McQuaid",
+   "stated_role": "",
+   "topic": "misquoted on social media about Village Center",
+   "quote": "d. mcquaid noted he has been misquoted on social media regarding the village center."
+  },
+  {
+   "speaker": "M. Jeffreys",
+   "stated_role": "speaking as a citizen",
+   "topic": "citizen teamwork and Facebook discussion",
+   "quote": "m. jeffreys (speaking as a citizen) opined that the citizens have been working together as a team to advance the town"
+  },
+  {
+   "speaker": "D. Prokowiew",
+   "stated_role": "",
+   "topic": "communication gap with citizens",
+   "quote": "d. prokowiew opined that there is a communication gap between town government and the citizens."
+  },
+  {
+   "speaker": "Heather Bowen",
+   "stated_role": "Farmers' Market Manager-in-Training",
+   "topic": "Facebook awareness, bylaws too vague",
+   "quote": "heather bowen, 188 flat hill road - the boards need to be aware of what is being discussed on facebook."
+  },
+  {
+   "speaker": "Marie Martin",
+   "stated_role": "",
+   "topic": "appreciation; concern about 40R in Town Center",
+   "quote": "marie martin, 54 longwood drive - expressed her appreciation to the boards for their work and commitment."
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "",
+   "topic": "economic development and open space",
+   "quote": "katey adams, williams drive - feels economic development should be encouraged towards both municipal and private"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "Village Center District Bylaw clarification",
+   "quote": "dave rodgers, 82 highland street - asked for clarification on the village center district bylaw;"
+  },
+  {
+   "speaker": "Heather Bowen",
+   "stated_role": "",
+   "topic": "Stillman Country Fair vs. Unifier Festival permitting",
+   "quote": "heather bowen, 188 flat hill road - thanked the boards for this brainstorming."
+  },
+  {
+   "speaker": "Kaley Adams",
+   "stated_role": "",
+   "topic": "Bolton art and farming; other communities' revenue",
+   "quote": "kaley adams; 45 williams drive - related how the bolion community combined art with farming"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "topic": "parking in Town Center",
+   "quote": "ana lockwood, 91 main street - stated as we talk about the town center and what we can do with what we have"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (first round)",
+   "resolution": "heard; no action",
+   "quote": "d. mcquaid noted he has been misquoted on social media regarding the village center.",
+   "tags": [
+    "public comment",
+    "Village Center"
+   ]
+  },
+  {
+   "topic": "Economic Development Workshop PowerPoint presentation",
+   "resolution": "presented; informational, no action",
+   "quote": "a. burney noted the economic development workshop presentalion, which is informational and conceptual to open up",
+   "tags": [
+    "presentation",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Economic development discussion",
+   "resolution": "discussion; no action",
+   "quote": "further discussion ensued about how to proceed for economic development, what the next steps are, what would it cost, etc.",
+   "tags": [
+    "economic development",
+    "zoning",
+    "open space",
+    "master plan",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Public comment (second round)",
+   "resolution": "heard; no action",
+   "quote": "heather bowen, 188 flat hill road - thanked the boards for this brainstorming.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:23 PM",
+   "quote": "motion made, d. prokowiew, second, m. allison, to adjourn the planning board meeting. all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Economic Development Workshop presentation (PowerPoint)",
+   "where": "text",
+   "quote": "a. burney noted the economic development workshop presentalion, which is informational and conceptual to open up"
+  },
+  {
+   "name": "Village Center District Bylaw",
+   "where": "text",
+   "quote": "dave rodgers, 82 highland street - asked for clarification on the village center district bylaw;"
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "he noted the town charter states the sewer commissioners shall in conjunclion with other land use bodies"
+  },
+  {
+   "name": "2011 Open Space Plan",
+   "where": "text",
+   "quote": "there were many recommendations on the 2011 open space plan that were never completed."
+  },
+  {
+   "name": "Zoning Map",
+   "where": "text",
+   "quote": "the zoning map will be the hot button when it goes to fown meeting."
+  }
+ ],
+ "tags": [
+  "economic development",
+  "workshop",
+  "public comment",
+  "zoning",
+  "Village Center",
+  "open space",
+  "master plan",
+  "solar",
+  "farming",
+  "Town website",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-10-11",
  "docid": "1435",
@@ -12,45 +12,181 @@
  },
  "votes": [
   {
-   "motion": "Change the order of the agenda to accommodate a Charter Review Committee member with a previous engagement",
+   "motion": "Change the order of the agenda to accommodate a member of the Charter Review Committee who has a previous engagement.",
    "moved_by": "Chairman May",
    "seconded_by": "Vice-Chair Mendoza",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "a motion was made by chairman may to change the order of the agenda, to accommodate a member of the charter review committee, who has a previous engagement. seconded by vice-chair mendoza, voted unanimously."
+   "quote": "a motion was made by chairman may to change the order of the agenda, to accommodate a member of the charter review committee"
   },
   {
-   "motion": "Accept the nominations of Lance May as Chair, Lorraine Mendoza as Vice-Chair, and William Tyler as Clerk",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the following nominations were put before the commission. lance may, chair, lorraine mendoza, vice-chair and william tyler, clerk, with no further discussion, it was voted to accept the nominations as presented unanimously."
+   "motion": "Accept the slate of nominations as presented: Lance May as Chair, Lorraine Mendoza as Vice-Chair, and William Tyler as Clerk.",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "with no further discussion, it was voted to accept the nominations as presented unanimously."
   },
   {
-   "motion": "Accept the minutes from September 13",
+   "motion": "Accept the minutes from the September 13 meeting.",
    "moved_by": "Chair May",
    "seconded_by": "Vice-Chair Mendoza",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "minutes from the september 13\" were read and upon a motion by chair may, seconded by vice-chair mendoza, the minutes were accepted unanimously."
+   "quote": "upon a motion by chair may, seconded by vice-chair mendoza, the minutes were accepted unanimously."
   },
   {
-   "motion": "Purchase a used 8x20 storage container for storing tools and items from the building before demolition",
+   "motion": "Purchase a used 8x20 storage container to store useful tools and other items remaining in the Holman St. Cemetery building before demolition.",
    "moved_by": "Commissioner Tyler",
    "seconded_by": "Vice-Chair Mendoza",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "also, upon a motion by commissioner tyler, seconded by vice-chair mendoza, to purchase a used 8x20 storage container for the purpose of storing whatever useful tools and other items that remain in the building before demolition. it was voted unanimously to purchase this container."
+   "quote": "upon a motion by commissioner tyler, seconded by vice-chair mendoza, to purchase a used 8x20 storage container"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chair May",
    "seconded_by": "Comm. Mendoza",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "a motion was made by chair may to adjourn, seconded by comm. mendoza. meeting was adjourned at 9:05 pm."
+   "quote": "a motion was made by chair may to adjourn, seconded by comm. mendoza."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes scanned via OCR (macOS Vision). One vote (#2 – nominations for officers) records the motion and outcome but does not state who moved or seconded it.",
- "cost_usd": 0.1372485
+ "note": "Text is OCR output from two pages (macOS Vision); a few characters may be misread. The minutes name no roll call, so absences are not stated. The nominations vote names no mover or seconder. The adjournment motion records no vote count. No public comment section is printed. The next meeting is set for November 29, 2018 at 7:00 pm.",
+ "cost_usd": 0.00445322,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance May",
+   "role": "Chair (Chairman May)",
+   "status": "present",
+   "quote": "meeting was called to order at 7:05 pm by chairman may."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "other members present were vice-chairman, lorraine mendoza, and clerk, william tyler."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "other members present were vice-chairman, lorraine mendoza, and clerk, william tyler."
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "from the Charter Review Committee",
+   "status": "present",
+   "quote": "steve archambault from the charter review committee was present to give the"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Get a price from M&M Services for a backhoe and operator to help remove the old gravestones around the Holman St. Cemetery building, since the DPW Director cannot commit help to the Supt.",
+   "quote": "it was decided to get a price from m&m services for the use of a backhoe and operator,"
+  },
+  {
+   "decision": "The possible increase of the Niche Wall price was taken under advisement, to be discussed further at a future meeting.",
+   "quote": "it was taken under advisement to be further discussed at a future meeting."
+  },
+  {
+   "decision": "The donor (son of George Reichart) was advised to send a letter stating his wishes; a special account in his name would then be established to be drawn on for the sign purchase.",
+   "quote": "it was advised that he send a letter stating his wishes and then we could establish a special account"
+  },
+  {
+   "decision": "Commissioner Tyler to contact LUK in Fitchburg about obtaining summer help for the Supt. next year and report at the next meeting.",
+   "quote": "commissioner tyler is in the process of contacting luk in fitchburg for"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Backhoe and operator for removing gravestones at Holman St. Cemetery",
+   "what_was_recorded": "The commission decided to obtain a price from M&M Services for a backhoe and operator; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "it was decided to get a price from m&m services for the use of a backhoe and operator,"
+  },
+  {
+   "topic": "Purchase of used storage container",
+   "what_was_recorded": "The commission voted unanimously to purchase a used 8x20 storage container; no price was printed.",
+   "figures_as_printed": [],
+   "quote": "it was voted unanimously to purchase this container."
+  },
+  {
+   "topic": "Cemetery rates / Niche Wall price",
+   "what_was_recorded": "Increasing the Niche Wall price to a figure was discussed and taken under advisement.",
+   "figures_as_printed": [
+    "$1400.00"
+   ],
+   "quote": "the possibility of increasing the niche wall price to $1400.00 was discussed."
+  },
+  {
+   "topic": "Private donation in memory of George Reichart for signs",
+   "what_was_recorded": "A son of George Reichart wishes to donate a sum of money for purchase of Rules and Regulations signs for both cemeteries; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "his son wishes to donate a sum of money for the purchase of signs"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Re-organization of the Commission",
+   "resolution": "approved nominations as presented",
+   "quote": "first order of business was re-organization of the commission."
+  },
+  {
+   "topic": "Approval of September 13 minutes",
+   "resolution": "approved",
+   "quote": "upon a motion by chair may, seconded by vice-chair mendoza, the minutes were accepted unanimously."
+  },
+  {
+   "topic": "Charter Review Committee update",
+   "resolution": "no action; update received",
+   "quote": "steve archambault from the charter review committee was present to give the"
+  },
+  {
+   "topic": "Holman St. Cemetery building demolition and gravestones",
+   "resolution": "price to be obtained; storage container purchased",
+   "quote": "the holman st. cemetery building is awaiting demolition, pending a plan to"
+  },
+  {
+   "topic": "Cemetery rates and Niche Wall price",
+   "resolution": "continued to a future meeting",
+   "quote": "cemetery rates were discussed and the possibility of increasing the niche wall"
+  },
+  {
+   "topic": "Private donation in memory of George Reichart",
+   "resolution": "no action; donor advised to send letter",
+   "quote": "notification was received of a private donation in memory of george reichart, a"
+  },
+  {
+   "topic": "Summer help from LUK for the Supt.",
+   "resolution": "no action; Commissioner Tyler to report at next meeting",
+   "quote": "commissioner tyler is in the process of contacting luk in fitchburg for"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:05 pm",
+   "quote": "a motion was made by chair may to adjourn, seconded by comm. mendoza."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery commission",
+  "re-organization",
+  "Holman St. Cemetery",
+  "gravestones",
+  "demolition",
+  "storage container",
+  "niche wall rates",
+  "private donation",
+  "charter review committee",
+  "summer help"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

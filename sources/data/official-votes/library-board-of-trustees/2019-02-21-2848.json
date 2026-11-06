@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2019-02-21",
  "docid": "2848",
@@ -12,47 +12,386 @@
  },
  "votes": [
   {
-   "motion": "Accept January 17, 2018 minutes",
+   "motion": "Approve the January 17, 2018 minutes, following a minor amendment by Maia.",
    "moved_by": "Lars",
    "seconded_by": "Maia",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "lars made a motion to accept, seconded by maia, and unanimously approved"
+   "quote": "lars made a motion to accept, seconded by maia, and unanimously approved."
   },
   {
-   "motion": "Accept February 7, 2018 special meeting minutes",
+   "motion": "Approve the February 7, 2018 special meeting minutes.",
    "moved_by": "Kate",
    "seconded_by": "Lars",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "kate made a motion to accept, seconded by lars, unanimously approved"
+   "quote": "kate made a motion to accept, seconded by lars, unanimously approved."
   },
   {
-   "motion": "Accept February 14, 2018 special meeting minutes",
+   "motion": "Approve the February 14, 2018 special meeting minutes.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dick made a motion to accept, seconded by kate, unanimously approved"
+   "quote": "dick made a motion to accept, seconded by kate, unanimously approved."
   },
   {
-   "motion": "Accept Martha Moore's resignation",
+   "motion": "Accept Martha Moore's resignation (letter of notification to retire).",
    "moved_by": "Maia",
    "seconded_by": "Bob",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "maia made a motion to accept her resignation, seconded by bob and unanimously approved"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "maia made a motion to accept her resignation, seconded by bob and unanimously approved."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:51 PM.",
    "moved_by": "Lars",
    "seconded_by": "Maia",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "a motion to adjourn was made by lars at 7:51 pm, seconded by maia and unanimously approved"
+   "quote": "a motion to adjourn was made by lars at 7:51 pm, seconded by maia and unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0850425
+ "note": "Text is a clean extraction of two pages; votes are recorded only as 'unanimously approved' without counts, so outcomes are 'passed'. Public comment is printed as 'none' twice, so no speakers are listed. Minutes dated 2019 refer to 'January 17, 2018' and 'February 7/14, 2018' minutes; printed as-is. The signature block names Kate McCarron as 'Trustee for Harry Kubetz'; absences are not stated. Heather Lemieux, Nicole, Anne Gilman, Donna and Jeanne Raboin are named but not shown as taking part, so they are not listed as attendees.",
+ "cost_usd": 0.00798352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, bob conroy, lars widstrand, kate mccarron, martha moore, muir haman"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, bob conroy, lars widstrand, kate mccarron, martha moore, muir haman"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, bob conroy, lars widstrand, kate mccarron, martha moore, muir haman"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, bob conroy, lars widstrand, kate mccarron, martha moore, muir haman"
+  },
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, bob conroy, lars widstrand, kate mccarron, martha moore, muir haman"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, bob conroy, lars widstrand, kate mccarron, martha moore, muir haman"
+  },
+  {
+   "name": "Muir Haman",
+   "status": "present",
+   "quote": "attending: dick mailloux, maia wentrup, bob conroy, lars widstrand, kate mccarron, martha moore, muir haman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board will invite Town Manager Heather Lemieux to attend a meeting at her convenience.",
+   "quote": "the board will invite the tm, heather lemieux, to attend a meeting at her convenience."
+  },
+  {
+   "decision": "Two extra hours were approved for a union employee to help with workload (no motion recorded).",
+   "quote": "two extra hours were approved of for a union employee to help with work load."
+  },
+  {
+   "decision": "Re-organization of officers to take place at the June meeting, after the May 18 town election.",
+   "quote": "re-organization of officers should take place during the june meeting."
+  },
+  {
+   "decision": "Agenda items not covered tonight, plus a review of changing the director's evaluation date, a review of the updated Trustee Guide, and a building tour, carried to upcoming meetings.",
+   "quote": "all of the agenda items that were not covered tonight, a closer examination of the pros and cons of changing the director's evaluation date"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2019 Budget - state funding change",
+   "what_was_recorded": "Martha explained a change in state funding calculations that will negatively affect the library, decreasing the Municipal Appropriation Requirement.",
+   "figures_as_printed": [
+    "$12,000"
+   ],
+   "quote": "martha explained a change in state funding calculations which will have a negative impact on lpl, decreasing the municipal appropriation requirement by $12,000."
+  },
+  {
+   "topic": "FY 2020 Budget status - benefited position",
+   "what_was_recorded": "No benefited position will be added as requested.",
+   "figures_as_printed": [],
+   "quote": "there will be no addition of a benefited position as requested."
+  },
+  {
+   "topic": "Trust Fund expenditure guidance",
+   "what_was_recorded": "Ongoing discussion about expending some trust funds and possibly moving or rolling over funds; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "ongoing discussion regarding expending some funds as well as the possibility of moving or rolling over funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved three sets of minutes",
+   "quote": "lars made a motion to accept, seconded by maia, and unanimously approved.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Town Manager",
+   "resolution": "board to invite Town Manager to a meeting",
+   "quote": "the board will invite the tm, heather lemieux, to attend a meeting at her convenience.",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, see attached",
+   "quote": "director's report - see attached",
+   "tags": [
+    "director",
+    "report"
+   ]
+  },
+  {
+   "topic": "FY 2019 Budget",
+   "resolution": "noted state funding change lowering appropriation requirement by $12,000",
+   "quote": "martha explained a change in state funding calculations which will have a negative impact on lpl, decreasing the municipal appropriation requirement by $12,000.",
+   "tags": [
+    "budget",
+    "state aid"
+   ]
+  },
+  {
+   "topic": "FY 2020 Budget status",
+   "resolution": "no new benefited position; two extra hours approved for union employee",
+   "quote": "there will be no addition of a benefited position as requested.",
+   "tags": [
+    "budget",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "no report (NA)",
+   "quote": "trust fund update -na staff- there are two positions to be filled",
+   "tags": [
+    "trust fund"
+   ]
+  },
+  {
+   "topic": "Staff",
+   "resolution": "two positions to be filled",
+   "quote": "there are two positions to be filled: a replacement for muir in adult services as he transitions to library director",
+   "tags": [
+    "staffing",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Technology",
+   "resolution": "no report (NA)",
+   "quote": "technology -na programs - successful vacation week",
+   "tags": [
+    "technology"
+   ]
+  },
+  {
+   "topic": "Programs",
+   "resolution": "reported; vacation week successful",
+   "quote": "programs - successful vacation week highlighted by spy camp, dungeons & dragons, and increasing popularity for board games by all ages.",
+   "tags": [
+    "programs"
+   ]
+  },
+  {
+   "topic": "Building & Maintenance",
+   "resolution": "no report (NA)",
+   "quote": "building & maintenance - na thes program update",
+   "tags": [
+    "building"
+   ]
+  },
+  {
+   "topic": "THES Program Update",
+   "resolution": "no plans to continue 5th grade class visits",
+   "quote": "thes program update - due to uncertain funding, there are currently no plans to continue the 5th grade class visits.",
+   "tags": [
+    "THES",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Capital Planning Update",
+   "resolution": "no report (NA)",
+   "quote": "capital planning update -na",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Young Adult Area Report",
+   "resolution": "received, see attached",
+   "quote": "young adult area report - see attached",
+   "tags": [
+    "reports",
+    "young adult"
+   ]
+  },
+  {
+   "topic": "Children's Area Report",
+   "resolution": "received, see attached",
+   "quote": "children's area report -see attached",
+   "tags": [
+    "reports",
+    "children"
+   ]
+  },
+  {
+   "topic": "Trust Fund Expenditure Guidance/Process",
+   "resolution": "ongoing discussion; no action recorded",
+   "quote": "trust fund expenditure guidance/process - ongoing discussion regarding expending some funds as well as the possibility of moving or rolling over funds.",
+   "tags": [
+    "trust fund"
+   ]
+  },
+  {
+   "topic": "Choosing New Director Update",
+   "resolution": "director's resignation accepted",
+   "quote": "maia made a motion to accept her resignation, seconded by bob and unanimously approved.",
+   "tags": [
+    "director search",
+    "retirement"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no report (NA)",
+   "quote": "friends of lpl update - na",
+   "tags": [
+    "friends"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "carried to upcoming meetings",
+   "quote": "agenda items for upcoming meetings - all of the agenda items that were not covered tonight",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "two trustees to run uncontested",
+   "quote": "board comments -donna and dick are both eager to remain on the board and, as of right now, will be running uncontested.",
+   "tags": [
+    "elections",
+    "trustees"
+   ]
+  },
+  {
+   "topic": "Town caucus, town meeting and town election dates",
+   "resolution": "dates noted; officer re-organization set for June",
+   "quote": "town caucus-monday march 11, 7 p.m., thes town meeting-saturday may 4 town election-saturday may 18",
+   "tags": [
+    "elections",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Other",
+   "resolution": "noted open house and farewell party for Martha",
+   "quote": "other - there will be an open house on march 30th to bid farewell to martha.",
+   "tags": [
+    "events"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Director's Report Jan. 2019",
+   "where": "list",
+   "quote": "referenced documents: director's report jan. 2019"
+  },
+  {
+   "name": "Children Area Report for Jan/Feb 2019",
+   "where": "list",
+   "quote": "director's report jan. 2019 children area report for jan/feb 2019"
+  },
+  {
+   "name": "YA Report for Jan/Feb 2019",
+   "where": "list",
+   "quote": "children area report for jan/feb 2019 ya report for jan/feb 2019"
+  },
+  {
+   "name": "Jan. 17 2019 Minutes",
+   "where": "list",
+   "quote": "ya report for jan/feb 2019 jan. 17 2019 minutes"
+  },
+  {
+   "name": "Feb. 7 2019 Special Meeting Minutes",
+   "where": "list",
+   "quote": "jan. 17 2019 minutes feb. 7 2019 special meeting minutes"
+  },
+  {
+   "name": "Feb. 14 2019 Special Meeting Minutes",
+   "where": "list",
+   "quote": "feb. 7 2019 special meeting minutes feb. 14 2019 special meeting minutes"
+  },
+  {
+   "name": "Library Materials report for FinComm",
+   "where": "list",
+   "quote": "feb. 14 2019 special meeting minutes library materials report for fincomm"
+  },
+  {
+   "name": "FY 2020 Budget Rationale",
+   "where": "list",
+   "quote": "library materials report for fincomm fy 2020 budget rationale"
+  },
+  {
+   "name": "Budget 2020 Presentation",
+   "where": "list",
+   "quote": "fy 2020 budget rationale\\ budget 2020 presentation"
+  },
+  {
+   "name": "FY 2020 Library Budget Worksheet",
+   "where": "list",
+   "quote": "budget 2020 presentation fy 2020 library budget worksheet"
+  },
+  {
+   "name": "Updated Trustee Guide",
+   "where": "text",
+   "quote": "an opportunity to go over the updated trustee guide and a tour of the building."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "budget",
+  "FY2019 budget",
+  "FY2020 budget",
+  "director retirement",
+  "director search",
+  "staffing",
+  "trust fund",
+  "programs",
+  "THES",
+  "town election"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

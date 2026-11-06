@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2017-10-19",
  "docid": "2833",
@@ -12,55 +12,272 @@
  },
  "votes": [
   {
-   "motion": "approve September 21, 2017 minutes as presented",
+   "motion": "Accept the September 21, 2017 minutes as presented.",
    "moved_by": "Kirja",
    "seconded_by": "Lars",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to accept as presented by kirja. seconded by lars. unanimous vote in favor."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Lars",
    "seconded_by": "Harry",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "motion to adjourn by lars. seconded by harry. unanimous vote in favor."
-  },
-  {
-   "motion": "accept the Committee Board Overview Form",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Kiirja Paananen",
-   "outcome": "not stated",
-   "procedural": false,
-   "quote": "motion to accept by gare thompson, seconded by kiirja paananen"
-  },
-  {
-   "motion": "adjourn",
-   "moved_by": "Gare Thompson",
-   "seconded_by": "Kiirja Paananen",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to adjourn by gare thompson, seconded by kiirja paananen. meeting adjourned at 7:48 pm."
-  },
-  {
-   "motion": "approve conceptually the revisions to section 3-7 as agreed upon by the Board",
-   "moved_by": "Harry",
-   "seconded_by": "Kate",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "a motion was made by harry to approve, conceptually, the revisions to section 3-7 as agreed upon by the board. seconded by kate. unanimous vote in favor."
-  },
-  {
-   "motion": "adjourn",
-   "moved_by": "Lars",
-   "seconded_by": "Kate",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion to adjourn by lars. seconded by kate. unanimous vote in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These minutes contain three separate meetings: October 19, 2017; November 9, 2017; and December 7, 2017 (special meeting). All six votes were extracted from the OCR'd text.",
- "cost_usd": 0.1137755
+ "note": "The OCR text covers three meetings: the October 19, 2017 regular meeting, the November 9, 2017 regular meeting, and the December 7, 2017 special meeting. Only the October 19, 2017 meeting is recorded here, per the requested meeting date; the November and December items were left out. Votes were recorded only as unanimous, with no counts. OCR errors appear in the text (e.g., 'coilects', 'Kirja' vs. 'Kiirja'); quotes were kept as printed.",
+ "cost_usd": 0.00672902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, donna saila, martha moore - director lpl"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, donna saila, martha moore - director lpl"
+  },
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, donna saila, martha moore - director lpl"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, donna saila, martha moore - director lpl"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, donna saila, martha moore - director lpl"
+  },
+  {
+   "name": "Donna Saila",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, donna saila, martha moore - director lpl"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director",
+   "status": "present",
+   "quote": "attending: dick mailloux, harry kubetz, kate mccarron, kiirja paananen, lars widstrand, donna saila, martha moore - director lpl"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "absent",
+   "quote": "absent: gare thompson, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: gare thompson, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: gare thompson, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Steve Archambault",
+   "status": "not stated",
+   "quote": "charter revision possibilities - steve archambault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dick will aggregate the suggestions on the Committee Board Overview Form and provide the trustees with an updated response.",
+   "quote": "dick will aggregate the suggestions and provide the lplbot's with an updated response."
+  },
+  {
+   "decision": "Donna will send her Room Use Policies material to the trustees before the November meeting.",
+   "quote": "donna will send what she has to the lplbot prior to our november meeting"
+  },
+  {
+   "decision": "The Director's evaluation will follow a similar process in 2018, beginning in February 2018 and completed by March 2018.",
+   "quote": "the process should begin in february, 2018 and be completed by march, 2018."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2018 budget status",
+   "what_was_recorded": "The Director reported the FY 2018 budget was on target, actually 2% below, for this time of year.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "fy 2018 budget - right on target (actually 2% below) for this time of year."
+  },
+  {
+   "topic": "Trust funds (Bartholomew vs. Touchstone)",
+   "what_was_recorded": "Trustees remain confused about the Bartholomew trust funds, which considerably underperform the Touchstone funds; the trustees still want them moved to Touchstone management and are unclear how much can be spent and for what purposes.",
+   "figures_as_printed": [],
+   "quote": "trust funds - still confusion about bartholomew funds (which considerably underperform the touchstone funds.)"
+  },
+  {
+   "topic": "Library fines revenue",
+   "what_was_recorded": "The ARIS report noted that the library collects approximately $8,000 per year in fines.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "aris report - noted that lpl coilects approximately $8,000 per year in fines."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "General public comment",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "no public - no comment."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Charter revision possibilities (Steve Archambault)",
+   "resolution": "discussed; no action",
+   "quote": "charter revision possibilities - steve archambault",
+   "tags": [
+    "charter",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Approval of minutes (September 21, 2017)",
+   "resolution": "approved unanimously",
+   "quote": "motion to accept as presented by kirja. seconded by lars. unanimous vote in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; trust funds, budget and fines discussed",
+   "quote": "director's report (presented by martha)",
+   "tags": [
+    "director report",
+    "budget",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Committee Board Overview Form",
+   "resolution": "suggestions gathered; Dick to aggregate",
+   "quote": "some suggestions were made about various parts of the form.",
+   "tags": [
+    "committee overview form"
+   ]
+  },
+  {
+   "topic": "Room Use Policies",
+   "resolution": "continued; Donna to send material before November meeting",
+   "quote": "donna will send what she has to the lplbot prior to our november meeting",
+   "tags": [
+    "room use policy"
+   ]
+  },
+  {
+   "topic": "Plans for Director's Evaluation",
+   "resolution": "same process as 2017 to run Feb-Mar 2018",
+   "quote": "the process from 2017 seemed to work well so we will do a similar process in 2018.",
+   "tags": [
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings / Board goals",
+   "resolution": "listed for upcoming meetings",
+   "quote": "agenda items for upcoming meetings",
+   "tags": [
+    "agenda",
+    "board goals"
+   ]
+  },
+  {
+   "topic": "Announcement: Book and Bake sale",
+   "resolution": "noted; no action",
+   "quote": "itwas noted that the annual book and bake sale is scheduled to take place on saturday, november 4, 2017.",
+   "tags": [
+    "friends of library",
+    "event"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:46 p.m.",
+   "quote": "motion to adjourn by lars. seconded by harry. unanimous vote in favor.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBoT Agenda for October 19, 2017",
+   "where": "list",
+   "quote": "lplbot agenda for october 19, 2017"
+  },
+  {
+   "name": "LPL Director's report of October 19, 2017",
+   "where": "list",
+   "quote": "lpl director's report of october 19, 2017"
+  },
+  {
+   "name": "Trust Funds Reports from Town of Lunenburg, Touchstone Investments, and Bartholomew",
+   "where": "list",
+   "quote": "trust funds reports from town of lunenburg, touchstone investments, and bartholomew"
+  },
+  {
+   "name": "Young Adult Services librarian's report October 2017",
+   "where": "list",
+   "quote": "young adult services librarian's report october 2017"
+  },
+  {
+   "name": "Children's Area Report For the Month of September, 2017",
+   "where": "list",
+   "quote": "children's area report for the month of september, 2017"
+  },
+  {
+   "name": "Town of Lunenburg Committee/Board Overview form",
+   "where": "list",
+   "quote": "town of lunenburg committee/board overview form"
+  },
+  {
+   "name": "Sections 3-1 and 3-7 of the Lunenburg Charter which relate to the LPL",
+   "where": "list",
+   "quote": "sections 3-1 and 3-7 of the lunenburg charter which relate to the lpl"
+  },
+  {
+   "name": "September 21, 2017 minutes",
+   "where": "text",
+   "quote": "september 21, 2017 minutes."
+  }
+ ],
+ "tags": [
+  "library board",
+  "charter revision",
+  "trust funds",
+  "FY2018 budget",
+  "director report",
+  "director evaluation",
+  "room use policy",
+  "committee overview form",
+  "minutes approval",
+  "fines revenue"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2018-09-20",
  "docid": "2843",
@@ -12,23 +12,320 @@
  },
  "votes": [
   {
-   "motion": "Approve the June 21, 2018 minutes as written",
+   "motion": "Approve the June 21, 2018 minutes as written.",
    "moved_by": "Donna Saiia",
-   "seconded_by": "Lars Widstrand",
-   "outcome": "unanimously approved",
+   "seconded_by": "Lars",
+   "outcome": "passed",
    "procedural": true,
    "quote": "donna saiia made a motion to approve of the minutes as written, seconded by lars. board unanimously approved."
   },
   {
-   "motion": "Adjourn at 8:31 p.m.",
-   "moved_by": "Lars Widstrand",
-   "seconded_by": "Kate McCarron",
-   "outcome": "unanimously approved",
+   "motion": "Adjourn the meeting at 8:31 p.m.",
+   "moved_by": "Lars",
+   "seconded_by": "Kate",
+   "outcome": "passed",
    "procedural": true,
    "quote": "lars made a motion to adjourn at 8:31p.m., seconded by kate. unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0808215
+ "note": "Draft minutes (header reads 'Draft Minutes'); no vote recorded to approve them. Two procedural motions were recorded with votes. The call to order and the agenda-setting list have no recorded motion. The attached reports (Director's Report, area reports, LED Update) are referenced but their contents are not in the text. Public comment is attributed by name only for Principal Champagne; the other three appear in the attendance list and the group's stated purpose.",
+ "cost_usd": 0.00655742,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: donna saiia, maia wentrup, kate mccarron, lars widstrand, bob conroy, harry kubetz , martha moore - director lpl"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: donna saiia, maia wentrup, kate mccarron, lars widstrand, bob conroy, harry kubetz , martha moore - director lpl"
+  },
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: donna saiia, maia wentrup, kate mccarron, lars widstrand, bob conroy, harry kubetz , martha moore - director lpl"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "present",
+   "quote": "attending: donna saiia, maia wentrup, kate mccarron, lars widstrand, bob conroy, harry kubetz , martha moore - director lpl"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: donna saiia, maia wentrup, kate mccarron, lars widstrand, bob conroy, harry kubetz , martha moore - director lpl"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Vice Chairperson (acting as Chair for that meeting)",
+   "status": "present",
+   "quote": "the lplbot meeting was called to order at 6:45 p.m. by vice chairperson, harry kubetz"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: donna saiia, maia wentrup, kate mccarron, lars widstrand, bob conroy, harry kubetz , martha moore - director lpl"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Chair of LPLBoT",
+   "status": "absent",
+   "quote": "absent: dick mailloux,-chair of lplbot, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: dick mailloux,-chair of lplbot, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: dick mailloux,-chair of lplbot, terri burchfield - fincom representative, bob ebersole - board of selectmen representative"
+  },
+  {
+   "name": "Heidi Champagne",
+   "role": "Principal, THES",
+   "status": "present",
+   "quote": "heidi champagne (principal, thes)"
+  },
+  {
+   "name": "Annica Scott",
+   "role": "Dean of Students, LMHS",
+   "status": "present",
+   "quote": "annica scott (dean of students, lmhs)"
+  },
+  {
+   "name": "Rhonda Connery",
+   "role": "5th Grade teacher @ THES",
+   "status": "present",
+   "quote": "rhonda connery (5th grade teacher @ thes)"
+  },
+  {
+   "name": "Julianna Hanscom",
+   "role": "Director of Special Services",
+   "status": "present",
+   "quote": "julianna hanscom (director of special services)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Harry Kubetz assured the guests the 5th grade visits matter would be treated with utmost importance; Dick Mailloux, Chair, would communicate with the visiting group upon his return from vacation.",
+   "quote": "and dick mailloux, chair, would be communicating with them upon his return from vacation."
+  },
+  {
+   "decision": "Agenda items set for upcoming meetings: resolving the issue of 5th grade class visits, LED update, and the financial report required by state.",
+   "quote": "agenda items for upcoming meetings § resolving the issue of 5th grade class visits"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Assistant Library Director salary and salary budget discrepancy",
+   "what_was_recorded": "Director said a $2,446 discrepancy missing from the salary budget is part of the negotiated salary for the new Assistant Library Director and would be justified from the database budget line; it arose from a placeholder salary entered at year-end hiring.",
+   "figures_as_printed": [
+    "$2,446"
+   ],
+   "quote": "the $2,446 discrepancy missing from the salary budget represents a portion of the salary agreed upon for the new assistant library director and would be justified from the database budget line"
+  },
+  {
+   "topic": "Salary budget in 2019",
+   "what_was_recorded": "Director stated there will be no salary budget discrepancy in 2019.",
+   "figures_as_printed": [],
+   "quote": "there will be no discrepancy in 2019."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "$2,446 from the database budget line to cover the missing portion of the Assistant Library Director salary",
+   "amount_as_printed": "$2,446",
+   "outcome": "Described by the Director as justified from the database budget line; no vote recorded.",
+   "quote": "the $2,446 discrepancy missing from the salary budget represents a portion of the salary agreed upon for the new assistant library director and would be justified from the database budget line"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Heidi Champagne",
+   "stated_role": "Principal, THES",
+   "topic": "5th grade student visits to LPL",
+   "quote": "principal champagne began with the history of the communication about the idea"
+  },
+  {
+   "speaker": "Annica Scott",
+   "stated_role": "Dean of Students, LMHS",
+   "topic": "5th grade student visits to LPL",
+   "quote": "annica scott (dean of students, lmhs)"
+  },
+  {
+   "speaker": "Rhonda Connery",
+   "stated_role": "5th Grade teacher @ THES",
+   "topic": "5th grade student visits to LPL",
+   "quote": "rhonda connery (5th grade teacher @ thes)"
+  },
+  {
+   "speaker": "Julianna Hanscom",
+   "stated_role": "Director of Special Services",
+   "topic": "5th grade student visits to LPL",
+   "quote": "julianna hanscom (director of special services)"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: 5th grade student visits to LPL",
+   "resolution": "discussed; no action, trustees asked clarifying questions only; Chair to follow up",
+   "quote": "these four attendees were at our meeting to discuss the matter of coordinating 5th grade student visits to lpl.",
+   "tags": [
+    "5th grade visits",
+    "schools",
+    "collaboration"
+   ]
+  },
+  {
+   "topic": "Approval of June 21, 2018 minutes",
+   "resolution": "approved",
+   "quote": "donna saiia made a motion to approve of the minutes as written, seconded by lars. board unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received; no action",
+   "quote": "martha stated that everything is on target.",
+   "tags": [
+    "director",
+    "salary budget",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Young Adult Area Report",
+   "resolution": "received; see attached",
+   "quote": "young adult area report - see attached",
+   "tags": [
+    "young adult services"
+   ]
+  },
+  {
+   "topic": "Children's Area Report",
+   "resolution": "received; see attached",
+   "quote": "children's area report -see attached",
+   "tags": [
+    "children's services"
+   ]
+  },
+  {
+   "topic": "Room Use Policy Update",
+   "resolution": "no action; awaiting final acceptance by town counsel",
+   "quote": "room use policy update - completed policy is awaiting final acceptance by town counsel.",
+   "tags": [
+    "policy",
+    "room use"
+   ]
+  },
+  {
+   "topic": "Parking Policy Update",
+   "resolution": "no action; staff-only areas marked",
+   "quote": "\"staff only\" areas have been marked",
+   "tags": [
+    "policy",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Safety Policy Update",
+   "resolution": "no action; nothing submitted yet",
+   "quote": "nothing submitted yet; martha is working on",
+   "tags": [
+    "policy",
+    "safety",
+    "emergency planning"
+   ]
+  },
+  {
+   "topic": "LED Update",
+   "resolution": "received; see attached",
+   "quote": "led update - see attached",
+   "tags": [
+    "LED"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received; no action",
+   "quote": "discussion was mostly about the upcoming book & bake sale to be held october 6th",
+   "tags": [
+    "Friends of LPL",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "set for next meetings",
+   "quote": "agenda items for upcoming meetings § resolving the issue of 5th grade class visits",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:31 p.m.",
+   "quote": "lars made a motion to adjourn at 8:31p.m., seconded by kate. unanimously approved.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBOT Meeting Minutes for June 21, 2018",
+   "where": "list",
+   "quote": "lplbot meeting minutes for june 21, 2018 directors report children's area report young adult services report led update"
+  },
+  {
+   "name": "Directors Report",
+   "where": "list",
+   "quote": "lplbot meeting minutes for june 21, 2018 directors report children's area report young adult services report led update"
+  },
+  {
+   "name": "Children’s Area Report",
+   "where": "list",
+   "quote": "lplbot meeting minutes for june 21, 2018 directors report children's area report young adult services report led update"
+  },
+  {
+   "name": "Young Adult Services Report",
+   "where": "list",
+   "quote": "lplbot meeting minutes for june 21, 2018 directors report children's area report young adult services report led update"
+  },
+  {
+   "name": "LED Update",
+   "where": "list",
+   "quote": "lplbot meeting minutes for june 21, 2018 directors report children's area report young adult services report led update"
+  },
+  {
+   "name": "Room Use Policy",
+   "where": "text",
+   "quote": "room use policy update - completed policy is awaiting final acceptance by town counsel."
+  }
+ ],
+ "tags": [
+  "library",
+  "5th grade visits",
+  "school collaboration",
+  "staffing",
+  "salary budget",
+  "policy updates",
+  "Friends of LPL",
+  "2018"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

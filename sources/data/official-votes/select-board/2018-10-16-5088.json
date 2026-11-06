@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-10-16",
  "docid": "5088",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appoint Tyler Hathaway to the Cultural Council with a term to expire June 30, 2021",
+   "motion": "Appoint Tyler Hathaway to the Cultural Council with a term to expire June 30, 2021.",
    "moved_by": "R. Ebersole",
    "seconded_by": "K. Adams",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: r. ebersole to appoint tyler hathaway to the cultural council with a term to expire june 30, 2021 2nd: k. adams vote: all in favor"
   },
   {
-   "motion": "Sign the Special Town Meeting Warrant",
+   "motion": "Sign the Special Town Meeting Warrant.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "not stated",
@@ -28,7 +28,7 @@
    "quote": "motion: r. ebersole 2nd: d. mcquaid to sign the special town meeting warrant"
   },
   {
-   "motion": "Come up with wording as proposed by Town Counsel regarding Board Policies",
+   "motion": "Come up with wording for Section 2.01 (Access to Town Counsel) as proposed by Town Counsel.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-1",
@@ -36,7 +36,7 @@
    "quote": "motion: r. ebersole 2nd: d. mcquaid to come up with wording as proposed by town counsel vote: 4 in favor, 1 against (adams)"
   },
   {
-   "motion": "Change Section 5.02 Road Acceptance changes as provided by Town Counsel",
+   "motion": "Change Section 5.02 Road Acceptance as provided by Town Counsel.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
@@ -53,6 +53,443 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned text with some corrupted passages (marked ===OCR macOS Vision===). All recorded votes extracted. One motion (Special Town Meeting Warrant) has no recorded vote outcome.",
- "cost_usd": 0.11681049999999998
+ "note": "OCR text with garbled passages: page 3 is partly unreadable (the vacancy list header is missing), page 6 and page 10 have garbled lines, and page 8 is partly missing. The body does not print the meeting date; the only date is the received stamp (DEC 10 2018). The Section 2.01 motion was withdrawn and re-made before the recorded 4-1 vote. The motion to sign the Special Town Meeting Warrant has no recorded result.",
+ "cost_usd": 0.013108620000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; damon"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "jamie toale, chairman; robert ebersole, vice chairman; damon mcquaid, clerk"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "robert ebersole, vice chairman; damon mcquaid, clerk; phyllis luck, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "damon mcquaid, clerk; phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "phyllis luck, member; katey adams, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; james marino, police chief"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; james marino, police chief"
+  },
+  {
+   "name": "James Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "adam costa, town counsel; james marino, police chief"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, land use director; elaine peterson, executive assistant"
+  },
+  {
+   "name": "Elaine Peterson",
+   "role": "Executive Assistant",
+   "status": "present",
+   "quote": "adam burney, land use director; elaine peterson, executive assistant"
+  },
+  {
+   "name": "Tyler Hathaway",
+   "role": "applicant for Cultural Council",
+   "status": "present",
+   "quote": "tyler hathaway, 872 northfield road, stated he moved to town about a year and a half ago"
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "288 Holman Street",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, talked about a resident holding private events"
+  },
+  {
+   "name": "Daron Massey",
+   "role": "300 Holman Street",
+   "status": "present",
+   "quote": "daron massey, 300 holman st, stated the word he wanted to keep repeating was reasonableness."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "284 Lancaster Avenue",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue, stated it comes down to what is the intent of this?"
+  },
+  {
+   "name": "Kathleen Wnuk",
+   "role": "503 Holman Street",
+   "status": "present",
+   "quote": "kathleen wnuk, 503 holman street, stated she lives on a quiet little street."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the accounts payable, payroll and payroll deductions warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $329,577.20"
+  },
+  {
+   "decision": "Special event permit policy is not finished; Mr. Toale recommended making it an agenda item and publicizing a public hearing in advance with a public draft.",
+   "quote": "mr. toale recommended making this an agenda item considering everything we discussed tonight and publicize holding a public hearing in advance with a public draft."
+  },
+  {
+   "decision": "Town Counsel to do a cursory review of the alcohol regulations with the Police Chief on what might be changed, and bring it back to the Board.",
+   "quote": "he suggested town counsel do a cursory review of the regulations with the police chief on what things might be changed and bring it back to us."
+  },
+  {
+   "decision": "Check with the Police Department, as agents of the local licensing commission, whether they feel supported enough and understand the language of the alcohol regulations.",
+   "quote": "mr. ebersole suggested checking with the police department, as the agents of the local licensing commission, whether they feel supported enough and they understand the language."
+  },
+  {
+   "decision": "Town Counsel to further research the enforceability of penalties due from the customer or patron under the carry-in permit policy.",
+   "quote": "he was unsure about the enforceability of penalties imposed as part of a licensing/permitting policy that are due from the customer or patron. he will further research this."
+  },
+  {
+   "decision": "Social media policy needs further Board discussion; Town Counsel to provide some guidance first.",
+   "quote": "mr. toale stated town counsel can provide some guidance but further discussion by the board is needed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$329,577.20",
+    "$779,721.38",
+    "$161,511.81"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $329,577.20, a payroll warrant"
+  },
+  {
+   "topic": "Town Hall weathervane replacement",
+   "what_was_recorded": "The Historical Commission gave an estimated replacement cost; a formal vendor quote is needed before the property claim goes to the insurer. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the historical commission provided us with an estimated replacement cost and once we receive"
+  },
+  {
+   "topic": "Clock tower and mount repairs",
+   "what_was_recorded": "The clock tower and mount need considerable work; this may become a capital project request in the FY20-24 Capital Plan. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "this will need to be reviewed and may be a capital project request in the fy20-24 capital plan."
+  },
+  {
+   "topic": "Municipal aggregation electricity rate (Constellation NewEnergy)",
+   "what_was_recorded": "The new municipal aggregation rate for residents with Constellation NewEnergy is fixed for 36 months, starting on their November meter read date.",
+   "figures_as_printed": [
+    ".10998 cents per K Wh"
+   ],
+   "quote": "the new rates for residents that are municipal aggregation customers with constellation newenergy will be .10998 cents per k wh starting on"
+  },
+  {
+   "topic": "Unitil winter residential electric rate",
+   "what_was_recorded": "Unitil's electric winter service fixed residential rates rise as of December 1, 2018.",
+   "figures_as_printed": [
+    "12915 cents per kWh"
+   ],
+   "quote": "as of december 1, 2018, unitil's electric winter service fixed residential rates will rise to 12915 cents per kwh."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Lion's Club pancake breakfast date",
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "quote": "ms. luck reminded everyone the next lion's club pancake breakfast will be the first wednesday of november"
+  },
+  {
+   "topic": "Special event permits and private events noise",
+   "speaker": "Steve Weaver",
+   "stated_role": "288 Holman Street",
+   "quote": "steve weaver, 288 holman street, talked about a resident holding private events where the music is loud"
+  },
+  {
+   "topic": "Special event policy reasonableness and events' value",
+   "speaker": "Daron Massey",
+   "stated_role": "300 Holman St",
+   "quote": "daron massey, 300 holman st, stated the word he wanted to keep repeating was reasonableness."
+  },
+  {
+   "topic": "Special event policy: intent and balancing property rights",
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Avenue",
+   "quote": "tom alonzo, 284 lancaster avenue, stated it comes down to what is the intent of this?"
+  },
+  {
+   "topic": "Advertised events on Facebook and neighborhood impact",
+   "speaker": "Kathleen Wnuk",
+   "stated_role": "503 Holman Street",
+   "quote": "kathleen wnuk, 503 holman street, stated she lives on a quiet little street."
+  },
+  {
+   "topic": "Reality-based conversation about events and noise",
+   "speaker": "Daron Massey",
+   "stated_role": "",
+   "quote": "daron massey, stated it is important that we have a reality based conversation about what is"
+  },
+  {
+   "topic": "Homecoming, Miles for Myles Run and Ham and Bean Supper",
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "quote": "ms. adams noted saturday is homecoming and the parade, sunday is the miles for myles run"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and public comment",
+   "resolution": "no action",
+   "quote": "ms. luck reminded everyone the next lion's club pancake breakfast will be the first wednesday of november",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Resignation from Cultural Council (Christopher Letarte)",
+   "resolution": "read into record; no action recorded",
+   "quote": "mr. toale read mr. letarte's resignation aloud.",
+   "tags": [
+    "cultural council",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Cultural Council interviews and appointment",
+   "resolution": "Tyler Hathaway appointed; Daron Massey withdrew",
+   "quote": "to appoint tyler hathaway to the cultural council with a term to expire june 30, 2021",
+   "tags": [
+    "cultural council",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "information only",
+   "quote": "the contractor has reclaimed the roadway from rocky's hardware in fitchburg to the baker's brook bridge.",
+   "tags": [
+    "Summer Street project",
+    "weathervane",
+    "business partnership",
+    "municipal aggregation",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $329,577.20",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "information only",
+   "quote": "mr. toale reported he will be attending the mpo meeting tomorrow representing subregion 3.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant",
+   "resolution": "warrant signing motion made; result not recorded",
+   "quote": "ms. lemieux referred the board to the final version of the special town meeting warrant.",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Special event permit policy workshop",
+   "resolution": "continued; more work needed",
+   "quote": "mr. toale stated more work needs to be done.",
+   "tags": [
+    "special events",
+    "zoning",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Board Policy 2.01 Access to Town Counsel",
+   "resolution": "amended wording approved 4-1",
+   "quote": "use of town counsel monthly office hours is restricted to town employees, board, committee,",
+   "tags": [
+    "policy",
+    "town counsel",
+    "citizen petitions"
+   ]
+  },
+  {
+   "topic": "Alcohol-related regulations (lighting, licensing)",
+   "resolution": "discussed; Town Counsel to review",
+   "quote": "mr. toale stated one of the reasons he wanted to review our alcohol-related regulations",
+   "tags": [
+    "alcohol",
+    "licensing",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Section 4.02 Bring Your Own Bottle",
+   "resolution": "discussed; Town Counsel to research penalties",
+   "quote": "attorney costa reported he did a section by section review of this and lunenburg's policy is",
+   "tags": [
+    "BYOB",
+    "carry-in permit"
+   ]
+  },
+  {
+   "topic": "Section 4.17 Taxicabs (Uber and Lyft)",
+   "resolution": "discussed; no action",
+   "quote": "attorney costa stated ms. lemieux has asked if anyone was regulating uber and lyft?",
+   "tags": [
+    "taxicabs",
+    "transportation network companies"
+   ]
+  },
+  {
+   "topic": "Utility double poles and pole petitions",
+   "resolution": "discussed; no action",
+   "quote": "attorney costa stated the town cannot prohibit double poles.",
+   "tags": [
+    "utility poles"
+   ]
+  },
+  {
+   "topic": "Section 5.02 Road Acceptance or Discontinuance",
+   "resolution": "changed as Town Counsel provided",
+   "quote": "attorney costa noted his changes in the section mimicking statutes but also providing some",
+   "tags": [
+    "roads",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Section 7.10 Social Media Policy",
+   "resolution": "continued; further Board discussion needed",
+   "quote": "mr. toale stated town counsel can provide some guidance but further discussion by the board is needed",
+   "tags": [
+    "social media",
+    "open meeting law",
+    "ethics"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and adjournment",
+   "resolution": "adjourned 10:30 p.m.",
+   "quote": "mr. toale reviewed the upcoming meeting schedule.",
+   "tags": [
+    "schedule",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant (final version)",
+   "where": "text",
+   "quote": "ms. lemieux referred the board to the final version of the special town meeting warrant."
+  },
+  {
+   "name": "Special event policy Draft #4",
+   "where": "text",
+   "quote": "draft #4 incorporates all the changes from #3-we had talked about one property holding multiple events"
+  },
+  {
+   "name": "Business Brochure (draft)",
+   "where": "text",
+   "quote": "we will be reviewing a draft of the business brochure."
+  },
+  {
+   "name": "Christopher Letarte resignation letter",
+   "where": "text",
+   "quote": "this is my resignation letter."
+  },
+  {
+   "name": "Daron Massey withdrawal email to Ms. Peterson",
+   "where": "text",
+   "quote": "mr. toale announced one applicant, daron massey, 300 holman street, has withdrawn his application in an email sent to ms. peterson"
+  },
+  {
+   "name": "Easton social media policy (drafted by Sarah Bellino)",
+   "where": "text",
+   "quote": "sarah bellino (of our firm) drafted easton's policy, which ms. lemieux included in the board's packet."
+  },
+  {
+   "name": "Newbury draft technology policy (equipment, email, social media, public records/OML)",
+   "where": "text",
+   "quote": "ms. fedeoroff is working on a draft policy with newbury that"
+  },
+  {
+   "name": "Proposed noise bylaw",
+   "where": "text",
+   "quote": "he noted the proposed noise bylaw addresses noise during daytime hours."
+  },
+  {
+   "name": "May 18, 2018 Minutes (excerpt)",
+   "where": "text",
+   "quote": "(excerpt from may 18, 2018 minutes: \"with regards to the lighting, there has been no talk about"
+  },
+  {
+   "name": "G.L. c. 159A½ (Chapter 187 of the Acts of 2016), Transportation Network Companies",
+   "where": "text",
+   "quote": "g.l. c. 159a½, adopted by the legislature as chapter 187 of the acts of 2016 (aug. 5, 2016)"
+  },
+  {
+   "name": "Boston Edison Co. v. Town of Bedford, 444 Mass. 775 (2005)",
+   "where": "text",
+   "quote": "boston edison co. v. town of bedford, 444 mass. 775 (2005)"
+  },
+  {
+   "name": "Hopkinton, MA regulations",
+   "where": "text",
+   "quote": "look at hopkinton, ma regulations and speak with town counsel if this type"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "Cultural Council",
+  "Special Town Meeting warrant",
+  "special event permit",
+  "alcohol regulations",
+  "BYOB",
+  "taxicabs",
+  "utility poles",
+  "road acceptance",
+  "social media policy",
+  "warrants",
+  "weathervane",
+  "municipal aggregation electricity",
+  "Summer Street project"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux referred the board to the final version of the special town meeting warrant"
+ },
+ "dropped_unquoted_by_field": {}
 }

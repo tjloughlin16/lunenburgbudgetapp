@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-08-22",
  "docid": "1556",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Terri",
    "seconded_by": "Mark",
    "outcome": "passed unanimously",
@@ -21,6 +21,194 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The document contains extensive discussion and planning of future agenda items and votes, but only one vote was actually taken and recorded: the motion to adjourn at the end of the meeting. The text specifies names (Terri and Mark) in connection with adjournment, and \"unanimous\" indicates the outcome, following standard meeting minute conventions where the first name listed typically indicates the mover and the second the seconder.",
- "cost_usd": 0.0298009
+ "note": "Only one recorded vote: adjournment, printed as '(Terri, Mark, unanimous)' with no explicit mover/seconder labels, so the mover and seconder are inferred from that parenthetical order. No motions on other items; the August 8 minutes were 'Not ready' with no vote. No dollar figures appear in the text. The minutes say 'Jamie' in the discussion but 'Jaime Toale' in the attendance line; the attendance spelling is used. Handout 2 (ranked choice voting) is a topic, not a document, so only handouts 1, 3 and 4 are listed as documents.",
+ "cost_usd": 0.00488222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), terri burchfield (finance committee)"
+  },
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), terri burchfield (finance committee)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), terri burchfield (finance committee)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "mark erickson (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "mark erickson (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "absent",
+   "quote": "absent: michael-ray jeffreys (planning board), jim laveck (school committee)"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "School Committee",
+   "status": "absent",
+   "quote": "absent: michael-ray jeffreys (planning board), jim laveck (school committee)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "absent",
+   "quote": "steve archambault (community representative), heather sroka (school committee)"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "absent",
+   "quote": "steve archambault (community representative), heather sroka (school committee)"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: rhonda lisio, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Also present",
+   "status": "present",
+   "quote": "also present: rhonda lisio, dave passios"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of August 8, 2018 were not ready; no approval was taken.",
+   "quote": "minutes of august 8, 2018: not ready"
+  },
+  {
+   "decision": "Write-ins language is to go back on the agenda for later discussion, put there by Bob.",
+   "quote": "bob to put this back on our agenda."
+  },
+  {
+   "decision": "Bob will add a ranked choice voting presenter to the schedule and agenda.",
+   "quote": "bob said we should consider having someone come in to present on the topic and he would add it to our schedule and agenda."
+  },
+  {
+   "decision": "A proposed draft will be published in advance of any public hearing.",
+   "quote": "we will publish a proposed draft in advance of any public hearing."
+  },
+  {
+   "decision": "Public hearings are to be scheduled, with the first the week of 11/26 depending on Town Hall availability and the second the week of Jan 21; the committee would then appear before the BOS in early February.",
+   "quote": "the first public hearing would be the week of 11/26 depending on availability of town hall"
+  },
+  {
+   "decision": "Invite Carl and Phyllis Luck, Heather, the park, cemetery and sewer groups, and the Library to meet with the committee; review whether the Housing Authority is following the charter.",
+   "quote": "we talked about inviting various parties to meet with us and getting them on the schedule:"
+  },
+  {
+   "decision": "Bob will provide a clean copy of the proposed changes at the next meeting.",
+   "quote": "bob said he would provide a clean copy at our next meeting."
+  },
+  {
+   "decision": "Separate votes will be taken on corrections, non-controversial changes and controversial changes, each individually, as the way Town Meeting is run requires; both sides of any change will be presented at the public hearings.",
+   "quote": "the plan is to have separate votes on corrections, non-controversial change and controversial changes, each individually."
+  },
+  {
+   "decision": "The next meeting is set for September 12.",
+   "quote": "next meeting: september 12"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of August 8, 2018",
+   "resolution": "not ready; not approved",
+   "quote": "minutes of august 8, 2018: not ready",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Handouts for review: write-ins, ranked choice voting, MGL 231A, calendar",
+   "resolution": "write-ins continued; ranked choice presenter to be scheduled",
+   "quote": "bob provided 4 handouts for review and discussion:",
+   "tags": [
+    "write-ins",
+    "ranked choice voting",
+    "MGL 231A",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Develop Meeting and Outreach Schedule",
+   "resolution": "schedule and hearing dates discussed; invitations to parties",
+   "quote": "develop meeting and outreach schedule:",
+   "tags": [
+    "public hearings",
+    "schedule",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Continue Discussion on Proposed Changes",
+   "resolution": "continued; clean copy to be provided next meeting",
+   "quote": "continue discussion on proposed changes:",
+   "tags": [
+    "charter changes",
+    "voting procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "“Write-ins” language as drafted by Carl Luck",
+   "where": "list",
+   "quote": "1. \"write-ins\" language as drafted by carl luck tracks state law"
+  },
+  {
+   "name": "MGL 231A Section 1: Power to make declaratory determination",
+   "where": "list",
+   "quote": "mgl 231a section 1: power to make declaratory determination."
+  },
+  {
+   "name": "A calendar to assist in developing our schedule",
+   "where": "list",
+   "quote": "a calendar to assist in developing our schedule."
+  },
+  {
+   "name": "Town Charter, section 7-11",
+   "where": "text",
+   "quote": "this section of mgl is referred to in section 7-11 of our charter"
+  }
+ ],
+ "tags": [
+  "charter review",
+  "town charter",
+  "write-ins",
+  "ranked choice voting",
+  "meeting schedule",
+  "public hearings",
+  "Town Meeting",
+  "outreach"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "bob provided 4 handouts for review and discussion:"
+ },
+ "dropped_unquoted_by_field": {}
 }

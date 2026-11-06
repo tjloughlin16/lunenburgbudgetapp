@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-05-29",
  "docid": "5605",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the draft response letter as written",
+   "motion": "Approve the draft response letter to the OML complaint as written.",
    "moved_by": "John R.",
    "seconded_by": "Ryan S.",
    "outcome": "passed 3-0-1",
@@ -20,63 +20,402 @@
    "quote": "motion: john r. second: ryan s. to approve the draft response letter as written. vote: aye-- john, ryan, carl abstain-joan"
   },
   {
-   "motion": "Nominate Joe A. as Chair",
+   "motion": "Nominate Joe A. as Chair.",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed unanimous",
+   "procedural": false,
    "quote": "motion: john r. second: carl l. to nominate joe a. as chair. vote: unanimous"
   },
   {
-   "motion": "Nominate Joan P. as Vice-Chair",
-   "moved_by": "John R.",
-   "seconded_by": "Ryan S.",
-   "outcome": "failed 2-3",
-   "procedural": true,
-   "quote": "motion: john r. second: ryan s. to nominate joan p. as vice-chair"
-  },
-  {
-   "motion": "Nominate Carl L. as Vice-Chair",
+   "motion": "Nominate Carl L. as Vice-Chair.",
    "moved_by": "Joe A.",
    "seconded_by": "Carl L.",
    "outcome": "passed 3-2",
-   "procedural": true,
-   "quote": "motion: joe a. second: carl l. to nominate carl l. as vice-chair"
+   "procedural": false,
+   "quote": "vote: 3 votes for carl l., 2 votes for joan p."
   },
   {
-   "motion": "Nominate John R. as Clerk",
+   "motion": "Nominate John R. as Clerk.",
    "moved_by": "Joan P.",
    "seconded_by": "Joe A.",
-   "outcome": "passed",
-   "procedural": true,
+   "outcome": "passed unanimous",
+   "procedural": false,
    "quote": "motion: joan p. second: joe a. to nominate john r. as clerk vote: unanimous"
   },
   {
-   "motion": "Insert task 2A to evaluate the effectiveness of I/I remediation work already done in areas 3 & 6",
+   "motion": "Insert in the present list task 2A, to evaluate the effectiveness of I/l remediation work already done in areas 3 & 6, as amended by Joe.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": false,
    "quote": "motion: joan p. second: john r. to insert in the present list, task 2a- to evaluate the effectiveness of i/l remediation work already done in areas 3 & 6, as amended by joe. vote: unanimous"
   },
   {
-   "motion": "Accept the minutes of 5/8/18",
+   "motion": "Accept the minutes of 5/8/18.",
    "moved_by": "Joan P.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "motion: joan p. second: ryan s. to accept the minutes of 5/8/18 vote: unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:35 pm.",
    "moved_by": "John R.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed unanimous",
    "procedural": true,
    "quote": "motion: john r. to adjourn: 9:35 pm. second: ryan s. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scanned pages via macOS Vision. All votes clearly recorded.",
- "cost_usd": 0.0703374
+ "note": "OCR of a two-page scan that opens partway through the OML complaint discussion, so the start of the meeting and the agenda are not in the text. Joan P.'s nomination for Vice-Chair has no recorded outcome and is not listed as a vote. Joe arrived partway through and assumed the chair. Several attendance statuses are inferred from participation, since the minutes do not state attendance outright. The Adam in the text is named Adam Costa only in the handouts list.",
+ "cost_usd": 0.00929142,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe A.",
+   "role": "Chair (assumed chairing the meeting)",
+   "status": "present",
+   "quote": "(joe arrived and assumed chairing the meeting.)"
+  },
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "carl introduced scott and stated that commission is looking into new alternatives for the irrigation meters."
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "motion: john r. second: ryan s. to approve the draft response letter as written. vote: aye-- john, ryan, carl abstain-joan"
+  },
+  {
+   "name": "Ryan S.",
+   "status": "present",
+   "quote": "motion: john r. second: ryan s. to approve the draft response letter as written. vote: aye-- john, ryan, carl abstain-joan"
+  },
+  {
+   "name": "Joan P.",
+   "status": "present",
+   "quote": "joan said that it would be helpful if positions are rotated."
+  },
+  {
+   "name": "Adam",
+   "status": "present",
+   "quote": "adam was concerned that there have been 3 oml violations in last couple months"
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported that the sewer service map is being updated from town meeting to reflect adding tilton ave."
+  },
+  {
+   "name": "Heather",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "heather (town manager) will attend and adam will be asked to do an oml training."
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "jack noted that he'd solicited 3 bids for the i/l remediation work"
+  },
+  {
+   "name": "Scott Fitzgerald",
+   "role": "Stiles Co",
+   "status": "present",
+   "quote": "scott fitzgerald, stiles co-discussion of irrigation meter new technologies- badger meters"
+  },
+  {
+   "name": "Tom Garrity",
+   "role": "Ti Sales",
+   "status": "present",
+   "quote": "tom garrity, ti sales - discussion of irrigation meter new technologies, neptune meters"
+  },
+  {
+   "name": "Dan Proctor",
+   "status": "present",
+   "quote": "dan proctor, 380-400 electric ave lot subdivision- dan was required to combine the lots"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "respectively submitted, jane ranley he lanly sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to add to the complaint response that Adam give OML training to the group; Adam offered to give it at a future meeting.",
+   "quote": "the commission discussed the draft of the response to the complaint and all agreed to add that adam give oml training to the group."
+  },
+  {
+   "decision": "The Commission agreed it needs clarification on the inspections for the I/I work scope.",
+   "quote": "commission discussed the scope of work and agreed that they will need clarification on the inspections."
+  },
+  {
+   "decision": "Jack will speak to the consultant about whether to repair during low water or high-water table.",
+   "quote": "he will speak to the consultant about this."
+  },
+  {
+   "decision": "Carl suggested the Commission do research and talk to town counsel on the sewer easement bylaw; Dan Proctor will prepare a couple of options and return.",
+   "quote": "carl suggests that the commission do some research and talk to town counsel."
+  },
+  {
+   "decision": "Dan Proctor will put together a couple of options and come back to the Commission.",
+   "quote": "dan will put together a couple options and come back again."
+  },
+  {
+   "decision": "Barb will email Pat (Weston/Sampson) information so he has answers for the 6/12/18 meeting, where the Commission will work on a schedule and costs.",
+   "quote": "barb will email pat (weston/sampson) information so he will have answers to bring to the 6/12/18 meeting."
+  },
+  {
+   "decision": "Communications plan workshop (schedule, attendees) set for 6/26/18 at 6:30; Town Manager to attend and Adam to be asked to do OML training.",
+   "quote": "communications plan workshop discussion - schedule, attendees - will be on 6/26/18 @6:30."
+  },
+  {
+   "decision": "Barb will send out the annual grease trap renewal letters this week.",
+   "quote": "barb will send out the renewal letters this week."
+  },
+  {
+   "decision": "Barb will check whether a Commission member can obtain the Munis quote.",
+   "quote": "barb will check to see if someone on the commission would be able to obtain the munis quote."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "I/I remediation work, Spring 2018 bids",
+   "what_was_recorded": "Three bids were solicited for the I/I remediation work; the low bid came from two companies. The Commission did not vote to award the work.",
+   "figures_as_printed": [
+    "$13,700"
+   ],
+   "quote": "received the low bid of $13,700 from 2 companies"
+  },
+  {
+   "topic": "Q4-FY18 sewer billing commitment",
+   "what_was_recorded": "The Commission signed the Q4-FY18 commitment for sewer billing.",
+   "figures_as_printed": [
+    "$207,182.23"
+   ],
+   "quote": "q4-fy18 commitment for sewer billing $207,182.23 - commission signed."
+  },
+  {
+   "topic": "Irrigation meter price quote (Ti Sales, Neptune)",
+   "what_was_recorded": "The Commission discussed the price quote provided by Tom Garrity for Neptune irrigation meters; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the price quote provided by"
+  },
+  {
+   "topic": "Irrigation meter pricing (Stiles Co.)",
+   "what_was_recorded": "Scott Fitzgerald explained pricing for cellular and mobile drive-by packages and purchase/sale options; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "scott explained the pricing for both cellular and mobile drive-by packages."
+  },
+  {
+   "topic": "Munis quote timing",
+   "what_was_recorded": "Carl asked about getting a Munis quote now rather than waiting until August; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "carl asked about getting a quote from munis now rather than waiting until august."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Barb and Joe",
+   "stated_role": "",
+   "topic": "thanks to Troy Daniels for his service",
+   "quote": "public comment - barb and joe thanked troy daniels for his service to the commission."
+  },
+  {
+   "speaker": "",
+   "stated_role": "",
+   "topic": "end-of-meeting public comment",
+   "quote": "public comment - none"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "OML complaint response",
+   "resolution": "draft response letter approved 3-0-1; Adam to give OML training",
+   "quote": "motion: john r. second: ryan s. to approve the draft response letter as written.",
+   "tags": [
+    "OML",
+    "complaint",
+    "training"
+   ]
+  },
+  {
+   "topic": "Irrigation meter technologies - Stiles Co. (Badger)",
+   "resolution": "presentation and discussion; no action recorded",
+   "quote": "scott handed out a packet of meter information and displayed samples of meters his company sells.",
+   "tags": [
+    "irrigation meters",
+    "vendor presentation"
+   ]
+  },
+  {
+   "topic": "Irrigation meter technologies - Ti Sales (Neptune)",
+   "resolution": "presentation and price quote discussed; no action recorded",
+   "quote": "tom handed out literature and gave a presentation on the neptune r900 migratable system.",
+   "tags": [
+    "irrigation meters",
+    "vendor presentation"
+   ]
+  },
+  {
+   "topic": "Public comment - thanks to Troy Daniels",
+   "resolution": "no action",
+   "quote": "public comment - barb and joe thanked troy daniels for his service to the commission.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Joe A. elected Chair; Carl L. Vice-Chair (3-2); John R. Clerk",
+   "quote": "election of officers",
+   "tags": [
+    "elections",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Dan Proctor - 380-400 Electric Ave lot subdivision and sewer easement",
+   "resolution": "continued; applicant to bring options back",
+   "quote": "dan will put together a couple options and come back again.",
+   "tags": [
+    "subdivision",
+    "sewer easement",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "DPW systems update - I/I work Spring 2018",
+   "resolution": "task 2A added to list; work not awarded; clarification of inspections needed",
+   "quote": "he would like to award the work but with the caveat of whether to repair during low water or high-water table.",
+   "tags": [
+    "I/I",
+    "inflow infiltration",
+    "bids",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Minutes of 5/8/18",
+   "resolution": "accepted unanimously",
+   "quote": "to accept the minutes of 5/8/18",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Communications plan workshop",
+   "resolution": "scheduled for 6/26/18 at 6:30",
+   "quote": "communications plan workshop discussion - schedule, attendees - will be on 6/26/18",
+   "tags": [
+    "communications",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Annual grease trap regulation compliance",
+   "resolution": "non-compliant list reviewed; renewal letters to be sent",
+   "quote": "barb will send out the renewal letters this week.",
+   "tags": [
+    "grease trap",
+    "compliance"
+   ]
+  },
+  {
+   "topic": "Whalom Kitchen non-compliance appeal",
+   "resolution": "no action; counsel advice reported",
+   "quote": "barb talked to counsel and he still feels that it falls back to the owner",
+   "tags": [
+    "grease trap",
+    "appeal",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Business manager report and billing commitment",
+   "resolution": "Q4-FY18 commitment signed; Munis quote to be sought",
+   "quote": "q4-fy18 commitment for sewer billing $207,182.23 - commission signed.",
+   "tags": [
+    "billing",
+    "Munis",
+    "sewer service map"
+   ]
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "list noted for future agendas",
+   "quote": "members agenda inputs for future meetings - dep, irrigation meters selection, meter policy, grease law",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:35 pm",
+   "quote": "motion: john r. to adjourn: 9:35 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Response to the OML complaint prepared by Adam Costa",
+   "where": "list",
+   "quote": "response to the oml complaint prepared by adam costa"
+  },
+  {
+   "name": "Weston Sampson draft of DEP response",
+   "where": "list",
+   "quote": "weston sampson draft of dep response"
+  },
+  {
+   "name": "Stiles Co. - Irrigation meter information",
+   "where": "list",
+   "quote": "stiles co. - irrigation meter information"
+  },
+  {
+   "name": "Ti Sales - Irrigation meter information",
+   "where": "list",
+   "quote": "ti sales - irrigation meter information"
+  },
+  {
+   "name": "Sewer Service Map",
+   "where": "text",
+   "quote": "barb reported that the sewer service map is being updated from town meeting to reflect adding tilton ave."
+  },
+  {
+   "name": "Sewer easement bylaw",
+   "where": "text",
+   "quote": "the commission discussed the sewer easement bylaw."
+  },
+  {
+   "name": "Q4-FY18 Commitment for Sewer Billing",
+   "where": "text",
+   "quote": "q4-fy18 commitment for sewer billing $207,182.23 - commission signed."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "OML complaint",
+  "OML training",
+  "irrigation meters",
+  "officer election",
+  "I/I remediation",
+  "sewer easement",
+  "grease trap",
+  "billing",
+  "Munis"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2018-05-16",
  "docid": "3288",
@@ -12,31 +12,265 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of April 11, 2018",
+   "motion": "Accept the minutes of April 11, 2018.",
    "moved_by": "Karin Menard",
-   "seconded_by": "",
    "outcome": "passed 2-0",
    "procedural": true,
    "quote": "karin menard motioned to accept the minutes of april 11, 2018 - approved 2-0."
   },
   {
-   "motion": "minimize street side parking on both sides during ball games and encourage people to park off of 2a in the main parking lot due to public safety concerns on Chestnut Street",
+   "motion": "Minimize street side parking on both sides during ball games and encourage people to park off of 2a in the main parking lot, due to public safety access concerns on Chestnut Street.",
    "moved_by": "Dennis Mannone",
-   "seconded_by": "",
    "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "dennis mannone motioned that we minimize street side parking on both sides during ball games and to encourage people to park off of 2a in the main parking lot due to concerns over public safety access on chestnut street. approved 2-0."
+   "quote": "dennis mannone motioned that we minimize street side parking on both sides during ball games and to encourage people to park off of 2a in the main parking lot"
   },
   {
-   "motion": "adjourn at 9:10pm",
-   "moved_by": "Karin",
-   "seconded_by": "Dennis",
+   "motion": "Adjourn the meeting at 9:10pm.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Dennis Mannone",
    "outcome": "passed 2-0",
    "procedural": true,
    "quote": "karin motioned and dennis seconded to adjourn at 9:10pm. approved 2-0"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0843674
+ "dropped_unquoted": 3,
+ "note": "Plain text, not a scan. The Whalom Road item is titled \"Vote\" but records no motion or vote; Dennis Mannone said he would recuse himself from a vote, which is not recorded. Pete McCauliff appears only in the letterhead, not in attendance, so is omitted. Only two members are recorded as present. Dave Passios is listed under public comment because he appeared under item 8, but the minutes' Public Comment section (10b) reads \"none\". Minutes contain line-break hyphenation and some typos (e.g., \"Dennis though\", \"Parks\"); quotes are copied as printed.",
+ "cost_usd": 0.006228919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone and dpw director jack rodriquenz."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone and dpw director jack rodriquenz."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendance: karin menard, dennis mannone and dpw director jack rodriquenz."
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios was in attendance to discuss questions and concerns raised at the annual town meet- in",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karin suggested the DPW director have his administrative assistant track down the name of the uninsured driver who damaged the Town Beach fence and send a bill.",
+   "quote": "to track down the name of the driver and send a bill."
+  },
+  {
+   "decision": "Picnic tables and a possible shade structure at the beach playground area were agreed to be added to the master plan as it is created.",
+   "quote": "dennis though those were good ideas and we can add it to our master plan as we create it."
+  },
+  {
+   "decision": "Dennis said the Chestnut Street parking concern is big enough to continue discussions with the Fire Chief and Police Chief.",
+   "quote": "dennis thinks the concern is big enough to continue having discussions with the fire chief and police chief."
+  },
+  {
+   "decision": "Karin will follow up with the Little League about whether tee ball player fees were waived for 2018.",
+   "quote": "dennis suggested karin follow up with them to see and see what they say."
+  },
+  {
+   "decision": "Karin will try to find Dan Proctor's email to reach out to him about using the 90' diamond at Marshall Park.",
+   "quote": "she would try and find his email to reach out to him."
+  },
+  {
+   "decision": "Karin will go back to Garry Rhodes on the Whalom Road playground and ask how he would like to proceed.",
+   "quote": "karin said she would go back to garry rhodes and see how he would like to proceed"
+  },
+  {
+   "decision": "The commission agreed it needs to make its needs known to the Town Manager, in hopes of bringing in someone to oversee day-to-day park needs.",
+   "quote": "the commission needs to make their needs known to the town"
+  },
+  {
+   "decision": "Dennis said the board should set aside the past and build a big-picture plan, and should receive regular budget updates.",
+   "quote": "we need to come up with the big picture and also be getting regular budget updates."
+  },
+  {
+   "decision": "Dennis suggested a feasibility study or survey to gather more information on field space needs.",
+   "quote": "dennis though a feasibility study or survey to get more information would be beneficial."
+  },
+  {
+   "decision": "Jack noted a past resident interest in a land swap and suggested the commission could look further into it.",
+   "quote": "a resident in town was interested in a land swap and we could look further into that."
+  },
+  {
+   "decision": "Karin will follow up on the online payment setup for beach pass registrations, with Adam Burney to do his part and reach back out.",
+   "quote": "adam was going to do some leg work on his side and then reach back out to her."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Beach fence damage from uninsured driver",
+   "what_was_recorded": "The town's insurance company does not cover the damage from the uninsured driver, so the driver is to be billed; no amount is printed.",
+   "quote": "he mentioned that as far as he knew this was an uninsured driver.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Budgeted versus spent difference over five years",
+   "what_was_recorded": "Dave Passios's research showed a difference of over 139k between what was budgeted and what was spent over the last 5 or so years.",
+   "quote": "there has been a difference of over 139k",
+   "figures_as_printed": [
+    "139k"
+   ]
+  },
+  {
+   "topic": "Moving money between budget lines",
+   "what_was_recorded": "Dave Passios said it was not appropriate to move money from one line to another when the fields need work; no amount is printed.",
+   "quote": "it was not appropriate to take money from one line and move it to another when the fields need work",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Little League tee ball player fees",
+   "what_was_recorded": "The Little League payment did not include tee ball players, and no waiver of those player fees for 2018 was recorded; no amount is printed.",
+   "quote": "the little league payment did not include tee ball plays",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Questions and concerns raised at Annual Town Meeting",
+   "quote": "dave passios was in attendance to discuss questions and concerns raised at the annual town meet- in",
+   "quote_taken_from_text": true
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of minutes of April 11, 2018",
+   "resolution": "approved 2-0",
+   "quote": "karin menard motioned to accept the minutes of april 11, 2018 - approved 2-0.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager Updates",
+   "resolution": "discussed; parking motion approved 2-0; follow-ups assigned",
+   "quote": "jack quickly went through a list of items that he and karin had discussed early in the week.",
+   "tags": [
+    "DPW",
+    "beach",
+    "playground",
+    "parking",
+    "fence damage"
+   ]
+  },
+  {
+   "topic": "Town Beach - General 2018 Discussion",
+   "resolution": "no action; follow-up with Adam Burney",
+   "quote": "karin met with adam burney to discuss getting set up on the online payment system to accept online registrations for beach passes.",
+   "tags": [
+    "beach",
+    "online payments"
+   ]
+  },
+  {
+   "topic": "Wallis Park Playground",
+   "resolution": "discussed; signage concern noted",
+   "quote": "karin updated the commission that there would be a ribbon cutting on tuesday at 7:15am.",
+   "tags": [
+    "playground",
+    "smoking",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Spring 2018 Baseball Field Usage",
+   "resolution": "no action; follow-ups assigned",
+   "quote": "karin mentioned that the little league payment did not include tee ball plays",
+   "tags": [
+    "baseball",
+    "Little League",
+    "Marshall Park",
+    "field fees"
+   ]
+  },
+  {
+   "topic": "General Parks - request by Dave Passios on Annual Town Meeting questions",
+   "resolution": "discussed; no action",
+   "quote": "dave passios was in attendance to discuss questions and concerns raised at the annual town meet- in",
+   "tags": [
+    "budget",
+    "Marshall Park bleachers",
+    "DPW staffing"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Long term plan / capital items for Parks",
+   "resolution": "discussed; feasibility study suggested; land swap noted",
+   "quote": "both karin and dennis agree that we do not have enough field space.",
+   "tags": [
+    "long term plan",
+    "fields",
+    "capital"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action; no unanticipated items or public comment",
+   "quote": "unanticipated items - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:10pm, approved 2-0",
+   "quote": "karin motioned and dennis seconded to adjourn at 9:10pm. approved 2-0",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Jack Rodriquenz to the Police Chief, Fire Chief and Town Manager offering parking solutions",
+   "where": "text",
+   "quote": "he had sent an email earlier in the year to the police chief, fire chief and town manager offering solutions"
+  },
+  {
+   "name": "Organizational chart for the DPW",
+   "where": "text",
+   "quote": "jack gave a bit more background and provided an overview of the organiza- tional chart for the dp",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "parks",
+  "Town Beach",
+  "Wallis Park playground",
+  "Whalom Road",
+  "baseball fields",
+  "Marshall Park",
+  "parking",
+  "budget",
+  "DPW",
+  "long term plan",
+  "fence damage"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1,
+  "topics": 1,
+  "documents_and_exhibits": 1
+ }
 }

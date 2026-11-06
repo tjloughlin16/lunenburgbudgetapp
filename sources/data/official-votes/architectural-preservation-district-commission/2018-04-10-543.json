@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2018-04-10",
  "docid": "543",
@@ -12,13 +12,115 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from March 20th, 2018",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of March 20, 2018.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from march 20th, 2018 were read and unanimously approved"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0098191
+ "note": "Text is a macOS Vision OCR extract. The minutes approval is recorded as \"unanimously approved\" with no mover or seconder printed. No adjournment motion is recorded, only the time \"Adjourned: 8:07 PM\". No public comment, dollar figures, or document list heading appear. The OCR text has a garbled phrase (\"discuss the topic\") and the Lancaster owner is mentioned but not shown as attending. The filed stamp reads RECEIVED & FILED JUN 25 2018.",
+ "cost_usd": 0.00226442,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Corcoran",
+   "role": "",
+   "status": "present",
+   "quote": "present: corcoran, vice-chairman laveck and dwyer"
+  },
+  {
+   "name": "LaVeck",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: corcoran, vice-chairman laveck and dwyer"
+  },
+  {
+   "name": "Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "present: corcoran, vice-chairman laveck and dwyer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dwyer intends to inspect the site at 53 Lancaster and speak with Ms. Walker on April 17th, following up on the demolition by neglect letter.",
+   "quote": "dwyer intended to inspect the site and speak with ms. walker on april 17th."
+  },
+  {
+   "decision": "The next meeting is scheduled for May 8th.",
+   "quote": "next meeting: scheduled for may 8th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved",
+   "quote": "minutes from march 20th, 2018 were read and unanimously approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Demolition by Neglect at 53 Lancaster",
+   "resolution": "no action; owner letter sent and site inspection planned",
+   "quote": "dwyer sent a letter to the owner and occupant: leanne walker, who was receptive to",
+   "tags": [
+    "demolition by neglect",
+    "53 Lancaster"
+   ]
+  },
+  {
+   "topic": "Revision of Demolition Delay Bylaw",
+   "resolution": "discussed; no action",
+   "quote": "the current bylaw and mass historic's proposed bylaw were compared and discussed",
+   "tags": [
+    "demolition delay bylaw",
+    "bylaw revision"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for May 8th",
+   "quote": "next meeting: scheduled for may 8th.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Current Demolition Delay Bylaw",
+   "where": "text",
+   "quote": "the current bylaw and mass historic's proposed bylaw were compared and discussed"
+  },
+  {
+   "name": "Mass Historic's proposed Demolition Delay Bylaw",
+   "where": "text",
+   "quote": "the current bylaw and mass historic's proposed bylaw were compared and discussed"
+  },
+  {
+   "name": "Letter to the owner and occupant of 53 Lancaster (Leanne Walker)",
+   "where": "text",
+   "quote": "dwyer sent a letter to the owner and occupant: leanne walker, who was receptive to"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "demolition by neglect",
+  "demolition delay bylaw",
+  "53 Lancaster",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

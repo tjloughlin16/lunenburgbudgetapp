@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-12-10",
  "docid": "3972",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept the ANR Plan as amended for 380 Electric Avenue",
+   "motion": "Accept the 380 Electric Avenue ANR Plan as amended.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "d. prokowiew made motion to accept the anr plan as amended, k. chenis seconded, all aye."
   },
   {
-   "motion": "Accept the ANR Plan for 811 & 813 Chase Road",
+   "motion": "Accept the 811 & 813 Chase Road ANR Plan.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis made motion to accept the anr plan, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "Accept the Request for a De Minimis Change for 5 Electric Avenue (Asian Imperial), with a note added documenting number of seats",
+   "motion": "Accept the Request for a De Minimis Change for 5 Electric Avenue, with a note added documenting number of seats.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "d. prokowiew made motion to accept the request for a de minimis change with a note added documenting number of seats, k. chenis seconded, all aye."
   },
   {
-   "motion": "Write a letter to the Cannabis Control Commission identifying the Board's questions regarding craft cultivators and transporters",
+   "motion": "Send a letter to the Cannabis Control Commission identifying the Board's questions on recreational marijuana regulations.",
    "moved_by": "P. Bertram",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "p. bertram made motion that a letter be written to the ccc identifying the board's questions, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "Accept the minutes from the November 26, 2018 regular meeting",
+   "motion": "Accept the minutes of 11/26/18.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
@@ -52,15 +52,15 @@
    "quote": "d. prokowiew made motion to accept, k. chenis seconded, all aye."
   },
   {
-   "motion": "Accept the minutes from the November 26, 2018 Executive Session meeting",
+   "motion": "Accept the executive session minutes of 11/26/18.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
    "procedural": true,
-   "quote": "d. prokowiew made motion to accept, k. chenis seconded, all aye."
+   "quote": "11/26/18, executive session- d. prokowiew made motion to accept, k. chenis seconded, all aye."
   },
   {
-   "motion": "Send a letter of support for the Open Space Plan",
+   "motion": "Send a letter of support for the Open Space Plan.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -68,15 +68,15 @@
    "quote": "d. prokowiew made motion to send a letter of support for the open space plan, p. bertram seconded, all aye."
   },
   {
-   "motion": "Recommend that the Board of Selectmen waive their right of first refusal for 994 Northfield Road",
+   "motion": "Recommend that the Board of Selectmen waive their right of first refusal on 994 Northfield Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "K. Chenis",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "p. bertram made motion to recommend that the board of selectmen waive their right of first refusal, k. chenis seconded, p. bertram, aye; t. cole, aye; k. chenis, aye; d. prokowiew, nay; m. allison, aye. vote passed 4 -1."
+   "quote": "to recommend that the board of selectmen waive their right of first refusal, k. chenis seconded, p. bertram, aye; t. cole, aye; k. chenis, aye; d. prokowiew, nay; m. allison, aye."
   },
   {
-   "motion": "Enter executive session pursuant to M.G.L. c. 30A, § 21, #3 to discuss strategy with respect to litigation regarding O'Brien Homes cases and not return to regular session",
+   "motion": "Enter executive session pursuant to M.G.L. c. 30A, §21, #3 (litigation strategy, O'Brien Homes matters) and not return to regular session.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -85,6 +85,325 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.14667049999999998
+ "note": "Clean text, no scan issues. Several motions are recorded only as 'all aye' with no printed count, so outcome is 'passed'. The adjournment has no recorded motion, so it is not listed as a vote. No public comment section is printed. Alan Weiner is named only as the applicant/owner and is not recorded as attending, so he is not listed as an attendee. Budget items carry no dollar figures; the minutes print no dollar amounts.",
+ "cost_usd": 0.010166020000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "applicant/property owner",
+   "status": "present",
+   "quote": "plan presented by applicant/property owner jean proctor."
+  },
+  {
+   "name": "Neal Gorman",
+   "role": "representing the applicant/owner (David E. Ross Associates)",
+   "status": "present",
+   "quote": "plan presented by neal gorman, david e. ross associates,"
+  },
+  {
+   "name": "Kim Chen",
+   "role": "property owner",
+   "status": "present",
+   "quote": "kim chen responded that based on number of tables"
+  },
+  {
+   "name": "Karen Chapman",
+   "role": "on behalf of MRPC",
+   "status": "present",
+   "quote": "karen chapman, on behalf of mrpc, noted that mrpc is crafting the guidebook"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The revised permitting Guidebook will be sent electronically to Board members for individual input, with comments to K. Chapman requested by December 21.",
+   "quote": "the revised guidebook will be sent electronically to board members for individual input."
+  },
+  {
+   "decision": "The ROFR packet will also be provided to the Open Space Ad Hoc Committee Chair.",
+   "quote": "packet will also be provided to the open space ad hoc committee chair."
+  },
+  {
+   "decision": "Board position: the Master Plan falls under the Planning Board's jurisdiction, and the Board of Selectmen should table any Master Plan discussion.",
+   "quote": "the board stressed that the master plan comes under the jurisdiction of the planning board and that the board of selectmen should table any discussion of the master plan"
+  },
+  {
+   "decision": "A. Burney will clarify with the CCC whether transporting can be limited at a facility; transporter questions go into the letter to the CCC.",
+   "quote": "transporter questions will be included in the letter to the ccc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MRPC permitting guidebook cost",
+   "what_was_recorded": "MRPC is preparing the guidebook at no cost to the town, under DLTA funding.",
+   "figures_as_printed": [],
+   "quote": "mrpc is crafting the guidebook at no expense under dlt a (district local technical assistance)."
+  },
+  {
+   "topic": "Master Plan consultant funding",
+   "what_was_recorded": "A capital item to fund a consultant for the Master Plan was to be discussed at the Board of Selectmen meeting on December 11; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "a discussion of a capital item for funding a consultant for the master plan"
+  },
+  {
+   "topic": "Cemetery Commission building funding",
+   "what_was_recorded": "Commission funds were used to construct the new Cemetery Commission building, which the Commission wants control of; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "commission funds are being used for its construction"
+  },
+  {
+   "topic": "Craft cultivator security costs",
+   "what_was_recorded": "A Board member did not want security costs to keep town residents from joining a co-op; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "due to financially prohibitive security"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR plans",
+   "resolution": "approved both plans (380 Electric Avenue as amended; 811 & 813 Chase Road)",
+   "quote": "plan presented by applicant/property owner jean proctor.",
+   "tags": [
+    "ANR",
+    "zoning",
+    "setbacks"
+   ]
+  },
+  {
+   "topic": "5 Electric Avenue request for waiver / de minimis change",
+   "resolution": "approved as de minimis change with seat count note",
+   "quote": "5 electric avenue, asian imperial - request for waiver - property owner kim chen requested waiver from",
+   "tags": [
+    "site plan",
+    "parking",
+    "restaurant"
+   ]
+  },
+  {
+   "topic": "MRPC permitting guidebook discussion",
+   "resolution": "no action; comments due December 21",
+   "quote": "the revised guidebook will be sent electronically to board members for individual input.",
+   "tags": [
+    "guidebook",
+    "MRPC",
+    "DLTA"
+   ]
+  },
+  {
+   "topic": "Public hearing 151-181 Leominster Shirley Road",
+   "resolution": "referred to separate minutes",
+   "quote": "151-181 leominster shirley road- see separate minutes",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Recreational marijuana regulations",
+   "resolution": "letter to CCC approved; craft cultivator and transporter questions discussed",
+   "quote": "as there were so many questions from the board, p. bertram made motion that a letter be written",
+   "tags": [
+    "marijuana",
+    "cultivation",
+    "transport",
+    "CCC"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 11/26/18 minutes and 11/26/18 executive session minutes",
+   "quote": "d. prokowiew made motion to accept, k. chenis seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "draft plan distributed for comments prior to finalization and submittal to the state.",
+   "tags": [
+    "committees",
+    "open space",
+    "stormwater",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Director's items: Open Space Plan and Master Plan",
+   "resolution": "letter of support for Open Space Plan approved; Master Plan discussion with Board of Selectmen requested",
+   "quote": "d. prokowiew made motion to send a letter of support for the open space plan, p. bertram seconded, all aye.",
+   "tags": [
+    "open space",
+    "master plan",
+    "Board of Selectmen"
+   ]
+  },
+  {
+   "topic": "Recreational marijuana ballot",
+   "resolution": "discussed; no action",
+   "quote": "with the way the ballot questions are written, there is no indication of the alternative",
+   "tags": [
+    "marijuana",
+    "ballot",
+    "Board of Selectmen"
+   ]
+  },
+  {
+   "topic": "994 Northfield Road right of first refusal",
+   "resolution": "recommended that Board of Selectmen waive right of first refusal, passed 4-1",
+   "quote": "correspondence received from 994 northfield road llc notifying the town of its intent to remove land from ch. 61b.",
+   "tags": [
+    "Ch. 61B",
+    "right of first refusal",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; December 11 joint meeting with Board of Selectmen",
+   "quote": "joint with board of selectmen for ballot discussion",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "no action; economic development update",
+   "quote": "business town partnership meeting to be held in the near future.",
+   "tags": [
+    "earth removal",
+    "drainage",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "no action",
+   "quote": "p. bertram feels that the board needs to be involved in discussions regarding the town buildings from a planning perspective.",
+   "tags": [
+    "town buildings",
+    "historical society"
+   ]
+  },
+  {
+   "topic": "Executive session (litigation)",
+   "resolution": "entered executive session under c. 30A, 21(3); not returning to regular session",
+   "quote": "agenda was revised and posted less than the statutory requirement of 48 hours as the chair found",
+   "tags": [
+    "executive session",
+    "litigation",
+    "O'Brien Homes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:06 PM; no motion recorded",
+   "quote": "adjournment: 10:06 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 11/26/18",
+   "where": "list",
+   "quote": "documents used at meeting: minutes- 11/26/18"
+  },
+  {
+   "name": "Minutes 11/26/18, Executive Session",
+   "where": "list",
+   "quote": "11/26/18, executive session"
+  },
+  {
+   "name": "ANR Plan, 380 Electric Avenue",
+   "where": "list",
+   "quote": "anr plan, 380 electric avenue"
+  },
+  {
+   "name": "ANR Plan, 811 & 813 Chase Road",
+   "where": "list",
+   "quote": "anr plan, 811 & 813 chase road"
+  },
+  {
+   "name": "Draft Permitting Guidebook",
+   "where": "list",
+   "quote": "draft permitting guidebook"
+  },
+  {
+   "name": "Draft Articles",
+   "where": "list",
+   "quote": "draft permitting guidebook draft articles"
+  },
+  {
+   "name": "Memorandum (recreational marijuana ballot)",
+   "where": "text",
+   "quote": "members were in possession of a memorandum and draft articles that would be"
+  },
+  {
+   "name": "Correspondence from 994 Northfield Road LLC",
+   "where": "text",
+   "quote": "correspondence received from 994 northfield road llc notifying the town of its intent to remove land from ch. 61b."
+  },
+  {
+   "name": "Seating schematic (5 Electric Avenue)",
+   "where": "text",
+   "quote": "a seating schematic had been previously submitted to the board"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "marijuana regulations",
+  "open space plan",
+  "master plan",
+  "right of first refusal",
+  "executive session",
+  "zoning",
+  "parking",
+  "solar"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

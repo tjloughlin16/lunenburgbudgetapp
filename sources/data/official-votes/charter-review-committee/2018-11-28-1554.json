@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-11-28",
  "docid": "1554",
@@ -12,37 +12,324 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from September 12, 2018",
+   "motion": "Approve the minutes of September 12, 2018.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "minutes september 12, 2018: approved"
+   "quote": "september 12, 2018: approved"
   },
   {
-   "motion": "recommend approval of the write-in language and voting threshold",
+   "motion": "Recommend approval of the write-in wording change (minimum number of write-in votes).",
    "moved_by": "Steve Archambault",
    "seconded_by": "Jamie Toale",
-   "outcome": "failed 5-2",
+   "outcome": "failed, 5 in favor, 2 nay (Tanner Cole, Terri Burchfield opposed); did not pass for lack of a super majority",
    "procedural": false,
    "quote": "steve archambault moved we vote to recommend approval, jamie toale seconded"
   },
   {
-   "motion": "postpone the election of a new chair",
+   "motion": "Postpone electing a new chair until the next meeting.",
    "moved_by": "Steve Archambault",
    "seconded_by": "Terri Burchfield",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "steve archambault moved we postpone electing a new chair, terri burchfield second; all in favor."
+   "quote": "steve archambault moved we postpone electing a new chair, terri burchfield second; all in favor"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Steve",
    "seconded_by": "Terri",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": true,
    "quote": "steve moved to adjourn, terri seconded, all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clearly printed and readable. October 24, 2018 minutes were noted as \"not ready\" but no vote was taken on them.",
- "cost_usd": 0.10597949999999999
+ "dropped_unquoted": 1,
+ "note": "Text extract, not a scan; votes and motions are legible. The Sept 12, 2018 minutes approval has no recorded mover, seconder or tally, so it is recorded as procedural with no movers. The write-in motion says only 'recommend approval' without naming the text being approved; the motion is paraphrased from that line. Spelling of Jaime/Jamie Toale varies in the minutes; attendee name is as printed in the attendance line. Documents are mentioned in the text only; no documents list heading is printed.",
+ "cost_usd": 0.00869882,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen),"
+  },
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen),"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "terri burchfield (finance committee),"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "mark erickson (finance committee), nancy gray (community representative),"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "mark erickson (finance committee), nancy gray (community representative),"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "nancy gray (community representative), steve archambault"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "tanner cole (planning board)"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "School Committee",
+   "status": "absent",
+   "quote": "absent: jim laveck (school committee), heather sroka (school committee)"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "absent",
+   "quote": "absent: jim laveck (school committee), heather sroka (school committee)"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Cemetery Commissioner",
+   "status": "present",
+   "quote": "bill tyler, cemetery commissioner, asked about our process"
+  },
+  {
+   "name": "Katie Adams",
+   "status": "present",
+   "quote": "also present: bill tyler, katie adams, heather lemieux, jack rodriquenz"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "also present: bill tyler, katie adams, heather lemieux, jack rodriquenz"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "present",
+   "quote": "also present: bill tyler, katie adams, heather lemieux, jack rodriquenz"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Steve Archambault to see whether the Town Moderator has language to propose on the temporary moderator sections; deputy idea discussed, subject to town meeting ratification, could default to town clerk.",
+   "quote": "we agreed to see if he has language to propose"
+  },
+  {
+   "decision": "Steve Archambault to speak further with Tim Murphy on the temporary moderator language.",
+   "quote": "steve to speak further with tim murphy"
+  },
+  {
+   "decision": "Recommendation that the appointment process timeline not be tied to the Town Hall schedule.",
+   "quote": "recommendation was made that we don't tie it to the schedule of town hall"
+  },
+  {
+   "decision": "Definition of a week clarified: normal weekdays, irrespective of weekends and holidays, to be added to definitions.",
+   "quote": "we agreed to clarify this in definitions"
+  },
+  {
+   "decision": "Proposed changes go to town counsel after the public hearing; any change at a later public hearing is to be reviewed again.",
+   "quote": "proposed changes should go to counsel after public hearing"
+  },
+  {
+   "decision": "Jamie Toale to speak with the town clerk to determine the new minimum write-in number.",
+   "quote": "jamie will speak with town clerk to determine what the new number is."
+  },
+  {
+   "decision": "Draft as of Nov 13 does not propose adding term limits, ranked choice, or representative town meeting.",
+   "quote": "not proposing adding term limits."
+  },
+  {
+   "decision": "Jan 9 to be publicized as a public hearing; Dec 26 meeting not likely to happen; Dec 12 may not be doable for a public hearing.",
+   "quote": "jan 9 should be publicized as a public hearing"
+  },
+  {
+   "decision": "Take new votes on Dec 12 to finalize the current draft for the public hearing, ensuring a super majority, assigning pro/con responsibility, and providing materials in advance.",
+   "quote": "we should take new votes on dec 12 to finalize current draft so we can include them in the public hearing"
+  },
+  {
+   "decision": "Expect any major changes by Jan 9.",
+   "quote": "steve said we should be clear we expect any major changes by jan 9"
+  },
+  {
+   "decision": "Jamie Toale as vice chair to arrange agenda and meeting location for Dec 12, when a new chair will be elected.",
+   "quote": "jamie as vice chair will arrange agenda and meeting location for dec 12, when a new chair will be elected."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cemetery building and equipment funding",
+   "what_was_recorded": "Discussion that cemetery building and equipment would be paid for from a cemetery account funded by sale of lots (revolving account); no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "not aware that building and equipment would be paid for from sale of lots"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "",
+   "topic": "thanks to Bob Ebersole",
+   "quote": "katie adams wished her thanks to bob ebersole for his role on the committee and for his service to the town."
+  },
+  {
+   "speaker": "Katie Adams",
+   "stated_role": "",
+   "topic": "minimum write-ins",
+   "quote": "katie adams commented on minimum write-ins: set a specific number; gave example that"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes",
+   "resolution": "Sept 12, 2018 minutes approved; Oct 24, 2018 minutes not ready",
+   "quote": "september 12, 2018: approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Cemetery Commission",
+   "resolution": "discussed; committee has more work to do; public forums and two public hearings expected; no vote",
+   "quote": "bill tyler, cemetery commissioner, asked about our process",
+   "tags": [
+    "cemetery commission",
+    "section 3-5",
+    "section 4-2"
+   ]
+  },
+  {
+   "topic": "Other Committees",
+   "resolution": "noted, no action",
+   "quote": "park commission has discussed increasing to 5 members.",
+   "tags": [
+    "park commission"
+   ]
+  },
+  {
+   "topic": "Appointment process timeline",
+   "resolution": "discussed; town counsel review started; clearer day definitions",
+   "quote": "appointment process timeline needs to be reviewed; town counsel has started their review;",
+   "tags": [
+    "appointment process",
+    "definitions"
+   ]
+  },
+  {
+   "topic": "Temporary moderator and TM removal",
+   "resolution": "discussed; Steve Archambault to seek proposed language",
+   "quote": "sections on temporary moderator need be more clear",
+   "tags": [
+    "town moderator",
+    "temporary moderator"
+   ]
+  },
+  {
+   "topic": "Feedback from Town Counsel",
+   "resolution": "discussed fall town meeting rules and process for proposed changes; no vote",
+   "quote": "feedback from town counsel",
+   "tags": [
+    "town counsel",
+    "fall town meeting"
+   ]
+  },
+  {
+   "topic": "Write-ins",
+   "resolution": "motion to recommend approval failed 5 in favor, 2 nay; minimum write-in number to be set by Jamie Toale with town clerk",
+   "quote": "discussed wording of write-ins; at least 42 votes as of last count",
+   "tags": [
+    "write-ins",
+    "charter wording"
+   ]
+  },
+  {
+   "topic": "Draft Charter as of Nov 13",
+   "resolution": "no term limits, ranked choice or representative town meeting proposed; may revote on other issues",
+   "quote": "draft charter as of nov 13",
+   "tags": [
+    "draft charter",
+    "term limits",
+    "ranked choice"
+   ]
+  },
+  {
+   "topic": "Schedule",
+   "resolution": "Dec 12 may not work for hearing; Dec 26 unlikely; Jan 9 to be publicized as public hearing",
+   "quote": "dec 12 may not be doable for a public hearing because of not enough notice",
+   "tags": [
+    "schedule",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Select new Chair",
+   "resolution": "Mark Erickson nominated and declined; election postponed to Dec 12",
+   "quote": "jamie nominated mark erickson as chair and he declined",
+   "tags": [
+    "chair election"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled: December 12 (location TBD) and January 9 (public hearing)",
+   "quote": "december 12; location tbd.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "katie adams commented on minimum write-ins: set a specific number;",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Charter as of Nov 13",
+   "where": "text",
+   "quote": "draft charter as of nov 13"
+  },
+  {
+   "name": "Draft report and charter (posted at town hall, library and senior center)",
+   "where": "text",
+   "quote": "bob ebersole said a draft report and charter had been posted at town hall, library and senior center."
+  }
+ ],
+ "tags": [
+  "charter review",
+  "cemetery commission",
+  "write-ins",
+  "appointment process",
+  "town moderator",
+  "town counsel",
+  "chair election",
+  "public hearing schedule",
+  "draft charter"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-07-11",
  "docid": "5035",
@@ -12,23 +12,328 @@
  },
  "votes": [
   {
-   "motion": "Approve the temporary closing of Memorial Drive from Mass. Ave to the corner, subject to accommodations for the two abutting homes",
+   "motion": "Approve the temporary closing of Memorial Drive from Mass. Ave to the corner of Memorial Drive for the Artisan Festival, subject to accommodations for the two abutting homes.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the temporary closing of memorial drive from mass. ave to the corner of memorial drive subject to accommodations being made to the two homes abutting the property vote: all in favor"
+   "quote": "to approve the temporary closing of memorial drive from mass. ave to the corner of memorial drive subject to accommodations being made to the two homes abutting the property"
   },
   {
-   "motion": "Ratify the Town Manager appointments",
+   "motion": "Ratify the Town Manager appointments as presented (Assistant Town Clerk Tina LePage; Board Clerk for Sewer Commission minutes Emily Lehto).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "that the board ratifies the town manager appointments as presented discussion: mr. toale stated he was not in favor of having board clerks. ms. bertram agreed and added that it was an enterprise fund and she did not think this board had any control over that. vote: all in favor"
+   "quote": "that the board ratifies the town manager appointments as presented"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:30 p.m.",
+   "moved_by": "D. McQuaid",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn the meeting at 9:30 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-processed text from macOS Vision. Document reads clearly with all votes recorded explicitly.",
- "cost_usd": 0.1455615
+ "dropped_unquoted": 0,
+ "note": "Text is OCR of a typed minutes document; some tokens are garbled (e.g., '$643,536, 77', '18t', 'Respecttully') and are recorded as printed. Only three motions are recorded with votes; the Artisan Festival and Town Manager votes show 'All in Favor' with no numeric count, and the adjournment shows 'All in Favor'. No motions are recorded for the policy edits, the Planning Board nomination, or the Budget Revision Request. Attendance lists Phyllis Luck as not present; other persons named only as referenced (Marro, Bursch, Calmes, Moore, Rodriquenz) are not counted as attendees.",
+ "cost_usd": 0.007879319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; damon mcquaid, member and town manager heather lemieux."
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; damon mcquaid, member and town manager heather lemieux."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; damon mcquaid, member and town manager heather lemieux."
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; damon mcquaid, member and town manager heather lemieux."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "with jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; damon mcquaid, member and town manager heather lemieux."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: phyllis luck, member"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "land use director adam burney reported the property owner had done some of the initial work"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "School Building Committee",
+   "status": "present",
+   "quote": "greg bittner, school building committee, reported sixteen projectors had a problem with shaking during class changes."
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "finance committee chair terri burchfield stated this came about after the town was informed by the bond advisor/company"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Williams Drive (public comment)",
+   "status": "present",
+   "quote": "katey adams, williams drive, asked about the process for appointing to the planning board vacancy."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Planning Board appointment: the board decided to ask whether Planning Board members were available on August 1, since one Board member is on vacation on July 18.",
+   "quote": "it was decided to ask the planning board members were available on august 1 since one board member will be on vacation on july 18t."
+  },
+  {
+   "decision": "Land Use Director Burney will pursue the fines, giving the property owner one more opportunity to pay before a lien is placed on the property; Burney to follow up on the Certificate of Compliance question.",
+   "quote": "we will move forward with pursuing that, giving the property owner one more opportunity to pay them."
+  },
+  {
+   "decision": "Budget Revision Request #23 (projector stabilization): the board was hesitant to sign and suggested inquiring further; no decision recorded.",
+   "quote": "the board was hesitant to sign the request and discussed further. it was suggested to inquire further."
+  },
+  {
+   "decision": "Ms. Bertram's request for an update on the roof and possible leaking was to be placed on a future agenda.",
+   "quote": "ms. bertram asked for an update on the roof and possible leaking to be placed on a future agenda."
+  },
+  {
+   "decision": "The financial policy on borrowing limits will be voted on at the next meeting and would replace Article III, Section 3.01 Borrowing, if approved.",
+   "quote": "this policy will be voted on at the next meeting and will replace article iii. section 3.01 borrowing, if approved."
+  },
+  {
+   "decision": "Policy edits were agreed in discussion across Articles I through VI of the Board of Selectmen policies (e.g., Section 1.08 paragraph six deleted; Article IV 1.A License Commission changed to Board of Selectmen).",
+   "quote": "under article iv. liquor license, 1. a., replace \"license commission\" with \"board of selectmen.\""
+  },
+  {
+   "decision": "Wording for the tollbooth fundraising policy shall be drafted based on recommendations sent by email.",
+   "quote": "wording shall be drafted based on recommendations sent by email."
+  },
+  {
+   "decision": "Penalty/suspension for failure to comply with license requirements was made an action item for legal counsel.",
+   "quote": "it was decided to make it an action item for legal counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget Revision Request #23 - projector mounting stabilization",
+   "what_was_recorded": "School Superintendent submitted a $9,600 budget revision request from the contingency fund to stabilize sixteen projectors; the board was hesitant to sign.",
+   "figures_as_printed": [
+    "$9,600"
+   ],
+   "quote": "school superintendent calmes has submitted a budget revision request in the amount of $9,600 for projector mounting stabilization from the contingency fund."
+  },
+  {
+   "topic": "Projector testing cost",
+   "what_was_recorded": "The manufacturer's testing of four projectors cost $700.",
+   "figures_as_printed": [
+    "$700"
+   ],
+   "quote": "we ended up testing four of them in different ways at the cost of $700."
+  },
+  {
+   "topic": "Policy: vehicle accidents monetary amount",
+   "what_was_recorded": "The board changed the monetary amount in the vehicle accidents policy to a maximum of $1000.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "the board reviewed x. vehicle accidents and changed the monetary amount to a maximum of $1000."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$1,110,152.00",
+    "$643,536, 77",
+    "$15,531.90"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $1,110,152.00; a payroll warrant in the amount of $643,536, 77 and a payroll deductions warrant in the amount of $15,531.90."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Budget Revision Request #23: $9,600 for projector mounting stabilization from the contingency fund, requested by the School Superintendent.",
+   "outcome": "Not decided; the board was hesitant to sign the request and suggested inquiring further.",
+   "amount_as_printed": "$9,600",
+   "quote": "school superintendent calmes has submitted a budget revision request in the amount of $9,600 for projector mounting stabilization from the contingency fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "Williams Drive",
+   "topic": "process for appointing to the Planning Board vacancy",
+   "quote": "katey adams, williams drive, asked about the process for appointing to the planning board vacancy."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Update on 101 Pleasant Street",
+   "resolution": "reported; no action",
+   "tags": [
+    "conservation",
+    "order of conditions",
+    "fines",
+    "land use"
+   ],
+   "quote": "update on 101 pleasant street"
+  },
+  {
+   "topic": "Budget Revision Request #23",
+   "resolution": "discussed; board hesitant to sign, inquire further",
+   "tags": [
+    "school",
+    "budget revision",
+    "contingency fund",
+    "projectors"
+   ],
+   "quote": "budget revision request #23"
+  },
+  {
+   "topic": "Artisan Festival road closure (Memorial Drive)",
+   "resolution": "approved",
+   "tags": [
+    "library",
+    "road closure",
+    "event"
+   ],
+   "quote": "library director martha moore is requesting to close down memorial drive to hold the event outside the library."
+  },
+  {
+   "topic": "Planning Board appointment process and questions for applicants",
+   "resolution": "discussed; interview questions and August 1 timing",
+   "tags": [
+    "planning board",
+    "appointments"
+   ],
+   "quote": "discussion on planning board appointment process and questions for the applicants"
+  },
+  {
+   "topic": "Town Manager appointments",
+   "resolution": "ratified",
+   "tags": [
+    "appointments",
+    "town clerk",
+    "sewer commission"
+   ],
+   "quote": "town manager appointments"
+  },
+  {
+   "topic": "Board of Selectmen Policies and Procedures Workshop",
+   "resolution": "reviewed sections; edits agreed; items carried forward",
+   "tags": [
+    "policies",
+    "procedures",
+    "vehicles",
+    "liquor license",
+    "personnel",
+    "social media"
+   ],
+   "quote": "ms. lemieux referred to the latest version of the policies and procedures document and suggested going"
+  },
+  {
+   "topic": "Financial Policy: Borrowing Limits on Debt Service Costs",
+   "resolution": "discussed; vote at next meeting",
+   "tags": [
+    "finance",
+    "debt",
+    "borrowing policy"
+   ],
+   "quote": "the board changed direction to review a draft financial policy; borrowing limits on debt service costs."
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants signed; action item for legal counsel",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable",
+    "licensing"
+   ],
+   "quote": "minutes/warrants/action file issues"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Budget Revision Request #23",
+   "where": "text",
+   "quote": "school superintendent calmes has submitted a budget revision request in the amount of $9,600 for projector mounting stabilization from the contingency fund."
+  },
+  {
+   "name": "Order of Conditions (OOC)",
+   "where": "text",
+   "quote": "the order of conditions (ooc) that was issued for continued logging and reclamation."
+  },
+  {
+   "name": "Certificate of Compliance (Conservation Commission)",
+   "where": "text",
+   "quote": "ms. bertram asked about a certificate of compliance being issued from the conservation commission."
+  },
+  {
+   "name": "Board of Selectmen policies and procedures document (latest version; revised 2015)",
+   "where": "text",
+   "quote": "ms. lemieux referred to the latest version of the policies and procedures document and suggested going"
+  },
+  {
+   "name": "Draft Financial Policy: Borrowing Limits on Debt Service Costs",
+   "where": "text",
+   "quote": "the board changed direction to review a draft financial policy; borrowing limits on debt service costs."
+  },
+  {
+   "name": "Draft Social Media Policy",
+   "where": "text",
+   "quote": "the board reviewed the draft social media policy next."
+  },
+  {
+   "name": "CORI Policy",
+   "where": "text",
+   "quote": "suggestion was made to ask legal to review the cori policy."
+  },
+  {
+   "name": "Planning Board Rules and Regulations (governing the subdivision of land)",
+   "where": "text",
+   "quote": "requiring compliance with the planning board rules and regulations governing the subdivision of land"
+  }
+ ],
+ "tags": [
+  "select board",
+  "planning board appointments",
+  "policies and procedures",
+  "budget revision",
+  "projectors",
+  "contingency fund",
+  "road closure",
+  "warrants",
+  "financial policy",
+  "debt service",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

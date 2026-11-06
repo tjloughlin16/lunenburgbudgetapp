@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2019-03-12",
  "docid": "5631",
@@ -12,31 +12,348 @@
  },
  "votes": [
   {
-   "motion": "Approve the three Annual Town Meeting Sewer Commission warrant articles as drafted",
+   "motion": "Approve the three Annual Town Meeting Sewer Commission warrant articles as drafted.",
    "moved_by": "John R.",
    "seconded_by": "Ryan S.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: john r. second: ryan s. to approve the three annual town meeting sewer commission warrant articles as drafted. vote: unanimous"
   },
   {
-   "motion": "Accept the minutes for 3/5/19",
+   "motion": "Accept the minutes for 3/5/19.",
    "moved_by": "John R.",
    "seconded_by": "Joan P.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: john r. to accept the minutes for 3/5/19. second: joan p. vote: unanimous"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:33pm.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: joan p. to adjourn: 8:33pm. second: john r. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text is OCR'd from scanned pages.",
- "cost_usd": 0.1282815
+ "note": "Text is OCR of printed minutes. No roll call or attendance list is printed, so attendee status is inferred from speaking or moving roles. Page 1 ends mid-item at the Grease Trap/FOG audit report by Joan P., and page 2 begins with the 3/5/19 minutes, so the FOG report content is missing. Several OCR errors appear in quotes (e.g. 'emall', 'bullding', '1/l', 'transter') and are kept verbatim.",
+ "cost_usd": 0.009327620000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kevin Olson",
+   "role": "Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson, matt corbin - wright pierce - preliminary meeting to discuss maintenance plan proposal- matt"
+  },
+  {
+   "name": "Matt Corbin",
+   "role": "Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson, matt corbin - wright pierce - preliminary meeting to discuss maintenance plan proposal- matt"
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb handed out the draft of the sewer articles for the 5/4/19 town meeting."
+  },
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl gave the presentation to fincom and was encouraged by the questions asked."
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: john r. second: ryan s. to approve the three annual town meeting sewer commission warrant articles as drafted."
+  },
+  {
+   "name": "Ryan S.",
+   "role": "",
+   "status": "present",
+   "quote": "second: ryan s. to approve the three annual town meeting sewer commission warrant articles as drafted."
+  },
+  {
+   "name": "Joan P.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: joan p. to adjourn: 8:33pm."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dan Proctor to submit a written request to discuss his sewer privilege fee at a future meeting.",
+   "quote": "commission suggested that dan submit a written request to discuss at a future meeting."
+  },
+  {
+   "decision": "Barb to add the contract discussion for the Wright Pierce Maintenance Plan to the 3/26 meeting.",
+   "quote": "kevin said he could get a contract together quick and barb will add the contract discussion to 3/26 meeting."
+  },
+  {
+   "decision": "Commission agreed the first step on DPW tasks is to generate a list of tasks, with the next step a meeting with the Town Manager and DPW Manager.",
+   "quote": "commission agreed that the first step is to generate a list of tasks and next step to meet with the town manager (heather) and dpw manager (jack)."
+  },
+  {
+   "decision": "Commission to discuss the task list before meeting with the Town Manager and DPW Manager, and to compile and discuss the list at the April 9 meeting.",
+   "quote": "they agreed to discuss the list prior to meeting with heather & jack."
+  },
+  {
+   "decision": "Commission to get clarification from counsel on whether sewer equipment is considered a town facility as implied in the charter paragraph.",
+   "quote": "it was determined that they would get clarification from counsel whether the sewer equipment is considered a town facility as implied in the charter paragraph."
+  },
+  {
+   "decision": "Executive Session passed over because no response had been received from counsel.",
+   "quote": "barb announced that they would pass over the executive session as we had not received a response from counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dan Proctor sewer assessment and privilege fee",
+   "what_was_recorded": "Dan Proctor disputed the sewer assessment for his new building and a privilege fee would be applied only to two parcels; no dollar figures printed.",
+   "quote": "dan proctor sent barb an emall regarding assessment for his new bullding as a service station",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY20 Budget",
+   "what_was_recorded": "Carl presented the FY20 budget to FinCom and was encouraged by the questions asked; no figures printed.",
+   "quote": "fy20 budget - carl gave the presentation to fincom and was encouraged by the questions asked.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Sewer Enterprise Fund Budget warrant article",
+   "what_was_recorded": "The Sewer Enterprise Fund Budget was one of three sewer warrant articles for Town Meeting; no amount printed.",
+   "quote": "the articles are the sewer enterprise fund budget article, capital reserve stabilization fund transfer and the opeb trust fund transter.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY20 Flow Assessment Contract",
+   "what_was_recorded": "Commission signed off on the FY20 Flow Assessment Contract; invoices reported as none; no amount printed.",
+   "quote": "commission signed off on the fy20 flow assessment contract. invoices - none.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "West Street pump replacement",
+   "what_was_recorded": "SWSS was to order another Flyte pump to replace one taken from spares inventory; no cost printed.",
+   "quote": "is having swss order another flyte pump to replace the one now taken out of spares inventory.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Capital Reserve Stabilization Fund transfer, Annual Town Meeting sewer warrant article",
+   "amount_as_printed": "not printed",
+   "outcome": "approved as drafted with the other two sewer warrant articles (vote unanimous) for the 5/4/19 Town Meeting",
+   "quote": "the articles are the sewer enterprise fund budget article, capital reserve stabilization fund transfer and the opeb trust fund transter."
+  },
+  {
+   "description": "OPEB Trust Fund transfer, Annual Town Meeting sewer warrant article",
+   "amount_as_printed": "not printed",
+   "outcome": "approved as drafted with the other two sewer warrant articles (vote unanimous) for the 5/4/19 Town Meeting",
+   "quote": "the articles are the sewer enterprise fund budget article, capital reserve stabilization fund transfer and the opeb trust fund transter."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dan Proctor",
+   "stated_role": "",
+   "topic": "assessment for new building and sewer privilege fee",
+   "quote": "dan proctor sent barb an emall regarding assessment for his new bullding as a service station (no gas) with 2 bays but feels that is inaccurate."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment - Dan Proctor",
+   "resolution": "referred to a written request for a future meeting",
+   "quote": "dan proctor sent barb an emall regarding assessment for his new bullding as a service station",
+   "tags": [
+    "public comment",
+    "sewer assessment",
+    "privilege fee"
+   ]
+  },
+  {
+   "topic": "Appointments - Wright Pierce Maintenance Plan",
+   "resolution": "discussed; contract discussion moved to 3/26 meeting",
+   "quote": "preliminary meeting to discuss maintenance plan proposal",
+   "tags": [
+    "maintenance plan",
+    "wright pierce",
+    "pump stations",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles",
+   "resolution": "approved as drafted",
+   "quote": "barb handed out the draft of the sewer articles for the 5/4/19 town meeting.",
+   "tags": [
+    "town meeting",
+    "warrant articles",
+    "sewer budget"
+   ]
+  },
+  {
+   "topic": "FY20 Budget",
+   "resolution": "no action; report only",
+   "quote": "fy20 budget - carl gave the presentation to fincom",
+   "tags": [
+    "budget",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "DPW tasks definition and expectations",
+   "resolution": "list of tasks to be compiled; discussed April 9",
+   "quote": "dpw tasks definition and expectations discussion",
+   "tags": [
+    "DPW",
+    "tasks",
+    "Town Manager",
+    "outsourcing"
+   ]
+  },
+  {
+   "topic": "Town Charter hearing review update",
+   "resolution": "clarification to be sought from counsel",
+   "quote": "town charter hearing review update- carl spoke at the hearing",
+   "tags": [
+    "charter",
+    "town facility"
+   ]
+  },
+  {
+   "topic": "Town Caucus 3/11",
+   "resolution": "no action; nominations noted",
+   "quote": "town caucus 3/11- john and carl were nominated.",
+   "tags": [
+    "caucus"
+   ]
+  },
+  {
+   "topic": "Grease trap/interceptor spring inspections - FOG audit",
+   "resolution": "report begins; text cut off, no action recorded",
+   "quote": "grease trap/interceptor spring inspections discussion - fog audit- joan reported that",
+   "tags": [
+    "grease trap",
+    "FOG",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/5/19",
+   "resolution": "approved unanimously",
+   "quote": "motion: john r. to accept the minutes for 3/5/19.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "received; FY20 Flow Assessment Contract signed off",
+   "quote": "business manager report - meter reading import- northern data contract went out and they will be assigning a project manager.",
+   "tags": [
+    "meter reading",
+    "Northern Data",
+    "RFP",
+    "West Street pump",
+    "Munis"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs for future meetings",
+   "resolution": "listed for future agendas",
+   "quote": "member agenda inputs for future meetings - grease trap regulations letter, maintenance plan contract, dan proctor connection fee, irrigation meter changeover.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Executive Session",
+   "resolution": "passed over; no response from counsel",
+   "quote": "barb announced that they would pass over the executive session as we had not received a response from counsel.",
+   "tags": [
+    "executive session",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:33pm",
+   "quote": "motion: joan p. to adjourn: 8:33pm.",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft sewer articles for the 5/4/19 Town Meeting",
+   "where": "list",
+   "quote": "barb handed out the draft of the sewer articles for the 5/4/19 town meeting."
+  },
+  {
+   "name": "Email from Dan Proctor to Barb",
+   "where": "text",
+   "quote": "dan proctor sent barb an emall regarding assessment for his new bullding as a service station"
+  },
+  {
+   "name": "Basic contract received from Town Counsel",
+   "where": "text",
+   "quote": "barb said she can send the basic contract she had received from town counsel."
+  },
+  {
+   "name": "Maintenance Plan proposal (Wright Pierce)",
+   "where": "text",
+   "quote": "preliminary meeting to discuss maintenance plan proposal"
+  },
+  {
+   "name": "Capital Plan",
+   "where": "text",
+   "quote": "commission discussed a capital plan, along with compiling a list of spare parts that had been purchased."
+  },
+  {
+   "name": "Northern Data contract",
+   "where": "text",
+   "quote": "meter reading import- northern data contract went out and they will be assigning a project manager."
+  },
+  {
+   "name": "3rd party RFP",
+   "where": "text",
+   "quote": "barb will be sending out the 1/l 3rd party rfp after adding the insurance section per town manager request."
+  },
+  {
+   "name": "FY20 Flow Assessment Contract",
+   "where": "text",
+   "quote": "commission signed off on the fy20 flow assessment contract."
+  },
+  {
+   "name": "Minutes of 3/5/19",
+   "where": "text",
+   "quote": "minutes of 3/5/19 motion: john r. to accept the minutes for 3/5/19."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "wright pierce",
+  "maintenance plan",
+  "town meeting warrant",
+  "FY20 budget",
+  "town charter",
+  "pump stations",
+  "grease trap",
+  "FOG audit",
+  "public comment",
+  "executive session",
+  "meter reading"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb handed out the draft of the sewer articles"
+ },
+ "dropped_unquoted_by_field": {}
 }

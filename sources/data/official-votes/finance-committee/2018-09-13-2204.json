@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-09-13",
  "docid": "2204",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John Henshaw",
    "seconded_by": "Hannah Anderson",
    "outcome": "passed 4-0",
@@ -21,6 +21,281 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes; one vote recorded (adjournment).",
- "cost_usd": 0.0859955
+ "note": "Text is macOS Vision OCR and contains garbled words (e.g., 'capita', 'OPE', 'wat', 'thes'). Sentences are cut at page breaks (pages 1-2 public comment, pages 2-3 and 3-4 policy discussion), so some passages are incomplete. Numbering jumps from 4 to 7 (items 5-6 absent). The Department Committee Updates table is garbled in the OCR. The Attachments line says (3) but four items are listed. Only one motion is recorded (adjournment, 4-0). Michelle Walton's role is not printed. The Chair's remark about 'Terri' and 'John' is discussion, not votes.",
+ "cost_usd": 0.00696982,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton"
+  },
+  {
+   "name": "Michelle Walton",
+   "role": "",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton"
+  },
+  {
+   "name": "George Martin",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: george martin, marc luescher, jay simeone"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: george martin, marc luescher, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: george martin, marc luescher, jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "a. dave passios, 56 whiting street, welcomes michelle to the board, his comments this evening have nothing to do with the person appointed to the committee"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "John Henshaw will bring a presentation to the committee on the vertex study and new growth within 2-3 weeks.",
+   "quote": "john will have a presentation for us within 2-3 weeks."
+  },
+  {
+   "decision": "Finance Committee would need to revisit the capital stabilization fund; committee discussed segregating it from the general stabilization fund, with John Henshaw agreeing.",
+   "quote": "that finance would need to revisit the capita stabilization fund"
+  },
+  {
+   "decision": "Terri Burchfield said she would need to take another look at the borrowing policy.",
+   "quote": "she would need to take a another look at the policy"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free cash priority for road maintenance (pothole fund and debt-funded amount)",
+   "what_was_recorded": "Terri Burchfield and John Henshaw described a standing agreement to hold $1 million for road maintenance from the pothole fund and the $550k from the debt before redirecting free cash.",
+   "figures_as_printed": [
+    "1 million dollars",
+    "$550k"
+   ],
+   "quote": "until we reach 1 million dollars, combination of the pot hole fund and the $550k from the debt it will be able to have 1 million dollars to maintain the roads"
+  },
+  {
+   "topic": "Annual set-aside toward the road fund",
+   "what_was_recorded": "John Henshaw said the town voted a 10% annual set-aside, $50K each year, toward the $1 million road goal.",
+   "figures_as_printed": [
+    "10%",
+    "$50K each year"
+   ],
+   "quote": "wat the town voted on that 10% each year ($50k each year)"
+  },
+  {
+   "topic": "Free cash policy: 10% of prior-year certified free cash",
+   "what_was_recorded": "Heather Lemieux confirmed the 10% of prior-year certified free cash limit applies to OPEB funding for new personnel.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "right as far as the 10% of the previous years certified free cash"
+  },
+  {
+   "topic": "Stabilization fund minimum balance",
+   "what_was_recorded": "Michelle Walton read the omnibus stabilization policy requiring the stabilization balance to be leveled at least 5% of the current fiscal year budget; committee debated whether capital stabilization counts toward that 5%.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "to increase the balance of the stabilization account if necessary, to level at least 5% of the current fiscal year budget"
+  },
+  {
+   "topic": "Borrowing policy: regular tax levy definition",
+   "what_was_recorded": "Discussion of defining the regular tax levy as prior-year levy plus the Prop 2½ increase plus new growth, and whether the 2.5% limit should be a ceiling.",
+   "figures_as_printed": [
+    "2.5%",
+    "2½"
+   ],
+   "quote": "that at least at the regular tax levy defined as 2.5% of the prior years tax levy plus 2.5%"
+  },
+  {
+   "topic": "OPEB funding for new personnel",
+   "what_was_recorded": "Discussion that new hires would add the cost of their OPEB liability amount into the budget; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "we added any new personnel add the costs of that persons ope liability amount into"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Process for filling committee vacancy",
+   "quote": "a. dave passios, 56 whiting street, welcomes michelle to the board, his comments this evening have nothing to do with the person appointed to the committee"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open Meeting",
+   "resolution": "called to order at 7:00 pm",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "public comment heard; vertex study item noted; new communications received",
+   "quote": "municipal directory came in the mail.",
+   "tags": [
+    "public comment",
+    "communications",
+    "vacancy process",
+    "vertex study"
+   ]
+  },
+  {
+   "topic": "Review policy areas the Board of Selectman want to revisit",
+   "resolution": "discussed; to meet Board of Selectmen Oct 11, 2018",
+   "quote": "meet with board of selectman on october 11, 2018 at 6:30pm then open the public",
+   "tags": [
+    "borrowing",
+    "debt service",
+    "free cash",
+    "stabilization fund",
+    "OPEB",
+    "tax levy",
+    "investment policy"
+   ]
+  },
+  {
+   "topic": "2020 Budget dashboard discussion",
+   "resolution": "skipped, GM Lead absent",
+   "quote": "skipped, george was absent.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Manager/Financial Officer Reports",
+   "resolution": "no reports",
+   "quote": "town manager, heather lemieux- no reports",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Department Committee Updates",
+   "resolution": "updates received",
+   "quote": "meeting september 25, at 5pm at town hall.",
+   "tags": [
+    "capital planning",
+    "schools",
+    "charter review",
+    "committee updates"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "dates set",
+   "quote": "october 11, 2018 6:30 with board of selectman",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 8:00 pm",
+   "quote": "john made a motion to adjourn. hannah seconded the motion. the committee approved the motion 4-0 at 8:00 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Policy areas the Board of Selectman want to revisit (1. Borrowing, Limits on Debt Service Costs Section 3.01)",
+   "where": "list",
+   "quote": "1. borrowing, limits on debt service costs section 3.01"
+  },
+  {
+   "name": "Policy areas the Board of Selectman want to revisit (2. Free Cash Section 3.03)",
+   "where": "list",
+   "quote": "2. free cash section 3.03"
+  },
+  {
+   "name": "Policy areas the Board of Selectman want to revisit (3. Investment Policy Section 3.06)",
+   "where": "list",
+   "quote": "3. investment policy section 3.06"
+  },
+  {
+   "name": "Policy areas the Board of Selectman want to revisit (4. OPEB Funding Policy Section 3.07)",
+   "where": "list",
+   "quote": "4. opeb funding policy section 3.07"
+  },
+  {
+   "name": "Municipal directory",
+   "where": "text",
+   "quote": "municipal directory came in the mail."
+  },
+  {
+   "name": "MMA publication",
+   "where": "text",
+   "quote": "mma publication from the senior center and"
+  },
+  {
+   "name": "Remote participation policy",
+   "where": "text",
+   "quote": "remote participation policy."
+  },
+  {
+   "name": "Vertex study",
+   "where": "text",
+   "quote": "john suggests we keep the vertex study front and center"
+  },
+  {
+   "name": "Pavement management plan",
+   "where": "text",
+   "quote": "the pavement management plan was funded"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "free cash",
+  "stabilization fund",
+  "debt service policy",
+  "tax levy",
+  "OPEB",
+  "board of selectmen",
+  "capital planning",
+  "public comment",
+  "vacancy appointment",
+  "town manager"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {}
 }

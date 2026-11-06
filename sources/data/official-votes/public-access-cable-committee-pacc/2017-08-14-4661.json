@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2017-08-14",
  "docid": "4661",
@@ -12,15 +12,137 @@
  },
  "votes": [
   {
-   "motion": "To approve the meeting minutes from July 10, 2017",
-   "outcome": "approved",
-   "procedural": true,
+   "motion": "Approve the minutes of the July 10, 2017 meeting.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "committee reviewed and approved the minutes"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "committee reviewed and approved the minutes."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-extracted. One procedural vote recorded; no mover or seconder named, and no vote count stated (recorded only as \"approved\").",
- "cost_usd": 0.0810195
+ "note": "OCR text from a scanned page (macOS Vision); some characters are garbled (e.g., \"Aug 22\"°\"). The minutes record one approval of the July 10, 2017 minutes with no motion, mover, seconder or count printed. The adjournment at 7:15pm is recorded without a motion or vote. The minutes name no vote counts. The \"Roll call:\" heading has no names beneath it apart from the attendance line. Signed by Jeffrey Bajko, PACC Clerk, dated 9/21/17, and stamped received and filed Sept 2, 2017.",
+ "cost_usd": 0.00270812,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "status": "present",
+   "role": "PACC member",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Steve Walker",
+   "status": "present",
+   "role": "PACC member",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Faith Beall",
+   "status": "present",
+   "role": "PACC member",
+   "quote": "pacc members present were jeff bajko, steve walker, and faith beall."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "status": "present",
+   "role": "Non-member",
+   "quote": "non-members present were jo mclaughlin."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jo will broadcast the job description to replace Emily on Facebook, the newspaper, and local colleges.",
+   "quote": "jo will broadcast the job description to replace emily on facebook, the newspaper, and local colleges."
+  },
+  {
+   "decision": "Logo clothing will be priced (discussed, to be priced).",
+   "quote": "logo clothing was discussed and will be priced."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Available budget",
+   "what_was_recorded": "The coordinator reported the available budget at the end of July.",
+   "figures_as_printed": [
+    "$159,503.16"
+   ],
+   "quote": "available budget ending in the month of july was $159,503.16."
+  },
+  {
+   "topic": "Comcast negotiation demands",
+   "what_was_recorded": "The CAC negotiator reported demands to Comcast for a 5% increase and a $240,000 infusion fee.",
+   "figures_as_printed": [
+    "5%",
+    "$240,000"
+   ],
+   "quote": "discussing demands with comcast for a 5% increase and the $240,000 infusion fee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no comments received",
+   "quote": "public comments: 1. no comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes of July 10, 2017",
+   "resolution": "approved",
+   "quote": "review and approve meeting minutes from july 10, 2017.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Coordinator's monthly report",
+   "resolution": "reported; no vote recorded",
+   "quote": "coordinator's monthly report:",
+   "tags": [
+    "budget",
+    "programming",
+    "staffing",
+    "studio"
+   ]
+  },
+  {
+   "topic": "Business and cable advisory committee update",
+   "resolution": "informational update; next meeting with Comcast Aug 22",
+   "quote": "business and cable advisory committee update:",
+   "tags": [
+    "Comcast",
+    "cable renewal",
+    "CAC"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:15pm; next meeting Sept 11",
+   "quote": "meeting adjourned at 7:15pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access cable",
+  "PACC",
+  "Comcast",
+  "cable renewal",
+  "budget",
+  "studio",
+  "programming",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

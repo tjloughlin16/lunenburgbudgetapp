@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-08-15",
  "docid": "5568",
@@ -15,80 +15,437 @@
    "motion": "Accept Dan Proctor's application to connect at 380 Electric Ave.",
    "moved_by": "Joe A.",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: joe a. to accept the dan proctor's application to connect at 380 electric ave. vote: unanimous"
   },
   {
-   "motion": "Approve the 2017 contract with SWSS, pending receipt of the agreement with SWSS",
+   "motion": "Approve the 2017 contract with SWSS, pending receipt of the agreement with SWSS.",
    "moved_by": "Joe A.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: joe a. second: john r. to approvethe 2017 contract with swss, pending receipt of the agreement with swss. vote: unanimous"
   },
   {
-   "motion": "Waive the $50 fee for Bad Larry for August",
-   "moved_by": "John R.",
-   "seconded_by": "Joe A.",
-   "outcome": "passed",
+   "motion": "Waive the $50 fee for Bad Larry for August.",
+   "moved_by": "John R",
+   "seconded_by": "JoeA.",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: john r second: joea. to waive the $50 fee for bad larry for august. vote: unanimous"
   },
   {
-   "motion": "Nominate Joe A. as chair",
+   "motion": "Elect Joe A. as chair, Carl L. as vice-chair and Joan P. as clerk (nominations by John R.; seconds and votes printed in sequence, not tied to each nominee).",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: john r. to nominate joe a. as chair. motion: john r. to nominate car",
-   "quote_taken_from_text": true
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "to nominate joan p. as clerk. second: carl l. vote: unanimous"
   },
   {
-   "motion": "Nominate Carl L. as vice-chair",
-   "moved_by": "John R.",
-   "seconded_by": "Joe A.",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: john r. to nominate carl l. as vice-chair. motion: john r. to nominate jo",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Nominate Joan P. as clerk",
-   "moved_by": "John R.",
-   "seconded_by": "Joe A.",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: john r. to nominate joan p. as clerk. second: carl l. vote: unanimou",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Accept the minutes of 6/13/17, with the addition of the date of Jack's email",
+   "motion": "Accept the minutes of 6/13/17, with the addition of the date of Jack's email.",
    "moved_by": "John R.",
    "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: john r. to accept the minutes of 6/13/17, with the addition of the date of jack's email. unanimous"
-  },
-  {
-   "motion": "Accept the minutes of 6/27/17 as amended",
-   "moved_by": "John",
-   "seconded_by": "Carl L.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: john to accept the minutes of 6/27/17 as amended. second: carll. vote: ",
-   "quote_taken_from_text": true
+   "quote": "to accept the minutes of 6/13/17, with the addition of the date of jack's email."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Accept the minutes of 6/20/17, as amended.",
+   "moved_by": "CarlL.",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "motion: carll. to accept the minutes of 6/20/17, as amended."
+  },
+  {
+   "motion": "Accept the minutes of 6/27/17 as amended.",
+   "moved_by": "John",
+   "seconded_by": "CarlL.",
+   "outcome": "passed, unanimous",
+   "procedural": true,
+   "quote": "motion: john to accept the minutes of 6/27/17 as amended. second: carll. vote: second: john r. vote: unanimous"
+  },
+  {
+   "motion": "Adjourn the meeting at 9:03 pm.",
    "moved_by": "Joan P.",
    "seconded_by": "Carl L.",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: joan p. to adjourn: 9:03 pm. second: carl l. vote: unanimous"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scanned minutes. Formatting on page 2 (officer elections and minutes approvals) is ambiguous: all motions are listed before their corresponding seconds/votes, making it difficult to link them with absolute certainty. Vote 9's outcome is unclear—the source shows \"Vote:\" with no recorded result.",
- "cost_usd": 0.1885595
+ "dropped_unquoted": 0,
+ "note": "OCR text is garbled and partial: page 1 begins mid-discussion, with no call to order, date header, or roll call, so attendance is not stated and every attendee status is 'not stated' except Dan Proctor (present by implication). Vote seconds for the officer elections are printed out of sequence ('Second: Carl L.', then two 'Second: Joe A.' lines) and are not tied to each nominee, so the election is recorded as one vote. Motions to accept the 6/13/17 and 6/20/17 minutes show no printed result; the 6/20 'Unanimous' heading appears before its motion, so outcome is 'not stated'. The handout line is dated 8/12/18 and the clerk stamp reads 2018, which does not match the 2017 meeting. Some signatures and names are OCR-garbled (for example 'Joe A.' vs 'JoeA.', 'CarlL.').",
+ "cost_usd": 0.01021692,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe A.",
+   "role": "chair (nominated; took over running the meeting)",
+   "status": "not stated",
+   "quote": "as new chair, joe took over running the meeting"
+  },
+  {
+   "name": "Carl L.",
+   "role": "vice-chair (nominated)",
+   "status": "not stated",
+   "quote": "carl suggested using the town counsel instead."
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "john suggested adding an agenda item to determine how often to"
+  },
+  {
+   "name": "Joan P.",
+   "role": "clerk (nominated)",
+   "status": "not stated",
+   "quote": "joan suggested rotating the offices, as the selectmen do."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "barb will advise dan of the approval."
+  },
+  {
+   "name": "Pat",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "pat stated that the i/l state reportis due in december"
+  },
+  {
+   "name": "Jack R.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jack added that a plan for scope of work for"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant (380 Electric Ave. Car Wash)",
+   "status": "present",
+   "quote": "dan asked for clarification on the privilege fee."
+  },
+  {
+   "name": "Cari",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "minutes- reviewed 6/13/17 minutes - cari suggested that dates of emails be noted in the minutes"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Pat is to send a list to Jack; Pat is to have the draft I/I report by early November.",
+   "quote": "pat should have the draft report by early november."
+  },
+  {
+   "decision": "Carl suggested having SWSS look at the repair at Kirby Ave. (suggestion; John and Joan felt the plan should be kept as it is).",
+   "quote": "carl suggested having swss look at the repair at kirby ave."
+  },
+  {
+   "decision": "Carl asked that the Sewer Commission review the I/I scope of work before it goes out to bid.",
+   "quote": "carl requested that the sewer commission review the scope of work before going out to bid."
+  },
+  {
+   "decision": "Dan will redraft his letter and give Barb an estimate of the value involved.",
+   "quote": "dan will redraft his letter and will give barb an estimate of the value involved."
+  },
+  {
+   "decision": "Barb will ask for the monthly pump station report.",
+   "quote": "she will ask for the monthly report."
+  },
+  {
+   "decision": "Barb will resend the letter to Ugly Omelet's new manager, Kristy.",
+   "quote": "barb will resendtheletterto her."
+  },
+  {
+   "decision": "Barb will send a letter with a copy of the regulations to Dragonfly Café.",
+   "quote": "barb will send a letter with a copy of the regulations."
+  },
+  {
+   "decision": "Barb will post the minutes clerk position.",
+   "quote": "barb will need to postthe position."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "I/I invoice - Weston & Sampson",
+   "what_was_recorded": "Weston & Sampson invoice for the I/I project (camera, flow isolation) was reported.",
+   "figures_as_printed": [
+    "$11, 853.01"
+   ],
+   "quote": "invoices- weston & sampson-$11, 853.01 for /l project (camera, flowisolation)."
+  },
+  {
+   "topic": "Manhole job final invoice",
+   "what_was_recorded": "Invoice for the $6000 manhole job was reported, final invoice of 3.",
+   "figures_as_printed": [
+    "$6000",
+    "$2890.02"
+   ],
+   "quote": "regarding $6000 manhole job-invoicefor $2890.02 (final invoice"
+  },
+  {
+   "topic": "I/I control plan report cost increase",
+   "what_was_recorded": "Pat's I/I control plan report cost was increased from the original figure to add the 4:1 I/I removal support.",
+   "figures_as_printed": [
+    "$4,000",
+    "$ 5,000"
+   ],
+   "quote": "increasing the original cost from $4,000 to $ 5,000."
+  },
+  {
+   "topic": "Pump station drawdown test",
+   "what_was_recorded": "Drawdown test for 10 stations is priced per station, for a total, and is to be done in early November.",
+   "figures_as_printed": [
+    "$500/station",
+    "$5,000"
+   ],
+   "quote": "the pump station drawdown test for 10 stationswillcost$500/station, foratotal $5,000"
+  },
+  {
+   "topic": "Car wash privilege fee / payment",
+   "what_was_recorded": "Barb received a payment and the building permit application from Dan Proctor.",
+   "figures_as_printed": [
+    "$21,000"
+   ],
+   "quote": "barb received $21,000 and the building permit application from dan."
+  },
+  {
+   "topic": "Ugly Omelet non-compliance fine",
+   "what_was_recorded": "A certified letter was sent to Seth regarding a fine of $25 per day.",
+   "figures_as_printed": [
+    "$25/day"
+   ],
+   "quote": "had sentacertified letterto sethregarding $25/dayfine."
+  },
+  {
+   "topic": "Bad Larry fee waiver",
+   "what_was_recorded": "Commission voted to waive the $50 fee for Bad Larry for August.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "to waive the $50 fee for bad larry for august."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "I/I control plan and state report (Pat, Jack)",
+   "resolution": "discussed; no action",
+   "quote": "pat reviewed the l/l control plan proposal for",
+   "tags": [
+    "inflow and infiltration",
+    "state report",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Announcements and public comment",
+   "resolution": "none",
+   "quote": "announcements & public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "380 Electric Ave. car wash privilege fee and connection application",
+   "resolution": "application approved, unanimous",
+   "quote": "380 electric ave. car wash, dan proctor-application, privilege fee - commission reviewed dan's letter.",
+   "tags": [
+    "privilege fee",
+    "betterment",
+    "380 Electric Ave"
+   ]
+  },
+  {
+   "topic": "K&P input and closeout",
+   "resolution": "no action; awaiting KPLaw summary",
+   "quote": "k&p input/closeout-barbiswaiting forasummary from kplaw.",
+   "tags": [
+    "legal",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "SWSS contract renewal",
+   "resolution": "2017 contract approved pending SWSS agreement",
+   "quote": "to approvethe 2017 contract with swss, pending receipt of the agreement with swss.",
+   "tags": [
+    "SWSS",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Pump station monthly reports",
+   "resolution": "no action; report not yet received",
+   "quote": "pump station monthly reports - no report was received yet.",
+   "tags": [
+    "pump station",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Non-compliant establishments and fee waiver",
+   "resolution": "Bad Larry fee waived for August; letter to be resent",
+   "quote": "establishments in non-compliance - ugly omelet-.",
+   "tags": [
+    "fees",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Joe A. chair, Carl L. vice-chair, Joan P. clerk",
+   "quote": "election of officers - joan suggested rotating the offices, as the selectmen do.",
+   "tags": [
+    "officers",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/13/17, 6/20/17 and 6/27/17",
+   "resolution": "approved, with amendments",
+   "quote": "minutes- reviewed 6/13/17 minutes - cari suggested that dates of emails be noted in the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "no action",
+   "quote": "invoices- weston & sampson-$11, 853.01 for /l project (camera, flowisolation).",
+   "tags": [
+    "invoices",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "no action",
+   "quote": "business manager report - q1 bills-will be out by next week",
+   "tags": [
+    "business manager",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Minutes clerk vacancy",
+   "resolution": "position to be posted",
+   "quote": "minutes clerk-still have emily working but will be starting to work at the school",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Kitchen use request for wedding cakes (John Londa)",
+   "resolution": "discussed; no action",
+   "quote": "requestfrom john londa-hereceived an inquiry aboutusing the",
+   "tags": [
+    "town building",
+    "kitchen",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "letter to be sent",
+   "quote": "members agendainputs for future meetings -john questioned about whether dragonfly café had made an applicationto connect.",
+   "tags": [
+    "connections",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:03 pm, unanimous",
+   "quote": "motion: joan p. to adjourn: 9:03 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled 8/29/17 and 9/12/17",
+   "quote": "next meetings-8/29/17 - town hall, 9/12/17-dpw, 520 chase rd.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handout: Email dated 8/12/18 from T.Daniels",
+   "where": "list",
+   "quote": "handout: email dated 8/12/18 from t.daniels"
+  },
+  {
+   "name": "Dan's letter of 8/8",
+   "where": "text",
+   "quote": "sent dan'sletter of8/8 and 1999 memoof understanding."
+  },
+  {
+   "name": "1999 memo of understanding",
+   "where": "text",
+   "quote": "sent dan'sletter of8/8 and 1999 memoof understanding."
+  },
+  {
+   "name": "Jack's email of 6/13/17",
+   "where": "text",
+   "quote": "date of jack's email of6/13/17."
+  },
+  {
+   "name": "Privilege fee document - 120 West St.",
+   "where": "text",
+   "quote": "privilege fee document- 120 west st. -barb reported she receivedthe"
+  },
+  {
+   "name": "l/l control plan proposal",
+   "where": "text",
+   "quote": "pat reviewed the l/l control plan proposal for"
+  },
+  {
+   "name": "2017 contract with SWSS",
+   "where": "text",
+   "quote": "to approvethe 2017 contract with swss, pending receipt of the agreement with swss."
+  },
+  {
+   "name": "Pump Station Monthly Reports",
+   "where": "text",
+   "quote": "pump station monthly reports - no report was received yet."
+  },
+  {
+   "name": "Town regulations (sewer)",
+   "where": "text",
+   "quote": "it was noticed that the town regs do not have the 4:1 /1 removal policy"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "inflow and infiltration",
+  "380 Electric Ave",
+  "SWSS contract",
+  "officer elections",
+  "minutes approval",
+  "invoices",
+  "fees",
+  "kitchen request",
+  "pump station"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handout"
+ },
+ "dropped_unquoted_by_field": {}
 }

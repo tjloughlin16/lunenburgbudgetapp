@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-09-27",
  "docid": "2201",
@@ -12,31 +12,259 @@
  },
  "votes": [
   {
-   "motion": "Approve 9-13-18 minutes as amended",
+   "motion": "Approve the 9-13-18 minutes as amended by Terri.",
    "moved_by": "Marc",
    "seconded_by": "John",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "marc motioned to approve minutes as amended by terri, john second. 5-0"
+   "quote": "9-13-18 minutes for review, marc motioned to approve minutes as amended by terri, john second. 5-0"
   },
   {
-   "motion": "Approve 3-22-18 minutes",
+   "motion": "Approve the 3-22-18 minutes.",
    "moved_by": "John",
    "seconded_by": "Marc",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "john motioned to approve minutes, marc second. 5-0"
+   "quote": "3-22.18 minutes for review, john motioned to approve minutes, marc second. 5-0"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John",
    "seconded_by": "Hannah",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "john made a motion to adjourn. hannah seconded the motion. the committee approved the motion 5-0"
+   "quote": "john made a motion to adjourn. hannah seconded the motion. the committee approved the motion 5-0 at 7:45pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded in this Finance Committee meeting of 2018-09-27, all procedural. Minutes are OCR-extracted from macOS Vision; text is readable with no missing pages.",
- "cost_usd": 0.0817445
+ "note": "Text is OCR of a scanned page set, with typos such as 'October 20m' and 'October 25tr'. Three motions are recorded with 5-0 counts (two minutes approvals and adjournment). The Terri Burchfield 'Chair' role comes from the Open Meeting item, not a printed label; Karen Brochu's role is not printed. Item 9 'Public Comment' contains only a member's announcement, so no public speakers are recorded. Next-meeting bullet dates are partly garbled (October 25tr). The Free Cash and new growth discussion has unattributed Yes answers, so those are not attributed to a speaker.",
+ "cost_usd": 0.005201319999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher"
+  },
+  {
+   "name": "Michelle Walton",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher"
+  },
+  {
+   "name": "Marc Luescher",
+   "status": "present",
+   "quote": "present: terri burchfield, john henshaw, hannah anderson, michelle walton, marc luescher"
+  },
+  {
+   "name": "George Martin",
+   "status": "absent",
+   "quote": "absent: george martin, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "absent",
+   "quote": "absent: george martin, jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "TM",
+   "status": "present",
+   "quote": "guest: heather lemieux, tm."
+  },
+  {
+   "name": "Karen Brochu",
+   "status": "present",
+   "quote": "karen brochu said, if there is an increase from new growth from what was actually"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Marc and Karen Brochu agreed to a date to enter the last 6 years of numbers into the new-growth/trend tool, which is set up for 15 years.",
+   "quote": "marc and karen brochu have made a date to enter numbers from the last 6 years."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Free cash estimate",
+   "what_was_recorded": "Karen Brochu reported the balance sheet was submitted for Free Cash Certification and the estimated free cash is about $1,530,000 plus some change.",
+   "figures_as_printed": [
+    "$1,530,000"
+   ],
+   "quote": "balance sheet was submitted for the department of revenue today for free cash certification and she estimates it will be $1,530,000 and some change."
+  },
+  {
+   "topic": "New growth budgeted versus prior years",
+   "what_was_recorded": "John Henshaw said new growth is budgeted at about $375K, while actual new growth in FY17 and FY18 was $488K and $481K, running a little over $100K above budget in those years.",
+   "figures_as_printed": [
+    "$375K",
+    "$488K",
+    "$481K",
+    "$100K"
+   ],
+   "quote": "when we budget for new growth it is about $375k but as shown in fy17 & fy18 new growth was $488k & $481k"
+  },
+  {
+   "topic": "Personal property new growth from RRC",
+   "what_was_recorded": "The personal property growth from RRC was originally estimated at $50K and the actual came in at about $97K.",
+   "figures_as_printed": [
+    "$50K",
+    "$97K"
+   ],
+   "quote": "originally when estimated it was $50k but the actual is about $97k."
+  },
+  {
+   "topic": "Additional new growth available",
+   "what_was_recorded": "Based on the RRC personal property actual, there is $37,904 additional available; with the real estate figure from Harold, total new growth is about $37K higher than the $375K budgeted.",
+   "figures_as_printed": [
+    "$37,904",
+    "$375K",
+    "$37K"
+   ],
+   "quote": "based on the total estimated growth being $375k versus what we think it will be now, there is $37,904 additional dollars available."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open Meeting",
+   "resolution": "called to order at 7:00 pm, no action",
+   "quote": "the chair called the meeting to order at 7:00 pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Communications",
+   "resolution": "noted; no public comment; Virtex studies and Planning Board marijuana hearing mentioned",
+   "quote": "nothing in our mailbox but terri did want to let people know that the planning board is",
+   "tags": [
+    "communications",
+    "marijuana",
+    "property condition studies"
+   ]
+  },
+  {
+   "topic": "Discussion regarding Free Cash (JH Lead)",
+   "resolution": "discussed, no action",
+   "quote": "3. discussion regarding free cash. -jh lead",
+   "tags": [
+    "free cash",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Review Minutes",
+   "resolution": "9-13-18 approved as amended; 3-22-18 approved",
+   "quote": "9-13-18 minutes for review, marc motioned to approve minutes as amended by terri, john second. 5-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager/Financial Officer Reports",
+   "resolution": "reported, no action",
+   "quote": "karen brochu- balance sheet was submitted for the department of revenue today for",
+   "tags": [
+    "free cash",
+    "new growth",
+    "town manager report"
+   ]
+  },
+  {
+   "topic": "Committee liaison reports",
+   "resolution": "Police Dept report given by Marc; other liaison sections blank",
+   "quote": "police dept - marc met with chief marino about staffing. in terms of",
+   "tags": [
+    "police staffing",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Public Comment (item 9)",
+   "resolution": "member announced Ham & Bean Supper; no public speakers recorded",
+   "quote": "terri mentioned the ham & bean super on october 20m, 2018 at the eagle house 4-7pm",
+   "tags": [
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "noted upcoming dates",
+   "quote": "7:30pm public hearing for special town meeting",
+   "tags": [
+    "special town meeting",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5-0 at 7:45pm",
+   "quote": "john made a motion to adjourn. hannah seconded the motion. the committee approved the motion 5-0 at 7:45pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Johns handout (draft) New Growth by Fiscal Year",
+   "where": "list",
+   "quote": "1. johns handout (draft) new growth by fiscal year"
+  },
+  {
+   "name": "George's handout (draft) pg. 1 Service Level Debt Trend Analysis Forecast",
+   "where": "list",
+   "quote": "george's handout (draft) pg. 1 service level debt ***trend analysis*** forecast"
+  },
+  {
+   "name": "George's handout (draft) pg. 2 Fiscal Debt Policies (Forecast)",
+   "where": "list",
+   "quote": "3. george's handout (draft) pg. 2 fiscal debt policies (forecast)"
+  },
+  {
+   "name": "George's handout (draft) pg. 3 Itemized Regular Debt",
+   "where": "list",
+   "quote": "george's handout (draft) pg. 3 itemized regular debt"
+  },
+  {
+   "name": "George's handout (draft) pg.4 Itemized Excludable Debt",
+   "where": "list",
+   "quote": "george's handout (draft) pg.4 itemized excludable debt"
+  },
+  {
+   "name": "Virtex (Property Condition Studies) on the Lunenburg, Mass website",
+   "where": "text",
+   "quote": "terri suggested the community takes a look at the virtex (property condition studies)"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "free cash",
+  "new growth",
+  "minutes approval",
+  "police staffing",
+  "special town meeting",
+  "budget",
+  "2018"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments:"
+ },
+ "dropped_unquoted_by_field": {}
 }

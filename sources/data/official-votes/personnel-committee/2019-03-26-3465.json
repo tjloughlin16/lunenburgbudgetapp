@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2019-03-26",
  "docid": "3465",
@@ -12,23 +12,139 @@
  },
  "votes": [
   {
-   "motion": "Approve request to adjust Library employee's level and pay effective July 1, 2019",
-   "moved_by": "E.Arnold",
+   "motion": "Approve request to adjust Library employee's level and pay as per the formal request, effective July 1, 2019.",
+   "moved_by": "E. Arnold",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by e.arnold: approve request to adjust library employees level and pay as per noted in formal request, effective july 1, 2019. second: s. andrews vote: all in favor"
+   "quote": "motion by e.arnold: approve request to adjust library employees level and pay as per noted in formal request, effective july 1, 2019."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:51pm.",
    "moved_by": "E. Arnold",
    "seconded_by": "S.Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by e. arnold: to adjourn the meeting at 6:51pm second: s.andrews vote: all in favor"
+   "quote": "motion by e. arnold: to adjourn the meeting at 6:51pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision. Minor inconsistencies in name formatting within the document (E.Arnold vs E. Arnold, S. Andrews vs S.Andrews) likely due to OCR, but votes are clearly readable.",
- "cost_usd": 0.09419649999999999
+ "note": "OCR of a scanned page; header text is garbled (\"SusaAndle\") and the chair's name and role are not printed. The minutes say all attendees were present but also that Scott Chase was not in attendance; recorded as absent. Dave Rogers is listed under \"Also Present\" with no comment recorded. The General Discussion on two additional roles ends without any recorded outcome. Page 1 ends mid-discussion. The vote tally reads \"All in Favor\" with no count.",
+ "cost_usd": 0.00313412,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Erik Arnold",
+   "status": "present",
+   "quote": "motion by e.arnold: approve request to adjust library employees level and pay as per noted in formal request, effective july 1, 2019.",
+   "role": "not stated"
+  },
+  {
+   "name": "S. Andrews",
+   "status": "present",
+   "quote": "second: s. andrews vote: all in favor"
+  },
+  {
+   "name": "Scott Chase",
+   "status": "absent",
+   "quote": "scott chase was not in attendance."
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "heather lemieux, town manager",
+   "role": "Town Manager"
+  },
+  {
+   "name": "Nancy Forest",
+   "status": "present",
+   "quote": "nancy forest, payroll & benefits cordinator/risk manager",
+   "role": "Payroll & Benefits Cordinator/Risk Manager"
+  },
+  {
+   "name": "Dave Rogers",
+   "status": "present",
+   "quote": "dave rogers, town resident",
+   "role": "Town Resident"
+  },
+  {
+   "name": "Martha Moore",
+   "status": "present",
+   "quote": "martha moore, director, lunenburg library",
+   "role": "Director, Lunenburg Library"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Two tentative dates were set for the Personnel Committee to meet in April to review final documents for the Salary Action Plan article: April 30, with an alternate of April 22.",
+   "quote": "two tentative dates were set, april 30, with an alternate of april 22."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library employee job releveling",
+   "what_was_recorded": "The committee discussed the budget considerations of the library employee reclassification and pay adjustment before approving it; no dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "the budget considerations and ultimately gained confidence that the request should be approved"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Old Business",
+   "resolution": "no action",
+   "tags": [
+    "minutes",
+    "old business"
+   ],
+   "quote": "there were no minutes presented for approval from previous committee meeting; no old business topics discussed."
+  },
+  {
+   "topic": "Library Request - Job Releveling",
+   "resolution": "approved, effective July 1, 2019",
+   "tags": [
+    "library",
+    "pay",
+    "reclassification"
+   ],
+   "quote": "martha moore presented a formal request to reevaluate the position level of one of the libary"
+  },
+  {
+   "topic": "General Discussion - Salary Action Plan article and Town Meeting",
+   "resolution": "dates set for April meeting; two additional roles discussed, no action recorded",
+   "tags": [
+    "salary action plan",
+    "town meeting",
+    "scheduling"
+   ],
+   "quote": "preparation of the article regarding the updating of the salary action plan (sap) that will be addressed at the town meeting may 4, 2019"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Formal request (library employee position level and pay adjustment)",
+   "where": "text",
+   "quote": "martha moore presented a formal request to reevaluate the position level of one of the libary"
+  },
+  {
+   "name": "Article regarding the updating of the Salary Action Plan (SAP), Town Meeting May 4, 2019",
+   "where": "text",
+   "quote": "preparation of the article regarding the updating of the salary action plan (sap) that will be addressed at the town meeting may 4, 2019"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "library",
+  "pay adjustment",
+  "salary action plan",
+  "town meeting",
+  "job reclassification"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

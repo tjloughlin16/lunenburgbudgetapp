@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2018-06-12",
  "docid": "547",
@@ -10,15 +10,158 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06122018-547",
   "doc_url": "/docs/meetings/architectural-preservation-district-commission/2018-06-12-minutes-547.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned page (macOS Vision); a typo 'Juiy' appears and is read as July. The minutes record no motions or votes at all, so the votes list is empty; the minutes approval, adjournment and the 'read and approved' line are not recorded as motions. No public comment section is printed. The page is stamped RECEIVED & FILED JUL 16 2018. Only one page was provided.",
+ "cost_usd": 0.00304562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "To approve the minutes from May 8, 2018",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "review of minutes: 5-8-18 minutes read and approved"
+   "name": "McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "LaVeck",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Corcoran",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: chairman mcgrath, vice-chairman laveck, corcoran and dwyer"
+  },
+  {
+   "name": "Gary Burton",
+   "role": "applicant (application for 944 Massachusetts Avenue)",
+   "status": "not stated",
+   "quote": "application from gary burton"
+  },
+  {
+   "name": "E. Peterson",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mcgrath will go over the wording for the public notice with e. peterson and post the notice in the lunenburg ledger."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd from scan via macOS Vision. One vote recorded: approval of prior minutes. The text schedules a public hearing and a joint meeting and sets the next meeting date, but records no motions or votes for these items. The meeting adjournment is noted but without a recorded motion to adjourn.",
- "cost_usd": 0.029832199999999996
+ "decisions": [
+  {
+   "decision": "Schedule a public hearing for the alteration at 944 Massachusetts Avenue for the next meeting.",
+   "quote": "scheduled public hearing for alteration at 944 massachusetts avenue for the next meeting."
+  },
+  {
+   "decision": "LaVeck will update the TA application form to include the $25 filing fee on the list of requirements for completion of an application, and will discuss the application process with land use department staff.",
+   "quote": "laveck will update ta application form to include $25 filing fee on list of requirements"
+  },
+  {
+   "decision": "McGrath will go over the public notice wording with E. Peterson and post the notice in the Lunenburg Ledger.",
+   "quote": "mcgrath will go over the wording for the public notice with e. peterson and post the notice in the lunenburg ledger."
+  },
+  {
+   "decision": "Schedule a joint meeting with the Historical Commission for Tuesday, September 11th, 2018 to discuss revision of the Demolition Delay Bylaw.",
+   "quote": "joint meeting scheduled with historical commission for tuesday, september 11th, 2018 to discuss revision of demolition delay"
+  },
+  {
+   "decision": "Next meeting scheduled for Tuesday, July 10th (printed as 'Juiy' in the OCR text).",
+   "quote": "next meeting: scheduled for tuesday, juiy 10th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Filing fee for TA application",
+   "what_was_recorded": "The TA application form is to be updated to list a $25 filing fee among the requirements for completion of an application.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "laveck will update ta application form to include $25 filing fee on list of requirements"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved (5-8-18 minutes read and approved; no motion recorded)",
+   "quote": "review of minutes: 5-8-18 minutes read and approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Application for alteration at 944 Massachusetts Avenue (Gary Burton)",
+   "resolution": "public hearing scheduled for next meeting; application nearly complete",
+   "quote": "scheduled public hearing for alteration at 944 massachusetts avenue for the next meeting.",
+   "tags": [
+    "application",
+    "public hearing",
+    "alteration"
+   ]
+  },
+  {
+   "topic": "Old Business: Demolition Delay Bylaw revision",
+   "resolution": "joint meeting with Historical Commission scheduled for September 11, 2018; red line version reviewed",
+   "quote": "joint meeting scheduled with historical commission for tuesday, september 11th, 2018 to discuss revision of demolition delay",
+   "tags": [
+    "demolition delay",
+    "bylaw",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Clean-up at 53 Lancaster",
+   "resolution": "no action; Dwyer mentioned planned clean-up Saturday the 16th at 9AM",
+   "quote": "dwyer mentioned plans for clean up at 53 lancaster, the coming saturday the 16th at 9am.",
+   "tags": [
+    "clean-up",
+    "community"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "next meeting scheduled for Tuesday, July 10th",
+   "quote": "next meeting: scheduled for tuesday, juiy 10th.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Delay Bylaw revision, LaVeck's \"red line\" version",
+   "where": "text",
+   "quote": "reviewed laveck's \"red line\" version."
+  },
+  {
+   "name": "TA application form",
+   "where": "text",
+   "quote": "laveck will update ta application form to include $25 filing fee on list of requirements"
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "demolition delay bylaw",
+  "public hearing",
+  "944 Massachusetts Avenue",
+  "filing fee",
+  "joint meeting",
+  "Historical Commission",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

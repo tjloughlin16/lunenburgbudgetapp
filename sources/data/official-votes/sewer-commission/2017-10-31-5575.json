@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-10-31",
  "docid": "5575",
@@ -12,31 +12,288 @@
  },
  "votes": [
   {
-   "motion": "have Barb follow up to get an update from SWSS on spare parts within a week",
+   "motion": "Have Barb follow up to get an update from SWSS on the spare parts within a week.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "motion: joan p. second: troy d. that the sewer commission have barb follow to get an update from swss on the spare parts up within a week. discussion: carl wanted to clarify that it is ok for commission to ask barb to get information unless it becomes a lot of work. also, the protocol is still to have 1 contact, which is jack but it is ok to have barb ask for follow up information. vote: unanimous"
+   "quote": "motion: joan p. second: troy d. that the sewer commission have barb follow to get an update from swss on the spare parts up within a week."
   },
   {
-   "motion": "have Barb notify Crossroads of a hearing before the Sewer Commission regarding non-compliance fees and alternative actions",
+   "motion": "Have Barb notify Crossroads of a hearing before the Sewer Commission regarding non-compliance fees and alternative actions.",
    "moved_by": "Troy D.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed (unanimous)",
    "procedural": false,
-   "quote": "motion: troy d. second: john r. to have barb notify crossroads of a hearing before the sewer commission regarding non-compliance fees and alternative actions that we may or may not take at that meeting. barb will send a copy of the draft letter to each commissioner. discussion: none vote: unanimous"
+   "quote": "motion: troy d. second: john r. to have barb notify crossroads of a hearing before the sewer commission regarding non-compliance fees"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "John R.",
-   "seconded_by": "Troy D.",
-   "outcome": "passed",
+   "seconded_by": "Troy",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn: john r. adjourned at 7:59pm second: troy d."
+   "quote": "motion to adjourn: john r. adjourned at 7:59pm second: troy"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd minutes. All votes clearly marked with Motion, Second, and Vote outcome. No significant legibility issues.",
- "cost_usd": 0.14351950000000002
+ "note": "Text is OCR (macOS Vision) with garbled spots (e.g. \"ib.\" for lb., \"submittec\", stray \"Lone tail\" block). No roll call, so attendance statuses are inferred from participation; the clerk signature block was not treated as an attendee. Minutes name \"April\" and \"Fran\" for the Water District administrator in one sentence; not recorded as an attendee since that meeting was not at this session. Public comment: the minutes print \"No public comment.\" so no speakers are listed. The meeting's own date is not printed in the text; the date given is 2017-10-31 from the request.",
+ "cost_usd": 0.00695262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl",
+   "status": "not stated",
+   "quote": "carl asked if the dishwasher could be disabled and if regular inspections could be done to get an idea of use to build history."
+  },
+  {
+   "name": "Troy D.",
+   "status": "not stated",
+   "quote": "troy said that the commission wants to be pro-business but the concern is to make sure grease does not get into sewer system."
+  },
+  {
+   "name": "Joan P.",
+   "status": "not stated",
+   "quote": "joan read in appendix under grease trap regulations, section k that a business could ask for a waiver"
+  },
+  {
+   "name": "John R.",
+   "status": "not stated",
+   "quote": "john r. inquired about the grease trap regulations and carl replied that the regulations require inspections weekly"
+  },
+  {
+   "name": "John Londa",
+   "role": "director of facilities for school department & manager for the Passios building",
+   "status": "present",
+   "quote": "passios kitchen rental request - john londa (director of facilities for school department & manager for the passios building)."
+  },
+  {
+   "name": "Barb",
+   "status": "not stated",
+   "quote": "barb had suggested the next step is to meet with the town manager."
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "status": "not stated",
+   "quote": "joan found an email from jack rodriquenz that he had met with the town manager to prioritize tasks"
+  },
+  {
+   "name": "Patrick Cotton",
+   "role": "W & S",
+   "status": "not stated",
+   "quote": "troy also found an email from patrick cotton, w & s, that he will be seeking sewer commission approval"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission will let Barb know it would like to schedule the Crossroads hearing for Dec. 5, with the letter going out 2 weeks before.",
+   "quote": "commission will let barb know they would like to schedule the hearing dec. 5th, with the letter going out 2 weeks before."
+  },
+  {
+   "decision": "Barb to send a copy of the draft Crossroads letter to each Commissioner.",
+   "quote": "barb will send a copy of the draft letter to each commissioner."
+  },
+  {
+   "decision": "Carl will ask Barb or Jack to follow up on the Weston & Sampson bid package for the repair work.",
+   "quote": "carl will ask barb or jack to follow up."
+  },
+  {
+   "decision": "Joan asked that the Weston & Sampson Task 2 approval request be added to the agenda.",
+   "quote": "joan suggested that this be added to the agenda."
+  },
+  {
+   "decision": "John Londa to go back to the Passios kitchen applicants to clarify things so the applicants, not the town, carry the cost; he will do the grease trap inspections and use the same cleaning company the schools use.",
+   "quote": "his next step is to go back to the applicants to clarify things to make sure it is the applicants-not the town-that is carrying the burden of cost."
+  },
+  {
+   "decision": "Carl will attend the November 21 Economic Development workshop and check whether it was cancelled.",
+   "quote": "november 21 economic development workshop -carl will attend and will ask joe if he can."
+  },
+  {
+   "decision": "Minutes deferred to the next meeting.",
+   "quote": "minutes - will be deferred to next meeting."
+  },
+  {
+   "decision": "The 11/28 meeting rescheduled to December 5 because it falls on Town Meeting night.",
+   "quote": "rescheduled 11/28 meeting as it is the same night as town meeting. reschedule meeting to december 5."
+  },
+  {
+   "decision": "Carl will email a list of information the Commissioners need for the Task 2 discussion at the next meeting.",
+   "quote": "task 2- carl will email a list of information to the commissioners"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap cleaning cost at Passios",
+   "what_was_recorded": "The school currently pays for 3 grease trap cleanings a year at a fixed cost each.",
+   "figures_as_printed": [
+    "$ 125"
+   ],
+   "quote": "currently the school does 3 cleanings/year at a cost of $ 125 each."
+  },
+  {
+   "topic": "Permit to Discharge Fee",
+   "what_was_recorded": "The annual permit fee is $150, so each of two vendors could pay half.",
+   "figures_as_printed": [
+    "$150",
+    "$ 75"
+   ],
+   "quote": "joan said that the permit to discharge fee is $150 annually, so each vendor could pay $ 75."
+  },
+  {
+   "topic": "Permit fee increase if reports are late",
+   "what_was_recorded": "Vendors must file inspection and cleaning reports on time or the fee rises to $350 a year plus fees.",
+   "figures_as_printed": [
+    "$350/year"
+   ],
+   "quote": "or fee goes up to $350/year plus fees."
+  },
+  {
+   "topic": "Crossroads overdue fee",
+   "what_was_recorded": "Crossroads is in compliance but has a substantial overdue fee; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "they are in compliance but issue is they have a substantial overdue fee."
+  },
+  {
+   "topic": "Legal and monthly billing invoices",
+   "what_was_recorded": "KP Law invoice for Highfield work and the Fitchburg monthly billing were reported.",
+   "figures_as_printed": [
+    "$ 306",
+    "1.8 hrs.",
+    "$ 12,843"
+   ],
+   "quote": "invoices - kp law $ 306 for 1.8 hrs. for highfield, fitchburg monthly billing - $ 12,843."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Passios kitchen rental request",
+   "resolution": "discussed; John Londa to go back to applicants",
+   "quote": "passios kitchen rental request - john londa (director of facilities for school department & manager for the passios building)."
+  },
+  {
+   "topic": "DPW/Systems update - Weston & Sampson Task 1 RFP review",
+   "resolution": "discussed; bid package still awaited, Carl to follow up",
+   "quote": "dpw/systems update- weston & sampson-task 1 rfp review - carl reported that task 1 is underway"
+  },
+  {
+   "topic": "SWSS update",
+   "resolution": "motion passed unanimously to get spare parts update",
+   "quote": "swss update - joan received an email on preventive maintenance"
+  },
+  {
+   "topic": "I/I Reduction Planning - Weston & Sampson Task 2 scope of services review",
+   "resolution": "discussed; Carl to email information list",
+   "quote": "i/l reduction planning - weston & sampson-task 2 scope of services review - carl asked jack for follow up information"
+  },
+  {
+   "topic": "Outsourcing updates (billing)",
+   "resolution": "discussed; next step is meeting with town manager",
+   "quote": "outsourcing updates - there have been 2 meetings on investigating billing outsourcing."
+  },
+  {
+   "topic": "Grease Trap Regulation Compliance - Crossroads",
+   "resolution": "motion passed unanimously; hearing to be scheduled Dec. 5",
+   "quote": "grease trap regulation compliance - crossroads -they are in compliance but issue is they have a substantial overdue fee."
+  },
+  {
+   "topic": "Commitment to Assessors of Privilege Fees FY18",
+   "resolution": "no action; signatures needed for Assessor's office",
+   "quote": "commitment to assessors of privilege fees fy18- 51 joslin st, 357 electric ave"
+  },
+  {
+   "topic": "November 21 Economic Development workshop",
+   "resolution": "Carl to attend and check on cancellation",
+   "quote": "november 21 economic development workshop -carl will attend and will ask joe if he can."
+  },
+  {
+   "topic": "Highfield Village status",
+   "resolution": "discussed; Barb working with Fitchburg on capacity questions",
+   "quote": "highfield village status - they have the sewer commission inputs"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "minutes - will be deferred to next meeting."
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "reported; no action recorded",
+   "quote": "invoices - kp law $ 306 for 1.8 hrs. for highfield, fitchburg monthly billing - $ 12,843."
+  },
+  {
+   "topic": "Meeting schedule change",
+   "resolution": "11/28 meeting moved to December 5",
+   "quote": "rescheduled 11/28 meeting as it is the same night as town meeting."
+  },
+  {
+   "topic": "Members agenda inputs for future meetings",
+   "resolution": "list of future agenda items noted",
+   "quote": "members agenda inputs for future meetings - discuss communications between commissioners & contractors/dpw;"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:59pm",
+   "quote": "motion to adjourn: john r. adjourned at 7:59pm second: troy"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Grease trap regulations, Appendix, section K",
+   "where": "text",
+   "quote": "joan read in appendix under grease trap regulations, section k that a business could ask for a waiver"
+  },
+  {
+   "name": "Draft letter to Crossroads",
+   "where": "text",
+   "quote": "barb will send a copy of the draft letter to each commissioner."
+  },
+  {
+   "name": "Email from Jack Rodriquenz re meeting with town manager",
+   "where": "text",
+   "quote": "joan found an email from jack rodriquenz that he had met with the town manager to prioritize tasks"
+  },
+  {
+   "name": "Email from Patrick Cotton, W & S, re Task 2 proposal",
+   "where": "text",
+   "quote": "troy also found an email from patrick cotton, w & s, that he will be seeking sewer commission approval"
+  },
+  {
+   "name": "Weston and Sampson Task 2 Proposal",
+   "where": "text",
+   "quote": "response to the task 2 proposal from weston and sampson."
+  },
+  {
+   "name": "Scope of services bid package from Weston & Sampson for the repair work",
+   "where": "text",
+   "quote": "waiting for the scope of services bid package from weston & sampson for the repair work"
+  },
+  {
+   "name": "SWSS email on preventive maintenance",
+   "where": "text",
+   "quote": "joan received an email on preventive maintenance, but did not see information on the spare parts."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "grease trap",
+  "Passios kitchen rental",
+  "Weston & Sampson",
+  "SWSS",
+  "I/I reduction",
+  "billing outsourcing",
+  "Crossroads",
+  "privilege fees",
+  "Highfield Village",
+  "Fitchburg",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

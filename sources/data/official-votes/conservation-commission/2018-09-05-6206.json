@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-09-05",
  "docid": "6206",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve permission for Sunrise Stables annual Harvest Ride",
+   "motion": "Approve permission for Rene Trakimas to use the property for the annual Sunrise Stables Harvest Ride event.",
    "moved_by": "KJ",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "kj moved to approve permission to use the property for the annual event. cc seconded and the motion was approved unanimously."
   },
   {
-   "motion": "Approve field change for insulation work at 914 Flatt Hill",
+   "motion": "Allow the 914 Flatt Hill change of scope as a field change, with conditions that the dock be removed this winter and no elevation changes.",
    "moved_by": "KJ",
    "seconded_by": "JR",
    "outcome": "passed",
@@ -28,55 +28,55 @@
    "quote": "this was approved by a motion of kj and a second by jr"
   },
   {
-   "motion": "Continue hearing on Notice of Intent for 141 Hemlock Road to September 19, 2018",
+   "motion": "Continue the Hemlock Road Notice of Intent (MJN Realty Trust) to September 19, 2018.",
    "moved_by": "CC",
    "seconded_by": "Cl",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "cc moved to continued and cl seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue hearing on Notice of Intent for Hickory Hills Lake drawdown management to September 19, 2018",
+   "motion": "Continue the Hickory Hills Association drawdown management plan Notice of Intent to September 19, 2018.",
    "moved_by": "KJ",
    "seconded_by": "cc",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the commission continued to september 19, 2018 with a motion of kj and a second by cc. the commission unanimously approved the motion."
   },
   {
-   "motion": "Issue negative determination for rolling dock, steps and Tiki Hut at 667 Reservoir Road",
+   "motion": "Issue a negative determination for the rolling dock, steps and Tiki Hut at 667 Reservoir Road, with the condition that the dock have a put in and take out date consistent with the drawdown season.",
    "moved_by": "BP",
    "seconded_by": "Cl",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "bp moved to issue a negative determination with the conditions that the dock have \"put in and take out date\" consistent with the drawdown season. cl seconded and the commission voted unanimously"
   },
   {
-   "motion": "Issue negative determination for tree removal at 4 Brookview",
+   "motion": "Issue a negative determination for tree removal at 4 Brookview, with conditions that no trees be dropped into the lake and the stumps be ground in place.",
    "moved_by": "BP",
    "seconded_by": "CL",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "bp moved for a negative determination with the conditions that no trees should be dropped into the lake and the stumps shall be ground in place. cl seconded"
+   "quote": "cl seconded and the commission unanimously approved the motion."
   },
   {
-   "motion": "Issue standard Order of Conditions for barn construction at 18 Gilchrest Street",
+   "motion": "Approve the Eagle Scout project to repair the snow mobile bridge at the Cowdery and allow 1500 dollars for reimbursement of expenses.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the commission approved the project and allowed for 1500 dollars for reimbursement of expenses by a motion of kj and a second by cc."
+  },
+  {
+   "motion": "Issue a standard Order of Conditions for the barn at 18 Gilchrest Street.",
    "moved_by": "KJ",
    "seconded_by": "JR",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "kj moved for a standard order of conditions, jr seconded and the commission voted unanimously."
   },
   {
-   "motion": "Approve Eagle Scout Project for snowmobile bridge repair at Cowdery and allow $1500 reimbursement",
-   "moved_by": "KJ",
-   "seconded_by": "CC",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "allowed for 1500 dollars for reimbursement of expenses by a motion of kj and a second by cc. the motion was unanimously approved by the commission."
-  },
-  {
-   "motion": "Approve partial Certificate of Compliance for lot 7 at 350 Sunset Lane with work continuing on lot 4",
+   "motion": "Approve a partial Certificate of Compliance for lot 7 at 350 Sunset Lane, with work continuing on lot 4.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 4-1",
@@ -85,6 +85,505 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One meeting continuation (200 New West Townsend Road) stated in the minutes but not recorded as a formal motion vote—no voting language or mover/seconder given, so excluded.",
- "cost_usd": 0.14093250000000002
+ "note": "Extracted text is typo-heavy and some lines are run together. Initials are used without expansion: CL and Cl, CC and cc, BP, KJ, JR, MM, RB. Whether \"Cl\" means Carl Luck or Catie Childs is not clear from the text, so the seconder names are kept as printed. The Hickory Hills motion records no count. The 350 Sunset Lane vote is printed as 4-1 with RB abstaining, and no mover is recorded. The Selectmen's 4-1 vote on the Gilchrest land exchange is not a commission vote and is excluded. The minutes approval item shows no recorded vote. The 914 Flatt Hill approval records no count. Gary Gouldrup and Caleb Slater are mentioned but are not recorded as taking part, so they are not listed as attendees.",
+ "cost_usd": 0.015307320000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "richard bursch, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "all were in attendance except for commissioner dwyer and mr."
+  },
+  {
+   "name": "Bob Pease",
+   "status": "present",
+   "quote": "mr. pease appeared at 8 pm."
+  },
+  {
+   "name": "Catie Childs",
+   "status": "present",
+   "quote": "catie childs carl luck"
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "catie childs carl luck"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "present",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Kenneth Jones",
+   "status": "present",
+   "quote": "matthew s. marro, kenneth jones"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "matthew s. marro, kenneth jones"
+  },
+  {
+   "name": "David King",
+   "role": "represented himself",
+   "status": "present",
+   "quote": "david king represented himself and noted the work and relative locations to the commission."
+  },
+  {
+   "name": "Charles Hadju",
+   "status": "present",
+   "quote": "charles hadju appeared before the commission."
+  },
+  {
+   "name": "Kaitlyne Cullinane",
+   "role": "applicant",
+   "status": "present",
+   "quote": "request for a determination by kaitlyne cullinane for tree removal at 4 brookview"
+  },
+  {
+   "name": "Vince Iaciovello",
+   "role": "appeared on his own behalf",
+   "status": "present",
+   "quote": "vince iaciovello appeared on his own behalf."
+  },
+  {
+   "name": "Jon Fortune",
+   "role": "appeared on behalf of HHL",
+   "status": "present",
+   "quote": "jon fortune appeared on behalf of hhl."
+  },
+  {
+   "name": "Chris Costich",
+   "status": "present",
+   "quote": "chris costich appeared before the commission to speak about a"
+  },
+  {
+   "name": "Anthony Cleaves",
+   "role": "was present for the owner",
+   "status": "present",
+   "quote": "anthony cleaves was present for the owner"
+  },
+  {
+   "name": "Ethan Gyles",
+   "status": "not stated",
+   "quote": "the commission reviewed the updates with ethan gyles"
+  },
+  {
+   "name": "Tim Lecuivere",
+   "status": "present",
+   "quote": "tim lecuivere of 148 hemlock disputed the validity of the application"
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "paul fortin of 13 birch island way also stated the same."
+  },
+  {
+   "name": "Doug Waters",
+   "status": "present",
+   "quote": "doug waters of 80 horizon island road wanted to know"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "MJN Realty Trust",
+   "status": "not stated",
+   "quote": "a public meeting on a continued notice of intent by mike nault of mjn realty trust"
+  },
+  {
+   "name": "Rene Trakimas",
+   "status": "not stated",
+   "quote": "appointment : rene trakimas- annual approval for sunrise stables harvest ride"
+  },
+  {
+   "name": "Yolanda Quick",
+   "status": "not stated",
+   "quote": "a request for a determination by yolanda quick for management of invasive vegetation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hickory Hills Association: Commissioner Rabbitt recused himself from the drawdown plan matter.",
+   "quote": "note: commissioner rabbit is recusing from this matter"
+  },
+  {
+   "decision": "Hickory Hills: the chair requested downstream flow rates be listed on one reference document; the chair recommended the applicant start a dialogue with Mass Wildlife, and MM will contact them about a meeting.",
+   "quote": "rb requested downstream flow rates and that they be listed on one document that can be used as a reference."
+  },
+  {
+   "decision": "70 Oak Ridge Road plantings appointment continued at the request of the owner; no vote recorded.",
+   "quote": "appointment: 70 oak ridge road, plantings- continued at the request of the owner"
+  },
+  {
+   "decision": "4 Brookview: the applicant agreed to stump grind in place, as recommended by KJ.",
+   "quote": "he recommended and the applicant agreed to stump grind in place."
+  },
+  {
+   "decision": "200 New West Townsend Road invasive vegetation request continued to September 19, 2018 due to abutter notification issue; no vote recorded.",
+   "quote": "meeting continued to september 19, 2018 due to abutter notification issue"
+  },
+  {
+   "decision": "LSIC order of conditions: MM will check the official expiration date of the order.",
+   "quote": "mm will check the official expiration date of the order."
+  },
+  {
+   "decision": "Settlers Solar: the commission requested the engineer send an itemized letter of the changes and saw no need for further action, as the changes were not in the buffer zone.",
+   "quote": "requested he have the engineer send an itemized letter of the changes."
+  },
+  {
+   "decision": "101 Pleasant Street: MM was directed to draft an enforcement order covering the area formerly covered under the cutting plan.",
+   "quote": "mm was instructed to draft an enforcement order covering the area formerly covered"
+  },
+  {
+   "decision": "55 Spring Street: MM is investigating with the owner proof of a pre-existing patio.",
+   "quote": "mm investigating with owner proof of a pre-exiting patio"
+  },
+  {
+   "decision": "155 Reservoir Road: MM to send a letter stating that if the work is not completed and received by 10/3/18, the commission would step up enforcement and commence fining.",
+   "quote": "if the work was not completed and received by 10/3/18, the commission would step up enforcement and commence fining"
+  },
+  {
+   "decision": "Butterfly Lane: MM is sending letters to the neighbors.",
+   "quote": "butterfly lane - mm is sending out letters to the neighbors"
+  },
+  {
+   "decision": "Robbs Hill: site walk scheduled for 9/15 at 8 am with Gary Gouldrup.",
+   "quote": "site walk for 9/15 at 8 am with gary gouldrup."
+  },
+  {
+   "decision": "Emerald Place: tentative inspection set for 9/15.",
+   "quote": "tentative inspection for 9/15"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle Scout project reimbursement (Cowdery snow mobile bridge)",
+   "what_was_recorded": "The commission approved the Eagle Scout project and allowed a reimbursement of expenses up to a set amount.",
+   "figures_as_printed": [
+    "1500 dollars"
+   ],
+   "quote": "the commission approved the project and allowed for 1500 dollars for reimbursement of expenses by a motion of kj and a second by cc."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "RB",
+   "topic": "thanks for conservation restriction and land swap on Gilchrest Street",
+   "quote": "rb thanked the commission in the efforts to secure the conservation restriction and 2.3 acre land swap on gilchrest street."
+  },
+  {
+   "speaker": "CL",
+   "topic": "LSIC order of conditions expiring; tapegrass along shoreline",
+   "quote": "cl noted that lsic's order of conditions is set to expire and if they do not renew they may not be able to complete a drawdown."
+  },
+  {
+   "speaker": "Tim Lecuivere",
+   "stated_role": "of 148 Hemlock",
+   "topic": "Hickory Hills application validity",
+   "quote": "tim lecuivere of 148 hemlock disputed the validity of the application stating that there was no board vote of hhl."
+  },
+  {
+   "speaker": "Paul Fortin",
+   "stated_role": "of 13 Birch Island Way",
+   "topic": "Hickory Hills wells and rare species habitat concerns",
+   "quote": "paul fortin noted concerns about both wells going dry and sensitive/rare species habitats"
+  },
+  {
+   "speaker": "Doug Waters",
+   "stated_role": "of 80 Horizon Island Road",
+   "topic": "Hickory Hills questions and written submissions",
+   "quote": "doug waters of 80 horizon island road wanted to know what the what the second response was from caleb slater"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "chairman bursch called to order at 7 pm all were in attendance except for commissioner dwyer",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "rb thanked the commission in the efforts to secure the conservation restriction",
+   "tags": [
+    "public comment",
+    "Gilchrest Street"
+   ]
+  },
+  {
+   "topic": "Appointment: Rene Trakimas, Sunrise Stables Harvest Ride annual approval",
+   "resolution": "approved",
+   "quote": "annual approval for sunrise stables harvest ride after examining the map, kj moved to approve",
+   "tags": [
+    "event permit"
+   ]
+  },
+  {
+   "topic": "Appointment: 70 Oak Ridge Road, plantings",
+   "resolution": "continued at owner request",
+   "quote": "appointment: 70 oak ridge road, plantings- continued at the request of the owner",
+   "tags": [
+    "plantings"
+   ]
+  },
+  {
+   "topic": "Appointment: 914 Flatt Hill change of scope",
+   "resolution": "approved as field change with conditions",
+   "quote": "review of change of scope at 914 flatt hill from prior negative determination.",
+   "tags": [
+    "foundation",
+    "dock",
+    "field change"
+   ]
+  },
+  {
+   "topic": "Hemlock Road Notice of Intent (Mike Nault, MJN Realty Trust)",
+   "resolution": "continued to September 19, 2018",
+   "quote": "a public meeting on a continued notice of intent by mike nault of mjn realty trust",
+   "tags": [
+    "notice of intent",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Association drawdown management plan",
+   "resolution": "continued to September 19, 2018",
+   "quote": "by hickory hills association for the approval of a drawdown management plan",
+   "tags": [
+    "drawdown",
+    "lake",
+    "recusal"
+   ]
+  },
+  {
+   "topic": "667 Reservoir Road determination (David King)",
+   "resolution": "negative determination with conditions",
+   "quote": "request for a determination by david king for the placement of a rolling dock",
+   "tags": [
+    "dock",
+    "wall",
+    "Tiki hut"
+   ]
+  },
+  {
+   "topic": "4 Brookview tree removal determination (Kaitlyne Cullinane)",
+   "resolution": "negative determination with conditions",
+   "quote": "request for a determination by kaitlyne cullinane for tree removal at 4 brookview",
+   "tags": [
+    "tree removal",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "200 New West Townsend Road invasive vegetation (Yolanda Quick)",
+   "resolution": "continued to September 19, 2018",
+   "quote": "request for a determination by yolanda quick for management of invasive vegetation",
+   "tags": [
+    "invasive vegetation",
+    "abutter notice"
+   ]
+  },
+  {
+   "topic": "18 Gilchrest Street barn determination (Vince Iaciovello)",
+   "resolution": "standard Order of Conditions issued",
+   "quote": "request for a determination by vince iaciovello for the construction of a barn at 18 gilchrest street",
+   "tags": [
+    "barn",
+    "wetland delineation"
+   ]
+  },
+  {
+   "topic": "Violations and enforcement",
+   "resolution": "status noted, no action",
+   "quote": "1. violations (enforcement actions and administrative hearings).",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "New Business: Eagle Scout project",
+   "resolution": "approved with 1500 dollars reimbursement",
+   "quote": "proposed eagle scout project -chris costich appeared before the commission",
+   "tags": [
+    "Eagle Scout",
+    "Cowdery"
+   ]
+  },
+  {
+   "topic": "Old Business: Robbs Hill management update",
+   "resolution": "site walk scheduled",
+   "quote": "robbs hill management update- site walk for 9/15 at 8 am with gary gouldrup.",
+   "tags": [
+    "Robbs Hill"
+   ]
+  },
+  {
+   "topic": "Old Business: Land exchange on Gilchrest Street",
+   "resolution": "update, no action",
+   "quote": "rb informed the commission that the selectmen approved the proposal by a 4-1 vote",
+   "tags": [
+    "land exchange",
+    "Gilchrest Street",
+    "ANR"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance: 350 Sunset Lane",
+   "resolution": "partial COC approved 4-1",
+   "quote": "certificates of compliance - 350 sunset lane- anthony cleaves was present for the owner",
+   "tags": [
+    "certificate of compliance",
+    "lots"
+   ]
+  },
+  {
+   "topic": "Extension Permit",
+   "resolution": "none presented",
+   "quote": "extension permit - none to present",
+   "tags": [
+    "extension permit"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "no vote recorded",
+   "quote": "minutes of previous meetings - review and approval of - august 1, 2018 & present august 15 minutes for future review",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report: legal updates and requests",
+   "resolution": "enforcement order directed for 101 Pleasant Street; other items updated",
+   "quote": "101 pleasant street - mm was instructed to draft an enforcement order",
+   "tags": [
+    "enforcement",
+    "legal"
+   ]
+  },
+  {
+   "topic": "New plans: Settlers Solar",
+   "resolution": "no further action needed",
+   "quote": "new plans - settlers solar- the commission reviewed the updates with ethan gyles",
+   "tags": [
+    "solar",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "155 Reservoir Road letter and deadline",
+   "resolution": "letter directed",
+   "quote": "155 reservoir road- mm is sending a letter per the commission's request",
+   "tags": [
+    "enforcement",
+    "fines"
+   ]
+  },
+  {
+   "topic": "Misc. updates: Emerald Place inspection",
+   "resolution": "inspection tentatively set; disclosure noted",
+   "quote": "misc. updates - emerald place- tentative inspection for 9/15.",
+   "tags": [
+    "inspection",
+    "disclosure"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for September 19",
+   "quote": "next meeting is september 19 at the town",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "WPA Form 1 and modified ortho photo with measurements and locations of work by the applicant, dated 9/19/18 (previously submitted 9/12/18)",
+   "where": "list",
+   "quote": "documents submitted for consideration was a wpa form 1 and a modified ortho photo with measurments and locations of work by the applicant dated 9/19/18"
+  },
+  {
+   "name": "WPA Form 1 and modified scaled sketch with photos by the applicant, dated 9/19/18 (previously submitted September 4, 2018)",
+   "where": "list",
+   "quote": "documents submitted for consideration was a wpa form 1 and a modified scaled sketch with photos by the applicant dated 9/19/18"
+  },
+  {
+   "name": "Notice of Intent form and plans by GPR, Inc.",
+   "where": "list",
+   "quote": "dcouments presnted for consideration was a notice of intent form and plan s by gpr, inc."
+  },
+  {
+   "name": "Lake analysis (Hickory Hills Lake)",
+   "where": "text",
+   "quote": "lake analysis was reviewed."
+  },
+  {
+   "name": "Hickory Hills Association Notice of Intent for a drawdown management plan",
+   "where": "text",
+   "quote": "by hickory hills association for the approval of a drawdown management plan"
+  },
+  {
+   "name": "Order of conditions for LSIC",
+   "where": "text",
+   "quote": "cl noted that lsic's order of conditions is set to expire and if they do not renew"
+  },
+  {
+   "name": "Original and amended order of conditions (350 Sunset Lane)",
+   "where": "text",
+   "quote": "reviewed the original versus the amended order of conditions and deviations from the granted approvals"
+  },
+  {
+   "name": "Enforcement order for 101 Pleasant Street",
+   "where": "text",
+   "quote": "mm was instructed to draft an enforcement order covering the area formerly covered"
+  },
+  {
+   "name": "Eagle Scout project proposal (Cowdery snow mobile bridge)",
+   "where": "text",
+   "quote": "chris costich appeared before the commission to speak about a"
+  },
+  {
+   "name": "Settlers Solar plans and itemized letter of changes",
+   "where": "text",
+   "quote": "requested he have the engineer send an itemized letter of the changes."
+  },
+  {
+   "name": "Minutes of August 1, 2018 and August 15, 2018",
+   "where": "text",
+   "quote": "minutes of previous meetings - review and approval of - august 1, 2018 & present august 15 minutes for future review"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "determination",
+  "order of conditions",
+  "enforcement",
+  "certificate of compliance",
+  "Eagle Scout",
+  "Hickory Hills",
+  "Gilchrest Street land exchange",
+  "drawdown",
+  "buffer zone"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents submitted for consideration was a wpa form 1"
+ },
+ "dropped_unquoted_by_field": {}
 }

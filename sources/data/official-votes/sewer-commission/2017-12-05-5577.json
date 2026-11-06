@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-12-05",
  "docid": "5577",
@@ -12,42 +12,324 @@
  },
  "votes": [
   {
-   "motion": "Approve agreement between the Lunenburg Sewer Commission and the Proctors, with the $13,870 payment coming from the Enterprise account rather than being deducted from the privilege fee",
+   "motion": "Approve the agreement between the Lunenburg Sewer Commission and the Proctors, 'Summary of provisions' from town counsel, with the modification that the $13,870 is paid from the Enterprise account and Dan Proctor is assessed the full privilege fee with a $13,870 rebate.",
    "moved_by": "Joan P.",
    "seconded_by": "TroyD.",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 ayes, Carl abstained",
    "procedural": false,
-   "quote": "motion: joan p. second: troyd. to approve agreement between the lunenburg sewer commission and the proctors \"summary of provisions\" provided by town counsel with one modification, that the $ 13,870 is not deducted from the privilege fee but is paid out of the enterprise account to dan proctor, and he is assessed the entire privilege fee amount and will get a rebate from the commission of $13,870. discussion: carl stated that",
-   "quote_taken_from_text": true
+   "quote": "to approve agreement between the lunenburg sewer commission and the proctors \"summary of provisions\" provided by town counsel"
   },
   {
-   "motion": "Add a section for 2016 Town-wide Manhole Inspections under the Inflow section",
-   "moved_by": "CarlL.",
+   "motion": "Put a section for 2016 Town-wide Manhole Inspections under Inflow in the DEP report.",
+   "moved_by": "Carl L.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: carll. second: john r. to put a section in for 2016 town-wide manhole inspections under inflow. discussion: non",
-   "quote_taken_from_text": true
+   "quote": "to put a section in for 2016 town-wide manhole inspections under inflow."
   },
   {
-   "motion": "Assess privilege fee for Building 1-Whalom Luxury Apts at 1 Rogers Way totaling $199,340.08 with $55,340.08 due before occupancy and $4,800 annually over 30 years",
+   "motion": "Assess the privilege fee for Building 1 - Whalom Luxury Apts at 1 Rogers Way: $55,340.08 due before occupancy and $4,800 annually over 30 years, total $199,340.08.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: joan p. second: troy d. sewer commission to vote to assess privilege fee for building 1-whalom luxury apts at 1 rogers way with $ 55,340.08 to be paid priorto occupancy and $ 4,800 to be paid annually over 30 years for a total of $199,340.08. discussion: none",
-   "quote_taken_from_text": true
+   "quote": "sewer commission to vote to assess privilege fee for building 1-whalom luxury apts at 1 rogers way with $ 55,340.08"
   },
   {
-   "motion": "Pay conference fee and half of the room fee for two people to attend the MMA annual workshop",
-   "moved_by": "John R",
+   "motion": "Pay the conference fee and half of the room fee for two people to attend the MMA annual workshop (Carl and Troy).",
+   "moved_by": "John R.",
    "seconded_by": "Joan P.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion: john r to pay for conference fee and half of the room fee for two people. second: joan p. vote: unanimous"
+   "quote": "to pay for conference fee and half of the room fee for two people."
   }
  ],
  "dropped_unquoted": 1,
- "note": "OCR-scanned minutes. One inconsistency noted: the second on the first motion is formatted as \"TroyD.\" (no space) in the source, while later motions show \"Troy D.\" with a space; both are preserved exactly as printed.",
- "cost_usd": 0.1623475
+ "note": "OCR text with missing spaces and line-break artifacts; quotes are copied as OCR printed them. The text begins mid-sentence on page 1 (the billing item's opening is missing). The minutes state there were no announcements or public comment. The stray 'Second: Joan P. Vote: Unanimous' after the 'Referenced documents on file' list has no motion text and is not recorded as a vote. The adjournment motion has no recorded result. The minutes name no attendance roll. The signature block reads 'Save Planey', which may be an OCR error. The received stamp reads 'FED 2C 2010', which may be an OCR error for 2018 and is not recorded here.",
+ "cost_usd": 0.00971162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl asked ifthere was any motion for discussion on adjusting the bill but none were raised, so the bill stands."
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: john r to pay for conference fee and half of the room fee for two people."
+  },
+  {
+   "name": "Aaron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "aaron became irate and stated he will only pay the $97 and refuses to pay anymore."
+  },
+  {
+   "name": "Dan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dan said he had no problem with the usagefee"
+  },
+  {
+   "name": "Troy D.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "troy wants the minutes should show that we do not want ittied to privilege fee."
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: joan p. second: troyd."
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb said that counsel willprovide the requested agreement document."
+  },
+  {
+   "name": "Pat Cotton",
+   "role": "not stated",
+   "status": "present",
+   "quote": "weston & sampson-draft dep report, pat cotton and steve pedersen"
+  },
+  {
+   "name": "Steve Pedersen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "weston & sampson-draft dep report, pat cotton and steve pedersen"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "on behalf ofthe Charter Review Committee",
+   "status": "present",
+   "quote": "bob ebersole, on behalf ofthe charter review committee, reported that the sewer commission is in the charter"
+  },
+  {
+   "name": "Jane Kanley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane kanley sewer commission board clerk"
+  },
+  {
+   "name": "Save Planey",
+   "role": "not stated (signature block, as printed)",
+   "status": "not stated",
+   "quote": "respectively submitted save planey"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No motion was made to adjust the ratepayer's bill, so the bill stands.",
+   "quote": "carl asked ifthere was any motion for discussion on adjusting the bill but none were raised, so the bill stands."
+  },
+  {
+   "decision": "Several Rehabilitation Summary items that are future work are to be included in the Plan and Schedule table.",
+   "quote": "during the discussion several of the items noted under rehabilitation summary were in the future and should be included in the plan and schedule table. this was agreed."
+  },
+  {
+   "decision": "The Commission agreed to add the 1440gpd unknown-source flow to the 2017 work on the report, and to investigate and identify its source.",
+   "quote": "commission discussed the need to investigate and identify source and add to future work and agreed on adding the 1440gpd to the 2017 work on report."
+  },
+  {
+   "decision": "Plan priority concerns were not resolved by a vote; the report will be modified (the Commission would not be locked into the priority ranking), with Barb and Jack reviewing it before submittal.",
+   "quote": "it was greed to not can team. at wi make modifications to the report and barb and jack will review it prior to submitta"
+  },
+  {
+   "decision": "Carl and Troy will attend the Economic Development Workshop on 12/12; Joan cannot commit and John cannot attend.",
+   "quote": "economic development workshop 12/12- carl and troy will go, joan cannot commit due to family commitments."
+  },
+  {
+   "decision": "Members agreed to reimburse Carl and Troy for attendance at the MMA workshop and to split room costs with the BOS if spouses attend.",
+   "quote": "members agreedto reimburse for both carl & troy for attendance and split costs for rooms with bos if spouses attend."
+  },
+  {
+   "decision": "Barb will check with Joe regarding the Economic Development Workshop.",
+   "quote": "barb will check with joe."
+  },
+  {
+   "decision": "Minutes 10/31 and 11/14, and the Business Manager Report, were tabled due to time constraints.",
+   "quote": "minutes/invoices/action file issues-minutes 10/31, 11/14, business manager report - tabled due to time constraints."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ratepayer bill adjustment request",
+   "what_was_recorded": "A ratepayer asked for an adjustment because his last bill was $150 more than usual due to power washing; the bill stood and he said he would pay only $97.",
+   "figures_as_printed": [
+    "$ 150",
+    "$97"
+   ],
+   "quote": "his bill was $ 150 more than usual due to the power washing"
+  },
+  {
+   "topic": "380 Electric Ave. car wash agreement and privilege fee",
+   "what_was_recorded": "The approved agreement with the Proctors removes the $13,870 from the privilege fee: it is paid from the Enterprise account, with the full privilege fee assessed and a rebate of $13,870 to Dan Proctor.",
+   "figures_as_printed": [
+    "$ 13,870",
+    "$13,870"
+   ],
+   "quote": "with one modification, that the $ 13,870 is not deducted from the privilege fee but is paid out of the enterprise account"
+  },
+  {
+   "topic": "Infiltration/inflow estimates in the DEP report",
+   "what_was_recorded": "Carl questioned the combined I/I figure of 435,000 gpd; Pat believed it was too high by over 300,000 gpd. The 1440 gpd from TV line inspection was added to the 2017 work.",
+   "figures_as_printed": [
+    "435,000gpd",
+    "300,000 gpd",
+    "6300gpd",
+    "1440gpd"
+   ],
+   "quote": "carl had a question about the figure of the combined i/l, of 435,000gpd"
+  },
+  {
+   "topic": "Whalom Luxury Apts privilege fee assessment",
+   "what_was_recorded": "The applicant paid $80,200 as agreed; the Commission assessed a privilege fee of $199,340.08, with $55,340.08 due before occupancy and $4,800 annually over 30 years.",
+   "figures_as_printed": [
+    "$199,340.08",
+    "$80,200",
+    "$ 55,340.08",
+    "$ 4,800"
+   ],
+   "quote": "privilege fee assessment $199,340.08-whalom lux apts (1 rogers way)"
+  },
+  {
+   "topic": "MMA annual workshop attendance",
+   "what_was_recorded": "Cost of MMA workshop attendance was reported and the Commission agreed to reimburse conference entry and half of room costs for two members.",
+   "figures_as_printed": [
+    "$180",
+    "$200"
+   ],
+   "quote": "cost $180 for entry and $200 per room for a 2 day event."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Ratepayer bill adjustment request",
+   "resolution": "no motion; bill stands",
+   "tags": [
+    "billing",
+    "ratepayer"
+   ],
+   "quote": "asking for adjustment on last bill since he lives alone, is on social security"
+  },
+  {
+   "topic": "380 Electric Ave. car wash agreement",
+   "resolution": "approved with modification, 3 ayes, Carl abstained",
+   "tags": [
+    "car wash",
+    "privilege fee",
+    "agreement"
+   ],
+   "quote": "380 electric ave. car wash-barb had contacted town counsel with commission input on draft agreement"
+  },
+  {
+   "topic": "DPW systems update: Weston & Sampson draft DEP report",
+   "resolution": "reviewed; manhole inspection section added under Inflow; 1440gpd added to 2017 work",
+   "tags": [
+    "infiltration",
+    "inflow",
+    "DEP report",
+    "sanitary sewer"
+   ],
+   "quote": "weston & sampson-draft dep report, pat cotton and steve pedersen-pat reported that the draft of the infiltration control plan was submitted"
+  },
+  {
+   "topic": "Plan priorities",
+   "resolution": "report to be modified; Barb and Jack to review before submittal",
+   "tags": [
+    "priorities",
+    "DEP report"
+   ],
+   "quote": "plan priorities: carl expressed concern about the proposed priority ranking."
+  },
+  {
+   "topic": "Grease trap compliance - Crossroads",
+   "resolution": "no action; Barb continues working with counsel",
+   "tags": [
+    "grease trap",
+    "enforcement",
+    "lien"
+   ],
+   "quote": "grease trap regulation compliance - crossroads -barb read response from counsel from 12/4 and only option is to lien the property."
+  },
+  {
+   "topic": "Whalom Luxury Apts privilege fee assessment",
+   "resolution": "assessed, unanimous",
+   "tags": [
+    "privilege fee",
+    "occupancy",
+    "assessment"
+   ],
+   "quote": "privilege fee assessment $199,340.08-whalom lux apts (1 rogers way)"
+  },
+  {
+   "topic": "Economic Development Workshop, Charter review, MMA conference",
+   "resolution": "attendees assigned; conference costs approved, unanimous",
+   "tags": [
+    "conference",
+    "charter review",
+    "economic development",
+    "reimbursement"
+   ],
+   "quote": "economic development workshop 12/12- carl and troy will go, joan cannot commit due to family commitments."
+  },
+  {
+   "topic": "Minutes, invoices and action file issues",
+   "resolution": "tabled due to time constraints",
+   "tags": [
+    "minutes",
+    "invoices"
+   ],
+   "quote": "minutes/invoices/action file issues-minutes 10/31, 11/14, business manager report - tabled due to time constraints."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Agreement between the Lunenburg Sewer Commission & the Proctors- Summary of Provisions",
+   "where": "list",
+   "quote": "agreement between the lunenburg sewer commission & the proctors- summary of provisions"
+  },
+  {
+   "name": "Draft DEP report (Weston & Sampson)",
+   "where": "text",
+   "quote": "weston & sampson-draft dep report, pat cotton and steve pedersen"
+  },
+  {
+   "name": "Draft infiltration control plan (submitted 11/21)",
+   "where": "text",
+   "quote": "pat reported that the draft of the infiltration control plan was submitted"
+  },
+  {
+   "name": "Charter (Charter Review Committee review request)",
+   "where": "text",
+   "quote": "committee would like alltown departmentsto reviewthe charterand makechangesorcomments."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "car wash",
+  "privilege fee",
+  "infiltration and inflow",
+  "DEP report",
+  "grease trap",
+  "billing",
+  "conferences",
+  "charter review",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents on file:"
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 1
+ }
 }

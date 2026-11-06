@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-08-14",
  "docid": "5116",
@@ -12,30 +12,136 @@
  },
  "votes": [
   {
-   "motion": "Request a 20-foot easement from Kevin Hill with clarification that land goes to Valley Road and request that landowner clear 20 feet under Conservation Commission direction",
+   "motion": "Request a 20 foot easement from Kevin Hill and clarify that the land actually goes to Valley Road; amended to request the landowner clear 20 feet under the direction of the Conservation Commission.",
    "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "motion: r.ebersole 2nd: d. mcquaid to request a 20 foot easement from kevin hill and to clarify that the land actually goes to valley road discussion: ms. adams asked if mr. hill would be willing to clear to make it as accessible as the one we have. mr. ebersole amended his motion to request if the landowner would clear 20 feet under the direction of the conservation commission. mr. mcquaid seconded the amendment. mr. toale asked what is different from what we said we already liked at our last executive session. mr. burney stated you don't own five acres. you have an exclusive right to easement. mr. ebersole stated he would be interested to see the easement along valley road as well; it does not change his motion but it helps us in making our decision because if the easement does not go across the property and it ends, we don't have the right to go any further. mr. burney stated he believed it actually goes through abutter jane gallagher's property. roll call vote: ms. adams-nay, mr. ebersole -aye, mr. mcquaid-aye, mr. toale-aye"
+   "quote": "motion: r.ebersole 2nd: d. mcquaid to request a 20 foot easement from kevin hill and to clarify that the land actually goes to valley road"
   },
   {
-   "motion": "Authorize negotiating and executing the purchase and sale agreement with specified terms, corrected at the Valley Road entrance",
+   "motion": "Authorize negotiation of a purchase and sale agreement on the presented terms and authorize the Chair to execute, as long as it is corrected at the Valley Road entrance portion.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "mr. costa stated the next question for the board is if he accepts this proposal, do you want to vote to give authorization to negotiate the purchase and sale agreement on these terms and authorize the chairman to sign on ===page 2=== authorize the chair to execute; as long as it is corrected at the valley road entrance portion roll call vote: ms. adams-nay, mr. ebersole -aye, mr. mcquaid-aye, ",
-   "quote_taken_from_text": true
+   "quote": "authorize the chair to execute; as long as it is corrected at the valley road entrance portion"
   },
   {
-   "motion": "Adjourn from Executive Session",
+   "motion": "Adjourn from Executive Session.",
    "moved_by": "R. Ebersole",
-   "seconded_by": "D. McQuaid",
+   "seconded_by": "",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "motion: r. ebersole to adjourn from executive session vote: ms. adams-aye, mr. mcquaid-aye, mr. ebersole- aye, mr. toale-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of executive session minutes. No apparent reading errors in recorded votes. Vote 1 includes an amendment that was incorporated before the roll call.",
- "cost_usd": 0.15086149999999998
+ "note": "Text is an OCR of a two-page excerpt that begins mid-meeting: no call to order, no board roster, no chair named, and no motion to enter executive session. Roll calls are printed without a clear link to each motion, so the 3-1 results are attributed to the motions they follow. The amendment to the first motion was not voted on separately. The second motion's mover is not printed, and the 'D. McQuaid' second line after the signature block is unclear, so no seconder is recorded for the adjournment vote. Kevin Hill and Jane Gallagher are named only in discussion and are not recorded as attending.",
+ "cost_usd": 0.00470672,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux; adam burney, land use director; adam costa, town counsel"
+  },
+  {
+   "name": "Mr. Toale",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: ms. adams-nay, mr. ebersole -aye, mr. mcquaid-aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: ms. adams-nay, mr. ebersole -aye, mr. mcquaid-aye, mr. toale-aye"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: ms. adams-nay, mr. ebersole -aye, mr. mcquaid-aye, mr. toale-aye"
+  },
+  {
+   "name": "Ms. Adams",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: ms. adams-nay, mr. ebersole -aye, mr. mcquaid-aye, mr. toale-aye"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaine m. peterson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Attorney Costa will communicate with Mr. Hill's lawyer and advise him of the board's vote.",
+   "quote": "attorney costa will communicate with mr. hill's lawyer and advise him of that vote."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Gilchrist Street properties conveyance (Executive Session)",
+   "resolution": "discussed in executive session; easement request and authority to negotiate purchase and sale agreement each passed 3-1",
+   "quote": "mr. toale believed it was important to hold this executive session to protect the board's negotiating rights",
+   "tags": [
+    "executive session",
+    "land conveyance",
+    "Gilchrist Street",
+    "easement",
+    "Conservation Commission"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:08 p.m.",
+   "quote": "the meeting adjourned at 9:08 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article #22 (Town Meeting article on the Gilchrist Street properties conveyance)",
+   "where": "text",
+   "quote": "discussion ensued about discussing the deal in open session and then turned to the wording of article #22"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "land conveyance",
+  "Gilchrist Street",
+  "Valley Road",
+  "easement",
+  "Conservation Commission",
+  "Article #22",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

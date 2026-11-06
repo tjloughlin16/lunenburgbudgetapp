@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-04-17",
  "docid": "5104",
@@ -12,32 +12,379 @@
  },
  "votes": [
   {
-   "motion": "Approve the change of beneficial interest and change of manager for Honey Farms as submitted",
+   "motion": "Approve the change of beneficial interest and change of manager for Honey Farms #3829, as submitted.",
+   "moved_by": "R.Ebersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the change of beneficial interest and change of manager as submitted vote: all in favor"
+  },
+  {
+   "motion": "Appoint William Tyler as Town Clockwinder with a term to expire June 30, 2018.",
+   "moved_by": "REbersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint william tyler as town clockwinder with a term to expire june 30, 2018."
+  },
+  {
+   "motion": "Appoint Matt Allison to fill out the remaining term of Maureen Dupuis on the Agricultural Commission (1 vacancy, term to expire June 30, 2019).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole 2nd: p. luck to approve the change of beneficial interest and change of manager as submitted vote: all in favor"
+   "quote": "to appoint matt allison to fill out the remaining term of maureen dupuis"
   },
   {
-   "motion": "Appoint Matt Allison to fill out the remaining term of Maureen Dupuis on the Agricultural Commission",
-   "moved_by": "R. Ebersole",
+   "motion": "Approve the sale of the $3,685,000 General Obligation Municipal Purpose Loan of 2018 Bonds to Roosevelt & Cross, Inc. at the price of $3,834,211.55 and accrued interest, with the related resolutions.",
+   "moved_by": "not stated",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "further that the sale of the $3,685,000 general obligation municipal purpose loan of 2018 bonds of the"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: r. ebersole 2\"': p. luck to appoint matt allison to fill out the remaining term of maureen dupuis vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "R. Ebersole",
-   "seconded_by": "P. Luck",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r.ebersole to adjourn the meeting the meeting adjourned at 7:35 p",
-   "quote_taken_from_text": true
+   "quote": "motion: r.ebersole to adjourn the meeting"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR'd text via macOS Vision. The town's official minutes for reference exist in the Lunenburg Town Clerk's office. A bond refunding vote was presented (item 1 under Current Business) with a vote result recorded but without explicit motion/second language in the minutes.",
- "cost_usd": 0.1376665
+ "dropped_unquoted": 0,
+ "note": "OCR text from a scanned, multi-page set with OCR errors (e.g., \"Honey Farms\", \"Montallo\", \"applicantion\"); figures and names are as printed. The bond-sale vote is recorded as \"Vote: All in Favor\" after the resolution text with no mover or seconder printed. The Bicycles Battling Cancer ride request has no recorded motion or result. Page 2 text before the Memorial Day item has no section heading. The Clerk is marked \"Not present\". Minutes received and filed May 23 2018.",
+ "cost_usd": 0.00746282,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "not present. paula bertram, clerk"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Acting Town Manager",
+   "status": "present",
+   "quote": "also present: acting town manager adam burney"
+  },
+  {
+   "name": "Mr. Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. toale announced town manager lemieux was on vacation this week."
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. luck noted lunenburg earth day 2018 will be at wallis park and is hosted by the lunenburg 4-h club"
+  },
+  {
+   "name": "R. Ebersole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: r.ebersole 2nd: p. luck"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "resident, 284 Lancaster Ave.",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster ave., thanked everyone who came out to the successful lunenburg boys and girls"
+  },
+  {
+   "name": "Jon Aieta",
+   "role": "Attorney from McDermott, Quilty & Miller, LLP, representing the applicant",
+   "status": "present",
+   "quote": "jon aieta, attorney from mcdermott, quilty & miller, llp, and katie phelan, general counsel for global"
+  },
+  {
+   "name": "Katie Phelan",
+   "role": "General Counsel for Global Montello Group Corporation, representing the applicant",
+   "status": "present",
+   "quote": "katie phelan, general counsel for global"
+  },
+  {
+   "name": "Tracy Benoit",
+   "role": "proposed new manager of record",
+   "status": "present",
+   "quote": "also in attendance was tracy benoit, the proposed new manager of record."
+  },
+  {
+   "name": "Mark Walter",
+   "role": "presented on behalf of the request",
+   "status": "present",
+   "quote": "mark walter presented on behalf of the request."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "applicant for Agricultural Commission appointment",
+   "status": "present",
+   "quote": "matthew allison, 188 flat hill road, presented to request appointment."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Town Clockwinder appointee",
+   "status": "not stated",
+   "quote": "town clockwinder appointment-william tyler, 5 graham st. - term to expire june 30, 2018."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "finance director karen brochu reported she went out to bid"
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "she added council in aging is hosting a meet and greet the candidates for anyone running for any office on"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Refunding bonds: average coupon rate",
+   "what_was_recorded": "Finance Director reported bids were received and the average coupon rate for the bonds is 3.62%.",
+   "quote": "she received bids and the average coupon rate for the bonds is 3.62%.",
+   "figures_as_printed": [
+    "3.62%"
+   ]
+  },
+  {
+   "topic": "Meadow Woods sewer and water debt refunding",
+   "what_was_recorded": "Principal and interest on the Meadow Woods sewer and water portions would be reduced; the costs are borne by the property owner through a betterment.",
+   "quote": "as far as meadow woods, the principal interest would be reduced for the sewer portion of the bond by",
+   "figures_as_printed": [
+    "$10,000",
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Pavement management plan bond size and premium",
+   "what_was_recorded": "The town had intended to borrow $1,250,000 but received a $135,000 premium at bid, so it could bond only $1,150,000.",
+   "quote": "we had intended to borrow $1,250,000 in this issue. we received a premium of $135,000 when we went out to bid for the bond",
+   "figures_as_printed": [
+    "$1,250,000",
+    "$135,000"
+   ]
+  },
+  {
+   "topic": "Premium applied to project",
+   "what_was_recorded": "Only $1,150,000 was bonded and a $103,000 premium will be applied to the project.",
+   "quote": "we were able to only bond $1,150,000 and we have a $103,000 premium that we are going to apply to the project",
+   "figures_as_printed": [
+    "$1,150,000",
+    "$103,000"
+   ]
+  },
+  {
+   "topic": "Roads bond tax rate impact",
+   "what_was_recorded": "Impact on the tax rate over the bond's fifteen year term ranges from a high of 22 to a low of .04 per thousand valuation.",
+   "quote": "the impact that it has on the tax rate based on the bond's fifteen year",
+   "figures_as_printed": [
+    "22",
+    ".04"
+   ]
+  },
+  {
+   "topic": "Original authorization and unissued balance",
+   "what_was_recorded": "Original authorization was $4 million; an unissued balance of $146,111 remains to be issued about a year later.",
+   "quote": "we had an original authorization of $4 million.",
+   "figures_as_printed": [
+    "$4 million"
+   ]
+  },
+  {
+   "topic": "Unissued balance of bond authorization",
+   "what_was_recorded": "An unissued balance of $146,111 remains after this issue and the premium.",
+   "quote": "we have an unissued balance of $146,111 to issue right around this time next year",
+   "figures_as_printed": [
+    "$146,111"
+   ]
+  },
+  {
+   "topic": "General Obligation bond sale",
+   "what_was_recorded": "Sale of the $3,685,000 bonds to Roosevelt & Cross, Inc. at a price of $3,834,211.55 plus accrued interest was approved.",
+   "quote": "further that the sale of the $3,685,000 general obligation municipal purpose loan of 2018 bonds of the",
+   "figures_as_printed": [
+    "$3,685,000",
+    "$3,834,211.55"
+   ]
+  },
+  {
+   "topic": "Accounts payable, payroll and deductions warrants",
+   "what_was_recorded": "Warrants were presented in the amounts listed.",
+   "quote": "an accounts payable warrant in the amount of $40,220.10, a payroll warrant in the amount of $775,181.92 and a deductions warrant in the amount of $164,894.64 were presented.",
+   "figures_as_printed": [
+    "$40,220.10",
+    "$775,181.92",
+    "$164,894.64"
+   ]
+  },
+  {
+   "topic": "Chase Road/Route 13 state-funded road project grant",
+   "what_was_recorded": "Read message from DPW Director: construction is funded with a grant of over $1 million.",
+   "quote": "this is funded with a grant of over $1 million that was acquired by dpw with the assistance of mpo representative paula bertram.",
+   "figures_as_printed": [
+    "over $1 million"
+   ]
+  },
+  {
+   "topic": "Boys and Girls Club fundraiser",
+   "what_was_recorded": "The fundraiser exceeded its goal of raising $20,000.",
+   "quote": "they exceeded their goal of raising $20,000.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "not stated",
+   "topic": "Town Manager vacation, Cub Scout sale, DPW road project message",
+   "quote": "mr. toale announced town manager lemieux was on vacation this week."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "not stated",
+   "topic": "Lunenburg Earth Day 2018",
+   "quote": "ms. luck noted lunenburg earth day 2018 will be at wallis park and is hosted by the lunenburg 4-h club"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "284 Lancaster Ave.",
+   "topic": "Boys and Girls Club fundraiser and candidates' debate",
+   "quote": "tom alonzo, 284 lancaster ave., thanked everyone who came out to the successful lunenburg boys and girls"
+  },
+  {
+   "speaker": "Ms. Doherty",
+   "stated_role": "not stated",
+   "topic": "Council on Aging program and candidates meet-and-greet",
+   "quote": "she added council in aging is hosting a meet and greet the candidates for anyone running for any office on"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Honey Farms #3829 change of beneficial interest and manager",
+   "resolution": "approved",
+   "quote": "to approve the change of beneficial interest and change of manager as submitted vote: all in favor",
+   "tags": [
+    "license",
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Bicycles Battling Cancer Ride request",
+   "resolution": "not stated",
+   "quote": "mark walter presented on behalf of the request. the event is sunday, june 10# and the course is the same as",
+   "tags": [
+    "event request",
+    "road race"
+   ]
+  },
+  {
+   "topic": "Town Clockwinder appointment",
+   "resolution": "approved",
+   "quote": "to appoint william tyler as town clockwinder with a term to expire june 30, 2018.",
+   "tags": [
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Agricultural Commission vacancy appointment",
+   "resolution": "approved",
+   "quote": "to appoint matt allison to fill out the remaining term of maureen dupuis",
+   "tags": [
+    "appointment",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Refunding of General Obligation Bonds for Roads and Water/Sewer USDA Loans",
+   "resolution": "bond sale approved",
+   "quote": "refunding of general obligation bonds for roads and water/sewer usda loans; vote by the board",
+   "tags": [
+    "bonds",
+    "debt",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Minutes/Warrants/Action File Issues",
+   "resolution": "warrants presented; action file noted",
+   "quote": "an accounts payable warrant in the amount of $40,220.10, a payroll warrant in the amount of $775,181.92 and",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "mr. burney reported planning board approved the three family dwelling on massachusetts avenue",
+   "tags": [
+    "planning",
+    "storm water",
+    "school contract"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:35 p.m.",
+   "quote": "motion: r.ebersole to adjourn the meeting",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Official Statement dated April 11, 2018",
+   "where": "text",
+   "quote": "dated april 11, 2018 (the \"official statement\"), each in such form as may be approved by the town"
+  },
+  {
+   "name": "MS4 permit annual report (due May 1)",
+   "where": "text",
+   "quote": "the status of our ms4 permit annual report which is due may 1s!"
+  }
+ ],
+ "tags": [
+  "select board",
+  "bonds",
+  "debt refunding",
+  "appointments",
+  "licenses",
+  "warrants",
+  "road project",
+  "storm water",
+  "public announcements",
+  "agricultural commission",
+  "clockwinder"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2018-11-15",
  "docid": "2984",
@@ -12,39 +12,246 @@
  },
  "votes": [
   {
-   "motion": "accept the October 25, 2018 meeting minutes",
+   "motion": "Accept the minutes of the October 25, 2018 meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to accept the minutes ; linda mcdonald seconded. all were in favor and the minutes were accepted."
+   "quote": "deborah christen made a motion to accept the minutes"
   },
   {
-   "motion": "accept the October 2018 financial reports",
+   "motion": "Accept the October 2018 financial reports.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": false,
-   "quote": "deborah christen made a motion to accept the october 2018 financial reports. linda mcdonald seconded; all were in favor."
+   "quote": "deborah christen made a motion to accept the october 2018 financial reports."
   },
   {
-   "motion": "submit the 2019 Operating Budget for State-Aided Housing to the Department of Housing and Community Development",
+   "motion": "Submit the 2019 Operating Budget for State-Aided Housing (Resolution 201817) to the Department of Housing and Community Development.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "motion made by linda mcdonald to submit the 2019 operating budget for state-aided housing of the lunenburg housing authority to the department of housing and community development. seconded, deborah christen seconde d the motion, and the motion was passed by a unanimous vote."
+   "quote": "motion made by linda mcdonald to submit the 2019 operating budget for"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:47 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 6:47 p.m. linda mcdonald seconded, all were in favor, and the meeting was adjourned."
+   "quote": "made a motion to adjourn the meeting at"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are legible. One typo in the original preserved verbatim in the third vote's quote: \"seconde d\" (with spacing) instead of \"seconded\".",
- "cost_usd": 0.10422150000000001
+ "dropped_unquoted": 1,
+ "note": "Minutes are a clean two-page text with no scan issues. Vote tallies are recorded only as \"all were in favor\" or \"unanimous vote\", with no numeric counts. The minutes do not print a documents-used list.",
+ "cost_usd": 0.00470552,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Paul Doherty",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "paul doherty, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "linda mcdonald, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "absent",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Interim Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, interim executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The December 2018 board meeting is moved to December 13 if needed, because the Interim Executive Director will be out of the office on the 20th; the board agreed to the change in date.",
+   "quote": "december board meeting on the 13th, if needed as ben gold will be out of the office on the 20th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "2019 operating budget: maintenance and roof",
+   "what_was_recorded": "The Interim Executive Director went over the 2019 budget, which budgets more for maintenance and funds completing the roof.",
+   "figures_as_printed": [
+    "$9,000",
+    "$8,600"
+   ],
+   "quote": "budgeted $9,000 more for maintenance and $8,600 to complete the roof."
+  },
+  {
+   "topic": "2019 operating budget: utilities",
+   "what_was_recorded": "The 2019 budget requests a little less for utilities; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "we were requesting a little less for utilities"
+  },
+  {
+   "topic": "Reserves (October 2018 financial report)",
+   "what_was_recorded": "Reserves are reported as a percentage in the October 2018 financial report.",
+   "figures_as_printed": [
+    "38.35%"
+   ],
+   "quote": "reserves are at 38.35%."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "meeting opened at 6:30 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:30 p.m.",
+   "tags": [
+    "procedure",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Approval of October 25, 2018 minutes",
+   "resolution": "approved",
+   "quote": "deborah christen made a motion to accept the minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "received; no action recorded",
+   "quote": "the executive director report:",
+   "tags": [
+    "executive director",
+    "FHA/LHA",
+    "Fitchburg",
+    "NAHRO"
+   ]
+  },
+  {
+   "topic": "Financial Report (October 2018)",
+   "resolution": "accepted",
+   "quote": "deborah christen made a motion to accept the october 2018 financial reports.",
+   "tags": [
+    "finance",
+    "reserves",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Modernization Report",
+   "resolution": "no action",
+   "quote": "no discussion; no on-going projects.",
+   "tags": [
+    "modernization"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "received; no action recorded",
+   "quote": "there are 889 applicants on the waiting list.",
+   "tags": [
+    "waiting list",
+    "occupancy",
+    "applications"
+   ]
+  },
+  {
+   "topic": "New Business: 2019 4001 Operating Budget resolution",
+   "resolution": "approved (submission to DHCD authorized)",
+   "quote": "motion made by linda mcdonald to submit the 2019 operating budget for",
+   "tags": [
+    "2019 budget",
+    "DHCD",
+    "4001 operating budget",
+    "resolution 201817"
+   ]
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "noted",
+   "quote": "other correspondence:",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "no resident participation requested.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:47 p.m.",
+   "quote": "made a motion to adjourn the meeting at",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from the laundry company (rate increase withdrawn)",
+   "where": "text",
+   "quote": "we received a letter from the laundry company stating there will be no rate increase"
+  },
+  {
+   "name": "Resolution 201817 (2019 4001 Operating Budget for State-Aided Housing)",
+   "where": "text",
+   "quote": "the following resolution was presented:"
+  },
+  {
+   "name": "PHN Notices",
+   "where": "text",
+   "quote": "other correspondence:"
+  },
+  {
+   "name": "NAHRO November Newsletter",
+   "where": "text",
+   "quote": "other correspondence:"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "2019 budget",
+  "4001 operating budget",
+  "DHCD",
+  "state-aided housing",
+  "financial report",
+  "reserves",
+  "waiting list",
+  "December meeting date",
+  "Fitchburg separation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

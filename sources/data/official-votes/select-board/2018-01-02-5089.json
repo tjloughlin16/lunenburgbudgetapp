@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-01-02",
  "docid": "5089",
@@ -12,25 +12,269 @@
  },
  "votes": [
   {
-   "motion": "Authorize the Town Manager to apply for District Local Technical Assistance to implement the two MRPC recommendations",
+   "motion": "Authorize the Town Manager to apply for District Local Technical Assistance to implement the two MRPC recommendations.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: r. ebersole to authorize the town manager to apply for district local technical assistance to implement the two mrpc recommendations 2\"d: p. luck vote: all in favor",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to authorize the town manager to apply for district local technical assistance to implement the two mrpc recommendations"
   },
   {
-   "motion": "Approve the Other Post-Employment Benefits (OPEB) Policy as amended, subject to the Finance Committee's approval",
-   "moved_by": "R. Ebersole",
+   "motion": "Approve the OPEB Policy as amended, subject to the Finance Committee's approval.",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed",
+   "procedural": false,
+   "quote": "to approve the opeb policy as amended"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:35 p.m.",
+   "moved_by": "REbersole",
+   "seconded_by": "P. Luck",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion:r.ebersole 21d: d. mcquaid to approve the opeb policy as amended discussion: mr. toale asked if the policy was presented to the finance committee yet. mr. ebersole amended his motion to \"subject to the finance committee's approval: mr. mcquaid seconded. vote: all in fav",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting at 7:35 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-scanned document with minor formatting artifacts (e.g., \"21d\" for \"2nd\" in seconded notation). All three votes were procedural in nature. The OPEB motion was amended during discussion before being voted.",
- "cost_usd": 0.1201185
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) with garbled characters: seconder lines appear as '2\"d: P. Luck' and '21d: D. McQuaid', and the second-page vote ended in a mangled quote mark. Page 3 begins mid-item, so item 4's heading and opening are missing; the warrant-signing sentence has no visible heading. No board roll call is printed, so board attendance is inferred from speakers and movers. Minutes say 'Board of Selectmen' in places. Votes recorded as 'All in Favor' with no count; outcome set to 'passed'.",
+ "cost_usd": 0.00607712,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "status": "present",
+   "quote": "mr. mcquaid reported he has registered his business in town, adding it was a pleasant experience."
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "ms. luck noted open air burning permits are now available and you can burn from january 15 to may 1st."
+  },
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "mr. toale announced the senior property tax workoff committee is seeking a member at large."
+  },
+  {
+   "name": "Mr. Ebersole",
+   "status": "present",
+   "quote": "mr. ebersole liked the proposal that the other post employment benefits (opeb) trust fund will be"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux will provide a quarterly report of requested waivers for the Disturbances of Newly Paved Roads, rather than reporting each waiver individually.",
+   "quote": "ms. lemieux will provide a quarterly report of requested waivers."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "OPEB trust fund annual funding",
+   "what_was_recorded": "The OPEB trust fund would be supported annually by a transfer of a minimum amount equal to 10% of certified General Fund Free Cash; the enterprise account amount was not yet determined.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "supported annually by a transfer of an minimum amount equivalent to 10% of certified general fund free cash"
+  },
+  {
+   "topic": "Accounts payable and payroll warrants",
+   "what_was_recorded": "The Town Manager signed an accounts payable warrant and a payroll warrant and a payroll deduction warrant.",
+   "figures_as_printed": [
+    "33,124, 18.04",
+    "$825,224.17",
+    "$183,673.17"
+   ],
+   "quote": "signed an accounts payable warrant in the amount of 33,124, 18.04, a payroll warrant in the amount of"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. McQuaid",
+   "stated_role": "",
+   "topic": "registering a business in town",
+   "quote": "mr. mcquaid reported he has registered his business in town, adding it was a pleasant experience."
+  },
+  {
+   "speaker": "Ms. Luck",
+   "stated_role": "",
+   "topic": "open air burning permits",
+   "quote": "ms. luck noted open air burning permits are now available and you can burn from january 15 to may 1st."
+  },
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "",
+   "topic": "Senior Property Tax Workoff Committee vacancy",
+   "quote": "mr. toale announced the senior property tax workoff committee is seeking a member at large."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "heard, no action",
+   "tags": [
+    "public comment",
+    "business",
+    "permits",
+    "volunteers"
+   ],
+   "quote": "mr. mcquaid reported he has registered his business in town, adding it was a pleasant experience."
+  },
+  {
+   "topic": "Town Manager report: 2018 MRPC District Local Technical Assistance application",
+   "resolution": "approved application authorization",
+   "tags": [
+    "grants",
+    "economic development",
+    "MRPC",
+    "business"
+   ],
+   "quote": "we received notification from montachusett regional planning commission (mrpc) for requests for"
+  },
+  {
+   "topic": "Town Manager report: draft OPEB funding policy",
+   "resolution": "forwarded to Finance Committee",
+   "tags": [
+    "OPEB",
+    "policy",
+    "finance"
+   ],
+   "quote": "in the board's electronic packet there is a draft policy for funding other post- employment benefits."
+  },
+  {
+   "topic": "Town Manager report: Town Facebook page",
+   "resolution": "informational, no action",
+   "tags": [
+    "communications",
+    "social media"
+   ],
+   "quote": "the town of lunenburg facebook page is now officially \"live\", so i invite everyone to \"like\" our page."
+  },
+  {
+   "topic": "Complete Streets public forum reminder",
+   "resolution": "informational, no action",
+   "tags": [
+    "complete streets",
+    "public forum",
+    "transportation"
+   ],
+   "quote": "reminder that the date for the public forum to hear feedback on areas in town"
+  },
+  {
+   "topic": "Old business: Board of Selectmen goals",
+   "resolution": "listed, no action",
+   "tags": [
+    "board goals",
+    "economic development",
+    "infrastructure"
+   ],
+   "quote": "identify desire for and type of economic development for lunenburg"
+  },
+  {
+   "topic": "Current business: draft OPEB and tax collection/tax title and tax foreclosure policies",
+   "resolution": "OPEB policy approved as amended, subject to Finance Committee approval",
+   "tags": [
+    "OPEB",
+    "policy",
+    "tax collection",
+    "tax title",
+    "tax foreclosure"
+   ],
+   "quote": "mr. ebersole liked the proposal that the other post employment benefits (opeb) trust fund will be"
+  },
+  {
+   "topic": "Discuss meeting schedule January to March",
+   "resolution": "discussed, no action",
+   "tags": [
+    "meeting schedule",
+    "charter review",
+    "finance committee"
+   ],
+   "quote": "discuss meeting schedule from january - march"
+  },
+  {
+   "topic": "Item 4 (opening missing): warrants and action file on newly paved road waivers",
+   "resolution": "Town Manager to provide quarterly waiver report",
+   "tags": [
+    "warrants",
+    "roads",
+    "waivers",
+    "paving"
+   ],
+   "quote": "action file- ms. luck noted the links on the website to the disturbances of newly paved roads."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "tags": [
+    "committees",
+    "capital planning",
+    "school budget",
+    "council on aging"
+   ],
+   "quote": "mr. mcquaid reported capital planning met earlier today with the dpw director."
+  },
+  {
+   "topic": "Department reports: ACO quarterly report",
+   "resolution": "noted, no action",
+   "tags": [
+    "animal control",
+    "reports"
+   ],
+   "quote": "mr. ebersole noted some of the reporting issues have been resolved, which is a great improvement over prior"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft OPEB Funding Policy",
+   "where": "text",
+   "quote": "in the board's electronic packet there is a draft policy for funding other post- employment benefits."
+  },
+  {
+   "name": "MRPC December 2017 report",
+   "where": "text",
+   "quote": "implement two of the recommendations made by mrpc in their december 2017 report through the last round"
+  },
+  {
+   "name": "Disturbances of Newly Paved Roads (website links)",
+   "where": "text",
+   "quote": "ms. luck noted the links on the website to the disturbances of newly paved roads."
+  },
+  {
+   "name": "Actuarial report (OPEB)",
+   "where": "text",
+   "quote": "ms. lemieux stated the actuarial report seperates it by town, school and enterprise accounts."
+  },
+  {
+   "name": "Five Year Financial Forecast presentation",
+   "where": "text",
+   "quote": "january 25*' is the five year financial forecast presentation to the finance committee"
+  }
+ ],
+ "tags": [
+  "select board",
+  "OPEB",
+  "grants",
+  "DLTA",
+  "warrants",
+  "public comment",
+  "complete streets",
+  "meeting schedule",
+  "newly paved roads",
+  "open burning",
+  "Facebook"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

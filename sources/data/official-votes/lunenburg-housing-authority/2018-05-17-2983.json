@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2018-05-17",
  "docid": "2983",
@@ -17,15 +17,15 @@
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "paul doherty made a motion to accept the minutes ; linda mcdonald seconded. all were in favor and the minutes were accepted."
+   "quote": "paul doherty made a motion to accept the minutes"
   },
   {
    "motion": "Elect Elizabeth Murphy as Chair and Paul Doherty as Vice Chair.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "deborah christen made a motion to elect elizabeth murphy as chai r and paul doherty as vice chair. linda mcdonald seconded and upon roll call as follows: deborah christen - yea, linda mcdonald - yea, caroline fortin - yea, paul doherty - yea and elizabeth murphy - yea; the motion carried."
+   "procedural": false,
+   "quote": "upon roll call as follows: deborah christen - yea, linda mcdonald - yea, caroline fortin - yea, paul doherty - yea and elizabeth murphy - yea; the motion carried."
   },
   {
    "motion": "Accept the April 30, 2018 financial report.",
@@ -33,18 +33,252 @@
    "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "paul doherty made a motion to accept the april 30, 2018 financial report. deborah christen seconded; all were in favor."
+   "quote": "paul doherty made a motion to accept the april 30, 2018 financial report."
   },
   {
-   "motion": "Adjourn the meeting.",
+   "motion": "Adjourn the meeting at 7:12 p.m.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Linda McDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 7:12 p.m. linda mcdonald seconded, all were in favor, and the meeting was adjourned."
+   "quote": "deborah christen made a motion to adjourn the meeting at 7:12 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes clearly recorded. Four votes total: approval of prior minutes, election of officers (with roll call), financial report approval, and adjournment.",
- "cost_usd": 0.0164916
+ "dropped_unquoted": 2,
+ "note": "Text-based minutes, not a scan. Page 3 contains only a running header with no content, and the minutes carry no signatures or approval stamp. Item 5 (\"July – generator for Community Room, not Laundry room.\") is too terse to say whether it is a decision, so it is not recorded as one. Four votes are recorded; the motion-carried election vote is recorded with its roll call. No dollar figures were voted on.",
+ "cost_usd": 0.005171819999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elizabeth Murphy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "elizabeth murphy, chair"
+  },
+  {
+   "name": "Paul Doherty",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "paul doherty, vice chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Caroline Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "caroline fortin, member"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "linda mcdonald, member"
+  },
+  {
+   "name": "Peter Proulx",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "peter proulx, executive director"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "benjamin gold, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board will not review the management agreement; it will go with the Executive Director's negotiation of the agreement. Lunenburg is to begin paying less under the new format.",
+   "quote": "the board has the option to review but will go with e.d."
+  },
+  {
+   "decision": "The Executive Director is to let residents know about alternative places to put mailboxes, after first discussing with the post office.",
+   "quote": "e.d. to let residents know about alternative places to put mailboxes."
+  },
+  {
+   "decision": "Will discuss with the post office before discussing with residents.",
+   "quote": "will discuss with post office before discussing with residents."
+  },
+  {
+   "decision": "The State-Aided Housing report is to be revised to write the vacated date as 'remains vacant from'.",
+   "quote": "in report, write vacated date"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Post office package boxes",
+   "what_was_recorded": "Cost of large mailboxes needed because the post office no longer delivers packages; the board still must decide where to place them.",
+   "figures_as_printed": [
+    "$1800"
+   ],
+   "quote": "the cost is $1800 per box, we need to decide where to put them."
+  },
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves reported at 63.01 percent, described as a safe level, with the roof and shed work expected to reduce it but staying above 20 percent being fine.",
+   "figures_as_printed": [
+    "63.01%",
+    "20%"
+   ],
+   "quote": "reserves are at 63.01%; safe number."
+  },
+  {
+   "topic": "Monthly surplus",
+   "what_was_recorded": "Operating result for the month reported as a surplus; if it continues the authority will add to reserves.",
+   "figures_as_printed": [
+    "$9,632"
+   ],
+   "quote": "page f3 - $9,632 to the good; if continues we will be adding to reserves."
+  },
+  {
+   "topic": "Shelter rents and utilities",
+   "what_was_recorded": "Shelter rents slightly under budget with a budget revision to come in October; utilities over budget and expected to be reduced monthly.",
+   "figures_as_printed": [],
+   "quote": "a little under on shelter rents."
+  },
+  {
+   "topic": "Management agreement cost",
+   "what_was_recorded": "Under the new management agreement format Lunenburg is to begin paying less, with dates and amounts per unit.",
+   "figures_as_printed": [],
+   "quote": "lunenburg to begin paying less (dates and amounts per unit)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "quorum declared; meeting opened 6:40 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:40 p.m.",
+   "tags": [
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Approval of April 19, 2018 minutes",
+   "resolution": "approved",
+   "quote": "the minutes of the april 19, 2018 meeting were presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "elected Elizabeth Murphy Chair and Paul Doherty Vice Chair",
+   "quote": "as this is the annual meeting with election of officers, the executive director opened the floor",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action; management agreement and post office mailbox matters discussed",
+   "quote": "the executive director report:",
+   "tags": [
+    "management agreement",
+    "post office",
+    "mailboxes"
+   ]
+  },
+  {
+   "topic": "Financial report (April 30, 2018)",
+   "resolution": "accepted",
+   "quote": "financial report (april 30, 2018):",
+   "tags": [
+    "finance",
+    "reserves",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Modernization report",
+   "resolution": "no action",
+   "quote": "modernization report:",
+   "tags": [
+    "modernization",
+    "generator"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "no action; report wording to be changed",
+   "quote": "state-aided housing report:",
+   "tags": [
+    "state-aided housing",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Old business",
+   "resolution": "none",
+   "quote": "7. old business: none",
+   "tags": []
+  },
+  {
+   "topic": "New business",
+   "resolution": "none",
+   "quote": "8. new business: none",
+   "tags": []
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "no resident participation requested.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:12 p.m.",
+   "quote": "deborah christen made a motion to adjourn the meeting at 7:12 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2018 DHCD Public Housing Notice",
+   "where": "text",
+   "quote": "2018 dhcd public housing notice - management agreement standard contract must be used."
+  },
+  {
+   "name": "Financial Report (April 30, 2018)",
+   "where": "text",
+   "quote": "financial report (april 30, 2018):"
+  },
+  {
+   "name": "Monthly payroll",
+   "where": "text",
+   "quote": "monthly payroll was passed around for review and two board member signatures."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "annual meeting",
+  "election of officers",
+  "management agreement",
+  "post office mailboxes",
+  "finance",
+  "reserves",
+  "modernization",
+  "state-aided housing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1,
+  "documents_and_exhibits": 1
+ }
 }

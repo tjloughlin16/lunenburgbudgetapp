@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-03-04",
  "docid": "4037",
@@ -12,72 +12,356 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR Plan for 205 Sunset Lane",
+   "motion": "Approve the ANR Plan for 205 Sunset Lane with the understanding that it does not reflect the driveway for either lot.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "p. bertram made motion to approve the anr plan with the understanding that it does not reflect the driveway for either lot, t. cole seconded, all aye."
   },
   {
-   "motion": "Grant the Special Permit and Site Plan Approval for 190 Electric Avenue with specified conditions",
+   "motion": "Grant the Special Permit and Site Plan Approval for 190 Electric Avenue with standard solar field conditions and the additional tree and planting conditions.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "k. chenis made motion to grant the special permit and site plan approval with standard solar field conditions and the additional conditions of, 1) two for one tree replacement, 2) tree plantings to be guaranteed for a minimum of two growing seasons, 3) plan tings to be included on the planting as-built plan, and 4) plantings will consist of three different species of evergreens; p. bertram seconded; all aye."
+   "quote": "k. chenis made motion to grant the special permit and site plan approval with standard solar field conditions"
   },
   {
-   "motion": "Recommend approval to town meeting of the bylaw with edits",
+   "motion": "Recommend approval to town meeting of the bylaw with edits (removing listed language, striking a redundant word, and accepting Town Counsel and Building Commissioner edits).",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
    "quote": "k. chenis made motion to recommend approval to town meeting of the bylaw with edits, p. bertram seconded, all aye."
   },
   {
-   "motion": "Recommend approval to town meeting of the remaining six warrant articles with renumbering edit",
+   "motion": "Recommend approval to town meeting of the remaining six May 2019 warrant articles with the renumbering edit for prohibition.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "k. chenis made motion to recommend approval to town meeting of the remaining six articles with the renumbering edit for prohibition, p. bertram seconded. discussion: p. bertram was of the opinion that if the warrant states \"planning board recommends approval\", citizens will have the mistaken belief that the board is recommending all articles be approved, whereas, the board is only recommending approval for the articles to be voted on the ballot . m. allison noted that the board can make it clear at town meeting that it is not advocating either for or against each article. t. cole noted that it will not make it to the ballot if it doesn't get passed. a. burney suggested the board take its vote and he will notify the select board that the planning board does not want a recommendation put in the warrant. roll call vote - p. bertram, nay; t. cole, aye; k. chenis, aye; m. allison, aye. vote passed 3-1."
+   "quote": "k. chenis made motion to recommend approval to town meeting of the remaining six articles with the renumbering edit for prohibition"
   },
   {
-   "motion": "Approve the special permit and site plan approval for 400 Electric Avenue with standard conditions",
+   "motion": "Approve the special permit and site plan approval for 400 Electric Avenue with standard conditions and the added button-activated actuator valve and semi-annual catch basin cleaning conditions.",
    "moved_by": "K. Chenis",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "k. chenis made motion to approve the special permit and site plan approval with standard conditions as discussed, t. cole seconded, all aye."
+   "quote": "k. chenis made motion to approve the special permit and site plan approval with standard conditions as discussed"
   },
   {
-   "motion": "Move all remaining agenda items to March 25 with exception of closing public comment",
+   "motion": "Amended motion to move all remaining agenda items to March 25, with the exception of closing public comment.",
    "moved_by": "K. Chenis",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "k. chenis amended his motion to move all remaining agenda items to march 25 th with the exception of closing public comment, p . bertram seconded, all aye",
-   "quote_taken_from_text": true
+   "quote": "k. chenis amended his motion to move all remaining agenda items to march 25 th with the exception of closing public comment"
   },
   {
    "motion": "Extend the meeting beyond 10:30 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "p. bertram made motion to extend the meeting beyond 10:30 p.m., t. cole seconded, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes are clearly recorded with outcomes. The MINUTES APPROVAL section lists prior meeting dates but records no vote on those minutes.",
- "cost_usd": 0.1158595
+ "note": "Scanned text was readable. Roll call \"passed 3-1\" follows the discussion of the remaining six warrant articles; it is attributed to that motion, though the minutes do not say so explicitly. The first tabling motion was amended and only the amended motion is recorded as voted. K. Chenis is recorded as leaving at 10:30 p.m., yet later votes (extension, adjournment at 10:46 p.m.) are printed \"all aye\" without noting his absence. No vote is recorded on approving the listed minutes. The MRPC speaker is spelled \"Glenn Eaton\" in the first comment and \"Glen Eaton\" later; both are kept as printed. Marjorie J. Boggio appears only on the letterhead and is not recorded as taking part.",
+ "cost_usd": 0.00866302,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis (left 10:30 p.m.), tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "kenneth chenis (left 10:30 p.m.)"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis (left 10:30 p.m.), tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis (left 10:30 p.m.), tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis (left 10:30 p.m.), tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "representing the property owner, David E. Ross Associates (ANR Plan 205 Sunset Lane)",
+   "status": "present",
+   "quote": "represented by neil gorman, david e. ross associates."
+  },
+  {
+   "name": "Glenn Eaton",
+   "role": "MRPC Executive Director",
+   "status": "present",
+   "quote": "mrpc executive director, glenn eaton, was approached by t. cole"
+  },
+  {
+   "name": "Justin Smith",
+   "role": "resident, 225 Sunset Lane",
+   "status": "present",
+   "quote": "justin smith, 225 sunset lane - concerning the anr plan for 205 sunset lane, stated that trees were being cut"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney will notify the Select Board that the Planning Board does not want a recommendation put in the warrant, following the Board's vote.",
+   "quote": "he will notify the select board that the planning board does not want a recommendation put in the warrant."
+  },
+  {
+   "decision": "K. Chenis recused himself from the ANR Plan for 205 Sunset Lane item.",
+   "quote": "k. chenis recused himself."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Block grant program (MRPC)",
+   "what_was_recorded": "Glenn Eaton explained that the block grant program is suspended and what block grants usually cover; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "the block grant program has been currently suspended as there were problems with the then program administrator."
+  },
+  {
+   "topic": "MRPC funding decline and staff layoffs",
+   "what_was_recorded": "Glen Eaton said a funding decline last spring led to staff layoffs; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "g. eaton noted last spring, due to a funding decline, staff had to be laid off ",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Glenn Eaton",
+   "stated_role": "MRPC Executive Director",
+   "topic": "block grants and DLTA (opening, deferred to end)",
+   "quote": "mrpc executive director, glenn eaton, was approached by t. cole (board repres entative to mrpc) regarding block grants and dlta"
+  },
+  {
+   "speaker": "Justin Smith",
+   "stated_role": "225 Sunset Lane",
+   "topic": "trees cut onto property from ANR Plan 205 Sunset Lane",
+   "quote": "justin smith, 225 sunset lane - concerning the anr plan for 205 sunset lane, stated that trees were being cut and coming down onto his property."
+  },
+  {
+   "speaker": "Glen Eaton",
+   "stated_role": "MRPC",
+   "topic": "MRPC recordkeeping issues and DLTA information",
+   "quote": "public comment: glen eaton, mrpc - t. cole noted that when he became the board representative to mrpc"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard from Glenn Eaton and Justin Smith; Eaton deferred remarks to end",
+   "quote": "mrpc executive director, glenn eaton, was approached by t. cole",
+   "tags": [
+    "public comment",
+    "MRPC",
+    "DLTA"
+   ]
+  },
+  {
+   "topic": "ANR Plan: 205 Sunset Lane",
+   "resolution": "approved with understanding it does not reflect driveways",
+   "quote": "p. bertram made motion to approve the anr plan with the understanding that it does not reflect the driveway for either lot",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Sunset Lane",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "190 Electric Avenue (cont'd), special permit and site plan",
+   "resolution": "approved with conditions",
+   "quote": "k. chenis made motion to grant the special permit and site plan approval with standard solar field conditions",
+   "tags": [
+    "public hearing",
+    "special permit",
+    "site plan",
+    "solar",
+    "190 Electric Avenue"
+   ]
+  },
+  {
+   "topic": "May 2019 Town Meeting warrant articles",
+   "resolution": "bylaw recommended with edits; remaining six recommended, roll call 3-1",
+   "quote": "k. chenis made motion to recommend approval to town meeting of the bylaw with edits",
+   "tags": [
+    "warrant article",
+    "town meeting",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "400 Electric Avenue, special permit and site plan",
+   "resolution": "approved with added conditions",
+   "quote": "k. chenis made motion to approve the special permit and site plan approval with standard conditions as discussed",
+   "tags": [
+    "special permit",
+    "site plan",
+    "400 Electric Avenue",
+    "catch basins"
+   ]
+  },
+  {
+   "topic": "Public comment (continued): Glen Eaton, MRPC",
+   "resolution": "heard; MRPC recordkeeping and DLTA discussed",
+   "quote": "public comment: glen eaton, mrpc - t. cole noted that when he became the board representative to mrpc",
+   "tags": [
+    "public comment",
+    "MRPC",
+    "recordkeeping"
+   ]
+  },
+  {
+   "topic": "Remaining agenda items",
+   "resolution": "tabled to March 25, 2019",
+   "quote": "k. chenis amended his motion to move all remaining agenda items to march 25 th with the exception of closing public comment",
+   "tags": [
+    "tabling",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Building Re-Use",
+   "resolution": "listed; no action recorded",
+   "quote": "building re-use- minutes approval:",
+   "tags": [
+    "building reuse"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "listed for 02/11/19 and 02/25/19 sets; no vote recorded",
+   "quote": "02/11/19, 190 electric avenue 02/11/19, 380-400 electric avenue",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "listed; no reports recorded",
+   "quote": "committee reports: capital planning committee",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "listed; no action recorded",
+   "quote": "director's items: 380-400 electric avenue",
+   "tags": [
+    "director",
+    "DLTA",
+    "town caucus"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "March 25 meeting noted",
+   "quote": "meeting schedule: march 25",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "listed; no discussion recorded",
+   "quote": "lunenburg code, section 250- 4.15., solar energy systems",
+   "tags": [
+    "zoning bylaw",
+    "solar",
+    "cluster development",
+    "parking",
+    "earth removal",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "heading only; no comment recorded",
+   "quote": "board comment/concerns:",
+   "tags": [
+    "board comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:46 p.m.",
+   "quote": "t. cole made motion to adjourn, p. bertram seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 205 Sunset Lane",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 205 sunset lane"
+  },
+  {
+   "name": "Conceptual Driveway Design",
+   "where": "text",
+   "quote": "shows access through a driveway off sunset lane for lot 2a"
+  },
+  {
+   "name": "May 2019 Town Meeting Warrant Article",
+   "where": "text",
+   "quote": "may 2019 town meeting warrant article - see separate minutes."
+  },
+  {
+   "name": "Planting As-Built Plan",
+   "where": "text",
+   "quote": "included on the planting as-built plan"
+  }
+ ],
+ "tags": [
+  "ANR plan",
+  "special permit",
+  "site plan approval",
+  "solar field",
+  "warrant article",
+  "town meeting",
+  "MRPC",
+  "DLTA",
+  "block grants",
+  "public comment",
+  "tabling",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,56 @@
+{
+ "board": "School Committee Meeting",
+ "board_slug": "school-committee",
+ "meeting_date": "2018-03-21",
+ "source": {
+  "sha256": "e93f5f3709db1b707e4b65e7b36571b971cd7ad9e44d5a8bcf94b2863bcc2b08",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2018-03-21-WpG1H1cX4jU.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "20 million 191 10",
+    "fiscal_year": 2019,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "Bottom line of the school budget at about a 3 percent increase.",
+    "status": "proposed",
+    "t": 2705,
+    "who": "the superintendent"
+   },
+   {
+    "amount_as_heard": "3%",
+    "fiscal_year": 2019,
+    "kind": "state_aid",
+    "scope": "school",
+    "statement": "Chapter 70 funding from the governor's budget came in at about 3 percent.",
+    "status": "announced",
+    "t": 2642,
+    "who": "the superintendent"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "layoffs",
+    "condition": "if Title I funding decreases",
+    "fiscal_year": 2019,
+    "prediction": "Layoffs of recently hired staff possible if federal funds fall",
+    "scope": "school",
+    "t": 2809,
+    "who": "the superintendent"
+   }
+  ]
+ },
+ "video_id": "WpG1H1cX4jU",
+ "video_url": "https://www.youtube.com/watch?v=WpG1H1cX4jU",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-11-05T20:55:49Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

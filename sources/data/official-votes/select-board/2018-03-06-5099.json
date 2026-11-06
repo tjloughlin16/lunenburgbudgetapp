@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-03-06",
  "docid": "5099",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Find that a license violation occurred at J & M's Sports Bar",
+   "motion": "That the Board finds that a license violation did occur (J & M's Sports Bar hearing).",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: p. bertram 2nd. p. luck that the board of selectmen finds that a license violation did occur vote: all in favor"
   },
   {
-   "motion": "Suspend the alcohol license for J & M's Sports Bar for seven days, from April 8 to April 14, 2018",
+   "motion": "To suspend the alcohol license for J & M's Sports Bar for seven days, from Sunday, April 8 to and including Saturday, April 14, 2018.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
@@ -28,15 +28,29 @@
    "quote": "motion: p. bertram 2nd. r. ebersole to suspend the alcohol license for j & m's sports bar for seven days; from sunday, april 8 to and including saturday, april 14, 2018 vote: all in favor"
   },
   {
-   "motion": "Approve the seasonal alcohol license renewal for Donald Lyon d/b/a Settler's Pub, 994 Northfield Road",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "That the Board of Selectmen support the skate park project, location to be determined from the three preferred sites.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: r.ebersole 2\"': p. bertram that the board of selectmen support the skate park project, location to be determined from the three preferred sites"
+  },
+  {
+   "motion": "To ratify the Town Manager appointment of Kamerin Munroe as Reserve Police Officer.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Bertram",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: r.ebersole 2\": p. bertram to ratify the town manager appointment of kamerin munroe as reserve police officer"
+  },
+  {
+   "motion": "To approve the seasonal alcohol license renewal for Donald Lyon d/b/a Settler's Pub, 994 Northfield Road.",
    "outcome": "passed",
    "procedural": false,
    "quote": "to approve the seasonal alcohol license renewal tor donald lyon d/b/a settler's pub, 994 northfield road vote: all in favor"
   },
   {
-   "motion": "Eliminate the Selectmen stipend effective with the new budget",
+   "motion": "To eliminate the Selectmen stipend effective with the new budget.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
@@ -44,15 +58,13 @@
    "quote": "motion: r. ebersole 2nd: p. bertram to eliminate the selectmen stipend effective with the new budget vote: all in favor"
   },
   {
-   "motion": "Approve minutes of February 20, 2018",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of February 20, 2018.",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes of february 20, 2018 were approved."
   },
   {
-   "motion": "Adjourn at 8:40 p.m.",
+   "motion": "To adjourn at 8:40 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "P. Luck",
    "outcome": "passed",
@@ -60,7 +72,412 @@
    "quote": "motion: p. bertram to adjourn at 8:40 p.m. 2nd: p. luck vote: all in favor"
   }
  ],
- "dropped_unquoted": 2,
- "note": "Document is OCR'd from scan. Skate park motion (vote 3) has no recorded vote outcome—the discussion ends mid-sentence at a page break before a vote is stated. Alcohol license renewal (vote 5) lacks moved_by and seconded_by designations in the minutes.\"",
- "cost_usd": 0.14655990000000002
+ "dropped_unquoted": 0,
+ "note": "OCR text, partly garbled: page 1 header line is unreadable; several OCR errors (e.g. \"tor\" for \"for\", \"2\\\"':\" for seconder lines, \"March 8*\"). Current Business items 2 and 3 are missing from the text (the page-7 to page-8 break skips from item 1 to the Donald Lyon renewal, then item 4). The skate park motion has a printed motion and second but no vote result, so outcome is recorded as not stated. The Donald Lyon renewal and the minutes approval print no mover or seconder. Some passages are cut across pages (e.g. the Parks Commission and Hickory Hills items). Board members are referred to by initials in the votes and as Mr./Ms. in the text.",
+ "cost_usd": 0.013164920000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "not printed (presides over hearing and announcements)",
+   "status": "present",
+   "quote": "mr. toale reviewed the hearing procedure."
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "board member (votes printed as P. Bertram)",
+   "status": "present",
+   "quote": "ms. bertram asked if you were in the bar after closing, who was on duty performing the closeout process?"
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "board member (votes printed as P. Luck)",
+   "status": "present",
+   "quote": "ms. luck requested feedback from police chief marino on what kind of a presence would be required at the skate park."
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "board member (votes printed as R. Ebersole)",
+   "status": "present",
+   "quote": "mr. ebersole asked if the outfalls can contribute to algae growth."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not printed",
+   "status": "present",
+   "quote": "ms. lemieux referred the board to the sentencing guidelines listed under the violation history."
+  },
+  {
+   "name": "Melissa Thibodeau",
+   "role": "Owner/Manager",
+   "status": "present",
+   "quote": "owner/manager melissa thibodeau was present for the hearing."
+  },
+  {
+   "name": "Jack Hebert",
+   "role": "Sergeant",
+   "status": "present",
+   "quote": "sergeant hebert and ms. thibodeau were sworn in."
+  },
+  {
+   "name": "Sergeant Jack Hebert",
+   "role": "Sergeant",
+   "status": "present",
+   "quote": "katey adams, sergeant jack hebert, dawn marie ayles"
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief",
+   "status": "not stated",
+   "quote": "ms. luck requested feedback from police chief marino on what kind of a presence would be required at the skate park."
+  },
+  {
+   "name": "Griffin Caiozzo",
+   "role": "student presenter, Genius Hour skate park project (1091 Massachusetts Avenue)",
+   "status": "present",
+   "quote": "griffin caiozzo, 1091 massachusetts avenue, thanked the board for the opportunity to present tonight."
+  },
+  {
+   "name": "Aidan Moore",
+   "role": "student presenter, Genius Hour skate park project",
+   "status": "present",
+   "quote": "others present: heather swift, brian swift, melissa thibodeau, david passios, greg bittner, aidan moore,"
+  },
+  {
+   "name": "Jonah Salvatore",
+   "role": "listed as present; Genius Hour project group",
+   "status": "present",
+   "quote": "others present: heather swift, brian swift, melissa thibodeau, david passios, greg bittner, aidan moore,"
+  },
+  {
+   "name": "Mason Whitcomb",
+   "role": "student presenter, Genius Hour skate park project",
+   "status": "present",
+   "quote": "mason whitcomb stated they had to consider material and construction options for the skate park."
+  },
+  {
+   "name": "Aidan Swift",
+   "role": "listed as present; Genius Hour project group",
+   "status": "present",
+   "quote": "katey adams, sergeant jack hebert, dawn marie ayles"
+  },
+  {
+   "name": "Chris Roy",
+   "role": "student presenter, Genius Hour skate park project",
+   "status": "present",
+   "quote": "chris roy reported they looked at other skate parks in the state."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "not printed; Genius Hour project group",
+   "status": "present",
+   "quote": "anthony caiozzo stated they did meet with the parks commissioners and they thought this was a fantastic idea"
+  },
+  {
+   "name": "Heather Swift",
+   "role": "listed as present",
+   "status": "present",
+   "quote": "others present: heather swift, brian swift, melissa thibodeau, david passios, greg bittner, aidan moore,"
+  },
+  {
+   "name": "Brian Swift",
+   "role": "listed as present",
+   "status": "present",
+   "quote": "others present: heather swift, brian swift, melissa thibodeau, david passios, greg bittner, aidan moore,"
+  },
+  {
+   "name": "David Passios",
+   "role": "listed as present",
+   "status": "present",
+   "quote": "others present: heather swift, brian swift, melissa thibodeau, david passios, greg bittner, aidan moore,"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "listed as present",
+   "status": "present",
+   "quote": "others present: heather swift, brian swift, melissa thibodeau, david passios, greg bittner, aidan moore,"
+  },
+  {
+   "name": "Dawn Marie Ayles",
+   "role": "listed as present",
+   "status": "present",
+   "quote": "katey adams, sergeant jack hebert, dawn marie ayles"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "resident, 40 Williams Drive",
+   "status": "present",
+   "quote": "katey adams, 40 williams drive, asked the board to remind the public about the roar presentation"
+  },
+  {
+   "name": "Gary Gouldrup",
+   "role": "Forester",
+   "status": "present",
+   "quote": "forester gary gouldrup was present to answer questions regarding the small state forest cutting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The full-time police officer appointment on the agenda was moved to the March 20 agenda.",
+   "quote": "ms. lemieux noted the full-time police officer appointment listed on tonight's agenda has been moved to the"
+  },
+  {
+   "decision": "Ms. Thibodeau is to receive written notice of the seven-day liquor license suspension by mail.",
+   "quote": "mr. toale informed ms. thibodeau she would receive notification of the suspension in the mail."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable, payroll and payroll deductions warrants",
+   "what_was_recorded": "The Board signed three warrants: accounts payable, payroll, and payroll deductions.",
+   "figures_as_printed": [
+    "$654,095.24",
+    "$727,213.49",
+    "$561,258.53"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $654,095.24; a payroll warrant in the amount of $727,213.49 and a payroll deductions warrant in the amount of $561,258.53."
+  },
+  {
+   "topic": "Wallis Park equipment funding",
+   "what_was_recorded": "Proposed Wallis Park equipment is funded by a town appropriation and Lions Club donations.",
+   "figures_as_printed": [
+    "$37,000",
+    "$25,000"
+   ],
+   "quote": "equipment to be installed at wallis park utilizing the $37,000 town appropriation and the $25,000 in donations"
+  },
+  {
+   "topic": "Competitive Green Communities Grant request",
+   "what_was_recorded": "The grant request, excluding administration services, is approximately $200,000.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "excluding the administration services, the total grant request is approximately $200,000 and will be submitted"
+  },
+  {
+   "topic": "Motor vehicle excise commitments",
+   "what_was_recorded": "The last 2017 excise commitment totaled $1,359,899, an increase of $42,996 over the previous fiscal year.",
+   "figures_as_printed": [
+    "$1,359,899",
+    "$42,996"
+   ],
+   "quote": "february 27th totaling $1,359,899. this is an increase over the previous fiscal year by $42,996."
+  },
+  {
+   "topic": "Selectmen stipend",
+   "what_was_recorded": "Selectmen receive a $100 stipend; historically the BOS was paid $1000 and was eligible for health insurance. The Board voted to eliminate the stipend.",
+   "figures_as_printed": [
+    "$100",
+    "$1000"
+   ],
+   "quote": "then it was noted that the board of selectmen members get a $100 stipend."
+  },
+  {
+   "topic": "Middle/High School uncompleted work expenditures",
+   "what_was_recorded": "Ms. Bertram had asked that expenditures on uncompleted Middle/High School work (ceiling tiles, HVAC) be flagged and not paid.",
+   "figures_as_printed": [],
+   "quote": "ms. bertram stated she had requested any expenditure related to the middle/high school uncompleted work"
+  },
+  {
+   "topic": "Skate park project cost",
+   "what_was_recorded": "Ms. Bertram asked the students for a cost estimate; they said it would depend on location. No figure given.",
+   "figures_as_printed": [],
+   "quote": "ms. bertram asked the group if they had an idea on the cost of their project goal would be."
+  },
+  {
+   "topic": "Tax title assignment auction",
+   "what_was_recorded": "Tax title reassignment pays all delinquent taxes and fees; 33 properties received 30-day notice; auction April 4th at 10 am. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the re-assignment of the tax title will pay all delinquent taxes and fees owed on the property"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "40 Williams Drive",
+   "topic": "ROAR presentation on substance abuse and opioid crisis",
+   "quote": "katey adams, 40 williams drive, asked the board to remind the public about the roar presentation on substance abuse and the opioid crisis this thursday"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: Boston Post Cane presentation",
+   "resolution": "no action",
+   "tags": [
+    "announcement",
+    "senior center"
+   ],
+   "quote": "mr. toale announced the public is invited to the presentation of the boston post cane to clarence goguen, 100"
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment: there was none at this time"
+  },
+  {
+   "topic": "Hearing on Liquor License Violation - J & M's Sports Bar",
+   "resolution": "violation found; seven-day suspension, April 8-14, 2018",
+   "tags": [
+    "liquor license",
+    "hearing",
+    "violation"
+   ],
+   "quote": "hearing on liquor license violation - j & m's sports bar, 5 summer st. #10"
+  },
+  {
+   "topic": "Genius Hour skate park presentation",
+   "resolution": "Board supported skate park project; location to be determined from three preferred sites (vote result not printed)",
+   "tags": [
+    "skate park",
+    "students",
+    "parks"
+   ],
+   "quote": "7 grade genius hour project presentation"
+  },
+  {
+   "topic": "Ratify Reserve Police Officer Kamerin Munroe",
+   "resolution": "approved",
+   "tags": [
+    "police",
+    "appointment"
+   ],
+   "quote": "to ratify the town manager appointment of kamerin munroe as reserve police officer"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; no action",
+   "tags": [
+    "town manager",
+    "facilities",
+    "parks",
+    "green communities",
+    "economic development",
+    "union negotiations",
+    "surveys"
+   ],
+   "quote": "the property condition assessment for eagle house has been received and circulated to the board of"
+  },
+  {
+   "topic": "Current Business 1: Walkability, Parking Study and/or Complete Streets Study request by MRPC",
+   "resolution": "no vote recorded; discussion of letter of support needed for MRPC/UPWP request",
+   "tags": [
+    "MRPC",
+    "walkability",
+    "parking",
+    "planning"
+   ],
+   "quote": "ms. lemieux reported ms. bertram had requested this be placed on the agenda."
+  },
+  {
+   "topic": "Seasonal alcohol license renewal, Donald Lyon d/b/a Settler's Pub",
+   "resolution": "approved",
+   "tags": [
+    "liquor license",
+    "renewal"
+   ],
+   "quote": "to approve the seasonal alcohol license renewal tor donald lyon d/b/a settler's pub, 994 northfield road"
+  },
+  {
+   "topic": "Removal of Selectmen stipend",
+   "resolution": "approved (eliminate stipend effective with new budget)",
+   "tags": [
+    "stipend",
+    "budget"
+   ],
+   "quote": "mr. toale stated he had requested this discussion because at the charter review committee"
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrants signed; minutes of February 20, 2018 approved",
+   "tags": [
+    "warrants",
+    "minutes"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $654,095.24"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "tags": [
+    "committees",
+    "school committee",
+    "storm water",
+    "MPO",
+    "charter",
+    "finance committee",
+    "conservation"
+   ],
+   "quote": "mr. toale reported the finance committee continues to review department budgets."
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "Katey Adams spoke; no action",
+   "tags": [
+    "public comment",
+    "ROAR",
+    "substance abuse"
+   ],
+   "quote": "katey adams, 40 williams drive, asked the board to remind the public about the roar presentation"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:40 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: p. bertram to adjourn at 8:40 p.m. 2nd: p. luck vote: all in favor"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Property Condition Assessment for Eagle House",
+   "where": "text",
+   "quote": "the property condition assessment for eagle house has been received and circulated to the board of"
+  },
+  {
+   "name": "Air Quality Report (issued last March)",
+   "where": "text",
+   "quote": "this was one of the recommendations in the air quality report issued last"
+  },
+  {
+   "name": "Formation of a Business/Town Partnership (MRPC report)",
+   "where": "text",
+   "quote": "in their report titled \"formation of a business/town partnership\"."
+  },
+  {
+   "name": "Unified Planning Work Program (UPWP)",
+   "where": "text",
+   "quote": "we approved the unified planning work program (upwp) and there are communities"
+  },
+  {
+   "name": "draft charter (Charter Review Committee)",
+   "where": "text",
+   "quote": "where they expect to vote on their draft charter and then they will hold the public hearing"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "hearing",
+  "skate park",
+  "police appointment",
+  "town manager report",
+  "parks",
+  "green communities",
+  "MRPC",
+  "selectmen stipend",
+  "warrants",
+  "committee reports",
+  "public comment",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

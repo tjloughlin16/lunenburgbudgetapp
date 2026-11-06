@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2018-01-09",
  "docid": "1259",
@@ -12,16 +12,222 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "McQuaid",
-   "seconded_by": "Allison",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Mc Quaid",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion to adjourn by mr. mc quaid at 5:50seconded by mr. allison ",
-   "quote_taken_from_text": true
+   "quote": "motion to adjourn by mr. mc quaid at 5:50seconded by mr. allison",
+   "seconded_by": "Mr. Allison"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of meeting minutes. The document records one explicit motion (to adjourn). Other items described as \"approved\" or \"agreed\" do not have formal motion or voting language and are not included per the rules.",
- "cost_usd": 0.10499750000000001
+ "note": "OCR text from a scan. Attendance block is jumbled: John Henshaw's status is unclear (could be absent). Several headings are garbled. The worksheet table columns are scrambled, so line items cannot be reliably matched to figures; the recommendation total reads \"1/474,907\" and is likely $474,907. Two items are numbered 5. No vote result is printed for the adjournment motion, and no vote was recorded on approving prior minutes. A \"RECEIVED & FILED OCT 03 2018\" stamp appears, well after the meeting date.",
+ "cost_usd": 0.00537542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "role": "presiding; called the meeting to order (role not printed)",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Caroline Griffis",
+   "role": "not printed",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "not printed",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "not printed",
+   "status": "not stated",
+   "quote": "heather sroka john henshaw absent:"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: heather lemieux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed to proceed with the same review method used last year, with each member reviewing the attached worksheet and the team discussing each line item.",
+   "quote": "the committee agreed to proceed with that method"
+  },
+  {
+   "decision": "The Committee agreed to wait for the Building Assessment before finalizing its recommendations.",
+   "quote": "before finalizing our recommendations the committee agreed that we need to wait for the building assessment."
+  },
+  {
+   "decision": "The next meeting is scheduled for January 23, 2018.",
+   "quote": "next meeting will be held on january 23, 2018."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Approved items compared with estimated budget",
+   "what_was_recorded": "Items approved totaled $474,907 against an estimated budget printed as $650.000.",
+   "figures_as_printed": [
+    "$474,907",
+    "$650.000"
+   ],
+   "quote": "items approved totaled $474,907. the estimated budget is $650.000."
+  },
+  {
+   "topic": "Partial funding of Ladder 1 Fire Truck",
+   "what_was_recorded": "The team discussed partially funding the Ladder 1 Fire Truck using a $175,000 variance; no decision recorded.",
+   "figures_as_printed": [
+    "$175,000"
+   ],
+   "quote": "the team discussed partially funding the ladder 1 fire truck with the $175,000 variance."
+  },
+  {
+   "topic": "Special Purpose Stabilization Fund contribution to Ladder 1",
+   "what_was_recorded": "The Special Purpose Stabilization Fund ($235,000) possibly could contribute to the Ladder 1 purchase; the rest of the cost would need to be borrowed.",
+   "figures_as_printed": [
+    "$235,000"
+   ],
+   "quote": "there is a possibility that the special purpose stabilization fund $235,000 could contribute to the ladder 1 fire truck"
+  },
+  {
+   "topic": "Ladder 1 Fire Truck replacement cost",
+   "what_was_recorded": "Cost to replace the Ladder 1 Fire Truck is stated as $935,000.",
+   "figures_as_printed": [
+    "$935,000"
+   ],
+   "quote": "cost to replace the ladder 1 fire truck is $935,000."
+  },
+  {
+   "topic": "FY 19 capital request totals (worksheet)",
+   "what_was_recorded": "Worksheet totals: total FY 19 requests, total estimated FY 19 CPC budget, and total FY 19 CPC recommendation. The recommendation figure is printed as 1/474,907 in the OCR text, presumably $474,907.",
+   "figures_as_printed": [
+    "$2,342,214",
+    "$650,000",
+    "1/474,907"
+   ],
+   "quote": "$2,342,214 $650,000 1/474,907"
+  },
+  {
+   "topic": "FY 19 worksheet line-item figures",
+   "what_was_recorded": "Line-item dollar figures appear in the worksheet table; the text does not clearly map each figure to a request.",
+   "figures_as_printed": [
+    "$646,000",
+    "$935,000",
+    "$285,000",
+    "$112,000",
+    "$20,000",
+    "$11,600",
+    "$18,000",
+    "$15,000",
+    "$35,000",
+    "$130,000",
+    "$45,307",
+    "$16,000",
+    "$28,000",
+    "$65,000"
+   ],
+   "quote": "$646,000 $935,000 $285,000 $112,000 $20,000 $11,600"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "called to order at 5:03; public comment none",
+   "quote": "meeting called to order at 5:03 by mr. mcquaid",
+   "tags": [
+    "call to order",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "FY 19 capital request worksheet review",
+   "resolution": "each line item reviewed and discussed; recommendations not finalized",
+   "quote": "each member reviewed the attached worksheet and the team discussed each line item.",
+   "tags": [
+    "capital requests",
+    "FY19 budget",
+    "worksheet"
+   ]
+  },
+  {
+   "topic": "Ladder 1 Fire Truck funding options",
+   "resolution": "discussed; no decision recorded",
+   "quote": "the team discussed partially funding the ladder 1 fire truck with the $175,000 variance.",
+   "tags": [
+    "fire apparatus",
+    "ladder truck",
+    "borrowing",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Wait for Building Assessment",
+   "resolution": "finalizing deferred pending Building Assessment",
+   "quote": "before finalizing our recommendations the committee agreed that we need to wait for the building assessment.",
+   "tags": [
+    "building assessment",
+    "deferral"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for January 23, 2018",
+   "quote": "next meeting will be held on january 23, 2018.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:50",
+   "quote": "motion to adjourn by mr. mc quaid at 5:50seconded by mr. allison",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Worksheet the Committee used (attached; FY 19 capital request table)",
+   "where": "list",
+   "quote": "the worksheet the committee used is attached"
+  },
+  {
+   "name": "Building Assessment",
+   "where": "text",
+   "quote": "the committee agreed that we need to wait for the building assessment."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY19 budget",
+  "fire apparatus",
+  "ladder truck",
+  "capital requests",
+  "borrowing",
+  "stabilization fund",
+  "public safety",
+  "building assessment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the worksheet the committee used is attached"
+ },
+ "dropped_unquoted_by_field": {}
 }

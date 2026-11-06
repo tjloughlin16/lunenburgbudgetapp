@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2019-03-12",
  "docid": "5151",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the Lunenburg Arts Festival for Saturday June 8, with a rain date of Sunday June 9th",
+   "motion": "Approve the Lunenburg Arts Festival for Saturday June 8, with a rain date of Sunday June 9th.",
    "moved_by": "P. Luck",
    "seconded_by": "K. Adams",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "to approve the lunenburg arts festival for saturday june 8, with a rain date of sunday june 9th vote: all in favor"
   },
   {
-   "motion": "Place a warrant article on the Annual Town Meeting warrant for a PILOT agreement with Borrego Solar",
+   "motion": "Place a warrant article on the Annual Town Meeting warrant for a PILOT agreement with Borrego Solar.",
    "moved_by": "P. Luck",
    "seconded_by": "K. Adams",
    "outcome": "passed",
@@ -28,15 +28,15 @@
    "quote": "to place a warrant article on the annual town meeting warrant for a pilot agreement with borrego solar vote: all in favor"
   },
   {
-   "motion": "Appoint Stephanie Carlson to the Cultural Council with a term to expire June 30, 2022",
+   "motion": "Appoint Stephanie Carlson to the Cultural Council with a term to expire June 30, 2022.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "to appoint stephanie carlson to the cultural council with a term to expire june 30, 2022 vote: all in favor"
   },
   {
-   "motion": "Not support the Assistant Town Manager position without evidence that it is truly not something the board can accomplish without other means",
+   "motion": "That the Board of Selectmen not support the Assistant Town Manager position without evidence that it is truly not something we can accomplish without other means.",
    "moved_by": "K. Adams",
    "seconded_by": "P. Luck",
    "outcome": "passed 2-1",
@@ -44,15 +44,421 @@
    "quote": "that the board of selectmen not support the assistant town manager position without evidence that it is truly not something we can accomplish without other means"
   },
   {
-   "motion": "Enter into Executive Session pursuant to M.G.L. c. 30 § 21, Reason #6, to consider the purchase, exchange, taking, lease, or value of real property and adjourn immediately afterwards",
-   "moved_by": "K. Adams",
-   "seconded_by": "P. Luck",
+   "motion": "Approve the Minutes of February 19, 2019.",
    "outcome": "passed",
    "procedural": true,
-   "quote": "to enter into executive session and to adjourn the meeting after exiting executive session: pursuant to m.g.l. c. 30 § 21, reason #6, to consider the purchase, exchange, taking, lease, or value of real property"
+   "quote": "the board approved minutes of february 19, 2019."
+  },
+  {
+   "motion": "Enter into Executive Session under M.G.L. c. 30 § 21, Reason #6 (conservation land), and adjourn immediately after exiting Executive Session.",
+   "moved_by": "K. Adams",
+   "seconded_by": "P. Luck",
+   "outcome": "passed 3-0",
+   "procedural": true,
+   "quote": "motion:k. adams 2nd: p. luck to enter into executive session and to adjourn the meeting after exiting executive session:"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text extracted via OCR (macOS Vision). Minor OCR artifacts present (e.g., \"2ed\" for \"2nd\", \"2\"d\" for \"2nd\") but votes are clearly recorded and comprehensible.",
- "cost_usd": 0.1451685
+ "note": "OCR text (macOS Vision) with garbled characters and missing lines: page 3 starts mid-item and page 4 starts mid-sentence; several warrant articles (17-18, 28-29, 32) are missing or garbled. The appointee is spelled both Karlson and Carlson; the applicant is spelled both Farkes and Frakes. The Arts Festival and PILOT votes record 'All in Favor' with no count. The 2-1 vote was taken over the Chairman's request not to act. Warrant-article transfers are proposals to Town Meeting, not Board transfers, so the transfers list is empty.",
+ "cost_usd": 0.01636562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen present: jamie toale, chairman; phyllis luck, clerk; katey adams, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Vice Chairman",
+   "status": "absent",
+   "quote": "not present: damon mcquaid, vice chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam burney, land use director; jim marino, police chief"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam burney, land use director; jim marino, police chief"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "others present: heather lemieux, town manager; adam burney, land use director; jim marino, police chief"
+  },
+  {
+   "name": "Josh Farkes",
+   "role": "representing Borrego Solar",
+   "status": "present",
+   "quote": "josh farkes of borrego solar stated he was representing a new project that is working its way for"
+  },
+  {
+   "name": "Stephanie Karlson",
+   "role": "Cultural Council appointment applicant",
+   "status": "present",
+   "quote": "cultural council appointment-stephanie karlson, 674 flat hill road"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "absent",
+   "quote": "she read aloud a letter from carl luck"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "pete and deb lincoln, 46 hemlock drive, announced the baseball 2018 world champion"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "pete and deb lincoln, 46 hemlock drive, announced the baseball 2018 world champion"
+  },
+  {
+   "name": "Clarence Floyd",
+   "role": "",
+   "status": "present",
+   "quote": "clarence floyd, 720 goodrich street, commented on the concept of the annual town meeting being conducted over two days."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, stated in regards to the vote taken earlier that is a blatant disregard for open meeting law."
+  },
+  {
+   "name": "Ms. Brzozoski",
+   "role": "",
+   "status": "not stated",
+   "quote": "ms. brzozoski thanked the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board tabled discussion of Old Business agenda item #2 (holding the Annual Town Meeting over two days) and #3 (town building articles) until the next meeting.",
+   "quote": "the board tabled discussion of old business agenda item # 2"
+  },
+  {
+   "decision": "Chairman Toale said he would look into the Open Meeting Law concern raised about the earlier vote.",
+   "quote": "mr. toale stated he would look into that."
+  },
+  {
+   "decision": "Town Manager said she will present a briefing to the Board before the preliminary budget presentation next year.",
+   "quote": "she noted next year she will present a briefing to the board prior to the preliminary budget presentation."
+  },
+  {
+   "decision": "The Board signed an accounts payable warrant in the amount of $172,820.99.",
+   "quote": "the board signed an accounts payable warrant in the amount of $172,820.99."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY2020 target budget highlights",
+   "what_was_recorded": "Target budget highlights list dollar amounts by department for General Government, Police, Fire, Regional Dispatch, DPW, Recycling, schools, Monty Tech and health insurance.",
+   "figures_as_printed": [
+    "$60K",
+    "$8K",
+    "$80k",
+    "$58k",
+    "$25K",
+    "$50K",
+    "$40K",
+    "$45k",
+    "$65K",
+    "$504K",
+    "$20K",
+    "$186K"
+   ],
+   "quote": "general govt.: $60k for an asst. town manager/hr director, $8k increase for updates to general code"
+  },
+  {
+   "topic": "FY2020 above-target highlights",
+   "what_was_recorded": "Above-target items list additional dollar amounts for General Government, Police, Fire, Radio Watch, DPW and the schools.",
+   "figures_as_printed": [
+    "$8K",
+    "$5k",
+    "$92k",
+    "$38k",
+    "$60K",
+    "+629K"
+   ],
+   "quote": "fire - additional $92k more than target to hire career firefighter, associated costs, training for paramedic & only funds ot at 44%"
+  },
+  {
+   "topic": "Town Manager preliminary FY2020 budget (February 14)",
+   "what_was_recorded": "Preliminary budget changes include recycling, a capped health insurance increase, and school and Monty Tech figures.",
+   "figures_as_printed": [
+    "$62K",
+    "$116,183",
+    "$109K",
+    "$600K"
+   ],
+   "quote": "health insurance- reduced to max. of 5% increase or $116,183 increase."
+  },
+  {
+   "topic": "Updates to FY2020 preliminary budget since February 14",
+   "what_was_recorded": "Updates list changes to general government, dispatch, health insurance, Monty Tech and school figures.",
+   "figures_as_printed": [
+    "$13K",
+    "$3K",
+    "-$64K",
+    "-$60K",
+    "$74K",
+    "$334k"
+   ],
+   "quote": "general govt.- increase of $13k for assessors software"
+  },
+  {
+   "topic": "Cost of proposed Assistant Town Manager/HR Director and other new positions",
+   "what_was_recorded": "Ms. Luck said no cost figures had been provided for the new positions; Ms. Adams suggested volunteers for a cost savings; no dollar figure was stated.",
+   "figures_as_printed": [],
+   "quote": "ms. luck stated there has been nothing provided to articulate what the cost of each position will be for the town as was provided in the past for a"
+  },
+  {
+   "topic": "Red Sox trophy fundraiser admission",
+   "what_was_recorded": "Admission to the trophy photo event is $5 per family, with proceeds going to the Eagle House Supporters.",
+   "figures_as_printed": [
+    "$5"
+   ],
+   "quote": "$5 admission per family gets you in so you can snap a picture using your own camera with the"
+  },
+  {
+   "topic": "TC Passios rental fee",
+   "what_was_recorded": "The rental fee for renting the TC Passios was meant to cover the custodian's cost; no figure given.",
+   "figures_as_printed": [],
+   "quote": "the rental fee was to cover the cost of the custodian."
+  },
+  {
+   "topic": "Warrant article appropriation amounts",
+   "what_was_recorded": "Draft Annual Town Meeting warrant articles name dollar amounts for a sewer reserve transfer, PEG Access operating funds, PEG capital funds, and cemetery care.",
+   "figures_as_printed": [
+    "$27,521",
+    "$152,000",
+    "$120,000",
+    "$35,000"
+   ],
+   "quote": "article 20. to see if the town will vote to appropriate a sum of $35,000 from the sale of cemetery lots account"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Clerk",
+   "topic": "Lions Club Pancake Breakfast announcement",
+   "quote": "ms. luck announced the lions club pancake breakfast was tomorrow morning from 8:30 -10:30"
+  },
+  {
+   "speaker": "Carl Luck (letter read by Phyllis Luck)",
+   "topic": "Gas and diesel tank replacement alternatives",
+   "quote": "i was very encouraged at a recent finance committee budget review meeting to hear the"
+  },
+  {
+   "speaker": "Pete and Deb Lincoln",
+   "topic": "2018 Baseball World Champion Trophy visit to Eagle House",
+   "quote": "pete and deb lincoln, 46 hemlock drive, announced the baseball 2018 world champion"
+  },
+  {
+   "speaker": "Clarence Floyd",
+   "topic": "Annual Town Meeting held over two days",
+   "quote": "clarence floyd, 720 goodrich street, commented on the concept of the annual town meeting being conducted over two days."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "Open Meeting Law concern over earlier vote",
+   "quote": "dave passios, 56 whiting street, stated in regards to the vote taken earlier that is a blatant disregard for open meeting law."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "Hiring new personnel and town growth",
+   "quote": "dave passios, 56 whiting street, stated he actually started advocating for this a year ago and he"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "heard public comment",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "public comment",
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Lunenburg Arts Festival and TC Passios rental",
+   "resolution": "approved",
+   "quote": "to approve the lunenburg arts festival for saturday june 8, with a rain date of sunday june 9th",
+   "tags": [
+    "events",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Borrego Solar PILOT proposal for 190 Electric Ave.",
+   "resolution": "warrant article placed on Annual Town Meeting warrant",
+   "quote": "borrego solar pilot proposal for 190 electric ave.",
+   "tags": [
+    "solar",
+    "PILOT",
+    "town meeting warrant"
+   ]
+  },
+  {
+   "topic": "Cultural Council appointment",
+   "resolution": "appointed Stephanie Carlson/Karlson to Cultural Council",
+   "quote": "cultural council appointment-stephanie karlson, 674 flat hill road",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Announcements and meeting reports",
+   "resolution": "heard",
+   "quote": "donation of memorial bench for whalom lakefront",
+   "tags": [
+    "announcements",
+    "Eagle House",
+    "memorial bench",
+    "dispatch"
+   ]
+  },
+  {
+   "topic": "FY2020 preliminary budget and Assistant Town Manager/HR Director position",
+   "resolution": "motion passed 2-1 not to support the position without evidence",
+   "quote": "ms. adams asked how did this assistant town manager position come up?",
+   "tags": [
+    "FY2020 budget",
+    "staffing",
+    "Assistant Town Manager"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles",
+   "resolution": "first draft reviewed; ordering discussed; Open Meeting Law concern raised",
+   "quote": "the board reviewed the first draft of the annual town meeting warrant articles.",
+   "tags": [
+    "town meeting warrant",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Old Business items 2 and 3",
+   "resolution": "tabled to next meeting",
+   "quote": "the board tabled discussion of old business agenda item # 2",
+   "tags": [
+    "town meeting",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file",
+   "resolution": "approved minutes of February 19, 2019; signed accounts payable warrant",
+   "quote": "the board approved minutes of february 19, 2019.",
+   "tags": [
+    "minutes",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Further public comment on personnel and growth",
+   "resolution": "heard public comment",
+   "quote": "dave passios, 56 whiting street, stated he actually started advocating for this a year ago and he",
+   "tags": [
+    "public comment",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session on conservation land; adjourned 8:42 PM",
+   "quote": "motion:k. adams 2nd: p. luck to enter into executive session and to adjourn the meeting after exiting executive session:",
+   "tags": [
+    "executive session",
+    "conservation land"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Town Meeting Warrant articles, first draft",
+   "where": "list",
+   "quote": "the board reviewed the first draft of the annual town meeting warrant articles."
+  },
+  {
+   "name": "Red-lined copy of Borrego Solar PILOT agreement",
+   "where": "list",
+   "quote": "he provided a red-lined copy that basically changes nothing more than the company, property address, system size and all that."
+  },
+  {
+   "name": "Final Report of the Charter Review Committee 2018",
+   "where": "text",
+   "quote": "final report of the charter review committee 2018, copies of which were placed on file in the office"
+  },
+  {
+   "name": "Capital Planning Committee Report",
+   "where": "text",
+   "quote": "as appearing in the capital planning committee report,"
+  },
+  {
+   "name": "FY2020 TM Preliminary Budget",
+   "where": "text",
+   "quote": "fy2020 tm preliminary budget on february 14th:"
+  },
+  {
+   "name": "FY20 Budget Message",
+   "where": "text",
+   "quote": "the fy20 budget message was sent out to the finance committee and bos on february 12th"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $172,820.99."
+  },
+  {
+   "name": "Carl Luck public comment letter",
+   "where": "text",
+   "quote": "she read aloud a letter from carl luck"
+  }
+ ],
+ "tags": [
+  "Board of Selectmen",
+  "FY2020 budget",
+  "Assistant Town Manager",
+  "Annual Town Meeting warrant",
+  "Solar PILOT",
+  "Cultural Council appointment",
+  "public comment",
+  "Open Meeting Law",
+  "executive session",
+  "conservation land",
+  "Eagle House",
+  "charter review"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board reviewed the first draft of the annual town meeting warrant articles"
+ },
+ "dropped_unquoted_by_field": {}
 }

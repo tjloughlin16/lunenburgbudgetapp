@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2019-01-28",
  "docid": "4033",
@@ -12,31 +12,47 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from January 8, 2019",
+   "motion": "Request that the Charter change to the ratification period be changed from 15 calendar days to 30 days.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "D. Prokowiew",
+   "outcome": "passed, all aye",
+   "procedural": false,
+   "quote": "p. bertram made motion to request change to 30 days, d. prokowiew seconded, all aye."
+  },
+  {
+   "motion": "Approve the Land Use Guidebook.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "D. Prokowiew",
+   "outcome": "passed, all aye",
+   "procedural": false,
+   "quote": "land use guidebook- p. bertram made motion to approve, d. prokowiew seconded, all aye."
+  },
+  {
+   "motion": "Approve the minutes of 01/08/19.",
    "moved_by": "T. Cole",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "t. cole made motion to approve, p. bertram seconded, all aye."
+   "quote": "01/08/19- t. cole made motion to approve, p. bertram seconded, all aye."
   },
   {
-   "motion": "Approve minutes from January 14, 2019",
+   "motion": "Approve the minutes of 01/14/19.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "d. prokowiew made motion to approve, p. bertram seconded, all aye."
+   "quote": "01/14/19- d. prokowiew made motion to approve, p. bertram seconded, all aye."
   },
   {
-   "motion": "Approve executive session minutes from January 14, 2019",
+   "motion": "Approve the 01/14/19 Executive session minutes.",
    "moved_by": "D. Prokowiew",
-   "seconded_by": "T. Cole",
-   "outcome": "passed",
+   "seconded_by": "",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "d. prokowiew made motion to approve, t. cole, all aye."
+   "quote": "01/14/19 executive- d. prokowiew made motion to approve, t. cole, all aye."
   },
   {
-   "motion": "Release executive session minutes from December 4, 2017 through September 10, 2018",
+   "motion": "Release the executive session minutes listed for release (12/4/17 through 9/10/18).",
    "moved_by": "D. Prokowiew",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
@@ -44,31 +60,258 @@
    "quote": "d. prokowiew made motion to release, t. cole seconded, roll call vote- p. bertram, aye; t. cole, aye; d. prokowiew, aye; m. allison, aye."
   },
   {
-   "motion": "Request change to 30 days for Board to ratify Town Planner/Land Use Director position per proposed charter changes",
-   "moved_by": "P. Bertram",
-   "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "p. bertram made motion to request change to 30 days, d. prokowiew seconded, all aye."
-  },
-  {
-   "motion": "Approve Land Use Guidebook",
-   "moved_by": "P. Bertram",
-   "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "p. bertram made motion to approve, d. prokowiew seconded, all aye."
-  },
-  {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "P. Bertram",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
    "quote": "d. prokowiew made motion to adjourn, p. bertram seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1023445
+ "note": "Minutes are a clean text extraction with all votes recorded. Marijuana bylaw points (buffers, acreage, abutter notice, odor masking) were reached by board consensus or majority sense, not by recorded motion, so they appear as decisions, not votes. The 01/14/19 Executive minutes approval records no seconder by name. Marjorie J. Boggio appears in the letterhead only and is not shown as present.",
+ "cost_usd": 0.00659232,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, david prokowiew, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, david prokowiew, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, david prokowiew, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, david prokowiew, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, david prokowiew, tanner cole, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "kenneth chenis, clerk"
+  },
+  {
+   "name": "Marjorie J. Boggio",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "marjorie j. boggio administrative assistant"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Williams Drive",
+   "status": "present",
+   "quote": "katey adams, williams drive - regarding recreational marijuana- noted weather can have an impact on the distance an odor travels."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus to strike section 4.15.K and write a new 4.15.G setting minimum acreage and reasonable buffers.",
+   "quote": "consensus was to strike 4.15.k"
+  },
+  {
+   "decision": "Consensus that chemical odor masking products would not be permitted in marijuana applications.",
+   "quote": "consensus was to add that chemical odor masking products would not be permitted."
+  },
+  {
+   "decision": "Abutter notification for marijuana applications set at 300 feet (board consensus).",
+   "quote": "board consensus was to go with 300 feet."
+  },
+  {
+   "decision": "Language to be cleaned up for differing buffers for schools, municipal active recreation, child care, family child care, houses of worship and funeral homes, measured from the marijuana structure to the property line of the protected use.",
+   "quote": "language will be cleaned up for differing buffers for schools, municipal active recreation facilities"
+  },
+  {
+   "decision": "Buffer for cultivation in O, RA and RB set at 375 feet (board consensus).",
+   "quote": "board consensus was 375 feet in o, ra and rb."
+  },
+  {
+   "decision": "Majority of the board agreed to a 20 acre minimum for the use.",
+   "quote": "the majority of board members were in agreement with a 20 acre minimum."
+  },
+  {
+   "decision": "Public hearing on the marijuana draft bylaw to be scheduled for the February 25, 2019 Board meeting.",
+   "quote": "the public hearing will be scheduled for the board's february 25, 2019 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan funding through Capital Planning",
+   "what_was_recorded": "The Capital Planning Committee reduced the Planning Board's Master Plan funding request from $100,000 to $50,000.",
+   "figures_as_printed": [
+    "$100,000",
+    "$50,000"
+   ],
+   "quote": "planning board request of $100,000 for master plan was reduced to $50,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "Williams Drive",
+   "topic": "recreational marijuana odor and prohibition",
+   "quote": "katey adams, williams drive - regarding recreational marijuana- noted weather can have an impact on the distance an odor travels."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Recreational marijuana draft bylaw (Draft 2.1)",
+   "resolution": "reviewed; buffer and acreage consensus reached; public hearing set for February 25, 2019",
+   "quote": "the public hearing will be scheduled for the board's february 25, 2019 meeting.",
+   "tags": [
+    "zoning",
+    "recreational marijuana",
+    "bylaw",
+    "buffers",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved minutes of 01/08/19, 01/14/19 and 01/14/19 Executive; 01/22/19 not completed",
+   "quote": "01/08/19- t. cole made motion to approve, p. bertram seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive session minutes for release",
+   "resolution": "released seven sets of executive session minutes by roll call vote",
+   "quote": "d. prokowiew made motion to release, t. cole seconded, roll call vote- p. bertram, aye; t. cole, aye; d. prokowiew, aye; m. allison, aye.",
+   "tags": [
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "agricultural commission- no report",
+   "tags": [
+    "committees",
+    "master plan",
+    "capital planning",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "requested Charter change to 30 days; approved Land Use Guidebook; other items noted",
+   "quote": "p. bertram made motion to request change to 30 days, d. prokowiew seconded, all aye.",
+   "tags": [
+    "town charter",
+    "master plan",
+    "land use guidebook",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; February 11 continuations and new hearings; February 25 warrant article hearing",
+   "quote": "february 25- hearing for board warrant article",
+   "tags": [
+    "hearings",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "no report",
+   "quote": "earth removal permitting- no report",
+   "tags": [
+    "earth removal",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one resident spoke on recreational marijuana odor and prohibition",
+   "quote": "katey adams, williams drive - regarding recreational marijuana- noted weather can have an impact on the distance an odor travels.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:18 PM",
+   "quote": "d. prokowiew made motion to adjourn, p. bertram seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft 2.1 Non-Medical Marijuana Bylaw",
+   "where": "list",
+   "quote": "draft 2.1 non-medical marijuana bylaw"
+  },
+  {
+   "name": "Minutes 01/08/19, 01/14/19, 01/14/19 Executive",
+   "where": "list",
+   "quote": "minutes o 01/08/19 o 01/14/19 o 01/14/19 executive"
+  },
+  {
+   "name": "Executive Minutes 12/04/17, 01/29/18, 03/19/18, 03/26/18, 06/25/18, 07/09/18, 09/10/18",
+   "where": "list",
+   "quote": "executive minutes o 12/04/17 o 01/29/18 o 03/19/18"
+  },
+  {
+   "name": "Minutes 2019/01.28.19",
+   "where": "list",
+   "quote": "minutes 2019/01.28.19"
+  },
+  {
+   "name": "Article previously provided by D. Prokowiew (on pine trees and odor)",
+   "where": "text",
+   "quote": "planting pine trees within the canopy was discussed as a way to eliminate odor based on an article previously provided by d. prokowiew."
+  },
+  {
+   "name": "Land Use Guidebook",
+   "where": "text",
+   "quote": "land use guidebook- p. bertram made motion to approve, d. prokowiew seconded, all aye."
+  },
+  {
+   "name": "Cannabis Control Commission (CCC) regulations",
+   "where": "text",
+   "quote": "already covered in the cannabis control commission (ccc) regulations."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "recreational marijuana",
+  "bylaw",
+  "buffers",
+  "public hearing",
+  "master plan",
+  "capital planning",
+  "town charter",
+  "executive session",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

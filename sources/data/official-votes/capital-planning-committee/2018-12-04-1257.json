@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2018-12-04",
  "docid": "1257",
@@ -10,8 +10,214 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12042018-1257",
   "doc_url": "/docs/meetings/capital-planning-committee/2018-12-04-minutes-1257.pdf"
  },
- "votes": [],
+ "votes": [
+  {
+   "motion": "Approve the minutes of 11/06/2018; the 11/27/2018 minutes changes to be reviewed at the next meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "minutes from 11/06/2018 approved, minutes from 11/27/2018 changes will be reviewed at the next meeting."
+  }
+ ],
  "dropped_unquoted": 0,
- "note": "These minutes record discussions and agreements (item 3: \"The Committee agreed to start using the Collins method\"; item 6: \"Minutes from 11/06/2018 approved\") but do not record formal votes with the required elements: no motions are explicitly stated with who moved and seconded them, and no vote counts or outcomes are recorded. Adjournment is mentioned (item 11) but without a motion or vote. The minutes lack the formal vote documentation required by the rules.",
- "cost_usd": 0.0724035
+ "note": "Scanned OCR text with a stray header fragment (\"Matthew Allison Mbr. MAA INCORPOR\"). The minutes record no roll-call vote and no motion with a mover or count; the only approval is item 6, \"Minutes from 11/06/2018 approved\", which is recorded with outcome not stated because no mover, second, or count is printed. The adjournment and next-meeting items have no vote recorded. Public comment is recorded as \"None\" twice, so no speakers are listed.",
+ "cost_usd": 0.00425562,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Damon McQuaid",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka, john henshaw"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka, john henshaw"
+  },
+  {
+   "name": "Caroline Griffis",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka, john henshaw"
+  },
+  {
+   "name": "Heather Sroka",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka, john henshaw"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "damon mcquaid, matthew allison, caroline griffis, heather sroka, john henshaw"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager; phyllis luck, selectman"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "heather lemieux, town manager; phyllis luck, selectman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Committee agreed to start using the Collins method for scoring capital requests next year, after review with the Town Manager.",
+   "quote": "the committee agreed to start using the collins method next year after review with town manager."
+  },
+  {
+   "decision": "Capital requests were discussed and the list was prioritized.",
+   "quote": "capital requests were discussed and the list was prioritized."
+  },
+  {
+   "decision": "Damon McQuaid will reissue the capital spreadsheet.",
+   "quote": "damon mcquaid will reissue the capital spreadsheet."
+  },
+  {
+   "decision": "The Town Manager will provide the Committee with a firm number for the capital budget.",
+   "quote": "will provide the committee with a firm number for the capital budget."
+  },
+  {
+   "decision": "Next meeting set for January 8 with a start time of 5:15.",
+   "quote": "next meeting january 8 with a start time of 5:15"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Election machines capital request",
+   "what_was_recorded": "Capital request for four new voting machines, with a total cost stated; discussed.",
+   "quote": "this capital project request is for four new voting machines for a total cost of $26,500.00.",
+   "figures_as_printed": [
+    "$26,500.00"
+   ]
+  },
+  {
+   "topic": "Fire truck repair",
+   "what_was_recorded": "Repair of a fire truck for the Fire Chief; the repair cost will be budgeted in operating expense and is expected to last one year.",
+   "quote": "the $10,000.00 for repairs will be budgeted in operating",
+   "figures_as_printed": [
+    "$10,000.00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Collins Center scoring method",
+   "resolution": "agreed to start using Collins method next year",
+   "quote": "heather lemieux reviewed the collins center scoring method used to review capital requests.",
+   "tags": [
+    "scoring",
+    "capital requests",
+    "Collins method"
+   ]
+  },
+  {
+   "topic": "Election machines capital request",
+   "resolution": "discussed, no action recorded",
+   "quote": "cost of election machines was discussed.",
+   "tags": [
+    "voting machines",
+    "capital request"
+   ]
+  },
+  {
+   "topic": "Master Plan capital request update",
+   "resolution": "update received, no action recorded",
+   "quote": "heather lemieux provided the committee an update regarding the capital project request for costs associated",
+   "tags": [
+    "Master Plan",
+    "capital request"
+   ]
+  },
+  {
+   "topic": "Fire truck repair",
+   "resolution": "repair budgeted to operating expense",
+   "quote": "john henshaw also relayed that fire chief sullivan needs to have a fire truck repaired.",
+   "tags": [
+    "fire truck",
+    "operating expense",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 11/06/2018 minutes; 11/27/2018 changes deferred",
+   "quote": "minutes from 11/06/2018 approved, minutes from 11/27/2018 changes will be reviewed at the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Capital request prioritization",
+   "resolution": "list prioritized",
+   "quote": "capital requests were discussed and the list was prioritized.",
+   "tags": [
+    "prioritization",
+    "capital requests"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "spreadsheet to be reissued; firm capital budget number to be provided",
+   "quote": "damon mcquaid will reissue the capital spreadsheet.",
+   "tags": [
+    "action items",
+    "capital budget"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "scheduled for January 8 at 5:15",
+   "quote": "next meeting january 8 with a start time of 5:15",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:00",
+   "quote": "11. adjournment at 6:00",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Collins Center scoring method",
+   "where": "text",
+   "quote": "heather lemieux reviewed the collins center scoring method used to review capital requests."
+  },
+  {
+   "name": "Google Document rollup sheet",
+   "where": "text",
+   "quote": "his work on the google document rollup sheet"
+  },
+  {
+   "name": "capital spreadsheet",
+   "where": "text",
+   "quote": "damon mcquaid will reissue the capital spreadsheet."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "capital budget",
+  "Collins method",
+  "voting machines",
+  "fire truck",
+  "Master Plan",
+  "minutes approval",
+  "town manager"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-04-10",
  "docid": "5105",
@@ -12,16 +12,299 @@
  },
  "votes": [
   {
-   "motion": "To approve Option #1 location, to the east of King's Kingdom as a skate park and allowing for future parking for the TC Passios Building",
+   "motion": "To approve Option #1 location, to the east of King's Kingdom, as a skate park and allowing for future parking for the TC Passios Building.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\"d: p. bertram to approve option #1 location, to the east of king's kingdom as a skate park and allowing for future parking for the tc passios building discussion: anthon",
-   "quote_taken_from_text": true
+   "quote": "to approve option #1 location, to the east of king's kingdom as a skate park and allowing for future parking for the tc passios building"
+  },
+  {
+   "motion": "To adjourn the joint meeting of the Planning Board and Agricultural Commission.",
+   "moved_by": "R. Ebersole",
+   "seconded_by": "P. Luck",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "the planning board and agricultural commission adjourned their meetings. motion: r. ebersole 2\": p. luck"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote is clearly recorded in these minutes. A motion appears at the end of the document (page 5-6) by R. Ebersole, seconded by P. Luck, but the motion text is unclear (shows only the word \\\"Changes\\\") and is not legible enough to extract, so it has been omitted. No votes to approve prior minutes or formally adjourn the meeting are recorded.\"",
- "cost_usd": 0.13197150000000002
+ "note": "OCR text, pages 1-6 are the minutes. Some passages are garbled (e.g., the social media policy quotation on pages 2-3 and the joint-meeting roll call on page 4), and the minutes give the skate park vote only as 'All in Favor' with no count. The joint-meeting adjournment motion has no printed result. The public session adjournment at 9:16 p.m. and the recess have no motion recorded. Pages 7-28 are unlabelled newspaper clippings (Sentinel & Enterprise article on Poopapalooza, an unrelated Lowell Sun article) and state agricultural census slides with dollar figures; they are not minutes content, so no figures or votes were taken from them. The minutes print no dollar figures themselves. No documents list heading is printed.",
+ "cost_usd": 0.012295820000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mr. toale announced both town manager and her executive assistant are sick with the flu"
+  },
+  {
+   "name": "R. Ebersole",
+   "role": "Board member",
+   "status": "present",
+   "quote": "mr. ebersole read the statement of policy and noted it is posted on the town website."
+  },
+  {
+   "name": "P. Bertram",
+   "role": "Board member",
+   "status": "present",
+   "quote": "ms. bertram preferred option 1."
+  },
+  {
+   "name": "P. Luck",
+   "role": "Board member",
+   "status": "present",
+   "quote": "ms. luck stated since we are just launching these sites, we need to give them a chance"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "Board member",
+   "status": "present",
+   "quote": "mr. mcquaid stated people should not expect to get an answer from us through facebook"
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "mr. toale announced both town manager and her executive assistant are sick with the flu"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "",
+   "status": "present",
+   "quote": "anthony caiozzo asked if stipulations such as size happen later."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "civil engineer, donating time to the project",
+   "status": "present",
+   "quote": "greg roy, 105 chestnut street, is a civil engineer who would be donating his time to the project."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster ave., reminded all this friday"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DP W Director",
+   "status": "present",
+   "quote": "jack rodriquenz, 178 arbor street, dp w director, stated last week during the board of selectmen meeting"
+  },
+  {
+   "name": "Jeff Mendoza",
+   "role": "Chair, Agricultural Commission",
+   "status": "present",
+   "quote": "agricultural commission members; jeff mendoza, chair; ryan stober, ashley steele, arthur snow"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Agricultural Commission member",
+   "status": "present",
+   "quote": "ryan stober, 275 pleasant st., stated during the snowstorms this year, the dpw issued"
+  },
+  {
+   "name": "Ashley Steele",
+   "role": "Agricultural Commission member",
+   "status": "present",
+   "quote": "agricultural commission members; jeff mendoza, chair; ryan stober, ashley steele, arthur snow"
+  },
+  {
+   "name": "Arthur Snow",
+   "role": "Agricultural Commission member",
+   "status": "present",
+   "quote": "agricultural commission members; jeff mendoza, chair; ryan stober, ashley steele, arthur snow"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "Chair, Planning Board",
+   "status": "present",
+   "quote": "planning board members: greg bittner, chair: matthew allison, kenneth chenis"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "planning board members: greg bittner, chair: matthew allison, kenneth chenis"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Planning Board member",
+   "status": "present",
+   "quote": "planning board members: greg bittner, chair: matthew allison, kenneth chenis"
+  },
+  {
+   "name": "Heather Bowen",
+   "role": "Farmer's Market Manager",
+   "status": "present",
+   "quote": "also attending: heather bowen, farmer's market manager; land use director adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also attending: heather bowen, farmer's market manager; land use director adam burney"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board concurred that stipulations such as size would be determined later in the skate park project.",
+   "quote": "anthony caiozzo asked if stipulations such as size happen later. the board concurred."
+  },
+  {
+   "decision": "Mr. Ebersole suggested that Greg Roy contact the Town Manager about his request to place a crew for a topographical survey.",
+   "quote": "mr. ebersole suggested contacting the town manager."
+  },
+  {
+   "decision": "The Board stated the question of DPW social media messages would be discussed when the social media policy is reexamined.",
+   "quote": "the board stated it would be discussed when reexamining the social media policy."
+  },
+  {
+   "decision": "Mr. Toale said he would place a Discussion of Creation of an Economic Development Committee item on a Board of Selectmen agenda and invite the joint groups, with a charge to be drafted.",
+   "quote": "we will invite all of you to that meeting and we'll take that as a next step."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Farmers' Market working budget",
+   "what_was_recorded": "Ms. Bowen said the Farmer's Market's biggest challenge is its working budget.",
+   "figures_as_printed": [],
+   "quote": "their biggest challenge is a working budget."
+  },
+  {
+   "topic": "Grants for farmer/artist collaborative",
+   "what_was_recorded": "Board members noted grants are available that could help with building restoration and program implementation for a farmer collaborative.",
+   "figures_as_printed": [],
+   "quote": "there are grants available that could help with building restoration and program implementation."
+  },
+  {
+   "topic": "Prevailing wages on skate park",
+   "what_was_recorded": "Asked whether the skate park project must report prevailing wages, Mr. Ebersole said it depends on who does the work and the funding source.",
+   "figures_as_printed": [],
+   "quote": "mr. ebersole stated it depends on who is doing the work and the funding source"
+  },
+  {
+   "topic": "Viability of farm cooperative",
+   "what_was_recorded": "Mr. Mendoza said the cooperative should support itself and make money for those involved, and that the Town should consider it an investment.",
+   "figures_as_printed": [],
+   "quote": "it's important that this coop supports itself and that it makes money for everyone involved."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "",
+   "topic": "Boys and Girls Club fundraiser; thanks to Charter Review Committee",
+   "quote": "tom alonzo, 284 lancaster ave., reminded all this friday, april 13\" at 8:00 p.m. is the lunenburg boys and"
+  },
+  {
+   "speaker": "Jack Rodriquenz",
+   "stated_role": "DP W Director",
+   "topic": "Flat Hill Road water runoff and remarks by a Board member",
+   "quote": "jack rodriquenz, 178 arbor street, dp w director, stated last week during the board of selectmen meeting"
+  },
+  {
+   "speaker": "Ryan Stober",
+   "stated_role": "",
+   "topic": "DPW social media storm messages",
+   "quote": "ryan stober, 275 pleasant st., stated during the snowstorms this year, the dpw issued a public service"
+  },
+  {
+   "speaker": "Jeffrey Mendoza",
+   "stated_role": "Agricultural Commission Chair",
+   "topic": "Thanks Board for approving the skate park",
+   "quote": "jeffrey mendoza, 162 lancaster ave., agricultural commission chair, and former skateboarder, thanked the board for approving the skate park."
+  },
+  {
+   "speaker": "Mr. Mendoza",
+   "stated_role": "",
+   "topic": "Joint meeting: small farms and economic viability",
+   "quote": "mr. mendoza stated he was brought here as a three year old and he's still here."
+  },
+  {
+   "speaker": "resident on Lancaster Road",
+   "stated_role": "",
+   "topic": "Joint meeting: making Lunenburg a destination",
+   "quote": "a resident on lancaster road stated he was happy to see this group making"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, Pledge and public comment",
+   "resolution": "heard; no action",
+   "quote": "the meeting opened at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "public comment",
+    "Chair statement"
+   ]
+  },
+  {
+   "topic": "Social Media Policy Discussion",
+   "resolution": "discussed; to be revisited after new website and legal review",
+   "quote": "mr. toale noted this board adopted a social media policy on july 18, 2017.",
+   "tags": [
+    "social media",
+    "policy",
+    "town website"
+   ]
+  },
+  {
+   "topic": "Skateboard Park Location Proposal at TC Passios",
+   "resolution": "Option #1 approved",
+   "quote": "option #1 places the skate park between tc passios and eagle house senior center on memorial drive and",
+   "tags": [
+    "skate park",
+    "TC Passios",
+    "location"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Agricultural Commission on economic development and agriculture",
+   "resolution": "discussed; Board to place Economic Development Committee on agenda; joint meeting adjourned",
+   "quote": "mr. toale thanked everyone for coming.",
+   "tags": [
+    "agriculture",
+    "economic development",
+    "farmers market",
+    "joint meeting",
+    "Planning Board"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Social Media Policy (Statement of Policy), adopted July 18, 2017",
+   "where": "text",
+   "quote": "mr. toale noted this board adopted a social media policy on july 18, 2017."
+  }
+ ],
+ "tags": [
+  "social media policy",
+  "skate park",
+  "TC Passios",
+  "agriculture",
+  "economic development committee",
+  "farmers market",
+  "joint meeting",
+  "Planning Board",
+  "Agricultural Commission",
+  "public comment",
+  "Flat Hill Road drainage",
+  "prevailing wages"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

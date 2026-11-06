@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-05-08",
  "docid": "5107",
@@ -12,47 +12,444 @@
  },
  "votes": [
   {
-   "motion": "find there was a violation of 1.03(j), 1.04 (a), 1.05 (e) and 1.08 (a) and 1.08 (f) of the liquor license regulations",
-   "moved_by": "R. Ebersole",
+   "motion": "Find that there was a violation of 1.03(j), 1.04(a), 1.05(e), 1.08(a) and 1.08(f) of the liquor license regulations at J & M's Sports Bar",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion; r.ebersole 2nd: p. bertram to find there was a violation of 1.03(j), 1.04 (a), 1.05 (e) and 1.08 (a) and 1.08 (f)"
   },
   {
-   "motion": "suspend the license for a two week period beginning Sunday June 10",
-   "moved_by": "R. Ebersole",
+   "motion": "Suspend the J & M's Sports Bar liquor license for two weeks beginning Sunday June 10, as amended from three weeks",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "mr. ebersole amended his motion to two week suspension beginning sunday june 10"
+   "quote": "to suspend the license for a three week period beginning june 10"
   },
   {
-   "motion": "approve the change of manager and beneficial interest as submitted for B & H Corporation d/b/a Mickey Sheas",
-   "moved_by": "R. Ebersole",
+   "motion": "Approve the change of manager and beneficial interest for B & H Corporation d/b/a Mickey Sheas as submitted",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole to approve the change of manager and beneficial interest as submitted 2nd: p. bertram"
+   "quote": "to approve the change of manager and beneficial interest as submitted 2nd: p. bertram vote: all in favor"
   },
   {
-   "motion": "approve the auto show on Memorial Drive on Wednesday, June 6th",
-   "moved_by": "R. Ebersole",
+   "motion": "Approve the auto show on Memorial Drive on Wednesday, June 6th",
+   "moved_by": "R.Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r.ebersole to approve the auto show on memorial drive on wednesday, june 6th 2nd: p. bertram"
+   "quote": "to approve the auto show on memorial drive on wednesday, june 6th 2nd: p. bertram vote: all in favor"
   },
   {
-   "motion": "approve the Entertainment License for June 9 and raindate of June 10",
+   "motion": "Approve the Entertainment License for the Lunenburg Arts Festival on June 9 with raindate June 10",
    "moved_by": "P. Bertram",
    "seconded_by": "REbersole",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: p. bertram 2\"d: rebersole to approve the entertainment license for june 9\" and raindate of june 10th"
+   "quote": "and raindate of june 10th vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with readable votes. All five votes recorded in these minutes.",
- "cost_usd": 0.12457649999999999
+ "note": "OCR of a scanned minutes document with garbled passages (e.g., the goals section near pages 9-10 and pages 16-17, which are largely unreadable or unlabelled). The minutes record vote results only as \"All in Favor\" with no counts, and no roll call is given, so attendance is inferred from speaking and voting. Roles marked \"not stated\" are not printed in the text. No approval of prior minutes, adjournment, or executive session motion appears in the readable text. Member \"Ms. Luck\" is listed absent. The liquor suspension vote is recorded on the amended two-week motion. Names like \"REbersole\" are kept as printed (OCR).",
+ "cost_usd": 0.015451420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. toale announced the following vacancies:"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "absent",
+   "quote": "not present: phyllis luck, member"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "mr. ebersole thanked everyone who came out to annual town meeting on last saturday."
+  },
+  {
+   "name": "Ms. Bertram",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. bertram stated she would be more amenable to a two week given the violations that we have identified."
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. mcquaid stated previously when we suspended for two weeks we were dealing with intoxication with people on the premises,"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "ms. lemieux reviewed the test website features."
+  },
+  {
+   "name": "Police Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "police chief marino reported hannah anderson is organizing a grassroots effort to raise funding for purchasing"
+  },
+  {
+   "name": "Julia Callahan",
+   "role": "",
+   "status": "present",
+   "quote": "julia callahan, 24 beal street, commented in regards to transforming the passios building into town offices and"
+  },
+  {
+   "name": "Melissa Thibodeau",
+   "role": "licensee",
+   "status": "present",
+   "quote": "he invited the licensee, melissa thibodeau and her attorney donna pawluk to come forward as well as the police department officer, sergeant jack hebert."
+  },
+  {
+   "name": "Donna Pawluk",
+   "role": "her attorney (for the licensee)",
+   "status": "present",
+   "quote": "he invited the licensee, melissa thibodeau and her attorney donna pawluk to come forward as well as the police department officer, sergeant jack hebert."
+  },
+  {
+   "name": "Sergeant Jack Hebert",
+   "role": "Police Department officer",
+   "status": "present",
+   "quote": "he invited the licensee, melissa thibodeau and her attorney donna pawluk to come forward as well as the police department officer, sergeant jack hebert."
+  },
+  {
+   "name": "Robert Herrick",
+   "role": "owner",
+   "status": "present",
+   "quote": "proposed manager rebecca andrews-grifoni, 127 kinsman road, fitchburg, and owner robert herrick"
+  },
+  {
+   "name": "Rebecca Andrews-Grifoni",
+   "role": "Proposed Manager",
+   "status": "present",
+   "quote": "proposed manager rebecca andrews-grifoni, 127 kinsman road, fitchburg, and owner robert herrick"
+  },
+  {
+   "name": "Laura Brzozski",
+   "role": "presented the request of the Cultural Council",
+   "status": "present",
+   "quote": "laura brzozski, 21 francis ave., and minna schoulten, 3 oak ave., presented the request of the cultural council"
+  },
+  {
+   "name": "Minna Schoulten",
+   "role": "presented the request of the Cultural Council",
+   "status": "present",
+   "quote": "laura brzozski, 21 francis ave., and minna schoulten, 3 oak ave., presented the request of the cultural council"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "michael-ray jeffreys, 1170 mass. ave, stated the town manager was doing a great job."
+  },
+  {
+   "name": "Katey Adams",
+   "role": "",
+   "status": "present",
+   "quote": "katey adams, 45 williams drive, regarding economic development, noted a lot of times we talk about what to add"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board to set next year's goals in a workshop by July so they can begin work on them.",
+   "quote": "he would like to set next year's goals for the board in workshop by july so they can begin to work on them."
+  },
+  {
+   "decision": "The Quarterly Financial Report to be reviewed at the next meeting.",
+   "quote": "the quarterly financial report will be reviewed at the next meeting."
+  },
+  {
+   "decision": "Board's next step is to develop a task force (business or economic development), beginning with an agricultural focus.",
+   "quote": "our next step as a board is to develop a task force, whether it's a business or economic development task force"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "An accounts payable warrant was presented for the meeting.",
+   "figures_as_printed": [
+    "$149,089.62"
+   ],
+   "quote": "an accounts payable warrant in the amount of $149,089.62 was presented."
+  },
+  {
+   "topic": "4th Quarter Water Commitment",
+   "what_was_recorded": "The 4th Quarter Water Commitment was presented.",
+   "figures_as_printed": [
+    "$7,612.40"
+   ],
+   "quote": "the 4th quarter water commitment of $7,612.40 was presented"
+  },
+  {
+   "topic": "Tax title collections",
+   "what_was_recorded": "Tax title properties brought in a stated total over the last two months.",
+   "figures_as_printed": [
+    "$104,934.96"
+   ],
+   "quote": "in just the last two months, a total of $104,934.96 has been on tax title properties."
+  },
+  {
+   "topic": "Facilities account for deferred maintenance",
+   "what_was_recorded": "The FY2019 approved budget added money to the Facilities account for deferred maintenance.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "fy2019 approved budget included an additional $40,000 in the facilities account to address deferred maintenance projects."
+  },
+  {
+   "topic": "FY19 Capital Plan infrastructure items",
+   "what_was_recorded": "The FY19 Capital Plan included funding for DPW roof, asbestos abatement and a modular classroom demolition.",
+   "figures_as_printed": [
+    "$65,000"
+   ],
+   "quote": "including $65,000 to address the dpw roof, asbestos abatement at turkey hill, and demolition of a modular classroom."
+  },
+  {
+   "topic": "Green Communities funding application",
+   "what_was_recorded": "The Town applied for the next round of Green Communities funding for energy efficiency projects, to defer taxpayer spending.",
+   "figures_as_printed": [],
+   "quote": "in march we applied for the next round of green communities funding to address energy efficiency projects"
+  },
+  {
+   "topic": "Property condition assessments funding",
+   "what_was_recorded": "Funding was approved at the November 2017 Special Town Meeting for seven property condition assessments.",
+   "figures_as_printed": [],
+   "quote": "funding was requested and approved at the november 2017 special town meeting to perform seven property condition assessments"
+  },
+  {
+   "topic": "925 Mass Ave environmental cleanup funding",
+   "what_was_recorded": "Discussion of possible funding for clean-up costs at the former gas station property.",
+   "figures_as_printed": [],
+   "quote": "any possible funding for clean-up costs, and assistance through"
+  },
+  {
+   "topic": "AED purchase fundraising for Police Department",
+   "what_was_recorded": "A grassroots fundraising effort to buy AEDs for the Police Department was reported, with a fundraising basketball game.",
+   "figures_as_printed": [],
+   "quote": "police chief marino reported hannah anderson is organizing a grassroots effort to raise funding for purchasing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Julia Callahan",
+   "stated_role": "24 Beal Street",
+   "topic": "Passios Building municipal campus and school safety",
+   "quote": "julia callahan, 24 beal street, commented in regards to transforming the passios building into town offices and"
+  },
+  {
+   "speaker": "Police Chief Marino",
+   "stated_role": "Police Chief",
+   "topic": "AED fundraiser basketball game",
+   "quote": "police chief marino reported hannah anderson is organizing a grassroots effort to raise funding for purchasing"
+  },
+  {
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "1170 Mass. Ave",
+   "topic": "Town Manager praise, election signage, Ms. Bertram's service",
+   "quote": "michael-ray jeffreys, 1170 mass. ave, stated the town manager was doing a great job."
+  },
+  {
+   "speaker": "Katey Adams",
+   "stated_role": "45 Williams Drive",
+   "topic": "Economic development: enhance existing businesses",
+   "quote": "katey adams, 45 williams drive, regarding economic development, noted a lot of times we talk about what to add"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, vacancies and public comment",
+   "resolution": "no action",
+   "quote": "mr. toale announced the following vacancies:",
+   "tags": [
+    "vacancies",
+    "public comment",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Liquor license violation hearing - J & M's Sports Bar",
+   "resolution": "violation found; two-week suspension (amended from three weeks)",
+   "quote": "liquor license violation hearing - j & m's sports bar- 5 summer street, #10; license #00047-gp-0636",
+   "tags": [
+    "liquor license",
+    "violation hearing",
+    "police"
+   ]
+  },
+  {
+   "topic": "Liquor license change of manager and beneficial interest - B & H Corporation d/b/a Mickey Sheas",
+   "resolution": "approved",
+   "quote": "liquor license change of manager & beneficial interest- b & h corporation d/b/a mickey sheas",
+   "tags": [
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Lunenburg Police Association auto show request",
+   "resolution": "approved",
+   "quote": "lunenburg police association auto show request- police chief marino",
+   "tags": [
+    "police",
+    "event",
+    "Memorial Drive"
+   ]
+  },
+  {
+   "topic": "Entertainment license for Lunenburg Arts Festival",
+   "resolution": "approved",
+   "quote": "weekday/sunday entertainment license for lunenburg arts festival -june 9/raindate june 10",
+   "tags": [
+    "entertainment license",
+    "Cultural Council",
+    "event"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "town manager report 925 mass ave (old gas station):",
+   "tags": [
+    "town manager",
+    "gas station property",
+    "MassDevelopment",
+    "ADA"
+   ]
+  },
+  {
+   "topic": "Town Manager goals and objectives status update",
+   "resolution": "reviewed; board rated goals",
+   "quote": "town manager goals and objectives status update - may 8, 2018",
+   "tags": [
+    "town manager goals",
+    "website",
+    "infrastructure",
+    "tax title",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action file issues",
+   "resolution": "warrant presented; no action recorded",
+   "quote": "an accounts payable warrant in the amount of $149,089.62 was presented.",
+   "tags": [
+    "warrants",
+    "water commitment"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "ms. bertram reported the 2019- 2023 transportation improvement plan (tip) has been released and is open for",
+   "tags": [
+    "MRPC",
+    "transportation",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Department reports - quarterly financial report",
+   "resolution": "deferred to next meeting",
+   "quote": "the quarterly financial report will be reviewed at the next meeting.",
+   "tags": [
+    "finance"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "michael-ray jeffreys, 1170 mass. ave, stated the town manager was doing a great job.",
+   "tags": [
+    "public comment",
+    "economic development"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft tax title and foreclosure policy",
+   "where": "list",
+   "quote": "draft policy attached. this can be discussed at another time."
+  },
+  {
+   "name": "Town asset inventory",
+   "where": "text",
+   "quote": "town manager will develop an inventory of all town assets including town buildings, school buildings, town-"
+  },
+  {
+   "name": "Police report (Sergeant Jack Hebert)",
+   "where": "text",
+   "quote": "sergeant hebert read his police report aloud."
+  },
+  {
+   "name": "Test lunenburg website",
+   "where": "text",
+   "quote": "ms. lemieux reviewed the test website features."
+  },
+  {
+   "name": "Talent bank form",
+   "where": "text",
+   "quote": "anyone interested in any of these positions should submit a talent bank form to the board of"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "an accounts payable warrant in the amount of $149,089.62 was presented."
+  },
+  {
+   "name": "Ms. Luck's submitted comments",
+   "where": "text",
+   "quote": "mr. toale read from ms. luck's submitted comments"
+  },
+  {
+   "name": "2019-2023 Transportation Improvement Plan (TIP)",
+   "where": "text",
+   "quote": "ms. bertram reported the 2019- 2023 transportation improvement plan (tip) has been released and is open for"
+  },
+  {
+   "name": "Unified Planning Work Plan",
+   "where": "text",
+   "quote": "regarding the unified planning work plan (of wl) there are a couple of tasks in the plan"
+  },
+  {
+   "name": "Property condition assessment reports",
+   "where": "text",
+   "quote": "the reports outlined immediate repairs and extended building maintenance with the associated costs"
+  },
+  {
+   "name": "Quarterly Financial Report",
+   "where": "text",
+   "quote": "the quarterly financial report will be reviewed at the next meeting."
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "license violation hearing",
+  "public safety",
+  "town manager goals",
+  "tax title",
+  "warrants",
+  "public comment",
+  "economic development",
+  "entertainment license",
+  "town website",
+  "Memorial Drive"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "draft policy attached"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2018-12-11",
  "docid": "1890",
@@ -12,23 +12,232 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the November 13, 2018 meeting as amended",
-   "moved_by": "Betty DiGiacomo",
-   "seconded_by": "Sarah Grant",
+   "motion": "Approve the minutes of the November 13, 2018 meeting as amended.",
+   "moved_by": "Ms. DiGiacomo",
+   "seconded_by": "Ms. Grant",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "ms. digiacomo moved to approve the minutes from the november 13, 2018 meeting as amended. ms. grant seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Betty DiGiacomo",
-   "seconded_by": "Jacquelyn Dwyer",
+   "motion": "Adjourn the meeting at 10:23 a.m.",
+   "moved_by": "Ms. DiGiacomo",
+   "seconded_by": "Ms. Dwyer",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "ms. digiacomo motioned to adjourn the meeting. ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "motioned to adjourn the meeting. ms. dwyer seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded: minutes approval and adjournment, both unanimous.",
- "cost_usd": 0.0826515
+ "note": "Text extraction of a typed minutes document, not a scan; votes are readable. The minutes carry a stamp mid-page reading \"Unanimously approved by COA at January 8, 2019 meeting.\" Two motions recorded, both procedural. Public comment was \"none\". The minutes name no dollar figures. Documents: the only document named is an AARP article Ms. Brown distributed, mentioned in passing; the minutes set out no list or heading of documents, so printed is false.",
+ "cost_usd": 0.00691022,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Deb Lincoln",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Kevin McNally",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Sarah Grant",
+   "status": "present",
+   "quote": "chairperson pete lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd, jacquelyn dwyer, deb lincoln, kevin mcnally, judy tarbell, barbara brown, sarah grant"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "status": "absent",
+   "quote": "absent: jane rabbitt"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "Outreach Coordinator",
+   "status": "present",
+   "quote": "outreach coordinator pauline roy, selectman jamie toale, eagle house supporters liaison marie burchfield"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "outreach coordinator pauline roy, selectman jamie toale, eagle house supporters liaison marie burchfield"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "outreach coordinator pauline roy, selectman jamie toale, eagle house supporters liaison marie burchfield"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes corrected to fix Jacquelyn Dwyer being listed on both the present and absent lists.",
+   "quote": "mr. lincoln noted that jacquelyn dwyer was included on both the present and absent list. the minutes were corrected."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY20 Budget",
+   "what_was_recorded": "Director Doherty said a budget meeting would be held in January and that she will not ask for more than level funding.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty reported there would be a meeting in january concerning the budget, and said she won't be asking for more than level funding."
+  },
+  {
+   "topic": "Formula Grant funds",
+   "what_was_recorded": "Director Doherty reported that the Formula Grant funds for FY 19 have officially been distributed; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty also reported that the formula grant funds for fy 19 have officially been distributed."
+  },
+  {
+   "topic": "Eagle House Supporters fund raising",
+   "what_was_recorded": "The Eagle House Supporters are looking for ideas for fund raisers; no dollar amount was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. burchfield added that the supporters are looking for ideas for fund raisers."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "informational, no action",
+   "quote": "ms. doherty informed the board that former meal site manager joanne brazell passed away.",
+   "tags": [
+    "announcements",
+    "staff"
+   ]
+  },
+  {
+   "topic": "Minutes approval (November 13, 2018)",
+   "resolution": "approved as amended",
+   "quote": "ms. digiacomo moved to approve the minutes from the november 13, 2018 meeting as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed, no action",
+   "quote": "ms. roy commented that the program did not go quite as smoothly as it did the first time around",
+   "tags": [
+    "Bridges Together",
+    "budget",
+    "capital plan",
+    "dementia friendly",
+    "Memory Cafe",
+    "building",
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no report given",
+   "quote": "ms. lincoln reported that there is no report from the eagle house supporters as their meeting was canceled",
+   "tags": [
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications: none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "informational, no action",
+   "quote": "ms. lincoln encouraged board members to spread the word about telephone call scams.",
+   "tags": [
+    "scam awareness",
+    "AARP article"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:23 a.m., passed unanimously",
+   "quote": "motioned to adjourn the meeting. ms. dwyer seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "AARP article about themed Memory Cafes",
+   "where": "text",
+   "quote": "ms. brown distributed an aarp article about themed memory cafes."
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "senior programs",
+  "Bridges Together",
+  "budget FY20",
+  "Memory Cafe",
+  "dementia friendly",
+  "Eagle House",
+  "minutes",
+  "December 2018"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-09-14",
  "docid": "2185",
@@ -12,30 +12,287 @@
  },
  "votes": [
   {
-   "motion": "Approve the FY18 salary transfer from the Salary Reserve to the Finance Director Town Accountant salary in the amount of $15,492.80 and to the Finance Director Town Accountant cell phone stipend in the amount of $480",
-   "moved_by": "Mark Erickson",
+   "motion": "Approve the FY18 salary reserve transfer as read (salary and cell phone stipend transfers for the Town Accountant).",
+   "moved_by": "Mark",
+   "seconded_by": "",
    "outcome": "passed 6-0",
    "procedural": false,
    "quote": "mark moved we approve the fy18 salary transfer as read. all in favor 6-0"
   },
   {
-   "motion": "Approve the minutes from 05-25-17 as amended",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Hannah Anderson",
-   "outcome": "passed",
+   "motion": "Approve the minutes of 05-25-17 as amended.",
+   "moved_by": "John",
+   "seconded_by": "Hannah",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "john motion as amended. hannah seconded. mark abstained."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mark Erickson",
-   "seconded_by": "John Henshaw",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mark",
+   "seconded_by": "John",
    "outcome": "passed 6-0",
    "procedural": true,
    "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0 at 8:07 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1073235
+ "note": "Draft minutes from OCR text. Cindy Testa's attendance status is not clear from the layout, so it is marked not stated. The minutes name Heather Lemieux and Karen Brochu under a guest-style line; their status is taken as present. The motion approving the 05-25-17 minutes records no tally and no clear result. The salary figure prints as \"$15.492.80\" (likely OCR of $15,492.80), kept as printed. The text contains garbled OCR lines on page 2 that were not used. The \"Attachments (0):\" line is recorded as a heading with zero items.",
+ "cost_usd": 0.005373419999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin"
+  },
+  {
+   "name": "George Martin",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "terri burchfield, mark erickson, jay simeone, john henshaw, hannah anderson, george martin"
+  },
+  {
+   "name": "Cindy Testa",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "cindy testa"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux - town manager. karen brochu - town accountant"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "heather lemieux - town manager. karen brochu - town accountant"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY18 Salary Reserve transfer to Town Accountant salary",
+   "what_was_recorded": "A transfer from the Salary Reserve to the Finance Director/Town Accountant salary was requested for the Town Accountant contract agreement.",
+   "figures_as_printed": [
+    "$15.492.80"
+   ],
+   "quote": "transfer from the salary reserve to the finance director town accountant salary the amount of $15.492.80."
+  },
+  {
+   "topic": "Town Accountant cell phone stipend transfer",
+   "what_was_recorded": "A transfer from the Salary Reserve to the Town Accountant cell phone stipend was requested under the same contract agreement.",
+   "figures_as_printed": [
+    "$480"
+   ],
+   "quote": "and a transfer in the amount of $480 from the salary reserve transfer to the finance director town accountant cell phone stipend."
+  },
+  {
+   "topic": "New Growth estimate",
+   "what_was_recorded": "The Assessor reported estimated Real Estate New Growth; the Personal Property figure is still pending from a contracted vendor.",
+   "figures_as_printed": [
+    "$374K"
+   ],
+   "quote": "new growth estimated at $374k for real estate."
+  },
+  {
+   "topic": "Land auction proceeds",
+   "what_was_recorded": "Land auction net proceeds after expenses will go to Free cash; four of five properties sold.",
+   "figures_as_printed": [
+    "$37K"
+   ],
+   "quote": "land auction: $37k net after expenses that will go to free cash."
+  },
+  {
+   "topic": "Land auction bids",
+   "what_was_recorded": "The low and high bids on the land auction were reported.",
+   "figures_as_printed": [
+    "5K",
+    "$15K"
+   ],
+   "quote": "5k low bid. $15k high bid."
+  },
+  {
+   "topic": "Road salt bid",
+   "what_was_recorded": "The road salt bid came in lower than last year; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "road salt bid came less than last year."
+  },
+  {
+   "topic": "OPEB cost and budget effect",
+   "what_was_recorded": "Discussion of how to determine OPEB cost, split it between Schools and Town, and how funding OPEB affects the Town and school budgets; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "how does funding opeb effect the town budget and school budget in different ways?"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY18 Salary Reserve transfer to Finance Director/Town Accountant salary",
+   "amount_as_printed": "$15.492.80",
+   "outcome": "approved 6-0",
+   "quote": "transfer from the salary reserve to the finance director town accountant salary the amount of $15.492.80."
+  },
+  {
+   "description": "Salary Reserve transfer to Town Accountant cell phone stipend",
+   "amount_as_printed": "$480",
+   "outcome": "approved 6-0 (within the motion to approve the FY18 salary transfer as read)",
+   "quote": "and a transfer in the amount of $480 from the salary reserve transfer to the finance director town accountant cell phone stipend."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and comments",
+   "resolution": "no action; Notice of Decision and ATFC workshop circulated",
+   "tags": [
+    "call to order",
+    "planning board",
+    "ATFC"
+   ],
+   "quote": "1. chairman called the meeting to order at 7:00 pm."
+  },
+  {
+   "topic": "FY18 salary reserve transfer",
+   "resolution": "approved 6-0",
+   "tags": [
+    "transfer",
+    "salary reserve",
+    "town accountant"
+   ],
+   "quote": "request for a fy18 salary reserve transfer:"
+  },
+  {
+   "topic": "Town financial officers reports",
+   "resolution": "received; no action",
+   "tags": [
+    "new growth",
+    "land auction",
+    "town hall painting",
+    "road salt"
+   ],
+   "quote": "from the town assessor office: new growth estimated at $374k for real estate."
+  },
+  {
+   "topic": "Review of minutes 05-25-17",
+   "resolution": "approved as amended; Mark abstained",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review of minutes: 05-25-17"
+  },
+  {
+   "topic": "Budget goals and opportunities: OPEB",
+   "resolution": "discussed; no action",
+   "tags": [
+    "OPEB",
+    "schools",
+    "town budget"
+   ],
+   "quote": "discuss other post employment benefits (opeb) expectations:"
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reported; no action",
+   "tags": [
+    "committee updates",
+    "capital planning",
+    "schools",
+    "charter review"
+   ],
+   "quote": "committee and department updates;"
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "noted; no action",
+   "tags": [
+    "pavement management",
+    "surplus property",
+    "contracts"
+   ],
+   "quote": "pavement management plan. starting summer street soon."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for 9-28-17 (later date 10-12-17 also printed)",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meeting: 9-28-17"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 8:07 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "mark made a motion to adjourn. john seconded the motion. the committee approved the motion 6-0 at 8:07 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Decision by the Planning Board relating to 40 Pioneer Drive",
+   "where": "text",
+   "quote": "the chair circulated a \"notice of decision\" by the planning board that relates to 40 pioneer drive."
+  },
+  {
+   "name": "Agenda for the Association of Town Finance Committees (ATFC) annual meeting workshop on October 21, 2017",
+   "where": "text",
+   "quote": "the chair circulaled the agenda for the association of town finance committee (atfc) annual meeting this"
+  },
+  {
+   "name": "New spreadsheet (capital project list)",
+   "where": "text",
+   "quote": "met with the tm and discussed how to simplify the new spreadsheet."
+  },
+  {
+   "name": "Minutes of 05-25-17",
+   "where": "text",
+   "quote": "review of minutes: 05-25-17"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "salary transfer",
+  "OPEB",
+  "land auction",
+  "free cash",
+  "new growth",
+  "town hall painting",
+  "road salt",
+  "committee updates",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (0):"
+ },
+ "dropped_unquoted_by_field": {}
 }

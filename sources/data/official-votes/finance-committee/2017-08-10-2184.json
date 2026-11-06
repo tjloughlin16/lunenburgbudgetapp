@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2017-08-10",
  "docid": "2184",
@@ -12,6 +12,285 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The OCR'd minutes contain reports and discussion by the Town Accountant, updates from committees and departments, but no motions, seconds, or voting outcomes are recorded in the text provided.",
- "cost_usd": 0.0803005
+ "note": "Scanned/OCR text, not a clean transcript. No motions, votes, approvals of minutes, or adjournment are recorded in the text, so votes is empty. Page 2 begins mid-sentence in the debt policy discussion and item 4's heading is missing from the text. The attendance Present/Absent/Guest labels run together in the OCR, so Mark Erickson and Cindy Testa are marked \"not stated\". The charter line says \"Mark Brickson\" while the attendance line says \"Mark Erickson\"; both are recorded as printed. Roles for committee members are not printed. The attachment block on page 3 is placed after item 7 but may belong to a different item. Only the Beacon newsletter and the Q4 FY17 report are named as documents.",
+ "cost_usd": 0.00633072,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "status": "present",
+   "quote": "terri burchfield, jay simeone, john henshaw, hannah anderson, george martin",
+   "role": "not stated"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "terri burchfield, jay simeone, john henshaw, hannah anderson, george martin",
+   "role": "not stated"
+  },
+  {
+   "name": "John Henshaw",
+   "status": "present",
+   "quote": "terri burchfield, jay simeone, john henshaw, hannah anderson, george martin",
+   "role": "not stated"
+  },
+  {
+   "name": "Hannah Anderson",
+   "status": "present",
+   "quote": "terri burchfield, jay simeone, john henshaw, hannah anderson, george martin",
+   "role": "not stated"
+  },
+  {
+   "name": "George Martin",
+   "status": "present",
+   "quote": "terri burchfield, jay simeone, john henshaw, hannah anderson, george martin",
+   "role": "not stated"
+  },
+  {
+   "name": "Mark Erickson",
+   "status": "not stated",
+   "quote": "mark erickson, cindy testa",
+   "role": "not stated"
+  },
+  {
+   "name": "Cindy Testa",
+   "status": "not stated",
+   "quote": "mark erickson, cindy testa",
+   "role": "not stated"
+  },
+  {
+   "name": "Karen Brochu",
+   "status": "present",
+   "quote": "karen brochu - town accountant,",
+   "role": "Town Accountant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Terri Burchfield and Mark Brickson to sit on the Charter Review Committee (the Finance Committee has two seats).",
+   "quote": "terri burchfield and mark brickson to sit on the charter review committee. the charter is reviewed every ten years and has nine"
+  },
+  {
+   "decision": "Capital planning committee to meet on August 15 to review the process for streamlining the Capital Plan.",
+   "quote": "committee to meet on august 15th to review the process."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY17 total revenues vs estimates",
+   "what_was_recorded": "Total FY17 revenues came in above the revenue estimates by a percentage.",
+   "figures_as_printed": [
+    "1.07%"
+   ],
+   "quote": "total revenues for fy17 were 1.07% more than what our revenue estimates were."
+  },
+  {
+   "topic": "Local receipts and motor vehicle excise",
+   "what_was_recorded": "Local receipts were collected above estimate, with motor vehicle excise a major increase.",
+   "figures_as_printed": [
+    "16.36%",
+    "$253,604"
+   ],
+   "quote": "motor vehicle excise at $253,604 more than estimated"
+  },
+  {
+   "topic": "Miscellaneous non-recurring revenue",
+   "what_was_recorded": "Miscellaneous non-recurring revenues ran over budget, mostly from one-time water betterments.",
+   "figures_as_printed": [
+    "$156k"
+   ],
+   "quote": "miscellaneous non reoccurring revenues $156k more than what was budgeted."
+  },
+  {
+   "topic": "Water betterments from Meadow Woods trailer park",
+   "what_was_recorded": "A one-time water betterment payment from Meadow Woods contributed to the miscellaneous revenue increase.",
+   "figures_as_printed": [
+    "$62,781"
+   ],
+   "quote": "water betterment's from meadow woods trailer park. $62,781."
+  },
+  {
+   "topic": "Tax collections and tax lien revenue",
+   "what_was_recorded": "Taxes collected were a percentage of the levy, below the levy estimate, offset by tax lien revenue not in the estimate.",
+   "figures_as_printed": [
+    "99.02%",
+    "$241K",
+    "$96K"
+   ],
+   "quote": "we received $96k in tax lien revenue that was not accounted for in the estimate."
+  },
+  {
+   "topic": "State aid",
+   "what_was_recorded": "State aid came in above estimate, mostly from charter school tuition.",
+   "figures_as_printed": [
+    "$50,285"
+   ],
+   "quote": "state aid: received $50,285 more than estimated."
+  },
+  {
+   "topic": "Expenditures encumbered and appropriation close-outs",
+   "what_was_recorded": "Expenditures were encumbered at a percentage of budget, with appropriation close-outs totaling a figure.",
+   "figures_as_printed": [
+    "99.49%",
+    "$358,084"
+   ],
+   "quote": "we expended and or encumbered 99.49% of budgeted expenditures."
+  },
+  {
+   "topic": "Appropriation close-outs",
+   "what_was_recorded": "Appropriation close-outs totaled a figure at year end.",
+   "figures_as_printed": [
+    "$358,084"
+   ],
+   "quote": "$358,084 in appropriations close outs."
+  },
+  {
+   "topic": "Payments above State assessment (Choice and Charter tuition)",
+   "what_was_recorded": "The town paid more than its State assessment, mostly for Choice and Charter school tuition adjustments; School committee made budget adjustments to balance.",
+   "figures_as_printed": [
+    "$170,787"
+   ],
+   "quote": "we also paid $170,787 more than our state"
+  },
+  {
+   "topic": "Free cash estimate",
+   "what_was_recorded": "Free cash was estimated for the current year.",
+   "figures_as_printed": [
+    "$800K"
+   ],
+   "quote": "free cash is estimated at $800k for this year."
+  },
+  {
+   "topic": "Snow deficit",
+   "what_was_recorded": "The snow deficit was covered; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the snow deficit was able to be covered."
+  },
+  {
+   "topic": "Debt policy and debt schedule",
+   "what_was_recorded": "Discussion of fitting municipal building projects into the debt schedule within the debt policy guidelines; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "and karen are working on trying to see what they could fit into the debt schedule that will meet"
+  },
+  {
+   "topic": "Fire truck repairs vs replacement",
+   "what_was_recorded": "Committee asked about the life expectancy of the fire truck if more repair funds were spent; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "life expectancy of the truck if more funds are put into repairs."
+  },
+  {
+   "topic": "Town insurance rates",
+   "what_was_recorded": "Town insurance rates are under review, the first in 12 years; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town insurance rates are up for review."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Budget transfers needed at year end were made internally, without the 4453B authorization that requires FinCom signatures.",
+   "amount_as_printed": "not stated",
+   "outcome": "All transfers completed internally; 4453B authorization not needed.",
+   "quote": "all transfers that needed to be done were able to be done internally with out the 4453b authorization"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:00 pm, non-televised",
+   "quote": "chairman called the meeting to order at 7:00 pm. non televised",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Comments and new communications",
+   "resolution": "noted public hearings, Charter Review seats, Beacon newsletter; no public comment",
+   "quote": "charter review committee: the finance committee has two seats on the committee.",
+   "tags": [
+    "charter review",
+    "public hearings",
+    "newsletter"
+   ]
+  },
+  {
+   "topic": "Town Manager and Town Accountant report",
+   "resolution": "discussed FY17 year-end results; no action",
+   "quote": "karen gave an overview of the year end appropriations and expenditures.",
+   "tags": [
+    "year-end close",
+    "revenue",
+    "expenditures",
+    "free cash",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Debt policy and municipal buildings (item number not printed in text)",
+   "resolution": "discussed; no action",
+   "quote": "karen commented that the bos is having a workshop to discuss the municipal buildings.",
+   "tags": [
+    "debt policy",
+    "municipal buildings"
+   ]
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "none to review",
+   "quote": "5. review of minutes: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports given; no action recorded",
+   "quote": "met with chief sullivan. one question the committee had from the last",
+   "tags": [
+    "capital planning",
+    "fire department",
+    "insurance",
+    "public access",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Ongoing business",
+   "resolution": "heading only; no content printed under it",
+   "quote": "7. ongoing business:",
+   "tags": [
+    "ongoing business"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY17 Fourth quarter revenues/expenditures report from the Town Accountant",
+   "where": "list",
+   "quote": "attachments (1): fy17 fourth quarter revenues/expenditures report from the town accountant"
+  },
+  {
+   "name": "Beacon newsletter",
+   "where": "text",
+   "quote": "the chair circulated the beacon newsletter"
+  }
+ ],
+ "tags": [
+  "FY17 year-end close",
+  "revenue and expenditures",
+  "free cash",
+  "debt policy",
+  "capital planning",
+  "fire truck",
+  "insurance rates",
+  "charter review",
+  "transfers",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments (1)"
+ },
+ "dropped_unquoted_by_field": {}
 }

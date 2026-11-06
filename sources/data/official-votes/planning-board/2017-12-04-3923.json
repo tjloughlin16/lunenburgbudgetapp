@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-12-04",
  "docid": "3923",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session pursuant to M.G.L. C.30A, 921 to discuss litigation strategy regarding Settler's Solar, LLC's appeal of a Notice of Constructive Approval of Special Permit with Development Plan Review for a large-scale ground-mounted photovoltaic installation at 994 Northfield Road",
+   "motion": "Enter Executive Session pursuant to M.G.L. C.30A, 921, to discuss litigation strategy on the appeal of the Settler's Solar, LLC Notice of Constructive Approval, and return to Regular Session afterward.",
    "moved_by": "M. Allison",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "m. allison made the motion, seconded by d. prokowiew, roll call vote: k. chenis, aye; d. prokowiew, aye; m. jeffreys, aye; m. allison, aye; g. bittner, aye."
   },
   {
-   "motion": "Exit Executive Session and return to Regular Session",
+   "motion": "Exit Executive Session and return to Regular Session.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed 5-0",
@@ -29,6 +29,99 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1115575
+ "note": "OCR text from a scanned page; the header lists titles in a layout that does not clearly tie 'Land Use Director' to a name, so no role is assigned to Adam R. Burney. The chair is printed as 'G. Bitter' in the body and 'Gregory Bittner' in the attendance line; the attendance spelling is used. The commendation sentence has its subject dropped in OCR and is not recorded. Adjournment at 8:27 PM is recorded with no motion or vote. Marjorie J. Boggio appears only in the header; her attendance is not stated. No public comment, budget figures, or document list are printed.",
+ "cost_usd": 0.0037275200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Planning Board Chair (minutes print 'G. Bitter')",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Marjorie J. Boggio",
+   "role": "Administrative Assistant",
+   "status": "not stated",
+   "quote": "marjorie j. boggio administrative assistant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Burney requested that G. Bittner provide a letter of resignation from his appointments to the Capital Planning Committee, School Building Committee, and Green Community Task Force.",
+   "quote": "a. burney requested g. bittner provide a letter of resignation from those positions."
+  },
+  {
+   "decision": "Board reorganization to take place at the December 11 Board meeting, following G. Bittner stepping back from his committee appointments.",
+   "quote": "reorganization will take place at the december 11 board meeting."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive Session on Settler's Solar appeal",
+   "resolution": "entered executive session for litigation strategy; returned to regular session",
+   "quote": "planning board chair g. bitter requested a motion to enter executive session pursuant to m.g.l. c.30a, 921, to"
+  },
+  {
+   "topic": "Chair Bittner stepping back from committee appointments",
+   "resolution": "no action; resignation letter requested, reorganization set for December 11",
+   "quote": "g. bittner informed the board that for personal reasons, he needs to step back from his board appointments to the capital"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Constructive Approval of Special Permit with Development Plan Review (Settler's Solar, LLC)",
+   "where": "text",
+   "quote": "appeal of a \"notice of constructive approval of special permit with development plan review\" received from settler's solar, llc"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "solar",
+  "special permit",
+  "Northfield Road",
+  "committee appointments",
+  "resignation",
+  "reorganization"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

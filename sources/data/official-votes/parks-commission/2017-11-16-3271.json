@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2017-11-16",
  "docid": "3271",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of September 21, 2017",
+   "motion": "Approve the minutes of September 21, 2017.",
    "moved_by": "Karin Menard",
    "seconded_by": "Dennis Mannone",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "karin menard motioned and dennis mannone seconded to approve the minutes of sep- tember 21, 2017 - approved 3",
-   "quote_taken_from_text": true
+   "quote": "karin menard motioned and dennis mannone seconded to approve the minutes of"
   },
   {
-   "motion": "approve the minutes of August 17, 2017",
+   "motion": "Approve the minutes of August 17, 2017 (Dennis Mannone did not vote, as he was not present at that meeting).",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 2-0",
    "procedural": true,
-   "quote": "karin menard motioned and pete mccauliff seconded to approve the minutes of august 17, 2017 - approved 2-0 (dennis mannone did not vote as he was not present at meeting)."
+   "quote": "karin menard motioned and pete mccauliff seconded to approve the minutes of august 17, 2017 - approved 2-0"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 9:10pm.",
    "moved_by": "Karin Menard",
    "seconded_by": "Pete McCauliff",
    "outcome": "passed 3-0",
@@ -38,6 +37,152 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted via macOS Vision. Text is readable; all three recorded votes transcribed verbatim.",
- "cost_usd": 0.08432150000000001
+ "note": "OCR text of a scanned page set. Page 2 begins with a mid-sentence fragment (\"do with the basketball court...\") and a stray \"FED 1: 2018\" line, so some of the DPW update is incomplete. Minutes record three motions, all with printed counts. No dollar figures are printed. The minutes state no public comment (\"none\"). Names mentioned only in passing (Superintendent Calmes, Heather Sroka, Heather Lemieux, Karen Brochu, Chief Marino, Chris Letarte) are not recorded as attendees.",
+ "cost_usd": 0.0044686199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "status": "present",
+   "quote": "dennis mannone called the meeting to order at 7:32pm. attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "dennis mannone called the meeting to order at 7:32pm. attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dennis mannone called the meeting to order at 7:32pm. attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff"
+  },
+  {
+   "name": "Pete McCauliff",
+   "status": "present",
+   "quote": "dennis mannone called the meeting to order at 7:32pm. attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Karin Menard will take the discussed version of the Memorandum of Agreement with the public schools and create a new MoA based on the commission's feedback.",
+   "quote": "karin will take that information and create a new moa based on the feedback from the current commission."
+  },
+  {
+   "decision": "The commission took no official stance on Special Town Meeting Article V, as the specifics had not yet been presented, though members are behind the premise of the article.",
+   "quote": "commission felt they could not take an official stance as the specifics had not yet been presented to them."
+  },
+  {
+   "decision": "For the Board of Selectmen meeting, Jack Rodriquenz gives a brief overview, then hands it over to the commissioners; Karin Menard takes Town Beach, Dennis Marshall Park and general fields, and Pete McCauliff addresses the turf.",
+   "quote": "karin will take the town beach, dennis marshall park and general fields and pete mccauliff will address the turf."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Field scheduling fees",
+   "what_was_recorded": "Jack Rodriquenz suggested the commission work on updating field fees as part of field scheduling logistics; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "and updating fees as well as determining a way to police unscheduled /"
+  },
+  {
+   "topic": "Town Beach capital plan",
+   "what_was_recorded": "The capital plan is to address the bowing front wall and some interior renovations at Town Beach; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "capital plan will deal with issues of bowing front wall as well as some interior renovations."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "called to order at 7:32pm",
+   "quote": "dennis mannone called the meeting to order at 7:32pm. attendance: dennis mannone, karin menard, jack rodriquenz, pete mccauliff",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Minutes of September 21 and August 17, 2017",
+   "resolution": "approved",
+   "quote": "karin menard motioned and dennis mannone seconded to approve the minutes of",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director / Town Manager Updates",
+   "resolution": "no action; updates on Marshall Park, Town Beach and field plans",
+   "quote": "jack rodriquenz updated the commission that the board of selectmen would like a plan of the",
+   "tags": [
+    "DPW",
+    "Marshall Park",
+    "Town Beach",
+    "fields"
+   ]
+  },
+  {
+   "topic": "Memorandum of Agreement with Lunenburg Public Schools",
+   "resolution": "continued; Karin Menard to draft a new MoA",
+   "quote": "karin will take that information and create a new moa based on the feedback from the current commission.",
+   "tags": [
+    "memorandum of agreement",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting Article V",
+   "resolution": "no official stance taken",
+   "quote": "commission felt they could not take an official stance as the specifics had not yet been presented to them.",
+   "tags": [
+    "warrant article",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Other business: meeting with Board of Selectmen",
+   "resolution": "assignments made; no action",
+   "quote": "meeting with board of selectman - jack will provide a brief overview and then hand it",
+   "tags": [
+    "board of selectmen"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:10pm, 3-0",
+   "quote": "motion to adjourn by karin menard, seconded by pete mccauliff- 3-0 to adjourn at 9:10pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum of Agreement with Lunenburg Public Schools (version provided by the public schools; earlier draft presented to a previous Park Commission)",
+   "where": "text",
+   "quote": "a. memorandum of agreement with lunenburg public schools"
+  },
+  {
+   "name": "Special Town Meeting Article V (submitted by resident Chris Letarte)",
+   "where": "text",
+   "quote": "article v - submitted by resident chris letarte - commission felt they could not take an official stance"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "Town Beach",
+  "memorandum of agreement",
+  "Lunenburg Public Schools",
+  "warrant article",
+  "field fees",
+  "board of selectmen",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

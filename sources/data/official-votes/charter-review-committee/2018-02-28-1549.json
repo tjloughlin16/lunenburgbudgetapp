@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-02-28",
  "docid": "1549",
@@ -12,23 +12,220 @@
  },
  "votes": [
   {
-   "motion": "Continue the discussion on the proposal to require a minimum number of votes for write-in candidates to be elected to town office",
-   "moved_by": "",
+   "motion": "Continue the conversation on the proposed minimum number of votes for write-in candidates (B. Ebersole called for a vote to continue).",
+   "moved_by": "B. Ebersole",
    "seconded_by": "",
-   "outcome": "failed 2-6",
+   "outcome": "failed",
    "procedural": false,
-   "quote": "b. ebersole called for a vote to continue this conversation. j. toale and m. mackin supported continuing the conversation, m. jeffreys, k. adams, n. gray, m. erickson, b. ebersole, and t. burchfield were opposed."
-  },
-  {
-   "motion": "Change the town clerk position from elected to appointed",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "5-3",
-   "procedural": false,
-   "quote": "straw poll - 5 of 8 support changing to appointed from elected."
+   "quote": "b. ebersole called for a vote to continue this conversation. j. toale and m. mackin supported continuing the conversation"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR of scanned minutes. The second vote is explicitly labeled a straw poll (informal voting). Both votes are substantive charter-related matters, not procedural items. No other formal motions were voted on in this meeting.",
- "cost_usd": 0.1240415
+ "dropped_unquoted": 1,
+ "note": "OCR text from a macOS Vision scan, with garbled and incomplete passages. Discussion of the write-in proposal is partly unreadable ('J. Toale added B. Ebersole added that this should also become the minimum votes needed'), so motions and positions there are uncertain. 'I. Burchfield' is read as T. Burchfield. The only recorded vote is the continuation motion, with supporters and opponents named but no printed tally or result; 'failed' is inferred from the named opposition. The draft charter review is announced as 'review, discuss and vote' but no votes on individual changes are recorded; the 5-of-8 straw poll is not a formal vote. No chair is named, no adjournment or minutes approval is recorded, and page 3 (meeting schedule) is empty. No dollar figures appear in the text.",
+ "cost_usd": 0.0053306199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), bob ebersole (selectman), katey adams (school committee representative,"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), bob ebersole (selectman), katey adams (school committee representative,"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), bob ebersole (selectman), katey adams (school committee representative,"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "mark erickson (finance committee), michael-ray jeffreys (planning board), michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "mark erickson (finance committee), michael-ray jeffreys (planning board), michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "mark erickson (finance committee), michael-ray jeffreys (planning board), michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "mark erickson (finance committee), michael-ray jeffreys (planning board), michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "mark erickson (finance committee), michael-ray jeffreys (planning board), michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "absent",
+   "quote": "absent: steve archambault (community representative)"
+  },
+  {
+   "name": "Phyllis Luck",
+   "status": "present",
+   "quote": "7 pm phyllis luck regarding proposal to require minimum number of votes for a candidate to be elected as a write in"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Straw poll on the town clerk: 5 of 8 members support changing the town clerk from elected to appointed (non-binding, no formal vote).",
+   "quote": "straw poll - 5 of 8 support changing to appointed from elected."
+  },
+  {
+   "decision": "Committee to conduct additional survey and outreach on town clerk elected vs. appointed and Select Board vs. Board of Selectmen, and review results at the next meeting.",
+   "quote": "additional survey and outreach efforts to seek town input on town clerk as elected vs. appointed and for select board versus board of selectmen. committee will review results at the next meeting."
+  },
+  {
+   "decision": "Action item: continue to communicate with boards, committees, and departments to identify organizational inefficiencies and needs before the next meeting.",
+   "quote": "continue to communicate with boards, committees, and departments to identify organizational inefficiencies and needs."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "topic": "minimum votes for write-in candidates",
+   "quote": "ms. luck recommended 42 votes (10% of last election where a governor was elected) to be the threshold for write-in candidates"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "place: ritter memorial building, 960 massachusetts avenue"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "2. public comment no public comments"
+  },
+  {
+   "topic": "Board announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements"
+   ],
+   "quote": "3. board announcements none"
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "none approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "4. minutes approval none approved"
+  },
+  {
+   "topic": "Write-in candidate minimum votes proposal",
+   "resolution": "continuation vote failed; discussion ongoing",
+   "tags": [
+    "write-in candidates",
+    "elections",
+    "public comment"
+   ],
+   "quote": "ms. luck mentioned that currently, there is not a minimum threshold for write in candidates to reach to be elected"
+  },
+  {
+   "topic": "Feedback from survey",
+   "resolution": "no action",
+   "tags": [
+    "survey"
+   ],
+   "quote": "no results from the survey"
+  },
+  {
+   "topic": "Feedback from town committees and officers",
+   "resolution": "no action recorded",
+   "tags": [
+    "committees"
+   ],
+   "quote": "feedback from town committees and officers"
+  },
+  {
+   "topic": "Draft charter changes review",
+   "resolution": "reviewed; straw poll taken; further survey and outreach; review at next meeting",
+   "tags": [
+    "charter",
+    "town clerk",
+    "select board",
+    "term limits"
+   ],
+   "quote": "review, discuss and vote on draft charter changes as follows:"
+  },
+  {
+   "topic": "Action items before next meeting",
+   "resolution": "action item assigned",
+   "tags": [
+    "organizational review"
+   ],
+   "quote": "continue to communicate with boards, committees, and departments to identify organizational inefficiencies and needs."
+  },
+  {
+   "topic": "Board comment/concerns",
+   "resolution": "no action",
+   "tags": [
+    "board comment"
+   ],
+   "quote": "8. board comment/concerns"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action recorded",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "9. meeting schedule:"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft charter changes",
+   "where": "text",
+   "quote": "review, discuss and vote on draft charter changes as follows:"
+  }
+ ],
+ "tags": [
+  "charter review",
+  "write-in candidates",
+  "town clerk elected vs appointed",
+  "select board",
+  "term limits",
+  "straw poll",
+  "public comment",
+  "draft charter changes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2018-09-13",
  "docid": "1384",
@@ -12,31 +12,194 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from July 12, July 31–August 7, and September 5, 2018, as written",
-   "moved_by": "Lance D. May",
-   "seconded_by": "Lorraine Mendoza",
-   "outcome": "approved unanimously",
+   "motion": "Accept the minutes of the July 12, July 31st - August 7th and September 5, 2018 meetings as written.",
+   "moved_by": "Chair May",
+   "seconded_by": "Vice-Chair Mendoza",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "upon a motion by chair may to accept the minutes as written, seconded by vice-chair mendoza, minutes were approved unanimously."
   },
   {
-   "motion": "Put a cap of $1000.00 for the plot plan from Whitman and Bingham, Civil Engineers",
-   "moved_by": "Lorraine Mendoza",
-   "seconded_by": "William Tyler",
-   "outcome": "approved unanimously",
+   "motion": "Put a cap of $1000.00 on the plot plan for the new building.",
+   "moved_by": "Comm. Mendoza",
+   "seconded_by": "Comm Tyler",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "a motion was made by comm. mendoza seconded by comm tyler to put a cap of $1000.00 for the plot plan, with no further discussion it was approved unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Lance D. May",
-   "seconded_by": "William Tyler",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Chair May",
+   "seconded_by": "Comm Tyler",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "a motion was made to adjourn by chair may, seconded by comm tyler and with no further discussion, meeting was adjourned at 9:15 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0812725
+ "note": "Text is a clean extraction of two pages; no scan issues. The adjournment motion is recorded with no stated result, so its outcome is 'not stated'. No documents list or exhibits are printed, and no public comment is recorded ('With no correspondence or public comment').",
+ "cost_usd": 0.00369892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lance D. May",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was called to order at 7:00 pm by chairman may, other members present were lorraine mendoza, vice-chair, william tyler, clerk."
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "other members present were lorraine mendoza, vice-chair, william tyler, clerk."
+  },
+  {
+   "name": "William Tyler",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "other members present were lorraine mendoza, vice-chair, william tyler, clerk."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Cemetery Superintendent",
+   "status": "present",
+   "quote": "also present was todd holman, cemetery superintendent."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Contact Whitman and Bingham, Civil Engineers, to get a price for the plot plan.",
+   "quote": "it was decided to contact whitman and bingham, civil engineers to get a price and after some discussion"
+  },
+  {
+   "decision": "A letter is to be sent to the Town Manager requesting the Superintendent be available for all tasks on the building project; Comm. Tyler to draft and send it.",
+   "quote": "a letter is to be sent to the town manager, requesting the superintendent be available for all tasks involved with this project."
+  },
+  {
+   "decision": "No decision on a container to house lumber and other items before demolition; deferred to the next meeting.",
+   "quote": "no decision was made at this time and will be discussed at the next meeting."
+  },
+  {
+   "decision": "Cemetery rates to be discussed at the next meeting.",
+   "quote": "it was decided to discuss cemetery rates at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Vouchers signed for website maintenance and advertising",
+   "what_was_recorded": "The budget was reviewed and vouchers were signed for Ramaker (website maintenance) and Lunenburg Ledger (advertising); no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "the budget was reviewed and vouchers were signed for ramaker for website maintenance and lunenburg ledger for advertising."
+  },
+  {
+   "topic": "Plot plan for new building",
+   "what_was_recorded": "A plot plan is needed for a building permit; the Commission capped spending on the plot plan at $1000.00 and sought a price from Whitman and Bingham, Civil Engineers.",
+   "figures_as_printed": [
+    "$1000.00"
+   ],
+   "quote": "to put a cap of $1000.00 for the plot plan, with no further discussion it was approved unanimously."
+  },
+  {
+   "topic": "Backhoe for removal of gravestones and material",
+   "what_was_recorded": "A backhoe will be needed to remove old gravestones and other material around the base of the building; no cost printed.",
+   "figures_as_printed": [],
+   "quote": "a backhoe will be needed to remove old gravestones and other material that is around the base of the building."
+  },
+  {
+   "topic": "Cemetery rates",
+   "what_was_recorded": "Cemetery rates (fees) were deferred to the next meeting; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "it was decided to discuss cemetery rates at the next meeting."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and approval of prior minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "procedure"
+   ],
+   "quote": "upon a motion by chair may to accept the minutes as written, seconded by vice-chair mendoza, minutes were approved unanimously."
+  },
+  {
+   "topic": "Correspondence, public comment and budget review",
+   "resolution": "vouchers signed",
+   "tags": [
+    "budget",
+    "vouchers",
+    "website",
+    "advertising"
+   ],
+   "quote": "the budget was reviewed and vouchers were signed for ramaker for website maintenance and lunenburg ledger for advertising."
+  },
+  {
+   "topic": "Monty Tech building schedule and plot plan",
+   "resolution": "approved $1000.00 cap; price sought from engineers",
+   "tags": [
+    "building project",
+    "plot plan",
+    "permit",
+    "Monty Tech"
+   ],
+   "quote": "to put a cap of $1000.00 for the plot plan, with no further discussion it was approved unanimously."
+  },
+  {
+   "topic": "Container for lumber and letter to Town Manager",
+   "resolution": "no decision; deferred; letter to Town Manager",
+   "tags": [
+    "building project",
+    "demolition",
+    "Town Manager"
+   ],
+   "quote": "there was also some discussion of a container to house all the lumber and other items in the current building before demolition."
+  },
+  {
+   "topic": "Prisoner help for fall clean-up",
+   "resolution": "no action",
+   "tags": [
+    "grounds",
+    "clean-up",
+    "labor"
+   ],
+   "quote": "the prisoners will be available the week of november 26-30 for help with leaves and other clean-up duties."
+  },
+  {
+   "topic": "Cemetery rates",
+   "resolution": "deferred to next meeting",
+   "tags": [
+    "rates",
+    "fees"
+   ],
+   "quote": "it was decided to discuss cemetery rates at the next meeting."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:15 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "a motion was made to adjourn by chair may, seconded by comm tyler and with no further discussion, meeting was adjourned at 9:15 pm"
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery",
+  "building project",
+  "plot plan",
+  "budget",
+  "vouchers",
+  "minutes",
+  "Monty Tech",
+  "grounds clean-up",
+  "cemetery rates"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

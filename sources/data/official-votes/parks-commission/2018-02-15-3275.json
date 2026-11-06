@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2018-02-15",
  "docid": "3275",
@@ -12,40 +12,198 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from January 25, 2018",
+   "motion": "Accept the minutes of January 25, 2018.",
    "moved_by": "Dennis Mannone",
    "seconded_by": "Karin Menard",
-   "outcome": "approved 2-0",
+   "outcome": "passed 2-0",
    "procedural": true,
-   "quote": "dennis mannone motioned and karin menard seconded to accept the minutes from january 25, 2018 - ap- proved 2",
-   "quote_taken_from_text": true
+   "quote": "dennis mannone motioned and karin menard seconded to accept the minutes from january 25, 2018"
   },
   {
-   "motion": "Authorize DPW Director to move forward with repairs to fence damaged over Christmas break and attempt to bill the driver for cost of damages and take any other means to recoup the cost",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Dennis Mannone",
+   "motion": "Authorize the DPW Director to move forward with repairs to the town beach fence and attempt to bill the driver for cost of damages and take any other means to recoup the cost of repairs.",
+   "moved_by": "Karin",
+   "seconded_by": "Dennis",
    "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "karin motioned and dennis seconded for the dpw director to move forward with repairs and attempt to bill the driver for cost of damages and take any other means to recoup the cost of repairs. passed 2-0."
+   "quote": "karin motioned and dennis seconded for the dpw director to move forward with repairs and attempt to bill the driver for cost of damages"
   },
   {
-   "motion": "Charge Lunenburg Schools $10 per baseball and softball player for the Spring 2018 season",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Dennis Mannone",
+   "motion": "Charge Lunenburg Schools $10 per baseball and softball player for the Spring 2018 season.",
+   "moved_by": "Karin",
+   "seconded_by": "Dennis",
    "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "karin motioned and dennis seconded to charge lunenburg schools $10 per baseball and softball player for the spring 2018 season. passed 2-0."
+   "quote": "karin motioned and dennis seconded to charge lunenburg schools $10 per baseball and softball player for the spring 2018 season."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Karin Menard",
-   "seconded_by": "Dennis Mannone",
+   "motion": "Adjourn the meeting at 8:18.",
+   "moved_by": "Karin",
+   "seconded_by": "Dennis",
    "outcome": "not stated",
    "procedural": true,
    "quote": "karin motioned and dennis seconded to adjourn at 8:18."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. Four votes recorded: approval of prior minutes, authorization for DPW repairs, baseball/softball fee, and adjournment. The adjournment motion is stated but no explicit vote result is recorded in the minutes.",
- "cost_usd": 0.021255899999999998
+ "dropped_unquoted": 7,
+ "note": "OCR text from a scan (macOS Vision). Two members only (Dennis Mannone and Karin Menard) are named as present; no role labels are printed. The item-4 motion on baseball/softball fees follows a page break ('High School Program.') with no heading printed, so I placed it under item 4 and noted that placement. The adjournment motion records no printed result. Item 5b reads 'none', so no public comment is recorded. Several people were named only as mentioned, not as taking part (Heather Sroka, Adam Costa, Nancy Forest, Chris Letarte, Jack, the DPW Director, and the driver), so they are not listed as attendees. The 'RECEIVED & FILED' stamp is dated APR 11 2018.",
+ "cost_usd": 0.005512019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dennis Mannone",
+   "status": "present",
+   "quote": "call to order by dennis mannone at 7pm. attendance: dennis mannone and karin menard"
+  },
+  {
+   "name": "Karin Menard",
+   "status": "present",
+   "quote": "call to order by dennis mannone at 7pm. attendance: dennis mannone and karin menard"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dennis told the students the group would have to check insurance with the Town Manager.",
+   "quote": "they asked about insurance and dennis told them we would have to check with town manager."
+  },
+  {
+   "decision": "If Marshall Park becomes the students' first choice, the commission would bring them back and include the Town Manager, DPW Director and Police Chief in the discussion.",
+   "quote": "dennis told them if marshall park emerges as their number 1 choice, we would have them back and include the town manager"
+  },
+  {
+   "decision": "Karin would submit the Seasonal Certification form to Nancy using the Friday before Memorial Day through the third Thursday of September, so the Beach Coordinator can give a wrap-up of the 2018 season.",
+   "quote": "karin said she would submit the form to nancy using the friday before memorial day through the third"
+  },
+  {
+   "decision": "The 2018 season beach pass fees were to be added to the April agenda.",
+   "quote": "karin mentioned that the commission needed to look at the 2018 season fees for beach passes and would like that added to the april agenda."
+  },
+  {
+   "decision": "Town Counsel's recommendation to continue the status quo from last season was noted; any request for use would come through Parks.",
+   "quote": "karin said that would mean that any request for use would need to come through parks."
+  },
+  {
+   "decision": "Karin would ask Chris Letarte for a final playground design plan and then set up a commission meeting; Dennis wants to see the plan and have Jack review it before a final OK.",
+   "quote": "karin will go back to chris letarte and request he get a final design plan and then set up a commission meeting."
+  },
+  {
+   "decision": "Next meeting set for March 15, 2018, with a second March meeting to finalize the playground design if needed.",
+   "quote": "upcoming meeting - march 15, 2018 and a second march meeting to finalize playground design if needed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Baseball and softball charge to Lunenburg Schools",
+   "what_was_recorded": "The board voted to charge Lunenburg Schools $10 per baseball and softball player for the Spring 2018 season.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "charge lunenburg schools $10 per baseball and softball player for the spring 2018 season."
+  },
+  {
+   "topic": "Town beach fence repair and driver billing",
+   "what_was_recorded": "The fence damage was to be repaired and the town will most likely pay; the DPW would try to bill the uninsured driver for the cost of damages. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the town will most likely be on the hook for it."
+  },
+  {
+   "topic": "Skate park fundraising and timeline",
+   "what_was_recorded": "Students had many fundraising ideas for the proposed skate park; Karin said fundraising would take a considerable amount of time. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "they had many ideas on fundraising and also asked if their time line of 2019 was doable."
+  },
+  {
+   "topic": "2018 beach pass fees",
+   "what_was_recorded": "The commission was to review the 2018 season fees for beach passes at the April meeting. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the commission needed to look at the 2018 season fees for beach passes and would like that added to the april agenda."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "call to order by dennis mannone at 7pm. attendance: dennis mannone and karin menard"
+  },
+  {
+   "topic": "Minutes of January 25, 2018",
+   "resolution": "approved 2-0",
+   "quote": "dennis mannone motioned and karin menard seconded to accept the minutes from january 25, 2018"
+  },
+  {
+   "topic": "Skate park presentation by Lunenburg Middle School students",
+   "resolution": "presented; no vote; commission to revisit if Marshall Park is chosen",
+   "quote": "gave a power point presentation on their idea to create a skate park in lunenburg."
+  },
+  {
+   "topic": "DPW Director and Town Manager updates (town beach fence damage)",
+   "resolution": "approved 2-0 to proceed with repairs and billing the driver",
+   "quote": "karin provided an update from dpw director that the driver who drove through the fence at town beach over christmas break was uninsured."
+  },
+  {
+   "topic": "Lunenburg Schools baseball and softball charge",
+   "resolution": "approved 2-0 at $10 per player for Spring 2018",
+   "quote": "charge lunenburg schools $10 per baseball and softball player for the spring 2018 season."
+  },
+  {
+   "topic": "Turf complex turnover",
+   "resolution": "no action; status quo continued",
+   "quote": "karin said she met with heather sroka and town counsel adam costa earlier in the week."
+  },
+  {
+   "topic": "Policy and procedure discussions on fields, courts and beaches",
+   "resolution": "no action; no updates",
+   "quote": "continuation of policy / procedure discussions, fees and scheduling of fields, courts and beaches"
+  },
+  {
+   "topic": "Playground updates",
+   "resolution": "no vote; Karin to obtain final design plan and set up a meeting",
+   "quote": "the friends of wallis park and the lions club are ready to move forward with ordering the playground equipment."
+  },
+  {
+   "topic": "Other business (unanticipated items; correspondence and public comment)",
+   "resolution": "no action; none",
+   "quote": "correspondence, announcements and public comment - none"
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "scheduled March 15, 2018 and possible second March meeting",
+   "quote": "upcoming meeting - march 15, 2018 and a second march meeting to finalize playground design if needed."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn at 8:18; result not printed",
+   "quote": "karin motioned and dennis seconded to adjourn at 8:18."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Power point presentation on a skate park in Lunenburg (Genius Hour project)",
+   "where": "text",
+   "quote": "gave a power point presentation on their idea to create a skate park in lunenburg."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "skate park",
+  "town beach",
+  "playground",
+  "turf complex",
+  "DPW",
+  "beach fees",
+  "insurance",
+  "baseball and softball fees",
+  "Lunenburg Schools"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 5,
+  "topics": 1,
+  "documents_and_exhibits": 1
+ }
 }

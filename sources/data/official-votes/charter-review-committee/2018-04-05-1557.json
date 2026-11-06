@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-04-05",
  "docid": "1557",
@@ -12,13 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from March 14",
+   "motion": "Approve the minutes of 14 March.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "14 march = minutes accepted by all members; all aye."
   },
   {
-   "motion": "Not approve the proposed changes to the Charter",
+   "motion": "Not to approve the changes to the Charter.",
    "moved_by": "S. Archambault",
    "seconded_by": "N. Gray",
    "outcome": "passed",
@@ -26,7 +28,7 @@
    "quote": "s. archambault - motion to not approve changes to charter, second by n. gray; all aye"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "S. Archambault",
    "seconded_by": "M. Mackin",
    "outcome": "passed",
@@ -35,6 +37,277 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan",
- "cost_usd": 0.0989095
+ "note": "Scanned OCR text with errors: page 1 has a garbled stamp, page 3 opens with an unreadable passage (possibly a public comment, unattributed), and the stamp reads JUN 14 2018, after this meeting date. The chair is not named. Votes record only 'All aye' with no roll call or tally. Attendance comes from the Present line alone.",
+ "cost_usd": 0.00676422,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative), mark erickson (finance committee), michael-ray jeffreys (planning board)"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative), mark erickson (finance committee), michael-ray jeffreys (planning board)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative), mark erickson (finance committee), michael-ray jeffreys (planning board)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "present: jaime toale (selectmen), katey adams (school committee representative), mark erickson (finance committee), michael-ray jeffreys (planning board)"
+  },
+  {
+   "name": "Michael Mackin",
+   "role": "School Committee Representative",
+   "status": "present",
+   "quote": "michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "michael mackin (school committee representative), terri burchfield (finance committee), nancy gray (community representative)"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "bob ebersole (selectman), steve archambault (community representative)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "bob ebersole (selectman), steve archambault (community representative)"
+  },
+  {
+   "name": "Richard Mailloux",
+   "role": "Chair of Library Board",
+   "status": "present",
+   "quote": "richard mailloux - chair of library board - what was suggested was adopted almost in its entirety."
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "carl luck - believes that when the proposal (to create minimum voting thresholds for open elected positions"
+  },
+  {
+   "name": "David W. Rodgers",
+   "status": "present",
+   "quote": "david w. rodgers- does not support a name change for the board of selectman."
+  },
+  {
+   "name": "Matthew Woodward",
+   "status": "present",
+   "quote": "matthew woodward - doesn't support change from board of selectman to select board; supports two town meetings; would like to keep the town clerk elected."
+  },
+  {
+   "name": "Bill Tyler",
+   "status": "present",
+   "quote": "bill tyler - does not believe that there has been enough time to review the proposed changes."
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios - does not support the verbiage added to the end of the sections for boards."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "paula bertram - does not support changing the name of board of selectman to select board;"
+  },
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "tom alonzo - thanked the board for their work."
+  },
+  {
+   "name": "Seth Mayer",
+   "status": "present",
+   "quote": "seth mayer - don't support changing the name of board of selectman."
+  },
+  {
+   "name": "Anna Lockwood",
+   "status": "present",
+   "quote": "anna lockwood - how well can we run the town."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members will be contacted by the chair to coordinate a schedule for future meetings and further public outreach.",
+   "quote": "members will be contacted by the chair to coordinate a schedule for future meetings"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town Clerk salary",
+   "what_was_recorded": "Tom Alonzo supported making the Town Clerk appointed, noting the Clerk is the only elected official that has a salary; no figure printed.",
+   "quote": "supports changing the town clerk's job to being appointed and not elected given that it's the only elected official that has a salary.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Library Trustrees",
+   "topic": "Written comment on library hiring paragraph",
+   "quote": "library trustrees - request to change paragraph to to read"
+  },
+  {
+   "speaker": "Richard Mailloux",
+   "stated_role": "Chair of Library Board",
+   "topic": "Library hiring and Town Manager role",
+   "quote": "richard mailloux - chair of library board - what was suggested was adopted almost in its entirety."
+  },
+  {
+   "speaker": "Carl Luck",
+   "topic": "Minimum voting thresholds, Select Board name, Road Commissioner",
+   "quote": "carl luck - believes that when the proposal (to create minimum voting thresholds for open elected positions"
+  },
+  {
+   "speaker": "David W. Rodgers",
+   "topic": "Board name, Town Clerk, Town Manager role, sections 2-3 to 4-2",
+   "quote": "david w. rodgers- does not support a name change for the board of selectman."
+  },
+  {
+   "speaker": "Matthew Woodward",
+   "topic": "Select Board name, two town meetings, elected Town Clerk",
+   "quote": "matthew woodward - doesn't support change from board of selectman to select board; supports two town meetings; would like to keep the town clerk elected."
+  },
+  {
+   "speaker": "Bill Tyler",
+   "topic": "Time to review changes, Sewer Commission",
+   "quote": "bill tyler - does not believe that there has been enough time to review the proposed changes."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "Verbiage added to boards sections; checks and balances",
+   "quote": "dave passios - does not support the verbiage added to the end of the sections for boards."
+  },
+  {
+   "speaker": "Paula Bertram",
+   "topic": "Select Board name, Town Clerk, second town meeting, personnel language",
+   "quote": "paula bertram - does not support changing the name of board of selectman to select board;"
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "topic": "Thanks; Town Clerk appointed; second town meeting; Town Accountant",
+   "quote": "tom alonzo - thanked the board for their work."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "Keeping Town Clerk elected",
+   "quote": "dave passios - strongly support keeping town clerk's position elected."
+  },
+  {
+   "speaker": "Seth Mayer",
+   "topic": "Board name change",
+   "quote": "seth mayer - don't support changing the name of board of selectman."
+  },
+  {
+   "speaker": "Anna Lockwood",
+   "topic": "Checks on elected officials",
+   "quote": "anna lockwood - how well can we run the town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 14 March minutes",
+   "quote": "14 march = minutes accepted by all members; all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public hearing on draft Charter",
+   "resolution": "heard Charter Committee and minority reports, member comments and public comment; comment period closed at 8:47PM",
+   "quote": "the existing charter requires a committee to meet every 10 years to review and make recommendations to amend",
+   "tags": [
+    "charter",
+    "public hearing",
+    "town clerk",
+    "select board",
+    "second town meeting"
+   ]
+  },
+  {
+   "topic": "Board discussion",
+   "resolution": "no action; members sought more feedback and time, did not aim for May Town Meeting",
+   "quote": "b. ebersole - does not believe that this can be published tomorrow to meet town meeting; would like more",
+   "tags": [
+    "town meeting",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Vote on Charter changes",
+   "resolution": "motion not to approve changes to the Charter passed",
+   "quote": "s. archambault - motion to not approve changes to charter, second by n. gray; all aye",
+   "tags": [
+    "vote",
+    "charter"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and further public outreach",
+   "resolution": "chair to contact members to set a schedule",
+   "quote": "members will be contacted by the chair to coordinate a schedule for future meetings",
+   "tags": [
+    "schedule",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:05PM",
+   "quote": "s. archambault - motion to adjourn, second by m. mackin; all aye at 9:05pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Charter",
+   "where": "text",
+   "quote": "read written comments on draft charter into record"
+  },
+  {
+   "name": "Town Meeting Time",
+   "where": "text",
+   "quote": "providing that conduct of town meeting to be governed by \"town meeting time,\""
+  }
+ ],
+ "tags": [
+  "charter review",
+  "public hearing",
+  "town clerk",
+  "select board name",
+  "second town meeting",
+  "town meeting",
+  "library",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

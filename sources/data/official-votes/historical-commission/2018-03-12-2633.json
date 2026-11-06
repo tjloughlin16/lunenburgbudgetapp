@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2018-03-12",
  "docid": "2633",
@@ -12,13 +12,176 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from February 6, 2018",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of February 6, 2018.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "minutes from february 6th, 2018 were read and approved unanimously"
+   "quote": "minutes from february 6th, 2018 were read and approved unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0212185
+ "note": "OCR text with visible errors (e.g., 'Historic Commissions's', 'Anrold Litch', 'Northfeild', 'fist step'); quotes copied as printed. Page 1 begins with a stray header fragment. Page 2 begins mid-sentence ('limited time-frame'), so the heading for the demolition delay bylaw discussion is not visible and its opening is missing. No vote is recorded for adjournment (8:35PM) or for the next meeting date (April 3rd, 2018), so none is recorded here. No public comment section is printed. Stamped 'RECEIVED & FILED APR 05 2018'.",
+ "cost_usd": 0.00425172,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lantry",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:38. mcgrath, lakso and dwyer present."
+  },
+  {
+   "name": "McGrath",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:38. mcgrath, lakso and dwyer present."
+  },
+  {
+   "name": "Lakso",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:38. mcgrath, lakso and dwyer present."
+  },
+  {
+   "name": "Dwyer",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:38. mcgrath, lakso and dwyer present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission agreed that more time is needed to consider, discuss and research changes to the demolition delay bylaw before agreeing on its revision; members felt a revised bylaw would not go to the Town Warrant before fall 2018.",
+   "quote": "the commission agreed that more time would be needed to consider, discuss and research changes to the bylaw before an agreement could be reached as to its revision."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Mass Historic suggested fine for demolition delay violations",
+   "what_was_recorded": "Mass Historic suggested a daily fine for violations of the bylaw, which inspired debate.",
+   "figures_as_printed": [
+    "$300/day"
+   ],
+   "quote": "mass historic's suggestion of a $300/day fine for violations also inspired debate."
+  },
+  {
+   "topic": "Historic marker production delay and over-payment",
+   "what_was_recorded": "Bronze marker production was delayed partly by questions from the foundry about credit from an over-payment; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "production of the bronze markers has been delayed due to questions the foundry had regarding exact wording on the plaques and credit from over-payment."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved minutes of February 6, 2018",
+   "quote": "minutes from february 6th, 2018 were read and approved unanimously.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "reported, no action",
+   "quote": "lantry shared the preservation newsletter from mass historic.",
+   "tags": [
+    "correspondence",
+    "town report",
+    "newsletter",
+    "downtown properties"
+   ]
+  },
+  {
+   "topic": "Historic Marker Project",
+   "resolution": "reported, no action",
+   "quote": "lantry expects them to be ready for installation in april.",
+   "tags": [
+    "historic markers",
+    "foundry",
+    "delay"
+   ]
+  },
+  {
+   "topic": "Demolition Requests (99 Boucher Street)",
+   "resolution": "reported; McGrath to find out the matter",
+   "quote": "she was calling to confirm that the owners had been invited to the meeting.",
+   "tags": [
+    "demolition",
+    "99 Boucher Street",
+    "building department"
+   ]
+  },
+  {
+   "topic": "Arnold Litch Cemetery",
+   "resolution": "discussed, no action",
+   "quote": "this program would inventory and recognize places of historical and cultural importance, including cemeteries.",
+   "tags": [
+    "cemetery",
+    "heritage landscape inventory",
+    "preservation"
+   ]
+  },
+  {
+   "topic": "Demolition delay bylaw revision",
+   "resolution": "continued; more time needed; not before fall 2018 at Town Warrant",
+   "quote": "the commission agreed that more time would be needed to consider, discuss and research changes to the bylaw before an agreement could be reached as to its revision.",
+   "tags": [
+    "bylaw",
+    "demolition delay",
+    "APDC",
+    "fines"
+   ]
+  },
+  {
+   "topic": "New Business (stone wall, Holman and Northfeild roads)",
+   "resolution": "discussed; McGrath to raise with Building Department",
+   "quote": "mcgrath observed that a historic stone wall had been demolished on the corner of holman and northfeild roads, in violation of the scenic ways bylaw.",
+   "tags": [
+    "stone wall",
+    "scenic ways bylaw",
+    "enforcement"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Summary of the Commission's activities during 2017 (written by Lantry, sent to Elaine Peterson for the 2017 Town Report)",
+   "where": "text",
+   "quote": "lantry read the summary she had written of the commission's activities during 2017, that she had sent to elaine peterson for inclusion in the 2017 town report."
+  },
+  {
+   "name": "Preservation Newsletter from Mass Historic",
+   "where": "text",
+   "quote": "lantry shared the preservation newsletter from mass historic."
+  },
+  {
+   "name": "Current demolition delay bylaw",
+   "where": "text",
+   "quote": "the current bylaw does not allow sufficient time to announce and prepare for the review, nor does it require notification of abut-"
+  },
+  {
+   "name": "Scenic ways bylaw",
+   "where": "text",
+   "quote": "a historic stone wall had been demolished on the corner of holman and northfeild roads, in violation of the scenic ways bylaw."
+  }
+ ],
+ "tags": [
+  "historic commission",
+  "demolition delay",
+  "bylaw revision",
+  "historic markers",
+  "cemetery",
+  "downtown properties",
+  "scenic ways",
+  "minutes approval",
+  "Brooks House",
+  "Old Primary School"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

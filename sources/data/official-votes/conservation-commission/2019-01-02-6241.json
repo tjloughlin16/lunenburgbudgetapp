@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2019-01-02",
  "docid": "6241",
@@ -12,71 +12,410 @@
  },
  "votes": [
   {
-   "motion": "to reconsider the prior vote on Powell Stone and Gravel",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Carl Luck",
+   "motion": "Reconsider the Powell Stone and Gravel vote.",
+   "moved_by": "JR",
+   "seconded_by": "CL",
    "outcome": "failed",
    "procedural": false,
-   "quote": "jr moved to reconsider the vote. cl seconded the roll call vote was rb cl and jr vote yes and td bp and kj voted no. the motion to reconsider failed."
+   "quote": "jr moved to reconsider the vote. cl seconded the roll call vote was rb cl and jr vote yes and td bp and kj voted no."
   },
   {
-   "motion": "to continue the Coulombe Notice of Intent hearing to January 16, 2019",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "the applicant requested a continuance due to the lack of a dep number to the 16 th of january. 7:00 pm motion by kj and a second by bp with a unanimous vote."
+   "motion": "Continue the (DEP 208-xxxx) Coulombe hearing to the 16th of January at the applicant's request.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "motion by kj and a second by bp with a unanimous vote."
   },
   {
-   "motion": "to continue the Violette Notice of Intent hearing to March 20, 2019",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "mr christopher requested to continue to the march 20th 2019 meeting. by a motion of jr and a second by bp with a unanimous vote to approve the motion."
+   "motion": "Continue the Tom Christopher (Violette, 181 Kilburn Street) hearing to the March 20th 2019 meeting.",
+   "moved_by": "JR",
+   "seconded_by": "BP",
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "by a motion of jr and a second by bp with a unanimous vote to approve the motion."
   },
   {
-   "motion": "to require the house and proposed garage and driveway to be reconfigured with the reconfigured plan showing existing and proposed grades to be submitted as an amendment",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Approve the Joseph Nowlan (507 West Townsend Road) plan changes: the house, garage and driveway will be reconfigured and an amendment submitted.",
+   "moved_by": "CL",
+   "seconded_by": "KJ",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "cl motioned and kj seconded the house and proposed garage and driveway will be reconfigured and the reconfigured plan will show existing and proposed grades and submitted an amendment."
+   "quote": "cl motioned and kj seconded the house and proposed garage and driveway will be reconfigured"
   },
   {
-   "motion": "to approve the final plans for Mark Rood with conditions that final gradings in the vicinity of the shed will be put on an amended plan, junk on the property be removed, and to suggest contacting the abutter about cleaning the property",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Approve the final plans for Mark Rood (13 East Street) with conditions that final gradings near the shed go on an amended plan and junk be removed.",
+   "moved_by": "BP",
+   "seconded_by": "KJ",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "motion to approve the final plans with the conditions that the final gradings in the vicinity of the shed will be put on an amended plan. junk on the property to be removed. the commission did suggest contacting the abutter about cleaning the property by bp and a second by kj with a unanimous vote."
+   "quote": "the commission did suggest contacting the abutter about cleaning the property by bp and a second by kj with a unanimous vote."
   },
   {
-   "motion": "to continue the Bell Notice of Intent hearing to January 16, 2019",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed",
-   "procedural": true,
+   "motion": "Continue the Nanci Bell (51 Fire Road 19) hearing to the 16th of January.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "passed, unanimous",
+   "procedural": false,
    "quote": "continued to the 16th of january by a motion of kj and a second by bp with a unanimous vote to approve."
   },
   {
-   "motion": "to issue a standard Order of Conditions with the additional condition that work on the abutting property would not be worked on until permission is obtained from that landowner",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Bob Pease",
-   "outcome": "passed",
+   "motion": "Issue a standard Order of Conditions for Kenneth Chenis (50 Fire Road 24) with the added condition that work on the abutting property not proceed until that landowner's permission is obtained.",
+   "moved_by": "KJ",
+   "seconded_by": "BP",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "a motion for a standard order of conditions with the additional condition the work on the abutting property would not be worked on until permission is obtained from that landowner by kj and a second by bp with a unanimous vote to approve."
+   "quote": "a motion for a standard order of conditions with the additional condition the work on the abutting property would not be worked"
   },
   {
-   "motion": "to adjourn",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "KJ",
+   "seconded_by": "JR",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "the meeting was adjourned at 10:25 pm by a motion of kj and a second by jr with a unanimous vote to adjourn"
+   "quote": "the meeting was adjourned at 10:25 pm by a motion of kj and a second by jr"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in the minutes. The Powell Stone reconsider motion (vote 1) recorded a roll-call count: RB, CL, and JR voted yes; TD, BP, and KJ voted no (3-3), resulting in failure. All other recorded outcomes were unanimous votes.",
- "cost_usd": 0.1517105
+ "note": "Text is OCR-like with spacing and typing errors; quotes were copied with double spaces collapsed to single spaces. The minutes record no vote on approving prior minutes (Dec 5 and Dec 19 are agenda items only). The Joseph Nowlan motion has no recorded outcome. Public comment section contains only commission member statements; no public speaker is named. Several hearing applicants (Coulombe, Violette, Nowlan, Bell) are named but did not speak per the text, so they are not listed as attendees. The Nowlan plan heading is dated 'NOVEMBER 2, 2019' for a 2019 meeting, as printed. Hearing headings list documents in sentence form, not a labelled list.",
+ "cost_usd": 0.012124120000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "richard bursch, chair"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "todd dwyer, vice-chair"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member (left the meeting at 10:18 PM)",
+   "status": "present",
+   "quote": "bp says individual comments do not speak to for the commission"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "remote",
+   "quote": "except cc and rb who participated remotely until 7:30 pm"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "present",
+   "quote": "cl seconded the roll call vote was rb cl and jr vote yes"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "jr moved to reconsider the vote."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "present",
+   "quote": "kj feels that enough information was presented."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted that he had a conversation with dep that they will allow a drawdown for one foot more"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "representing the owner",
+   "status": "present",
+   "quote": "mark bursch appeared representing the owner."
+  },
+  {
+   "name": "Tom Christopher",
+   "role": "appeared before the commission (not stated)",
+   "status": "present",
+   "quote": "tom christopher appeared before the commission an outlined the history of the emergency permit"
+  },
+  {
+   "name": "Ms Takahana",
+   "role": "property owner",
+   "status": "present",
+   "quote": "ms takahana the property owner appeared before the commission to represent herself as the owner."
+  },
+  {
+   "name": "Maryann Dipinto",
+   "role": "represented the owner",
+   "status": "present",
+   "quote": "maryann dipinto represented the owner and explained the project"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "kenneth chenis from the planning board spoke to anr dimensional requirements"
+  },
+  {
+   "name": "Ken Chenis",
+   "role": "not stated (presented plan updates)",
+   "status": "present",
+   "quote": "ken chenis presented the requested updates to his plan as required by the commission."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission members (TD) indicated the Emerald Place Beach proposal is a good first step, with a letter stating the work to be done and the modified work kept in the file, to be reviewed next season.",
+   "quote": "td stated that he feels the proposal will be a good first step, letter stating work to be done and work modified to have in the file"
+  },
+  {
+   "decision": "Mr. Marsden (Spring Street violation) to present at the next meeting, when he attends the public hearing.",
+   "quote": "mm noted that mr. marsden will present at the next"
+  },
+  {
+   "decision": "TD recommended extending the piers out of the zone of influence on the wall (Violette hearing); recommendation only, no vote recorded.",
+   "quote": "td recommended extending the piers out of the zone of influence on the wall."
+  },
+  {
+   "decision": "Conservation Administrator MM to resubmit language on the 5% online-file fee to the commission.",
+   "quote": "resubmit language to the commission."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Wetland regulation fee for online files",
+   "what_was_recorded": "Proposed change to wetland regulations adding a fee for online files, continued as new business.",
+   "figures_as_printed": [
+    "5%"
+   ],
+   "quote": "change in wetland regulations to add a 5% fee for online files"
+  },
+  {
+   "topic": "Riverfront protection economic threshold (Powell Stone and Gravel)",
+   "what_was_recorded": "JR outlined the economic threshold and the 10% thresholds under the rivers protection act in the reconsideration discussion.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "jr outlined the economic and the 10% thresholds in the rivers protection act."
+  },
+  {
+   "topic": "Recreation trail grant and signage",
+   "what_was_recorded": "BP wants to purchase locus signs for signage under the recreation trail grant opportunity and outlined proposals for the grant; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "he wants to purchase locus signs for various signage."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "noted attendance; CC and RB remote until 7:30 PM",
+   "quote": "except cc and rb who participated remotely until 7:30 pm",
+   "tags": [
+    "attendance",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Announcements: small town forest trail",
+   "resolution": "reported; no action",
+   "quote": "kj and bp had finished 95% of the main trail at small town forest.",
+   "tags": [
+    "trail",
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Public comment: reconsider Powell Stone and Gravel vote",
+   "resolution": "motion to reconsider failed; JR will not sign the Order of Conditions",
+   "quote": "jr asked members to reconsider the vote for powell stone and gravel.",
+   "tags": [
+    "enforcement",
+    "reconsideration",
+    "Powell Stone and Gravel"
+   ]
+  },
+  {
+   "topic": "Trail grant opportunities and signage",
+   "resolution": "discussed; no action",
+   "quote": "he wants to purchase locus signs for various signage.",
+   "tags": [
+    "grant",
+    "trail",
+    "signage",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Hearing: Michael and Barbara Coulombe, 98 Horizon Island Road (NOI, DEP 208-xxxx)",
+   "resolution": "continued to 16 January",
+   "quote": "the applicant requested a continuance due to the lack of a dep number to the 16 th of january.",
+   "tags": [
+    "notice of intent",
+    "continuance",
+    "demolition",
+    "reconstruction"
+   ]
+  },
+  {
+   "topic": "Hearing: Steven Violette, 181 Kilburn Street (continued NOI, bridge deck)",
+   "resolution": "continued to 20 March 2019",
+   "quote": "mr christopher requested to continue to the march 20th 2019 meeting.",
+   "tags": [
+    "notice of intent",
+    "bridge",
+    "roadway",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Hearing: Joseph Nowlan, 507 West Townsend Road (continued NOI, single family home)",
+   "resolution": "plan to be reconfigured and amended; no outcome recorded",
+   "quote": "ms takahana the property owner appeared before the commission to represent herself as the owner.",
+   "tags": [
+    "notice of intent",
+    "single family home",
+    "driveway",
+    "wetland line"
+   ]
+  },
+  {
+   "topic": "Hearing: Mark Rood, 13 East Street (continued NOI, septic repair and addition)",
+   "resolution": "final plans approved with conditions",
+   "quote": "motion to approve the final plans with the conditions that the final gradings in the vicinity of the shed will be put on an amended plan.",
+   "tags": [
+    "notice of intent",
+    "septic",
+    "addition",
+    "erosion",
+    "shed"
+   ]
+  },
+  {
+   "topic": "Hearing: Nanci Bell, 51 Fire Road 19 (continued NOI, retaining wall)",
+   "resolution": "continued to 16 January",
+   "quote": "continued to the 16th of january by a motion of kj and a second by bp with a unanimous vote to approve.",
+   "tags": [
+    "notice of intent",
+    "retaining wall",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Hearing: Kenneth Chenis, 50 Fire Road 24 (continued NOI, addition and patio)",
+   "resolution": "standard Order of Conditions issued with added abutter-permission condition",
+   "quote": "a motion for a standard order of conditions with the additional condition the work on the abutting property would not be worked",
+   "tags": [
+    "notice of intent",
+    "addition",
+    "patio",
+    "abutter",
+    "order of conditions"
+   ]
+  },
+  {
+   "topic": "Current business: violations (enforcement)",
+   "resolution": "updates given; Emerald Place Beach letter and Marsden presentation noted; others listed without recorded action",
+   "quote": "violations (enforcement actions and administrative hearings).",
+   "tags": [
+    "enforcement",
+    "violations",
+    "Emerald Place Beach",
+    "Spring Street",
+    "Pleasant Street"
+   ]
+  },
+  {
+   "topic": "New business: wetland regulation fee for online files",
+   "resolution": "continued; administrator to resubmit language",
+   "quote": "change in wetland regulations to add a 5% fee for online files",
+   "tags": [
+    "regulations",
+    "fee",
+    "online filing"
+   ]
+  },
+  {
+   "topic": "Old business: LSIC draft Order of Conditions",
+   "resolution": "discussed; markup reviewed, drawdown levels discussed",
+   "quote": "bp reviewed his own markup on the draft order.",
+   "tags": [
+    "LSIC",
+    "order of conditions",
+    "drawdown",
+    "Metcalf and Eddy"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:25 PM",
+   "quote": "the meeting was adjourned at 10:25 pm by a motion of kj and a second by jr",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent and plan entitled \"Notice of Intent Plan\" by Green Hill Engineering, plan amended December 17, 2018",
+   "where": "list",
+   "quote": "documents presented for consideration was a notice of intent and a plan entitled \"notice of intent plan\" both by green hill engineering - plan amended december 17, 2018"
+  },
+  {
+   "name": "Notice of Intent by Mark Roode and plan of land entitled \"OWN A HOME LLC\" by Doug Smith dated November 2, 2019",
+   "where": "list",
+   "quote": "documents presented was a notice of intent by mark roode and a plan of land entitled"
+  },
+  {
+   "name": "Notice of Intent by Kenneth Chenis and modified site plan by the applicant, final revision of December 31, 2018",
+   "where": "list",
+   "quote": "documents presented for consideration was notice of intent by kenneth chenis and a modified"
+  },
+  {
+   "name": "Statement by Kenneth Chenis attesting he would not work on the abutting property until permission is obtained",
+   "where": "text",
+   "quote": "submitted a statement attesting he would not work on the property until he obtained permission."
+  },
+  {
+   "name": "Amendment showing reconfigured plan with existing and proposed grades (Nowlan)",
+   "where": "text",
+   "quote": "the reconfigured plan will show existing and proposed grades and submitted an amendment."
+  },
+  {
+   "name": "Draft Order of Conditions (LSIC)",
+   "where": "text",
+   "quote": "bp reviewed his own markup on the draft order."
+  },
+  {
+   "name": "Metcalf and Eddy report",
+   "where": "text",
+   "quote": "the metcalf and eddy report was discussed as to the relevancy of the report in todays work."
+  },
+  {
+   "name": "Open space plan",
+   "where": "text",
+   "quote": "now that we have an open space plan that we have recreation trail grant opportunities."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "order of conditions",
+  "enforcement",
+  "continuances",
+  "trail grant",
+  "regulations fee",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration was"
+ },
+ "dropped_unquoted_by_field": {}
 }

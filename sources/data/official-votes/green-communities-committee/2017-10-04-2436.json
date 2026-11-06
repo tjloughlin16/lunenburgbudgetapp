@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2017-10-04",
  "docid": "2436",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from March 29, 2017",
+   "motion": "Approve the minutes of the March 29, 2017 meeting.",
    "moved_by": "G.B.",
    "seconded_by": "N.S.",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "g.b. made a motion to approve, n.s. seconded."
+   "quote": "minutes from march 29, 2017 meeting were reviewed. g.b. made a motion to approve, n.s. seconded."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 7:45 PM.",
    "moved_by": "L.Murphy",
    "seconded_by": "N. Sullival",
    "outcome": "not stated",
@@ -29,6 +29,169 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. No votes recorded on substantive matters. Both procedural votes (approval of prior minutes and adjournment) lack explicit outcome statements.",
- "cost_usd": 0.09156249999999999
+ "note": "OCR of a scanned page with a garbled letterhead (e.g. 'TEMBURG', 'INCORPOR', 'LUNENBURG 1'!;'). The body and header call the body the Green Communities Task Force; the board name given for this record is Green Communities Committee. Both motions are recorded without a printed result, so outcomes are 'not stated'. The minutes do not record approval of these minutes. Adam Burney and Jim Breault appear only in the letterhead block, not in the attendance line, so they are not listed as attendees. Public comment was 'No Public Comment'; no entry was made.",
+ "cost_usd": 0.00425122,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: david blatt- chair, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux - town manager"
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: david blatt- chair, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux - town manager"
+  },
+  {
+   "name": "Neal Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: david blatt- chair, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux - town manager"
+  },
+  {
+   "name": "Liz Murphy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: david blatt- chair, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux - town manager"
+  },
+  {
+   "name": "John Londa",
+   "role": "Liaison",
+   "status": "present",
+   "quote": "present: david blatt- chair, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux - town manager"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "present: david blatt- chair, greg bittner, neal sullivan, liz murphy, john londa, heather lemieux - town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Task Force to draft a charter for review by the selectmen, with ideas for the charter emailed to the Chair.",
+   "quote": "j. londa suggested the task force draft a charter for review by the selectmen. any ideas for the charter should be"
+  },
+  {
+   "decision": "Town Manager Heather Lemieux to compile a wish list of town buildings with department input, with return on investment in mind, available by early November.",
+   "quote": "h. lemieux will compile a \"wish list\" for town buildings with department input for the committee"
+  },
+  {
+   "decision": "Heather Lemieux volunteered to act as liaison with MRPC and invite them to the next task force meeting.",
+   "quote": "h. lemieux volunteered to act as liaison with mrpc and invite them to the next task force meeting."
+  },
+  {
+   "decision": "J. Londa to work on vehicle listing updates, follow up on the Building Department report, and update baseline data for the annual report.",
+   "quote": "j. londa reported he will work on vehicle listing updates, following up with the building department report and updating baseline data for the annual report."
+  },
+  {
+   "decision": "Next meeting set for November 8, 2017 at 6:30 PM, with MRPC to be invited.",
+   "quote": "the next meeting date was set as november 8th, 2017 at 6:30 pm. mrpc will be invited to attend."
+  },
+  {
+   "decision": "Suggested that the Town Manager act as liaison to other departments to assist the work and develop a presentation of the work to inform others.",
+   "quote": "it was suggested the town manager could act as liaison to other departments to assist in this work, as well as developing a presentation of the work to inform others."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Shovel-ready energy projects for the next grant round (Turkey Hill envelope and roof, school lighting)",
+   "what_was_recorded": "Turkey Hill envelope and roof projects and lighting at the school were raised as well-developed, shovel-ready projects with an estimated cost stated.",
+   "figures_as_printed": [
+    "$70,000"
+   ],
+   "quote": "turkey hill envelope and roof projects as well as lighting at the school were raised as well developed- shovel ready projects with an estimated $70,000 cost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of March 29, 2017 meeting",
+   "resolution": "motion to approve made and seconded; result not stated",
+   "quote": "minutes from march 29, 2017 meeting were reviewed. g.b. made a motion to approve, n.s. seconded.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Draft annual report (grant reporting)",
+   "resolution": "reviewed; areas to update discussed; Londa to update vehicle listing and baseline data",
+   "quote": "j. londa provided a copy of the draft annual report. the report was reviewed and areas to be updated were discussed.",
+   "tags": [
+    "annual report",
+    "grant",
+    "energy"
+   ]
+  },
+  {
+   "topic": "Recommendations for next grant round projects",
+   "resolution": "discussed; Town Manager to compile building wish list",
+   "quote": "recommendations for upcoming projects for the next grant round were discussed.",
+   "tags": [
+    "grant",
+    "capital projects",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "MRPC grant and outreach",
+   "resolution": "Town Manager volunteered as liaison; MRPC to be invited",
+   "quote": "mrpc has reached out and reported they have a grant to develop new projects.",
+   "tags": [
+    "MRPC",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Task Force status as task force or committee and charter",
+   "resolution": "discussed; Task Force to draft a charter for selectmen review",
+   "quote": "discussion was had regarding the task force's status as a task force or committee.",
+   "tags": [
+    "charter",
+    "governance",
+    "selectmen"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for November 8, 2017 at 6:30 PM",
+   "quote": "the next meeting date was set as november 8th, 2017 at 6:30 pm.",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft annual report",
+   "where": "text",
+   "quote": "j. londa provided a copy of the draft annual report. the report was reviewed and areas to be"
+  },
+  {
+   "name": "Building Department report",
+   "where": "text",
+   "quote": "following up with the building department report and updating baseline data for the annual report."
+  }
+ ],
+ "tags": [
+  "green communities",
+  "energy reduction",
+  "annual report",
+  "grant",
+  "MRPC",
+  "task force charter",
+  "town buildings",
+  "capital projects"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

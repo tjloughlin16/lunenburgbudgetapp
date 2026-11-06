@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2018-04-03",
  "docid": "741",
@@ -12,19 +12,209 @@
  },
  "votes": [
   {
-   "motion": "Grant both statutory exemptions in the amount of $5,799.77",
+   "motion": "Approve current expense vouchers, payroll, abatements, warrants, commitments and the March 6, 2018 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and march 6, 2018 minutes."
+  },
+  {
+   "motion": "Grant both statutory exemptions (V1 & V22D), in the amount of $5,799.77.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "boa voted to grant both statutory exemptions in the amount of $5,799.77."
   },
   {
-   "motion": "Meet on May 1, 2018 at 5:45 pm",
+   "motion": "Approve the eight 3 ABC Charitable Exemption applications for FY19.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the board reviewed and approved the following (8) eight 3 abc charitable exemption applications for fy19:"
+  },
+  {
+   "motion": "Meet on May 1, 2018 at 5:45 pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on may 1, 2018 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0534077
+ "note": "Text is OCR (macOS Vision). The abatement table is garbled: the Total Abated column splits dollar signs and digits (e.g. \"$ 1.970.00\" likely means $1,970.00). No motion makers, seconders, or vote counts are printed; the statutory exemption outcome rests on \"voted to grant\" and the approvals on \"reviewed and approved\", so outcomes are recorded as stated. Adjournment at 7:10 pm is stated without a recorded vote. Page 2 supplemental-bill field labels have no values. Signature line reads \"Lause Faquette\", an OCR error for Louise Paquette.",
+ "cost_usd": 0.005394019999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "regional assessor, harald scheid, associate assessor, joshua gendron, and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board denied five real estate abatement applications and granted four.",
+   "quote": "five (5) applications were denied by the board and four (4) application abatements were granted."
+  },
+  {
+   "decision": "Three additional statutory exemption applications were reviewed and denied as not meeting the qualifications.",
+   "quote": "also, there were an additional three (3) applications received that were reviewed and denied; did not meet the qualifications."
+  },
+  {
+   "decision": "Supplemental tax bills for 23 new-construction properties to be mailed April 30, 2018; the list for commercial properties is still awaited and is not the final mailing.",
+   "quote": "louise reported that 23 bills totaling $53,122.69 for new constructed properties will be mailed on"
+  },
+  {
+   "decision": "Property values for the two commercial properties needing inspections to be reported to the BOA next month.",
+   "quote": "stated that the property values will be reported to the boa next month."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Real estate abatement applications",
+   "what_was_recorded": "Real estate abatement amounts for the listed accounts were printed in the minutes; four were granted.",
+   "figures_as_printed": [
+    "$421.58",
+    "$204.88",
+    "$415.67",
+    "$1,970.00",
+    "$ 1.970.00"
+   ],
+   "quote": "120-028 $1,970.00 $ 1.970.00"
+  },
+  {
+   "topic": "Statutory exemptions V1 & V22D",
+   "what_was_recorded": "The Board voted to grant both statutory exemptions in a stated total amount.",
+   "figures_as_printed": [
+    "$5,799.77"
+   ],
+   "quote": "boa voted to grant both statutory exemptions in the amount of $5,799.77."
+  },
+  {
+   "topic": "FY18 RE supplemental bills for new construction",
+   "what_was_recorded": "Louise reported 23 supplemental bills totaling a stated amount, to be mailed April 30, 2018.",
+   "figures_as_printed": [
+    "$53,122.69"
+   ],
+   "quote": "louise reported that 23 bills totaling $53,122.69 for new constructed properties will be mailed on"
+  },
+  {
+   "topic": "Growth Report",
+   "what_was_recorded": "Harald stated the Growth Report remains at a stated figure.",
+   "figures_as_printed": [
+    "$375,000"
+   ],
+   "quote": "he also stated that the growth report remains at $375,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals and minutes",
+   "resolution": "approved",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "warrants",
+    "minutes"
+   ],
+   "quote": "board reviewed and approved current expense vouchers, payroll, abatements, warrants, commitments and march 6, 2018 minutes."
+  },
+  {
+   "topic": "Real estate abatement applications",
+   "resolution": "4 granted, 5 denied",
+   "tags": [
+    "abatements",
+    "real estate"
+   ],
+   "quote": "abatement applications: joshua presented nine (9) real estate abatement applications."
+  },
+  {
+   "topic": "Statutory exemptions",
+   "resolution": "2 granted, 3 denied",
+   "tags": [
+    "exemptions",
+    "statutory"
+   ],
+   "quote": "statutory exemptions: two (2) applications for statutory exemptions (v1 & v22d) were received and"
+  },
+  {
+   "topic": "FY18 RE supplemental bills",
+   "resolution": "reported",
+   "tags": [
+    "supplemental tax",
+    "new construction"
+   ],
+   "quote": "fy18 re supplemental bills: louise reported that a letter was sent to 23 property owners for new"
+  },
+  {
+   "topic": "3 ABC charitable exemptions FY19",
+   "resolution": "approved 8 applications",
+   "tags": [
+    "charitable exemptions",
+    "FY19"
+   ],
+   "quote": "the board reviewed and approved the following (8) eight 3 abc charitable exemption applications for fy19:"
+  },
+  {
+   "topic": "Report by Assessor",
+   "resolution": "reported",
+   "tags": [
+    "growth report",
+    "commercial occupancy",
+    "inspections"
+   ],
+   "quote": "report by assessor: harald stated that there appears to be only two commercial properties that were"
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for May 1, 2018; adjourned 7:10 pm",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "board voted to meet on may 1, 2018 at 5:45 pm. meeting adjourned 7:10 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter to 23 property owners for new construction explaining the supplemental tax bill (sent April 2, 2018)",
+   "where": "text",
+   "quote": "a letter was sent to 23 property owners for new construction yesterday, april 2"
+  }
+ ],
+ "tags": [
+  "abatements",
+  "statutory exemptions",
+  "charitable exemptions",
+  "supplemental tax bills",
+  "new construction",
+  "growth report",
+  "FY18",
+  "FY19",
+  "assessors"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

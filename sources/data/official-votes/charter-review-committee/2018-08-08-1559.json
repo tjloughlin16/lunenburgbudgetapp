@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "charter-review-committee",
  "meeting_date": "2018-08-08",
  "docid": "1559",
@@ -12,15 +12,245 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of June 13, 2018 and June 27, 2018",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve the minutes of June 13, 2018 and June 27, 2018.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "minutes of june 13, 2018 and june 27, 2018 were unanimously approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The remainder of the document describes committee discussions and reviews of proposed charter changes, but records no additional motions voted on. The document ends with scheduling of the next meeting and adjournment without recording a vote on adjournment.",
- "cost_usd": 0.0806605
+ "note": "Text is a clean extraction with no scan or missing pages. The only recorded vote is approval of the June 13 and June 27, 2018 minutes; no motions are recorded on the charter language items, and no adjournment motion is recorded (the minutes say only 'Meeting adjourned at 8:25 pm.'). No mover or seconder is printed. The chair is not named. Public comment is recorded as 'None'.",
+ "cost_usd": 0.00665742,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Ebersole",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), nancy gray (community representative)"
+  },
+  {
+   "name": "Jaime Toale",
+   "role": "Selectmen",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), nancy gray (community representative)"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "Community Representative",
+   "status": "present",
+   "quote": "present: bob ebersole (selectmen), jaime toale (selectmen), nancy gray (community representative)"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka (school committee), jim laveck (school committee), terri burchfield (finance committee)"
+  },
+  {
+   "name": "Jim LaVeck",
+   "role": "School Committee",
+   "status": "present",
+   "quote": "heather sroka (school committee), jim laveck (school committee), terri burchfield (finance committee)"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "Finance Committee",
+   "status": "present",
+   "quote": "heather sroka (school committee), jim laveck (school committee), terri burchfield (finance committee)"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Planning Board",
+   "status": "absent",
+   "quote": "absent: michael-ray jeffreys (planning board), mark erickson (finance committee), steve archambault (community representative)"
+  },
+  {
+   "name": "Mark Erickson",
+   "role": "Finance Committee",
+   "status": "absent",
+   "quote": "absent: michael-ray jeffreys (planning board), mark erickson (finance committee), steve archambault (community representative)"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "Community Representative",
+   "status": "absent",
+   "quote": "absent: michael-ray jeffreys (planning board), mark erickson (finance committee), steve archambault (community representative)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Delete the previously proposed words 'who may delegate such authority' from 3.5, 3.9 and 3.14, since Section 4.3 already lets the town manager delegate.",
+   "quote": "3.14 sewer commissioners (b) powers and duties delete the previously proposed words"
+  },
+  {
+   "decision": "Remove the requirement in 3-5, 3-9 and 3.13 that the boards stay out of day to day administration, because the wording did not meet the clarifying purpose.",
+   "quote": "the committee will take out the previously proposed language requiring staying out of day to day administration"
+  },
+  {
+   "decision": "Delete section 8-5 as a duplicate of the first paragraph of section 8-2.",
+   "quote": "this section is not needed as it is a duplicate of the first paragraph of section 8-2."
+  },
+  {
+   "decision": "Add a sentence at the end of 6-3 that the budget summary shall be mailed with the warrant to households with registered voters.",
+   "quote": "the summary of the budget shall be mailed with the warrant to households with registered voters"
+  },
+  {
+   "decision": "Present the controversial topics as separate articles at the spring town meeting, and seek pro and con statements for voters.",
+   "quote": "these topics will be presented as separate articles at the spring town meeting."
+  },
+  {
+   "decision": "Seek pro and con statements so voters have information on both sides of each controversial proposal.",
+   "quote": "we will seek to have pro and con statements so that the voters will have information on both sides of the proposal."
+  },
+  {
+   "decision": "Bob Ebersole will talk with Town Counsel about a standing second town meeting that is not confused with annual town meeting and does not require special town meeting standards.",
+   "quote": "bob will talk with town counsel about how to meet the desire to have a standing second town meeting"
+  },
+  {
+   "decision": "Move the proposed language on appointment of the land use director to the Town Manager section (3-10).",
+   "quote": "move the proposed language regarding appointment of the land use director to the town manager section."
+  },
+  {
+   "decision": "Clarify that the residency requirement in 4-2(c) applies only to an appointed town clerk due to election requirements.",
+   "quote": "this language needs to be clarified so that it only applies to an appointed town clerk due to election requirements"
+  },
+  {
+   "decision": "The town accountant will continue to be an appointment of the Selectmen (5-3(d)(3)).",
+   "quote": "the town accountant will continue to be an appointment of the selectmen."
+  },
+  {
+   "decision": "Bob Ebersole will work with the Library and the Town Manager on language for 3-7 that meets the Library's wishes and the Town Manager's concerns, incorporating current state-law hiring practice.",
+   "quote": "bob will work with the library and the town manager to get the language that meets what the library wants"
+  },
+  {
+   "decision": "Bob Ebersole will gather information from the Secretary of State's office on changing the Town Clerk from elected to appointed.",
+   "quote": "bob will gather information from the secretary of state"
+  },
+  {
+   "decision": "Invite Carl and Phyllis Luck to an upcoming meeting to discuss the write-in candidate signature proposal.",
+   "quote": "it was decided to invite them to an upcoming meeting to discuss the proposal."
+  },
+  {
+   "decision": "Invite a speaker in to discuss ranked choice voting.",
+   "quote": "we will invite someone in to discuss the topic."
+  },
+  {
+   "decision": "No interest in revisiting term limits; the topic was dropped.",
+   "quote": "there was no interest in revisiting term limits."
+  },
+  {
+   "decision": "Need to talk with the Town Moderator about the 4-1 Town Manager Search process, since the proposed changes make the committee an even numbered membership.",
+   "quote": "need to talk with town moderator as the proposed changes make the committee an even numbered membership."
+  },
+  {
+   "decision": "Keep the proposed deleted language in 4-2(s) related to infrastructure maintenance, improvement and expansion, pending discussion with the town manager.",
+   "quote": "4-2 town manager powers and duties (s) keep the proposed deleted language"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget summary notice in local newspaper (6-3)",
+   "what_was_recorded": "The committee said the cost of keeping budget notice in the local newspaper and other outreach tools needs to be discussed with the Town Manager; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "need to discuss with the town manager the cost of keeping notice in the local newspaper and other outreach tools"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved June 13 and June 27, 2018 minutes",
+   "quote": "minutes of june 13, 2018 and june 27, 2018 were unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Non-controversial proposed changes",
+   "resolution": "discussed; several language changes agreed, some referred to Town Manager or counsel",
+   "quote": "review of non-controversial proposed changes -- the committee walked through the language and",
+   "tags": [
+    "charter language",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Substantive changes not controversial",
+   "resolution": "discussed; follow-up assigned to members",
+   "quote": "review of substantive changes not controversial -- the committee walked through the language and",
+   "tags": [
+    "charter language",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Substantive changes considered controversial",
+   "resolution": "separate spring town meeting articles with pro and con statements; Select Board name and Town Clerk appointment discussed",
+   "quote": "review of substantive changes considered controversial -- the committee walked through the",
+   "tags": [
+    "select board name",
+    "town clerk",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Items previously considered but not included in draft charter",
+   "resolution": "write-in signatures: invite Lucks; ranked choice: invite a speaker; term limits: not revisited",
+   "quote": "review of items previously considered but not included in the draft charter -- the committee walked",
+   "tags": [
+    "write-in candidates",
+    "ranked choice voting",
+    "term limits"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "next meeting set for August 22, 2018",
+   "quote": "we will discuss scheduling and public outreach.",
+   "tags": [
+    "scheduling",
+    "public outreach"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Working of MGL 231A Section 1 (enforcement process), distributed by Bob",
+   "where": "list",
+   "quote": "bob distributed the working of mgl 231a section 1 that details the process for enforcement."
+  },
+  {
+   "name": "Information previously provided by Carl and Phyllis Luck (write-in candidate signatures), distributed by Bob",
+   "where": "list",
+   "quote": "bob distributed information previously provided by carl and phyllis luck"
+  },
+  {
+   "name": "Draft charter",
+   "where": "text",
+   "quote": "review of items previously considered but not included in the draft charter -- the committee walked"
+  }
+ ],
+ "tags": [
+  "charter review",
+  "town charter",
+  "select board name",
+  "town clerk appointment",
+  "ranked choice voting",
+  "write-in candidates",
+  "term limits",
+  "town manager",
+  "budget notice",
+  "town meeting",
+  "Ritter Building"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "as requested at the previous meeting, bob distributed"
+ },
+ "dropped_unquoted_by_field": {}
 }

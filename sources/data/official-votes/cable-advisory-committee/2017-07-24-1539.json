@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2017-07-24",
  "docid": "1539",
@@ -12,6 +12,239 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. No votes recorded. The minutes document a discussion of cable contract negotiations with Comcast, but contain no language recording a motion, a second, or a vote. The next meeting is mentioned as being scheduled for August 7, 2017, and the meeting adjourned at 6:59 pm, but neither action records a vote.",
- "cost_usd": 0.0842615
+ "note": "The minutes text is an OCR extraction with recognition errors (for example \"liquated\", \"Gregs\", \"Comcasi\", \"arinua!\"); quotes are copied as the OCR prints them. The minutes head the meeting \"July 25, 2017\" while the requested meeting date is 2017-07-24; the minutes are otherwise dated by the next-meeting reference (8/7/17). The minutes print the name as both \"Greg Franks\" and \"Gregg Franks\"/\"Mr. Franks\". No motion, vote, or result is recorded anywhere in the text, including the adjournment at 6:59, so the votes list is empty. Public comment, announcements and minutes/correspondence were recorded as \"None\".",
+ "cost_usd": 0.00740842,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "not stated (minutes signed by her)",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  },
+  {
+   "name": "Bill Hewig",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  },
+  {
+   "name": "Jo Mclaughlin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "not stated",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  },
+  {
+   "name": "Greg Franks",
+   "role": "of Comcast (also printed as Gregg Franks and Mr. Franks)",
+   "status": "present",
+   "quote": "steve walker, tom alonzo, paula bertram, heather lemieux, attorney bill hewig, jo mclaughlin, steve malandrinos and greg franks of comcast present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Greg Franks will look into whether a copy of the hearing transcript is available, which is not yet available.",
+   "quote": "mr. franks responded that it is not yet available and he will investigate."
+  },
+  {
+   "decision": "Steve Walker will forward an electronic copy of the hearing presentation to Comcast.",
+   "quote": "steve walker will forward an electronic copy of the presentation."
+  },
+  {
+   "decision": "Greg Franks will send a copy of the HD PEG letter and EPG letter to Bill Hewig.",
+   "quote": "mr. franks will send a copy of the hd peg letter and epg letter to bill hewig."
+  },
+  {
+   "decision": "Greg Franks will add liquidated damages to the contract.",
+   "quote": "bill hewig noted that he did not see liquated damages in the contract and would like to see that added"
+  },
+  {
+   "decision": "Greg Franks will provide sample side letters and an estimate on the video return line.",
+   "quote": "he will provide sample side letters and will get an estimate on the video return line (may be less than $10,000)."
+  },
+  {
+   "decision": "Greg Franks will work on an electronic programming guide (EPG) side letter.",
+   "quote": "gregs said he will work on that."
+  },
+  {
+   "decision": "Next committee meeting set for August 7, 2017 at 6:00 pm.",
+   "quote": "meeting was scheduled for august 7, 2017 at 6:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Franchise fee increase and town revenue share",
+   "what_was_recorded": "The proposal seeks 5% of gross annual revenues, about $200,000 per year, versus the 2.5% (about $100,000) Lunenburg currently receives.",
+   "figures_as_printed": [
+    "5%",
+    "$200,000",
+    "2.5%",
+    "$100,000"
+   ],
+   "quote": "revenues; which represents approx. $200,000 per year. lunenburg currently receives 2.5%;"
+  },
+  {
+   "topic": "Capital request",
+   "what_was_recorded": "The committee's capital request is $240,000, compared with a current license of $115,000.",
+   "figures_as_printed": [
+    "$240,000"
+   ],
+   "quote": "we are looking for $240,000 in capital"
+  },
+  {
+   "topic": "Current license amount",
+   "what_was_recorded": "The current license is for $115,000.",
+   "figures_as_printed": [
+    "$115,000"
+   ],
+   "quote": "current license is for $115,000."
+  },
+  {
+   "topic": "Franchise related cost and subscriber bill impact",
+   "what_was_recorded": "Comcast stated current franchise related cost is $.36 per subscriber; with 11% interest on capital costs the cost is stated as approximately $.75, and $.28 on capital without interest; a fee increase from 2.5% to 5% would raise subscriber bills.",
+   "figures_as_printed": [
+    "$.36",
+    "(11%)",
+    "$.28",
+    "$.75",
+    "2.5%",
+    "5%"
+   ],
+   "quote": "current franchise related cost (frc) is $.36 per subscriber."
+  },
+  {
+   "topic": "Video return line from high school to Town Hall",
+   "what_was_recorded": "Comcast will get an estimate on the video return line, which may cost less than $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "will get an estimate on the video return line (may be less than $10,000)."
+  },
+  {
+   "topic": "Town and school business services spending",
+   "what_was_recorded": "Lunenburg's town and school together spend about $3,000 per month on business services, which the committee said makes the requested increases more palatable.",
+   "figures_as_printed": [
+    "$3,000 per month"
+   ],
+   "quote": "currently between the town and school lunenburg is currently spending about $3,000 per month on business services."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action (none)",
+   "quote": "public comment none announcements none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes and correspondence",
+   "resolution": "no action (none)",
+   "quote": "minutes/correspondences none.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Negotiations with Comcast on new cable contract",
+   "resolution": "discussed; follow-up items assigned to Comcast and presentation to committee; no vote recorded",
+   "quote": "negotiations with comcast on new cable contract - attorney hewig asked if a copy of the hearing",
+   "tags": [
+    "Comcast",
+    "cable contract",
+    "negotiations",
+    "franchise fee",
+    "PEG access",
+    "side letters",
+    "capital budget"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "next meeting set for 8/7/17 at 6:00 pm",
+   "quote": "the next meeting is scheduled for 8/7/17 at 6:00 pm",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Business plan (Comcast copy provided at meeting; capital needs at page 9)",
+   "where": "list",
+   "quote": "mr. franks indicated that he does not yet have a copy of the business plan, he was provided a printed copy during the meeting."
+  },
+  {
+   "name": "Hearing transcript",
+   "where": "text",
+   "quote": "attorney hewig asked if a copy of the hearing transcript was available."
+  },
+  {
+   "name": "Presentation given at the hearing",
+   "where": "text",
+   "quote": "he also requested a copy of the presentation given at the hearing"
+  },
+  {
+   "name": "HD PEG letter",
+   "where": "text",
+   "quote": "mr. franks will send a copy of the hd peg letter and epg letter to bill hewig."
+  },
+  {
+   "name": "EPG letter",
+   "where": "text",
+   "quote": "mr. franks will send a copy of the hd peg letter and epg letter to bill hewig."
+  },
+  {
+   "name": "Senior citizen discount side letter (proposed)",
+   "where": "text",
+   "quote": "we discussed the possibility of requesting a senior citizen discount side letter."
+  }
+ ],
+ "tags": [
+  "cable",
+  "Comcast",
+  "cable contract negotiations",
+  "franchise fee",
+  "PEG access",
+  "HD programming",
+  "EPG",
+  "side letters",
+  "capital budget",
+  "subscriber rates",
+  "video return line",
+  "public hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. franks indicated that he does not yet have a copy of the business plan"
+ },
+ "dropped_unquoted_by_field": {}
 }

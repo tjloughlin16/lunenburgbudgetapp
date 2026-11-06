@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-02-27",
  "docid": "5592",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "accept the Task 1 report as written and begin work on that",
+   "motion": "Accept the Task 1 report as written and begin work on that (I/I, Weston & Sampson); recorded as Joan, Troy and Joe aye, Carl nay.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
-   "outcome": "passed 3-1",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: joan p. second: troy d. to accept the task 1 report as written and begin work on that. discussion: carl brought up concerns ",
-   "quote_taken_from_text": true
+   "quote": "motion: joan p. second: troy d. to accept the task 1 report as written and begin work on that."
   },
   {
-   "motion": "use $35,034 for the SWSS parts and move the $10,000 out of I/l, leaving $12,000, to get the Emergency Fund up to $19,000",
+   "motion": "Use $35,034 for the SWSS parts and move the $10,000 out of I/l, leaving $12,000, to get the Emergency Fund up to $19,000; recorded as Joe, Joan and Troy aye, Carl nay.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
-   "outcome": "passed 3-1",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: joan p. second: troy d. to use $35,034 for the swss parts and move the $10,000 out of i/l, leaving $12,000, to get the emergency fund up to $19,000. vote: joe, joan & troy- aye, carl - nay"
+   "quote": "motion: joan p. second: troy d. to use $35,034 for the swss parts and move the $10,000 out of i/l, leaving $12,000, to get the emergency fund up to $19,000."
   },
   {
-   "motion": "accept the minutes for 1/30/18 as originally submitted by the Minutes Clerk",
+   "motion": "Accept the minutes for 1/30/18 as originally submitted by the Minutes Clerk; no result is printed before the discussion that follows.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
    "outcome": "not stated",
@@ -37,15 +36,370 @@
    "quote": "motion: joan p. second: troy d. to accept the minutes for 1/30/18 as originally submitted by the minutes clerk."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 8:55 pm.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: joan p. to adjourn: 8:55 pm. second: troy d. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision; readable overall. Motion on minutes (vote 3) has no recorded outcome—text appears to jump between pages without recording a vote result.",
- "cost_usd": 0.0397117
+ "note": "OCR text from a scanned page set (macOS Vision) with recognition errors (e.g., \"I/l\" for I/I, \"March 12'\", \"27h\"); the top of page 1 is garbled and page 1 begins mid-sentence. No roll call or attendance line is printed, so attendee status is inferred only from speaking or voting. The 1/30/18 minutes motion has no printed result before the text breaks to page 2; outcome left not stated. Vote tallies are given by name, not as printed counts. Documents are mentioned only in passing with no list heading.",
+ "cost_usd": 0.01046892,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joan P.",
+   "status": "present",
+   "quote": "motion: joan p. second: troy d. to accept the task 1 report as written and begin work on that."
+  },
+  {
+   "name": "Troy D.",
+   "status": "present",
+   "quote": "second: troy d. to accept the task 1 report as written and begin work on that."
+  },
+  {
+   "name": "Carl",
+   "status": "present",
+   "quote": "discussion: carl brought up concerns about problems in the rfq."
+  },
+  {
+   "name": "Joe",
+   "status": "present",
+   "quote": "presentation to fincom on 3/8 will be done by joe and carl."
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "jack spoke to weston & sampson and they are ready to move it into the"
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported they are revising the draft agreement and should have something"
+  },
+  {
+   "name": "Al Packard",
+   "status": "present",
+   "quote": "6:45pm small water systems services (swss) quarterly update - al packard reported that everything is operational and"
+  },
+  {
+   "name": "Bob Ebersole",
+   "status": "present",
+   "quote": "bob ebersole, passed out copies of the complaint of a violation of the open meeting law"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "not stated",
+   "quote": "barb got a revised debt schedule from the town accountant, karen brochu."
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "not stated",
+   "quote": "barb will check with jack, heather lemieux and bob ebersole for their availability to attend"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "jane ranley sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jack will contact Weston & Sampson for their opinion on the next step on I/I after Task 1 is completed.",
+   "quote": "jack will contact weston & sampson to get their opinion on what the next step would be on i/l after task 1 is completed."
+  },
+  {
+   "decision": "Jack will have a discussion with SWSS about a maintenance plan.",
+   "quote": "jack will have a discussion with swss."
+  },
+  {
+   "decision": "Commission agreed to the edits to the Tilton Ave. letter survey; Barb will send out the letters. Residents to respond by March 13th.",
+   "quote": "all agreed to the edits and barb will send out the letters."
+  },
+  {
+   "decision": "Joe and Carl will make the FY19 budget presentation to FinCom on 3/8.",
+   "quote": "presentation to fincom on 3/8 will be done by joe and carl."
+  },
+  {
+   "decision": "Barb will go over the final FY19 budget figures with Karen Brochu.",
+   "quote": "barb will be going over the final fy19 budget figures with karen."
+  },
+  {
+   "decision": "Barb will check with Jack, Heather Lemieux and Bob Ebersole on their availability for the communication process plan workshop.",
+   "quote": "barb will check with jack, heather lemieux and bob ebersole for their availability to attend"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY18 spending: SWSS spare parts, I/I and Emergency Fund",
+   "what_was_recorded": "Motion to use $35,034 for SWSS parts, move $10,000 out of I/l leaving $12,000, and bring the Emergency Fund up to $19,000.",
+   "figures_as_printed": [
+    "$35,034",
+    "$10,000",
+    "$12,000",
+    "$19,000"
+   ],
+   "quote": "to use $35,034 for the swss parts and move the $10,000 out of i/l, leaving $12,000, to get the emergency fund up to $19,000."
+  },
+  {
+   "topic": "Pump parts budget",
+   "what_was_recorded": "Jack asked the Commission to decide how much to budget for pump parts; he will meet with SWSS on a prioritized list. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "jack asked the commission to decide how much they can budget for the parts and he can meet with swss"
+  },
+  {
+   "topic": "FY19 budget insurance costs",
+   "what_was_recorded": "Commission discussed insurance costs and how the amounts are determined. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the insurance costs and looking at how the amounts are determined."
+  },
+  {
+   "topic": "Fitchburg CSS 4d project costs",
+   "what_was_recorded": "John and Carl to attend the 3/7 cost review meeting on the John Fitch Highway project costs. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "4d project costs -john fitch highway - john and carl will be going on 3/7 to the cost review meeting"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Move $10,000 out of I/l, leaving $12,000, to bring the Emergency Fund up to $19,000; $35,034 used for SWSS parts.",
+   "amount_as_printed": "$10,000",
+   "outcome": "passed",
+   "quote": "motion: joan p. second: troy d. to use $35,034 for the swss parts and move the $10,000 out of i/l, leaving $12,000, to get the emergency fund up to $19,000."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Troy",
+   "topic": "Re-election as Sewer Commissioner",
+   "quote": "troy said that he is running for re-election as sewer commissioner."
+  },
+  {
+   "speaker": "Bob Ebersole",
+   "topic": "Open Meeting Law complaint",
+   "quote": "bob ebersole, passed out copies of the complaint of a violation of the open meeting law for the business manager distributing information containing member's opinions"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "SWSS quarterly update",
+   "resolution": "received; pump parts and backup options discussed",
+   "quote": "6:45pm small water systems services (swss) quarterly update - al packard reported that everything is operational and",
+   "tags": [
+    "SWSS",
+    "pumps"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements- q3 bills were sent out on the 16th. town caucus is on march 12' at turkey hill elementary school.",
+   "tags": [
+    "bills",
+    "election"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action; no discussion",
+   "quote": "public comment -troy said that he is running for re-election as sewer commissioner.",
+   "tags": [
+    "public comment",
+    "Open Meeting Law"
+   ]
+  },
+  {
+   "topic": "DPW systems update - I/I Task 1",
+   "resolution": "Task 1 report accepted and work to begin (vote 3-1 by names)",
+   "quote": "dpw systems update - i/l discussion- task 1- jack spoke to weston & sampson and they are ready to move it into the",
+   "tags": [
+    "I/I",
+    "Weston & Sampson",
+    "RFQ"
+   ]
+  },
+  {
+   "topic": "FY18 spending",
+   "resolution": "funds moved: $35,034 for SWSS parts, $10,000 out of I/I (vote)",
+   "quote": "fy 18 spending -- commission discussed priorities for using the balance of the f18 budgeted money",
+   "tags": [
+    "FY18",
+    "budget",
+    "Emergency Fund",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Maintenance plan",
+   "resolution": "discussed; Jack to talk with SWSS",
+   "quote": "maintenance plan discussion-commission discussed what would be required in a maintenance plan",
+   "tags": [
+    "maintenance",
+    "jetting"
+   ]
+  },
+  {
+   "topic": "Pump station analysis",
+   "resolution": "discussed; life-expectancy study considered for capital plan",
+   "quote": "pump station analysis-commission discussed doing a study on the life expectancy of the pump stations in their capital plan",
+   "tags": [
+    "pump stations",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Tilton Ave extension",
+   "resolution": "letter survey agreed; Barb to send; engineering needed if 2/3 interested",
+   "quote": "tilton ave extension discussion -commission discussed the letter survey to be sent out to the tilton ave. residents concerning a sewer extension.",
+   "tags": [
+    "Tilton Ave",
+    "sewer extension",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "FY19 budget",
+   "resolution": "discussed; Barb to review final figures with Karen Brochu; FinCom presentation 3/8",
+   "quote": "fy19 budget discussion- barb got a revised debt schedule from the town accountant, karen brochu.",
+   "tags": [
+    "FY19",
+    "budget",
+    "debt",
+    "insurance",
+    "FinCom"
+   ]
+  },
+  {
+   "topic": "Fitchburg CSS 4d project costs",
+   "resolution": "no action; John and Carl to attend 3/7 cost review",
+   "quote": "4d project costs -john fitch highway - john and carl will be going on 3/7 to the cost review meeting",
+   "tags": [
+    "Fitchburg",
+    "CSS",
+    "cost review"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles",
+   "resolution": "first draft sent; discussed",
+   "quote": "annual town meeting warrant articles - fy19 budget, stabilization funds, opeb, tilton ave. barb sent out the first draft",
+   "tags": [
+    "Town Meeting",
+    "warrant articles",
+    "OPEB",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Communication process plan workshop",
+   "resolution": "two options discussed; Barb to check availability",
+   "quote": "communication process plan workshop- 2 options - there would be either a workshop on march 27h at the town hall",
+   "tags": [
+    "workshop",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "discussed edits to minutes; motion to accept 1/30/18 minutes made, result not printed",
+   "quote": "minutes- joan brought up concerns about the number of edits being made to the minutes that the minutes clerk has prepared",
+   "tags": [
+    "minutes",
+    "Open Meeting Law"
+   ]
+  },
+  {
+   "topic": "Highfield Village",
+   "resolution": "update; draft agreement being revised",
+   "quote": "highfield village - barb reported they are revising the draft agreement and should have something",
+   "tags": [
+    "Highfield Village",
+    "agreement"
+   ]
+  },
+  {
+   "topic": "Members agenda inputs",
+   "resolution": "none",
+   "quote": "members agenda inputs for future meetings-none",
+   "tags": [
+    "agenda"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Task 1 report (Weston & Sampson, I/I)",
+   "where": "text",
+   "quote": "to accept the task 1 report as written and begin work on that."
+  },
+  {
+   "name": "List of questions prepared by Carl regarding Task 1",
+   "where": "text",
+   "quote": "commission discussed the list of questions that carl put together regarding task 1 and how to move forward."
+  },
+  {
+   "name": "RFQ",
+   "where": "text",
+   "quote": "discussion: carl brought up concerns about problems in the rfq."
+  },
+  {
+   "name": "Parts lists for the pumps provided by SWSS",
+   "where": "text",
+   "quote": "commission reviewed the parts lists for the pumps provided by swss."
+  },
+  {
+   "name": "Complaint of a violation of the Open Meeting Law (distributed by Bob Ebersole)",
+   "where": "text",
+   "quote": "passed out copies of the complaint of a violation of the open meeting law for the business manager"
+  },
+  {
+   "name": "Revised debt schedule (from Town Accountant Karen Brochu)",
+   "where": "text",
+   "quote": "barb got a revised debt schedule from the town accountant, karen brochu."
+  },
+  {
+   "name": "Tilton Ave. letter survey",
+   "where": "text",
+   "quote": "survey to be sent out to the tilton ave. residents concerning a sewer extension."
+  },
+  {
+   "name": "Annual Town Meeting warrant articles (first draft)",
+   "where": "text",
+   "quote": "annual town meeting warrant articles - fy19 budget, stabilization funds, opeb, tilton ave. barb sent out the first draft"
+  },
+  {
+   "name": "Highfield Village draft agreement",
+   "where": "text",
+   "quote": "barb reported they are revising the draft agreement and should have something"
+  },
+  {
+   "name": "Minutes of 1/30/18",
+   "where": "text",
+   "quote": "to accept the minutes for 1/30/18 as originally submitted by the minutes clerk."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "SWSS pumps",
+  "I/I",
+  "FY18 spending",
+  "FY19 budget",
+  "Emergency Fund",
+  "Tilton Ave extension",
+  "Open Meeting Law",
+  "minutes",
+  "Town Meeting",
+  "election",
+  "Fitchburg CSS"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

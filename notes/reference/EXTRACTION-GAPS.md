@@ -17,7 +17,7 @@
 
 - **360 of 3,696 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
 - **268 of the 866 tables catalogued in FY2011-FY2025 sit on a page no dataset has a row from.** Step 4 (`scripts/sort_catalogue.py`) sorted them from the catalogue's descriptions, not from the pages: 166 gap, 5 repeat, 78 prose, 1 unsure, 18 deferred-to-list-survey. A `gap` is a judgement that nothing we hold looks like the table, not proof that the figures are absent. The other 598, on pages some dataset reads, are not sorted table by table.
-- **All 96 datasets holding report rows are in the database.**
+- **All 98 datasets holding report rows are in the database.**
 - **Lists are not counted yet.** Most years print officers and staff as running text, not tables, and every survey so far looked for tables. `lists_found` and `lists_in_dataset` are empty in the edition CSV until the list survey (step 3) runs.
 
 The proxy row is page grain, not table grain: a catalogued table counts if ANY dataset holds a row from ANY of its pages, so it is an upper bound on what has been read, never a count of tables read.
@@ -67,7 +67,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-dept-activity` | yes | 2,264 | 34 / 15 | 15 | 0 | 2,249 |
 | `special-revenue-read` | yes | 1,882 | 0 / 13 | - | - | - |
 | `report-officials` | yes | 1,838 | 20 / 13 | 0 | 0 | 1,838 |
-| `balance-sheet` | yes | 1,699 | 24 / 12 | - | - | - |
+| `balance-sheet` | yes | 1,701 | 24 / 12 | - | - | - |
 | `tax-collection` | yes | 1,449 | 49 / 3 | - | - | - |
 | `report-capital-projects` | yes | 1,317 | 11 / 15 | 741 | 547 | 29 |
 | `treasurers-cash` | yes | 1,130 | 40 / 15 | - | - | - |
@@ -97,6 +97,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-property-tax-exemptions` | yes | 179 | 18 / 0 | 0 | 0 | 179 |
 | `report-signatures` | yes | 179 | 0 / 14 | - | - | - |
 | `report-warrant-article-amounts` | yes | 178 | 9 / 0 | 148 | 0 | 30 |
+| `scholarship-funds` | yes | 174 | 0 / 15 | - | - | - |
 | `valuation-by-class` | yes | 170 | 0 / 13 | 144 | 26 | 0 |
 | `report-auditors-cash-schedule` | yes | 168 | 6 / 0 | 127 | 0 | 41 |
 | `peg-access-fund` | yes | 165 | 0 / 11 | 154 | 11 | 0 |
@@ -147,7 +148,8 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-office-budget-cuts` | yes | 4 | 1 / 0 | 4 | 0 | 0 |
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
-| **total** | | **140,052** | | **58,321** | **11,807** | **28,410** |
+| `scholarship-purposes` | yes | 3 | 3 / 0 | - | - | - |
+| **total** | | **140,231** | | **58,321** | **11,807** | **28,410** |
 
 ## Registers and files about the reading
 
@@ -187,12 +189,12 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | 1962 | 128 | 36 (36 / 0) | 73 | 69 | 4 | 69 | 19 |  |
 | 1963 | 124 | 43 (42 / 1) | 87 | 82 | 5 | 82 | 21 |  |
 | 1964 | 124 | 39 (38 / 1) | 84 | 79 | 5 | 79 | 24 |  |
-| 1965 | 138 | 41 (37 / 4) | 73 | 71 | 2 | 71 | 23 |  |
+| 1965 | 138 | 41 (37 / 4) | 73 | 71 | 2 | 71 | 24 |  |
 | 1966 | 126 | 36 (34 / 2) | 86 | 79 | 7 | 79 | 22 |  |
 | 1967 | 140 | 46 (40 / 6) | 89 | 79 | 10 | 79 | 24 |  |
 | 1968 | 148 | 43 (39 / 4) | 78 | 71 | 7 | 71 | 16 |  |
 | 1969 | 132 | 40 (37 / 3) | 79 | 72 | 7 | 72 | 18 |  |
-| 1970 | 136 | 38 (37 / 1) | 67 | 60 | 7 | 60 | 18 |  |
+| 1970 | 136 | 38 (37 / 1) | 67 | 60 | 7 | 60 | 19 |  |
 | 1971 | 136 | 39 (39 / 0) | 68 | 61 | 7 | 61 | 19 |  |
 | 1972 | 132 | 38 (36 / 2) | 69 | 63 | 6 | 63 | 18 |  |
 | 1973 | 128 | 30 (27 / 3) | 63 | 52 | 11 | 52 | 17 |  |
@@ -207,7 +209,7 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | 1982 | 168 | 46 (44 / 2) | 81 | 75 | 6 | 75 | 22 |  |
 | 1983 | 132 | 44 (39 / 5) | 83 | 79 | 4 | 79 | 24 |  |
 | 1984 | 146 | 39 (38 / 1) | 79 | 72 | 7 | 72 | 23 |  |
-| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 64 | 23 |  |
+| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 64 | 24 |  |
 | 1986 | 122 | 39 (31 / 8) | 80 | 75 | 5 | 75 | 23 |  |
 | 1987 | 76 | 22 (12 / 10) | 40 | 36 | 4 | 36 | 17 |  |
 | 1988 | 84 | 18 (12 / 6) | 37 | 32 | 5 | 32 | 17 |  |
@@ -233,21 +235,21 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 80 | 21 |  |
 | 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 61 | 20 |  |
 | 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 81 | 24 |  |
-| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 30 |  |
-| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 27 |  |
-| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 28 |  |
-| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 30 |  |
-| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 36 |  |
-| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 36 |  |
-| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 37 |  |
-| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 35 |  |
-| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 34 |  |
-| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 34 |  |
-| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 34 |  |
-| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 35 |  |
-| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 29 |  |
-| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 31 |  |
-| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 32 |  |
+| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 31 |  |
+| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 28 |  |
+| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 29 |  |
+| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 31 |  |
+| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 37 |  |
+| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 37 |  |
+| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 38 |  |
+| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 36 |  |
+| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 35 |  |
+| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 35 |  |
+| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 35 |  |
+| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 36 |  |
+| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 30 |  |
+| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 32 |  |
+| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 33 |  |
 
 ## Why 1959-2010 tables were not landed, by what the map calls them
 

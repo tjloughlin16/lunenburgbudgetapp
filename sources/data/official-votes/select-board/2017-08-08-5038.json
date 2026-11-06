@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2017-08-08",
  "docid": "5038",
@@ -12,32 +12,445 @@
  },
  "votes": [
   {
-   "motion": "Determine that violations to the Class II auto dealer license did occur",
+   "motion": "Determine that violations to the Class II auto dealer license did occur, based on evidence from the Building Commissioner and Police Department.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2nd: p. bertram based on the documented evidence provided by the building commissioner and the police department it is determined that violations to the class il auto dealer license did occur"
+   "quote": "based on the documented evidence provided by the building commissioner and the police department it is determined that violations to the class il auto dealer license did occur"
   },
   {
-   "motion": "Support the request of the Sewer Commission to retain KP Law, PC for the High Field Village legal work",
+   "motion": "Revoke the Class II auto dealer license for Nutting's Body and Frame Company at 40 Summer Street effective immediately.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "R. Ebersole",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to revoke the class ii auto dealer license for nutting's body and frame company located at 40 summer street effective immediately"
+  },
+  {
+   "motion": "Support the request of the Sewer Commission to retain KP Law, PC for the High Field Village legal work.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: r. ebersole 2\": p. bertram to support the request of the sewer commission to retain kp law, pc for the high field village legal work discussion: mr. to",
-   "quote_taken_from_text": true
+   "quote": "to support the request of the sewer commission to retain kp law, pc for the high field village legal work"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:26 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "R. Ebersole",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: p. bertram to adjourn the meeting at 8:26 p.m. 2\"d: r. ebersole vote: all in favor"
+   "quote": "to adjourn the meeting at 8:26 p.m."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-scanned text. All four votes passed unanimously (All in Favor). OCR artifacts visible in second field notation (e.g., 2\\\": appears variously due to scanning quality).",
- "cost_usd": 0.16378189999999998
+ "dropped_unquoted": 0,
+ "note": "Text is macOS Vision OCR with some garbling (e.g., 'Class Il', 'Elaiiem Piterson', stray quote marks in motion lines); quotes copied as printed. Votes are recorded only as 'All in Favor' with no counts; outcome recorded as 'passed'. The Sewer Commission members are referenced as present but are not named. Board members' announcements under the PUBLIC COMMENT heading are recorded as public comment. The minutes print no documents list heading.",
+ "cost_usd": 0.01214102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jamie Toale",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Member",
+   "status": "present",
+   "quote": "board of selectmen: jamie toale, chairman; robert ebersole, vice chairman; paula bertram, clerk; phyllis luck, member; damon mcquaid, member"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Dave Berthiaume",
+   "status": "present",
+   "quote": "dave berthiaume, 109 whiting street, and marilyn talley, 172 peninsula drive, came to announce the"
+  },
+  {
+   "name": "Marilyn Talley",
+   "status": "present",
+   "quote": "dave berthiaume, 109 whiting street, and marilyn talley, 172 peninsula drive, came to announce the"
+  },
+  {
+   "name": "Courtney Forester",
+   "role": "of WasteZero",
+   "status": "present",
+   "quote": "courtney forester of wastezero stated some clothing is resold in thrift stores"
+  },
+  {
+   "name": "Scott Sanford",
+   "role": "Owner",
+   "status": "present",
+   "quote": "owner scott sanford was sworn in."
+  },
+  {
+   "name": "Chief Marino",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "mr. toale swore in police chief marino, officer mcnamara and building commissioner rhodes."
+  },
+  {
+   "name": "McNamara",
+   "role": "Officer",
+   "status": "present",
+   "quote": "mr. toale swore in police chief marino, officer mcnamara and building commissioner rhodes."
+  },
+  {
+   "name": "Rhodes",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "mr. toale swore in police chief marino, officer mcnamara and building commissioner rhodes."
+  },
+  {
+   "name": "Moe Langlois",
+   "role": "Operations Manager for P. J. Keating",
+   "status": "present",
+   "quote": "moe langlois, operations manager for p. j. keating, stated ms. peterson had contacted them"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaiiem piterson elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board decided to get more pricing information on a thicker mil PAYT trash bag but to proceed with the survey to solicit interest.",
+   "quote": "it was decided to get more pricing information on a thicker mil payt trash bag but to proceed with the survey to solicit interest."
+  },
+  {
+   "decision": "Board decided to research what other communities are doing for this type of lease agreement, and a memorandum of agreement should be drafted for the interim until a new lease is negotiated.",
+   "quote": "it was decided to research what other communities are doing for this type of lease agreement. a memorandum"
+  },
+  {
+   "decision": "Suggested inviting the earth removal permit owners to discuss the item at the August 22 meeting.",
+   "quote": "it was suggested to invite the permit owners to discuss at the august 22 meeting."
+  },
+  {
+   "decision": "Town Manager evaluation document planned for the August 22 agenda.",
+   "quote": "mr. toale stated he and ms. lemieux had begun work on that and planned it for the august 22"
+  },
+  {
+   "decision": "Town Hall painting color item to be an action item on the August 22 meeting agenda.",
+   "quote": "this item will be an action item 'on the august 22"
+  },
+  {
+   "decision": "Lions Club International signs request to be scheduled on a future agenda.",
+   "quote": "this will be scheduled on a future agenda."
+  },
+  {
+   "decision": "Mr. Ebersole requested the Town Manager check with the Town Clerk on progress of general bylaw recodification.",
+   "quote": "he requested ms. lemieux check with town clerk to see if there is any movement on that."
+  },
+  {
+   "decision": "Board signed the accounts payable, payroll and payroll deduction warrants.",
+   "quote": "the board signed an accounts payable warrant in the amount of $702,093.29, a payroll warrant in the amount of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lions Club Pancake Breakfast price",
+   "what_was_recorded": "Ms. Luck announced the price of the Lions Club pancake breakfast.",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "the price is $2.00 per person and takeout is available."
+  },
+  {
+   "topic": "Extra large PAYT bag pilot: initial cost and proposed price",
+   "what_was_recorded": "Minimum order of 50 cases at $75.50 per case for an initial investment of $3775.00, with a proposed charge of $20.00 per roll to recoup cost.",
+   "figures_as_printed": [
+    "50 cases",
+    "$75.50",
+    "200 bags",
+    "$3775.00",
+    "$20.00"
+   ],
+   "quote": "the minimum order would be 50 cases at $75.50 per case of 200 bags. this equates to an initial investment of $3775.00 for the town."
+  },
+  {
+   "topic": "Proposed charge per roll to recoup bag and hauling costs",
+   "what_was_recorded": "Ms. Lemieux proposed charging $20.00 per roll to recoup the cost of the bags and hauling charges.",
+   "figures_as_printed": [
+    "$20.00"
+   ],
+   "quote": "ms. lemieux proposed charging $20.00 per roll."
+  },
+  {
+   "topic": "WasteZero retail distribution contract pricing",
+   "what_was_recorded": "Zero cost in Year 1, rising to 4 cents per bag in Year 2, and in Year 3 increasing by CPI plus 3% (currently a total 3.5% increase).",
+   "figures_as_printed": [
+    "4 cents per bag",
+    "3%",
+    "3.5%"
+   ],
+   "quote": "program at zero cost in year 1 and the increases to 4 cents per bag in year 2."
+  },
+  {
+   "topic": "Textile recycling payment to Town",
+   "what_was_recorded": "The textile recycling service is free to the Town, which is paid per ton of textiles.",
+   "figures_as_printed": [
+    "$20/ton"
+   ],
+   "quote": "this is a free service and the town is paid $20/ton."
+  },
+  {
+   "topic": "Sale of storage cabinets to School Committee",
+   "what_was_recorded": "Facilities Director Londa suggested the storage cabinets be sold to the school committee for a set price each, with leftovers offered to town departments.",
+   "figures_as_printed": [
+    "$20"
+   ],
+   "quote": "facilities director londa suggested they be sold to them for $20 each."
+  },
+  {
+   "topic": "Sewer Commission legal fees",
+   "what_was_recorded": "Use of KP Law legal service is paid from a sewer account, not town funds.",
+   "figures_as_printed": [],
+   "quote": "he noted their use of this legal service is paid from a sewer account not town funds."
+  },
+  {
+   "topic": "Town Hall T-Mobile lease revenue",
+   "what_was_recorded": "A longer lease term is described as ensuring a long-term revenue source for the Town.",
+   "figures_as_printed": [],
+   "quote": "the benefits of a longer term agreement are that it is more desirable for communications companies and ensures a long term revenue source for the town."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Board signed accounts payable, payroll and payroll deduction warrants.",
+   "figures_as_printed": [
+    "$702,093.29",
+    "$594,733.80",
+    "$527,172.50"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $702,093.29, a payroll warrant in the amount of"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "Member",
+   "topic": "Lions Club Pancake Breakfast",
+   "quote": "ms. luck announced the lions club pancake breakfast is at the senior center tomorrow morning from 8:00 to"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Clerk",
+   "topic": "Conservation Commission hearing and Walk in the Woods",
+   "quote": "ms. bertram announced the conservation commission is holding a public hearing on august 30 at 6:30 p.m. on"
+  },
+  {
+   "speaker": "Dave Berthiaume, Marilyn Talley",
+   "topic": "Stillman Country Fair announcement",
+   "quote": "dave berthiaume, 109 whiting street, and marilyn talley, 172 peninsula drive, came to announce the"
+  },
+  {
+   "speaker": "Dave Berthiaume",
+   "topic": "Lions Club International signs",
+   "quote": "mr. berthiaume stated the lions club would like to place their lions club international signs in areas around"
+  },
+  {
+   "speaker": "Robert Ebersole",
+   "stated_role": "Vice Chairman",
+   "topic": "General bylaw recodification",
+   "quote": "mr. ebersole stated a few years ago funding had been approved for recodification of the general bylaws into a"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "Clerk",
+   "topic": "Cable Advisory Committee meeting",
+   "quote": "ms. bertram reported cable advisory committee is meeting august 22 at 6:00 pm before their regular meeting"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public Comment (opening announcements)",
+   "resolution": "no action",
+   "quote": "the meeting commenced at 7:00 p.m. with the pledge of allegiance.",
+   "tags": [
+    "announcements",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "PAYT Program Update: bag fees, retail distribution, WasteZero contract, recycling textiles",
+   "resolution": "decided to get more bag pricing and proceed with survey",
+   "quote": "ms. lemieux reported the pay as you throw extra large trash bag discussion is a continuance from a previous",
+   "tags": [
+    "pay as you throw",
+    "WasteZero",
+    "recycling",
+    "bags"
+   ]
+  },
+  {
+   "topic": "License Violation Hearing: Nuttings Body & Frame Co. Inc., 40 Summer Street",
+   "resolution": "violations found; Class II license revoked",
+   "quote": "mr. toale opened the hearing and stated anyone who testifies needs to be sworn in.",
+   "tags": [
+    "license hearing",
+    "auto dealer",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Request from Sewer Commission to use special legal counsel",
+   "resolution": "approved (support request to retain KP Law)",
+   "quote": "mr. ebersole reported as the liaison to the sewer commission that the commission had used kp law, pc prior",
+   "tags": [
+    "sewer commission",
+    "legal counsel",
+    "High Field Village"
+   ]
+  },
+  {
+   "topic": "T-Mobile lease agreement for Town Hall",
+   "resolution": "research other communities; draft interim memorandum of agreement",
+   "quote": "ms. lemieux reported the town has a signed lease agreement for the wireless communications equipment in",
+   "tags": [
+    "lease",
+    "T-Mobile",
+    "town counsel",
+    "telecommunications"
+   ]
+  },
+  {
+   "topic": "Earth removal permit renewals",
+   "resolution": "invite permit owners to discuss at August 22 meeting",
+   "quote": "ms. lemieux reported earth removal permits are renewed annually by the end of august.",
+   "tags": [
+    "earth removal",
+    "permits",
+    "gravel pits"
+   ]
+  },
+  {
+   "topic": "Warrants and action pile issues",
+   "resolution": "warrants signed; Town Manager evaluation planned for August 22",
+   "quote": "the board signed an accounts payable warrant in the amount of $702,093.29",
+   "tags": [
+    "warrants",
+    "evaluation",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "mr. mcquaid reported capital planning has their first meeting next week.",
+   "tags": [
+    "committee reports",
+    "stormwater",
+    "conservation",
+    "lake shirley"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action; Town Hall painting item set for August 22 agenda",
+   "quote": "the survey generated approximately 593 responses as of today, with 83 comments.",
+   "tags": [
+    "town hall painting",
+    "mold abatement",
+    "foreclosure auction",
+    "tax title",
+    "capital planning",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing) and adjournment",
+   "resolution": "adjourned at 8:26 p.m.",
+   "quote": "ms. bertram reported cable advisory committee is meeting august 22 at 6:00 pm before their regular meeting",
+   "tags": [
+    "cable",
+    "bylaws"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Mr. Sanford (surrender of license, 40 Summer Street)",
+   "where": "text",
+   "quote": "the office received a letter from mr. sanford stating he was no longer doing business at the 40 summer street location"
+  },
+  {
+   "name": "Letter submitted by Officer McNamara to Chief Marino regarding the investigation",
+   "where": "text",
+   "quote": "he referred the board to the letter that he had submitted to chief marino regarding the investigation"
+  },
+  {
+   "name": "Building Commissioner Rhodes letter on pit inspections",
+   "where": "text",
+   "quote": "building commissioner rhodes issued a letter on his inspection of the pits."
+  },
+  {
+   "name": "WasteZero contract proposal",
+   "where": "text",
+   "quote": "the contract proposal from wastezero includes transitioning to the retail store distribution with zero cost in year 1."
+  },
+  {
+   "name": "Annual town meeting vote of May 13, 2000 (telecommunications leases)",
+   "where": "text",
+   "quote": "exceeded the annual town meeting vote on may 13, 2000"
+  },
+  {
+   "name": "Evaluation document for the Town Manager",
+   "where": "text",
+   "quote": "the board was going to work on an evaluation document for the town manager."
+  },
+  {
+   "name": "Google Sheets template for capital requests",
+   "where": "text",
+   "quote": "has already begun with a google sheets template that will automate capital requests from departments."
+  }
+ ],
+ "tags": [
+  "pay as you throw",
+  "WasteZero",
+  "license revocation",
+  "Sewer Commission",
+  "KP Law",
+  "Town Hall lease",
+  "T-Mobile",
+  "earth removal",
+  "warrants",
+  "town manager report",
+  "foreclosure auction",
+  "capital planning",
+  "cable",
+  "Lions Club",
+  "conservation commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

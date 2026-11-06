@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2018-11-06",
  "docid": "740",
@@ -12,31 +12,244 @@
  },
  "votes": [
   {
-   "motion": "To grant all 18 exemption applications totaling $10,092.00",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "board voted to grant all applications totaling $10,092.00."
-  },
-  {
-   "motion": "To table decision on the Chapter 61A application at 285 Goodrich Street pending further inspection",
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, payroll, and the October 16, 2018 minutes.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the boa voted to table decision until another inspection has been completed oi the 103 acre property"
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and october 16, 2018 minutes.",
+   "seconded_by": ""
   },
   {
-   "motion": "To commit the rollback tax of $1,965.81 for 920 Lancaster Avenue",
+   "motion": "Grant all statutory exemption applications (18) totaling $10,092.00.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the boa voted to commit the rollback tax in the amount of $1,965.81."
+   "quote": "board voted to grant all applications totaling $10,092.00.",
+   "seconded_by": ""
   },
   {
-   "motion": "To meet on December 11, 2018 at 5:45 pm",
+   "motion": "Table the decision on 285 Goodrich St. (020-001, Chapter 61A) until another inspection is completed and more information is received.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the boa voted to table decision until another inspection has been completed",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Commit the rollback tax on 920 Lancaster Ave. (120-011) in the amount of $1,965.81.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the boa voted to commit the rollback tax in the amount of $1,965.81.",
+   "seconded_by": ""
+  },
+  {
+   "motion": "Meet on December 11, 2018 at 5:45 pm.",
+   "moved_by": "",
    "outcome": "passed",
    "procedural": true,
-   "quote": "board voted to meet on december 11, 2018 2018 at 5:45 pm."
+   "quote": "board voted to meet on december 11, 2018 2018 at 5:45 pm.",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. Four votes recorded; moved_by and seconded_by not stated in any vote.",
- "cost_usd": 0.12163449999999999
+ "note": "Single OCR page (macOS Vision) with errors. The text begins mid-sentence and the meeting date is not printed; the date 2018-11-06 comes from the request. No roll-call, vote counts, movers or seconders are printed, so vote outcomes are recorded as passed without counts. The 285 Goodrich St. entry is badly garbled by OCR, and its quote is taken from the clean part of the sentence. Harald, Richard and Joshua are named as speaking but their roles are not printed. The statement \"Meeting adjourned at 7:25 pm\" has no printed motion, so it is not recorded as a vote. The sewer commitment and the lien signing are recorded as decisions because they are actions without a printed vote. The approval sentence names warrants and minutes as reviewed, but the minutes set out no separate document list, so documents_list is recorded as not printed.",
+ "cost_usd": 0.00559722,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "board member rena swezey not in attendance,"
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "louise paquette administrative assessor"
+  },
+  {
+   "name": "Harald",
+   "role": "not stated",
+   "status": "present",
+   "quote": "harald reported that we should be receiving the preliminary value certification soon"
+  },
+  {
+   "name": "Richard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "richard requested that louise contact"
+  },
+  {
+   "name": "Joshua",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joshua stated he will accompany them on this inspection."
+  },
+  {
+   "name": "Marina Scheid",
+   "role": "RRG Chapter Specialist",
+   "status": "not stated",
+   "quote": "marina scheid, rrg chapter specialist, to set up another inspection date with jeffrey powell."
+  },
+  {
+   "name": "Jeffrey Powell",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "marina scheid, rrg chapter specialist, to set up another inspection date with jeffrey powell."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Louise Paquette is to contact Marina Scheid (RRG Chapter Specialist) to set a new inspection date with Jeffrey Powell for 285 Goodrich St.; Joshua will accompany the inspection.",
+   "quote": "richard requested that louise contact marina scheid, rrg chapter specialist, to set up another inspection date with jeffrey powell."
+  },
+  {
+   "decision": "BOA committed the sewer privilege fee of $17,327.20 for 654 Mass Ave. (Sewer Order #21), as certified by the Lunenburg Sewer Commissioners.",
+   "quote": "boa committed $17,327.20 as certified by the lunenburg sewer commissioners."
+  },
+  {
+   "decision": "Chapter land tax liens for 100 Howard St. and 39 Wildwood Rd. were signed and are to be sent for recording.",
+   "quote": "land tax lien signed and will be sent for recording"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Statutory exemptions",
+   "what_was_recorded": "Eighteen exemption applications were reviewed and the board granted all of them, totaling $10,092.00.",
+   "figures_as_printed": [
+    "$10,092.00"
+   ],
+   "quote": "board voted to grant all applications totaling $10,092.00."
+  },
+  {
+   "topic": "Rollback tax, 920 Lancaster Ave.",
+   "what_was_recorded": "The board committed a rollback tax of $1,965.81 after the property was sold and lost Chapter 61A eligibility; the rollback was reported collected on October 22, 2018.",
+   "figures_as_printed": [
+    "$1,965.81"
+   ],
+   "quote": "louise reported that the rollback payment in the amount of $1,965.81 was collected on october 22. 2018."
+  },
+  {
+   "topic": "Sewer privilege fee commitment, Sewer Order #21",
+   "what_was_recorded": "The BOA committed a sewer privilege fee for 654 Mass Ave. owned by Signature Living, LLC, as certified by the Lunenburg Sewer Commissioners.",
+   "figures_as_printed": [
+    "$17,327.20"
+   ],
+   "quote": "boa committed $17,327.20 as certified by the lunenburg sewer commissioners."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Routine approvals: vouchers, abatements, warrants, commitments, payroll, Oct 16 2018 minutes",
+   "resolution": "approved",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll,",
+   "tags": [
+    "approvals",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Statutory exemptions",
+   "resolution": "approved (18 applications granted)",
+   "quote": "board voted to grant all applications totaling $10,092.00.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "FY20 Chapter applications: 100 Howard St. and 39 Wildwood Rd.",
+   "resolution": "liens signed, to be recorded",
+   "quote": "fy20 chapter applications: 100 howard st. - 015-012 - cole - fy20 chapter 61 forest classification",
+   "tags": [
+    "chapter 61",
+    "chapter 61b",
+    "land tax lien"
+   ]
+  },
+  {
+   "topic": "285 Goodrich St. Chapter 61A",
+   "resolution": "tabled pending another inspection and more information",
+   "quote": "the boa voted to table decision until another inspection has been completed",
+   "tags": [
+    "chapter 61a",
+    "agriculture",
+    "inspection"
+   ]
+  },
+  {
+   "topic": "920 Lancaster Ave. rollback tax",
+   "resolution": "rollback committed",
+   "quote": "the boa voted to commit the rollback tax in the amount of $1,965.81.",
+   "tags": [
+    "rollback tax",
+    "chapter 61a"
+   ]
+  },
+  {
+   "topic": "Sewer privilege fee commitment, Sewer Order #21, 654 Mass Ave.",
+   "resolution": "committed",
+   "quote": "sewer privilege fee commitment / sewer order #21: 654 mass ave., 059-018-0001 - property",
+   "tags": [
+    "sewer privilege fee",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "FY19 valuations, tax rate schedule and growth certification",
+   "resolution": "no action (report)",
+   "quote": "public disclosure of proposed fy19 valuations / assessment finalization - tax rate setting",
+   "tags": [
+    "fy19 valuation",
+    "tax rate",
+    "growth"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting and next meeting date",
+   "resolution": "next meeting set for December 11, 2018",
+   "quote": "special town meeting: november 13, 2018",
+   "tags": [
+    "special town meeting",
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "October 16, 2018 minutes",
+   "where": "text",
+   "quote": "and october 16, 2018 minutes."
+  },
+  {
+   "name": "Land Tax Lien (100 Howard St. Chapter 61 and 39 Wildwood Rd. Chapter 61B)",
+   "where": "text",
+   "quote": "land tax lien signed and will be sent for recording"
+  },
+  {
+   "name": "Sewer Order #21",
+   "where": "text",
+   "quote": "sewer privilege fee commitment / sewer order #21: 654 mass ave., 059-018-0001 - property"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "statutory exemptions",
+  "chapter 61 land",
+  "chapter 61A agriculture",
+  "rollback tax",
+  "sewer privilege fee",
+  "FY19 valuations",
+  "tax commitments",
+  "special town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

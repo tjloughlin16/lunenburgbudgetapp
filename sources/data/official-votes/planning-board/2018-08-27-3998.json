@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-08-27",
  "docid": "3998",
@@ -12,15 +12,323 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing to September 10th at 6:35 PM",
+   "motion": "Continue the hearing on the 994 Northfield Road application to September 10, 2018 at 6:35 PM.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis made motion to continue the hearing to september 10th, 6:35 pm, d. prokowiew seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10293649999999999
+ "note": "Extracted text, not a scan. One recorded vote (continuance to September 10, 2018, all aye; no count printed). The first continuance motion has no recorded result and is restated in the final motion, so only the final vote is recorded. Alan Clapp and Daniel Romero are listed as represented by the applicant but no remarks are attributed to them, so status is not stated. Hearing recessed at 8:56 PM. No transfers recorded.",
+ "cost_usd": 0.00710542,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: gregory bittner"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, kenneth chenis, david prokowiew, tanner cole, adam r. burney"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: town counsel adam costa"
+  },
+  {
+   "name": "Michael D. Rosen",
+   "role": "Attorney representing the applicant (Settlers Solar, LLC), of Ruberto, Israel & Weiner, P.C.",
+   "status": "present",
+   "quote": "attorney michael d. rosen, of ruberto, israel & weiner"
+  },
+  {
+   "name": "Ethan Gyles, PE",
+   "role": "Development Manager, Nexamp",
+   "status": "present",
+   "quote": "ethan gyles, pe, development manager, nexamp"
+  },
+  {
+   "name": "Alan Clapp, PE",
+   "role": "Development Director, Nexamp",
+   "status": "not stated",
+   "quote": "alan clapp, pe, development director, nexamp"
+  },
+  {
+   "name": "Daniel Wolfe, P. E.",
+   "role": "David E. Ross Associates",
+   "status": "present",
+   "quote": "daniel wolfe, p. e. and daniel romero, project manager, david e. ross associates"
+  },
+  {
+   "name": "Daniel Romero",
+   "role": "Project Manager, David E. Ross Associates",
+   "status": "not stated",
+   "quote": "daniel romero, project manager, david e. ross associates"
+  },
+  {
+   "name": "William Gustus",
+   "role": "Property Owner 994 Northfield Road, LLC",
+   "status": "present",
+   "quote": "property owner 994 northfield road, llc, william gustus was also in attendance"
+  },
+  {
+   "name": "Hans Wentrup",
+   "role": "Resident, 418 New West Townsend Road",
+   "status": "present",
+   "quote": "hans wentrup, 418 new west townsend road"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "A. Costa will work with M. Rosen to draft a Decision and proposed form of easement.",
+   "quote": "a. costa will work with m. rosen to draft a decision and proposed form of easement."
+  },
+  {
+   "decision": "The Board did not close the hearing on the advice of Town Counsel, who would draft a decision to bring to the Board.",
+   "quote": "he recommended the board not close tonight"
+  },
+  {
+   "decision": "K. Chenis requested that the gate identified by the Fire Department and the relocation of the Knox Box (or moving the bar gate) be incorporated into the plan.",
+   "quote": "k. chenis requested that the gate identified by the fire department and relocation of knox box (or moving the bar gate) be incorporated into the plan."
+  },
+  {
+   "decision": "The PILOT agreement, conservation restriction, public trail access, Fire Department gate and Knox Box relocation (or bar gate move) are to be part of the Board's Conditions, included in the Decision if the modified Contingent Settlement Agreement is accepted.",
+   "quote": "the pilot agreement, conservation restriction, public trail access, gate requested by the fire department"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Decommissioning bond increase",
+   "what_was_recorded": "The decommissioning bond was increased from $60,000 to $105,000.",
+   "figures_as_printed": [
+    "$60,000",
+    "$105,000"
+   ],
+   "quote": "the increase in the decommissioning bon d from $60,000 to $105,000"
+  },
+  {
+   "topic": "Tree fund increase held in escrow",
+   "what_was_recorded": "The tree fund agreed to in mediation was increased from $10,000 to a total of $50,000, to be placed in escrow and dispersed through a Board-designated point of contact.",
+   "figures_as_printed": [
+    "$10,000",
+    "$50,000"
+   ],
+   "quote": "the $10,000 tree fund agreed to in mediation has been increased to a total of $50,000, which will be placed in escrow."
+  },
+  {
+   "topic": "Tree fund portion for landscape architect",
+   "what_was_recorded": "A portion of the tree fund, up to a maximum of $5,000, would pay for hiring a landscape architect.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "allows for the hiring of a landscape architect"
+  },
+  {
+   "topic": "Solar subscription discount to residents",
+   "what_was_recorded": "If allowed under the SMART Program, solar subscriptions would be marketed to Lunenburg residents at a discount for 45 days or until fully subscribed.",
+   "figures_as_printed": [
+    "12 – 15%"
+   ],
+   "quote": "at a 12 - 15% discount for 45 days or until the project is fully subscribed"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Hans Wentrup",
+   "stated_role": "418 New West Townsend Road",
+   "topic": "natural vegetation, panel visibility, access road blending with scenic Northfield Road",
+   "quote": "would like to see th e natural vegetation remain and have the applicant move the panels so no one from new west townsend road is able to see them."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing on special permit, site plan and stormwater permit for 994 Northfield Road solar array",
+   "resolution": "continued to September 10, 2018 at 6:35 PM",
+   "quote": "the hearing was to hear and discuss an application for a special permit",
+   "tags": [
+    "solar",
+    "special permit",
+    "site plan approval",
+    "public hearing",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Project history and pending litigation",
+   "resolution": "background presented; no action",
+   "quote": "the court has remanded the special permit and site plan approval back to the board.",
+   "tags": [
+    "litigation",
+    "remand",
+    "background"
+   ]
+  },
+  {
+   "topic": "Contingent Settlement Agreement and mediation changes",
+   "resolution": "presented; no action",
+   "quote": "the agreement entered into during mediation is a contingent settlement agreement",
+   "tags": [
+    "settlement",
+    "mediation",
+    "conditions"
+   ]
+  },
+  {
+   "topic": "Revised site plan changes and buffers",
+   "resolution": "presented; no action",
+   "quote": "changes to the site plan include- expansion of the no-cut zone on the east side",
+   "tags": [
+    "site plan",
+    "buffer",
+    "no-cut zone",
+    "gravel access road"
+   ]
+  },
+  {
+   "topic": "Engineer's presentation of revised site plan",
+   "resolution": "presented; no action",
+   "quote": "presented the board with a site plan updated to august 20, 2018",
+   "tags": [
+    "site plan",
+    "engineering",
+    "panel layout",
+    "drainage"
+   ]
+  },
+  {
+   "topic": "Public comment on vegetation, visibility and scenic road access",
+   "resolution": "applicant response; no action",
+   "quote": "m. allison responded there will not be any new curb cuts on northfield road",
+   "tags": [
+    "public comment",
+    "scenic road",
+    "curb cut",
+    "visibility"
+   ]
+  },
+  {
+   "topic": "Tree fund explanation and stormwater permit timeframe",
+   "resolution": "hearing kept open; Town Counsel to draft decision",
+   "quote": "a. costa responded that the stormwater permit has a 90 -day timeframe",
+   "tags": [
+    "tree fund",
+    "stormwater permit",
+    "timeline",
+    "decision drafting"
+   ]
+  },
+  {
+   "topic": "Utility interconnection and trail access",
+   "resolution": "discussed; no action",
+   "quote": "it will be on the back lawn of the golf course clubhouse and will connect to northfield road",
+   "tags": [
+    "utility interconnection",
+    "UNITIL",
+    "trail access",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Motion to continue the hearing",
+   "resolution": "continued to September 10, 2018 at 6:35 PM",
+   "quote": "k. chenis made motion to continue the hearing to september 10th, 6:35 pm, d. prokowiew seconded, all aye.",
+   "tags": [
+    "continued hearing",
+    "vote"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Permit and Site Plan Approval Application",
+   "where": "list",
+   "quote": "documents used at meeting: special permit and site plan approval application stormwater special permit application site plans"
+  },
+  {
+   "name": "Stormwater Special Permit Application",
+   "where": "list",
+   "quote": "documents used at meeting: special permit and site plan approval application stormwater special permit application site plans"
+  },
+  {
+   "name": "Site Plans (updated to August 20, 2018)",
+   "where": "list",
+   "quote": "documents used at meeting: special permit and site plan approval application stormwater special permit application site plans"
+  },
+  {
+   "name": "Graves Engineering, Inc. (GEI) August 15, 2018 review letter",
+   "where": "text",
+   "quote": "final changes based on graves engineering, inc. (gei) august 15, 2018 review letter"
+  },
+  {
+   "name": "Contingent Settlement Agreement",
+   "where": "text",
+   "quote": "the agreement entered into during mediation is a contingent settlement agreement"
+  },
+  {
+   "name": "Remand order",
+   "where": "text",
+   "quote": "the remand order required the public hearing"
+  },
+  {
+   "name": "Proposed form of easement",
+   "where": "text",
+   "quote": "a. costa will work with m. rosen to draft a decision and proposed form of easement."
+  }
+ ],
+ "tags": [
+  "solar",
+  "special permit",
+  "site plan approval",
+  "stormwater permit",
+  "public hearing",
+  "994 Northfield Road",
+  "Northfield Road",
+  "tree fund",
+  "decommissioning bond",
+  "PILOT",
+  "litigation",
+  "settlement",
+  "continued hearing",
+  "scenic road",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

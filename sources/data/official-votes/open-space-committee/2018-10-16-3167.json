@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2018-10-16",
  "docid": "3167",
@@ -12,6 +12,166 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. Minutes describe a public information and discussion session with presentations on open space planning, survey results, and draft mapping, followed by public comments. No motions, seconds, or votes are documented. Meeting adjourned at 6:57 pm without a recorded vote.",
- "cost_usd": 0.0792625
+ "note": "No motions, votes, or decisions are recorded in these minutes; the votes list is empty for that reason. Text is extracted from a document with a garbled letterhead (\"TOWN OF L UNENBURG\") and no pages missing that are visible; page 2 begins mid-list. The Open Space Survey and draft mapping are presented items, not votes. Public commenters are not named.",
+ "cost_usd": 0.00322012,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brandon Kibbe",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Richard Brockelman",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: brandon kibbe, david prokowiew, bob pease, richard brockelman, sarah cammer"
+  },
+  {
+   "name": "Dennis Mannone",
+   "role": "Parks",
+   "status": "absent",
+   "quote": "absent: dennis mannone (parks)"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks alternate",
+   "status": "present",
+   "quote": "also present: karin menard (parks alternate)"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "State grant eligibility from plan update",
+   "what_was_recorded": "Kibbe said the plan update will result in a 7-year window of state grant eligibility; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "updating plan will result in a 7-year window of state grant eligibility."
+  },
+  {
+   "topic": "Sale of surplus municipal land to return it to the tax rolls",
+   "what_was_recorded": "Public comment suggested reviewing general municipal land and considering selling truly surplus properties to get them back on the tax rolls; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "consider selling truly \"surplus\" properties to get those back on the tax rolls."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Trail and sidewalk connectivity",
+   "quote": "connectivity of walking trails, sidewalks, and interconnection between conservation, recreation, and local businesses."
+  },
+  {
+   "topic": "Marshall Park master plan",
+   "quote": "master plan and improvements to marshall park due to its central location to town."
+  },
+  {
+   "topic": "Surplus general municipal land",
+   "quote": "review inventory of lands held as \"general municipal\" land."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public information and comment session opened",
+   "resolution": "opened 6:02 pm, no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public information and comment session was called to order at 6:02 pm."
+  },
+  {
+   "topic": "Open space and recreation plan overview",
+   "resolution": "presented",
+   "tags": [
+    "open space plan",
+    "presentation"
+   ],
+   "quote": "b. kibbe gave a presentation providing an overview of the open space and recreation planning proces s"
+  },
+  {
+   "topic": "Open Space Survey results",
+   "resolution": "presented",
+   "tags": [
+    "survey",
+    "open space plan"
+   ],
+   "quote": "b. kibbe presented the results of the open space survey that was mailed to nearly 4,900 taxpayers"
+  },
+  {
+   "topic": "Draft mapping for plan update",
+   "resolution": "presented",
+   "tags": [
+    "mapping",
+    "open space plan"
+   ],
+   "quote": "b. kibbe presented draft mapping for the plan update, looking at the town's various resources and discussing trends/priorities."
+  },
+  {
+   "topic": "Public comments and general discussion",
+   "resolution": "discussed, no action recorded",
+   "tags": [
+    "public comment",
+    "trails",
+    "parks",
+    "surplus land"
+   ],
+   "quote": "public comments and general discussion:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:57 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting was adjourned at 6:57 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft mapping",
+   "where": "list",
+   "quote": "documents used at charrette: draft mapping"
+  },
+  {
+   "name": "Open Space Survey",
+   "where": "text",
+   "quote": "b. kibbe presented the results of the open space survey that was mailed to nearly 4,900 taxpayers"
+  }
+ ],
+ "tags": [
+  "open space plan",
+  "charrette",
+  "public comment",
+  "survey",
+  "mapping",
+  "trails",
+  "Marshall Park",
+  "surplus land",
+  "state grants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at charrette:"
+ },
+ "dropped_unquoted_by_field": {}
 }

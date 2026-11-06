@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2018-08-23",
  "docid": "2200",
@@ -12,31 +12,440 @@
  },
  "votes": [
   {
-   "motion": "Recommend free cash policy change to the Board of Selectmen",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Marc Luescher",
-   "outcome": "passed 6-0",
+   "motion": "Recommend a free cash policy change to the Board of Selectmen.",
+   "moved_by": "John",
+   "seconded_by": "Marc",
+   "outcome": "6-0",
    "procedural": false,
    "quote": "john made the motion. marc second. 6-0"
   },
   {
-   "motion": "Approve the minutes of July 26, 2018",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Marc Luescher",
-   "outcome": "passed 6-0",
+   "motion": "Approve the 7.26.18 minutes.",
+   "moved_by": "John",
+   "seconded_by": "Marc",
+   "outcome": "6-0",
    "procedural": true,
    "quote": "john motioned to approve minutes, marc second. 6-0"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "John Henshaw",
-   "seconded_by": "Hannah Anderson",
-   "outcome": "passed 6-0",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "John",
+   "seconded_by": "Hannah",
+   "outcome": "6-0",
    "procedural": true,
-   "quote": "john made a motion to adjourn. hannah seconded the motion. the committee approved the motion 6-0"
+   "quote": "john made a motion to adjourn. hannah seconded the motion. the committee approved the motion 6-0 at 8:00 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text, readable. Three votes recorded, all procedural or housekeeping except the first (free cash policy recommendation).",
- "cost_usd": 0.100784
+ "note": "OCR text, with errors. Page 6 is garbled and the heading for item 6 is lost; the debt-share discussion sits between items 5 and 7 and is listed as an unnumbered topic. Page 2 is partly cut off. The vote on item 3 names the mover only as 'John' and the seconder as 'Marc'. The item 9 department update text is partly garbled, so no committee-update vote or figure is inferred. The 'Attachments: (0)' line is treated as a printed attachments heading with no items. The 'Committee/Department Update' list is partly lost to OCR. The 'Presenting this for consideration' sentence is recorded as a decision-free statement, not a board decision.",
+ "cost_usd": 0.014183600000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "John Henshaw",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present: terri burchfield, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Hannah Anderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "George Martin",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Marc Luescher",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, jay simeone, john henshaw, hannah anderson, george martin, marc luescher"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "guest: karen brochu, town accountant, heather lemieux, tm."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "TM",
+   "status": "present",
+   "quote": "guest: karen brochu, town accountant, heather lemieux, tm."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Public",
+   "status": "present",
+   "quote": "public: dave passios, 56 whiting st."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will have the Town Council check the charter vacancy procedure raised in public comment, through the help of the Town Manager.",
+   "quote": "regarding mr. passios public comment, the chair will have the town council check this procedure through the help of the town manager."
+  },
+  {
+   "decision": "George Martin asked Hannah Anderson to get K-12 student enrollment figures from last year and the expected numbers for this coming year.",
+   "quote": "george has asked hannah to get the student enrollments of k-12 from last year and what the expecting numbers are for this coming year"
+  },
+  {
+   "decision": "Presenting the five-year forecast and property condition figures was intended to inform the committee's approach to budget season; no action was taken.",
+   "quote": "presenting this for consideration for discussion at finance committee meetings"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Property condition assessment remediation and demolition costs",
+   "what_was_recorded": "The Vertex property condition assessment was reported to require about $3.4 million in remediation for six buildings plus $400K to demolish the Old Primary School.",
+   "figures_as_printed": [
+    "3.4 million dollars",
+    "$400K"
+   ],
+   "quote": "about 3.4 million dollars' worth of our remediation to six of the buildings and $400k to demolish the old primary school"
+  },
+  {
+   "topic": "Remaining capital outlays",
+   "what_was_recorded": "Capital outlays for the six remaining buildings over the next several years were reported at 8.6 million dollars.",
+   "figures_as_printed": [
+    "8.6 million dollars"
+   ],
+   "quote": "beyond that capital out lays through the next several years of 8.6 million dollars for the six remaining buildings."
+  },
+  {
+   "topic": "Capital improvement request 2020-2023",
+   "what_was_recorded": "The capital improvement request for 2020 to 2023 was 5.3 million dollars, about 1.3 million dollars per year.",
+   "figures_as_printed": [
+    "5.3 million dollars",
+    "1.3 million dollars per year"
+   ],
+   "quote": "the capital improvement request for the next four years, 2020 - 2023 which is 5.3 million dollars or about average of 1.3 million dollars per year."
+  },
+  {
+   "topic": "Average capital expenditures FY16 and FY17",
+   "what_was_recorded": "Average capital expenditures for FY16 and FY17 were about $600K.",
+   "figures_as_printed": [
+    "$600K"
+   ],
+   "quote": "the average capital expenditures were about $600k."
+  },
+  {
+   "topic": "Free cash certification and Turkey Hill asbestos remediation",
+   "what_was_recorded": "Free cash rose after FY17 close to FY18 close; $130k is available for Turkey Hill Elementary asbestos remediation, now state-funded.",
+   "figures_as_printed": [
+    "$130k"
+   ],
+   "quote": "we now have $130k for the asbestos remediation at the turkey hill elementary school"
+  },
+  {
+   "topic": "Ladder truck borrowing authorization",
+   "what_was_recorded": "A $480k borrowing authorization for part of the ladder truck was discussed, with a proposal to pay for it with free cash instead to avoid interest.",
+   "figures_as_printed": [
+    "$480k"
+   ],
+   "quote": "the barrowing authorization of $480k for a portion of the ladder truck"
+  },
+  {
+   "topic": "Free cash available end of FY18 and FY19",
+   "what_was_recorded": "If the ladder truck borrowing were eliminated, close to a million dollars would be available at the end of this fiscal year and FY20.",
+   "figures_as_printed": [
+    "close to a million dollars"
+   ],
+   "quote": "there would be close to a million dollars available for the end of this fiscal year and fiscal year 20."
+  },
+  {
+   "topic": "Motor vehicle excise revenue",
+   "what_was_recorded": "Excise revenue has grown; the town has been raising estimates by $50K plus to fund pavement management in General Highway Maintenance.",
+   "figures_as_printed": [
+    "$50K",
+    "$50K plus"
+   ],
+   "quote": "terri asked if it was coming in at basically $50k a year or significantly more?"
+  },
+  {
+   "topic": "Local receipts budget versus actual",
+   "what_was_recorded": "Local receipt estimate was $2,940,817.00 against actual collections of $3,468,170.00, an increase of $527K.",
+   "figures_as_printed": [
+    "$2,940,817.00",
+    "$3,468,170.00",
+    "$527K"
+   ],
+   "quote": "the local receipt estimate was $2,940,817.00. the actual collection was $3,468,170.00 so there was an increase"
+  },
+  {
+   "topic": "Motor vehicle excise over estimate",
+   "what_was_recorded": "Motor vehicle excise came in $207,000.00 above the estimated amount.",
+   "figures_as_printed": [
+    "$207,000.00"
+   ],
+   "quote": "there was an increase in motor vehicle excise from the estimated amount of $207,000.00"
+  },
+  {
+   "topic": "Penalties and interest on taxes",
+   "what_was_recorded": "Penalties and interest on taxes came in $135,000.00 above estimate, mostly from the collector's pursuit of real estate taxes.",
+   "figures_as_printed": [
+    "$135,000.00"
+   ],
+   "quote": "there was an increase in penalties and interest on taxes which was increased $135,000.00"
+  },
+  {
+   "topic": "Departmental revenue, schools",
+   "what_was_recorded": "Departmental revenue from schools (state money for Medicaid-eligible students) was $103,000.00 more than estimated.",
+   "figures_as_printed": [
+    "$103,000.00"
+   ],
+   "quote": "there was also $103,000.00 more in departmental revenue schools"
+  },
+  {
+   "topic": "Tax lien revenue",
+   "what_was_recorded": "The town received $511,000.00 in tax lien revenue in 2018, about $400,000.00 better than the prior year.",
+   "figures_as_printed": [
+    "$511,000.00",
+    "$400,000.00"
+   ],
+   "quote": "received $511,000.00 in tax lien revenue in 2018 which was about $400,000.00 better than the previous year"
+  },
+  {
+   "topic": "40S reimbursement (Tri-Town) on the cherry sheet",
+   "what_was_recorded": "$119K was budgeted for the 40S reimbursement, but the state indicated the town will receive around $20k after proration.",
+   "figures_as_printed": [
+    "$119K",
+    "$20k"
+   ],
+   "quote": "on the cherry sheet there was $119k that was budgeted for the 40s reimbursement"
+  },
+  {
+   "topic": "Appropriation closeouts",
+   "what_was_recorded": "The town had $399K in appropriation closeouts.",
+   "figures_as_printed": [
+    "$399K"
+   ],
+   "quote": "the town does have $399k in appropriation closeouts"
+  },
+  {
+   "topic": "Choice and charter tuition state assessments",
+   "what_was_recorded": "Choice and charter tuition assessments for out-of-district students came in $290K below the amount assessed on the cherry sheet; this is not guaranteed year to year.",
+   "figures_as_printed": [
+    "$290K"
+   ],
+   "quote": "was $290k less than the amount that was received as an assessment on the cherry sheet"
+  },
+  {
+   "topic": "Health, liability and workers comp insurance lines",
+   "what_was_recorded": "About $130K surplus in insurance lines from better rates and retirees not replaced.",
+   "figures_as_printed": [
+    "$130K"
+   ],
+   "quote": "there was about $130k in our health, liability, and workers comp insurance lines"
+  },
+  {
+   "topic": "Debt service share of town budget",
+   "what_was_recorded": "Debt service was described as 13% of the town budget, which the chair tracks over time.",
+   "figures_as_printed": [
+    "13%"
+   ],
+   "quote": "terri went on to say debt services is 13% of our towns budget"
+  },
+  {
+   "topic": "New fire truck purchase",
+   "what_was_recorded": "The fire chief said the purchase would not exceed the town's approved budget and would use the state bidding process.",
+   "figures_as_printed": [],
+   "quote": "chief is finalizing his new specs for the towns new fire truck and the purchase will not exceed the towns approved budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Charter vacancy procedure (Section 7-8)",
+   "speaker": "Dave Passios",
+   "stated_role": "Public",
+   "quote": "like to bring attention to the board a section in this charter, section 7-8 procedures governing multiple member bodies paragraph f, filling a vacancy."
+  },
+  {
+   "topic": "Economic outlook and debt advice",
+   "speaker": "Dave Passios",
+   "stated_role": "Public",
+   "quote": "dave passios 56 whiting street, reported that he heard of a radio station that a financial analyst said"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "called to order 7:00 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the chair called the meeting to order at 7:00 pm."
+  },
+  {
+   "topic": "Communications: charter vacancy procedure",
+   "resolution": "Chair to have Town Council check procedure",
+   "tags": [
+    "charter",
+    "vacancy",
+    "public comment"
+   ],
+   "quote": "like to bring attention to the board a section in this charter, section 7-8 procedures governing multiple member bodies paragraph f, filling a vacancy."
+  },
+  {
+   "topic": "Recommend free cash policy change to Board of Selectmen",
+   "resolution": "recommended 6-0",
+   "tags": [
+    "free cash",
+    "policy",
+    "vote"
+   ],
+   "quote": "vote to recommend free cash policy change to the board of selectmen:"
+  },
+  {
+   "topic": "2020 budget: property condition and capital needs",
+   "resolution": "discussed, no action",
+   "tags": [
+    "capital",
+    "budget 2020",
+    "forecast",
+    "buildings"
+   ],
+   "quote": "discussion around 2020 budget related to property condition assessment and capital needs:"
+  },
+  {
+   "topic": "2020 Budget Dashboard",
+   "resolution": "discussed, no action",
+   "tags": [
+    "dashboard",
+    "debt",
+    "enrollment",
+    "data"
+   ],
+   "quote": "5. 2020 budget dashboard discussion."
+  },
+  {
+   "topic": "Debt share of town budget (heading lost in OCR)",
+   "resolution": "discussed, no action",
+   "tags": [
+    "debt",
+    "budget"
+   ],
+   "quote": "terri went on to say debt services is 13% of our towns budget"
+  },
+  {
+   "topic": "Review minutes",
+   "resolution": "approved 6-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "7.26.18 minutes for review, john motioned to approve minutes, marc second. 6-0"
+  },
+  {
+   "topic": "Town Manager and financial officers reports",
+   "resolution": "no reports",
+   "tags": [
+    "reports"
+   ],
+   "quote": "8. town manager/financial officers reports: no reports"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received, no action",
+   "tags": [
+    "public comment",
+    "economy"
+   ],
+   "quote": "dave passios 56 whiting street, reported that he heard of a radio station that a financial analyst said"
+  },
+  {
+   "topic": "Committee and department updates",
+   "resolution": "reports given, no action",
+   "tags": [
+    "fire department",
+    "schools",
+    "sewer",
+    "green community",
+    "charter review"
+   ],
+   "quote": "chief is finalizing his new specs for the towns new fire truck and the purchase will not exceed the towns approved budget."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "set for September 13, 2018",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "10. next meeting: september 13, 2018"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6-0 at 8:00 pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "john made a motion to adjourn. hannah seconded the motion. the committee approved the motion 6-0 at 8:00 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Vertex property condition assessment",
+   "where": "text",
+   "quote": "the very general overview of the property condition assessment that was given to the town by vertex several months ago"
+  },
+  {
+   "name": "Town Manager five-year forecast of revenues and expenditures",
+   "where": "text",
+   "quote": "general overview of the forecasted revenues and expenditures for the next five years"
+  },
+  {
+   "name": "Debt financial forecast and Town Manager's financial forecast",
+   "where": "text",
+   "quote": "the debt financial forecast and the town managers financial forecast"
+  },
+  {
+   "name": "Charter Section 7-8, paragraph F (filling a vacancy)",
+   "where": "text",
+   "quote": "section 7-8 procedures governing multiple member bodies paragraph f, filling a vacancy"
+  },
+  {
+   "name": "7.26.18 minutes",
+   "where": "text",
+   "quote": "7.26.18 minutes for review"
+  },
+  {
+   "name": "Chief Marino police staffing schedule",
+   "where": "text",
+   "quote": "chief marino had given us a schedule some months ago regarding increasing the police"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "free cash",
+  "capital needs",
+  "budget 2020",
+  "revenue",
+  "tax liens",
+  "debt",
+  "charter vacancy",
+  "public comment",
+  "fire department"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attachments: (0)"
+ },
+ "dropped_unquoted_by_field": {}
 }

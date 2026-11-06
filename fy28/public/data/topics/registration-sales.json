@@ -12,8 +12,11 @@
      "value": 6
     }
    },
-   "literals": [],
-   "text": "Both MyRec reports. 6 programmes that recorded nothing or net refunds are not drawn."
+   "literals": [
+    "2024",
+    "2025"
+   ],
+   "text": "Beach passes and swim lessons each combine the products named for summers 2024 and 2025. 6 programmes with nothing or net refunds are not drawn."
   },
   "rows": [
    {
@@ -29,15 +32,15 @@
     ]
    },
    {
-    "label": "2025 BEACH PASSES",
+    "label": "Beach passes",
     "texts": [
-     "$3,466",
-     "$3,614"
+     "$4,975",
+     "$3,789"
     ],
-    "total": "$7,080",
+    "total": "$8,764",
     "values": [
-     3466.0,
-     3614.0
+     4975.0,
+     3789.0
     ]
    },
    {
@@ -65,14 +68,14 @@
     ]
    },
    {
-    "label": "SWIM LESSONS 2025",
+    "label": "Swim lessons",
     "texts": [
-     "$2,310",
+     "$2,670",
      "$1,170"
     ],
-    "total": "$3,480",
+    "total": "$3,840",
     "values": [
-     2310.0,
+     2670.0,
      1170.0
     ]
    },
@@ -86,18 +89,6 @@
     "values": [
      600.0,
      2130.0
-    ]
-   },
-   {
-    "label": "2024 BEACH PASSES",
-    "texts": [
-     "$1,509",
-     "$175"
-    ],
-    "total": "$1,684",
-    "values": [
-     1509.0,
-     175.0
     ]
    },
    {
@@ -146,18 +137,6 @@
     "values": [
      280.0,
      190.0
-    ]
-   },
-   {
-    "label": "SWIM LESSONS 2024",
-    "texts": [
-     "$360",
-     "$0"
-    ],
-    "total": "$360",
-    "values": [
-     360.0,
-     0.0
     ]
    },
    {
@@ -246,29 +225,25 @@
    "text": "One programme, SNAPOLOGY-STEM PROGRAMS, was 44% of the programme money."
   },
   {
-   "figures": {
-    "a": {
-     "text": "390",
-     "unit": "",
-     "value": 390
-    },
-    "b": {
-     "text": "814",
-     "unit": "",
-     "value": 814
-    },
-    "c": {
-     "text": "$23,972",
-     "unit": "",
-     "value": 23972.5
-    }
-   },
-   "literals": [],
-   "rests_on": [
-    "nonresn",
-    "nonres"
+   "figures": {},
+   "literals": [
+    "FY2025",
+    "2024",
+    "2025"
    ],
-   "text": "Non-residents made 390 of 814 registrations and paid $23,972."
+   "notes": [
+    {
+     "closes": "a MyRec sales report listing each transaction with its date",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The report dates no sale, so neither summer here can be read as whole."
+    }
+   ],
+   "rests_on": [
+    "beach"
+   ],
+   "text": "FY2025 sales include passes and lessons for both summer 2024 and summer 2025."
   },
   {
    "figures": {},
@@ -367,20 +342,22 @@
    "label": {
     "figures": {
      "b": {
-      "text": "$7,080",
+      "text": "$8,764",
       "unit": "",
-      "value": 7080.0
+      "value": 8764.0
      }
     },
     "literals": [
+     "FY2025",
+     "2024",
      "2025"
     ],
-    "text": "2025 beach passes sold, for $7,080"
+    "text": "beach passes, summers 2024 and 2025, for $8,764"
    },
    "value": {
-    "text": "131",
+    "text": "160",
     "unit": "passes",
-    "value": 131
+    "value": 160
    }
   },
   {
@@ -516,11 +493,11 @@
  "sources": [
   {
    "href": "/docs/town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf",
-   "label": "Parks & Recreation — MyRec, by records request — parks-program-financials-fy2025-myrec.pdf"
+   "label": "Parks & Recreation — MyRec, by emailed request — parks-program-financials-fy2025-myrec.pdf"
   },
   {
    "href": "/docs/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf",
-   "label": "Parks & Recreation — MyRec, by records request — parks-membership-sales-fy2025-myrec.pdf"
+   "label": "Parks & Recreation — MyRec, by emailed request — parks-membership-sales-fy2025-myrec.pdf"
   },
   {
    "href": "/docs/data/parks-myrec-sales-fy2025.csv",
@@ -543,7 +520,7 @@
      "ledger"
     ],
     "label": "MyRec sales reports",
-    "note": "Two printouts from the registration system, 1 July 2024 to 30 June 2025, each footed to the totals it prints. Negative figures are refunds.",
+    "note": "Two printouts from the registration system, 1 July 2024 to 30 June 2025, each footed to the totals it prints, with products under MyRec’s own names. Years in those names are summers, not fiscal years. Negative figures are refunds.",
     "rows": [
      {
       "cells": [

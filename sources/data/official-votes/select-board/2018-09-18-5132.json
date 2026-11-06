@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-09-18",
  "docid": "5132",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Appeal the final judgment in the Land Court case",
+   "motion": "Appeal the final judgment in the O'Brien Homes litigation.",
    "moved_by": "R. Ebersole",
    "seconded_by": "K. Adams",
    "outcome": "passed 5-0",
@@ -20,15 +20,119 @@
    "quote": "motion: r. ebersole 2nd: k. adams to appeal the final judgment vote: ms. adams-aye, ms. luck- aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale- yes"
   },
   {
-   "motion": "Adjourn from Executive Session",
+   "motion": "Adjourn from executive session.",
    "moved_by": "R. Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: r. ebersole to adjourn from executive session vote: ms. adams-aye, ms. luck-aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale- yes 2nd: d. mcquaid"
+   "quote": "motion: r. ebersole to adjourn from executive session vote: ms. adams-aye, ms. luck-aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale- yes"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable. Two votes recorded, both with votes stated as individual ayes (Ms. Luck listed as \"Ms. Luck\" without title throughout). All votes passed unanimously 5-0.",
- "cost_usd": 0.1011395
+ "note": "Text is OCR of a scanned page with some errors (e.g., 'O Brien', 'Atter'). No attendance roll call is printed; board member status is inferred from the vote lines. 'Mr. McQuaid' and 'D. McQuaid' may be the same person; both are recorded as printed. The closing signature reads 'Claire In. Peterson' and then 'Elaine M. Peterson'. The minutes do not print a motion to enter executive session; the only exit motion is the adjournment from executive session. The meeting commenced at 9:52 p.m. and adjourned at 10:28 p.m. Judge Long, Attorney Bard, and Attorney Borenstein are mentioned in the discussion but did not take part in this meeting, so they are not listed as attendees. No public comment section appears in the text.",
+ "cost_usd": 0.00458572,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Attorney Costa",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney costa reported this is the second round of litigation that pertains to the subdivision applications"
+  },
+  {
+   "name": "Ms. Adams",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, ms. luck- aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale- yes"
+  },
+  {
+   "name": "Ms. Luck",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, ms. luck- aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale- yes"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, ms. luck- aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale- yes"
+  },
+  {
+   "name": "Mr. Ebersole",
+   "status": "present",
+   "quote": "motion: r. ebersole 2nd: k. adams to appeal the final judgment"
+  },
+  {
+   "name": "Mr. Toale",
+   "status": "present",
+   "quote": "vote: ms. adams-aye, ms. luck- aye, mr. mcquaid-aye, mr. ebersole-aye, mr. toale- yes"
+  },
+  {
+   "name": "D. McQuaid",
+   "status": "present",
+   "quote": "2nd: d. mcquaid the meeting adjourned at 10:28 p.m."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Attorney Costa will contact MIIA again about its denial of coverage.",
+   "quote": "mr. costa will contact miia again in regards to their denial of coverage."
+  },
+  {
+   "decision": "Attorney Costa will send MIIA the three-page memo from Attorney Borenstein that summarizes the claim.",
+   "quote": "he will send miia the three-page memo from attorney borenstein that better summarizes their claim."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monetary exposure from bad faith claim",
+   "what_was_recorded": "Discussion noted that the bad faith claim carries clear monetary implications, which is what the insurance coverage protects against; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "there are clear monetary implications in regards to the bad faith claim and that is what they protect against."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "O'Brien Homes subdivision litigation (executive session)",
+   "resolution": "approved appeal of final judgment; MIIA coverage and settlement follow-up directed",
+   "quote": "attorney costa reported this is the second round of litigation that pertains to the subdivision applications that were made by o'brien homes",
+   "tags": [
+    "litigation",
+    "land court",
+    "appeal",
+    "O'Brien Homes",
+    "subdivision",
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Three-page memo from Attorney Borenstein",
+   "where": "text",
+   "quote": "he will send miia the three-page memo from attorney borenstein that better summarizes their claim."
+  }
+ ],
+ "tags": [
+  "litigation",
+  "executive session",
+  "O'Brien Homes",
+  "Land Court",
+  "appeal",
+  "MIIA insurance",
+  "bad faith claim",
+  "subdivision",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2018-04-03",
  "docid": "2634",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the March 12, 2018 minutes",
+   "motion": "Approve the minutes of March 12, 2018.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "minutes from march 12th, 2018 were read and approved unanimously."
   },
   {
-   "motion": "Permit demolition of the house at 99 Boucher Road",
+   "motion": "Permit demolition of the house at 99 Boucher Rd.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "the commission decided that the house was of little historical value and voted unanimously to permit demolition."
   },
   {
-   "motion": "Encumber the Commission's budget to the limit of current available funds for historic milestones restoration",
+   "motion": "Encumber the Commission's budget to the limit of current available funds for the historic milestones project.",
    "moved_by": "Lantry",
    "seconded_by": "",
    "outcome": "passed unanimously",
@@ -37,6 +37,209 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes from macOS Vision. Three votes recorded: approval of prior minutes (procedural), demolition permit decision, and budget encumbrance for historic milestones. Movers identified only for the third vote.",
- "cost_usd": 0.1128615
+ "note": "OCR text with line-break hyphenation and some garbled words (e.g., \"Ist\" for 1st). Attendance is given only as \"All members present\" with no roll call; members are named only as they took part. No dollar figures appear in the minutes. The minutes approval and demolition votes name no mover or seconder. The adjournment at 8:25PM has no recorded motion, so it is not listed as a vote.",
+ "cost_usd": 0.00600262,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Lantry",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting called to order by chair lantry at 6:55. all members present."
+  },
+  {
+   "name": "McGrath",
+   "status": "present",
+   "quote": "mcgrath had inspected the property from the outside."
+  },
+  {
+   "name": "Dwyer",
+   "status": "present",
+   "quote": "dwyer will contact steve malandrinos to update the web page"
+  },
+  {
+   "name": "Lakso",
+   "status": "present",
+   "quote": "lakso had noticed that the information on the town website was in need of revision"
+  },
+  {
+   "name": "Sanderson",
+   "status": "present",
+   "quote": "sanderson noted that another wall had been demolished on northfield across from the golf course."
+  },
+  {
+   "name": "John Herrick",
+   "role": "applicants",
+   "status": "present",
+   "quote": "john and brian herrick appeared to defend their application for demolition of a house at 99 boucher rd."
+  },
+  {
+   "name": "Brian Herrick",
+   "role": "applicants",
+   "status": "present",
+   "quote": "john and brian herrick appeared to defend their application for demolition of a house at 99 boucher rd."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission found the Boucher Rd house of little historical value; McGrath was to inform the building inspector of the decision the following day.",
+   "quote": "mcgrath was to inform the building inspector of the decision the following day."
+  },
+  {
+   "decision": "Dwyer to update the town website contact information and Lantry to revise the Demolition Delay Determination form to include contact information.",
+   "quote": "dwyer will contact steve malandrinos to update the web page, and lantry will ensure that the demolition delay determination form"
+  },
+  {
+   "decision": "Chair Lantry asked the commission to proceed with inventorying all historic properties in town.",
+   "quote": "chair lantry requested that the commission proceed in taking inventory of all historic properties in the town"
+  },
+  {
+   "decision": "McGrath agreed to investigate the second demolished stone wall on Northfield across from the golf course.",
+   "quote": "mcgrath agreed to investigate the matter."
+  },
+  {
+   "decision": "Lakso and Sanderson asked to write Lunenburg Ledger articles on the Brooks House and Primary School; McGrath to contact Mr. Hoats of Mass Historic was not yet done.",
+   "quote": "requested that lakso and sanderson write articles for the lunenburg ledger on these historic buildings"
+  },
+  {
+   "decision": "Sanderson and Lakso agreed to vote on the milestone replacement measure at the Historical Society meeting the following day.",
+   "quote": "agreed to vote on the measure at the historical society meeting the following day."
+  },
+  {
+   "decision": "McGrath intended to speak with Jack Rodiquenz about the Commission's rights and responsibilities regarding the Arnold Litch cemetery.",
+   "quote": "mcgrath intended to speak to jack rodiquenz regarding the commission's rights and responsibilities in"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Historic milestones project",
+   "what_was_recorded": "The Commission encumbered its budget up to the limit of current available funds for the milestone project; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "lantry motioned to encumber the commission's budget to the limit of current available funds for the project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John and Brian Herrick",
+   "stated_role": "applicants",
+   "topic": "difficulty finding Commission contact information",
+   "quote": "the applicants complained that they found it difficult to find contact information for the historical"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved",
+   "quote": "minutes from march 12th, 2018 were read and approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Historic Marker Project",
+   "resolution": "reported, no action",
+   "quote": "lantry reported that the markers had arrived from the foundry.",
+   "tags": [
+    "historic markers"
+   ]
+  },
+  {
+   "topic": "Demolition Requests (99 Boucher Rd)",
+   "resolution": "approved demolition; website contact fixes assigned",
+   "quote": "voted unanimously to permit demolition.",
+   "tags": [
+    "demolition",
+    "website"
+   ]
+  },
+  {
+   "topic": "Form B project",
+   "resolution": "discussed; inventory directed",
+   "quote": "chair lantry requested that the commission proceed in taking inventory of all historic properties in the town",
+   "tags": [
+    "inventory",
+    "Form B"
+   ]
+  },
+  {
+   "topic": "Stone Walls",
+   "resolution": "referred to Conservation Commission; McGrath to investigate second wall",
+   "quote": "mcgrath agreed to investigate the matter.",
+   "tags": [
+    "stone walls",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Brooks House and Primary School",
+   "resolution": "articles requested",
+   "quote": "requested that lakso and sanderson write articles for the lunenburg ledger on these historic buildings",
+   "tags": [
+    "articles",
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Franklin S. Francis house",
+   "resolution": "inspection reported, no action",
+   "quote": "mcgrath inspected the work in progress at 944 mass ave.",
+   "tags": [
+    "inspection",
+    "944 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Historic Milestones",
+   "resolution": "encumbrance approved",
+   "quote": "lantry motioned to encumber the commission's budget to the limit of current available funds for the project.",
+   "tags": [
+    "milestones",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Arnold Litch cemetery",
+   "resolution": "discussed; McGrath to speak with Rodiquenz",
+   "quote": "lakso quoted a passage from mass general law explaining that",
+   "tags": [
+    "cemetery",
+    "state archeologist"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Delay Determination form used by the Building Department",
+   "where": "text",
+   "quote": "lantry will ensure that the demolition delay determination form used by the building department is revised"
+  },
+  {
+   "name": "1934 map of Lunenburg by Cyrus Kilburn",
+   "where": "text",
+   "quote": "noted on the 1934 map of lunenburg by cyrus kilburn"
+  },
+  {
+   "name": "Form B format used by Mass Historic",
+   "where": "text",
+   "quote": "form b format used by mass historic to inventory significant historical resources"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "demolition",
+  "historic markers",
+  "stone walls",
+  "milestones",
+  "cemetery",
+  "inventory",
+  "website",
+  "budget encumbrance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

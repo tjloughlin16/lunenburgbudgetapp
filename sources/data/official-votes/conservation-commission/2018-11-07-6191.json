@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-11-07",
  "docid": "6191",
@@ -12,55 +12,325 @@
  },
  "votes": [
   {
-   "motion": "approve trail usage for the Luneburg Snow Riders for a five year term with annual review",
+   "motion": "Approve the trail usage for a five-year term, with the Snow Riders appearing annually to review usage and proposed work.",
    "moved_by": "BP",
    "seconded_by": "CL",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bp moved to approved the trail usage for a five year term with the snow riders appearing annualy to review usage and proposed work cl seconded and the commission approved unanimously."
+   "quote": "bp moved to approved the trail usage for a five year term with the snow riders appearing annualy to"
   },
   {
-   "motion": "continue the Notice of Intent hearing by Michael and Barbara Battle to November 28, 2018",
+   "motion": "Continue the Battle Notice of Intent hearing to November 28, 2018 with the applicant's permission.",
    "moved_by": "CC",
    "seconded_by": "KJ",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "this hearing continued with applicants permission to november 28, 2018 by a motion of cc and a second by kj with a unanimous vote by the commission to approve."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "this hearing continued with applicants permission to november 28, 2018 by a motion of cc and a second by kj with a"
   },
   {
-   "motion": "continue the Notice of Intent hearing by Hickory Hills Association to November 28, 2018",
+   "motion": "Continue the Hickory Hills Association Notice of Intent hearing to November 28, 2018 with the applicant's permission.",
    "moved_by": "CC",
    "seconded_by": "KJ",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "this hearing continued with applicants permission to november 28, 2018 by a motion of cc and a second by kj with a unanimous vote by the commission to approve."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "this hearing continued with applicants permission to november 28, 2018 by a motion of cc and a second by kj with a"
   },
   {
-   "motion": "continue the Notice of Intent hearing by Nanci Bell to November 28, 2018",
+   "motion": "Continue the Nanci Bell Notice of Intent hearing to November 28, 2018 with the applicant's permission.",
    "moved_by": "CC",
    "seconded_by": "KJ",
-   "outcome": "unanimously approved",
-   "procedural": true,
-   "quote": "this hearing continued with applicants permission to november 28, 2018 by a motion of cc and a second by kj with a unanimous vote by the commission to approve."
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "this hearing continued with applicants permission to november 28, 2018 by a motion of cc and a second by kj with a"
   },
   {
-   "motion": "instruct the Conservation Administrator to commence fines of 100 dollars per day",
+   "motion": "Instruct MM to commence fines of 100 dollars per day against 101 Pleasant Street for failure to meet bond deadlines.",
    "moved_by": "CL",
    "seconded_by": "BP",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": false,
    "quote": "the commission by motion of cl and a second by bp instructed mm to commence fines of 100 dollars per day."
   },
   {
-   "motion": "author a letter to Mr. Gorman outlining support for the preferred common drive configuration for ZBA consideration",
+   "motion": "Have MM send a letter to Mr. Gorman outlining the Commission's support to the ZBA of the preferred driveway configuration (common drive, Saliba).",
    "moved_by": "KJ",
    "seconded_by": "TD",
-   "outcome": "unanimously approved",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "the motion to author the letter was made by kj with a second by td and a unanimous vote of the commission."
+   "quote": "the motion to author the letter was made by kj with a second by td and a unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly legible. Three hearing continuations are procedurally identical and back-to-back in the text.",
- "cost_usd": 0.1607555
+ "note": "Text is a clean extract with no tallies beyond the unanimous and continuance wording. The Pleasant Street motion is recorded with no outcome printed. The three continuance motions share identical wording, so one sentence is quoted for each. Initials (CC, KJ, BP, CL, TD, MM, RB) are as printed; the minutes do not spell out CC. No documents list is printed.",
+ "cost_usd": 0.00812912,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order by chairman rb at 7 pm with all members attending"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "call to order by chairman rb at 7 pm with all members attending"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "call to order by chairman rb at 7 pm with all members attending"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "call to order by chairman rb at 7 pm with all members attending"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "call to order by chairman rb at 7 pm with all members attending"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "call to order by chairman rb at 7 pm with all members attending"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "call to order by chairman rb at 7 pm with all members attending"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm mentioned that on 11/13 the annual inspections for the hollis rd cr and the peabody cr will take place."
+  },
+  {
+   "name": "Tom Betram",
+   "role": "appeared for Luneburg Snow Riders",
+   "status": "present",
+   "quote": "tom betram appeared before the commission and spoke of the laist of trails"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "from David Ross",
+   "status": "present",
+   "quote": "neil gorman from david ross appeared before the commission with 2 different alternative configurations"
+  },
+  {
+   "name": "Gini Albertson",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "concerns pertaining to the stewardship planning on hollis road made by gini albertson"
+  },
+  {
+   "name": "Lyn Mann",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "lyn mann requested a stewardship workshop be held on a night separate from a meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MM was asked to send a message to DPW regarding obtaining culverts for the small town work.",
+   "quote": "asking mm to send a message to dpw regarding obtaining culverts"
+  },
+  {
+   "decision": "MM and RB to meet with the original design engineer to review the 155 Reservoir Road survey data.",
+   "quote": "mm and rb to meet with original design engineer to review data"
+  },
+  {
+   "decision": "The 355 Northfield Road enforcement matter was considered closed and would be removed from the list, since the owner recorded the deed restriction.",
+   "quote": "mm considered the matter closed and would be removed"
+  },
+  {
+   "decision": "The 155 Reservoir Road special meeting date is to be set later.",
+   "quote": "155 reservoir road- special meeting date to be set"
+  },
+  {
+   "decision": "The normal 11/21 meeting date was moved to 11/28 because of the Thanksgiving holiday; next meeting is November 28, 2018 at 7:00 PM, location to be determined.",
+   "quote": "moved to 11/28 in consideration of the thanksgiving day holiday"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "101 Pleasant Street fines",
+   "what_was_recorded": "The Commission directed that daily fines be started against 101 Pleasant Street for missed bond deadlines.",
+   "figures_as_printed": [
+    "100 dollars per day"
+   ],
+   "quote": "the commission by motion of cl and a second by bp instructed mm to commence fines of 100 dollars per day."
+  },
+  {
+   "topic": "101 Pleasant Street bond",
+   "what_was_recorded": "The owner did not meet the deadlines set for the bond; no amount was stated.",
+   "figures_as_printed": [],
+   "quote": "mr brady has not complied with the deadlines given to him"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "KJ",
+   "topic": "pollinator habitat at 123 Hollis Road",
+   "quote": "public comment- kj mentioned the pollinator habitat area at 123 hollis road has been mowed and prepared for added"
+  },
+  {
+   "speaker": "Tom Betram",
+   "topic": "Luneburg Snow Riders trail use and annual review",
+   "quote": "tom betram appeared before the commission and spoke of the laist of trails"
+  },
+  {
+   "speaker": "Gini Albertson",
+   "topic": "Hollis Road stewardship planning and bird habitat",
+   "quote": "concerns pertaining to the stewardship planning on hollis road made by gini albertson"
+  },
+  {
+   "speaker": "Lyn Mann",
+   "topic": "Robbs Hill stewardship workshop",
+   "quote": "lyn mann requested a stewardship workshop be held on a night separate from a meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "public comment- kj mentioned the pollinator habitat area at 123 hollis road has been mowed and prepared for added"
+  },
+  {
+   "topic": "Appointment: Luneburg Snow Riders annual meeting",
+   "resolution": "approved five-year trail use term with annual review",
+   "quote": "appointment: luneburg snow riders- annual meeting with commission- tom betram appeared before the commission"
+  },
+  {
+   "topic": "NOI hearing: Michael and Barbara Battle, 168 West Street",
+   "resolution": "continued to November 28, 2018",
+   "quote": "notice of intent by michael and barbara battle for grading and planting within"
+  },
+  {
+   "topic": "NOI hearing: Hickory Hills Association drawdown plan",
+   "resolution": "continued to November 28, 2018",
+   "quote": "by hickory hills association for the approval of a drawdown"
+  },
+  {
+   "topic": "NOI hearing: Nanci Bell retaining wall, 51 Fire Road 19",
+   "resolution": "continued to November 28, 2018",
+   "quote": "notice of intent by nanci bell for the replacement of an existing retaining wall"
+  },
+  {
+   "topic": "Violations (enforcement)",
+   "resolution": "355 Northfield considered closed; 101 Pleasant Street fines directed; other matters updated",
+   "quote": "355 northfield road- enforcement order- failure to record deed restriction."
+  },
+  {
+   "topic": "New Business: letter to ZBA on common drive (Saliba)",
+   "resolution": "letter of support authorized",
+   "quote": "consideration for a letter to the zba regarding a common drive ( saliba)."
+  },
+  {
+   "topic": "Forest Stewardship grants and planning",
+   "resolution": "discussed, no action",
+   "quote": "mm noted concerns pertaining to the stewardship planning on"
+  },
+  {
+   "topic": "Old Business: Robbs Hill stewardship and maintenance plan",
+   "resolution": "discussed, no action",
+   "quote": "robbs hill conservation stewardship and maintenance plan ( if any update)"
+  },
+  {
+   "topic": "Land Exchange on Gilchrest",
+   "resolution": "update; follow-up meeting to address deficiencies",
+   "quote": "land exchange on gilchrest -updates ( if any)"
+  },
+  {
+   "topic": "Work at the Small Town Forest",
+   "resolution": "see Robbs Hill item",
+   "quote": "work at the small town forest- see robs hill above."
+  },
+  {
+   "topic": "Forest Stewardship/Bird Habitat assessment, 123 Hollis Road",
+   "resolution": "see Robbs Hill item, no separate action",
+   "quote": "forest stewardship/bird habitat assessment planning for 123 hollis road conservation area"
+  },
+  {
+   "topic": "Certificate of Compliance, 91 Gilchrest Street",
+   "resolution": "continued to 11/28",
+   "quote": "continued to 11/28 no action taken"
+  },
+  {
+   "topic": "Extension Permit, 22 Oak Ridge Road",
+   "resolution": "no action",
+   "quote": "extension permit - 22 oak ridge road- no action taken"
+  },
+  {
+   "topic": "Minutes of October 3 and October 19 meetings",
+   "resolution": "continued, no action",
+   "quote": "review and approval of october 3 and october 19 - continued no action taken"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no updates",
+   "quote": "committee reports - any updates"
+  },
+  {
+   "topic": "Agent's report and action items",
+   "resolution": "updates noted; 155 Reservoir Road survey data to be reviewed",
+   "quote": "agents report /action items"
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for November 28, 2018",
+   "quote": "next meeting is november 28, 2018 at 7:00 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent by Michael and Barbara Battle (grading and planting, 168 West Street)",
+   "where": "text",
+   "quote": "notice of intent by michael and barbara battle for grading and planting within"
+  },
+  {
+   "name": "Notice of Intent by Hickory Hills Association (drawdown management plan, Hickory Hills Lake)",
+   "where": "text",
+   "quote": "by hickory hills association for the approval of a drawdown"
+  },
+  {
+   "name": "Notice of Intent by Nanci Bell (retaining wall, 51 Fire Road 19)",
+   "where": "text",
+   "quote": "notice of intent by nanci bell for the replacement of an existing retaining wall"
+  },
+  {
+   "name": "Rose Land Survey data (155 Reservoir Road)",
+   "where": "text",
+   "quote": "reviewed data by rose land survey is in"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "continuances",
+  "enforcement",
+  "trails",
+  "snow riders",
+  "forest stewardship",
+  "land exchange",
+  "ZBA letter",
+  "bond fines",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

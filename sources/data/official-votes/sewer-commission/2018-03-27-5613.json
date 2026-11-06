@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-03-27",
  "docid": "5613",
@@ -12,15 +12,130 @@
  },
  "votes": [
   {
-   "motion": "Exit executive session and adjourn",
+   "motion": "To exit executive session and adjourn the meeting.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: joan p. to exit executive session and adjourn vote: joe, aye, joan, aye, carl, aye, john, aye, troy, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. One vote recorded with unanimous outcome (5-0).",
- "cost_usd": 0.0877175
+ "note": "Partial text: page 1 only. The call to order, roll call, agenda, any prior-minutes approval, and the start of the executive session discussion are not in the extract, so attendance is inferred from the names in the vote line and the signature block. Only the adjournment vote is recorded; the minutes print five aye votes (Joe, Joan, Carl, John, Troy) with no printed tally, so the outcome is recorded as \"passed\". The signature block is garbled by OCR; the clerk name is read as \"Sane Ranley\". Joan P. and John R. are printed as mover and seconder and are not matched to the first names in the vote line. No roles are printed for members.",
+ "cost_usd": 0.00306902,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe",
+   "role": "",
+   "status": "present",
+   "quote": "vote: joe, aye, joan, aye, carl, aye, john, aye, troy, aye."
+  },
+  {
+   "name": "Joan",
+   "role": "",
+   "status": "present",
+   "quote": "vote: joe, aye, joan, aye, carl, aye, john, aye, troy, aye."
+  },
+  {
+   "name": "Carl",
+   "role": "",
+   "status": "present",
+   "quote": "carl suggested that instead of the $57,716 figure it should mirror the cost sharing"
+  },
+  {
+   "name": "John",
+   "role": "",
+   "status": "present",
+   "quote": "vote: joe, aye, joan, aye, carl, aye, john, aye, troy, aye."
+  },
+  {
+   "name": "Troy",
+   "role": "",
+   "status": "present",
+   "quote": "vote: joe, aye, joan, aye, carl, aye, john, aye, troy, aye."
+  },
+  {
+   "name": "Joan P.",
+   "role": "",
+   "status": "present",
+   "quote": "motion: joan p. to exit executive session and adjourn"
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "second: john r."
+  },
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "not stated",
+   "quote": "barb will contact kp law with these concerns."
+  },
+  {
+   "name": "Sane Ranley",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "sane ranley carl 7 sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will contact KP Law with the board's concerns about the draft document: the cost-sharing amount, the 30,782 capacity figure (to state it includes Inflow/Infiltration), and payment instructions.",
+   "quote": "barb will contact kp law with these concerns."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost-sharing amount in the draft document",
+   "what_was_recorded": "The draft's statement of amount was $57,716, which may change based on final project cost numbers from Fitchburg; Carl suggested mirroring the original agreement's cost-sharing language, capped at $75,000.",
+   "figures_as_printed": [
+    "$ 57,716",
+    "$ 75,000"
+   ],
+   "quote": "the statement of $ 57,716 amount. that amount may change based upon the numbers from fitchburg for"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session: Fitchburg agreement draft review (cost sharing, capacity figure, payment instructions)",
+   "resolution": "no action; Barb to contact KP Law; motion to exit executive session and adjourn passed",
+   "quote": "carl suggested that instead of the $57,716 figure it should mirror the cost sharing",
+   "tags": [
+    "executive session",
+    "Fitchburg agreement",
+    "cost sharing",
+    "KP Law",
+    "sewer"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "original agreement (Fitchburg cost-sharing language)",
+   "where": "text",
+   "quote": "should mirror the cost sharing language in the original agreement, noting the amount can be no greater than $ 75,000."
+  },
+  {
+   "name": "draft document referenced in discussion (unnamed)",
+   "where": "text",
+   "quote": "the document should reflect that 30,782 includes inflow/infiltration (i/i)."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "executive session",
+  "Fitchburg agreement",
+  "KP Law",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

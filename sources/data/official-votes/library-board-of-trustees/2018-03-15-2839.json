@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2018-03-15",
  "docid": "2839",
@@ -12,23 +12,234 @@
  },
  "votes": [
   {
-   "motion": "Accept the January 18, 2018 minutes",
+   "motion": "To accept the minutes of January 18, 2018.",
    "moved_by": "Donna",
    "seconded_by": "Kiirja",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to accept by donna. seconded by kiirja. approved of by show of hands. unanimously approved."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "Harry",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by harry. seconded by kate. unanimous vote in favor."
+   "quote": "motion to adjourn by harry. seconded by kate. unanimous vote in favor. meeting closed at 7:25 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Both votes are procedural (approval of prior minutes and adjournment). The \"Voting on revolving funds next month\" in the agenda items section is a future action, not a recorded vote from this meeting.",
- "cost_usd": 0.0245921
+ "note": "OCR text (macOS Vision) with garbled words (e.g., 'calied', 'Aduit'). Page 2 begins mid-sentence ('meeting did not take place.'), so text for an item before it is missing. The 'Voting on revolving funds next month' line is ambiguous in layout. Public comment shows 'no comment' and 'none' with no speakers named, so public_comment is empty. Only two motions appear, both procedural and both with unanimous results; no roll-call tallies are printed. Rich Letarte is mentioned but not recorded as attending.",
+ "cost_usd": 0.006072719999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dick Mailloux",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "attending: dick mailloux, kate mccarron, donna salia, kiirja paananen, (harry kubetz remotely via facetime), martha moore -"
+  },
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: dick mailloux, kate mccarron, donna salia, kiirja paananen, (harry kubetz remotely via facetime), martha moore -"
+  },
+  {
+   "name": "Donna Salia",
+   "status": "present",
+   "quote": "attending: dick mailloux, kate mccarron, donna salia, kiirja paananen, (harry kubetz remotely via facetime), martha moore -"
+  },
+  {
+   "name": "Kiirja Paananen",
+   "status": "present",
+   "quote": "attending: dick mailloux, kate mccarron, donna salia, kiirja paananen, (harry kubetz remotely via facetime), martha moore -"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Secretary, Trustee of Lunenburg Public Library",
+   "status": "remote",
+   "quote": "attending: dick mailloux, kate mccarron, donna salia, kiirja paananen, (harry kubetz remotely via facetime), martha moore -"
+  },
+  {
+   "name": "Martha Moore",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: dick mailloux, kate mccarron, donna salia, kiirja paananen, (harry kubetz remotely via facetime), martha moore -"
+  },
+  {
+   "name": "Gare Thompson",
+   "status": "absent",
+   "quote": "absent: gare thompson, lars widstrand, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  },
+  {
+   "name": "Lars Widstrand",
+   "status": "absent",
+   "quote": "absent: gare thompson, lars widstrand, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  },
+  {
+   "name": "Bob Ebersole",
+   "role": "Board of Selectmen representative",
+   "status": "absent",
+   "quote": "absent: gare thompson, lars widstrand, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  },
+  {
+   "name": "Terri Burchfield",
+   "role": "FinCom representative",
+   "status": "absent",
+   "quote": "absent: gare thompson, lars widstrand, bob ebersole - board of selectmen representative, terri burchfield - fincom"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Director's Evaluation is due from all Trustees by the March 15 meeting (listed as an agenda item for upcoming meetings).",
+   "quote": "director's evaluation - due from all trustees by our march 15 meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2018 Budget",
+   "what_was_recorded": "Director reported the library is presently 7% under budget, but large invoices must still be paid, so it is more-or-less on budget.",
+   "figures_as_printed": [
+    "7%"
+   ],
+   "quote": "we are presently 7% under budget but martha has a couple of large invoices that must be paid, so we are more-or-less on-budget."
+  },
+  {
+   "topic": "Budget Planning for FY 2019",
+   "what_was_recorded": "Director will present the FY 2019 budget to the Financial Committee on Thursday, February 22; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "budget planning for fy 2019 - martha will present our budget which will be presented to the financial committee meeting on thursday, february 22."
+  },
+  {
+   "topic": "Trust Fund Update - Bartholomew funds",
+   "what_was_recorded": "Official request for Bartholomew funds to be transferred to Touchstone was submitted last month; Rich Letarte to review all accounts when he returns in April. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "the official request for bartholomew funds be transferred to touchstone was submitted last month."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Request that Bartholomew trust funds be transferred to Touchstone",
+   "amount_as_printed": "not stated",
+   "outcome": "Request submitted last month; no board vote recorded and no amount printed",
+   "quote": "the official request for bartholomew funds be transferred to touchstone was submitted last month."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "quote": "public comment- no comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of January 18, 2018 minutes",
+   "resolution": "approved unanimously",
+   "quote": "approval of january 18, 2018 minutes - motion to accept by donna. seconded by kiirja.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "presented; no action recorded",
+   "quote": "director's report (presented by martha and referenced below)",
+   "tags": [
+    "budget",
+    "staff",
+    "programs",
+    "building",
+    "trust fund",
+    "reports"
+   ]
+  },
+  {
+   "topic": "Agenda items for upcoming meetings",
+   "resolution": "noted; no action",
+   "quote": "director's evaluation - due from all trustees by our march 15 meeting",
+   "tags": [
+    "director evaluation",
+    "by-laws",
+    "revolving funds"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action",
+   "quote": "town caucus will be on monday march 12 at 7pm. at turkey hill elementary school.",
+   "tags": [
+    "trustee elections",
+    "town caucus"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comment",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:25 p.m.",
+   "quote": "motion to adjourn by harry. seconded by kate. unanimous vote in favor. meeting closed at 7:25 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "LPLBOT Meeting Agenda for February 15, 2018",
+   "where": "list",
+   "quote": "lplbot meeting agenda for february 15, 2018"
+  },
+  {
+   "name": "LPL Director's Report for February 15, 2018",
+   "where": "list",
+   "quote": "lpl director's report for february 15, 2018"
+  },
+  {
+   "name": "Annual Report of the Lunenburg Public Library 2017-2018",
+   "where": "list",
+   "quote": "annual report of the lunenburg public library 2017-2018"
+  },
+  {
+   "name": "Children's Area Report for the month of January, 2018",
+   "where": "list",
+   "quote": "children's area report for the month of january, 2018"
+  },
+  {
+   "name": "Young Adult Services Report January, 2018",
+   "where": "list",
+   "quote": "young adult services report january, 2018"
+  },
+  {
+   "name": "LPLBOT Draft Minutes for January, 18, 2018",
+   "where": "list",
+   "quote": "lplbot draft minutes for january, 18, 2018"
+  }
+ ],
+ "tags": [
+  "library trustees",
+  "FY2018 budget",
+  "FY2019 budget",
+  "trust fund",
+  "staff vacancy",
+  "director evaluation",
+  "by-laws",
+  "revolving funds",
+  "trustee elections",
+  "library programs"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "referenced documents:"
+ },
+ "dropped_unquoted_by_field": {}
 }

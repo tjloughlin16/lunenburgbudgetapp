@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2018-04-10",
  "docid": "5128",
@@ -12,8 +12,8 @@
  },
  "votes": [
   {
-   "motion": "Accept the health insurance agreement proposal as written and sign the agreement",
-   "moved_by": "R. Ebersole",
+   "motion": "Accept the health insurance proposal as written and sign the Memorandum of Agreement with the Lunenburg Public Employee Committee",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-0",
    "procedural": false,
@@ -21,7 +21,7 @@
   },
   {
    "motion": "Adjourn and not return to open session",
-   "moved_by": "R. Ebersole",
+   "moved_by": "R.Ebersole",
    "seconded_by": "D. McQuaid",
    "outcome": "passed 4-0",
    "procedural": true,
@@ -29,6 +29,80 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision. Two votes recorded, both passed unanimously. Names printed as: R. Ebersole, D. McQuaid, Mr. Toale (first name not printed), Ms. Luck (first name not printed).",
- "cost_usd": 0.0850935
+ "note": "OCR text from a scanned page; no roll call or printed meeting date (2018-04-10 supplied by the user). The received stamp reads JUN 05 2019. The minutes print the effective dates as July 1 and June 20, 2022, as OCR'd. Attendance is inferred from the recorded votes; no attendance list is printed. Some names are OCR-garbled (MIlA for MIIA, Elairem for Elaine). The adjournment motion says 'not return to open session' but no executive session is named.",
+ "cost_usd": 0.0033114200000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Ebersole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: mr. ebersole-aye, mr. mcquaid- aye, mr. toale-aye, ms. luck -aye"
+  },
+  {
+   "name": "Mr. McQuaid",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: mr. ebersole-aye, mr. mcquaid- aye, mr. toale-aye, ms. luck -aye"
+  },
+  {
+   "name": "Mr. Toale",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: mr. ebersole-aye, mr. mcquaid- aye, mr. toale-aye, ms. luck -aye"
+  },
+  {
+   "name": "Ms. Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "vote: mr. ebersole-aye, mr. mcquaid- aye, mr. toale-aye, ms. luck -aye"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Health insurance rate increase",
+   "what_was_recorded": "The minutes state the health insurance plans will see a rate increase of 3.61 percent.",
+   "figures_as_printed": [
+    "3.61 percent"
+   ],
+   "quote": "there will be a 3.61 percent increase in rates."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Health insurance Memorandum of Agreement with the Lunenburg Public Employee Committee",
+   "resolution": "approved; Board voted to accept the proposal and sign the agreement",
+   "quote": "the board reviewed the memorandum of agreement between the town and the lunenburg public employee committee regarding the health insurance agreement.",
+   "tags": [
+    "health insurance",
+    "memorandum of agreement",
+    "employee benefits",
+    "rate increase",
+    "MIIA"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum of Agreement between the Town and the Lunenburg Public Employee Committee regarding the health insurance agreement",
+   "where": "list",
+   "quote": "the board reviewed the memorandum of agreement between the town and the lunenburg public employee committee regarding the health insurance agreement."
+  }
+ ],
+ "tags": [
+  "health insurance",
+  "memorandum of agreement",
+  "employee benefits",
+  "rate increase",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board reviewed the memorandum of agreement"
+ },
+ "dropped_unquoted_by_field": {}
 }

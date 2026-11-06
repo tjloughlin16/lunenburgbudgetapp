@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-09-17",
  "docid": "1000",
@@ -12,40 +12,229 @@
  },
  "votes": [
   {
-   "motion": "Approve septic variance for 217 Reservoir Road",
+   "motion": "Approve the variance for 217 Reservoir Road (groundwater offset from 5 feet to 4 feet and system less than 100 feet from a wetland).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the variance was approved. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved. all in favor."
   },
   {
-   "motion": "Approve septic variances for 145 Woodland with two-bedroom deed restriction",
+   "motion": "Approve the variances for 145 Woodland (groundwater reduction from 4 feet to 3 feet and less than 12 inch tee separation) with a two-bedroom deed restriction condition.",
    "moved_by": "Passios",
    "seconded_by": "Mayhew",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by passios and second by mayhew, the variances were approved with the condition that a two (2) bedroom deed restriction be placed on the property. all in favor."
+   "quote": "after discussion and on motion by passios and second by mayhew, the variances were approved with the condition that a two (2) bedroom deed restriction be placed on the property."
   },
   {
-   "motion": "Approve septic variances for 169 Peninsula Drive",
+   "motion": "Approve the variances for 169 Penninsula Drive (groundwater, tee separation, garage slab and house slab offsets).",
    "moved_by": "Mayhew",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by mayhew and second by fortin, the variances were approved. all in favor."
+   "quote": "after discussion and on motion by mayhew and second by fortin, the variances were approved. all in favor."
   },
   {
-   "motion": "Allow installation of well at 950 Chase Road to proceed",
+   "motion": "Allow the installation of the new well at 950 Chase Road to go forward, with a variance for exact placement to follow once the distance is known.",
    "moved_by": "Passios",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by passios and second by fortin, the board voted to allow the installation of the well to go forward. a variance fo",
-   "quote_taken_from_text": true
+   "quote": "after discussion and on motion by passios and second by fortin, the board voted to allow the installation of the well to go forward."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record \"MINUTES APPROVED: August 20, 2018\" but do not include explicit motion language, mover, seconder, or formal vote outcome for that approval, so it is not included above.",
- "cost_usd": 0.1064145
+ "note": "Text is a plain extraction of a 3-page set; some words are split by stray spaces (e.g., 'beca use', 'previousl y', 'd -box') and were quoted as printed or lightly collapsed. No motion is recorded for approval of the August 20, 2018 minutes or for adjournment, so neither is listed as a vote. No public comment section is printed; speakers appear only in the hearing items. The board's 'All in favor' tallies have no count, so outcomes are recorded as 'passed'.",
+ "cost_usd": 0.00475492,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin, david passios and warren mayhew"
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Member",
+   "status": "present",
+   "quote": "member perry jewell also stated that this error did not change the situation with this property."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin, david passios and warren mayhew"
+  },
+  {
+   "name": "David Passios",
+   "role": "member",
+   "status": "present",
+   "quote": "both chairman george emond and member dave passios have met with town counsel to discuss this."
+  },
+  {
+   "name": "Warren Mayhew",
+   "role": "",
+   "status": "present",
+   "quote": "present: george emond, perry jewell, paul fortin, david passios and warren mayhew"
+  },
+  {
+   "name": "Neil Gorman",
+   "role": "of Ross Associates, on behalf of the owner",
+   "status": "present",
+   "quote": "neil gorman of ross associates met with the board on behalf of the owner."
+  },
+  {
+   "name": "Matthew Woodward",
+   "role": "owner",
+   "status": "present",
+   "quote": "matthew woodward, owner, met with the board."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "bob proctor met with the board on behalf of the owner. this system is i n failure."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of August 20, 2018 recorded as approved (no motion or tally printed).",
+   "quote": "minutes approved: august 20, 2018"
+  },
+  {
+   "decision": "Title 5 inspection report for 943 Reservoir Road acknowledged.",
+   "quote": "title 5 inspection reports acknowledged: 943 reservoir road"
+  },
+  {
+   "decision": "Septic permits recorded as signed for the listed properties, including 29 Otis Street marked Fail.",
+   "quote": "septic permits signed: 29 otis street - fail 60 beal street 2 smith drive 12 island road"
+  },
+  {
+   "decision": "Board agreed to move forward with discussing an expanded use of Septic Loan Program funds and to speak with Town Counsel on how that might be accomplished.",
+   "quote": "after discussion, the board would like to move forward with discussing the possibility of using these funds in an expanded way and will be speaking with town counsel"
+  },
+  {
+   "decision": "Board took no recorded action on 64 Arbor Street; the chair stated the June 4, 2018 minutes misstated the septic height rule and that the error did not change the outcome for the property.",
+   "quote": "the error made does not change the outcome with regard to this property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Septic Loan Program funds",
+   "what_was_recorded": "Board discussed using money in the Septic Loan Program for purposes other than repair of private, low income, residential dwellings, and would only do so if it retains control of the funds; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "members of the board would like to consider using the money currently in the septic loan program for other than the repair of private, low income, residential dwellings."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (August 20, 2018)",
+   "resolution": "approved (no motion printed)",
+   "quote": "minutes approved: august 20, 2018",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Title 5 inspection report, 943 Reservoir Road",
+   "resolution": "acknowledged",
+   "quote": "title 5 inspection reports acknowledged: 943 reservoir road",
+   "tags": [
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed",
+   "quote": "septic permits signed: 29 otis street - fail 60 beal street 2 smith drive 12 island road",
+   "tags": [
+    "septic permits"
+   ]
+  },
+  {
+   "topic": "217 Reservoir Road variance",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by jewell and second by fortin, the variance was approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "64 Arbor Street",
+   "resolution": "no action recorded; discussion of prior minutes error",
+   "quote": "chairman george emond stated that this matter was placed on the agenda beca use at their meeting on june 4, 2018",
+   "tags": [
+    "minutes correction",
+    "Title 5",
+    "septic"
+   ]
+  },
+  {
+   "topic": "145 Woodland variances",
+   "resolution": "approved with two-bedroom deed restriction",
+   "quote": "after discussion and on motion by passios and second by mayhew, the variances were approved with the condition that a two (2) bedroom deed restriction be placed on the property.",
+   "tags": [
+    "variance",
+    "deed restriction",
+    "septic"
+   ]
+  },
+  {
+   "topic": "169 Penninsula Drive variances",
+   "resolution": "approved",
+   "quote": "after discussion and on motion by mayhew and second by fortin, the variances were approved. all in favor.",
+   "tags": [
+    "variance",
+    "septic",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "950 Chase Road well",
+   "resolution": "approved to proceed; placement variance to follow",
+   "quote": "after discussion and on motion by passios and second by fortin, the board voted to allow the installation of the well to go forward.",
+   "tags": [
+    "well",
+    "variance"
+   ]
+  },
+  {
+   "topic": "Septic Loan Program expanded use",
+   "resolution": "board to consult Town Counsel; no vote",
+   "quote": "after discussion, the board would like to move forward with discussing the possibility of using these funds in an expanded way",
+   "tags": [
+    "septic loan program",
+    "town counsel"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 inspection report, 943 Reservoir Road",
+   "where": "text",
+   "quote": "title 5 inspection reports acknowledged: 943 reservoir road"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "septic",
+  "Title 5",
+  "variances",
+  "well",
+  "septic loan program",
+  "town counsel"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

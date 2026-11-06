@@ -175,11 +175,11 @@ def sources():
         'ar24': ('town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf', town),
         'ar25': ('town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf', town),
         'myprog': ('town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf',
-                   'Parks & Recreation — MyRec, by records request'),
+                   'Parks & Recreation — MyRec, by emailed request'),
         'mymem': ('town-ledgers/account-details/parks-membership-sales-fy2025-myrec.pdf',
-                  'Parks & Recreation — MyRec, by records request'),
+                  'Parks & Recreation — MyRec, by emailed request'),
         'bid': ('town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf',
-                'a contractor, by records request'),
+                'a contractor, by emailed request'),
         'receipts': ('town-ledgers/account-details/field-rental-receipts-fy2024-fy2026-lysa.xlsx',
                      'Lunenburg Public Schools, by records request'),
         'parkspage': ('town-supplementary/docs/board-283-parks-commission.html',
@@ -576,15 +576,31 @@ def build():
     top = max(prog, key=lambda r: r['total'])
     nothing = [r for r in prog if abs(r['total']) < 0.005]
     neg = [r for r in prog if r['total'] < 0]
-    beach = [r for r in mem if r['program'] == '2025 BEACH PASSES'][0]
+    # ONE FISCAL YEAR, TWO SUMMERS' PRODUCTS. TJ, 5 November 2026: the report runs 1 July to
+    # 30 June and names each product for its summer, so two beach lines read like two years.
+    # The chart merges them; the table keeps MyRec's own names. The report dates no sale.
+    beaches = [r for r in mem if 'BEACH PASSES' in r['program']]
+    swims = [r for r in prog if r['program'].startswith('SWIM LESSONS')]
+    if len(beaches) != 2 or len(swims) != 2:
+        fail('expected two beach-pass and two swim-lesson products: %s, %s'
+             % ([r['program'] for r in beaches], [r['program'] for r in swims]))
+    beach_n = sum(r['total_count'] for r in beaches)
+    beach_usd = sum(r['total'] for r in beaches)
     drawn = [r for r in sales if r['total'] > 0]
+    merged = [(n, sum(r['res_total'] for r in g), sum(r['nonres_total'] for r in g))
+              for n, g in (('Beach passes', beaches), ('Swim lessons', swims))]
+    merged += [(r['program'], r['res_total'], r['nonres_total']) for r in drawn
+               if r not in beaches and r not in swims]
+    merged.sort(key=lambda x: -(x[1] + x[2]))
     sales_chart = TP.ranking(
         'Registration sales by programme',
-        [(r['program'], [r['res_total'], r['nonres_total']]) for r in drawn], '$',
+        [(n, [a, b]) for n, a, b in merged], '$',
         stack=['Residents', 'Non-residents'],
-        note='Both MyRec reports. %s programmes that recorded nothing or net refunds are not '
-             'drawn.' % C.num(len(sales) - len(drawn)).capitalize(),
-        note_figures={'n': N(len(sales) - len(drawn))})
+        note='Beach passes and swim lessons each combine the products named for summers 2024 and '
+             '2025. %s programmes with nothing or net refunds are not drawn.'
+             % C.num(len(sales) - len(drawn)).capitalize(),
+        note_figures={'n': N(len(sales) - len(drawn))},
+        note_allow=('2024', '2025'))
     out['registration-sales'] = TP.page(
         'registration-sales',
         'The registration system recorded %s in FY2025, and non-residents paid %s of it.'
@@ -595,8 +611,9 @@ def build():
            % C.num(len(prog)), 'published', {'n': N(len(prog))}),
          f('progn', N(m['program_n'], 'registrations'), 'programme registrations', 'published'),
          f('mem', U(m['membership_total']), 'beach passes and memberships', 'published'),
-         f('beach', N(beach['total_count'], 'passes'), '2025 beach passes sold, for %s'
-           % C.usd(beach['total']), 'published', {'b': U(beach['total'])}, allow=('2025',)),
+         f('beach', N(beach_n, 'passes'), 'beach passes, summers 2024 and '
+           '2025, for %s' % C.usd(beach_usd), 'published', {'b': U(beach_usd)},
+           allow=('FY2025', '2024', '2025')),
          f('nonres', PC(100 * nonres / tot), 'of the money paid by non-residents', 'published'),
          f('nonresn', N(nonres_n, 'registrations'), 'registrations by non-residents, of %s'
            % C.num(all_n),
@@ -615,9 +632,11 @@ def build():
              % (top['program'], C.pct(100 * top['total'] / m['program_total'], 0)),
              ['top', 'prog'], {'a': PC(100 * top['total'] / m['program_total'])},
              allow=(top['program'],)),
-         con('Non-residents made %s of %s registrations and paid %s.'
-             % (C.num(nonres_n), C.num(all_n), C.usd(nonres)), ['nonresn', 'nonres'],
-             {'a': N(nonres_n), 'b': N(all_n), 'c': U(nonres)}),
+         con('FY2025 sales include passes and lessons for both summer 2024 and summer 2025.',
+             ['beach'], allow=('FY2025', '2024', '2025'),
+             notes=[step('The report dates no sale, so neither summer here can be read as whole.',
+                         'gap', closes='a MyRec sales report listing each transaction with '
+                                       'its date')]),
          con('A sales report is what the system recorded, not what the town deposited.',
              ['tot', 'books', 'nothing'],
              notes=[step('%s programmes recorded net refunds; costs and waivers are not in a '
@@ -632,7 +651,9 @@ def build():
                        cells=[usd2(r['res_total']), usd2(r['nonres_total']), usd2(r['total'])])
                   for r in sorted(sales, key=lambda r: -r['total'])],
             note='Two printouts from the registration system, 1 July 2024 to 30 June 2025, '
-                 'each footed to the totals it prints. Negative figures are refunds.')]),
+                 'each footed to the totals it prints, with products under MyRec\u2019s own '
+                 'names. Years in those names are summers, not fiscal years. Negative figures '
+                 'are refunds.')]),
         chart=sales_chart,
         sources=[src['myprog'], src['mymem'], src['d-myrec']],
         finding_figures={'a': U(tot), 'b': PC(100 * nonres / tot)}, finding_allow=('FY2025',))

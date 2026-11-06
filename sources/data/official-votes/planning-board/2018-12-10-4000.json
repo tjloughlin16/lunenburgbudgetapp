@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-12-10",
  "docid": "4000",
@@ -12,23 +12,153 @@
  },
  "votes": [
   {
-   "motion": "accept requested waivers as documented",
-   "moved_by": "K. Chenis",
-   "seconded_by": "D. Prokowiew",
+   "motion": "Accept the requested waivers from Board Rules and Regulations for Site Plan Approval and Special Permits, as documented.",
+   "moved_by": "Kenneth Chenis",
+   "seconded_by": "David Prokowiew",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis made motion to accept requested waivers as documented, d. prokowiew seconded, all aye."
   },
   {
-   "motion": "continue the Hearing to February 11, 2019, 6:35 PM",
-   "moved_by": "K. Chenis",
-   "seconded_by": "P. Bertram",
+   "motion": "Continue the Hearing to February 11, 2019, 6:35 PM.",
+   "moved_by": "Kenneth Chenis",
+   "seconded_by": "Paula Bertram",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "k. chenis made motion to continue the hearing to february 11, 2019, 6:35 pm, p. bertram seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0837125
+ "note": "Text is a clean extraction with no votes missing. The meeting date is printed as December 10, 2018, but the page-2 header and the footer read \"12.12.18\"; the record above uses the header date. Tanner Cole recused himself and no recusal vote is recorded. Tanner Cole's and Steven Powell's attendance is not stated as present. Garry Rhodes is mentioned as author of an August 2018 letter but is not shown as taking part in the hearing.",
+ "cost_usd": 0.00449802,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "status": "present",
+   "quote": "present: matthew allison, david prokowiew, kenneth chenis, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "status": "not stated",
+   "quote": "board member tanner cole recused himself."
+  },
+  {
+   "name": "Brian Marchetti",
+   "status": "present",
+   "quote": "the applicant/owner (hereinafter referred to as psg) was represented by brian marchetti, mccarty engineering, inc."
+  },
+  {
+   "name": "Steven Powell",
+   "status": "not stated",
+   "quote": "applicant/own er is steven powell, psg realty 393 - 435, llc",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "status": "present",
+   "quote": "j. walsh, gei, stressed this is an organized, clean operation."
+  },
+  {
+   "name": "Garry Rhodes",
+   "status": "not stated",
+   "quote": "from building commissioner garry rhodes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to wait for Conservation Commission input before approving the berm.",
+   "quote": "board consensus was to wait for conservation commission input before approving the berm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PSG financial effect of residential zoning area",
+   "what_was_recorded": "PSG said it would be affected operationally and financially if the eight acres in the Residential zone cannot be used; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "psg would be affected both operationally and financially if those eight (8) acres cannot be used."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: Modification to Site Plan Approval, 151-181 Leominster Shirley Road (gravel manufacturing and processing)",
+   "resolution": "waivers accepted; hearing continued to February 11, 2019",
+   "quote": "the hearing was to hear and discuss an application for modification to site plan approval under section 250- 8.4.",
+   "tags": [
+    "site plan approval",
+    "gravel operation",
+    "zoning line",
+    "waivers",
+    "continued hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Modification to Site Plan Approval",
+   "where": "list",
+   "quote": "application for modification to site plan approval"
+  },
+  {
+   "name": "GEI Review Letter dated 12.07.18",
+   "where": "list",
+   "quote": "gei review letter dated 12.07.18"
+  },
+  {
+   "name": "McCarty Review Response Letter dated 12.10.18",
+   "where": "list",
+   "quote": "mccarty review response letter dated 12.10.18"
+  },
+  {
+   "name": "Impact Analysis (on file in the Planning Office)",
+   "where": "text",
+   "quote": "b. marchetti summarized the project's impact analysis (on file in the planning office)."
+  },
+  {
+   "name": "Letter from Building Commissioner Garry Rhodes, August 2018",
+   "where": "text",
+   "quote": "in august 2018 a letter was sent to the board of selectmen from building commissioner garry rhodes."
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "gravel operation",
+  "earth removal",
+  "zoning line",
+  "Residence B",
+  "stormwater",
+  "berm",
+  "waivers",
+  "continued hearing",
+  "Leominster Shirley Road",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

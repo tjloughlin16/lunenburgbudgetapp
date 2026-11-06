@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2019-01-15",
  "docid": "743",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve current expense vouchers, abatements, warrants, commitments, payroll and minutes of November 6, 2018 and December 11, 2018",
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, payroll and the November 6, 2018 and December 11, 2018 minutes.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -20,23 +20,15 @@
    "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and november 6, 2018 & december 11, 2018 minutes."
   },
   {
-   "motion": "Approve three V1 exemption applications and one 41C (E2) elderly exemption application in the amount of $1,950.00",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "statutory exemptions: three (3) v1 applications and one (1) 41c (e2) elderly exemption applications were reviewed and approved by the boa in the amount of $1,950.00."
-  },
-  {
-   "motion": "Grant continuation of Chapter 61A land designation for Stillman property at Lancaster Ave (total 180 acres)",
+   "motion": "Grant continuation of the Chapter 61A land designation for the Stillman property at 991, 992 & 1168 Lancaster Ave, without income documentation, because the land is also Agricultural Preservation Restriction land.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the boa voted to grant the continuation of the chapter land designation after recognizing that the property is also identified as agricultural preservation restriction land; thus receipts of income are not required by the board."
+   "quote": "the boa voted to grant the continuation of the chapter land designation after recognizing that the"
   },
   {
-   "motion": "Schedule next meeting for February 12, 2019 at 5:45 pm",
+   "motion": "Meet next on February 12, 2019 at 5:45 pm.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -45,6 +37,294 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Moved_by and seconded_by names not recorded for any votes in these minutes.",
- "cost_usd": 0.12356349999999999
+ "note": "OCR text (macOS Vision) with some errors (e.g., signature reads 'Laure Paguette'). The meeting date 2019-01-15 is not printed in the text; the meeting is identified by the supplied date. No vote counts, movers or seconders are printed for any motion. The approval of vouchers and minutes is recorded as 'approved' without a motion. The Stillman vote is recorded as 'voted to grant' with no count. The text does not say whether Low Places Ranch and the Statutory Exemptions were voted or simply granted/approved, so they are recorded as decisions. Heather is mentioned but not identified by a full name and not listed as attending. No public comment is recorded. No documents list heading is printed.",
+ "cost_usd": 0.0071251199999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco,"
+  },
+  {
+   "name": "Louis Franco",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis franco,"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member (as printed under Board Members; the minutes also print 'Associate Assessor' next to her name)",
+   "status": "present",
+   "quote": "rena swezey, associate assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Associate Assessor",
+   "status": "present",
+   "quote": "rena swezey, associate assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "rena swezey, associate assessor, joshua gendron and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "FY 20 Sewer Privilege Order tabled until the next meeting.",
+   "quote": "fy 20 sewer privilege order- tabled until next meeting"
+  },
+  {
+   "decision": "Three V1 applications and one 41C (E2) Elderly Exemption application reviewed and approved by the BOA.",
+   "quote": "were reviewed and approved by the boa in the amount of $1,950.00."
+  },
+  {
+   "decision": "Low Places Ranch, LLC: BOA granted 81.66 acres to Chapter 61A (Agricultural) and the remaining 21.34 acres to Chapter 61B (Recreational); Mr. Powell to contact Forest Manager about the Forest Management Plan; new lien to be available for review at next meeting.",
+   "quote": "the boa granted 81.66 to be classified as chapter 61a as agricultural land and the remaining 21.34 acres to be"
+  },
+  {
+   "decision": "A new lien will be available to the Board for review at the next meeting.",
+   "quote": "a new lien will be available to the board for review at the next meeting."
+  },
+  {
+   "decision": "Board recommended that a letter be sent to the Stillmans notifying them of the decision and of conditions: timely filing, contacting the State Forester to remove 285E Goodrich St. (parcel 129-01) from the Forest Management Plan, and recording an amended partial lien release at the Registry of Deeds.",
+   "quote": "board recommended that a letter be sent to the stillmans' to notify them of the decision and the following"
+  },
+  {
+   "decision": "One Real Estate abatement at 8 Pine Acres Rd approved; two Personal Property abatements approved; one Personal Property abatement denied.",
+   "quote": "one (1) application for property located at 8 pine acres rd was approved and two (2) pp"
+  },
+  {
+   "decision": "Louise to speak with the Town Manager about the Board's concerns and the status of the proposed agreement with CSC/Tyler.",
+   "quote": "louise will speak with town manger regarding the concerns of the board and status of the proposed"
+  },
+  {
+   "decision": "Heather to present the proposed Assessors Budget to the Finance Committee for approval.",
+   "quote": "heather will be presenting the proposed assessors budget to the finance committee for"
+  },
+  {
+   "decision": "Rena to contact Vision and Patriot about alternatives to CSC/Tyler and report at the next meeting.",
+   "quote": "rena volunteered to contact vision and patriot"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 19 real estate commitment",
+   "what_was_recorded": "Real Estate commitment of 4865 bills plus 182 exempt bills totaling the printed amount.",
+   "figures_as_printed": [
+    "$26,216,995.53"
+   ],
+   "quote": "commitments: real estate - 4865 + 182 exempt bills / $26,216,995.53"
+  },
+  {
+   "topic": "Omitted real estate commitment",
+   "what_was_recorded": "One omitted Real Estate bill recorded at the printed amount.",
+   "figures_as_printed": [
+    "$6, 194.29"
+   ],
+   "quote": "omitted real estate- 1 bill - $6, 194.29"
+  },
+  {
+   "topic": "Personal property commitment",
+   "what_was_recorded": "Personal Property commitment of 271 bills at the printed amount.",
+   "figures_as_printed": [
+    "$714,225.07"
+   ],
+   "quote": "personal property - 271bills / $714,225.07"
+  },
+  {
+   "topic": "Betterments added to tax",
+   "what_was_recorded": "Betterments added to the tax at the printed amount.",
+   "figures_as_printed": [
+    "$671,639.29"
+   ],
+   "quote": "betterments added to tax / $671,639.29"
+  },
+  {
+   "topic": "Statutory exemptions",
+   "what_was_recorded": "Statutory exemptions approved by the BOA in the stated amount.",
+   "figures_as_printed": [
+    "$1,950.00"
+   ],
+   "quote": "were reviewed and approved by the boa in the amount of $1,950.00."
+  },
+  {
+   "topic": "FY20 dues and membership account #57300",
+   "what_was_recorded": "Dues and membership allowance was $4,090.00; dues for Community Software Consortium and Tyler are now $6,210.00, which is above target by $2,636.00.",
+   "figures_as_printed": [
+    "$4,090.00",
+    "$6,210.00",
+    "$2,636.00"
+   ],
+   "quote": "allowance has been $4,090.00. for fy20, dues for community software consortium and tyler (which"
+  },
+  {
+   "topic": "FY19 abatement totals",
+   "what_was_recorded": "Printed abatement totals for the abatements granted at this meeting.",
+   "figures_as_printed": [
+    "$ 241.53",
+    "$ 155.04",
+    "$ 396.57"
+   ],
+   "quote": "totals 3| $ 241.53 $ 155.04 $ 396.57"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll and prior minutes",
+   "resolution": "approved",
+   "tags": [
+    "approvals",
+    "minutes"
+   ],
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll and november 6, 2018 & december 11, 2018 minutes."
+  },
+  {
+   "topic": "FY19 bills mailed and commitments",
+   "resolution": "reported",
+   "tags": [
+    "tax commitments",
+    "bills"
+   ],
+   "quote": "louise reported the fy 19 real estate & personal property bills were mailed on 12/27/2018"
+  },
+  {
+   "topic": "FY20 Sewer Privilege Order",
+   "resolution": "tabled",
+   "tags": [
+    "sewer privilege"
+   ],
+   "quote": "fy 20 sewer privilege order- tabled until next meeting"
+  },
+  {
+   "topic": "Statutory exemptions",
+   "resolution": "approved",
+   "tags": [
+    "exemptions"
+   ],
+   "quote": "statutory exemptions: three (3) v1 applications and one (1) 41c (e2) elderly exemption applications"
+  },
+  {
+   "topic": "FY19 chapter account: Low Places Ranch, LLC new Chapter 61A/61B application",
+   "resolution": "granted in part; lien to next meeting",
+   "tags": [
+    "chapter land",
+    "Chapter 61A",
+    "Chapter 61B"
+   ],
+   "quote": "\"new\" for fy20 - low places ranch, llc - cassidy - powell, jeffrey - 285 e. goodrich st., map"
+  },
+  {
+   "topic": "Stillman Chapter 61A continuation",
+   "resolution": "continuation granted; letter to be sent",
+   "tags": [
+    "chapter land",
+    "Chapter 61A",
+    "Agricultural Preservation Restriction"
+   ],
+   "quote": "stillman, garth & colleen - boa reviewed the chapter 61a application which consists of land located"
+  },
+  {
+   "topic": "FY19 abatements",
+   "resolution": "three abatements approved, one denied",
+   "tags": [
+    "abatements",
+    "personal property",
+    "real estate"
+   ],
+   "quote": "fy19 abatements: josh reported that a total of eleven (11) abatements have been received to date"
+  },
+  {
+   "topic": "FY2020 proposed budget",
+   "resolution": "discussed; Heather to present to Finance Committee",
+   "tags": [
+    "budget",
+    "dues"
+   ],
+   "quote": "fy 2020 proposed budget: boa reviewed the proposed budget provided by the town manager."
+  },
+  {
+   "topic": "Assessment software and CSC/Tyler concerns",
+   "resolution": "discussed; Rena to contact other vendors",
+   "tags": [
+    "assessment software",
+    "CAMA",
+    "Tyler iasWorld",
+    "CSC"
+   ],
+   "quote": "assessment software: there was discussion regarding the proposed assessment software"
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for February 12, 2019; adjourned 7:35 pm",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "board voted to meet on february 12, 2019 at 5:45 pm. meeting adjourned 7:35 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY 19 Real Estate & Personal Property bills",
+   "where": "text",
+   "quote": "louise reported the fy 19 real estate & personal property bills were mailed on 12/27/2018"
+  },
+  {
+   "name": "FY20 Budget Detail Spreadsheet for account #57300 (Dues & Membership)",
+   "where": "text",
+   "quote": "louise reported that the fy20 budget detail spreadsheet for account #57300 / dues & membership"
+  },
+  {
+   "name": "Chapter 61A application (Stillman, 991, 992 & 1168 Lancaster Ave)",
+   "where": "text",
+   "quote": "boa reviewed the chapter 61a application which consists of land located"
+  },
+  {
+   "name": "Chapter designation application (Low Places Ranch, LLC)",
+   "where": "text",
+   "quote": "boa reviewed the application seeking 103 acres for chapter designation."
+  },
+  {
+   "name": "Forest Management Plan",
+   "where": "text",
+   "quote": "forest manager if he wishes to maintain the forest management plan which is presently in place."
+  },
+  {
+   "name": "Proposed budget provided by the Town Manager",
+   "where": "text",
+   "quote": "boa reviewed the proposed budget provided by the town manager."
+  },
+  {
+   "name": "New lien (Low Places Ranch, LLC)",
+   "where": "text",
+   "quote": "a new lien will be available to the board for review at the next meeting."
+  },
+  {
+   "name": "Amended partial lien release",
+   "where": "text",
+   "quote": "an amended partial lien release must be recorded at the registry of deeds"
+  }
+ ],
+ "tags": [
+  "board of assessors",
+  "tax commitments",
+  "chapter land",
+  "abatements",
+  "exemptions",
+  "FY20 budget",
+  "assessment software",
+  "CSC/Tyler",
+  "sewer privilege"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

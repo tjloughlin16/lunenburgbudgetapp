@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-08-30",
  "docid": "3912",
@@ -12,31 +12,31 @@
  },
  "votes": [
   {
-   "motion": "Enter Executive Session to discuss strategy with respect to litigation",
+   "motion": "Enter executive session to discuss litigation strategy (O'Brien Homes, Inc. et al. v. Planning Board), with the Chair declaring that an open meeting may be detrimental to the litigating position.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion, r. ebersole, second, p. bertram to enter executive session to discus s strategy with respect to litigation if an open meeting would have a detrimental effect of the government's litigating position and the chair declares so roll call vote: p. luck- aye, d. mcquaid- aye, p. bertram- aye, r. ebersole- aye, j. toale - aye"
+   "quote": "motion, r. ebersole, second, p. bertram to enter executive session to discus s strategy with respect to litigation"
   },
   {
-   "motion": "Enter Executive Session to discuss strategy with respect to litigation and not return to open meeting",
+   "motion": "Enter executive session to discuss litigation strategy and not return to open meeting.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion, d. prokowiew, second, k. chenis to enter executive session to discuss strategy with respect to litigation if an open meeting would have a detrimental effect of the government's litigating position and the chair declares so and to not return to open meeting roll call vote: m. allison- aye, m. jeffreys- aye, d. prokowiew- aye, g. bittner- aye, k. chenis- aye"
+   "quote": "motion, d. prokowiew, second, k. chenis to enter executive session to discuss strategy with respect to litigation"
   },
   {
-   "motion": "Adjourn from Executive Session and not return to open meeting",
+   "motion": "Amended motion: adjourn from executive session and not return to the open meeting.",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "r. ebersole amended his motion to state they would adjourn from executive session and not return to the open meeting. seconded by p. bertram roll call vote: p. luck- aye, d. mcquaid- aye, p. bertram- aye, r. ebersole- aye, j. toale - aye"
+   "quote": "r. ebersole amended his motion to state they would adjourn from executive session and not return to the open meeting. seconded by p. bertram"
   },
   {
-   "motion": "Not approve the settlement agreement and proceed with the lawsuit",
+   "motion": "Not approve the settlement agreement and proceed with the lawsuit (first motion, Select Board roll call).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-1",
@@ -44,31 +44,190 @@
    "quote": "motion: r. ebersole, second, p. bertram to not approve the settlement agreement and proceed with the lawsuit r. ebersole- aye, p. bertram - aye, d. mcquaid- aye, p. luck- nay, j. toale- aye"
   },
   {
-   "motion": "Not approve the settlement agreement and proceed with the lawsuit",
+   "motion": "Not approve the settlement agreement and proceed with the lawsuit (second motion, Planning Board roll call).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: m. jeffreys, second, d. prokowiew to not approve the settlement agreement and proceed with the lawsuit m. allison- aye, m. jeffreys -aye, d. prokowiew- aye, k. chenis- nay, g. bittner- aye"
+   "quote": "motion: m. jeffreys, second, d. prokowiew to not approve the settlement agreement and proceed with the lawsuit m. allison- aye, m. jeffreys -aye"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (first adjournment motion, Select Board roll call).",
    "moved_by": "R. Ebersole",
    "seconded_by": "P. Bertram",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: r. ebersole, second, p. bertram to adjourn the meeting vote: p. luck- aye, d. mcquaid- aye, p. bertram- aye, r. ebersole- aye, j. toale - aye"
+   "quote": "motion: r. ebersole, second, p. bertram to adjourn the meeting vote: p. luck- aye, d. mcquaid- aye"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "K. Chenis",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: k. chenis, second, m. allison to adjourn the meeting roll call vote: m. allison- aye, m. jeffreys- aye, d. prokowiew- aye, g. bittner- aye, k. chenis- aye"
+   "quote": "motion: k. chenis, second, m. allison to adjourn the meeting roll call vote: m. allison- aye, m. jeffreys- aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11615249999999999
+ "note": "These are executive session minutes only, with no open-session business. Several roll calls are by Select Board members (Luck, McQuaid, Bertram, Ebersole, Toale), and the minutes record them in this Planning Board record as printed; the minutes do not say which body those votes belonged to. The straw poll has no printed result. The minutes name the Select Board member \"Jamie Toa le\" with a stray space; I read it as Jamie Toale, matching \"J. Toale\" elsewhere. The 2017 minutes print two adjournment motions; both are recorded. No documents list is printed.",
+ "cost_usd": 0.00660702,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "gregory bittner, chair"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael -ray jeffreys"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael -ray jeffreys"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael -ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael -ray jeffreys"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "absent",
+   "quote": "absent: adam r. burney"
+  },
+  {
+   "name": "Joel Bard",
+   "role": "Attorney, KP Law, P C",
+   "status": "present",
+   "quote": "attorney joel bard, kp law, p c; select board members jamie toa le"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "attorney joel bard, kp law, p c; select board members jamie toa le"
+  },
+  {
+   "name": "Robert Ebersole",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board members jamie toa le, robert ebersole, paula bertram, phyllis"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board members jamie toa le, robert ebersole, paula bertram, phyllis"
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "paula bertram, phyllis luck, damon mcquaid, and town manager heather lemieux"
+  },
+  {
+   "name": "Damon McQuaid",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "paula bertram, phyllis luck, damon mcquaid, and town manager heather lemieux"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "damon mcquaid, and town manager heather lemieux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Straw poll taken on which direction to go on the O'Brien Homes matter; no result is printed in the minutes.",
+   "quote": "a straw poll was taken on which direction to go."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of injunction versus trial in O'Brien Homes litigation",
+   "what_was_recorded": "Attorney Bard said filing for an injunction costs $250.00, compared with the cost of a trial, which he put at several thousand dollars.",
+   "figures_as_printed": [
+    "$250.00",
+    "several thousand dollars"
+   ],
+   "quote": "the cost to file for an injunction is $250.00 versus the cos t of a trial (several thousand dollars)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Executive session on O'Brien Homes litigation",
+   "resolution": "entered executive session; not returned to open meeting",
+   "tags": [
+    "executive session",
+    "litigation",
+    "O'Brien Homes"
+   ],
+   "quote": "executive session m.g.l. c.30a, §21; to discuss strategy with respect to collective bargaining or litigation"
+  },
+  {
+   "topic": "O'Brien Homes draft settlement agreement",
+   "resolution": "not approved; proceed with lawsuit (two motions, each passed 4-1)",
+   "tags": [
+    "settlement",
+    "injunction",
+    "subdivision",
+    "Land Court"
+   ],
+   "quote": "to not approve the settlement agreement and proceed with the lawsuit"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:06 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "meeting adjourned 8:06 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "O'Brien's lawyer's draft agreement proposal (draft settlement agreement)",
+   "where": "text",
+   "quote": "attorney bard recommended going with o'brien's lawyer's draft agreement proposal."
+  },
+  {
+   "name": "Photographs of O'Brien Homes subdivision work",
+   "where": "text",
+   "quote": "six months later we were shown photographs that"
+  }
+ ],
+ "tags": [
+  "executive session",
+  "litigation",
+  "O'Brien Homes",
+  "settlement agreement",
+  "subdivision",
+  "Cluster Development",
+  "injunction",
+  "Land Court"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-10-23",
  "docid": "3919",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "waive the filing fee",
+   "motion": "Waive the filing fee for the Asian Imperial application, as requested by R. Oliva.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion, d. prokowiew, to waive filing fee, second, k. chenis, discussion, g. bitter was not in favor of waiving the filing tee due to the time expended by staff on the december 2016 application, m. jeffreys, aye; d. prokowiew, aye; k. chenis, aye; m. allison, aye; g. bittner, nay. motion passed 4-1."
+   "quote": "motion, d. prokowiew, to waive filing fee, second, k. chenis, discussion, g. bitter was not in favor of waiving the filing tee"
   },
   {
-   "motion": "extend the meeting past 10:30 PM",
+   "motion": "Extend the meeting past 10:30 PM under the Board Rules and Regulations, §2.3.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
@@ -28,7 +28,15 @@
    "quote": "d. prokowiew made motion to extend the meeting past 10:30 pm, second, m. jeffreys, all aye."
   },
   {
-   "motion": "exclude architectural elevations from the requested waivers",
+   "motion": "Approve all requested waivers (as originally moved; the amendment below removed architectural elevations from it).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "D. Prokowiew",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion made, m. jeffreys, to approve all requested waivers, second, d. prokowiew, discussion: as an architectural waiver"
+  },
+  {
+   "motion": "Amend the waiver motion to exclude architectural elevations (waivers limited to Phases 1 and 2).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -36,7 +44,7 @@
    "quote": "motion amended, m. jeffreys, to exclude architectural elevations from the previous motion, second, d. prokowiew, all aye."
   },
   {
-   "motion": "continue the hearing to November 13th",
+   "motion": "Continue the public hearing to November 13, 2017.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -45,6 +53,173 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd from scan (macOS Vision). Typical OCR errors present in non-voting sections (e.g., \"G. Bitter\" for Bittner, \"filing tee\" for fee in discussion); voting records and names in the actual vote tallies are legible and correctly extracted.",
- "cost_usd": 0.15180749999999998
+ "note": "OCR-extracted text with errors: names misspelled (\"Prokowiew\", \"G. Bitter\" for Bittner, \"filing tee\", \"withdraw\"), the page 2 header reads \"Minules\", and page 2 ends mid-sentence (\"at the front of the\"). The minutes say \"Hearing recessed 10:58 PM\" alongside the continuance. The main waiver motion has no separately printed result; only its amendment is recorded as \"all aye\". Min Xu's attendance status is inferred from her recorded exchange with G. Bittner. The Fire Chief's correspondence is unnamed.",
+ "cost_usd": 0.00718612,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "Clk.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Mbr.",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Min Xu",
+   "role": "Trustee, K& E Realty Trust (applicant)",
+   "status": "present",
+   "quote": "the applicant, k& e realty trust, min xu - trustee, submitted an application in december 2016"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "representing the applicant (David E. Ross Associates)",
+   "status": "present",
+   "quote": "min xu was represented by rob oliva, david e. ross associates, 6 lancaster county road, harvard, ma."
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Reviewing Engineer, Graves Engineering, inc.",
+   "status": "present",
+   "quote": "reviewing engineer jeffrey walsh, graves engineering, inc., brought up his concern of not knowing where the building entrance"
+  },
+  {
+   "name": "Alan Graham",
+   "role": "13 Electric Avenue",
+   "status": "present",
+   "quote": "alan graham 13 electric avenue-felt his concerns were addressed with plantings and lighting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Min Xu is to provide a seating chart of existing seating for the hearing continuation.",
+   "quote": "she will provide a seating chart of existing seating for the hearing continuation."
+  },
+  {
+   "decision": "The existing spotlight is to be removed after Phase 2.",
+   "quote": "the existing spotlight needs to be removed after phase 2."
+  },
+  {
+   "decision": "If Phase 1 proceeds alone, the applicant would propose one striped-off space for a turnaround maneuver.",
+   "quote": "if phase 1 proceeds by itself he would propose one striped off space that can be used for a turnaround maneuver."
+  },
+  {
+   "decision": "If Phase 3 goes forward, plans must be revised to show pedestrian and handicapped access to the building and separation of vehicles and pedestrians at the front.",
+   "quote": "if phase 3 goes forward, the plans will need to be revised to clearly show how pedestrians and"
+  },
+  {
+   "decision": "Chair wants input from the Conservation Commission on the project.",
+   "quote": "he is also looking for input from the conservation commission."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Filing fee waiver",
+   "what_was_recorded": "R. Oliva asked that the filing fee be waived because the previous application was withdrawn without prejudice; the Board voted to waive it, with G. Bittner opposed due to staff time spent on the December 2016 application. No fee amount is printed.",
+   "figures_as_printed": [],
+   "quote": "r. oliva verbally requested the filing fee be waived as the previous application was withdraw without prejudice."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Alan Graham",
+   "stated_role": "13 Electric Avenue",
+   "topic": "concerns on plantings and lighting",
+   "quote": "alan graham 13 electric avenue-felt his concerns were addressed with plantings and lighting. would like to see it get started."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: site plan approval, Asian Imperial, 5 & 9 Electric Avenue (parking lot and building addition)",
+   "resolution": "continued to November 13, 2017, 6:35 PM",
+   "quote": "r. oliva requested continuance to november 13, 2017, 6:35 pm.",
+   "tags": [
+    "site plan approval",
+    "parking lot",
+    "building addition",
+    "waivers",
+    "filing fee",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Site Plan Approval, Asian Imperial Restaurant, 5 Electric Avenue, dtd 09.11.17",
+   "where": "list",
+   "quote": "application for site plan approval, asian imperial restaurant, 5 electric avenue, dtd 09.11.17"
+  },
+  {
+   "name": "Minutes/public hearings 2017/Asian imperial. Electric Avenue. 10.23.17",
+   "where": "list",
+   "quote": "minutes/public hearings 2017/asian imperial. electric avenue. 10.23.17"
+  },
+  {
+   "name": "Board's 2011 Decision (Asian Imperial site plan)",
+   "where": "text",
+   "quote": "the parking approved under the board's 2011 decision was for 25 spaces"
+  },
+  {
+   "name": "Board Rules and Regulations of Site Plan Approval & Special Permits",
+   "where": "text",
+   "quote": "board rules and regulations of site plan approval & special permits, §2.3."
+  },
+  {
+   "name": "Protective Bylaw of the Town of Lunenburg, Section 8.4",
+   "where": "text",
+   "quote": "site plan approval under section 8.4, of the protective bylaw of"
+  },
+  {
+   "name": "Correspondence from the Fire Chief",
+   "where": "text",
+   "quote": "correspondence from the fire chief noted that he had concerns for adequate room/turning space for apparatus coming in off electric avenue."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan approval",
+  "public hearing",
+  "parking",
+  "restaurant",
+  "waivers",
+  "filing fee",
+  "continuance",
+  "handicap spaces",
+  "2011 decision compliance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2018-06-05",
  "docid": "736",
@@ -12,21 +12,249 @@
  },
  "votes": [
   {
-   "motion": "Richard Letarte serve as Chairman of the Board",
-   "moved_by": "Louis Franco",
-   "seconded_by": "Rena Swezey",
+   "motion": "Approve current expense vouchers, abatements, warrants, commitments, payroll, and the May 1, 2018 minutes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and may 1, 2018 minutes."
+  },
+  {
+   "motion": "That Richard (Rich) Letarte serve as Chairman of the Board.",
+   "moved_by": "Louis rranco",
+   "seconded_by": "Rena Swezey",
+   "outcome": "not stated",
+   "procedural": false,
    "quote": "louis motioned that rich serve as chairman of the board and was seconded by rena."
   },
   {
-   "motion": "Meet on July 17, 2018 at 5:45 pm",
-   "outcome": "passed",
+   "motion": "Meet on July 17, 2018 at 5:45 pm.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "board voted to meet on july 17, 2018 at 5:45 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text. \"rranco\" in attendee list appears to be OCR error; name used as \"Franco.\"",
- "cost_usd": 0.1395265
+ "note": "OCR text (macOS Vision) of a single page; several words are garbled (e.g., \"Louis rranco\", \"-ouise Paquette\", \"June 19'i\", \"Jaquette\"). Quotes were taken as printed. The minutes record no vote counts or results. The approval of vouchers and minutes and the reorganization motion show no outcome. Joshua Gendron's individual role is not separately printed. No public comment is recorded.",
+ "cost_usd": 0.00436102,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis rranco"
+  },
+  {
+   "name": "Louis rranco",
+   "role": "Board member",
+   "status": "present",
+   "quote": "present: chairman, richard letarte, board members, louis rranco"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Joshua Gendron",
+   "role": "Assessor (role not separately printed)",
+   "status": "present",
+   "quote": "rena swezey, regional assessor, joshua gendron and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOA directed that the Chapter 61B application for 2030 Mass Ave be amended and corrected to better describe the owner's intentions.",
+   "quote": "the boa suggested that the application be amended and corrected to better describe the intentions of the owner."
+  },
+  {
+   "decision": "Louise will contact the new Chapter 61B owners of 2030 Mass Ave for more information; the BOA will review the application again next month.",
+   "quote": "louise stated that she will contact the new owners for more information. the boa will review the application again next month."
+  },
+  {
+   "decision": "Joshua will review the postponed ATB case for 508 & 516 New West Townsend Rd. with Harald.",
+   "quote": "joshua stated that he will review this with harald."
+  },
+  {
+   "decision": "BOA reviewed the FY18 assessment report and it will be submitted to the DOR.",
+   "quote": "boa reviewed the fy18 assessment report and report will be submitted to the dor."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Supplemental bill, new commercial property",
+   "what_was_recorded": "A letter will be mailed to a new commercial property owner expecting a FY18 supplemental bill; occupancy permit issued 4/25/2018.",
+   "figures_as_printed": [
+    "$10,181.67"
+   ],
+   "quote": "a letter will be mailed notifying a new commercial property owner that they can expect a fy18 supplemental bill in the amount of $10,181.67."
+  },
+  {
+   "topic": "Motor vehicle commitment",
+   "what_was_recorded": "Motor vehicle commitment for 2018-03 was reported.",
+   "figures_as_printed": [
+    "$109,627.37"
+   ],
+   "quote": "motor vehicle commitment: 2018-03 commitment $109,627.37"
+  },
+  {
+   "topic": "FY19 preliminary real estate tax commitment",
+   "what_was_recorded": "Total FY19 preliminary RE tax commitment reported; bills to be mailed on or before June 28, 2018; 5048 accounts.",
+   "figures_as_printed": [
+    "$13,273,222.41"
+   ],
+   "quote": "total amount of commitment is $13,273,222.41."
+  },
+  {
+   "topic": "Rollback taxes collected",
+   "what_was_recorded": "No omitted bills were found, but rollback taxes were collected for FY18.",
+   "figures_as_printed": [
+    "$2,888.18"
+   ],
+   "quote": "however, $2,888.18 was collected in rollback taxes for fy18."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of vouchers, abatements, warrants, commitments, payroll, and May 1, 2018 minutes",
+   "resolution": "approved (no motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, payroll, and may 1, 2018 minutes.",
+   "tags": [
+    "approvals",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reorganization / election of Chairman",
+   "resolution": "Richard Letarte named Chairman; result not stated",
+   "quote": "louis motioned that rich serve as chairman of the board and was seconded by rena.",
+   "tags": [
+    "reorganization",
+    "chairman"
+   ]
+  },
+  {
+   "topic": "Supplemental bills",
+   "resolution": "reported; letter to be mailed",
+   "quote": "supplemental bills: louise reported that a letter will be mailed notifying a new commercial property owner",
+   "tags": [
+    "supplemental bill",
+    "commercial property"
+   ]
+  },
+  {
+   "topic": "Motor vehicle commitment",
+   "resolution": "reported",
+   "quote": "motor vehicle commitment: 2018-03 commitment $109,627.37",
+   "tags": [
+    "motor vehicle excise",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "FY19 preliminary real estate tax",
+   "resolution": "reported; BOA to sign warrant/commitment",
+   "quote": "boa will be in to sign the warrant / commitment.",
+   "tags": [
+    "FY19",
+    "tax billing",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Omitted and revised assessment report",
+   "resolution": "reviewed; to be submitted to DOR",
+   "quote": "boa reviewed the fy18 assessment report and report will be submitted to the dor.",
+   "tags": [
+    "DOR",
+    "omitted assessments",
+    "rollback taxes"
+   ]
+  },
+  {
+   "topic": "Chapter 61B application, 2030 Mass Ave",
+   "resolution": "continued; applicant to be contacted, application to be amended",
+   "quote": "the boa will review the application again next month.",
+   "tags": [
+    "chapter 61B",
+    "land use",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Report by Assessor",
+   "resolution": "reported; office out of office June 6 to June 19",
+   "quote": "they will be out of the office beginning june 6th not to",
+   "tags": [
+    "revaluation",
+    "DOR certification",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "ATB case, 508 & 516 New West Townsend Rd.",
+   "resolution": "postponed",
+   "quote": "the case regarding 508 & 516 new west townsend rd. has been postponed.",
+   "tags": [
+    "appellate tax board",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Next meeting date and adjournment",
+   "resolution": "voted to meet July 17, 2018; adjourned 6:50 pm",
+   "quote": "board voted to meet on july 17, 2018 at 5:45 pm. meeting adjourned 6:50 pm",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY18 assessment report (omitted and revised assessment report), to be submitted to the DOR",
+   "where": "text",
+   "quote": "boa reviewed the fy18 assessment report and report will be submitted to the dor."
+  },
+  {
+   "name": "Chapter 61B application for 2030 Mass Ave",
+   "where": "text",
+   "quote": "chapter 61b - boa reviewed the application for chapter 61b for new owners that have purchased 2030"
+  },
+  {
+   "name": "Letter to new commercial property owner re FY18 supplemental bill",
+   "where": "text",
+   "quote": "louise reported that a letter will be mailed notifying a new commercial property owner that they can expect a fy18 supplemental bill"
+  }
+ ],
+ "tags": [
+  "assessors",
+  "reorganization",
+  "tax commitment",
+  "FY19 tax billing",
+  "supplemental bill",
+  "Chapter 61B",
+  "ATB appeal",
+  "revaluation",
+  "DOR certification",
+  "rollback taxes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

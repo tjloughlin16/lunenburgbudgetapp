@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2018-02-13",
  "docid": "1881",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the January 9, 2018 meeting",
+   "motion": "Approve the minutes of the January 9, 2018 meeting.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Mr. Guenard",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "ms. digiacomo motioned to approve the minutes from the january 9, 2018 meeting, mr. guenard seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 10:55 a.m.",
    "moved_by": "Ms. Dwyer",
    "seconded_by": "Ms. DiGiacomo",
    "outcome": "passed unanimously",
@@ -29,6 +29,234 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR from macOS Vision. Two procedural votes recorded: minutes approval and adjournment.",
- "cost_usd": 0.0832975
+ "note": "OCR text from scanned minutes; page 1 begins with a stray header word (\"Dwyer\") and the roll-call line reads \"Absent: none\". Text runs across page breaks mid-sentence (the Ms. DiGiacomo line, and the MART item between pages 2 and 3, ending \"could go back to\" then \"order.\"), so some wording may be garbled. \"Mr. Lincoln\" and \"Ms. Lincoln\" both appear as printed, and the Ms. Lincoln references may be a typo. The PUBLIC COMMENT heading is printed with no speakers under it. Two motions are recorded, both procedural; no vote on any budget item, personnel request, or other business is recorded.",
+ "cost_usd": 0.006909619999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. lincoln held a moment of silence for three prominent members of the eagle"
+  },
+  {
+   "name": "Ms. Doherty",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. doherty reported that funds equaling $12.00 per elder would be available"
+  },
+  {
+   "name": "Ms. DiGiacomo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. digiacomo motioned to approve the minutes from the january 9, 2018"
+  },
+  {
+   "name": "Mr. Guenard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. guenard seconded. on vote, motion carried unanimously."
+  },
+  {
+   "name": "Ms. Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dwyer absent: none guests: none"
+  },
+  {
+   "name": "Ms. Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lincoln encouraged everyone to go to the lunenburg public access youtube channel"
+  },
+  {
+   "name": "Ms. Rabbitt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. rabbitt asked about how the eagle house could get access to the gym at tc passios."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Formula Grant FY 19",
+   "what_was_recorded": "Ms. Doherty reported the Formula Grant would give the COA about $12.00 per elder, roughly $25,000 based on the 2010 Census.",
+   "figures_as_printed": [
+    "$12.00",
+    "$25,000"
+   ],
+   "quote": "funds equaling $12.00 per elder would be available, which, based on the 2010 census, would total up around $25,000 in funding for the coa."
+  },
+  {
+   "topic": "FY 19 budget increase: administrative assistant hours",
+   "what_was_recorded": "Ms. Doherty will ask for more hours for the administrative assistant position, costing $4,344, to compensate for MART cuts; she said the Formula Grant would cover any differences in salaries.",
+   "figures_as_printed": [
+    "$4,344"
+   ],
+   "quote": "will equate to $4,344, in order to compensate for mart cuts."
+  },
+  {
+   "topic": "FY 19 budget: programming line",
+   "what_was_recorded": "Ms. Doherty will suggest cutting $200 from the programming line in the town's budget, to be made up through the Formula Grant and Eagle House Supporters funds.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "suggest cutting $200 from the programming line from the town's budget"
+  },
+  {
+   "topic": "Salary payment legality",
+   "what_was_recorded": "Ms. Lincoln asked where the legality lies for paying salaries if the Town or MART refuse; Ms. Doherty said the Formula Grant would cover any differences. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lincoln asked where the legality lies when it comes to paying salaries if the town or mart refuse."
+  },
+  {
+   "topic": "COA Gift Fund donation",
+   "what_was_recorded": "The COA Gift Fund received a $410.00 donation in Therese Barney's name.",
+   "figures_as_printed": [
+    "$410.00"
+   ],
+   "quote": "the coa gift fund took in $410.00 in therese barney's name."
+  },
+  {
+   "topic": "Outreach Worker pay grade change",
+   "what_was_recorded": "Ms. Doherty will go before the Personnel Committee to request a title change for Outreach Worker Pauline Roy and a pay grade change from Grade 6 Step 3 to Grade 7 Step 1; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "change the pay grade from grade 6 step 3 to grade 7 step 1."
+  },
+  {
+   "topic": "MART funds use by other COAs",
+   "what_was_recorded": "Ms. Doherty reported other COAs have used MART funds, such as one buying a photocopier; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "one town's coa purchased a new photocopier with their mart funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "moment of silence held; no action",
+   "tags": [
+    "announcements",
+    "memorial"
+   ],
+   "quote": "mr. lincoln held a moment of silence for three prominent members of the eagle"
+  },
+  {
+   "topic": "Minutes approval (January 9, 2018)",
+   "resolution": "approved unanimously",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. digiacomo motioned to approve the minutes from the january 9, 2018"
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; no action taken",
+   "tags": [
+    "director report",
+    "formula grant",
+    "budget",
+    "housing",
+    "programming",
+    "events",
+    "MART",
+    "personnel"
+   ],
+   "quote": "formula grant fy 19: ms. doherty reported that funds equaling $12.00 per elder"
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "received; no action",
+   "tags": [
+    "gift fund",
+    "training"
+   ],
+   "quote": "the coa gift fund took in $410.00 in therese barney's name."
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "discussed; no action",
+   "tags": [
+    "reappointment",
+    "influenza",
+    "facilities"
+   ],
+   "quote": "mr. lincoln reminded board members to start thinking about whether they want to be reappointed to"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heading printed; no speakers recorded",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment adjournment at 10:55 a.m., ms. dwyer motioned to adjourn"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:55 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "at 10:55 a.m., ms. dwyer motioned to adjourn, ms. digiacomo seconded."
+  },
+  {
+   "topic": "Next meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meeting: tuesday, march 13, 2018 at 9:30 a.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY 19 Budget Increase Request",
+   "where": "list",
+   "quote": "ms. doherty handed out copies of the fy 19 budget increase request, and explained"
+  },
+  {
+   "name": "Tri-Town Landing proposed senior housing project description (with apartment layouts)",
+   "where": "list",
+   "quote": "ms. doherty handed out a description of the proposed project to the board, which includes layouts of the apartments"
+  },
+  {
+   "name": "Application to the Lunenburg Planning Board for Tri-Town Landing (due February 15, 2018)",
+   "where": "text",
+   "quote": "an application is due to the lunenburg planning board by february 15, 2018."
+  },
+  {
+   "name": "Letter of support for the Tri-Town Landing project (submitted by Ms. Doherty)",
+   "where": "text",
+   "quote": "ms. doherty has submitted a letter of support for the project."
+  },
+  {
+   "name": "Town Clerk's list of seniors",
+   "where": "text",
+   "quote": "according to the town clerk's list, there's almost 3,000 seniors in town."
+  },
+  {
+   "name": "Email from Selectman Bob Ebersole re: Dementia Friendly Community",
+   "where": "text",
+   "quote": "sent an email to ms. doherty inquiring about whether lunenburg should consider"
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "Eagle House",
+  "FY19 budget",
+  "formula grant",
+  "MART",
+  "personnel",
+  "senior housing",
+  "intergenerational programming",
+  "community events",
+  "dementia friendly community"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. doherty handed out copies of the fy 19 budget increase request"
+ },
+ "dropped_unquoted_by_field": {}
 }

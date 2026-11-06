@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2019-02-12",
  "docid": "1893",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the January 8, 2019 meeting",
+   "motion": "Approve the minutes of the January 8, 2019 meeting.",
    "moved_by": "Ms. Nowd",
    "seconded_by": "Ms. Rabbitt",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "ms. nowd motioned to approve the minutes from the january 8, 2019 meeting. ms. rabbitt seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (at 11:09 a.m.).",
    "moved_by": "Ms. Nowd",
    "seconded_by": "Ms. Dwyer",
    "outcome": "passed unanimously",
@@ -29,6 +29,289 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0952305
+ "note": "Text is a clean extraction of three pages; no scan issues. Only two motions were recorded (minutes approval and adjournment), both unanimous with no numeric count printed. The footer \"Unanimously approved by the COA at March 12, 2019 meeting.\" refers to later approval of these minutes, not a vote at this meeting, so it is not recorded as a vote. \"Mr. Lincoln\" (Chairperson Pete Lincoln) and \"Ms. Lincoln\" (Deb Lincoln) are both named in the text; attribution of \"Ms. Lincoln\" follows the minutes' honorific. No document list is printed.",
+ "cost_usd": 0.00639222,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Pete Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director sue doherty, cheryl moisan, diane nowd, jane rabbitt, jacquelyn dwyer,"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director sue doherty, cheryl moisan, diane nowd, jane rabbitt, jacquelyn dwyer,"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director sue doherty, cheryl moisan, diane nowd, jane rabbitt, jacquelyn dwyer,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director sue doherty, cheryl moisan, diane nowd, jane rabbitt, jacquelyn dwyer,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director sue doherty, cheryl moisan, diane nowd, jane rabbitt, jacquelyn dwyer,"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson pete lincoln, director sue doherty, cheryl moisan, diane nowd, jane rabbitt, jacquelyn dwyer,"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "deb lincoln, judy tarbell, barbara brown"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "deb lincoln, judy tarbell, barbara brown"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "present",
+   "quote": "deb lincoln, judy tarbell, barbara brown"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: betty digiacomo, kevin mcnally, sarah grant"
+  },
+  {
+   "name": "Kevin McNally",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: betty digiacomo, kevin mcnally, sarah grant"
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: betty digiacomo, kevin mcnally, sarah grant"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "guests: selectman jamie toale, eagle house supporters liaison marie burchfield, gaynor grieci"
+  },
+  {
+   "name": "Marie Burchfield",
+   "role": "Eagle House Supporters Liaison",
+   "status": "present",
+   "quote": "ms. burchfield commented that only those who weed the garden should be allowed to reap its bounty."
+  },
+  {
+   "name": "Gaynor Grieci",
+   "role": "Guest",
+   "status": "not stated",
+   "quote": "guests: selectman jamie toale, eagle house supporters liaison marie burchfield, gaynor grieci"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager heather lemieux, and dpw director jack rodriquenz at the last meeting"
+  },
+  {
+   "name": "Jack Rodriquenz",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "town manager heather lemieux, and dpw director jack rodriquenz at the last meeting"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY20 Finance Committee request (meal services donation)",
+   "what_was_recorded": "Ms. Doherty said she would ask for only $100 more than last year, to cover the donation to the Montachusett Opportunity Council for meal services.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "she would only be asking for $100 more than last year to cover the donation to the montachusett opportunity council for meal services."
+  },
+  {
+   "topic": "Capital plan items for Eagle House",
+   "what_was_recorded": "Eagle House requests in the released capital plan were quoted as: HVAC $45,000 (FY22), main entrance reconfiguration $88,000 (FY22), building generator $75,000 (FY24), building automation $25,000 (FY26), new boiler $22,000 (FY22).",
+   "figures_as_printed": [
+    "$45,000",
+    "$88,000",
+    "$75,000",
+    "$25,000",
+    "$22,000"
+   ],
+   "quote": "an hvac quoted at $45,000 is on the list for fy22, reconfiguring the main entrance is quoted for $88,000 in fy22, a generator for the entire building is quoted for $75,000 in fy24"
+  },
+  {
+   "topic": "Memory Cafe grant award",
+   "what_was_recorded": "Ms. Doherty reported receiving a $5,000 grant from the Greater Lowell Community Foundation and the Community Foundation of North Central Massachusetts.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "ms. doherty reported she received a $5,000 grant from the greater lowell community foundation"
+  },
+  {
+   "topic": "Central Massachusetts Agency on Aging grant",
+   "what_was_recorded": "The Central Massachusetts Agency on Aging presented a $500 grant check to Ms. Doherty.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "to present their $500 grant check to ms. doherty."
+  },
+  {
+   "topic": "Television request for Supporters programs",
+   "what_was_recorded": "Ms. Doherty requested funds for a 60-inch television for upcoming programs at the Supporters meeting; no dollar amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty requested funds for a 60-inch television for the many upcoming programs"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Toale",
+   "stated_role": "Selectman",
+   "topic": "Annual Town Meeting schedule and Charter Review",
+   "quote": "mr. toale announced that annual town meeting will include the charter review, and many other topics"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "announcements",
+    "moment of silence"
+   ],
+   "quote": "mr. lincoln asked the board for a moment of silence in remembrance of arnie rill who passed"
+  },
+  {
+   "topic": "Minutes approval (January 8, 2019)",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "ms. nowd motioned to approve the minutes from the january 8, 2019 meeting."
+  },
+  {
+   "topic": "Discussion of January 8 minutes: park location and visibility",
+   "resolution": "discussed, no action",
+   "tags": [
+    "skateboard park",
+    "Memorial Dr",
+    "Town Hall",
+    "traffic"
+   ],
+   "quote": "the minutes of the january 8 meeting were discussed among board members."
+  },
+  {
+   "topic": "Director's Report: Bridges Together, Finance Committee/FY20 budget, Dementia Friendly Community, Memory Cafe, shuffleboard, building, events",
+   "resolution": "reported, no action",
+   "tags": [
+    "director report",
+    "volunteers",
+    "budget FY20",
+    "dementia friendly",
+    "memory cafe",
+    "grants"
+   ],
+   "quote": "bridges together: ms. doherty reported the training meeting may be disrupted given the weather"
+  },
+  {
+   "topic": "Capital Plan (Eagle House requests)",
+   "resolution": "reported, no action",
+   "tags": [
+    "capital plan",
+    "Eagle House",
+    "building"
+   ],
+   "quote": "capital plan: ms. doherty reported she found out that eagle house requests were included in the"
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "reported, no action",
+   "tags": [
+    "Eagle House Supporters",
+    "donations",
+    "garden"
+   ],
+   "quote": "eagle house supporters report: ms. lincoln reported that marie burchfield chaired the last meeting as the"
+  },
+  {
+   "topic": "Notices and Communications",
+   "resolution": "reported, no action",
+   "tags": [
+    "certifications",
+    "meal site"
+   ],
+   "quote": "ms. doherty informed the board that meal site manager sandy ricci, and outreach coordinator pauline roy have received"
+  },
+  {
+   "topic": "Board Comment: room acoustics",
+   "resolution": "suggested, no action",
+   "tags": [
+    "acoustics",
+    "capital plan"
+   ],
+   "quote": "ms. rabbitt asked if there was anything that could be done about the acoustics in the room where"
+  },
+  {
+   "topic": "Public Comment: Annual Town Meeting",
+   "resolution": "no action",
+   "tags": [
+    "Annual Town Meeting",
+    "Charter Review"
+   ],
+   "quote": "mr. toale announced that annual town meeting will include the charter review, and many other topics"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:09 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ms. nowd motioned to adjourn the meeting, ms. dwyer seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Plan (released online)",
+   "where": "text",
+   "quote": "ms. doherty reported she found out that eagle house requests were included in the capital plan after it was released online."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "senior services",
+  "skateboard park",
+  "capital plan",
+  "FY20 budget",
+  "dementia friendly",
+  "memory cafe",
+  "grants",
+  "annual town meeting",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

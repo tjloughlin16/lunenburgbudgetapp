@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-10-23",
  "docid": "3957",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
+   "motion": "Close the Public Hearing.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -21,6 +21,219 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, readable. One vote recorded: motion to close the public hearing.",
- "cost_usd": 0.08481050000000001
+ "note": "OCR text from a scanned, multi-page set. Initials for some speakers vary within the minutes (e.g., 'B. Gustus' for Bill Gustus, 'A. Burney' for Adam R. Burney, 'E. Gyles' for Ethan Gyles, 'R. Oliva'). The only recorded motion is to close the public hearing (outcome printed as 'all aye', not a count). No vote or decision on the application is recorded; the hearing closed at 9:23 PM. The PILOT date reads '17ü' in the OCR text and is quoted as printed. No dollar figures are printed in the minutes.",
+ "cost_usd": 0.00599352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Robert Oliva",
+   "role": "representing the applicant (David E. Ross Associates (DER))",
+   "status": "present",
+   "quote": "the applicant, settlers solar, llc, was represented by robert oliva, david e. ross associates (der); attorney robert bowen;"
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "Attorney, representing the applicant",
+   "status": "present",
+   "quote": "the applicant, settlers solar, llc, was represented by robert oliva, david e. ross associates (der); attorney robert bowen;"
+  },
+  {
+   "name": "Ethan Gyles",
+   "role": "PE, Development Manager, NEXAMP",
+   "status": "present",
+   "quote": "ethan gyles, pe, development manager, and alan clapp, pe, director, development projects, nexamp."
+  },
+  {
+   "name": "Alan Clapp",
+   "role": "PE, Director, Development Projects, NEXAMP",
+   "status": "present",
+   "quote": "ethan gyles, pe, development manager, and alan clapp, pe, director, development projects, nexamp."
+  },
+  {
+   "name": "Bill Gustus",
+   "role": "owner of subject parcel, 19 Burke Street",
+   "status": "present",
+   "quote": "bill gustus (owner of subject parcel), 19 burke street- did additional outreach to abutters and asked them what they needed"
+  },
+  {
+   "name": "Ron Smith",
+   "role": "1026 Northfield Road",
+   "status": "present",
+   "quote": "ron smith, 1026 northfield road- noted revised plan was definitely an improvement over the initial submittal."
+  },
+  {
+   "name": "Lucy Hawkins Smith",
+   "role": "1026 Northfield Road",
+   "status": "present",
+   "quote": "lucy hawkins smith, 1026 northfield road-pleased that the buffer zones were improved."
+  },
+  {
+   "name": "Christopher Valliere",
+   "role": "1048 Northfield Road (email read into record)",
+   "status": "not stated",
+   "quote": "an email was read into record from christopher valliere, 1048 northfield road noting that mr. gustus had addressed his concerns."
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Reviewing Engineer, Graves Engineering, Inc.",
+   "status": "not stated",
+   "quote": "reviewing engineer jeffrey walsh, graves engineering, inc., felt that the dollar amount seemed low."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Surety for decommissioning",
+   "what_was_recorded": "NEXAMP is phasing the surety; the Chair would prefer a bond for the full amount up front, and the reviewing engineer felt the dollar amount seemed low. No figure is printed.",
+   "figures_as_printed": [],
+   "quote": "nexamp is phasing the surety. g. bittner would prefer a bond with the full amount up front."
+  },
+  {
+   "topic": "Surety estimate revised",
+   "what_was_recorded": "A revised decommissioning plan and surety estimate was submitted based on a contractor's proposal; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "a revised decommissioning plan and surety estimate was submitted based on a proposal from a contractor."
+  },
+  {
+   "topic": "PILOT agreement",
+   "what_was_recorded": "The PILOT (Payment in Lieu of Taxes) was approved by the Board of Selectmen on October 17; the Chair asked NEXAMP to condition a PILOT agreement and Clapp agreed. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the pilot (payment in lieu of taxes) was approved by the board of selectmen on october 17ü."
+  },
+  {
+   "topic": "Land value under Chapter 61B",
+   "what_was_recorded": "Board concern that clearing before a change of use filing would devalue the land; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there was board concern as to the value of the land at the time b. gustus files for a change of use,"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Bill Gustus",
+   "stated_role": "owner of subject parcel, 19 Burke Street",
+   "topic": "outreach to abutters on the solar array",
+   "quote": "bill gustus (owner of subject parcel), 19 burke street- did additional outreach to abutters and asked them what they needed"
+  },
+  {
+   "speaker": "Ron Smith",
+   "stated_role": "1026 Northfield Road",
+   "topic": "revised plan improvement and buffer",
+   "quote": "ron smith, 1026 northfield road- noted revised plan was definitely an improvement over the initial submittal."
+  },
+  {
+   "speaker": "Christopher Valliere",
+   "stated_role": "1048 Northfield Road (email read into record)",
+   "topic": "concerns addressed by owner",
+   "quote": "an email was read into record from christopher valliere, 1048 northfield road noting that mr. gustus had addressed his concerns."
+  },
+  {
+   "speaker": "Lucy Hawkins Smith",
+   "stated_role": "1026 Northfield Road",
+   "topic": "buffer zone improvements",
+   "quote": "lucy hawkins smith, 1026 northfield road-pleased that the buffer zones were improved."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Special Permit and Site Plan Approval, 994 Northfield Road (6MW ground-mounted solar)",
+   "resolution": "hearing continued and closed; no decision recorded",
+   "quote": "the hearing continuation was to hear and discuss an application for a special permit and site plan approval under §4.15.",
+   "tags": [
+    "solar",
+    "special permit",
+    "site plan",
+    "public hearing",
+    "994 Northfield Road",
+    "Chapter 61B",
+    "surety",
+    "PILOT"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "994 Northfield Road Revised Materials w/cover letter dt 10/16/17",
+   "where": "list",
+   "quote": "994 northfield road revised materials w/cover letter dt 10/16/17"
+  },
+  {
+   "name": "Minutes/public hearings 2017/994 Northfield Road_10.23.17",
+   "where": "list",
+   "quote": "minutes/public hearings 2017/994 northfield road_10.23.17"
+  },
+  {
+   "name": "revised Impact Report",
+   "where": "text",
+   "quote": "a revised impact report addressed traffic, transportation and circulation;"
+  },
+  {
+   "name": "stormwater pollution prevention plan (SWPPP)",
+   "where": "text",
+   "quote": "nexamp will have to file a stormwater pollution prevention plan (swppp) with the epa."
+  },
+  {
+   "name": "revised O&M (Operation and Maintenance Plan)",
+   "where": "text",
+   "quote": "r. oliva noted the revised o&m (operation and maintenance plan), which addresses mowing of the site and maintenance of the facility."
+  },
+  {
+   "name": "revised decommissioning plan and surety estimate",
+   "where": "text",
+   "quote": "a revised decommissioning plan and surety estimate was submitted based on a proposal from a contractor."
+  }
+ ],
+ "tags": [
+  "solar",
+  "special permit",
+  "site plan",
+  "public hearing",
+  "994 Northfield Road",
+  "buffer",
+  "Chapter 61B",
+  "surety",
+  "PILOT"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

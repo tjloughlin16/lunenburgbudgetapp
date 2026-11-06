@@ -1,0 +1,341 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Selectmen Meeting",
+ "meeting_date": "2019-02-05",
+ "video_id": "sES_v5pOx4U",
+ "video_url": "https://www.youtube.com/watch?v=sES_v5pOx4U",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2019-02-05-sES_v5pOx4U.json",
+  "sha256": "5beec8d963a251f1e09a8f17791e0b4e588c571eba145aba7a2ddc0bb3a67d68",
+  "caption_lines": 468,
+  "segments": 3399
+ },
+ "recording": {
+  "duration_s": 10008,
+  "duration": "2:46",
+  "spoken_chars": 123490,
+  "words_approx": 20581
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02052019-5148",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2019-02-05-agenda-5148.txt",
+   "path": "sources/meetings/select-board/2019-02-05-agenda-5148.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T15:39:10Z",
+  "cost_usd": 0.44222909999999993
+ },
+ "minutes": {
+  "headline": "Select Board heard a tax-break request from Ecologic Fibers and the capital plan; the TIF was taken under advisement.",
+  "summary": "The board approved an auto dealer license and a Verizon pole move after short hearings. It then heard the quarterly financial report, a Complete Streets debate, and a tax increment financing request from Ecologic Fibers. The town manager presented the FY20 capital plan and five-year forecast, and a long debate followed on the 2.5 percent levy assumption and on warrant articles for Passios, Brooks House and the old primary school. No direction was voted on the levy.",
+  "attendees": [
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Adam Bernie",
+    "role": "land-use director"
+   },
+   {
+    "name_as_heard": "Phyllis",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Diane Peterson",
+    "role": "presenter (TIF consultant)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 47,
+    "speaker_as_heard": "Dave Rogers",
+    "stated_role": "resident",
+    "topic": "Asked about the DPW fuel tank money in the capital plan and suggested a fleet management program like Fitchburg's."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "economic-development",
+   "facilities",
+   "free-cash",
+   "public-comment",
+   "tax-rate",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 390,
+    "motion": "Approve the class 2 auto dealer license for 555 Chase Road.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 584,
+    "motion": "Approve the Verizon pole petition on Sunny Hill Road as submitted.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 9640,
+    "motion": "Vote that the plan of record is to move municipal offices to TCP.",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 9976,
+    "motion": "Adjourn.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 68,
+    "topic": "DPW fuel tank replacement",
+    "what_was_said": "A resident asked about money earmarked for removing tanks. The town manager said the new request replaces the earlier approved amount.",
+    "figures_as_heard": [
+     "two hundred and twenty thousand dollars",
+     "a hundred and ten thousand dollars",
+     "three hundred and thirty thousand dollars"
+    ]
+   },
+   {
+    "t": 8012,
+    "topic": "Levy at 2.5 percent versus 2 percent",
+    "what_was_said": "The difference in available revenue between the two levy assumptions was stated.",
+    "figures_as_heard": [
+     "577",
+     "461",
+     "one hundred and sixteen thousand dollar difference"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 8644,
+    "decision": "Board agreed not to take up the 2 percent levy question again until this year's budget is done."
+   },
+   {
+    "t": 4731,
+    "decision": "Ecologic Fibers' TIF request taken under advisement; the company will supply a local incentive application and a business plan."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 47,
+    "t_end": 278,
+    "topic": "Public comment and announcements",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 278,
+    "t_end": 650,
+    "topic": "Auto dealer and pole hearings",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 683,
+    "t_end": 980,
+    "topic": "Quarterly financial report",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 981,
+    "t_end": 2140,
+    "topic": "Town manager report and Complete Streets",
+    "resolution": "referred",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2140,
+    "t_end": 4870,
+    "topic": "Ecologic Fibers TIF request",
+    "resolution": "under advisement",
+    "tags": [
+     "economic-development",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 4925,
+    "t_end": 6000,
+    "topic": "FY20 capital plan",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 6012,
+    "t_end": 7300,
+    "topic": "Five-year forecast",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 7300,
+    "t_end": 8660,
+    "topic": "Two and a half percent levy debate",
+    "resolution": "no resolution",
+    "tags": [
+     "tax-rate",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 8667,
+    "t_end": 8920,
+    "topic": "Warrants and senior tax work-off",
+    "resolution": "informational",
+    "tags": [
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 8922,
+    "t_end": 9954,
+    "topic": "Warrant articles for Passios, Brooks House, old primary",
+    "resolution": "referred",
+    "tags": [
+     "warrant-article",
+     "housing"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote results at close of the plan of record motion and adjournment",
+   "Parts of the TIF discussion were garbled"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 9283,
+    "about": "Members disagreed over whether to craft sale articles for the old primary and Brooks House.",
+    "sides": "Members for crafting articles against members opposing a sale",
+    "words_as_heard": "you're taking three people's recommendation to fix the building and trying to tell the community we have to sell property",
+    "kind": "members disagree"
+   },
+   {
+    "t": 7484,
+    "about": "A member argued for a lower levy assumption against the town manager and other members.",
+    "sides": "One member against the town manager and others",
+    "words_as_heard": "the town spends every cent it gets",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1597,
+    "kind": "liability or legal",
+    "about": "Insurance liability and property damage coverage for a possible skatepark.",
+    "who": "a member",
+    "words_as_heard": "the insurance information has to be a part of this gate park discussion"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 4970,
+    "name_as_heard": "financial policy section 3.03",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "identified in the financial policy section 3.03"
+   },
+   {
+    "t": 5497,
+    "name_as_heard": "Vertex property condition report",
+    "kind": "report",
+    "words_as_heard": "identified in the vertex property condition sorry report"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "five-year-financial-forecast",
+    "title": "Five-year financial forecast",
+    "question": "What does the five-year forecast assume for levy, state aid and costs?",
+    "t": 6012,
+    "words_as_heard": "what is a financial forecast",
+    "data_in_play": [
+     "375",
+     "2.7 percent"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "tif-tax-agreement",
+    "title": "Tax increment financing agreements",
+    "question": "What would a TIF cost the town in tax revenue?",
+    "t": 2908,
+    "words_as_heard": "Reader's Digest version what a TIF is for us and the citizens",
+    "data_in_play": [
+     "five point seven million dollars",
+     "hundred and nine thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The board took Ecologic Fibers' tax increment financing request under advisement; the company is to supply a local incentive application and a business plan.",
+    "t": 4731
+   },
+   {
+    "line": "After a long debate on the 2.5 percent levy assumption, the board agreed not to take up the 2 percent levy question until this year's budget is done.",
+    "t": 8644
+   },
+   {
+    "line": "The town manager presented the FY20 capital plan and five-year forecast; no direction on the levy was voted.",
+    "t": 4925
+   },
+   {
+    "line": "The board approved a class 2 auto dealer license for 555 Chase Road and a Verizon pole petition on Sunny Hill Road.",
+    "t": 390
+   },
+   {
+    "line": "A vote to make moving municipal offices to TCP the plan of record was recorded, but its outcome was not audible.",
+    "t": 9640
+   }
+  ],
+  "why_it_matters": [
+   "A tax increment financing deal would shape what a business pays in property tax for years, and the levy assumption in the forecast sets how much room the town budget, mostly taxes, has for the capital plan.",
+   "Warrant articles for Passios, Brooks House and the old primary school were referred, so residents may be asked to vote on them at Town Meeting."
+  ],
+  "watch_next": [
+   "Ecologic Fibers' local incentive application and business plan.",
+   "The board's return to the levy question once this year's budget is done."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T15:39:16Z",
+   "cost_usd": 0.0225431
+  }
+ }
+}

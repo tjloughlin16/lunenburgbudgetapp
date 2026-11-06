@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2018-05-02",
  "docid": "6197",
@@ -12,63 +12,374 @@
  },
  "votes": [
   {
-   "motion": "Continue the Dixon beach hearing until May 16 at Town Hall second floor",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Continue the Marley and Ryan Dixon request for a determination hearing until they report at tonight's meeting.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "the meeting was continued until may 16 at town hall second floor by a motion of td and a second of kj"
+   "quote": "continued until they report at tonight's meeting by motion of kj second of cc."
   },
   {
-   "motion": "Continue the Dippins addition request to May 16",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Continue the Dixon request for a determination hearing to May 16 at Town Hall second floor.",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "applicant agreed to continue to may 16 th by motion of td and a second of kj"
+   "quote": "the meeting was continued until may 16 at town hall second floor by a motion of td and a second of kj."
   },
   {
-   "motion": "Negative determination for tree removal at 672 Page Street",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Catie Childs",
+   "motion": "Continue the Dippin Donuts (Paul Karapatsas) request for a determination to May 16.",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "applicant agreed to continue to may 16 th by motion of td and a second of kj."
+  },
+  {
+   "motion": "Issue a negative determination for the Karin and Chris Menard tree removal at 672 Page Street.",
+   "moved_by": "TD",
+   "seconded_by": "CC",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "td moved for a negative determination cc seconded and the commission voted unanimously"
+   "quote": "td moved for a negative determination cc seconded and the commission voted unanimously."
   },
   {
-   "motion": "Negative determination for dock placement at 32 Hemlock Drive",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Issue a negative determination for the Thomas Mason Jr. dock at 32 Hemlock Drive.",
+   "moved_by": "TD",
+   "seconded_by": "JR",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "td moved for a negative determination. jr seconded and the commission voted unanimously"
+   "quote": "td moved for a negative determination. jr seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continuance of Hickory Hills Notice of Intent until May 16, 2018 at 7 PM",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Continue the Hickory Hills Association Notice of Intent (drawdown management plan) to May 16, 2018 at 7 PM.",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "the applicant agreed to a continuance until mary 16 2018 at 7 pm by a motion of td and a second by kj with a unanimous vote to approve the motion"
+   "quote": "the applicant agreed to a continuance until mary 16 2018 at 7 pm by a motion of td and a second by kj with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Rescind the last two citations issued to 654 Massachusetts Ave, resulting in a new total of $600.00",
-   "moved_by": "Todd Dwyer",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Rescind the last two citations issued to 654 Massachusetts Ave, for a new total of $600.00.",
+   "moved_by": "TD",
+   "seconded_by": "KJ",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "the commission decided by a motion of td and a second by kj that the last two citations issued would be rescinded for a new total of $600.00"
+   "quote": "the commission decided by a motion of td and a second by kj that the last two citations issued would be rescinded for a new total of $600.00."
   },
   {
-   "motion": "Approve the 3/21 minutes as amended",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Approve the 3/21 meeting minutes as amended.",
+   "moved_by": "BP",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "the 3/21 minutes were reviewed and approved as amended by a motion of bp and a second by kj with a unanimous vote"
+   "quote": "minutes were reviewed and approved as amended by a motion of bp and a second by kj with a unanimous vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One sentence early in the Dixon section—\"Continued until they report at tonight's meeting by motion of KJ second of CC\"—records a prior continuation and was excluded; the vote at tonight's meeting to continue until May 16 is the one recorded above.",
- "cost_usd": 0.14769749999999998
+ "note": "Extracted text is noisy: typos and spacing errors ('Mary 16 2018', 'Sandy be ach', 'DETERMINATON'), and commissioners appear only as initials (TD, KJ, BP, CC, JR, RB, MM). The Call to Order says 'All present except for CL'; CL is read as Carl Luck (inference), and CC as Catie Childs, who seconds a motion. Several motions (Dixon and Dippin Donuts continuances, the 654 Massachusetts Ave rescission) record no vote count or result, so outcome is 'not stated'. The Public Comment heading has no speakers and the Extension Permit heading is empty. Chris Menard is named as an applicant but is not recorded as appearing. Documents are referred to under 'DOCUMENTS PRESENTED FOR CONSIDERATION' headings and not as a formal list.",
+ "cost_usd": 0.010660220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "present",
+   "quote": "rb noted that the majority of commissioners comments indicated that they may not be in favor of the beach or regrading."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "td noted discrepancies with what was approved versus what was built and suggested that remediation could be proposed."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "present",
+   "quote": "bp reviewed the research he as conducted on the trust accounts and the origins of the hollis road/hawes accounts."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order all present except for cl"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member",
+   "status": "absent",
+   "quote": "call to order all present except for cl"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "jr seconded and the commission voted unanimously."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "member",
+   "status": "present",
+   "quote": "kj inquired about the steps and the dock."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mr. marro will deliver a notice to the magistrate outlining the citation numbers to be voided."
+  },
+  {
+   "name": "Marley Dixon",
+   "role": "applicant",
+   "status": "present",
+   "quote": "marley and ryan dixon appeared before the commission."
+  },
+  {
+   "name": "Ryan Dixon",
+   "role": "applicant",
+   "status": "present",
+   "quote": "marley and ryan dixon appeared before the commission."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "applicant",
+   "status": "present",
+   "quote": "karin menard appeared and explained the areas of concern for the trees to be cut"
+  },
+  {
+   "name": "Tom Mason",
+   "role": "applicant",
+   "status": "present",
+   "quote": "tom mason appeared before the commission and spoke to the commission about the placement of a new dock"
+  },
+  {
+   "name": "Paul Karapatsas",
+   "role": "applicant, Dippin Donuts (minutes print 'Paul from Dippins')",
+   "status": "present",
+   "quote": "paul from dippins reported to the commission that the board of health has no objection to the moving of the freezer."
+  },
+  {
+   "name": "Steve Babineau",
+   "role": "owner",
+   "status": "present",
+   "quote": "review of citations with owner- steve babineau spoke about the events"
+  },
+  {
+   "name": "Matt Founier",
+   "role": "applicant, 70 Oak Ridge drainage change",
+   "status": "present",
+   "quote": "matt founier appeared and outlined a change he wanted to make with the drainage at"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission directed the 70 Oak Ridge applicant to submit formal and final revised drainage plans to MM to take up at a future meeting.",
+   "quote": "the commission told him to submit formal and final revised plans to mm to take up at a future meeting."
+  },
+  {
+   "decision": "The Commission requested a more specific diagram and proposal from the Dixons for the land, its proposed surface, and the access to the dock.",
+   "quote": "cc requested a more specific diagram and proposal of the land and its proposed surface (example loam and seed) and the access to the dock."
+  },
+  {
+   "decision": "Mr. Marro will deliver a notice to the Magistrate outlining the citation numbers to be voided (654 Massachusetts Ave).",
+   "quote": "mr. marro will deliver a notice to the magistrate outlining the citation numbers to be voided."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "654 Massachusetts Ave citations",
+   "what_was_recorded": "The last two citations were rescinded, leaving a new total of $600.00 in citations for the violation review.",
+   "quote": "the commission decided by a motion of td and a second by kj that the last two citations issued would be rescinded for a new total of $600.00.",
+   "figures_as_printed": [
+    "$600.00"
+   ]
+  },
+  {
+   "topic": "Treasurer's report on trust accounts",
+   "what_was_recorded": "BP reviewed his research on the trust accounts and the origins of the Hollis Road/Hawes accounts; no dollar figures printed.",
+   "quote": "bp reviewed the research he as conducted on the trust accounts and the origins of the hollis road/hawes accounts.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order; all present except CL",
+   "quote": "call to order all present except for cl",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "discussion only, no action",
+   "quote": "jr spoke about the success of the earth-day weekend with storm water and pollinator habitat work",
+   "tags": [
+    "earth day",
+    "stormwater",
+    "pollinator"
+   ]
+  },
+  {
+   "topic": "Marley and Ryan Dixon request for determination (sand beach, 307 Townsend Harbor Road)",
+   "resolution": "continued to May 16, 2018; applicant asked for more specific diagram and proposal",
+   "quote": "the meeting was continued until may 16 at town hall second floor by a motion of td and a second of kj.",
+   "tags": [
+    "beach",
+    "wetlands",
+    "request for determination",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Dippin Donuts addition request for determination (455 Mass Ave)",
+   "resolution": "continued to May 16",
+   "quote": "applicant agreed to continue to may 16 th by motion of td and a second of kj.",
+   "tags": [
+    "request for determination",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Menard tree removal request for determination (672 Page Street)",
+   "resolution": "negative determination, unanimous",
+   "quote": "td moved for a negative determination cc seconded and the commission voted unanimously.",
+   "tags": [
+    "tree removal",
+    "request for determination"
+   ]
+  },
+  {
+   "topic": "Mason dock request for determination (32 Hemlock Drive)",
+   "resolution": "negative determination, unanimous",
+   "quote": "td moved for a negative determination. jr seconded and the commission voted unanimously.",
+   "tags": [
+    "dock",
+    "request for determination"
+   ]
+  },
+  {
+   "topic": "Hickory Hills Association Notice of Intent, drawdown management plan (Hickory Hills Lake)",
+   "resolution": "continued to May 16, 2018 at 7 PM",
+   "quote": "the applicant agreed to a continuance until mary 16 2018 at 7 pm by a motion of td and a second by kj with a unanimous vote to approve the motion.",
+   "tags": [
+    "drawdown",
+    "notice of intent",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Violations: 654 Massachusetts Ave citation review",
+   "resolution": "two citations rescinded for $600.00 total; Marro to notify Magistrate; 571 Chase Road stays on agenda",
+   "quote": "the commission decided by a motion of td and a second by kj that the last two citations issued would be rescinded for a new total of $600.00.",
+   "tags": [
+    "enforcement",
+    "violations",
+    "citations"
+   ]
+  },
+  {
+   "topic": "Gilchrest land exchange (New Business)",
+   "resolution": "endorsement language reviewed for town meeting; no action recorded",
+   "quote": "the article is due for this town meeting to be approved.",
+   "tags": [
+    "land exchange",
+    "town meeting",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Small Town forest update (Old Business)",
+   "resolution": "update only, no action",
+   "quote": "old business -small town forest update-the different types of gates are being examined.",
+   "tags": [
+    "forest",
+    "gates",
+    "parking lot"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance",
+   "resolution": "none presented",
+   "quote": "certificates of compliance - none presented for consideration",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings (3/21, 4/6, 4/18)",
+   "resolution": "3/21 approved as amended; 4/6 and 4/18 not yet approved",
+   "quote": "minutes were reviewed and approved as amended by a motion of bp and a second by kj with a unanimous vote.",
+   "tags": [
+    "minutes",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Committee and agent reports",
+   "resolution": "updates only, no action recorded",
+   "quote": "183 hemlock, update - mm noted that he had submitted pictures showing the wall had been built within compliance",
+   "tags": [
+    "treasurer",
+    "legal updates",
+    "183 Hemlock",
+    "101 Pleasant Street",
+    "70 Oak Ridge",
+    "842R Chase Road",
+    "155 Reservoir Road",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for May 16, 2018",
+   "quote": "next meeting is may 16, 2018 7:00 pm at 17 main street, 2nd floor",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for a Determination form and sketch by applicant dated April 2018 (Menard tree removal)",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determinaton form and a sketch by applicant dated april 2018."
+  },
+  {
+   "name": "Request for a Determination form and sketch plan by applicant dated April 2018 (Mason dock)",
+   "where": "list",
+   "quote": "documents presented for consideration was a request for a determination form and a sketch plan by applicant dated april 2018"
+  },
+  {
+   "name": "Land Exchange on Gilchrest article for town meeting",
+   "where": "text",
+   "quote": "new business - land exchange on gilchrest- any update if available the article is due for this town meeting to be"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "request for determination",
+  "notice of intent",
+  "enforcement",
+  "violations",
+  "beach",
+  "dock",
+  "tree removal",
+  "drainage",
+  "land exchange",
+  "town meeting",
+  "minutes",
+  "open meeting law",
+  "continuances"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented for consideration was a request for a determinaton form and a sketch by"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2019-01-10",
  "docid": "1390",
@@ -12,23 +12,277 @@
  },
  "votes": [
   {
-   "motion": "to nominate Comm. Tyler to Chair the Cemetery Commission",
+   "motion": "Nominate Comm. Tyler to Chair the Cemetery Commission (reorganization appointment).",
    "moved_by": "Comm. Mendoza",
-   "seconded_by": "Comm. Tyler",
-   "outcome": "unanimously",
-   "procedural": true,
-   "quote": "comm. mendoza made a motion to nominate comm. tyler to chair the cemetery commission. motion was seconded by comm. tyler and voted unanimously to appoint comm. tyler"
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "comm. mendoza made a motion to nominate comm. tyler to chair the cemetery commission. motion was seconded by comm. tyler and voted unanimously to appoint comm. tyler",
+   "seconded_by": "Comm. Tyler"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chairman Tyler",
-   "seconded_by": "Comm. Mendoza",
    "outcome": "passed",
    "procedural": true,
-   "quote": "a motion was made by chairman tyler to adjourn, seconded by comm. mendoza"
+   "quote": "a motion was made by chairman tyler to adjourn, seconded by comm. mendoza. meeting was adjourned at 9:05 pm.",
+   "seconded_by": "Comm. Mendoza"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0819245
+ "note": "Text extraction, not a scan. The minutes record two motions with results (chair nomination, adjournment). The adjournment result is taken from 'Meeting was adjourned at 9:05 pm' and no tally is printed. The minutes do not say whether Clarence Floyd or Patricia Potter appeared in person; both are marked 'not stated'. The Town Manager is referred to only as 'she' and is not named, so not listed as an attendee.",
+ "cost_usd": 0.00554482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Clerk; called the meeting to order and presided (later referred to as Chairman)",
+   "status": "present",
+   "quote": "meeting was called to order by comm. tyler at 7:00 pm. members present were"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present were vice-chair lorraine mendoza, clerk william tyler and supt. todd holman."
+  },
+  {
+   "name": "Todd Holman",
+   "role": "Supt.",
+   "status": "present",
+   "quote": "members present were vice-chair lorraine mendoza, clerk william tyler and supt. todd holman."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public comment",
+   "status": "present",
+   "quote": "public comment made by dave passios noting comm. tyler's comments at the bos meeting regarding the service of the late lance may"
+  },
+  {
+   "name": "Clarence Floyd",
+   "role": "who knew Sergeant Kilpi",
+   "status": "not stated",
+   "quote": "clarence floyd, who knew sergeant kilpi, who has a duplicate headstone found at the old cemetery building, stated he has tried to contact his son with no luck."
+  },
+  {
+   "name": "Patricia Potter",
+   "role": "daughter-in-law of Howard; letter writer, lives in South Carolina",
+   "status": "not stated",
+   "quote": "a letter was received from patricia potter , who lives in south carolina, daughter- in-law of howard who died in 1985",
+   "quote_taken_from_text": true
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Unclaimed duplicate headstone found at the old Cemetery building: wait a month or so, then destroy the stone per protocol.",
+   "quote": "it was decided to wait a month or so and then destroy the stone in accordance with protocol."
+  },
+  {
+   "decision": "Re-visit the FY 2019 budget at the next meeting, when there is a clearer idea of the rest of FY 2019 expenses.",
+   "quote": "after some discussion, it was decided to re-visit the budget at the next meeting when we will have a clearer idea of the rest of the expenses for fy 2019."
+  },
+  {
+   "decision": "Commission to recess and reconvene at Town Hall at 7:15 pm for a joint vote with the BOS on the appointment (to fill Lance May's term).",
+   "quote": "commission will recess and reconvene at the town hall for a joint vote with the bos on the appointment at 7:15 pm."
+  },
+  {
+   "decision": "Response to Potter request: policy is not to buy back unused lots; they can be donated back to the Cemetery, not re-sold.",
+   "quote": "it is our policy not to buy back unused lots, but they can be donated back to the cemetery. we cannot re-sell them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2019 budget vouchers",
+   "what_was_recorded": "Vouchers were signed totaling a stated amount; the FY 2019 budget was reviewed and revisited at the next meeting.",
+   "figures_as_printed": [
+    "$14,707.36"
+   ],
+   "quote": "the fy 2019 budget was reviewed, and vouchers were signed totaling $14,707.36."
+  },
+  {
+   "topic": "Reimbursement to Geri Grigas",
+   "what_was_recorded": "Geri Grigas was reimbursed for an overpayment on engraving a niche in the Columbarium.",
+   "figures_as_printed": [
+    "$50.00"
+   ],
+   "quote": "geri grigas was reimbursed $50.00 for overpayment on engraving their niche in the columbarium."
+  },
+  {
+   "topic": "Beaulac Bros. Landscaping leaf cleanup bill to DPW",
+   "what_was_recorded": "Beaulac Bros. Landscaping, contracted by the DPW for the leaf cleanup, was billed; the bill was given to the DPW.",
+   "figures_as_printed": [
+    "$1500.00"
+   ],
+   "quote": "beaulac bros. landscaping was contracted by the dpw to finish the leaf cleanup and a bill of $1500.00 was given to the dpw."
+  },
+  {
+   "topic": "New garage construction bids",
+   "what_was_recorded": "Garage foundation completed; bids for the remainder of construction to be reviewed at the next meeting. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "the foundation for the new garage has been completed, and bids for the remainder of the construction will be reviewed and discussed at our next meeting."
+  },
+  {
+   "topic": "Handicap access ramp and parking lot grant",
+   "what_was_recorded": "Grant for the handicap access ramp and parking lot was not approved; the Town Manager said the Commission can apply again. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "the grant for the handicap access ramp and parking lot was not approved, the town manager stated that we can apply again"
+  },
+  {
+   "topic": "Potter request to buy back lots",
+   "what_was_recorded": "Request to buy back six lots in the South Cemetery; policy is no buy-back of unused lots. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "requested the commission to buy back the plots. it is our policy not to buy back unused lots, but they can be donated back to the cemetery."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "public comment",
+   "topic": "Tyler's BOS and Charter Review remarks; Wreaths Across America; cleanup help",
+   "quote": "public comment made by dave passios noting comm. tyler's comments at the bos meeting regarding the service of the late lance may and also his remarks at the charter review committee public hearing."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "no action",
+   "quote": "meeting was called to order by comm. tyler at 7:00 pm. members present were",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Public comment (Dave Passios)",
+   "resolution": "no action",
+   "quote": "public comment made by dave passios noting comm. tyler's comments at the bos meeting regarding the service of the late lance may",
+   "tags": [
+    "public comment",
+    "Wreaths Across America"
+   ]
+  },
+  {
+   "topic": "Correspondence: Patricia Potter letter on lot buy-back",
+   "resolution": "no action; policy stated, lots may be donated back",
+   "quote": "it is our policy not to buy back unused lots, but they can be donated back to the cemetery.",
+   "tags": [
+    "lots",
+    "South Cemetery",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Duplicate headstone (Sergeant Kilpi)",
+   "resolution": "decided to wait a month then destroy stone",
+   "quote": "it was decided to wait a month or so and then destroy the stone in accordance with protocol.",
+   "tags": [
+    "headstone",
+    "protocol"
+   ]
+  },
+  {
+   "topic": "Reorganization: Chair appointment",
+   "resolution": "approved (Tyler appointed Chair)",
+   "quote": "comm. mendoza made a motion to nominate comm. tyler to chair the cemetery commission.",
+   "tags": [
+    "reorganization",
+    "chair"
+   ]
+  },
+  {
+   "topic": "Old business: garage, Facebook, handicap ramp grant",
+   "resolution": "no action; updates received",
+   "quote": "in old business, the foundation for the new garage has been completed, and bids for the remainder of the construction will be reviewed",
+   "tags": [
+    "garage",
+    "Facebook",
+    "grant"
+   ]
+  },
+  {
+   "topic": "FY 2019 budget and vouchers",
+   "resolution": "continued to next meeting",
+   "quote": "after some discussion, it was decided to re-visit the budget at the next meeting",
+   "tags": [
+    "budget",
+    "vouchers",
+    "reimbursement"
+   ]
+  },
+  {
+   "topic": "Superintendent update on fall cleanup and leaf cleanup bill",
+   "resolution": "no action",
+   "quote": "supt. holman gave an update on the fall cleanup and said both cemeteries are",
+   "tags": [
+    "cleanup",
+    "DPW",
+    "Beaulac Bros."
+   ]
+  },
+  {
+   "topic": "Burial records for 2018 Town Report",
+   "resolution": "no action; update received",
+   "quote": "supt. holman also stated he is in the process of compiling the burial records for submission to the 2018 town report.",
+   "tags": [
+    "burial records",
+    "Town Report"
+   ]
+  },
+  {
+   "topic": "Next meetings and joint BOS appointment vote",
+   "resolution": "no action; schedule set",
+   "quote": "commission will recess and reconvene at the town hall for a joint vote with the bos on the appointment at 7:15 pm.",
+   "tags": [
+    "appointment",
+    "Talent Bank",
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:05 pm",
+   "quote": "a motion was made by chairman tyler to adjourn, seconded by comm. mendoza. meeting was adjourned at 9:05 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Patricia Potter (lot buy-back request, South Cemetery)",
+   "where": "text",
+   "quote": "a letter was received from patricia potter , who lives in south carolina, daughter- in-law of howard who died in 1985",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Talent Bank form submitted by Nancy Foss Yasko",
+   "where": "text",
+   "quote": "one talent bank form submitted by nancy foss yasko."
+  },
+  {
+   "name": "2018 Town Report (burial records submission)",
+   "where": "text",
+   "quote": "he is in the process of compiling the burial records for submission to the 2018 town report."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "reorganization",
+  "chair appointment",
+  "budget",
+  "vouchers",
+  "reimbursement",
+  "DPW",
+  "headstone",
+  "lot buy-back",
+  "public comment",
+  "appointment",
+  "joint BOS vote",
+  "Town Report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-09-12",
  "docid": "5571",
@@ -12,56 +12,407 @@
  },
  "votes": [
   {
-   "motion": "Accept the change of use for 24 Mass Ave for a hair salon",
+   "motion": "Accept the change of use for 24 Mass Ave. (Alyssa Falite, hair salon).",
    "moved_by": "John R.",
    "seconded_by": "Joan P.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion by john r. to accept the change of use for 24 mass ave. second: joan p. discussion: none approved unanimously"
+   "quote": "motion by john r. to accept the change of use for 24 mass ave."
   },
   {
-   "motion": "Spread the payment of $1,750 balance from 9/30/17 to 6/30/18, with 20% forgiven at end if all payments made on time",
+   "motion": "Spread the payment of the $ 1,750 balance from 9/30/17 to 6/30/18, with 20% forgiven at the end if all payments are made on time (Kristee Lussier, 324 Ugly Omelet).",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion: joan p. to spread the payment of $ 1,750 balance from 9/30/17 to 6/30/18, with 20% forgiven at the end if all payments are made on time. discussion: none received & filed second: john r",
-   "quote_taken_from_text": true
+   "quote": "motion: joan p. to spread the payment of $ 1,750 balance from 9/30/17 to 6/30/18, with 20% forgiven at the end if all"
   },
   {
-   "motion": "Approve sewer commission minutes of 8/1/17",
+   "motion": "Tell counsel the Commission will not modify the privilege fee for 380 Electric Ave., but wishes to investigate the promises made and reach a separate reimbursement agreement; applicant and DPW to list promises from memory separately.",
+   "outcome": "passed unanimous",
+   "procedural": false,
+   "quote": "that the commission tell counsel that we will not modify the privilege fee but wish to pursue investigating the promises made to"
+  },
+  {
+   "motion": "Approve sewer commission minutes of 8/1/17.",
    "moved_by": "Carl L.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: carl l. to approve sewer commission minutes of 8/1/17 discussion: none second: john r. vote: unanimous"
+   "quote": "motion: carl l. to approve sewer commission minutes of 8/1/17"
   },
   {
-   "motion": "Approve sewer commission minutes of 8/22/17",
-   "moved_by": "Carl L.",
+   "motion": "Approve sewer commission minutes of 8/22/17.",
+   "moved_by": "CarlL.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: carll. second: john r. to approve sewer commission minutes of 8/22/17 discussion: john brought up point that even though commission is not a precedent setting board, that we have to be careful in wording. vote: unanimous"
+   "quote": "motion: carll. second: john r. to approve sewer commission minutes of 8/22/17"
   },
   {
-   "motion": "Approve sewer commission minutes of 8/29/17",
+   "motion": "Approve sewer commission minutes of 8/29/17.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": true,
-   "quote": "motion: joan p. to approve sewer commission minutes of 8/29/17 discussion: none second: john r. vote: unanimous"
+   "quote": "motion: joan p. to approve sewer commission minutes of 8/29/17"
   },
   {
-   "motion": "Let Barb move forward on hiring based on her judgment on 9/15/17",
+   "motion": "Let Barb move forward on hiring based on her judgment on 9/15/17 (minutes clerk position).",
    "moved_by": "Carl L.",
    "seconded_by": "Joan P.",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimous",
    "procedural": false,
-   "quote": "motion: carl l. to let barb move forward on hiring based on herjudgement on 9/15/17 second: joan p. vote: unanimous"
+   "quote": "motion: carl l. to let barb move forward on hiring based on herjudgement on 9/15/17"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction from scanned meeting minutes. The document shows date as \"FEB 2E 2018\" at one point, but context indicates the recorded business occurred in September 2017 (references to 9/7/17, 8/1/17–8/29/17 minute approvals, next meetings in late Sept–Oct 2017). One motion about the privilege fee appeared to have its \"Motion:\" prefix lost in the OCR page break and was not included. The OCR produced some character errors (e.g., \"CarlL.\" without space, \"herjudgement\" as one word) which are preserved in quotes.",
- "cost_usd": 0.1262545
+ "dropped_unquoted": 1,
+ "note": "OCR of scanned pages (macOS Vision) with garbled words and stamp text; the opening item before 7:00 pm has no printed heading or time. No roll call and no adjournment recorded. A 'RECEIVED & FILED' line sits inside the Kristee Lussier item without attribution. The 380 Electric vote has no named mover. The clerk's signature is OCR-garbled as 'bane Ranley' (the text also names applicant 'Jane Ranley'). Mentioned but not attending: Richard Bursch, Pat, Paul Casey, Jane Ranley, Seth, Kim Chen, Lisa.",
+ "cost_usd": 0.01065992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe Anderson",
+   "role": "Chair",
+   "status": "present",
+   "quote": "joe anderson(chair who arrived late, took over control of meeting."
+  },
+  {
+   "name": "Carl L.",
+   "status": "present",
+   "quote": "jackr. entered meeting and carl asked jack ifthere were any issues."
+  },
+  {
+   "name": "Joan P.",
+   "status": "present",
+   "quote": "motion: joan p. to approve sewer commission minutes of 8/29/17"
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "motion by john r. to accept the change of use for 24 mass ave."
+  },
+  {
+   "name": "Jack",
+   "status": "present",
+   "quote": "jackr. entered meeting and carl asked jack ifthere were any issues."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported thatthe building has been vacant for a"
+  },
+  {
+   "name": "Bob",
+   "status": "present",
+   "quote": "bob explained how he would connect at the manhole."
+  },
+  {
+   "name": "Alyssa Falite",
+   "status": "not stated",
+   "quote": "7:00 pm alyssa falite, 24 mass ave - change of use application-hair salon"
+  },
+  {
+   "name": "Jamie Harris",
+   "role": "representing Alyssa",
+   "status": "present",
+   "quote": "jamie harris spoke, representing alyssa, and is"
+  },
+  {
+   "name": "Kevin Sidileau",
+   "role": "property manager for Kim Chen",
+   "status": "present",
+   "quote": "kevin sidileau entered meeting."
+  },
+  {
+   "name": "Kristee Lussier",
+   "status": "present",
+   "quote": "kristee lussier just took over the ugly omelet from seth."
+  },
+  {
+   "name": "bane Ranley",
+   "role": "Board Clerk",
+   "status": "not stated",
+   "quote": "respectfully submitted bane ranley, board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bob to move forward with the sewer connection; pipe size question referred to engineers at Whitman & Bingham (agreed without a vote).",
+   "quote": "john suggested that bob move forward and sewer commission all agreed"
+  },
+  {
+   "decision": "Commission questions for Jack go through Barb, and Jack will contact SWSS (agreed without a vote).",
+   "quote": "all agreed that commission will send questions to jack through barb and jack will contact swss."
+  },
+  {
+   "decision": "Maintenance plan tabled until everyone can review the Charter (agreed without a vote).",
+   "quote": "all agreed to table the maintenance plan untileveryonecan review the charter."
+  },
+  {
+   "decision": "Barb to email Lisa to tell them the Commission gave an okay on the 24 Mass Ave. change of use.",
+   "quote": "barb said she willemail lisa to tell them the commission gave an okay."
+  },
+  {
+   "decision": "Crossroads to be discussed with counsel at the Town Attorney office hours on 9/25 (agreed without a vote).",
+   "quote": "barb suggested discussing crossroads with counsel and all agreed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Alternative sewer connection option (E-one system) for resident",
+   "what_was_recorded": "Bob's E-one system option on the resident's property was described as about half the price of the road-digging option.",
+   "figures_as_printed": [],
+   "quote": "this option would be about halfthe price."
+  },
+  {
+   "topic": "Betterment and privilege fee payment (Bob's connection)",
+   "what_was_recorded": "The commission discussed payment of the betterment and privilege fee; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion of payment of the betterment and privilege fee."
+  },
+  {
+   "topic": "Ugly Omelet permit fees and non-compliance charges",
+   "what_was_recorded": "The $650 fee was paid; original invoice had added fees, and the fee is now $1,750 with non-compliance fees due.",
+   "figures_as_printed": [
+    "$650",
+    "$50",
+    "$ 25/day",
+    "$1,750"
+   ],
+   "quote": "so the fee is now $1,750 with non-compliance fees due."
+  },
+  {
+   "topic": "Ugly Omelet payment arrangement",
+   "what_was_recorded": "Motion to spread the $ 1,750 balance over 9/30/17 to 6/30/18, with 20% forgiven if all payments are on time.",
+   "figures_as_printed": [
+    "$ 1,750",
+    "20%"
+   ],
+   "quote": "motion: joan p. to spread the payment of $ 1,750 balance from 9/30/17 to 6/30/18, with 20% forgiven at the end if all"
+  },
+  {
+   "topic": "380 Electric Ave. car wash privilege fee",
+   "what_was_recorded": "The commission discussed not waiving the entire privilege fee and the promises made to Proctors; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "joan was not in favor of waiving the entire privilege fee"
+  },
+  {
+   "topic": "Inflow and infiltration work savings (State's work on 2A)",
+   "what_was_recorded": "Jack said about $70,000 plus was saved through the State's work on 2A.",
+   "figures_as_printed": [
+    "$ 70,000"
+   ],
+   "quote": "reminded all that $ 70,000 plus was saved with the state's work on 2a."
+  },
+  {
+   "topic": "Inflow work costs (Tasks I and II)",
+   "what_was_recorded": "Jack reviewed the costs for both tasks; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "jack reviewed details of work to be done and costs for both tasks."
+  },
+  {
+   "topic": "Koppeiman & Paige invoice",
+   "what_was_recorded": "An invoice of $ 493 for privilege fees for 380 Electric and Highfield village consults in July was listed.",
+   "figures_as_printed": [
+    "$ 493"
+   ],
+   "quote": "invoices-koppeiman & paige-$ 493 for privilege fees, 380 electric and highfield village consults in july."
+  },
+  {
+   "topic": "Crossroads violation fees",
+   "what_was_recorded": "Violations at Crossroads were resolved and the fees have stopped at $5,800.",
+   "figures_as_printed": [
+    "$5,800"
+   ],
+   "quote": "now the fees have stopped at $5,800."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Sewer connection by Bob (pipe size, betterment, manhole connection)",
+   "resolution": "Bob to move forward; pipe size to engineers",
+   "quote": "john suggested that bob move forward and sewer commission all agreed",
+   "tags": [
+    "sewer connection",
+    "pipe size",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "7:00 pm Alyssa Falite change of use, 24 Mass Ave (hair salon)",
+   "resolution": "approved unanimously",
+   "quote": "7:00 pm alyssa falite, 24 mass ave - change of use application-hair salon -jamie harris spoke",
+   "tags": [
+    "change of use",
+    "water flow",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "7:30 pm Kristee Lussier, 324 Ugly Omelet (fees and payment plan)",
+   "resolution": "payment plan approved unanimously",
+   "quote": "7:30pm kristee lussier, 324 ugly omelet-kristee lussier just took over the ugly omelet from seth.",
+   "tags": [
+    "grease trap",
+    "permit fees",
+    "payment plan"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "announcements - none",
+   "tags": []
+  },
+  {
+   "topic": "380 Electric Ave. car wash privilege fee update",
+   "resolution": "counsel told fee will not be modified; separate reimbursement review; lists requested",
+   "quote": "380 electric ave. car wash privilege fee update - commission discussed emails from counsel regarding options for the privilege",
+   "tags": [
+    "privilege fee",
+    "counsel",
+    "reimbursement"
+   ]
+  },
+  {
+   "topic": "Systems status (inflow dish work, DEP I/I report, pump station)",
+   "resolution": "no vote; questions routed through Barb; monthly pump station reports pursued",
+   "quote": "systems status - inflow dish work summary- jack asked that if anyone has any questions for pat, let barb know",
+   "tags": [
+    "inflow and infiltration",
+    "pump station",
+    "SWSS"
+   ]
+  },
+  {
+   "topic": "Maintenance plan",
+   "resolution": "tabled until members review the Charter",
+   "quote": "maintenance plan-commission discussed what would be involved and have itpossibly outsourced.",
+   "tags": [
+    "maintenance plan",
+    "outsourcing",
+    "Charter"
+   ]
+  },
+  {
+   "topic": "Grease trap compliance and 1st Tuesday report",
+   "resolution": "noted; Dragonfly Garden Cafe to submit application",
+   "quote": "grease trap regulation compliance-ugly omeletwas already addressed, dragonfly",
+   "tags": [
+    "grease trap",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Billing outsourcing",
+   "resolution": "no action; stays on future agendas",
+   "quote": "billing outsourcing-barb is still doing billing which is very time consuming.",
+   "tags": [
+    "billing",
+    "Water District",
+    "Northern Data"
+   ]
+  },
+  {
+   "topic": "Minutes approval (8/1/17, 8/22/17, 8/29/17)",
+   "resolution": "approved unanimously",
+   "quote": "motion: carl l. to approve sewer commission minutes of 8/1/17",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Invoices and business manager report (Crossroads, CWMP, clerk hiring, attorney hours)",
+   "resolution": "hiring authority given to Barb; Crossroads to counsel",
+   "quote": "invoices-koppeiman & paige-$ 493 for privilege fees",
+   "tags": [
+    "invoices",
+    "Crossroads",
+    "CWMP",
+    "hiring",
+    "town attorney"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted",
+   "quote": "next meetings-sept. 26 -town hail, oct. 10 -dpw",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Emails from counsel on privilege fee options (380 Electric Ave.)",
+   "where": "text",
+   "quote": "commission discussed emails from counsel regarding options for the privilege"
+  },
+  {
+   "name": "Inflow dish work report (summary handed out by Jack)",
+   "where": "text",
+   "quote": "handedoutthereportand clarified that tasklinvolves manhole rehabilitation"
+  },
+  {
+   "name": "DEP I/I report",
+   "where": "text",
+   "quote": "dep i/l report- is promised in early november."
+  },
+  {
+   "name": "Charter",
+   "where": "text",
+   "quote": "all agreed to table the maintenance plan untileveryonecan review the charter."
+  },
+  {
+   "name": "Certified letter to Seth (Ugly Omelet)",
+   "where": "text",
+   "quote": "trying to get a certified letter to seth but he has removed himself from the business"
+  },
+  {
+   "name": "Text copy from Richard Bursch, Lakeview (Aug 30)",
+   "where": "text",
+   "quote": "after receiving a text copy from richard bursch, from lakeview, on aug 30the concerning the fees owed."
+  },
+  {
+   "name": "Original invoice (Ugly Omelet permit fees)",
+   "where": "text",
+   "quote": "the original invoice had added fees of $50 for not getting permit back in time"
+  },
+  {
+   "name": "Permit application (Kristee Lussier, 9/7/17)",
+   "where": "text",
+   "quote": "to fill out the permit application and paid the $650 fee."
+  },
+  {
+   "name": "Koppeiman & Paige invoices",
+   "where": "text",
+   "quote": "invoices-koppeiman & paige-$ 493 for privilege fees, 380 electric and highfield village consults in july."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "change of use",
+  "privilege fee",
+  "grease trap",
+  "betterment",
+  "inflow and infiltration",
+  "pump station",
+  "billing outsourcing",
+  "clerk hiring",
+  "Crossroads",
+  "Fitchburg CWMP",
+  "minutes approval",
+  "payment plan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

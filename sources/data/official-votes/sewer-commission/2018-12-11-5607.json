@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2018-12-11",
  "docid": "5607",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "approve the change of use from single family to 2 family",
+   "motion": "To approve the change of use from single family to 2 family (roll call vote).",
    "moved_by": "",
-   "seconded_by": "Ryan o.",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to approve the change of use from single family to 2 family votes will be by roll call because of carl's remote participation. vote: joe-aye, joan-aye, ryan-aye, john-aye, carl- aye."
+   "quote": "votes will be by roll call because of carl's remote participation. vote: joe-aye, joan-aye, ryan-aye, john-aye, carl- aye."
   },
   {
-   "motion": "approve the payment schedule with interest for cost sharing of the John Fitch project",
+   "motion": "To approve the payment schedule with interest for cost sharing of the John Fitch Highway project.",
    "moved_by": "Joe A.",
    "seconded_by": "Joan P.",
    "outcome": "passed 5-0",
@@ -28,7 +28,7 @@
    "quote": "motion: joe a. second: joan p. to approve the payment schedule with interest for cost sharing of the john fitch project. vote: joe-aye, joan-aye, john-aye, ryan-aye, carl-aye."
   },
   {
-   "motion": "accept the minutes of 11/27/18",
+   "motion": "To accept the minutes of 11/27/18.",
    "moved_by": "Joe A.",
    "seconded_by": "Ryan S.",
    "outcome": "passed 5-0",
@@ -36,7 +36,7 @@
    "quote": "motion: joe a. to accept the minutes of 11/27/18 vote: joe-aye, joan-aye, john-aye, ryan-aye, carl- aye. second: ryan s."
   },
   {
-   "motion": "adjourn the regular session and enter into executive session",
+   "motion": "To adjourn the regular session and enter into executive session.",
    "moved_by": "Jonn R.",
    "seconded_by": "",
    "outcome": "passed 5-0",
@@ -44,15 +44,304 @@
    "quote": "motion: jonn r. to adjourn the regular session and enter into executive session. vote: joe-aye, john-aye, joan-aye, ryan-aye, carl-aye."
   },
   {
-   "motion": "enter into executive session and not return to the regular meeting upon conclusion",
+   "motion": "To enter into executive session and not return to the regular meeting upon conclusion.",
    "moved_by": "Joan P.",
    "seconded_by": "John R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: joan p. to enter into executive session and not return to the regular meeting upon conclusion. vote: joe-aye, john-aye, joan-aye, ryan-aye, carl-aye. second: john r."
+   "quote": "motion: joan p. to enter into executive session and not return to the regular meeting upon conclusion. vote: joe-aye, john-aye, joan-aye, ryan-aye, carl-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned and OCR'd source; Motion line missing for Vote 1.",
- "cost_usd": 0.1625065
+ "note": "OCR of a scan. Page 1 begins mid-agenda, so the mover of the first (change of use) vote is unreadable; no mover or seconder recorded for it. Page 2 cuts off mid-sentence in the irrigation meter discussion, so that item's outcome is unknown. No meeting date is printed in the text; 2018-12-11 is taken from the request. The 'Jonn R.' and 'John R.' names may be OCR variants of one name. Executive session minutes are separate and not included. No dollar transfers recorded.",
+ "cost_usd": 0.00667872,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joe",
+   "status": "present",
+   "quote": "joe read the executive session reason aloud:"
+  },
+  {
+   "name": "Joan",
+   "status": "present",
+   "quote": "joan said that based on her research, she would suggest going with the cellular system and in the long run, it will save money."
+  },
+  {
+   "name": "Ryan",
+   "status": "present",
+   "quote": "ryan had read and shared the plumbing inspector, gary williams' input on the irrigation meters."
+  },
+  {
+   "name": "John",
+   "status": "present",
+   "quote": "vote: joe-aye, joan-aye, john-aye, ryan-aye, carl-aye."
+  },
+  {
+   "name": "Carl",
+   "role": "remote participation",
+   "status": "remote",
+   "quote": "votes will be by roll call because of carl's remote participation."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported that fitchburg is waiting for the official approval of the sewer commission for the john fitch highway cost-sharing payment schedule."
+  },
+  {
+   "name": "Gary",
+   "status": "present",
+   "quote": "gary added that the connection should be done in the next couple weeks."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "public commenter, 56 Whiting Street",
+   "status": "present",
+   "quote": "public comment - dave passios, 56 whiting street - inquired about getting the cost of administrative costs for reading"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "applicant, 380-390 Electric Ave",
+   "status": "absent",
+   "quote": "dan proctor, 380-390 electric ave - change of use - multi-use facility/lot subdivision - dan did not attend"
+  },
+  {
+   "name": "Gene h. Pandey",
+   "role": "Sewer Commission Board Clerk",
+   "status": "not stated",
+   "quote": "gene h. pandey, sewer commission board clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will send Dave Passios the administrative cost figures for reading irrigation meters once the Commission has reviewed and discussed them.",
+   "quote": "barb noted that there is nothing yet compiled but would send it to dave once the commission could review and discuss."
+  },
+  {
+   "decision": "Barb said Pat Cotton will give an estimate for cameraing; the exact I/I source still needs to be determined, and the Commission discussed asking Pat what is needed to pinpoint the location.",
+   "quote": "barb said that pat will give an estimate for cameraing but that they still need to determine the exact source."
+  },
+  {
+   "decision": "Maintenance plan RFP: the Commission agreed to add liability insurance and to send the request only to companies they already use (Weston & Sampson, Wright Pierce, and SWSS); Barb will tell Heather what they are doing and why.",
+   "quote": "agreed to add the liability insurance. they will just send it to companies they are using now- weston & sampson, wright pierce, and"
+  },
+  {
+   "decision": "The Commission agreed that a Selectmen liaison is not needed at this time.",
+   "quote": "the commission discussed need for selectmen liaisons and agreed that one is not needed at this time."
+  },
+  {
+   "decision": "Joe will meet with Heather in January to discuss legal costs, Jack's time and other budget questions; the Commission will discuss the budget at the January 8th meeting.",
+   "quote": "joe will meet with heather in january to discuss issues of legal costs,"
+  },
+  {
+   "decision": "Barb will send the draft third-party evaluation RFQ to Heather for review.",
+   "quote": "barb received the draft from carl and needs to send to heather for review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grease trap annual permit fee, Simon Pure (formerly Bootleggers)",
+   "what_was_recorded": "Barb reported the annual permit application arrived with a non-compliant fee attached.",
+   "figures_as_printed": [
+    "$650"
+   ],
+   "quote": "barb has received their annual permit application, with the $650 non-compliant fee and the report of the grease interceptor pumpout that was due."
+  },
+  {
+   "topic": "Public comment on administrative costs of reading irrigation meters",
+   "what_was_recorded": "A resident asked for the administrative cost of reading irrigation meters; nothing had been compiled yet.",
+   "figures_as_printed": [],
+   "quote": "inquired about getting the cost of administrative costs for reading the irrigation meters."
+  },
+  {
+   "topic": "FY20 budget discussion",
+   "what_was_recorded": "The FY20 budget discussion covered legal costs and Jack's time, with no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "fy20 budget discussion - proposed schedule-joe will meet with heather in january to discuss issues of legal costs,"
+  },
+  {
+   "topic": "Irrigation meter policy and meter selection",
+   "what_was_recorded": "The Commission discussed meter options, fees and quotes from Badger and Neptune; the $50 fee was discussed.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "the commission discussed the $50 fee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "cost of administrative work for reading irrigation meters",
+   "quote": "public comment - dave passios, 56 whiting street - inquired about getting the cost of administrative costs for reading the irrigation meters."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Change of use from single family to 2 family",
+   "resolution": "approved 5-0 by roll call",
+   "tags": [
+    "change of use",
+    "zoning"
+   ],
+   "quote": "votes will be by roll call because of carl's remote participation. vote: joe-aye, joan-aye, ryan-aye, john-aye, carl- aye."
+  },
+  {
+   "topic": "Dan Proctor, 380-390 Electric Ave change of use and lot subdivision",
+   "resolution": "applicant absent; no action recorded",
+   "tags": [
+    "change of use",
+    "lot subdivision"
+   ],
+   "quote": "dan proctor, 380-390 electric ave - change of use - multi-use facility/lot subdivision - dan did not attend"
+  },
+  {
+   "topic": "Public comment: irrigation meter reading costs",
+   "resolution": "no action; Barb to send info later",
+   "tags": [
+    "public comment",
+    "irrigation meters"
+   ],
+   "quote": "public comment - dave passios, 56 whiting street - inquired about getting the cost of administrative costs for reading"
+  },
+  {
+   "topic": "Fitchburg John Fitch Highway cost-sharing payment schedule",
+   "resolution": "approved 5-0",
+   "tags": [
+    "Fitchburg",
+    "cost sharing",
+    "payment schedule"
+   ],
+   "quote": "motion: joe a. second: joan p. to approve the payment schedule with interest for cost sharing of the john fitch project."
+  },
+  {
+   "topic": "Minutes of 11/27/18",
+   "resolution": "approved 5-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion: joe a. to accept the minutes of 11/27/18 vote: joe-aye, joan-aye, john-aye, ryan-aye, carl- aye."
+  },
+  {
+   "topic": "Grease trap relicensing, Sean Patricks and Simon Pure",
+   "resolution": "reported; no action recorded",
+   "tags": [
+    "grease trap",
+    "permits"
+   ],
+   "quote": "barb has received their annual permit application, with the $650 non-compliant fee"
+  },
+  {
+   "topic": "Inflow/infiltration and manhole rehabilitation",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "inflow infiltration",
+    "manholes",
+    "Elizabeth St"
+   ],
+   "quote": "commission discussed report by pat cotton, weston sampson, concerning the i/l issue found 238' down."
+  },
+  {
+   "topic": "Third-party evaluation RFQ",
+   "resolution": "draft received; to Heather for review",
+   "tags": [
+    "RFQ",
+    "consultant"
+   ],
+   "quote": "3rd party evaluation rfq - barb received the draft from carl and needs to send to heather for review."
+  },
+  {
+   "topic": "Maintenance plan RFP and vendor confirmation",
+   "resolution": "agreed to add liability insurance; send to current vendors",
+   "tags": [
+    "maintenance plan",
+    "RFP",
+    "insurance"
+   ],
+   "quote": "the commission discussed heather's feedback on the maintenance plan rfp and agreed to add"
+  },
+  {
+   "topic": "FY20 budget schedule",
+   "resolution": "discussed; budget to January 8th meeting",
+   "tags": [
+    "FY20 budget"
+   ],
+   "quote": "commission will discuss the budget at the january 8th meeting."
+  },
+  {
+   "topic": "Irrigation meter policy and meter selection",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "irrigation meters",
+    "policy",
+    "fees"
+   ],
+   "quote": "the commission discussed the meter options, fees and quotes from badger and neptune."
+  },
+  {
+   "topic": "Executive session: litigation over Allocation Agreement",
+   "resolution": "entered executive session; open meeting adjourned at 8:00 pm",
+   "tags": [
+    "executive session",
+    "litigation",
+    "allocation agreement"
+   ],
+   "quote": "open meeting adjourned at 8:00 pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pictures of manhole repairs submitted by Weston Sampson",
+   "where": "text",
+   "quote": "the commission reviewed pictures of manhole repairs submitted by weston sampson."
+  },
+  {
+   "name": "Report by Pat Cotton and Weston Sampson on the I/I issue found 238' down",
+   "where": "text",
+   "quote": "commission discussed report by pat cotton, weston sampson, concerning the i/l issue found 238' down."
+  },
+  {
+   "name": "Draft third-party evaluation RFQ (from Carl)",
+   "where": "text",
+   "quote": "barb received the draft from carl and needs to send to heather for review."
+  },
+  {
+   "name": "Maintenance plan RFP",
+   "where": "text",
+   "quote": "discussed heather's feedback on the maintenance plan rfp"
+  },
+  {
+   "name": "John Fitch Highway cost-sharing payment schedule (Fitchburg)",
+   "where": "text",
+   "quote": "waiting for the official approval of the sewer commission for the john fitch highway cost-sharing payment schedule."
+  },
+  {
+   "name": "Irrigation meter quotes from Badger and Neptune",
+   "where": "text",
+   "quote": "the commission discussed the meter options, fees and quotes from badger and neptune."
+  },
+  {
+   "name": "Allocation Agreement between the Sewer Commission and Robert A. Leverone Lunenburg Nominee Trust (LNT)",
+   "where": "text",
+   "quote": "enforcement of the allocation agreement between the sewer commission and robert a. leverone lunenburg"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "change of use",
+  "irrigation meters",
+  "inflow infiltration",
+  "grease trap",
+  "FY20 budget",
+  "Fitchburg cost sharing",
+  "executive session litigation",
+  "maintenance plan RFP"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

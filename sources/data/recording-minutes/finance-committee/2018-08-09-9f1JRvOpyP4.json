@@ -1,0 +1,583 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2018-08-09",
+ "video_id": "9f1JRvOpyP4",
+ "video_url": "https://www.youtube.com/watch?v=9f1JRvOpyP4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2018-08-09-9f1JRvOpyP4.json",
+  "sha256": "716bf5bda00fdcbf67ff01f138560b66978ea0db55a3d553bf5584c08b83b61e",
+  "caption_lines": 170,
+  "segments": 1136
+ },
+ "recording": {
+  "duration_s": 3661,
+  "duration": "1:01",
+  "spoken_chars": 40912,
+  "words_approx": 6818
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08092018-2400",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2018-08-09-agenda-2400.txt",
+   "path": "sources/meetings/finance-committee/2018-08-09-agenda-2400.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08092018-2400",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2018-08-09-minutes-2400.txt",
+   "path": "sources/meetings/finance-committee/2018-08-09-minutes-2400.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-05T18:51:58Z",
+  "cost_usd": 0.1535784
+ },
+ "minutes": {
+  "headline": "Finance Committee reorganized and heard a first read of a free cash policy change; vote set for next meeting.",
+  "summary": "The committee elected its officers and assigned liaisons to town departments and committees. Members reviewed a first look at comparison spending data from nearby towns, and a draft revision to the free cash policy was presented for a first read. The town accountant reported a small increase in spending capacity from the state budget, and the calendar of fall meetings was set.",
+  "attendees": [
+   {
+    "name_as_heard": "Terry",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "John Henshaw",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "George Martin",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Hannah",
+    "role": "secretary"
+   },
+   {
+    "name_as_heard": "Mark",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jay",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager or finance officer"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 104,
+    "speaker_as_heard": "Dave Paseos",
+    "stated_role": "resident",
+    "topic": "Followed up on Ashby paying for capital improvements through one year's tax bills rather than borrowing; Ashby has virtually no debt."
+   },
+   {
+    "t": 2604,
+    "stated_role": "resident",
+    "topic": "Asked how the five percent stabilization figure is calculated and whether debt or a special stabilization fund should be included in the base."
+   },
+   {
+    "t": 3076,
+    "stated_role": "resident",
+    "topic": "Urged paying down non-exempt debt rather than putting as much money away for rainy days."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "debt",
+   "free-cash",
+   "policy",
+   "public-comment",
+   "retirement",
+   "state-aid",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 233,
+    "motion": "Nominate Terry as chair of the committee",
+    "moved_by": "John",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 295,
+    "motion": "John to continue as vice chair",
+    "moved_by": "George",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 362,
+    "motion": "Nominate Hannah as secretary",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 627,
+    "motion": "John Henshaw to represent the Finance Committee on the capital planning committee",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3636,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1378,
+    "topic": "Police spending comparison",
+    "what_was_said": "Lunenburg police spending was higher in the first year than the next, which was attributed to moving to regional dispatch.",
+    "figures_as_heard": [
+     "hundred fifty K"
+    ]
+   },
+   {
+    "t": 1424,
+    "topic": "Fire spending comparison",
+    "what_was_said": "Lunenburg fire spending exceeded Groton's by a large margin across the years compared.",
+    "figures_as_heard": [
+     "500k"
+    ]
+   },
+   {
+    "t": 1472,
+    "topic": "Education spending comparison",
+    "what_was_said": "Lunenburg education spending was stable one year and rose the next, placing it near the top of the comparison towns.",
+    "figures_as_heard": [
+     "800 K"
+    ]
+   },
+   {
+    "t": 2416,
+    "topic": "Free cash policy revision",
+    "what_was_said": "Draft revision drops pavement management as a free cash priority since it is funded elsewhere and directs free cash toward the OPEB trust fund and special purpose stabilization."
+   },
+   {
+    "t": 2923,
+    "topic": "FY19 state budget cherry sheet change",
+    "what_was_said": "The state budget raised spending capacity slightly through cherry sheet and assessment changes; new growth is not yet certified.",
+    "figures_as_heard": [
+     "one hundred and sixty two thousand one hundred and thirty three dollars"
+    ]
+   },
+   {
+    "t": 3006,
+    "topic": "Turkey Hill asbestos abatement state funding",
+    "what_was_said": "The state budget included money for Turkey Hill asbestos abatement, which can be reappropriated from the capital plan at a special town meeting.",
+    "figures_as_heard": [
+     "one hundred and thirty thousand"
+    ]
+   },
+   {
+    "t": 3096,
+    "topic": "Debt versus savings",
+    "what_was_said": "A resident urged paying down non-exempt debt rather than building reserves."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 22,
+    "decision": "Next meeting is August 23; the chair expects the seventh Finance Committee member may be appointed that day."
+   },
+   {
+    "t": 2830,
+    "decision": "The free cash policy recommendation will be placed on the next agenda for a vote to recommend to the Board of Selectmen."
+   },
+   {
+    "t": 2879,
+    "decision": "Minutes from the July 26 meeting will go on the next agenda."
+   },
+   {
+    "t": 3135,
+    "decision": "New growth and how to factor it into anticipated budgets will be added to the next agenda."
+   },
+   {
+    "t": 3225,
+    "decision": "Meeting calendar set through December, with no meeting on November 22 for Thanksgiving; Tuesdays kept open for a possible special town meeting public hearing."
+   },
+   {
+    "t": 583,
+    "decision": "Liaisons assigned: Mark for public access cable, John for capital planning, George for Department of Public Works, John for police, George for fire, Jay for sewer and green communities."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 104,
+    "topic": "Communications and meeting scheduling",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 104,
+    "t_end": 189,
+    "topic": "Public comment on Ashby paying for capital with taxes",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 189,
+    "t_end": 498,
+    "topic": "Election of officers",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 498,
+    "t_end": 1126,
+    "topic": "Liaison assignments",
+    "resolution": "voted",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1126,
+    "t_end": 2056,
+    "topic": "Comparison town spending data",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2056,
+    "t_end": 2396,
+    "topic": "Fiscal policy and capital data dashboard",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 2396,
+    "t_end": 2853,
+    "topic": "Free cash policy revision first read",
+    "resolution": "referred to next meeting for a vote",
+    "tags": [
+     "free-cash",
+     "policy",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 2853,
+    "t_end": 2901,
+    "topic": "Minutes review",
+    "resolution": "deferred",
+    "tags": []
+   },
+   {
+    "t_start": 2901,
+    "t_end": 3076,
+    "topic": "Town finance update on state budget and Turkey Hill abatement",
+    "resolution": "informational",
+    "tags": [
+     "state-aid",
+     "turkey-hill",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 3076,
+    "t_end": 3140,
+    "topic": "Public comment on debt versus reserves",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "debt"
+    ]
+   },
+   {
+    "t_start": 3140,
+    "t_end": 3656,
+    "topic": "New growth discussion request, calendar, budget season planning, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "budget",
+     "town-meeting"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Voice counts on the officer votes and liaison motion are not in the captions.",
+   "Several speakers are unidentified and some names are garbled.",
+   "Which liaison went to the Council on Aging and library is partly unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [],
+  "documents_mentioned": [
+   {
+    "t": 1257,
+    "name_as_heard": "comparison town spending spreadsheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "I'm sharing here and if you're interested I can do you have extra copy"
+   },
+   {
+    "t": 2161,
+    "name_as_heard": "fiscal policies",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "I printed the fiscal policies off the website"
+   },
+   {
+    "t": 2396,
+    "name_as_heard": "free cash policy revision",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "here two copies for and I've got four extra copies for the people in the audience"
+   },
+   {
+    "t": 2853,
+    "name_as_heard": "minutes from 726",
+    "kind": "prior minutes",
+    "words_as_heard": "we don't have minutes we deal from the last meeting from 726"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "free-cash-policy",
+    "title": "Free cash policy",
+    "question": "How would the revised free cash priorities change what free cash is used for?",
+    "t": 2396,
+    "words_as_heard": "the point of the revision for the free cash policy came to bring this more in line with the Board of Selectmen town policies",
+    "data_in_play": [
+     "five percent",
+     "OPEB trust fund"
+    ],
+    "existing": "topic:free-cash-guideline"
+   },
+   {
+    "slug": "comparison-towns-spending",
+    "title": "Comparison town spending",
+    "question": "How does Lunenburg's police, fire and education spending compare with similar towns?",
+    "t": 1288,
+    "words_as_heard": "pretty impressive difference of almost 500k",
+    "data_in_play": [
+     "500k",
+     "800 K"
+    ],
+    "existing": "topic:comparison-districts"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee heard a first read of a draft free cash policy revision that drops pavement management as a priority and favors the OPEB trust and special purpose stabilization.",
+    "t": 2416
+   },
+   {
+    "line": "The free cash policy recommendation goes on the next agenda for a vote on whether to recommend it to the Board of Selectmen.",
+    "t": 2830
+   },
+   {
+    "line": "The committee elected officers, then assigned members as liaisons to departments and committees; John Henshaw was voted to the capital planning committee.",
+    "t": 627
+   },
+   {
+    "line": "The town accountant said the state budget raised spending capacity slightly and included Turkey Hill asbestos abatement money that a special town meeting could reappropriate.",
+    "t": 3006
+   },
+   {
+    "line": "Members reviewed first comparison spending data from nearby towns for police, fire and education.",
+    "t": 1472
+   }
+  ],
+  "why_it_matters": [
+   "The free cash policy steers where leftover town money goes, so a change toward reserves and the OPEB trust affects what is available to hold down future tax bills or fund projects.",
+   "The Turkey Hill abatement money could be reappropriated from the capital plan at a special town meeting, a vote residents may be asked to take."
+  ],
+  "watch_next": [
+   "August 23 meeting: vote on the free cash policy recommendation, July 26 minutes, new growth in anticipated budgets, and possible appointment of the seventh member."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-05T18:52:02Z",
+   "cost_usd": 0.0246991
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08092018-2400",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2018-08-09-minutes-2400.txt",
+   "path": "sources/meetings/finance-committee/2018-08-09-minutes-2400.pdf"
+  },
+  "official_sha256": "ed937829d00882307bab9a076a68a413c9643ff5cdc29635815ad4fa3271d0af",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the Henshaw capital planning vote, the $162,133 cherry sheet figure, the $130K Turkey Hill funds, the August 23 next meeting and the new growth agenda item. Our minutes omit the officer elections, and the official minutes say nothing about the free cash policy and July 26 minutes agenda items, the meeting calendar, or the spending comparison figures. The liaison assignments are the one place to check closely, because they differ in content as well as in whether they carry a vote.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: John Henshaw as Finance Committee liaison to Capital Planning Committee",
+    "ours": "John Henshaw to represent the Finance Committee on the capital planning committee — passed",
+    "official": "capital planning committee- marc nominated john. hannah second. all in favor 6-0",
+    "note": "Both record the vote as passed; the official minutes add the 6-0 tally and the nominator and seconder.",
+    "t": 627
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Votes electing Chairman, Vice-Chairman and Secretary",
+    "ours": "",
+    "official": "chairman: john nominated terri, hannah seconded. all in favor 6-0",
+    "note": "The official minutes record three officer election votes (Terri Burchfield chair, John Henshaw vice-chair, Hannah Anderson secretary), each passing 6-0. Our minutes list no votes for them, so check the recording for the elections."
+   },
+   {
+    "kind": "agree",
+    "about": "Cherry sheet change",
+    "ours": "FY19 state budget cherry sheet change: one hundred and sixty two thousand one hundred and thirty three dollars",
+    "official": "cherry sheet increase, $162,133.00 in spending capacity.",
+    "note": "The figures match: $162,133.",
+    "t": 2923
+   },
+   {
+    "kind": "agree",
+    "about": "Turkey Hill asbestos abatement state funding",
+    "ours": "Turkey Hill asbestos abatement state funding: one hundred and thirty thousand",
+    "official": "also in state budget $130k for the turkey hill asbestos abatement.",
+    "note": "The figures match: $130K.",
+    "t": 3006
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Police, fire and education spending comparison figures",
+    "ours": "Police spending comparison: hundred fifty K; Fire spending comparison: 500k; Education spending comparison: 800 K",
+    "official": "",
+    "note": "The official minutes mention the comparison of Police, Fire and Education spending across similar towns but give no dollar figures. The captions may have misheard these amounts, so verify them against the recording.",
+    "t": 1378
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Liaison assignments",
+    "ours": "Liaisons assigned: Mark for public access cable, John for capital planning, George for Department of Public Works, John for police, George for fire, Jay for sewer and green communities.",
+    "official": "department of public works- george",
+    "note": "Our minutes list six assignments. The official minutes list more bodies (Council on Aging, Library, Schools, Monty Tech, Green Common Task Force, Charter Review). Check the assignments against the official list, especially who holds police, fire, sewer and green communities, and whether any were assigned at this meeting.",
+    "t": 583
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting is August 23; the chair expects the seventh Finance Committee member may be appointed that day.",
+    "official": "next meeting: august 23, 2018",
+    "note": "Both give August 23. The seventh-member remark appears only in ours.",
+    "t": 22
+   },
+   {
+    "kind": "agree",
+    "about": "New growth on next agenda",
+    "ours": "New growth and how to factor it into anticipated budgets will be added to the next agenda.",
+    "official": "john h. asks to put on the agenda for next meeting new growth discussion",
+    "note": "Both put a new growth discussion on the next agenda.",
+    "t": 3135
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash policy recommendation on next agenda",
+    "ours": "The free cash policy recommendation will be placed on the next agenda for a vote to recommend to the Board of Selectmen.",
+    "official": "",
+    "note": "The official minutes do not mention this planned vote on the free cash policy.",
+    "t": 2830
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "July 26 minutes on next agenda",
+    "ours": "Minutes from the July 26 meeting will go on the next agenda.",
+    "official": "",
+    "note": "The official minutes do not mention it.",
+    "t": 2879
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Meeting calendar through December",
+    "ours": "Meeting calendar set through December, with no meeting on November 22 for Thanksgiving; Tuesdays kept open for a possible special town meeting public hearing.",
+    "official": "",
+    "note": "The official minutes record no calendar decision beyond August 23.",
+    "t": 3225
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Marc Luescher to continue drilling down on Police, Fire, Education and Cable",
+    "ours": "",
+    "official": "marc plans to continue drilling down on police, fire, education, and cable access.",
+    "note": "Our minutes record no such plan."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Dave Passios",
+    "ours": "",
+    "official": "public: dave passios, 56 whiting st. follow up on town of ashby capital finances.",
+    "note": "The official minutes record public comment on Ashby capital finances, the 5% stabilization calculation and non-exempt debt. Our minutes record none."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair name",
+    "ours": "Terry (chair)",
+    "official": "terri burchfield, jay simeone, john henshaw, hannah anderson, géorge martin, marc luescher",
+    "note": "Same person, with the name misspelled in the captions.",
+    "official_reading": "Terri Burchfield"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mark",
+    "ours": "Mark (member)",
+    "official": "terri burchfield, jay simeone, john henshaw, hannah anderson, géorge martin, marc luescher",
+    "note": "The captions give Marc Luescher's first name as Mark.",
+    "official_reading": "Marc Luescher"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Henshaw, Martin, Hannah, Jay, Heather",
+    "ours": "John Henshaw (vice chair), George Martin (member), Hannah (secretary), Jay (member), Heather (town manager or finance officer)",
+    "official": "karen brochu, town accountant, heather lemieux, tm.",
+    "note": "The same people are present. Heather is the Town Manager, Heather Lemieux."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Karen Brochu and Dave Passios",
+    "ours": "",
+    "official": "karen brochu, town accountant, heather lemieux, tm.",
+    "note": "Karen Brochu (Town Accountant) and Dave Passios (resident) are listed in the official minutes and not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-05T18:52:58Z",
+   "cost_usd": 0.0482951
+  }
+ }
+}

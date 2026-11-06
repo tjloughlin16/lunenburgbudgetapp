@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2017-08-14",
  "docid": "3959",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Allow the applicant to present but take no action tonight regarding a vote",
+   "motion": "Allow the Applicant to present the revised plan at the hearing but take no action tonight on a vote, because the Applicant did not meet the materials deadline.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "M. Jeffreys",
    "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion, d. prokowiew, as the applicant did not meet the deadline, that the board allow the applicant to present to hear presentation, but take no action tonight regarding a vote, second, m. jeffreys."
+   "procedural": false,
+   "quote": "motion, d. prokowiew, as the applicant did not meet the deadline, that the board allow the applicant to present to hear presentation, but take no action tonight"
   },
   {
-   "motion": "Approve waiver for vertical datum",
+   "motion": "Approve the waiver from the vertical datum requirement.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
    "outcome": "passed",
@@ -28,15 +28,174 @@
    "quote": "motion, k. chenis, to approve waiver for vertical datum, second, d. prokowiew, all aye."
   },
   {
-   "motion": "Continue the Hearing to August 28th per the Applicant's request",
+   "motion": "Continue the public hearing to August 28 at the Applicant's request.",
    "moved_by": "D. Prokowiew",
    "seconded_by": "K. Chenis",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion, d. prokowiew, to continue the hearing to august 28h per the applicant's request, second, k. chenis, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; first motion outcome incomplete (Gregory Bittner's vote in roll call cut off)",
- "cost_usd": 0.1363635
+ "note": "OCR text with errors and gaps: the first motion's roll call is garbled and incomplete (K. Chenis's vote reads 'estain', likely abstain, and no final result is printed), so that motion's outcome is recorded as not stated. Page 2 begins mid-sentence and some lines between pages are missing. No dollar figures appear in the text. No public comment is recorded. Hearing recessed 8:11 PM; no adjournment is recorded.",
+ "cost_usd": 0.00667332,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "absent",
+   "quote": "absent: adam r. burney"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "representing the applicant (Whitman & Bingham Associates)",
+   "status": "present",
+   "quote": "was represented by wesley flis, whitman & bingham associates"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing (continued): site plan approval and special permit, 40 Pioneer Drive & 98 Leominster Shirley Road",
+   "resolution": "continued to August 28",
+   "quote": "the hearing was to hear and discuss an application for site plan approval under section 8.4.and special permit under section",
+   "tags": [
+    "public hearing",
+    "site plan approval",
+    "special permit",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Late submission of revised materials and deadline",
+   "resolution": "presentation allowed, no action taken on the vote",
+   "quote": "g. bittner noted to the board that new materials were submitted after the deadline and the board needed to take a",
+   "tags": [
+    "deadline",
+    "late materials"
+   ]
+  },
+  {
+   "topic": "Revised site plan presentation",
+   "resolution": "presented; re-review letter still outstanding",
+   "quote": "he went over the proposed revisions to the plan. the middle entrance has been eliminated.",
+   "tags": [
+    "site plan",
+    "parking",
+    "driveway",
+    "landscaping",
+    "signage"
+   ]
+  },
+  {
+   "topic": "Vertical datum waiver",
+   "resolution": "approved",
+   "quote": "motion, k. chenis, to approve waiver for vertical datum, second, d. prokowiew, all aye.",
+   "tags": [
+    "waiver"
+   ]
+  },
+  {
+   "topic": "Bylaw limit on curb cuts per lot (discussion)",
+   "resolution": "discussion only, no action",
+   "quote": "m. jeffreys brought up the issue of the bylaw limiting two curb cuts per lot.",
+   "tags": [
+    "curb cuts",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Continuance to August 28",
+   "resolution": "continued to August 28, 6:35 PM",
+   "quote": "w. flis requested a continuance to the august 28th board meeting, 6:35 pm.",
+   "tags": [
+    "continuance"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Site Plan Approval Application",
+   "where": "list",
+   "quote": "documents used at hearing: site plan approval application public hearings 2017/40 pioneer drive_98 leominster shirley road 08.14.17"
+  },
+  {
+   "name": "public hearings 2017/40 Pioneer Drive_98 Leominster Shirley Road 08.14.17",
+   "where": "list",
+   "quote": "documents used at hearing: site plan approval application public hearings 2017/40 pioneer drive_98 leominster shirley road 08.14.17"
+  },
+  {
+   "name": "Board Rules and Regulations for Site Plan Approval & Special Permits, Section 4.2 d.",
+   "where": "text",
+   "quote": "board rules and regulations for site plan approval & special permits, section 4.2 d."
+  },
+  {
+   "name": "memo from water engineer (water flow rate and pressure)",
+   "where": "text",
+   "quote": "w. flis noted a memo from his water engineer stating"
+  },
+  {
+   "name": "letter requesting waiver from the Vertical Datum",
+   "where": "text",
+   "quote": "he noted a letter issued to the board requesting a waiver from the vertical datum."
+  },
+  {
+   "name": "re-review letter from J. Walsh, Graves Engineering Inc.",
+   "where": "text",
+   "quote": "the outstanding item is the re-review letter from j. walsh, graves engineering inc. for the revised plan."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "special permit",
+  "continuance",
+  "waiver",
+  "curb cuts",
+  "late materials",
+  "Pioneer Drive",
+  "Leominster Shirley Road",
+  "Ecological Fibers"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at hearing:"
+ },
+ "dropped_unquoted_by_field": {}
 }

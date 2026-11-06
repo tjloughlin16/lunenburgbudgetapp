@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-11-01",
  "docid": "6158",
@@ -12,63 +12,429 @@
  },
  "votes": [
   {
-   "motion": "Allow the Lunenburg Snow Riders Club use of trails for the next year based on the presented letter.",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Allow the Lunenburg Snow Riders club use of the trails based on its letter for the next year.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "jr motioned to allow use based on letter for the next year. kj seconded and the commission approved unanimously."
   },
   {
-   "motion": "Issue an Order of Conditions for the Settlers Solar project.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Continue the 48 Oak Ridge Road request for a determination (patio and decks) to a later meeting.",
+   "moved_by": "CL",
+   "seconded_by": "KJ",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "the motion was made to continue by cl and a second by kj."
+  },
+  {
+   "motion": "Issue an Order of Conditions (OOC) for the Settlers Solar notice of intent at 994 Northfield Road.",
+   "moved_by": "CL",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "cl moved for a motion to issue an ooc kj seconded and the commission voted unanimousiy."
   },
   {
-   "motion": "Fine $100 for failure to appear at the administrative hearing.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Bob Pease",
+   "motion": "Fine 307 Townsend Harbor Road 100 dollars for a no show at the administrative hearing.",
+   "moved_by": "CL",
+   "seconded_by": "BP",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "cl moved to fine 100 dollars for a now show. bp seconded and the commission voted unanimously."
   },
   {
-   "motion": "Fine $100 for cutting in the buffer zone and $100 for failure to appear at the administrative hearing.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Catie Childs",
+   "motion": "Issue a 100 dollar fine at 654 Massachusetts Ave for cutting in the buffer zone and 100 dollars for the no show.",
+   "moved_by": "cl",
+   "seconded_by": "CC",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "cl moved to issue a 100 dollar fine for cutting in the buffer and 100 for the no show. cc seconded and the commission voted unanimously."
   },
   {
-   "motion": "Support the forest cutting plan article and defer closing costs.",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Support the town warrant article for 842 R Chase Road and defer the closing costs.",
+   "moved_by": "BP",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "bp moved to support the article and defer closing costs. kj seconded and the commission voted unanimously."
   },
   {
-   "motion": "Approve the minutes from 9/20 and 10/18.",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the 9/20 and 10/18 meetings.",
+   "moved_by": "BP",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously (CC abstained)",
    "procedural": true,
-   "quote": "bp motioned to approve the minutes. kj seconded and the commission voted unanimously. (cc abstained.)"
-  },
-  {
-   "motion": "Continue the hearing on the application for 48 Oak Ridge Road.",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "not stated",
-   "procedural": true,
-   "quote": "the motion was made to continue by cl and a second by kj."
+   "quote": "bp motioned to approve the minutes. kj seconded and the commission voted unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd text (macOS Vision). Clear record of votes. One motion (48 Oak Ridge continuation) has no explicit vote outcome stated in minutes.",
- "cost_usd": 0.1259495
+ "dropped_unquoted": 1,
+ "note": "OCR text from a scanned page set, with many typos and garbled words (e.g. 'now show' for no show, 'unanimousiy', 'stratedgy'). Votes are recorded as 'voted unanimously' with no numeric count; the Tufts continuance shows a motion without a stated result. Attendance is inferred from the 'With all present except Chairman Bursch' line; the names of members other than Chair, Vice-Chair and Administrator carry no printed role. Public Comment is recorded as 'none' at the opening and no speaker appears at the close; speakers at hearings appear in the hearing text, not as public comment. Adjournment has no recorded motion.",
+ "cost_usd": 0.00854972,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "with all present except chairman bursch"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "with all present except chairman bursch"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "with all present except chairman bursch"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "with all present except chairman bursch"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "carl called to order and presided for the lunenburg snow riders appointment."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "with all present except chairman bursch"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "with all present except chairman bursch"
+  },
+  {
+   "name": "Matthew S, Marro,",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "matthew s, marro, conservation administrator"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "from the snow-riders",
+   "status": "present",
+   "quote": "tom bertram from the snow-riders appeared before the commission and presented a letter outlining the request and details."
+  },
+  {
+   "name": "Michael Tufts",
+   "role": "applicant (request for a determination, 48 Oak Ridge Road)",
+   "status": "present",
+   "quote": "mr tufts provided the dimensions of the patio and picture for the commissions review."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "appeared before the commission",
+   "status": "present",
+   "quote": "rob oliva appeared before the commission and discussed the suggested and amended construction sequence/conditions with"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "spoke in support of the project",
+   "status": "present",
+   "quote": "paula bertram spoke in support of the project and the merits of the proposed conservation restriction."
+  },
+  {
+   "name": "Bill Gustus",
+   "role": "the owner",
+   "status": "present",
+   "quote": "bill gustus the owner reiterated his commitment to the conservation restriction on the"
+  },
+  {
+   "name": "James McNiff",
+   "role": "not stated",
+   "status": "present",
+   "quote": "james mcniff noted the fence was falling down and was"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission asked the applicant to modify the 48 Oak Ridge Road plan, eliminating the smaller deck and noting the beach dimensions, plantings and current patio size, and to add the dock to the plans.",
+   "quote": "the commission requested the applicant modify the plan showing: 1. the smaller"
+  },
+  {
+   "decision": "The Commission requested an administrative hearing for 101 Pleasant (silt fencing restoration).",
+   "quote": "the commission requested an administrative hearing."
+  },
+  {
+   "decision": "MM will inspect 183 Hemlock Dr and schedule a reconvening of the NOI hearing.",
+   "quote": "he will inspect and schedule a reconvening of the noi hearing."
+  },
+  {
+   "decision": "571 Chase Road to remain on the agenda until restoration is completed.",
+   "quote": "to remain on agenda until restoration is completed (grown in)"
+  },
+  {
+   "decision": "MM will have 307 Townsend Harbor Road served in hand for the no show.",
+   "quote": "show- mm will have them served in hand."
+  },
+  {
+   "decision": "MM will work with the owner at 323 Leominster Road on an erosion control strategy.",
+   "quote": "mm is going to work with him to come up with an erosion control stratedgy."
+  },
+  {
+   "decision": "Certificates of Compliance for Butterfly Lane deferred to the next meeting.",
+   "quote": "certificates of compliance - butterfly lane -deferred to next meeting."
+  },
+  {
+   "decision": "MM sent the draft forest cutting contract out for review after reviewing the bid.",
+   "quote": "mm reviewed the bid and has sent the draft contract out for review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Gilchrest Street parcel possible purchase",
+   "what_was_recorded": "BP outlined a for-sale property on Gilchrest Street with the possibility of the commission buying a 4 acre parcel for a stated price.",
+   "figures_as_printed": [
+    "50,000 dollars"
+   ],
+   "quote": "he also outlined the property at gilchrest street that is for sale with the possibility of the commission purchasing a 4 acre parcel for 50,000 dollars."
+  },
+  {
+   "topic": "307 Townsend Harbor Road fine",
+   "what_was_recorded": "Commission voted a 100 dollar fine for a no show at the administrative hearing.",
+   "figures_as_printed": [
+    "100 dollars"
+   ],
+   "quote": "cl moved to fine 100 dollars for a now show. bp seconded and the commission voted unanimously."
+  },
+  {
+   "topic": "654 Massachusetts Ave fines",
+   "what_was_recorded": "Commission voted a 100 dollar fine for cutting in the buffer zone and a 100 dollar fine for the no show.",
+   "figures_as_printed": [
+    "100 dollar",
+    "100"
+   ],
+   "quote": "cl moved to issue a 100 dollar fine for cutting in the buffer and 100 for the no show. cc seconded and the commission voted unanimously."
+  },
+  {
+   "topic": "842 R Chase Road closing costs and funding",
+   "what_was_recorded": "BP noted the land can be acquired at town meeting, the BOS is looking to abate the taxes, there are closing costs, and the trust funds can be used.",
+   "figures_as_printed": [],
+   "quote": "however, there are closing costs. the trust funds can be used."
+  },
+  {
+   "topic": "Small town forest cutting bid",
+   "what_was_recorded": "MM reviewed the bid for the small town forest and reported the winning bidder; the commission then supported the article and deferral of closing costs.",
+   "figures_as_printed": [],
+   "quote": "blanch flower logging of leominster was the winning bid."
+  },
+  {
+   "topic": "Third-party monitor funding",
+   "what_was_recorded": "MM raised a third-party monitor funded in the 53G account for the Settlers Solar project and suggested Christopher Environmental Associates.",
+   "figures_as_printed": [],
+   "quote": "mm raised the issue of having a third party monitor funded in the 53g account"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order; Carl Luck presided for the first hearing",
+   "quote": "carl called to order and presided for the lunenburg snow riders appointment.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Appointment: Lunenburg Snow Riders annual permission and use report",
+   "resolution": "approved use based on letter for the next year, unanimously",
+   "quote": "appointment: lunenburg snow riders club-annual permission and use report.",
+   "tags": [
+    "trails",
+    "snow riders",
+    "permit"
+   ]
+  },
+  {
+   "topic": "Continued request for determination, 48 Oak Ridge Road (Michael Tufts)",
+   "resolution": "continued at applicant's agreement; plan modifications requested",
+   "quote": "a public meeting on a continued request for a determination by michael tufts for the construction of a paver patio and 2 decks",
+   "tags": [
+    "wetlands",
+    "buffer zone",
+    "patio",
+    "continued"
+   ]
+  },
+  {
+   "topic": "Continued Notice of Intent, 994 Northfield Road (Settlers Solar)",
+   "resolution": "Order of Conditions issued unanimously",
+   "quote": "a public meeting on a continued notice of intent by settlers solar for the construction of 6 mega watt solar field",
+   "tags": [
+    "solar",
+    "wetlands",
+    "order of conditions",
+    "53G"
+   ]
+  },
+  {
+   "topic": "Current business: violations and enforcement",
+   "resolution": "fines voted for 307 Townsend Harbor Road and 654 Massachusetts Ave; other sites updated or continued",
+   "quote": "1. violations (enforcement actions and administrative hearings). - new (n) and continuations (c)",
+   "tags": [
+    "enforcement",
+    "fines",
+    "violations"
+   ]
+  },
+  {
+   "topic": "New business: 842 R Chase Road",
+   "resolution": "discussed land acquisition, warrant and funding; article support voted under old business",
+   "quote": "new business - 842 r chase road - updates and any new considerations",
+   "tags": [
+    "land purchase",
+    "town warrant",
+    "trail"
+   ]
+  },
+  {
+   "topic": "Old business: forest cutting plan and small town forest bid",
+   "resolution": "commission supported the article and deferral of closing costs, unanimously",
+   "quote": "old business - forest cutting plan review and acceptance of bid for small town forest",
+   "tags": [
+    "forest cutting",
+    "bid",
+    "town forest"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance, Butterfly Lane",
+   "resolution": "deferred to next meeting",
+   "quote": "certificates of compliance - butterfly lane -deferred to next meeting.",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Extension permit",
+   "resolution": "none presented",
+   "quote": "extension permit - none presented for consideration",
+   "tags": [
+    "extension permit"
+   ]
+  },
+  {
+   "topic": "Minutes of 9/20 and 10/18",
+   "resolution": "approved unanimously (CC abstained)",
+   "quote": "minutes of previous meetings - review and approval of - 9/20 and 10/18",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report and status of inspections",
+   "resolution": "status reported; no votes recorded",
+   "quote": "agents report /action items :",
+   "tags": [
+    "inspections",
+    "flood",
+    "agent report"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for November 15, 2017",
+   "quote": "next meeting for november 15, 2017 at the bilotta meeting room town hall 2nd floor at 7 pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment for meeting close; maps and Gilchrest Street parcel",
+   "resolution": "BP showed LIDAR maps and outlined the Gilchrest Street parcel and 842 R Chase Road trail efforts; no action",
+   "quote": "bp showed the commission some maps with 1 foot contours (lidar) data.",
+   "tags": [
+    "maps",
+    "LIDAR",
+    "land purchase"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9 PM (no motion recorded)",
+   "quote": "adjournment- the commission adjourned at 9 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Adjustments to the original plan previously presented (48 Oak Ridge Road)",
+   "where": "list",
+   "quote": "supplemental documents presented was adjustments to the original plan previously presented"
+  },
+  {
+   "name": "Revised construction timeline (48 Oak Ridge Road)",
+   "where": "list",
+   "quote": "supplemental documents presented was a revised construction timeline."
+  },
+  {
+   "name": "Letter outlining the request and details (Lunenburg Snow Riders)",
+   "where": "text",
+   "quote": "presented a letter outlining the request and details"
+  },
+  {
+   "name": "Patio dimensions and picture (48 Oak Ridge Road)",
+   "where": "text",
+   "quote": "mr tufts provided the dimensions of the patio and picture for the commissions review."
+  },
+  {
+   "name": "Application and supporting documents (48 Oak Ridge Road)",
+   "where": "text",
+   "quote": "application and supporting documents are available for review at the conservation commission office by calling 978-582-4147 ext 431 by appointment."
+  },
+  {
+   "name": "Application and supporting documents (994 Northfield Road, Settlers Solar)",
+   "where": "text",
+   "quote": "application and supporting documents are available for review at the conservation commission office by calling 978-582-4147"
+  },
+  {
+   "name": "Suggested and amended construction sequence/conditions (Settlers Solar)",
+   "where": "text",
+   "quote": "discussed the suggested and amended construction sequence/conditions with"
+  },
+  {
+   "name": "Draft forest cutting contract",
+   "where": "text",
+   "quote": "mm reviewed the bid and has sent the draft contract out for review."
+  },
+  {
+   "name": "Maps with 1 foot contours (LIDAR) data",
+   "where": "text",
+   "quote": "bp showed the commission some maps with 1 foot contours (lidar) data."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "enforcement",
+  "fines",
+  "solar",
+  "snow riders trails",
+  "forest cutting",
+  "continuances",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "supplemental documents presented"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

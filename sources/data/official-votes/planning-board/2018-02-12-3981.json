@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2018-02-12",
  "docid": "3981",
@@ -12,23 +12,265 @@
  },
  "votes": [
   {
-   "motion": "approve the modification to the site plan for 40 Pioneer Drive (Ecological Fibers) and carry over all conditions of the August 28, 2017 Special Permit and Site Plan Approval except for conditions #2 and #5",
+   "motion": "Approve the modification to the 40 Pioneer Drive (Ecological Fibers) site plan and carry over all conditions of the August 28, 2017 Special Permit and Site Plan Approval except #2 and #5.",
    "moved_by": "K. Chenis",
    "seconded_by": "D. Prokowiew",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "k. chenis made a motion to approve the modification to the site plan and carry over all conditions of the august 28, 2017 special permit and site plan approval except for #2 and #5, seconded by d. prokowiew, all aye."
+   "quote": "k. chenis made a motion to approve the modification to the site plan and carry over all conditions of the august 28, 2017 special permit"
   },
   {
-   "motion": "move the March 12 Board meeting to March 19 at 6:30 PM at Town Hall",
-   "moved_by": "D. Prokowiew",
-   "seconded_by": "M. Allison",
+   "motion": "Approve the minutes of 1/22/18, 1/29/18, and Executive 1/29/18.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
+   "quote": "minutes approval: 1/22/18, 1/29/18, executive 1/29/18- all minutes approved."
+  },
+  {
+   "motion": "Move the March 12 Board meeting to March 19, 6:30 PM, at Town Hall.",
+   "moved_by": "D. Prokowiew",
+   "seconded_by": "M. Allison",
+   "outcome": "passed, all aye",
+   "procedural": false,
    "quote": "d. prokowiew made a motion to move the march 12 board meeting to march 19, 6:30 pm, town hall, seconded by m. allison, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes approval and other board actions (ANR Plan endorsement, Covenant Release) lack explicit motion/seconder language and are not recorded as formal votes.",
- "cost_usd": 0.0875935
+ "note": "OCR of a scanned page with noise: the header names are garbled ('ichael-kay Jelneys, Mor.') and the footer reads 'Minules/2018/02.18.18'. Attendance is taken from the 'Present:' line only. No dollar figures appear in the text, and parcel areas are square feet. The adjournment and the Blueberry Hill covenant signing have no recorded motion or vote. The 40 Pioneer Drive item says 'see separate minutes', so those minutes are not in this text. The minutes approval has no mover or seconder printed and no count, so it is recorded as passed.",
+ "cost_usd": 0.00592792,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Bittner",
+   "status": "present",
+   "role": "not stated",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "role": "not stated",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Kenneth Chenis",
+   "status": "present",
+   "role": "not stated",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "David Prokowiew",
+   "status": "present",
+   "role": "not stated",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "role": "not stated",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "status": "present",
+   "role": "Land Use Director",
+   "quote": "present: gregory bittner, matthew allison, kenneth chenis, david prokowiew, michael-ray jeffreys, adam r. burney"
+  },
+  {
+   "name": "Neil Gorman",
+   "status": "not stated",
+   "role": "representing the applicant",
+   "quote": "applicants represented by neil gorman, david e. ross associates."
+  },
+  {
+   "name": "David E. Ross Associates",
+   "status": "not stated",
+   "role": "representing the applicant",
+   "quote": "applicants represented by neil gorman, david e. ross associates."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board endorsed the ANR Plan for the 994 Northfield Road and 994 Northfield Road Rear parcel swap (no vote recorded).",
+   "quote": "anr plan endorsed by the board."
+  },
+  {
+   "decision": "The Board signed the Covenant Release for the Blueberry Hill Subdivision, taken out of order (no vote recorded).",
+   "quote": "covenant release- blueberry hill subdivision (taken out of order) - signed by board."
+  },
+  {
+   "decision": "The Registered Marijuana Dispensaries item (§250-4.16) and the Lake Whalom Overlay District item can be taken off future agendas.",
+   "quote": "§250-4.16. registered marijuana dispensaries- can be taken off future agendas."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan: 994 Northfield Road and Rear (parcel swap)",
+   "resolution": "endorsed by the Board",
+   "quote": "anr plan: 994 northfield road & 994 northfield road rear- applicants represented by neil gorman, david e. ross",
+   "tags": [
+    "ANR plan",
+    "land swap",
+    "golf course"
+   ]
+  },
+  {
+   "topic": "Covenant release, Blueberry Hill Subdivision",
+   "resolution": "signed by Board, taken out of order",
+   "quote": "covenant release- blueberry hill subdivision (taken out of order) - signed by board.",
+   "tags": [
+    "covenant",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Public hearing: 40 Pioneer Drive, Ecological Fibers site plan modification",
+   "resolution": "approved as modified, conditions carried over except #2 and #5",
+   "quote": "public hearing: 40 pioneer drive, ecological fibers- see separate minutes.",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "minutes approval: 1/22/18, 1/29/18, executive 1/29/18- all minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received, no action",
+   "quote": "green community task force- will meet february 21st for discussion of grant funding.",
+   "tags": [
+    "committees",
+    "green community",
+    "agriculture",
+    "storm water",
+    "charter review"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "no action; Planning Board survey suggested",
+   "quote": "he met with the owners/developers of tri town landing regarding a proposal to build out the remaining unit as senior",
+   "tags": [
+    "economic development",
+    "senior housing",
+    "survey",
+    "zoning bylaws",
+    "solar",
+    "marijuana"
+   ]
+  },
+  {
+   "topic": "Notices and communications; March 12 meeting moved",
+   "resolution": "meeting moved to March 19",
+   "quote": "citizens party caucus, 3/12/18, 7:00 pm, turkey hill elementary school- g. bittner",
+   "tags": [
+    "meeting schedule",
+    "caucus"
+   ]
+  },
+  {
+   "topic": "Meeting schedule discussion",
+   "resolution": "discussed; additional workshop meetings suggested",
+   "quote": "meeting schedule: board discussion- g. bittner suggested additional meetings (workshop) on a consistent basis;",
+   "tags": [
+    "meeting schedule",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "some items may be taken off future agendas",
+   "quote": "§250-4.16. registered marijuana dispensaries- can be taken off future agendas.",
+   "tags": [
+    "solar energy",
+    "marijuana",
+    "sign bylaw",
+    "lake whalom",
+    "economic development",
+    "recreational marijuana"
+   ]
+  },
+  {
+   "topic": "Board comment: Town Manager correspondence on Land Use Chairs meeting",
+   "resolution": "no action; Chair to follow up",
+   "quote": "g. bittner noted correspondence he received from the town manager suggesting a meeting",
+   "tags": [
+    "town manager",
+    "land use boards"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:50 PM (no motion recorded)",
+   "quote": "adjournment: 7:50 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes- 1/22/18, 1/29/18, Executive 1/29/18",
+   "where": "list",
+   "quote": "minutes- 1/22/18, 1/29/18, executive 1/29/18"
+  },
+  {
+   "name": "Definitions and Use Table, DRAFT",
+   "where": "list",
+   "quote": "definitions and use table, draft"
+  },
+  {
+   "name": "ANR Plan: 994 Northfield Road & 994 Northfield Road Rear",
+   "where": "text",
+   "quote": "anr plan: 994 northfield road & 994 northfield road rear- applicants represented by neil gorman, david e. ross"
+  },
+  {
+   "name": "August 28, 2017 Special Permit and Site Plan Approval (40 Pioneer Drive)",
+   "where": "text",
+   "quote": "carry over all conditions of the august 28, 2017 special permit and site plan approval"
+  },
+  {
+   "name": "Covenant Release- Blueberry Hill Subdivision",
+   "where": "text",
+   "quote": "covenant release- blueberry hill subdivision (taken out of order) - signed by board."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "site plan",
+  "covenant release",
+  "minutes approval",
+  "meeting schedule",
+  "economic development",
+  "zoning bylaws",
+  "marijuana",
+  "solar energy",
+  "Blueberry Hill"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

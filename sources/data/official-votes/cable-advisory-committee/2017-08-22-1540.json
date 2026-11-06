@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2017-08-22",
  "docid": "1540",
@@ -12,6 +12,281 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe a negotiation session between the Cable Advisory Committee and a Comcast representative (Greg Franks), with discussion of contract terms, capital funding, and technical requirements. The minutes document positions taken (\"committee members and Attorney Hewig unanimously said they would be unwilling to accept $140K\"), but no formal motions or recorded votes are stated. The text is OCR'd from a scan dated 2017-08-22; readability is good, but no voting language (\"motion by...\", \"seconded by...\", \"vote X-Y\", \"so voted\", \"approved\") appears in the document. The meeting adjourned at 6:55 pm with no adjournment vote recorded.",
- "cost_usd": 0.0846445
+ "note": "The minutes are OCR text with typos (e.g., \"wil\", \"hit\", \"Mir.\", \"IVir.\") and some garbled lines; quotes were copied as printed with line breaks collapsed. No motion or vote is recorded in the text: \"unanimously said they would be unwilling to accept $140K\" describes a shared position, not a motion, and adjournment at 6:55 pm has no recorded motion. Votes are therefore empty. Public comment was \"None\". The minutes do not print a list of documents used; documents are named only in discussion.",
+ "cost_usd": 0.007251919999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Greg Franks",
+   "role": "of Comcast",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with greg franks of comcast, attorney bill hewig, heather lemieux, jo mclaughlin, steve walker, paula bertram and tom alonzo present."
+  },
+  {
+   "name": "Bill Hewig",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with greg franks of comcast, attorney bill hewig, heather lemieux, jo mclaughlin, steve walker, paula bertram and tom alonzo present."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with greg franks of comcast, attorney bill hewig, heather lemieux, jo mclaughlin, steve walker, paula bertram and tom alonzo present."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with greg franks of comcast, attorney bill hewig, heather lemieux, jo mclaughlin, steve walker, paula bertram and tom alonzo present."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with greg franks of comcast, attorney bill hewig, heather lemieux, jo mclaughlin, steve walker, paula bertram and tom alonzo present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with greg franks of comcast, attorney bill hewig, heather lemieux, jo mclaughlin, steve walker, paula bertram and tom alonzo present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with greg franks of comcast, attorney bill hewig, heather lemieux, jo mclaughlin, steve walker, paula bertram and tom alonzo present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula Bertram will resend the minutes that committee members did not receive.",
+   "quote": "paula had sent out minutes, however committee members did not receive. paula wil resend."
+  },
+  {
+   "decision": "Bill Hewig will forward the two side letters (HD PEG and EPG) to the Committee electronically.",
+   "quote": "bill will forward them to the committee electronically."
+  },
+  {
+   "decision": "Steve Walker will review the spreadsheet again before the next meeting.",
+   "quote": "steve walker said he would need to review the spreadsheet again, which he will do before the next meeting."
+  },
+  {
+   "decision": "Greg Franks will consult his superiors and get back to Attorney Hewig; Franks left the meeting before the end.",
+   "quote": "at this point mr. franks left the meeting, he will consult with his superiors and get back to mr. hewig"
+  },
+  {
+   "decision": "The Chair will schedule the next meeting after conferring with Attorney Hewig.",
+   "quote": "next meeting date to be scheduled by the chair after conferring with attorney hewig."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Internet connectivity cost",
+   "what_was_recorded": "Tom Alonzo questioned the cost of current internet connectivity; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "tom alonzo questioned the cost of current internet connectivity."
+  },
+  {
+   "topic": "Comcast counter offer",
+   "what_was_recorded": "Comcast's counter offer was a 4.5% PEG fee and $120,000 capital, plus a video return line from the high school.",
+   "figures_as_printed": [
+    "4.5% PEG fee",
+    "$120,000 Capital"
+   ],
+   "quote": "4.5% peg fee $120,000 capital"
+  },
+  {
+   "topic": "Current license payments",
+   "what_was_recorded": "The current license gave Lunenburg $90,000 and $25,000, a total of $115k, with $25,000 paid up front as an advance from the 2.5%.",
+   "figures_as_printed": [
+    "$90,000",
+    "$25,000",
+    "$115k",
+    "$25,000 up front"
+   ],
+   "quote": "the current license gave lunenburg $90,000 and $25,000 for a total of $115k"
+  },
+  {
+   "topic": "Capital request",
+   "what_was_recorded": "Lunenburg's requested capital is $240,000, which Attorney Hewig said is not enough per the plan.",
+   "figures_as_printed": [
+    "$240,000"
+   ],
+   "quote": "based on the plan, even the $240,000 requested is not enough."
+  },
+  {
+   "topic": "Proposed budget total",
+   "what_was_recorded": "Attorney Hewig said the numbers in the proposed budget add up to $340,000, and the Committee asked for less than the full amount.",
+   "figures_as_printed": [
+    "$340,000"
+   ],
+   "quote": "if you add up the numbers in the proposed budget it comes up to $340,000"
+  },
+  {
+   "topic": "Minimum capital acceptable",
+   "what_was_recorded": "Attorney Hewig said Lunenburg needs a minimum of $230K or $238K in capital.",
+   "figures_as_printed": [
+    "$230K",
+    "$238K"
+   ],
+   "quote": "mr. hewig said that we need a minimum of $230k or $238k"
+  },
+  {
+   "topic": "Rejected capital offer",
+   "what_was_recorded": "Committee members and Attorney Hewig unanimously said they would be unwilling to accept $140K.",
+   "figures_as_printed": [
+    "$140K"
+   ],
+   "quote": "committee members and attorney hewig unanimously said they would be unwilling to accept $140k."
+  },
+  {
+   "topic": "Percentage and capital trade-off",
+   "what_was_recorded": "Tom Alonzo said a 5% fee bringing about $200,000 might work; he noted 2.5% equates to approx. $100,000.",
+   "figures_as_printed": [
+    "$200,000",
+    "2.5%",
+    "$100,000"
+   ],
+   "quote": "tom alonzo said that if comcast can get the 4.5% back to 5% which would bring us to about $200,000"
+  },
+  {
+   "topic": "Pass-through costs",
+   "what_was_recorded": "Steve Walker's review noted the pass-through cost for the budget proposal is .625, equal to $.40 per subscriber.",
+   "figures_as_printed": [
+    ".625",
+    "$.40"
+   ],
+   "quote": "the pass through cost for the budget proposal is .625 which equates to $.40 per subscriber"
+  },
+  {
+   "topic": "Capital spread over 20 years",
+   "what_was_recorded": "Mr. Alonzo noted that $240,000 over 20 years is $24000 a year.",
+   "figures_as_printed": [
+    "$240,000",
+    "$24000"
+   ],
+   "quote": "mr. alonzo noted that $240,000 over 20 years is $24000"
+  },
+  {
+   "topic": "Senior discount",
+   "what_was_recorded": "Comcast said it will at least continue the current senior discount of $2 off basic channels and can definitely do that.",
+   "figures_as_printed": [
+    "$2"
+   ],
+   "quote": "they are currently doing for seniors which is $2 off basic channels."
+  },
+  {
+   "topic": "Studio funding and borrowing",
+   "what_was_recorded": "Heather Lemieux said funding could be a possibility but she would need to talk with the Town Accountant about short term borrowing; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "heather responded that funding could be a possibility but she would have to talk with the town accountant about short term borrowing."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action (none offered)",
+   "quote": "public comment none announcements none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action (none)",
+   "quote": "public comment none announcements none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Minutes and correspondence",
+   "resolution": "minutes to be resent; side letters to be forwarded electronically",
+   "quote": "paula had sent out minutes, however committee members did not receive. paula wil resend.",
+   "tags": [
+    "minutes",
+    "side letters",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Comcast license negotiation",
+   "resolution": "continued; Comcast to consult superiors and revert; next meeting to be scheduled",
+   "quote": "mr. franks said he would go back to his superiors and call bill hewig at the end of the week.",
+   "tags": [
+    "cable license",
+    "Comcast",
+    "PEG",
+    "capital funding",
+    "negotiation"
+   ]
+  },
+  {
+   "topic": "Legal options if no agreement",
+   "resolution": "discussed, no action",
+   "quote": "bill outlined the legal options if comcast won't come closer to our capital needs",
+   "tags": [
+    "license denial",
+    "legal options",
+    "administrative hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Two side letters, one for HD PEG and one for EPG",
+   "where": "text",
+   "quote": "tom alonzo asked if bill hewig had received the two side letters, one for hd peg and one for epg."
+  },
+  {
+   "name": "Business plan",
+   "where": "text",
+   "quote": "tom asked if mr. franks had reviewed the business plan, mr. franks said he read it"
+  },
+  {
+   "name": "Senior discount side letter",
+   "where": "text",
+   "quote": "bill hewig said that when we convened last time we talked about a senior discount side letter."
+  },
+  {
+   "name": "Proposed budget",
+   "where": "text",
+   "quote": "if you add up the numbers in the proposed budget it comes up to $340,000"
+  },
+  {
+   "name": "Current license",
+   "where": "text",
+   "quote": "the current license expires 9/3/17."
+  },
+  {
+   "name": "Spreadsheet",
+   "where": "text",
+   "quote": "steve walker said he would need to review the spreadsheet"
+  },
+  {
+   "name": "Letter from the Department of Telecommunications",
+   "where": "text",
+   "quote": "mr. hewig informed the committee that he had received a letter from the department of"
+  }
+ ],
+ "tags": [
+  "cable franchise",
+  "Comcast",
+  "license negotiation",
+  "PEG access",
+  "capital funding",
+  "Cable Advisory Committee",
+  "senior discount",
+  "legal options"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

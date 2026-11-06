@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2018-05-07",
  "docid": "992",
@@ -12,6 +12,181 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe discussions (window repair violations for Ed Perry, Title 5 discrepancies for Mr. Woodward) and suggestions (extending deadline, continuing matter to June 4), but no motions with recorded votes (no \"moved by X, seconded by Y\", \"unanimously approved\", \"vote X-X\", or \"carried/failed\" language appears). \"MINUTES APPROVED\" is a section heading with no vote recorded. \"Meeting adjourned\" is stated without a vote.",
- "cost_usd": 0.0815545
+ "note": "No votes are recorded anywhere in the text, including approval of minutes, so votes is empty. The minutes give no property address for the Perry matter. Dates conflict: the meeting is dated 2018-05-07 but the continuance reads 'June 4, 2017', and the stamp reads 'JUL 16 2018'. The chairman is named both 'George Edmond' and 'Chairman Emond'. Text is OCR and contains typos, e.g. 'with be'. 'Meeting adjourned' appears with no motion. The chairman's suggested end-of-month deadline for Perry was not a decision.",
+ "cost_usd": 0.00481352,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Edmond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman george edmond advised mr. perry that windows must function in the manner in which they are designed."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "member dave passios asked how many windows needed repair."
+  },
+  {
+   "name": "Ed Perry",
+   "role": "owner of the above property",
+   "status": "present",
+   "quote": "the owner of the above property, ed perry, met with the board."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "agent jim garreffi completed a housing inspection."
+  },
+  {
+   "name": "Mr. Woodward",
+   "status": "not stated",
+   "quote": "a letter with be sent to mr. woodward requesting that he attend."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Woodward Title 5 / septic matter was continued to June 4 at 7:15 pm, after discussion, without a recorded vote.",
+   "quote": "after discussion this matter was continued to june 4, 2017 at 7:15 pm."
+  },
+  {
+   "decision": "A letter is to be sent to Mr. Woodward requesting that he attend the continued hearing.",
+   "quote": "a letter with be sent to mr. woodward requesting that he attend."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ed Perry housing violation - window replacement cost and ability to pay",
+   "what_was_recorded": "Mr. Perry said he does not have the money to replace the windows and had just returned to work; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. perry stated that he does not have the money to replace the windows."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ed Perry",
+   "stated_role": "owner of the above property",
+   "topic": "housing violation, window replacement",
+   "quote": "mr. perry stated that the windows are not that bad and only"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes approved",
+   "resolution": "listed as approved; no vote recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approved: title 5 inspection reports acknowledged:"
+  },
+  {
+   "topic": "Title 5 inspection reports acknowledged",
+   "resolution": "acknowledged (listed; 113 Sandy Cove Road marked Fail)",
+   "tags": [
+    "title 5",
+    "septic"
+   ],
+   "quote": "title 5 inspection reports acknowledged: 682 page street 90 rolling acres 245 sunset lane"
+  },
+  {
+   "topic": "Septic permits signed",
+   "resolution": "signed (listed)",
+   "tags": [
+    "septic",
+    "permits"
+   ],
+   "quote": "septic permits signed: 298 pleasant street 2 lena lane lot 2 134 kilburn street"
+  },
+  {
+   "topic": "Housing complaint - Ed Perry window replacement",
+   "resolution": "discussed; no motion or decision recorded",
+   "tags": [
+    "housing code",
+    "enforcement",
+    "windows"
+   ],
+   "quote": "a housing complaint was received and agent jim garreffi completed a housing inspection."
+  },
+  {
+   "topic": "Woodward Title 5 and septic system discrepancies",
+   "resolution": "continued to June 4 at 7:15 pm",
+   "tags": [
+    "title 5",
+    "septic",
+    "continuance"
+   ],
+   "quote": "agent jim garreffi has recommended that mr. woodward be required to install a new compliant system immediately"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "682 Page Street",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 682 page street 90 rolling acres 245 sunset lane 85 leominster shirley road 113 sandy cove road - fail"
+  },
+  {
+   "name": "90 Rolling Acres",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 682 page street 90 rolling acres 245 sunset lane 85 leominster shirley road 113 sandy cove road - fail"
+  },
+  {
+   "name": "245 Sunset Lane",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 682 page street 90 rolling acres 245 sunset lane 85 leominster shirley road 113 sandy cove road - fail"
+  },
+  {
+   "name": "85 Leominster Shirley Road",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 682 page street 90 rolling acres 245 sunset lane 85 leominster shirley road 113 sandy cove road - fail"
+  },
+  {
+   "name": "113 Sandy Cove Road - Fail",
+   "where": "list",
+   "quote": "title 5 inspection reports acknowledged: 682 page street 90 rolling acres 245 sunset lane 85 leominster shirley road 113 sandy cove road - fail"
+  },
+  {
+   "name": "298 Pleasant Street",
+   "where": "list",
+   "quote": "septic permits signed: 298 pleasant street 2 lena lane lot 2 134 kilburn street"
+  },
+  {
+   "name": "2 Lena Lane Lot 2",
+   "where": "list",
+   "quote": "septic permits signed: 298 pleasant street 2 lena lane lot 2 134 kilburn street"
+  },
+  {
+   "name": "134 KILBURN STREET",
+   "where": "list",
+   "quote": "septic permits signed: 298 pleasant street 2 lena lane lot 2 134 kilburn street"
+  },
+  {
+   "name": "Title 5 report, 2013 (Woodward property)",
+   "where": "text",
+   "quote": "the 2013 report indicated the system was 30 feet long, the 2017 report indicated the system"
+  },
+  {
+   "name": "Title 5 report submitted October 2017 (Mr. Woodward)",
+   "where": "text",
+   "quote": "mr. woodward submitted a new title 5 report in october of 2017."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "title 5",
+  "septic",
+  "housing code",
+  "window violation",
+  "enforcement",
+  "continuance",
+  "permits"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "title 5 inspection reports acknowledged:"
+ },
+ "dropped_unquoted_by_field": {}
 }
