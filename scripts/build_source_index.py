@@ -1679,6 +1679,15 @@ GROUPS = [
              'Written by us, by scripts/build_town_meetings.py, with no model: a thread for '
              'every Town Meeting, and one for each article discussed well beyond its routine '
              'stops, which build_threads.py merges beside the hand registry in threads.csv.'),
+            ('data/threads-auto/opened.json',
+             'Threads opened automatically', 1,
+             'Written by us, by scripts/open_threads.py: a model wrote each question and closing '
+             'condition from the meeting record, and the build published those whose pattern '
+             'reached three or more meetings. No person has read them unless a row says so.'),
+            ('data/thread-review-queue.csv',
+             'Possible threads, not published', 1,
+             'Written by us, by scripts/open_threads.py: matters a model named that the build '
+             'would not publish, each with the reason. Not established as matters.'),
             ('data/heard-figures.csv',
              'Figures a person checked in the meeting recordings', 1,
              'Written by us: a figure our notes of a recording heard, which a person then '

@@ -566,8 +566,14 @@ def the_record():
         m = j.get('minutes') or {}
         rec = by.setdefault(key, {'board_slug': key[0], 'board': j.get('board') or key[0],
                                   'date': key[1], 'votes': [], 'items': [], 'seen': set(),
-                                  'recordings': []})
+                                  'recordings': [], 'headlines': []})
         rec['recordings'].append(j.get('video_url') or '')
+        # THE HEADLINE IS KEPT APART FROM `items`. Closures, looseness and the bar all count
+        # items, and a headline restates them. chronology() reads it only for a meeting that
+        # nothing else claimed: the Stormwater Task Force on 4 November 2026 said "ERU" and
+        # "spreadsheet" in every topic and "stormwater" only in the headline.
+        if m.get('headline'):
+            rec['headlines'].append({'text': m['headline'], 'video_url': j.get('video_url') or ''})
         for v in (m.get('votes') or []):
             k = norm_motion(v.get('motion'))
             if not k or k in rec['seen']:
@@ -814,6 +820,16 @@ def vote_log(t, record, town=None):
     return out
 
 
+def sole_subject_board(t):
+    """The board this thread alone claims in the registry, or None. Two threads naming one board
+    (the building committee has TC Passios and the town offices) means it has no single subject."""
+    board = (t.get('boards') or '').strip()
+    if not board:
+        return None
+    owners = [r['id'] for r in read_csv(THREADS) if (r.get('boards') or '').strip() == board]
+    return board if owners == [t.get('id')] else None
+
+
 def chronology(t, record, town=None):
     """Every meeting the thread came up at, oldest first, from BOTH records of it.
 
@@ -894,6 +910,16 @@ def chronology(t, record, town=None):
             for it in (town.get(key) or {}).get('items', []):
                 if it['kind'] == 'vote' and re.search(r'warrant|article|bylaw|fee|rate', it['text'], re.I):
                     hits.append(dict(it))
+        # THE HEADLINE, ONLY WHERE NOTHING ELSE CLAIMED THE MEETING. It names the subject when the
+        # topics do not. On a board with one subject it needs no match at all, only to clear the
+        # thread's `exclude`; a board two threads share still has to name the matter.
+        if not hits and rec:
+            own = sole_subject_board(t) == slug
+            for h in rec.get('headlines', []):
+                if (hit(h['text']) or own) and not (ex and ex.search(h['text'])):
+                    hits.append({'kind': 'headline', 'text': h['text'], 'outcome': '', 't': None,
+                                 'video_url': h['video_url'], 'source': 'ours', 'recording_note': ''})
+                    break
         if hits:
             out.append({'board': (rec or {}).get('board') or names.get(slug) or slug.replace('-', ' ').title(),
                         'board_slug': slug, 'date': date, 'items': hits,

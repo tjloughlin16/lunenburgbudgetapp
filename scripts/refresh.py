@@ -1666,6 +1666,10 @@ def run(a, notes, ctx):
         if not a.no_minutes and not a.dry_run:
             if metered('write_article_summaries.py', notes=notes) is not None:
                 py('build_town_meetings.py', check=False)
+        # NEW MATTERS OPEN THEIR OWN THREADS (TJ, 6 November 2026): one model call, none when its
+        # input did not change. The build counts the meetings; 3+ publishes, the rest is queued.
+        if not a.no_minutes and not a.dry_run:
+            metered('open_threads.py', notes=notes)
         py('build_threads.py', check=False)
         # THE CALLOUTS, for the threads whose record just changed -- what someone says next
         # (TJ, 19 October 2026). A model picks, threads batched to a call, only where the input moved, and a second call judges every new pick;
@@ -1697,11 +1701,8 @@ def run(a, notes, ctx):
             feed = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'budget-feed.json')))
             for p in feed.get('proposed_episodes', []):
                 notes.append('possible new budget episode: %s (%s) -- add to sources/data/budget-episodes.csv if real' % (p['signal'], p['evidence']))
-            # A story forming that no thread names -- 'athletics' in 23 lines across 9 meetings --
-            # is proposed the same way; a row in sources/data/budget-threads.csv makes it one.
-            for p in feed.get('proposed_threads', [])[:5]:
-                notes.append('a budget story may be forming: %s -- %d lines across %d meetings, %s to %s; add to sources/data/budget-threads.csv to give it a thread'
-                             % (p['name'], p['rows'], p['meetings'], p['first'], p['last']))
+            # A story forming that no thread names is read by open_threads.py, which opens or
+            # queues it, so it no longer waits here as a note for a person.
         except Exception as e:
             notes.append('could not read proposed episodes: %s' % e)
         # The finished seasons, rebuilt too: their calendars and minutes counts move as the

@@ -8,7 +8,8 @@
 The gates are `notes/process/THREADS-MODEL.md` §2, and the reason this script only PROPOSES
 is §4: the criteria do not have to decide, only to rank. Over-proposal costs one line in a
 list; a miss is invisible, and has the shape of every silent zero in CLAUDE.md. So it is
-tuned for recall and a person confirms by adding a row to sources/data/threads.csv.
+tuned for recall. scripts/open_threads.py reads this list in every refresh and opens what the
+record proves; a person can still add a row to sources/data/threads.csv.
 
 GATE A -- PERSISTENCE, and it fires on any of three. The first two are LEADING indicators
 and they are the point: recurrence can only fire after a matter has run for months, which

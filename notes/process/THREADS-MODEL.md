@@ -302,7 +302,15 @@ A thread can also **lapse**: no mention in 12 months and no scheduled step. That
 resolved and must never be shown as resolved — it is *went quiet*, and it is frequently the
 most interesting state on the page.
 
-## 4. Tune for recall. Filter by hand
+## 4. Tune for recall. Publish what the record proves, queue the rest
+
+**Changed 6 November 2026, TJ: new threads open themselves.** `scripts/open_threads.py` runs in
+every refresh. One model call turns the proposer's items and the budget feed's forming stories
+into matters with a question and a closing condition. The build runs each matter's pattern over
+the record: three or more meetings publishes, with a caveat saying a model wrote the question;
+anything weaker, too broad or mostly another thread's goes to
+`sources/data/thread-review-queue.csv`, shown on the dashboard's Review tab. What follows was
+the original rule, a person creating every thread, and its reasoning about recall still holds.
 
 **The detector proposes. A person creates.** This is already how the budget feed works and
 it is the answer to "the hard part is identifying what counts" — the criteria do not have to

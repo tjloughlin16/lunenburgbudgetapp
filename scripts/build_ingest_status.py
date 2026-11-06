@@ -3630,6 +3630,17 @@ def page_review(st):
                         html.escape(_board_name(r['board_slug'])), html.escape(r['reason']),
                         html.escape(r.get('resolution') or ''), html.escape(r.get('note') or ''), html.escape(now)))
         h.append('</table></div>')
+    # MATTERS open_threads.py WOULD NOT PUBLISH by itself. Read-only: a person publishes one by
+    # adding a row to threads.csv and refuses one by adding it to threads-declined.csv.
+    qp = os.path.join(ROOT, 'sources', 'data', 'thread-review-queue.csv')
+    rows = list(csv.DictReader(open(qp, encoding='utf-8'))) if os.path.exists(qp) else []
+    if rows:
+        h.append('<div class="card"><b>Possible threads (%d)</b> <span class="tiny">a model named these '
+                 'matters and the build would not publish them</span><table style="margin-top:8px">' % len(rows))
+        for r in rows:
+            h.append('<tr><td>%s</td><td>%s</td><td class="tiny">%s</td></tr>'
+                     % (html.escape(r['label']), html.escape(r['question']), html.escape(r['why'])))
+        h.append('</table></div>')
     h.append('</div>')
     return ''.join(h)
 

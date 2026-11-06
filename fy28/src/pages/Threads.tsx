@@ -547,10 +547,10 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
  *  the record it came from. What it does not show, the reading and the coverage come last.
  *  A settled thread leads with how it ended and tells its story start to finish. */
 const KIND_WORD: Record<string, string> = {
-  vote: 'Vote', decision: 'Decided', budget: 'Money discussed', topic: 'Discussed',
+  vote: 'Vote', decision: 'Decided', budget: 'Money discussed', topic: 'Discussed', headline: 'Meeting summary',
   contention: 'Disputed', comment: 'Public comment', safety: 'Safety concern raised', liability: 'Liability raised', condition: 'Condition set', unreadable: 'Captions unreadable',
 }
-const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, safety: 2, liability: 2, condition: 1, contention: 2, budget: 3, topic: 4, comment: 5 }
+const KIND_RANK: Record<string, number> = { vote: 0, decision: 1, safety: 2, liability: 2, condition: 1, contention: 2, budget: 3, topic: 4, headline: 4, comment: 5 }
 const hms = (t: number) => {
   const h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60
   return (h ? `${h}:${String(m).padStart(2, '0')}` : `${m}`) + `:${String(s).padStart(2, '0')}`
