@@ -67,7 +67,7 @@ def report_links(t, catalogue):
     out = []
     for rid in [x.strip() for x in (t.get('reports') or '').split(';') if x.strip()]:
         rid = catalogue['superseded'].get(rid, rid)
-        # A HUB OR TOPIC PAGE, by its address (`/athletics`, `/parks/artificial-turf-fund`),
+        # A HUB OR TOPIC PAGE, by its address (`/athletics`, `/school-all-funds/artificial-turf-fund`),
         # resolved against topics.json -- the long reports those pages absorbed are UNLISTED
         # and are not in reports.json, so a thread reads on from the page that answers now.
         r = catalogue['by_path'].get(rid) if rid.startswith('/') else catalogue['by_id'].get(rid)
@@ -319,6 +319,11 @@ def callouts(known, problems):
                          **{x: v for x, v in c.items() if x not in ('item_date', 'item_board', 'verdict')},
                          thread=tid, order=str(k))
                 r['t'] = str(r['t'])
+                # PICKS WRITTEN BEFORE THE WRITER WAS FIXED name the document (`...-8080.pdf`) where
+                # they mean its extracted text. Those files read as current and will not be
+                # re-picked, so the path is normalised here. The quote is still checked against it.
+                if r.get('text'):
+                    r['text'] = os.path.splitext(r['text'])[0] + '.txt'
                 mine = []
                 if re.search(r'\d', r['hook']) or len(r['value']) > 24 or len(r['label']) > 110 or len(r['hook']) > 40 \
                         or r['kind'] not in CALLOUT_KINDS:

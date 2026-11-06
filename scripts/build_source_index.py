@@ -930,6 +930,19 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'parks-information-request-2025', 'origin': 'request',
+        'title': 'The Parks & Recreation information request, 2025',
+        'blurb': 'The email thread behind the Parks & Recreation reports. It came from TJ '
+                 'Loughlin’s own mailbox, not from a website; the decision to publish it is '
+                 'recorded in sources/data/redactions.csv.',
+        'items': [
+            ('correspondence/2025-08-07-parks-information-request-thread.pdf',
+             'The request and the Facilities Director’s answers', 2,
+             'TJ Loughlin’s request of 7 August 2025 and the Facilities Director’s answers to '
+             '10 September 2025.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'finance-committee-2026-10-22-sped', 'origin': 'school',
         'title': 'Special education funding, for the Finance Committee, 22 October 2026',
         'blurb': 'The Superintendent’s slides on how special education is paid for, shown to the '
@@ -5962,11 +5975,12 @@ def main():
             # A SQLite side file (`-journal`, `-wal`, `-shm`) belongs to a skipped database
             # and exists only while something is writing it. On 10 October 2026 the refresh
             # ran this check while build_search_index.py held `search-fts.db-journal` open,
-            # and failed on a file that was gone a minute later.
+            # and failed on a file that was gone a minute later. `data/lunenburg.db` is
+            # catalogued rather than skipped, so its journal has to be tested against both.
             sidecar = re.sub(r'-(journal|wal|shm)$', '', rel)
             if (fn.startswith('.') or fn == 'index.csv'
                     or fn in SKIP_FILES or rel in SKIP_FILES
-                    or (sidecar != rel and sidecar in SKIP_FILES)
+                    or (sidecar != rel and (sidecar in SKIP_FILES or sidecar in catalogued))
                     or rel in catalogued or is_edition(rel, catalogued)
                     or in_family(rel)):
                 continue

@@ -53,6 +53,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
 DB = os.path.join(DATA, 'lunenburg.db')
+BUILDING = os.path.join(ROOT, 'build', 'lunenburg.db.building')
 
 SCHEMA = """
 -- ------------------------------------------------------------------ dimensions
@@ -3403,9 +3404,16 @@ def main():
     # Before the old database is removed, so a refusal leaves the last good build in place.
     n_report = check_report_datasets()
 
-    if os.path.exists(DB):
-        os.remove(DB)                     # rebuilt from scratch, always
-    db = sqlite3.connect(DB)
+    # REBUILT FROM SCRATCH, ALWAYS, AND BESIDE THE LIVE COPY. check_generated.py runs this at the
+    # same time as every check that reads the database. Removing DB here left a half-built file
+    # at the published path for minutes: readers got `database is locked` or an empty table
+    # (`build_inputs: local 0`), and `lunenburg.db-journal` appeared in sources/. It is swapped in
+    # by os.replace at the end, so a reader sees the last whole build or this one.
+    os.makedirs(os.path.dirname(BUILDING), exist_ok=True)
+    for stale in (BUILDING, BUILDING + '-journal'):
+        if os.path.exists(stale):
+            os.remove(stale)
+    db = sqlite3.connect(BUILDING)
     db.executescript(SCHEMA)
     db.executescript(PROVENANCE_SCHEMA)
     db.executemany('INSERT INTO fiscal_period VALUES (?,?,?,?)', PERIODS)
@@ -3524,6 +3532,7 @@ def main():
           'inference as a mapping, so it stays empty and the view does the joining.')
 
     db.close()
+    os.replace(BUILDING, DB)
     if args.check and bad:
         return 1
     return 0

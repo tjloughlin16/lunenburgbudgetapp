@@ -293,7 +293,9 @@ def resolve(c, items):
             return None
         rel = x['doc_url'][len('/docs/'):]
         b, f = rel.split('/')[1], rel.split('/')[2]
-        row.update(basis='printed', doc=rel, text='meetings/text/%s/%s' % (b, f),
+        # THE EXTRACTED TEXT, never the document: `f` is the PDF or Word file, and the checker in
+        # build_threads.py reads the text. 12 of 13 town-minutes picks dropped on this.
+        row.update(basis='printed', doc=rel, text='meetings/text/%s/%s.txt' % (b, os.path.splitext(f)[0]),
                    where='%s minutes, %s' % (x['board'], pretty(x['date'])))
     else:
         m = re.search(r'v=([\w-]{11})', x['video_url'])

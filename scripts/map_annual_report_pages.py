@@ -649,6 +649,9 @@ PROOF = {
     # all of them at once, so a row's existence in this file is the verdict -- CONSTRUCTION,
     # the same argument as `treasurers-cash` below.
     'trust-fund-balances': (None, CONSTRUCTION),
+    # extract_scholarship_funds.py writes a row only when the table's own identity closes on it,
+    # or last year's proven ending cash plus this year's activity does; `basis` says which.
+    'scholarship-funds': (None, CONSTRUCTION),
     'treasurers-cash': (None, CONSTRUCTION),
     # the register of stabilization rows that did NOT foot. Its rows are real and published
     # with the reconciliation that fails; it is the definition of unproven.

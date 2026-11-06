@@ -246,7 +246,7 @@ def build():
             'boards': ';'.join(sorted(r['boards'])),
             'first': min(r['dates']), 'last': max(r['dates']),
             'fiscal_years': ';'.join(sorted({fiscal_year(d) for d in r['dates']})),
-            'meeting_list': ' | '.join('%s %s' % (d, b) for b, d in sorted(r['meetings'], key=lambda x: x[1], reverse=True)),
+            'meeting_list': ' | '.join('%s %s' % (d, b) for b, d in sorted(r['meetings'], key=lambda x: (x[1], x[0]), reverse=True)),
             'question': sorted(r['questions'])[-1][1],
             'citations': ' | '.join(sorted(set(r['cites']), reverse=True)),
             'data_in_play_as_heard': ' | '.join(r['data'][:12]),

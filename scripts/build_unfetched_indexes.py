@@ -39,7 +39,7 @@ prose in that column would publish a broken link. The column therefore holds a U
 nothing, and for a document that did not come off a website the address is carried in the
 LABEL, which is what a searcher actually reads:
 
-    ... (records request, August 2025)
+    ... (emailed request, August 2025)
 
 That is also the fix for the thing that went wrong. The label is the only part of a
 document a searcher sees, so it carries the words the document uses about itself --
@@ -182,20 +182,20 @@ TREES = {
          "Parks grounds maintenance bid, year one from 1 July 2024 — mowing, weeding, turf, "
          "clean-ups and infield work priced per park (Fitzgerald, McNally, Marshall, Memorial, "
          "Town Beach, Wallis); the town's own filename is “Landscaping Costs.pdf” "
-         "(records request, August 2025)"),
+         "(emailed request, August 2025)"),
         ('account-details/parks-program-financials-fy2025-myrec.pdf',
          'account-details/parks-program-financials-fy2025-myrec.txt',
          "Parks & Recreation programme sales, FY2025 — registrations and fees programme by "
          "programme, resident and non-resident, from the MyRec registration system "
-         "(records request, August 2025)"),
+         "(emailed request, August 2025)"),
         ('account-details/parks-membership-sales-fy2025-myrec.pdf',
          'account-details/parks-membership-sales-fy2025-myrec.txt',
          "Beach passes sold, FY2025 — counts and receipts by pass type, resident and "
-         "non-resident, from the MyRec registration system (records request, August 2025)"),
+         "non-resident, from the MyRec registration system (emailed request, August 2025)"),
         ('account-details/parks-program-offerings-fy2025-myrec.pdf',
          'account-details/parks-program-offerings-fy2025-myrec.txt',
          "Every Parks & Recreation programme offered in FY2025 as the public saw it — "
-         "description, sessions, ages and fee, 32 pages (records request, August 2025)"),
+         "description, sessions, ages and fee, 32 pages (emailed request, August 2025)"),
         # Our provenance notes. Below the line (rule 3): we wrote them, and the label says so.
         # They are indexed because they are where a publisher's filename, a request date and
         # a grade of evidence are written down -- which is exactly what somebody looking for
@@ -232,9 +232,11 @@ TREES = {
          "(our provenance note)"),
     ],
     'correspondence': [
+        ('2025-08-07-parks-information-request-thread.pdf', '2025-08-07-parks-information-request-thread.pdf',
+         'The email thread behind the Parks & Recreation reports: TJ Loughlin\u2019s request of 7 August 2025 and the Facilities Director\u2019s answers to 10 September 2025'),
         ('2024-03-01-parks-beach-and-swim-fees.txt', '2024-03-01-parks-beach-and-swim-fees.txt',
          "Beach pass and swim lesson fees the Parks Commission voted, 1 March 2024 — an internal "
-         "town email (records request, August 2025)"),
+         "town email (emailed request, August 2025)"),
         ('2025-05-bus-fees-superintendent.txt', '2025-05-bus-fees-superintendent.txt',
          "School bus fees for 2025-26, May 2025 — email from the Superintendent "
          "(from the recipient's inbox, August 2026)"),
@@ -350,6 +352,23 @@ def rows_for(folder):
     return out, problems
 
 
+def carried_rows(folder, path):
+    """Rows already in this tree's index.csv that TREES does not name, kept as written.
+
+    TREES IS NOT THE WHOLE CATALOGUE. An ingest appends its own documents to these files (the
+    warrant batches, the PEC agreement, the peer contracts) and never adds them here. This used
+    to write TREES alone, so one run on 5 November 2026 silently removed 67 rows across
+    three trees, and nothing failed because every document was still on disk.
+    """
+    if not os.path.exists(path):
+        return []
+    known = {('sources/%s/%s' % (folder, local) if local else '',
+              'sources/%s/%s' % (folder, text) if text else '')
+             for local, text, _ in TREES[folder]}
+    with open(path, encoding='utf-8', newline='') as fh:
+        return [r for r in csv.DictReader(fh) if (r['local'], r['text']) not in known]
+
+
 def render(rows):
     buf = io.StringIO(newline='')
     w = csv.DictWriter(buf, fieldnames=HEADER, lineterminator='\n')
@@ -367,8 +386,9 @@ def main():
     for folder in sorted(TREES):
         rows, problems = rows_for(folder)
         allprob += problems
-        total += len(rows)
         path = os.path.join(SRC, folder, 'index.csv')
+        rows += carried_rows(folder, path)
+        total += len(rows)
         text = render(rows)
         have = open(path, encoding='utf-8').read() if os.path.exists(path) else None
         if args.check:

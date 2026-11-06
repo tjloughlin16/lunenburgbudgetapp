@@ -807,6 +807,20 @@ def routed_reports(all_of_area=False, include_unlisted=False):
     # hub from topics.json, so a row here was a second entry for the same door, under the
     # long report's OLD title -- and its payload's conclusions are the absorbed report's.
     tabs = [t for t in tabs if slug.get(t) not in topic_categories()]
+    # MINUS A PAGE WHOSE ADDRESS A TOPIC PAGE NOW HOLDS, the same case one level down.
+    # `TOPIC_ALIASES` in routes.ts sends /budget-vs-actual (tab `variance`) to the topic that
+    # replaced the report on 29 October 2026, and its page component was removed, so asking
+    # for its owner below refused every include_unlisted caller. /youth-sports went the same
+    # way on 5 November. An alias to a hub is the filter above; these aim at a topic id.
+    al = re.search(r'export const TOPIC_ALIASES: Record<string, string> = \{(.*?)\n\}', src, re.S)
+    if not al:
+        raise SystemExit('routes.ts: could not find the TOPIC_ALIASES table')
+    entries = re.findall(r"(?:'([a-z0-9-]+)'|\b([a-z0-9]+)): '([a-z0-9-]+)'",
+                         re.sub(r'//[^\n]*', '', al.group(1)))
+    if not entries:
+        raise SystemExit('routes.ts: TOPIC_ALIASES parsed to nothing')
+    taken = {a or b for a, b, target in entries if target not in topic_categories()}
+    tabs = [t for t in tabs if slug.get(t) not in taken]
     lab = re.search(r'export const LABEL: Record<Tab, string> = \{(.*?)\n\}', src, re.S)
     if not lab:
         raise SystemExit('routes.ts: could not find the LABEL table')
