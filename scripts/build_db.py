@@ -1395,7 +1395,17 @@ REFERENCE = [
     # quoted from the record that states it (4 November 2026).
     'scholarship-funds', 'scholarship-purposes',
 
+    # The senior tax work-off programme, by season, as printed in the annual reports and the
+    # boards' minutes: every figure carries its citation and quote.
+    'senior-tax-workoff',
+
 ]
+
+# YEAR-BY-YEAR SERIES READ OUT OF THE ANNUAL REPORTS, one family a file: quotes checked against
+# the page and parts tied to the printed total by scripts/report_series.py. By glob, so a new
+# family loads without touching this file. `series-coverage` says which editions were looked at.
+REFERENCE += sorted(os.path.basename(_p)[:-4] for _p in glob.glob(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sources', 'data', 'series-*.csv')))
 
 # EVERY `report-*.csv` IS LOADED OR SAYS WHY NOT. The annual-report datasets were loaded from
 # the hand-kept list above, and four (`report-index`, `report-signatures`, `report-filing`,

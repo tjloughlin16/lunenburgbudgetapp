@@ -5627,9 +5627,9 @@
      "stars": 3,
      "what": "225 rows: dataset, edition, pages, the report’s own filename, both of the town’s addresses for it, and the sha256 of our copy. Rule 12 wants the address at the same time as the figure; this is that join, and notes/generated/DATASET-PROVENANCE.md is its readable form.",
      "kind": "Data",
-     "bytes": 189587,
+     "bytes": 205155,
      "url": "/docs/data/dataset-provenance.csv",
-     "count": 711,
+     "count": 778,
      "unit": "rows",
      "textUrl": "/docs/data/dataset-provenance.csv"
     },
@@ -6071,11 +6071,23 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 133509,
+     "bytes": 134894,
      "url": "/docs/data/table-semantics.csv",
-     "count": 211,
+     "count": 214,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
+    },
+    {
+     "path": "data/series-fire-calls.csv",
+     "title": "Fire Department calls by year and category, 1959-FY2025",
+     "stars": 2,
+     "what": "What the Fire Department printed about its calls in every annual report: the total and each category as printed, with the quote and the PDF page. Parts are tied to the printed total, and a year that does not tie says so.",
+     "kind": "Data",
+     "bytes": 115546,
+     "url": "/docs/data/series-fire-calls.csv",
+     "count": 926,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-fire-calls.csv"
     },
     {
      "path": "data/stated-cuts.csv",
@@ -6155,9 +6167,9 @@
      "stars": 2,
      "what": "Written by us. Keyed on the column NAME rather than on table-plus-name, because 883 column instances share only 285 distinct names and the dangerous ones mean the same thing everywhere: `v1` is an ordinal on every table that has it, `status` splits rows into checked, check failed and no check on every extract. Each entry carries a `caution` saying what goes wrong if the column is used without knowing that, and every one of those was written after getting it wrong at least once.",
      "kind": "Data",
-     "bytes": 24981,
+     "bytes": 26394,
      "url": "/docs/data/column-glossary.csv",
-     "count": 179,
+     "count": 190,
      "unit": "rows",
      "textUrl": "/docs/data/column-glossary.csv"
     },
@@ -6628,6 +6640,18 @@
      "count": 202,
      "unit": "rows",
      "textUrl": "/docs/data/report-new-growth-history.csv"
+    },
+    {
+     "path": "data/report-series/fire-calls.csv",
+     "title": "Fire Department calls by year and category, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 94598,
+     "url": "/docs/data/report-series/fire-calls.csv",
+     "count": 926,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/fire-calls.csv"
     },
     {
      "path": "data/report-tax-bill-breakdown.csv",
@@ -7134,6 +7158,30 @@
      "textUrl": "/docs/data/report-school-building-approved-costs.csv"
     },
     {
+     "path": "data/series-coverage.csv",
+     "title": "Which annual reports were checked for each series",
+     "stars": 1,
+     "what": "One row per series per edition: whether the series is printed there and, if not, which pages were looked at.",
+     "kind": "Data",
+     "bytes": 1611,
+     "url": "/docs/data/series-coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-coverage.csv"
+    },
+    {
+     "path": "data/report-series/fire-calls.coverage.csv",
+     "title": "Fire Department calls by year and category, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 1611,
+     "url": "/docs/data/report-series/fire-calls.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/fire-calls.coverage.csv"
+    },
+    {
      "path": "data/report-office-budget-cuts.csv",
      "title": "Annual-report extract: office budget cuts",
      "stars": 1,
@@ -7230,7 +7278,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 117407744,
+     "bytes": 117583872,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -64256,9 +64304,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5771,
+  "documents": 5775,
   "groups": 33,
-  "bytes": 7350175557,
+  "bytes": 7350583417,
   "loadBearing": 220
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 234 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

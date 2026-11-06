@@ -178,3 +178,14 @@ unaccounted_cnt,The starting cohort less the four destinations the row accounts 
 eligible_students_claimed,Children whose high-cost special education costs the district claimed circuit breaker reimbursement for.,students,publisher,"A count of CLAIMS, which is not the same set as the placements in `placement-counts.csv`, and not the same as students with disabilities."
 agrees_with_teacher_subject,Whether two DESE datasets state the same total teacher FTE for this organisation and year.,,derived,"Written on the `All` rows only. Where it is `no`, both figures are kept and neither publication is treated as correcting the other."
 printing,"Which of several rows published under one natural key this is: 1 for the first, 2 for the next.",,derived,"Part of the primary key of three DESE tables and of enterprise_balance_sheet. It exists because the publisher printed the same key twice — sometimes identically, sometimes with the district under a different name, and sometimes with DIFFERENT FIGURES. Nothing may be dropped, so collapse on it before aggregating rather than assuming the key is unique."
+pdf_page,"The page of the PDF file, counted from its first page. It is not the number printed on the page.",,ours,"Printed page numbers differ from this, often by several."
+row_group,"Which set of figures this row belongs to, within a year.",,ours,A total ties only to the parts in its own group.
+row_role,"`total` is a figure the page prints as a total, `part` is one figure that adds up to it, `single` adds up to nothing.",,ours,Summing without filtering on this counts every total twice.
+our_grouping,"Our grouping of a category across years whose names differ, such as ambulance or medical.",,ours,"Ours, not printed. The town's categories change by era, so a series on this is a judgement."
+group_parts_sum,"The sum of this group's parts, computed by us.",,ours,
+group_total_printed,The total the page prints for this group.,,publisher,
+group_ties,"Whether the group's parts reach its printed total, and by how much if not.",,ours,A year that does not tie is kept as printed. Neither the total nor the parts have been adjusted.
+quote_found,"Whether the quote was found on the cited page: `yes` in order, `apart` with its words on the page but separated, usually by a two-column layout.",,ours,`apart` is a weaker check.
+year_basis,What kind of year `year` is.,,ours,
+family,Which series this row is about.,,ours,
+pages_looked,The PDF pages opened before saying a series is not printed in an edition.,,ours,

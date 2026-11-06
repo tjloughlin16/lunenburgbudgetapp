@@ -113,7 +113,7 @@ Read `column_meaning` before reading a value.
 | `annual-report-contents.csv` | 199 | 2011–2025 | What each report contains, section by section |
 | `annual-report-survey.csv` | 2,751 | 2011–2025 | Every page, and which instrument recovers it |
 | `extraction-plan.csv` | 555 | 2011–2025 | Which pages each dataset is read from |
-| `dataset-provenance.csv` | 711 | 1959–2025 | Every dataset joined to the document it came from |
+| `dataset-provenance.csv` | 778 | 1959–2025 | Every dataset joined to the document it came from |
 | `report-anomalies.csv` | 521 | 2011–2025 | Where a reading is not credible, and where to look |
 
 ## What is NOT captured

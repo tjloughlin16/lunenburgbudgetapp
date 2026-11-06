@@ -5901,6 +5901,8 @@ def main():
                  'Departments that list work-off positions, by season', 1,
                  'Every department each annual report lists, as printed and as grouped by us, '
                  'with the line it came from.')]
+            import report_series
+            g['items'] = list(g['items']) + report_series.catalogue_items()
             break
 
     global LINKS, COPIES

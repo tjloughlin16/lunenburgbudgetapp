@@ -57,6 +57,7 @@ OUT_MD = os.path.join(ROOT, 'notes', 'generated', 'DATASET-PROVENANCE.md')
 # Datasets built from the annual town reports, and the column naming the source year.
 DATASETS = [
     ('placement-counts', 'fy'), ('ballot-questions', 'fy_report'),
+    ('series-fire-calls', 'edition'),
     ('annual-report-receipts', 'fy'), ('special-revenue-funds', 'edition'),
     ('staff-roster-entries', 'fy'), ('annual-report-catalogue', 'edition'),
     ('report-appropriations', 'edition'), ('report-trust-funds', 'edition'),

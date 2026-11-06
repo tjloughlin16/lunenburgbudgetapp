@@ -223,11 +223,11 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 </header>
 
 <div class="metrics">
-  <div class="metric"><div class="v">211</div><div class="l">tables</div></div>
+  <div class="metric"><div class="v">214</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">416,326</div><div class="l">rows</div></div>
-  <div class="metric"><div class="v">3419</div><div class="l">columns</div></div>
-  <div class="metric"><div class="v">77%</div><div class="l">columns described</div></div>
+  <div class="metric"><div class="v">417,421</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">3475</div><div class="l">columns</div></div>
+  <div class="metric"><div class="v">76%</div><div class="l">columns described</div></div>
 </div>
 
 
@@ -2059,7 +2059,7 @@ to $325</td><td>quoted in source</td></tr>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Town money and town subjects</b><span>85 tables &middot; 121,529 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Town money and town subjects</b><span>88 tables &middot; 122,540 rows</span></summary>
 <p class="cap">The other 67 departments, the receipts that fund them, and what the annual reports print about the town.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
 <details class="t"><summary><span class="srow"><code>annual_report_receipts</code> <span class="tag scope stown">town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">extract</span> <span class="n">7,856 rows</span> <span class="yr">1959 … 2022 (63 years)</span><button class="open" data-t="annual_report_receipts">Query table</button></span><span class="gr">one row per revenue line per year</span></summary>
@@ -4742,6 +4742,98 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>Geof Lucier scholarship</td><td>post - secondary education in the fields of…</td><td>minutes</td><td>2024</td><td>sources/meetings/school-committee/2024-06-1…</td><td>2</td><td>sources/meetings/text/school-committee/2024…</td><td><span class="nul">empty</span></td><td>Four scholarships of $1,000.00 each, receiv…</td></tr>
 </table></div>
 </details>
+<details class="t"><summary><span class="srow"><code>senior_tax_workoff</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">18 rows</span><button class="open" data-t="senior_tax_workoff">Query table</button></span><span class="gr">one row per programme season (calendar year)</span></summary>
+<p class="ans">How many residents took part in the senior property tax work-off programme each season, the hours and the dollars abated, with the source of each figure.</p>
+<p class="warn">Each figure has its own citation, quote and qualifier; a value may be approximate or come from a board minute rather than the annual report. Read the <code>_qualifier</code> and <code>_kind</code> columns before comparing years.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>season</code></td><td class="ty">TEXT</td><td>Which athletic season.</td></tr>
+<tr><td><code>participants</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_how</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_cite</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_alt</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_alt_qualifier</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_alt_cite</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>participants_alt_quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>hours</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>hours_qualifier</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>hours_cite</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>hours_quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_qualifier</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_how</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_basis</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_cite</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_alt</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_alt_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_alt_how</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_alt_basis</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_alt_cite</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>dollars_alt_quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>cap</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>cap_cite</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>cap_quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>rate</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>rate_kind</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>rate_cite</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>rate_quote</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>note</code></td><td class="ty">TEXT</td><td>What we recorded about this row.</td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>season</th><th>participants</th><th>participants_kind</th><th>participants_how</th><th>participants_cite</th><th>participants_quote</th><th>participants_alt</th><th>participants_alt_qualifier</th><th>participants_alt_cite</th><th>participants_alt_quote</th><th>hours</th><th>hours_qualifier</th><th>hours_cite</th><th>hours_quote</th><th>dollars</th><th>dollars_qualifier</th><th>dollars_kind</th><th>dollars_how</th><th>dollars_basis</th><th>dollars_cite</th><th>dollars_quote</th><th>dollars_alt</th><th>dollars_alt_kind</th><th>dollars_alt_how</th><th>dollars_alt_basis</th><th>dollars_alt_cite</th><th>dollars_alt_quote</th><th>cap</th><th>cap_cite</th><th>cap_quote</th><th>rate</th><th>rate_kind</th><th>rate_cite</th><th>rate_quote</th><th>note</th></tr>
+<tr><td>CY2021</td><td>6</td><td>printed</td><td><span class="nul">empty</span></td><td>sources/town-annual-reports/text/4128-fy-20…</td><td>During 2021, there were six residents who p…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>359.50</td><td><span class="nul">empty</span></td><td>sources/town-annual-reports/text/4128-fy-20…</td><td>accumulated 359.50 hours amounting to $4,85…</td><td>4853.25</td><td><span class="nul">empty</span></td><td>printed</td><td><span class="nul">empty</span></td><td>not stated</td><td>sources/town-annual-reports/text/4128-fy-20…</td><td>accumulated 359.50 hours amounting to $4,85…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1500</td><td>sources/town-annual-reports/text/4128-fy-20…</td><td>The 2021 tax abatement maximum is $1,500</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+<tr><td>CY2023</td><td>11</td><td>printed</td><td><span class="nul">empty</span></td><td>sources/meetings/text/board-of-assessors/20…</td><td>The total is under $9,363.65 for 11 individ…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>9363.65</td><td>under</td><td>printed</td><td><span class="nul">empty</span></td><td>not stated</td><td>sources/meetings/text/board-of-assessors/20…</td><td>The total is under $9,363.65 for 11 individ…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>No program section in the FY2023 annual rep…</td></tr>
+<tr><td>CY2025</td><td>6</td><td>printed</td><td><span class="nul">empty</span></td><td>sources/town-annual-reports/text/4130-fy-20…</td><td>During 2025, there were six residents who p…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>293.75</td><td><span class="nul">empty</span></td><td>sources/town-annual-reports/text/4130-fy-20…</td><td>accumulated 293.75 hours amounting to $4,40…</td><td>4406.25</td><td><span class="nul">empty</span></td><td>printed</td><td><span class="nul">empty</span></td><td>before withholding</td><td>sources/town-annual-reports/text/4130-fy-20…</td><td>accumulated 293.75 hours amounting to $4,40…</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td><td>1500</td><td>sources/town-annual-reports/text/4130-fy-20…</td><td>The 2025 tax abatement maximum is $1,500</td><td>15</td><td>printed</td><td>sources/town-annual-reports/text/4130-fy-20…</td><td>The current hourly rate is $15.00 per hour</td><td><span class="nul">empty</span></td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>series_coverage</code> <span class="tag scope stown">town</span> <span class="tag">provenance</span> <span class="n">67 rows</span><button class="open" data-t="series_coverage">Query table</button></span><span class="gr">one row per series family per annual report edition</span></summary>
+<p class="ans">Which annual report editions were checked for each year-by-year series, and whether the series is printed there.</p>
+<p class="warn">A family with no row for an edition was not looked at. <code>not printed</code> names the pages looked at, and is a statement about those pages.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>family</code></td><td class="ty">TEXT</td><td>Which series this row is about.</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>status</code></td><td class="ty">TEXT</td><td>Whether this row&#x27;s table was CHECKED against a total the report itself prints.<br><span class="ccaut"><code>checked</code>, <code>check failed</code>, <code>no check</code>. NOTHING may be aggregated without splitting on this — check failed is not slightly-worse data, it is data whose columns do not sum to the printed total.</span></td></tr>
+<tr><td><code>pages_looked</code></td><td class="ty">TEXT</td><td>The PDF pages opened before saying a series is not printed in an edition.</td></tr>
+<tr><td><code>note</code></td><td class="ty">TEXT</td><td>What we recorded about this row.</td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>family</th><th>edition</th><th>status</th><th>pages_looked</th><th>note</th></tr>
+<tr><td>fire-calls</td><td>2002</td><td>held</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+<tr><td>fire-calls</td><td>2008</td><td>held</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+<tr><td>fire-calls</td><td>FY2022</td><td>held</td><td><span class="nul">empty</span></td><td><span class="nul">empty</span></td></tr>
+</table></div>
+</details>
+<details class="t"><summary><span class="srow"><code>series_fire_calls</code> <span class="tag scope stown">town</span> <span class="tag">extract</span> <span class="n">926 rows</span><button class="open" data-t="series_fire_calls" data-q="SELECT year, value FROM series_fire_calls WHERE row_group=&#x27;calls&#x27; AND row_role=&#x27;total&#x27; ORDER BY year">Query table</button></span><span class="gr">one row per category the Fire Department printed for a year, plus a total row where a total is printed</span></summary>
+<p class="ans">How many calls the Fire Department reported each year, 1959-FY2025, and in what categories, read from every annual report.</p>
+<p class="warn">Split on <code>row_role</code> before summing: <code>total</code> rows and <code>part</code> rows are the same calls counted twice. <code>group_ties</code> says whether a year&#x27;s parts reach its printed total, and some years do not; nothing was adjusted. Categories change by era, inspections are inside some totals and outside others, and <code>our_grouping</code> is our judgement rather than anything printed. A count of calls is not a count of emergencies, and no year here says why the number moved.</p>
+<div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
+<tr><td><code>year</code></td><td class="ty">TEXT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>year_basis</code></td><td class="ty">TEXT</td><td>What kind of year <code>year</code> is.</td></tr>
+<tr><td><code>edition</code></td><td class="ty">TEXT</td><td>Which annual town report the row was read from, as that report names itself.<br><span class="ccaut">FY2016 has TWO editions — the report and an addendum. Summing on fy rather than edition counts that year twice.</span></td></tr>
+<tr><td><code>pdf_page</code></td><td class="ty">TEXT</td><td>The page of the PDF file, counted from its first page. It is not the number printed on the page.<br><span class="ccaut">Printed page numbers differ from this, often by several.</span></td></tr>
+<tr><td><code>row_group</code></td><td class="ty">TEXT</td><td>Which set of figures this row belongs to, within a year.<br><span class="ccaut">A total ties only to the parts in its own group.</span></td></tr>
+<tr><td><code>row_role</code></td><td class="ty">TEXT</td><td><code>total</code> is a figure the page prints as a total, <code>part</code> is one figure that adds up to it, <code>single</code> adds up to nothing.<br><span class="ccaut">Summing without filtering on this counts every total twice.</span></td></tr>
+<tr><td><code>measure</code></td><td class="ty">TEXT</td><td>Which DESE measure this row reports.</td></tr>
+<tr><td><code>value</code></td><td class="ty">TEXT</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>unit</code></td><td class="ty">TEXT</td><td>What the figure is counted in.</td></tr>
+<tr><td><code>our_grouping</code></td><td class="ty">TEXT</td><td>Our grouping of a category across years whose names differ, such as ambulance or medical.<br><span class="ccaut">Ours, not printed. The town&#x27;s categories change by era, so a series on this is a judgement.</span></td></tr>
+<tr><td><code>quote</code></td><td class="ty">TEXT</td><td>What the source says, verbatim.</td></tr>
+<tr><td><code>note</code></td><td class="ty">TEXT</td><td>What we recorded about this row.</td></tr>
+<tr><td><code>group_parts_sum</code></td><td class="ty">TEXT</td><td>The sum of this group&#x27;s parts, computed by us.</td></tr>
+<tr><td><code>group_total_printed</code></td><td class="ty">TEXT</td><td>The total the page prints for this group.</td></tr>
+<tr><td><code>group_ties</code></td><td class="ty">TEXT</td><td>Whether the group&#x27;s parts reach its printed total, and by how much if not.<br><span class="ccaut">A year that does not tie is kept as printed. Neither the total nor the parts have been adjusted.</span></td></tr>
+<tr><td><code>quote_found</code></td><td class="ty">TEXT</td><td>Whether the quote was found on the cited page: <code>yes</code> in order, <code>apart</code> with its words on the page but separated, usually by a two-column layout.<br><span class="ccaut"><code>apart</code> is a weaker check.</span></td></tr>
+</table></div>
+<p class="cap sm">First 3 rows, in rowid order:</p>
+<div class="scroll"><table class="samp"><tr><th>year</th><th>year_basis</th><th>edition</th><th>pdf_page</th><th>row_group</th><th>row_role</th><th>measure</th><th>value</th><th>unit</th><th>our_grouping</th><th>quote</th><th>note</th><th>group_parts_sum</th><th>group_total_printed</th><th>group_ties</th><th>quote_found</th></tr>
+<tr><td>1985</td><td>the year the page names</td><td>1985</td><td>33</td><td>calls</td><td>part</td><td>Box Alarms</td><td>26</td><td>calls</td><td><span class="nul">empty</span></td><td>Box Alarms - 26</td><td><span class="nul">empty</span></td><td>523</td><td>523</td><td>yes</td><td>yes</td></tr>
+<tr><td>1987</td><td>the year the page names</td><td>1987</td><td>20</td><td>calls</td><td>part</td><td>Illegal Burning</td><td>5</td><td>calls</td><td><span class="nul">empty</span></td><td>Illegal Burning - 5</td><td><span class="nul">empty</span></td><td>545</td><td>545</td><td>yes</td><td>yes</td></tr>
+<tr><td>2001</td><td>the year the page names</td><td>2001</td><td>20</td><td>calls</td><td>part</td><td>Fires</td><td>58</td><td>calls</td><td><span class="nul">empty</span></td><td>FIRES 58</td><td>top-level categories only; sub-lines not la…</td><td>1595</td><td>1567</td><td>no, parts +28 against the total</td><td>yes</td></tr>
+</table></div>
+</details>
 <details class="t"><summary><span class="srow"><code>stabilization_balances</code> <span class="tag scope stown">town</span> <span class="tag">fact</span> <span class="n">41 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="stabilization_balances">Query table</button></span><span class="gr">one row per fund, per year</span></summary>
 <p class="ans">Every stabilization fund&#x27;s ending cash and ending market value, FY2011-FY2025, read off the trust tables in the annual reports.</p>
 <p class="warn">ONLY PROVEN ROWS ARE HERE. Each exists because an identity the table states about itself closed -- beginning plus activity equals ending cash, ending cash plus unrealised equals ending market. A fund-year that is absent was refused, not zero. FY2023 refuses on OCR alone: its page prints the arithmetic correctly and the scanner returns the figure block as two tokens.</p>
@@ -5868,10 +5960,10 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,509 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 14,593 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
-<details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">198 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
+<details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">201 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
 <p class="ans">Which files, by sha256, produced the figures in this database — so a reader can tell whether it still matches them. The database is a derived read model rebuilt from the CSVs; this is the only thing that records WHEN and FROM WHAT, which is what makes staleness detectable.</p>
 <p class="warn">A hash here is of the bytes at build time. It says nothing about whether those bytes were correct, only whether they have since changed. Ask scripts/db_freshness.py rather than reading this by hand.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -5894,8 +5986,8 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-11-06T16:11:18Z</td></tr>
-<tr><td>inputs</td><td>198</td></tr>
+<tr><td>built_at</td><td>2026-11-06T21:30:56Z</td></tr>
+<tr><td>inputs</td><td>201</td></tr>
 </table></div>
 </details>
 <p class="tierhead"><b>Not about money</b><span>Counts, names, dates and documents — everything this archive holds that is not a dollar figure</span></p>
@@ -5974,7 +6066,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2022</td><td>4129-fy-2022-annual-town-report.pdf</td><td>154</td><td>layout</td><td>0</td><td>0</td><td>3297</td><td>0</td><td>town_meeting</td><td><span class="nul">empty</span></td><td>text, no figures</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>column_glossary</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">179 rows</span><button class="open" data-t="column_glossary">Query table</button></span><span class="gr">one row per DISTINCT column name across the whole database</span></summary>
+<details class="t"><summary><span class="srow"><code>column_glossary</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">190 rows</span><button class="open" data-t="column_glossary">Query table</button></span><span class="gr">one row per DISTINCT column name across the whole database</span></summary>
 <p class="ans">One row per DISTINCT column name across the whole database: what it means, its unit, whether it is published or ours, and the caution attached to it.</p>
 <p class="warn">Keyed on the NAME, not on table plus name, because <code>v1</code> and <code>status</code> mean the same dangerous thing everywhere they appear. Where a name genuinely differs by table, the table entry says so.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -5991,7 +6083,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>lunenburg_rank_of_districts</td><td>Lunenburg’s position in that distribution, …</td><td><span class="nul">empty</span></td><td>derived</td><td>Read the denominator. It includes charter a…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>dataset_document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">711 rows</span><button class="open" data-t="dataset_document">Query table</button></span><span class="gr">one row per dataset per document</span></summary>
+<details class="t"><summary><span class="srow"><code>dataset_document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">778 rows</span><button class="open" data-t="dataset_document">Query table</button></span><span class="gr">one row per dataset per document</span></summary>
 <p class="ans">The join between an extracted dataset and the document it came from: which pages, how many rows, whether it reconciled, and the publisher&#x27;s own label, size and checksum.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
 <tr><td><code>dataset</code></td><td class="ty">TEXT</td><td>Which extract family this row belongs to.</td></tr>
@@ -6009,9 +6101,9 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 3 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>dataset</th><th>edition</th><th>rows</th><th>pages</th><th>page_count</th><th>reconciled</th><th>partial</th><th>document</th><th>publisher_label</th><th>upstream</th><th>sha256</th><th>bytes</th></tr>
-<tr><td>special-revenue-funds</td><td>1997</td><td>88</td><td>57,58,59,60</td><td>4</td><td>0</td><td>0</td><td>4523-1997-annual-town-report.pdf</td><td>1997 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>ddef7192c8858956fa40f5d856d9c080d2d5778ce09…</td><td>4892501</td></tr>
-<tr><td>staff-roster-entries</td><td>1996</td><td>114</td><td>36,40,41</td><td>3</td><td>0</td><td>0</td><td>4522-1996-annual-town-report.pdf</td><td>1996 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>77d133e7499f3749579dc594c9cbb477f1d4c688d1f…</td><td>5059499</td></tr>
-<tr><td>report-monty-tech</td><td>FY2017</td><td>70</td><td>142,143</td><td>2</td><td>0</td><td>0</td><td>4124-fy-2017-annual-town-report.pdf</td><td>FY 2017 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>4c6fbf70d0aff247bc2e18914ec1b0dcfddeeb33da8…</td><td>37102314</td></tr>
+<tr><td>special-revenue-funds</td><td>1993</td><td>59</td><td>32,33,34</td><td>3</td><td>0</td><td>0</td><td>4519-1993-annual-town-report.pdf</td><td>1993 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>bc727914bdd599ebfbc4b40ffa19439d970d38d88b3…</td><td>2692179</td></tr>
+<tr><td>report-dept-activity</td><td>1984</td><td>41</td><td>23,24</td><td>2</td><td>0</td><td>0</td><td>4484-1984-annual-town-report.pdf</td><td>1984 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>41e023d099bddcb8b16e4684301017abe767e228895…</td><td>12166235</td></tr>
+<tr><td>report-vital-records</td><td>2003</td><td>287</td><td>11,76,77,78,79,80</td><td>6</td><td>0</td><td>0</td><td>4529-2003-annual-town-report.pdf</td><td>2003 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>380875fbd1121db3ad1c59e76a891f0eb76553c5c73…</td><td>5611429</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,466 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
@@ -6080,7 +6172,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td class="num">2020</td><td>FY2020</td><td>4127-fy-2020-annual-town-report.pdf</td><td>40-41</td><td>Trust funds fiscal year 2020 summary</td><td>unreadable / OCR damage</td><td>table note</td><td>Here the table is transposed into column ru…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">211 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
+<details class="t"><summary><span class="srow"><code>table_semantics</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">214 rows</span><button class="open" data-t="table_semantics">Query table</button></span><span class="gr">one row per table in this database</span></summary>
 <p class="ans">This page&#x27;s own source. One row per table: its role, whose money it is, how finely it resolves money, its grain, what it holds, and what goes wrong if it is used carelessly.</p>
 <p class="warn">Self-describing, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
