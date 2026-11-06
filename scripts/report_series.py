@@ -51,6 +51,9 @@ FAMILIES = {
                    'What the Fire Department printed about its calls in every annual report: the '
                    'total and each category as printed, with the quote and the PDF page. Parts '
                    'are tied to the printed total, and a year that does not tie says so.'),
+    'tax-collection-holes': ('Tax collection by levy year: the editions the other two datasets do not hold',
+                   'The Tax Collector\'s receivable table for 1961, 1962, 1967, FY2011-FY2013, FY2019 and '
+                   'FY2024, by column and levy year, each column tied to the total the page prints.'),
 }
 
 
