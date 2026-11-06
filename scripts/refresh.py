@@ -1197,6 +1197,7 @@ def finish_shipping(a, delta_row, deployed, notes, ctx):
         # views/ links and four stale payloads behind. Each of these takes seconds and reads only
         # what the run already wrote, so running them here costs little and leaves nothing.
         for g in ('build_views.py', 'build_vote_lists.py', 'build_question_bank.py', 'build_agent_manifest.py',
+                  'build_archive_guide.py',
                   'build_source_index.py', 'build_notices.py', 'build_readme.py', 'build_app_metrics.py'):
             py(g, check=False)
         commit_run(a, notes, ctx, 'run row')
