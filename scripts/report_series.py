@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'ballot-questions-local': ('Local ballot questions: votes by precinct, 1960-FY2025',
+                   'Every question the Town put to its own voters that the annual reports print a tally for (debt exclusions, overrides, regional school, charter, '
+                   'advisory questions, local acts and liquor licensing), with Yes, No and Blanks by precinct and the total the page prints. State questions and '
+                   'candidates\' returns are not here; the four tallies already in ballot-questions.csv are listed as held elsewhere.'),
     'revolving-fund-limits': ('Revolving fund spending limits voted at town meeting, 1992-FY2025',
                    'The dollar limit town meeting voted on each revolving fund (fund, limit, and from FY2017 the spender, revenue source and purpose where the page prints them), '
                    'read from the town meeting articles in each report. These are voted limits, not spending; articles passed over are not rows.'),
