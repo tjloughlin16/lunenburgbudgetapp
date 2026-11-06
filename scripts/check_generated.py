@@ -53,6 +53,7 @@ CHECKS = [
     # cheap and offline, which is why they come first.
     ('check_refresh_safe.py', ['--selftest']),
     ('test_refresh_git.py', []),
+    ('test_refresh_ship.py', []),
     # Finding and fetching annual town reports: the year parser on real labels, the shelf
     # rule, and a sandboxed crawl -- an older report filed, the same bytes at a new address
     # recorded and not stored twice. Offline, under build/.

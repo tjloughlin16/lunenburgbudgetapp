@@ -10,7 +10,8 @@ of a `reset --hard` 120 lines above it, and a later edit made the first true and
 dangerous without anybody re-reading both. So the promise is a check, it runs with every
 other check (scripts/check_generated.py), and a later edit cannot quietly put one back.
 
-WHAT IT REFUSES, in daily_refresh.sh, refresh.py, refresh_git.py and triage_refresh.py:
+WHAT IT REFUSES, in daily_refresh.sh, refresh.py, refresh_git.py, refresh_ship.py and
+triage_refresh.py:
 
   * git reset, clean, stash, checkout, restore, switch, rebase, rm -- each can discard a
     working-tree file, move a branch out from under a person, or (rebase --abort, 4 October
@@ -35,6 +36,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = ['scripts/daily_refresh.sh', 'scripts/refresh.py', 'scripts/refresh_git.py',
+         'scripts/refresh_ship.py',
          'scripts/triage_refresh.py',
          # Report generation runs agents in worktrees and publishes onto main: the same promise,
          # never lose or step on work (TJ, 15 October 2026), held by the same scan.

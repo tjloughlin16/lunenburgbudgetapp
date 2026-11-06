@@ -331,12 +331,17 @@ def _move_to(root, old, new, ref):
     return True, ''
 
 
-def publish(root, remote='origin', target='main', tries=PUSH_TRIES):
+def publish(root, remote='origin', target='main', tries=PUSH_TRIES, foreign_ok=False):
     """Put this branch's refresh commits on origin/main. -> (status, detail).
 
-    status is one of 'pushed', 'nothing', 'local-only', 'not-main', 'conflict', 'refused',
-    'failed'. Never a side branch, never a force: a commit that cannot reach main stays a
-    local commit, and the next run tries again.
+    status is one of 'pushed', 'nothing', 'local-only', 'diverged', 'not-main', 'conflict',
+    'refused', 'failed'. Never a side branch, never a force: a commit that cannot reach main
+    stays a local commit, and the next run tries again.
+
+    `foreign_ok` is the armed refresh (refresh_ship.py): main goes out whole, a person's commits
+    with it, because TJ asked for everything to be committed and deployed and a live genlock
+    hold is what stops a push now. Their commits are still never REPLAYED: that would rewrite
+    their hashes and dates, so if origin moved as well the run stops and says `diverged`.
     """
     b = branch(root)
     if b != target:
@@ -352,13 +357,17 @@ def publish(root, remote='origin', target='main', tries=PUSH_TRIES):
         if not ahead:
             return 'nothing', 'already at %s/%s' % (remote, target)
         foreign = [c for c in ahead if not _is_refresh_commit(root, c)]
-        if foreign:
+        if foreign and not foreign_ok:
             # A PERSON'S UNPUSHED COMMITS ARE NOT OURS TO PUBLISH. Pushing HEAD would carry
             # them to main with ours; replaying ours alone would leave them behind locally.
             return 'local-only', ('%d local commit(s) on %s are not the refresh’s and not '
                                   'on %s/%s; the refresh commit stays local until they are '
                                   'pushed' % (len(foreign), b, remote, target))
         base = git(root, 'merge-base', upstream, local).stdout.strip()
+        if base != upstream and foreign:
+            return 'diverged', ('%s/%s has commits this tree lacks and this tree has %d of a '
+                                'person\u2019s it has not pushed; pull main by hand, then run '
+                                'python3 scripts/refresh.py --ship-only' % (remote, target, len(foreign)))
         if base != upstream:
             new, conflicted = _replay(root, ahead, upstream)
             if conflicted:

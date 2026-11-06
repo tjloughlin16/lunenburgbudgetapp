@@ -24,7 +24,14 @@ cd "$ROOT" || exit 1
 # A COMPLETE dist IS NOT A FRESH ONE. On 23 October 2026 a build failed at its type check and
 # left the morning's dist in place, whole and prerendered, so both checks below passed and the
 # preview shipped stale. Refuse if any source or public file is newer than the built page.
-NEWER="$(find fy28/src fy28/public -type f -newer fy28/dist/index.html 2>/dev/null | head -3)"
+#
+# DEPLOY_SITE_TREE is the refresh (refresh_ship.py): dist was built from an export of a commit, so
+# what this tree's files are doing says nothing about it, and wrangler runs in that export so the
+# Functions it bundles are the commit's too. Exit 75 means every check passed and the upload failed.
+NEWER=""
+if [ -z "${DEPLOY_SITE_TREE:-}" ]; then
+  NEWER="$(find fy28/src fy28/public -type f -newer fy28/dist/index.html 2>/dev/null | head -3)"
+fi
 if [ -n "$NEWER" ]; then
   echo "NOT DEPLOYING: fy28/dist is older than the code and data it is built from, e.g.:"
   echo "$NEWER" | sed 's/^/  /'
@@ -54,4 +61,5 @@ if ! python3 scripts/sync_derived.py --push || ! python3 scripts/sync_derived.py
   exit 1
 fi
 python3 scripts/sync_derived.py --stage "$STAGE" || exit 1
-cd "$ROOT/fy28" && npx wrangler pages deploy "$STAGE" "$@" --commit-dirty=true
+cd "${DEPLOY_SITE_TREE:-$ROOT/fy28}" || exit 1
+npx wrangler pages deploy "$STAGE" "$@" --commit-dirty=true || exit 75

@@ -5,10 +5,22 @@ see `notes/handoffs-done/HANDOFF-REFRESH-ADDITIVE.md`). It is ADDITIVE: it reset
 nothing, commits ONLY the files it wrote (`scripts/refresh_git.py`), puts back anything
 of somebody else's uncommitted work it overwrote -- reported as *not yet refreshable* --
 and reaches `main` by replaying its commit onto a moved `origin/main`, never by a side
-branch or a force. On a branch other than `main` it commits locally and reports
-`not deployed: on branch X`. It deploys only from `main`'s own commit, gated only on
-the generators that run executed. `scripts/check_refresh_safe.py` fails the build if any
-destructive command reappears in the refresh's code.
+branch or a force. `scripts/check_refresh_safe.py` fails the build if any destructive command
+reappears in the refresh's code.
+
+**launchd runs `scripts/daily_refresh.sh` from this working tree**, so an edit to it or to
+`refresh.py` is live at the next 07:00 whether or not it was ever pushed.
+
+**With `ops/REFRESH-SHIP-ARMED` present, every run ships** (`scripts/refresh_ship.py`). It commits
+the paced meeting run's output under that run's own lock, holds the meeting run still from the
+rebuild to the last commit, pushes `main` with any local commits on it unless a genlock `forbid`
+says push or deploy, builds an EXPORT of that commit under `build/ship/tree`, installs the
+result as `fy28/dist`, re-runs what reads the build, deploys through `deploy_site.sh` and hashes
+four files from production. Without the file a run ingests, commits as before and deploys nothing.
+
+Failing to ship is exit 3: `build/refresh-ALERT.txt`, a notification and the run row all name the
+cause. `python3 scripts/refresh.py --ship-only` retries without ingesting.
+`python3 scripts/refresh_ship.py --plan` says what a run starting now would do, and changes nothing.
 
 `scripts/daily_refresh.sh` runs `refresh.py --deploy` and logs to
 `build/refresh-logs/<date>.log`. Nothing in it posts to Facebook; the paste-ready texts

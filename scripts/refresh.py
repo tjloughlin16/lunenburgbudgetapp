@@ -4,6 +4,7 @@
     python3 scripts/refresh.py                # watch, fetch, write, rebuild; commit and deploy nothing
     python3 scripts/refresh.py --commit       # ...and commit ONLY the files it wrote; push when on main
     python3 scripts/refresh.py --deploy       # ...and build the site and deploy it (implies --commit)
+    python3 scripts/refresh.py --ship-only    # no ingest: push, build, deploy, verify what is on main
     python3 scripts/refresh.py --dry-run      # watch only; write nothing, fetch nothing
     python3 scripts/refresh.py --no-minutes   # skip the model step (costs money per meeting)
     python3 scripts/refresh.py --check        # every watcher's state holds together
@@ -33,8 +34,9 @@ THE ORDER, AND WHY IT CANNOT MOVE
   8. rebuild             the feed, the minutes payload, the notices, the index, the metrics
   9. push                the search index and the analysis database to D1, incrementally
  10. commit              only the files this run wrote (refresh_git.py), replayed onto main
- 11. deploy              only with --deploy, only from main's own commit, gated only on the
-                         generators this run executed. Rule 10: nothing deploys unasked.
+ 11. ship                with --deploy and ops/REFRESH-SHIP-ARMED: build an export of the
+                         commit on origin/main, re-run what reads the build, deploy, verify from
+                         production. Rule 10's one exception. See ship() and refresh_ship.py.
 
 THE POLICY FILE IS THE APPROVAL. `sources/data/recording-minutes-policy.csv` names which
 boards, from which date, TJ has approved minutes for. Step 7 writes minutes for a
@@ -857,7 +859,7 @@ def back_up_documents(notes, why):
 #
 # CALLED TWICE: once before the deploy gate, so the gate and the deploy judge the commit
 # that is actually on main, and once at the very end for the run row, which cannot know
-# whether it deployed until after. A run that DIES is committed too (see main), because
+# whether it deployed until after. (Armed, more often: see ship.) A run that DIES is committed too (see main), because
 # what it fetched is real and the old shell wrapper committed a failed run as well -- left
 # uncommitted, tomorrow's run would find it dirty and treat it as somebody else's work.
 def commit_run(a, notes, ctx, why):
@@ -867,6 +869,24 @@ def commit_run(a, notes, ctx, why):
         return
     try:
         ours, blocked, appended = G.settle(ROOT, base)
+        armed = ctx.get('armed')
+        if armed:
+            import refresh_ship as Ship
+            # NOT EVERYTHING THAT CHANGED DURING THE RUN IS THE RUN'S. See refresh_ship.py.
+            pause = ctx.get('pause')
+            ours, held = Ship.split_ours(ours, Ship.claimed_paths(ROOT) or (),
+                                         exclude_meeting=not (pause and pause.held))
+            new_held = [p for p in held if p not in ctx['held']]
+            ctx['held'].extend(new_held)
+            if new_held:
+                print('\n  LEFT UNCOMMITTED -- hand-written, claimed, or meeting output without '
+                      'its lock:')
+                for p in new_held:
+                    print('    ' + p)
+                notes.append('left uncommitted: %d file(s) changed during this run are hand-written, '
+                             'under a genlock claim, or meeting output without its lock: %s%s'
+                             % (len(new_held), ', '.join(new_held[:6]),
+                                ' ...' if len(new_held) > 6 else ''))
         for p in appended:
             note = ('%s held uncommitted rows, so the rows this run appended stay '
                     'uncommitted with them (nothing set aside)' % p)
@@ -906,15 +926,29 @@ def commit_run(a, notes, ctx, why):
         sha = G.commit(ROOT, ours, msg)
         if sha:
             print('  committed %d file(s) the refresh wrote, as %s' % (len(ours), sha[:8]))
-        status, detail = G.publish(ROOT)
-        ctx['push'] = status
+        if armed:
+            try:
+                holds = Ship.push_holds(ROOT)
+            except Exception as e:      # noqa: BLE001 -- an unread list of holds stops a push
+                status, detail = 'holds-unread', 'could not read the genlock prohibitions: %s' % e
+            else:
+                if holds:
+                    status, detail = 'held', ('a live genlock prohibition stops the push: %s'
+                                              % ' | '.join(h[:160] for h in holds))
+                else:
+                    status, detail = G.publish(ROOT, foreign_ok=True)
+        else:
+            status, detail = G.publish(ROOT)
+        ctx['push'], ctx['push_detail'] = status, detail
         print('  %s: %s' % (status, detail))
         if status == 'not-main':
             note = 'not deployed: on branch %s' % (G.branch(ROOT) or 'detached')
             if note not in notes:
                 notes.append(note)
         elif status not in ('pushed', 'nothing'):
-            notes.append('NOT PUSHED (%s): %s' % (status, detail))
+            note = 'NOT PUSHED (%s): %s' % (status, detail)
+            if note not in notes:
+                notes.append(note)
     except G.GitError as e:
         ctx['push'] = 'failed'
         notes.append('COMMIT FAILED: %s' % e)
@@ -922,53 +956,81 @@ def commit_run(a, notes, ctx, why):
 
 
 # ------------------------------------------------------------- THE SCOPED DEPLOY GATE
-def scoped_gate(notes):
-    """-> True when every generator THIS RUN executed still reproduces its output.
+def failing_checks():
+    """-> [(check, what it said)], every failure in check_generated. The whole output is read,
+    never its tail: fifteen of twenty-three failures went unread on 29 September 2026 because a
+    person read the report through `tail -25`."""
+    chk = subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'check_generated.py')],
+                         cwd=ROOT, capture_output=True, text=True)
+    failing = []
+    for line in (chk.stdout or '').splitlines():
+        if line.startswith('  FAIL'):
+            parts = line.split(None, 2)
+            failing.append((parts[1] if len(parts) > 1 else '?',
+                            (parts[2] if len(parts) > 2 else '').strip()))
+    return failing
+
+
+def scoped_gate(a, notes, ctx):
+    """-> the checks that still hold the site back: generators THIS RUN executed whose output
+    does not reproduce, after one repair. An empty list means ship.
 
     IT USED TO BE ALL OF THEM. Any failing check in check_generated held the site back, so
     on 8 October 2026 fourteen unrelated stale outputs -- state aid, the money flow, the
     README -- kept that morning's new meetings off the site. A stale page this run never
     touched is no less stale for being withheld with everything else, and withholding the
-    meetings fixes nothing about it.
+    meetings fixes nothing about it. SO ONLY THE RUN'S OWN GENERATORS BLOCK (RAN, recorded where
+    each was started); every other failure is REPORTED and never blocks. verify_balance_sheet.py
+    is in that second group: the refresh does not execute it.
 
-    SO ONLY THE RUN'S OWN GENERATORS BLOCK (RAN, recorded where each was started); every
-    other failure is REPORTED, with its reason, and never blocks. The whole check still
-    runs, because the report is how somebody learns a page elsewhere has gone stale.
+    AND A STALE OUTPUT GETS REBUILT BEFORE IT STOPS ANYTHING. Three runs were refused for a
+    generator that had only run too early in the order (build_notices.py on 31 October and 2
+    November 2026). Rebuild, commit, ask again. A verifier has nothing to rebuild, and one that
+    still fails stops the deploy by name. One that fails because rebuilding it would overwrite
+    somebody's uncommitted file is theirs to settle: the committed version is what ships.
     """
-    chk = subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'check_generated.py')],
-                         cwd=ROOT, capture_output=True, text=True)
-    # The whole output is read, never its tail: fifteen of twenty-three failures went
-    # unread on 29 September 2026 because a person read the report through `tail -25`.
-    failing = []
-    for line in (chk.stdout or '').splitlines():
-        if not line.startswith('  FAIL'):
-            continue
-        parts = line.split(None, 2)
-        failing.append((parts[1] if len(parts) > 1 else '?',
-                        (parts[2] if len(parts) > 2 else '').strip()))
-    blocking = [(n, w) for n, w in failing if n in RAN and n not in NOT_BLOCKING]
-    reported = [(n, w) for n, w in failing if (n, w) not in blocking]
+    import check_generated as C
+    import refresh_git as G
+
+    def split(failing):
+        blocking = [(n, w) for n, w in failing if n in RAN and n not in NOT_BLOCKING]
+        return blocking, [(n, w) for n, w in failing if (n, w) not in blocking]
+
+    blocking, reported = split(failing_checks())
     if reported:
-        notes.append('stale elsewhere, reported and NOT blocking: %d output(s): %s'
-                     % (len(reported), ', '.join(sorted({n for n, _ in reported}))))
+        note = ('stale elsewhere, reported and NOT blocking: %d output(s): %s'
+                % (len(reported), ', '.join(sorted({n for n, _ in reported}))))
+        if note not in notes:
+            notes.append(note)
         print('  STALE ELSEWHERE -- reported, never blocking:')
         for name, why in sorted(reported):
             tag = ('[a person runs this: %s]' % BY_HAND[name][:70] if name in BY_HAND else
                    '[not blocking: %s]' % NOT_BLOCKING[name][:70] if name in NOT_BLOCKING else
                    '[this run did not execute it]')
             print('      %-34s %s  %s' % (name, why[:80], tag))
-    if blocking:
-        notes.append('DID NOT DEPLOY: %d output(s) THIS RUN rebuilt still do not reproduce '
-                     'from their inputs -- a defect in the refresh, or an input holding '
-                     'uncommitted changes: %s'
-                     % (len(blocking), ', '.join(sorted(n for n, _ in blocking))))
-        print('  NOT deploying -- executed by this run and still stale:')
-        for name, why in sorted(blocking):
-            print('      %-34s %s' % (name, why[:104]))
-        return False
-    print('  every generator this run executed (%d scripts) reproduces its output; safe to '
-          'deploy' % len(RAN))
-    return True
+    if not blocking:
+        print('  every generator this run executed (%d scripts) reproduces its output' % len(RAN))
+        return []
+    base, set_aside = ctx.get('base'), set()
+    theirs = dict(base.dirty) if base else {}
+    for name in sorted({n for n, _ in blocking}):
+        for job in C.CHECKS:
+            cmd = C._rebuild_cmd(job) if job[0] == name else None
+            if cmd and name not in BY_HAND:
+                print('  repairing %s' % name)
+                py(cmd[0], *cmd[1], check=False)
+                if any(G._sha(os.path.join(ROOT, p)) != h for p, h in theirs.items()):
+                    set_aside.add(name)
+    commit_run(a, notes, ctx, 'repair')
+    blocking, _ = split(failing_checks())
+    theirs_too = sorted({n for n, _ in blocking if n in set_aside})
+    if theirs_too:
+        notes.append('not refreshed, because a file they write holds somebody\u2019s uncommitted '
+                     'work: %s' % ', '.join(theirs_too))
+    still = sorted({n for n, _ in blocking if n not in set_aside})
+    for name, why in sorted(blocking):
+        print('      %-34s %s' % (name, why[:104]))
+    return still
 
 
 # ONE SITE BUILD AT A TIME. `npm run build:site` writes a shared dist/ and binds a fixed
@@ -988,7 +1050,10 @@ def acquire_build_lock(notes):
     fh = open(BUILD_LOCK, 'a+')
     t0 = time.monotonic()
     while True:
-        busy = subprocess.run(['pgrep', '-f', '[v]ite build|[s]cripts/prerender.mjs'],
+        # ANCHORED ON THE node EXECUTABLE. The brackets only stopped pgrep matching itself; a
+        # shell whose command line merely mentioned scripts/prerender.mjs still read as a build
+        # and held this for its full half hour (found 6 November 2026, by a test doing just that).
+        busy = subprocess.run(['pgrep', '-f', '^[^ ]*node .*(vite build|scripts/prerender[.]mjs)'],
                               capture_output=True).returncode == 0
         if not busy:
             try:
@@ -998,55 +1063,194 @@ def acquire_build_lock(notes):
                 pass
         if time.monotonic() - t0 > BUILD_WAIT_S:
             fh.close()
-            notes.append('DID NOT DEPLOY: another site build was running for %d minutes'
-                         % (BUILD_WAIT_S // 60))
+            notes.append('another site build held the lock for %d minutes' % (BUILD_WAIT_S // 60))
             return None
         time.sleep(15)
 
 
-def deploy_allowed(notes, ctx):
-    """Every condition a deploy needs, each refusal a NOTE rather than a printed line -- a
-    note reaches refresh-runs.csv, the dashboard and the notification, and the old refusal
-    was one line in a 1,600-line log while the run exited 0.
+def ship_failed(notes, ctx, cause):
+    """A RUN THAT DID NOT DEPLOY IS A FAILURE, AND IT SAYS WHY. For five weeks the refusal was a
+    note in a run that exited 0: the banner cleared and nobody was told. This is the row's note,
+    exit code 3, and daily_refresh.sh's banner and notification, all with the same sentence."""
+    ctx.setdefault('ship_failure', cause)
+    note = 'DID NOT DEPLOY: ' + cause
+    if note not in notes:
+        notes.append(note)
+    print('\n  ' + note)
+    return False
 
-    1. THE BRANCH IS main. Anywhere else the run ingests, commits locally and reports
-       `not deployed: on branch X` (15 September 2026: a refresh built a feature branch and
-       Cloudflare put the deploy on a preview alias while the log said "deployed").
-    2. THE COMMIT REACHED origin/main, AND HEAD IS EXACTLY origin/main. A NAME IS NOT THE
-       FACT: from 23 September 2026 the refresh pushed to main and then silently refused to
-       deploy for four days because it tested the branch NAME of a detached HEAD. What
-       matters is whether this commit is the one main points at.
-    3. NO SITE FILE HOLDS SOMEBODY ELSE'S UNCOMMITTED WORK. The build reads fy28/ from the
-       working tree, and this tree is a person's: a dirty file there would be shipped to
-       production without ever being committed. Refused and named, never cleaned.
-    4. EVERY GENERATOR THIS RUN EXECUTED REPRODUCES -- see scoped_gate.
+
+# WHAT READS THE BUILD. They ran earlier against yesterday's dist, so they go stale the moment
+# a new one lands; build_reports_index.py also reads the date of the commit just made. After the
+# build of 6 November 2026, reports.json changed by one `updated` date for exactly that reason,
+# and short-versions.csv stayed stale.
+AFTER_BUILD = (('build_reading_time.py',), ('build_short_versions.py',), ('build_reports_index.py',),
+               ('build_search_index.py', '--quiet'), ('build_sitemap.py',),
+               ('build_app_metrics.py',))
+
+
+def ship(a, notes, ctx):
+    """Push, build, deploy, verify. -> True only when production serves what was built.
+
+    RULE 10'S ONE EXCEPTION. TJ, 5 November 2026: *"we need to make sure everything is committed
+    and deployed after every refresh."* The module docstring of refresh_ship.py says what each
+    old guard protected and what protects it now. The order cannot move:
+
+      1. the gate, on the tree with the meeting run still paused;
+      2. everything on origin/main;
+      3. the build, on an export of exactly that commit -- not this tree, which is a person's;
+      4. what reads the build, re-run and committed, then copied into the build;
+      5. deploy_site.sh, which refuses a torn dist, a stale takedown module or an unsynced bucket;
+      6. production fetched and hashed. An upload that succeeded is a claim about the upload.
     """
     import refresh_git as G
+    import refresh_ship as Ship
     b = G.branch(ROOT)
     if b != 'main':
-        note = 'not deployed: on branch %s' % (b or 'detached')
-        if note not in notes:
-            notes.append(note)
+        return ship_failed(notes, ctx, 'this tree is on %s; only main reaches production'
+                           % (b or 'a detached HEAD'))
+
+    def on_origin():
+        if ctx.get('push') in ('pushed', 'nothing'):
+            return True
+        return ship_failed(notes, ctx, 'the commit did not reach origin/main (%s): %s'
+                           % (ctx.get('push'), ctx.get('push_detail', '')))
+    if not on_origin():
         return False
+    still = scoped_gate(a, notes, ctx)
+    if still:
+        return ship_failed(notes, ctx, '%d output(s) this run rebuilt still do not reproduce from '
+                           'their inputs, after a repair: %s' % (len(still), ', '.join(still)))
+    if not on_origin():
+        return False
+    sha = G.git(ROOT, 'rev-parse', 'refs/remotes/origin/main').stdout.strip()
+    lock = acquire_build_lock(notes)
+    if lock is None:
+        return ship_failed(notes, ctx, 'another site build held the lock for %d minutes'
+                           % (BUILD_WAIT_S // 60))
+    try:
+        print('\n  building %s from an export, not from this tree' % sha[:8])
+        tree = Ship.export_commit(ROOT, sha)
+        r = sh(['npm', 'run', 'build:site:unlocked'], check=False,
+               cwd=os.path.join(tree, 'fy28'), extra_env={'SITE_BUILD_LOCK_HELD': '1'})
+        if r.returncode:
+            return ship_failed(notes, ctx, 'the site build failed (exit %d); fy28/dist and '
+                               'production were not touched. Log: %s'
+                               % (r.returncode, os.environ.get('REFRESH_LOG', 'the run\u2019s log')))
+        Ship.drop_export_repo(ROOT)
+        Ship.install_dist(ROOT, tree)
+        # The marker first: what reads the build then counts it, and stays reproducible.
+        Ship.write_marker(ROOT, sha, dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'))
+        for gen in AFTER_BUILD:
+            if py(*gen, check=False).returncode:
+                notes.append('%s failed after the build; its output is a build behind' % gen[0])
+        was = G.head(ROOT)
+        commit_run(a, notes, ctx, 'after the build')
+        if not on_origin():
+            return False
+        now = G.head(ROOT)
+        if now != was:
+            print('  copied %d file(s) into the build from %s' % (Ship.overlay_public(ROOT, now), now[:8]))
+        # `--branch main`, NAMED: wrangler takes production-or-preview from the git branch, and on
+        # 9 October 2026 a hand deploy went to a preview alias. Wrangler runs in the export, so
+        # the Functions it bundles are the commit's as well.
+        env = {'DEPLOY_SITE_TREE': os.path.join(tree, 'fy28')}
+        args = ['--branch', 'main', '--commit-hash', sha,
+                '--commit-message', 'Daily refresh, %s' % a.as_of]
+        deploy = ['bash', os.path.join(SCRIPTS, 'deploy_site.sh')] + args
+        r = sh(deploy, check=False, extra_env=env)
+        if r.returncode == Ship.DEPLOY_SITE_UPLOAD_FAILED:
+            # A FAILED UPLOAD KEEPS NOTHING, so blind retries do not converge. Upload in parts to
+            # a preview branch, which keeps them and cannot touch production, then deploy.
+            print('  the upload died; sending the stage in parts to a preview branch')
+            stage = os.path.join(ROOT, 'build', 'deploy-stage')
+            for part in Ship.split_stage(ROOT, stage):
+                sh(['npx', 'wrangler', 'pages', 'deploy', part, '--branch', 'upload-staging',
+                    '--commit-dirty=true'], check=False, cwd=os.path.join(tree, 'fy28'))
+            r = sh(deploy, check=False, extra_env=env)
+        if r.returncode:
+            return ship_failed(notes, ctx, 'deploy_site.sh exited %d; see the log. Retry: python3 '
+                               'scripts/refresh.py --ship-only' % r.returncode)
+        dist = os.path.join(ROOT, 'fy28', 'dist')
+        ok, detail = Ship.verify_production(dist, Ship.verify_list(dist), sha[:12])
+        if not ok:
+            return ship_failed(notes, ctx, 'the upload succeeded and production does not serve '
+                               'this build: %s' % detail)
+        notes.append('DEPLOYED %s, verified from production -- %s' % (sha[:8], detail))
+        print('  ' + notes[-1])
+        Ship.discard_export(ROOT)
+        return True
+    finally:
+        lock.close()
+
+
+def finish_shipping(a, delta_row, deployed, notes, ctx):
+    """The run's last words: the row, what counts it, the commit, the check. `delta_row` writes
+    the row; it runs again if the push of the row itself fails, so the row says so."""
+    def settle_row():
+        delta_row(deployed, 'not shipped' if ctx.get('ship_failure') else 'ok')
+        # WHAT THE ROW MOVES, measured 6 November 2026 by changing only the row and running the
+        # check: build_source_index.py rewrites sources.json and the row's public copy, and it
+        # does so even under check_generated. Left for the next session's check, those three
+        # sat dirty and the next morning's refresh called them somebody else's work.
+        for g in ('build_source_index.py', 'build_notices.py', 'build_readme.py', 'build_app_metrics.py'):
+            py(g, check=False)
+        commit_run(a, notes, ctx, 'run row')
+    settle_row()
     if ctx.get('push') not in ('pushed', 'nothing'):
-        notes.append('DID NOT DEPLOY: the refresh commit did not reach origin/main (%s)'
-                     % ctx.get('push'))
-        return False
-    head = G.head(ROOT)
-    origin_main = G.git(ROOT, 'rev-parse', 'refs/remotes/origin/main', check=False).stdout.strip()
-    if not head or head != origin_main:
-        notes.append('DID NOT DEPLOY: this tree is at %s and origin/main is at %s, so the '
-                     'build would not be main’s own commit' % (head[:8] or '?',
-                                                                origin_main[:8] or '?'))
-        return False
-    site_dirty = [p for p in G.dirty_paths(ROOT) if p.startswith('fy28/')]
-    if site_dirty:
-        notes.append('DID NOT DEPLOY: %d file(s) under fy28/ hold uncommitted changes the '
-                     'refresh did not make, and the build would ship them: %s%s'
-                     % (len(site_dirty), ', '.join(site_dirty[:5]),
-                        ' ...' if len(site_dirty) > 5 else ''))
-        return False
-    return scoped_gate(notes)
+        ship_failed(notes, ctx, 'the run\u2019s last commit did not reach origin/main (%s): %s'
+                    % (ctx.get('push'), ctx.get('push_detail', '')))
+        settle_row()
+    # WHAT IS STILL OPEN. Reported only, and into a file rather than the row, because writing the
+    # row is what the check would then call stale.
+    left = failing_checks()
+    with open(os.path.join(ROOT, 'build', 'refresh-post-check.txt'), 'w', encoding='utf-8') as fh:
+        fh.write('%s: %d failing after the refresh\n' % (a.as_of, len(left)))
+        for name, why in sorted(left):
+            fh.write('%s  %s\n' % (name, why[:160]))
+    print('\n  check_generated after the refresh: %d failing%s'
+          % (len(left), ': ' + ', '.join(sorted({n for n, _ in left})) if left else ''))
+    cause = ctx.get('ship_failure')
+    if cause:
+        with open(os.path.join(ROOT, 'build', 'refresh-ship-failure.txt'), 'w', encoding='utf-8') as fh:
+            fh.write(cause + '\n')
+
+
+def ship_only(a):
+    """Retry the shipping of a run that already ingested, without fetching anything: the command
+    a failed morning's banner names. Updates that day's row."""
+    import refresh_git as G
+    import refresh_ship as Ship
+    if not Ship.armed(ROOT):
+        print('not armed: %s is absent' % Ship.ARMED_FILE)
+        return 2
+    rows = read_csv(RUNS)
+    if not any(r['as_of'] == a.as_of for r in rows):
+        print('no refresh row for %s; run the refresh, not --ship-only' % a.as_of)
+        return 2
+    row = next(r for r in rows if r['as_of'] == a.as_of)
+    drop = ('DID NOT DEPLOY', 'NOT PUSHED', 'DEPLOYED ')
+    notes = [n for n in row['notes'].split('; ') if n and not n.startswith(drop)]
+    pause = Ship.MeetingPause(ROOT)
+    ctx = {'base': G.Baseline.take(ROOT), 'blocked': [], 'held': [], 'push': None, 'armed': True,
+           'pause': pause}
+
+    def write_row(deployed, state):
+        row.update(deployed='yes' if deployed else 'no', notes='; '.join(notes), state=state)
+        with open(RUNS, 'w', newline='', encoding='utf-8') as fh:
+            w = csv.DictWriter(fh, fieldnames=RUN_COLS)
+            w.writeheader()
+            for r in rows:
+                w.writerow({c: r.get(c, '') for c in RUN_COLS})
+    try:
+        if not pause.acquire():
+            notes.append('the meeting run did not yield, so its output stays uncommitted')
+        commit_run(a, notes, ctx, 'ship only')
+        deployed = ship(a, notes, ctx)
+        finish_shipping(a, write_row, deployed, notes, ctx)
+    finally:
+        pause.release()
+    return 3 if ctx.get('ship_failure') else 0
 
 
 def main():
@@ -1055,6 +1259,8 @@ def main():
                     help='commit, push, and build and deploy the site (implies --commit)')
     ap.add_argument('--commit', action='store_true',
                     help='commit ONLY the files this run wrote, and push them when on main')
+    ap.add_argument('--ship-only', action='store_true',
+                    help='no ingest: push, build, deploy and verify what is on main')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-minutes', action='store_true')
     ap.add_argument('--no-push', action='store_true', help='skip the D1 pushes (search index and database)')
@@ -1071,17 +1277,37 @@ def main():
             bad += py(s, *args, check=False).returncode != 0
         return 1 if bad else 0
 
-    # THE BASELINE FIRST, before the run writes a byte: what is dirty now is somebody
-    # else's, and a copy of it goes into build/ so nothing the run overwrites is lost.
+    if a.ship_only:
+        return ship_only(a)
+
+    # THE MEETING RUN'S OUTPUT FIRST, under its lock, or the baseline below calls it somebody
+    # else's and it is never committed. See refresh_ship.py.
     a.commit = (a.commit or a.deploy) and not a.dry_run
-    ctx = {'base': None, 'blocked': [], 'push': None}
+    ctx = {'base': None, 'blocked': [], 'held': [], 'push': None, 'armed': False}
+    notes = []
+    if a.deploy and not a.dry_run:
+        import refresh_ship as Ship
+        ctx['armed'] = Ship.armed(ROOT)
+    if ctx['armed']:
+        import refresh_git as G
+        ctx['pause'] = Ship.MeetingPause(ROOT)
+        if G.branch(ROOT) == 'main':
+            try:
+                sha, n, why = Ship.adopt_meeting_output(ROOT, G)
+            except G.GitError as e:
+                sha, n, why = None, 0, str(e)
+            print('meeting output: %s' % (why or ('%d file(s) committed as %s' % (n, sha[:8]) if sha
+                                                  else 'nothing waiting')))
+            if why:
+                notes.append('meeting output from before this run was not committed: %s' % why)
+    # THE BASELINE, before the run writes a byte: what is dirty now is somebody else's, and a
+    # copy of it goes into build/ so nothing the run overwrites is lost.
     if a.commit:
         import refresh_git as G
         ctx['base'] = G.Baseline.take(ROOT)
         print('baseline: branch %s at %s; %d path(s) already hold uncommitted work and will '
               'not be committed by this run' % (ctx['base'].branch or '(detached)',
                                                 ctx['base'].head[:8], len(ctx['base'].dirty)))
-    notes = []
     finished = False
     try:
         rc = run(a, notes, ctx)
@@ -1094,6 +1320,8 @@ def main():
             commit_run(a, notes, ctx, 'stopped early')
             for n in notes:
                 print('  note: ' + n)
+        if ctx.get('pause'):
+            ctx['pause'].release()
 
 
 def run(a, notes, ctx):
@@ -1281,9 +1509,11 @@ def run(a, notes, ctx):
         slow_sources(a, notes)
 
     # 4-6. The town's recordings.
-    r = py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
+    # check=False: the channel's feed answered 404 on 6 November 2026, and a morning without the
+    # video list should not lose the morning's agendas, its commit and its deploy. Tried tomorrow.
+    r = py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
     if not a.dry_run:
-        looked('youtube', a, r)
+        looked('youtube', a, r, notes, 'the channel feed may be down')
     if not a.dry_run:
         py('build_youtube_classification.py')
         if backfill_running():
@@ -1390,6 +1620,12 @@ def run(a, notes, ctx):
 
     # 8. Rebuild everything derived from the above.
     if not a.dry_run:
+        # THE MEETING RUN HOLDS STILL FROM HERE TO THE LAST COMMIT, so what is rebuilt, committed
+        # and checked all describe one set of meetings. Without its lock the run still ships,
+        # and leaves that output uncommitted for tomorrow's run to adopt.
+        if ctx.get('armed') and not ctx['pause'].acquire():
+            notes.append('the meeting run did not yield, so what it writes during this run stays '
+                         'uncommitted until tomorrow')
         # THE ONE MEETING RECORD, before anything that lists meetings reads it.
         py('extract_document_timestamps.py', '--quiet')
         py('build_meeting_register.py')
@@ -1614,29 +1850,25 @@ def run(a, notes, ctx):
     if a.commit:
         commit_run(a, notes, ctx, 'data')
 
-    # 10. The site, only when asked -- and see deploy_allowed for every condition.
+    # 11. The site. See ship(), and ops/REFRESH-SHIP-ARMED.
     deployed = False
-    if a.deploy and not a.dry_run and deploy_allowed(notes, ctx):
-        lock = acquire_build_lock(notes)
-        if lock is not None:
+    if a.deploy and not a.dry_run:
+        if ctx.get('armed'):
             try:
-                sh(['npm', 'run', 'build:site'], cwd=os.path.join(ROOT, 'fy28'),
-                   extra_env={'SITE_BUILD_LOCK_HELD': '1'})
-                # `--branch main`, NAMED. Wrangler takes production-or-preview from the git
-                # branch; on 9 October 2026 a hand deploy from a tree on another branch went
-                # to `refresh.lunenburg-fy28.pages.dev` while production kept the old site.
-                # deploy_allowed already refuses anything but main's own commit, so naming
-                # the branch only says what is already true.
-                sh(['npx', 'wrangler', 'pages', 'deploy', '--branch', 'main'],
-                   cwd=os.path.join(ROOT, 'fy28'))
-                deployed = True
-            finally:
-                lock.close()
+                deployed = ship(a, notes, ctx)
+            except Exception as e:      # noqa: BLE001 -- whatever broke, the row and the banner name it
+                deployed = ship_failed(notes, ctx, 'shipping stopped on %s: %s' % (type(e).__name__, e))
+        else:
+            notes.append('not deployed: shipping is not armed (ops/REFRESH-SHIP-ARMED is absent)')
 
     if not a.dry_run:
-        record_run(a, delta, deployed, 'ok', notes)
-        if a.commit:
-            commit_run(a, notes, ctx, 'run row')
+        if ctx.get('armed'):
+            finish_shipping(a, lambda dep, state: record_run(a, delta, dep, state, notes),
+                            deployed, notes, ctx)
+        else:
+            record_run(a, delta, deployed, 'ok', notes)
+            if a.commit:
+                commit_run(a, notes, ctx, 'run row')
         ctx['done'] = True
 
     # THE DOCUMENTS FIRST. WHAT CAME IN, WHAT WE MADE, THEN THE CLOCK.
@@ -1693,7 +1925,7 @@ def run(a, notes, ctx):
     print('  %-46s %8s' % ('step', 'seconds'))
     for name, secs, rc in sorted(TIMINGS, key=lambda t: -t[1]):
         print('  %-46s %8.1f%s' % (name[:46], secs, '' if rc == 0 else '  exit %d' % rc))
-    return 0
+    return 3 if ctx.get('ship_failure') else 0
 
 
 if __name__ == '__main__':

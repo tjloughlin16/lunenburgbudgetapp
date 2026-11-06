@@ -1,7 +1,9 @@
 #!/bin/bash
 # The daily run, as launchd calls it -- see ops/README.md. Everything the refresh needs on
-# PATH, a log per day, and refresh.py --deploy, which commits ONLY what it wrote, replays
-# it onto main and deploys main. Nothing here posts to Facebook; the paste-ready texts land
+# PATH, a log per day, and refresh.py --deploy, which commits ONLY what it wrote and, with
+# ops/REFRESH-SHIP-ARMED present, pushes main, builds an export of it, deploys and verifies
+# from production. launchd runs THIS FILE IN THIS TREE: an edit is live at the next 07:00 whether
+# or not it was ever pushed. Nothing here posts to Facebook; the paste-ready texts land
 # in build/notices-to-post.md.
 #
 #   bash scripts/daily_refresh.sh          # by hand
@@ -20,8 +22,8 @@
 # branch on the 8th. notes/handoffs-done/HANDOFF-REFRESH-ADDITIVE.md has the whole account.
 #
 # WHAT REPLACED EACH PART, so none of the old protections was simply dropped:
-#   * a feature branch reaching production -> refresh.py deploys only when the branch is
-#     main AND its commit is origin/main's, and names `--branch main` to wrangler;
+#   * a feature branch reaching production -> refresh.py deploys only from main, builds an
+#     export of origin/main's own commit, and names `--branch main` to wrangler;
 #   * `add -A` sweeping in other work      -> refresh_git.py commits only the paths the run
 #     changed, and puts back anything of somebody else's it overwrote;
 #   * a moved main                          -> replayed onto with merge-tree, bounded
@@ -51,8 +53,12 @@ export REFRESH_LOG="$LOG"
 # to treat the 9 October failure (exit 1 at 07:00:03, nothing fetched) as the day's run,
 # and every later firing -- at login, or by hand once the cause was fixed -- did nothing.
 # The day is done only when the LAST `refresh exit` it logged is 0.
+#
+# EXIT 3 IS A RUN THAT INGESTED AND DID NOT DEPLOY. The day's ingest is done, so it is not run
+# again at the next login; the banner names the cause and `refresh.py --ship-only`.
+LAST_EXIT="$(grep '^refresh exit ' "$LOG" 2>/dev/null | tail -1)"
 if grep -q "=== finished" "$LOG" 2>/dev/null \
-   && [ "$(grep '^refresh exit ' "$LOG" | tail -1)" = "refresh exit 0" ]; then
+   && { [ "$LAST_EXIT" = "refresh exit 0" ] || [ "$LAST_EXIT" = "refresh exit 3" ]; }; then
   echo "already ran today ($(date)); nothing to do" >> "$LOG"
   exit 0
 fi
@@ -94,7 +100,16 @@ notify() {   # notify <title> <message>
   python3 scripts/refresh.py --deploy
   rc=$?
   echo "refresh exit $rc"
-  if [ "$rc" -ne 0 ]; then
+  if [ "$rc" -eq 3 ]; then
+    cause=$(head -1 "$HERE/build/refresh-ship-failure.txt" 2>/dev/null | cut -c1-400)
+    {
+      echo "$(date '+%Y-%m-%d %H:%M')  the daily refresh ingested and DID NOT DEPLOY"
+      echo "because: ${cause:-see the log}"
+      echo "when that is settled: python3 scripts/refresh.py --ship-only"
+      echo "log: $LOG"
+    } > "$ALERT"
+    notify "Lunenburg refresh DID NOT DEPLOY" "$(echo "${cause:-see the log}" | cut -c1-120 | tr -d '\"')"
+  elif [ "$rc" -ne 0 ]; then
     # The step that broke, named, so the notification is actionable rather than a shrug.
     broke=$(grep -o 'step failed:.*' "$LOG" | tail -1 | grep -oE '[a-z_]+\.py' | tail -1)
     why=$(grep -E 'Error|error:|full|refused|denied' "$LOG" | tail -1 | cut -c1-160)

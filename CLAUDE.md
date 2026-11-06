@@ -534,7 +534,8 @@ nobody checked.
 ## Push holds -- read before ANY `git push`
 
 **A hold is a genlock prohibition.** Before any push run `genlock orient`, which prints every
-live `forbid`. Record a hold with `genlock forbid G "..." --lifted-by "..."`, lift it with
+live `forbid`. The refresh reads the same list before each push and stops on any `forbid` that
+says push or deploy, so a hold must use one of those words. Record a hold with `genlock forbid G "..." --lifted-by "..."`, lift it with
 `genlock unforbid`. None at present. (The hold of 19 October 2026, unmasked journal names in
 history, ended 26 October 2026 with the rewrite: `notes/handoffs-done/HANDOFF-HISTORY-REWRITE.md`.)
 
@@ -544,7 +545,15 @@ worktree here shares them; a cloud session or another machine does not see them)
 that must reach those too is also written here. Local branches still on the pre-rewrite
 history -- `wip-snapshot-2026-10-19`, `gen/town-office-space` -- are never pushed.
 
-## 10. Nothing deploys without being asked
+## 10. Nothing deploys without being asked, except the refresh
+
+**The refresh deploys every run, because the owner asked for it.** TJ, 5 November 2026: *"we
+need to make sure everything is committed and deployed after every refresh."* Everything else
+waits to be asked. Each run commits, pushes `main`, builds an export of that commit (never the
+working tree, so uncommitted work cannot ship), deploys and hashes the result from production;
+a run that cannot says why, in the run row and the banner, and exits 3. It is armed by
+`ops/REFRESH-SHIP-ARMED`. See `scripts/refresh_ship.py`, and retry with
+`python3 scripts/refresh.py --ship-only`.
 
 Tag what is live. `v1` is the build before the source archive; `v2` is the current public
 build. Branch for anything substantial and never reuse a branch whose history got tangled.
