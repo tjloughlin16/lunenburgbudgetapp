@@ -38,6 +38,25 @@ project IS, not what it found.
 | `facebook-group-cover.png` | 1640x856 | the Facebook group cover |
 | `favicon.svg` | 32x32 | published as `fy28/public/favicon.svg` |
 
+### The logo kit: `logo/`
+
+Built 7 November 2026 by `scripts/build_logo_files.py`, so the favicon and the logo files are
+one drawing and cannot drift. Every variant is in light (ink on paper) and `-dark` (paper on
+ink); SVGs are resolution-free, and PNGs are in `logo/png/`.
+
+| file | what | PNG sizes |
+|---|---|---|
+| `mark.svg` | the square mark on its rounded paper tile, the same as the favicon | 16, 32, 48, 64, 128, 180, 192, 256, 512, 1024 px |
+| `mark-notile.svg` | the bare L, transparent, for placing on your own surface | 64, 256, 1024 px |
+| `logo-horizontal.svg` | the L, then *Lunenburg Budget Project* on one line, transparent | 64, 128, 256, 512 px tall |
+| `logo-stacked.svg` | the L, then *Lunenburg* over *Budget Project*, transparent | 64, 128, 256, 512 px tall |
+| `*-bg.svg` | either lockup on a paper (or ink) panel with an even inset | as above |
+| `favicon.ico` | 16, 32 and 48 in one file, for anything that will not take an SVG | |
+
+180 is the iOS home-screen size and 192/512 are the Android/PWA sizes. The name is Inter Bold
+(SIL Open Font Licence) converted to outlines, so the SVGs need no font installed. The
+wordmark is all ink, like the cover: **no brand blue**, for the reason above.
+
 **The layout was changed on 11 September so the thumbnail is the mark.** A Facebook GROUP
 has no profile picture: the square beside the group's name is the cover's CENTRE SQUARE,
 cropped and shrunk to about 56 pixels, and the first layout put the wordmark there, so
