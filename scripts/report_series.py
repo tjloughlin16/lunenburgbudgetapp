@@ -91,6 +91,9 @@ FAMILIES = {
                    'The headline counts the Police Department printed each year: calls for service, incidents or complaints handled, arrests or court cases, '
                    'motor vehicle stops, accidents and protective custody, with the tabulation totals where the page ties its parts. The wording of the headline '
                    'count changes by era (miscellaneous calls, calls for service, incidents, incidents/calls) and is kept as printed, not merged.'),
+    'town-nurse-visits': ('Town nurse visits and clinics, 1959-1976',
+                   "The Town's own public health nurses' counts as the Health, Town Nurse and Town Nursing Service pages print them: nursing visits by kind, "
+                   'Well Child Conferences, Well Oldster Clinics and immunization doses. Nashoba\'s own counts are in nashoba-public-health; each clinic row notes where the page credits both.'),
     'nashoba-public-health': ('Nashoba Associated Boards of Health services for Lunenburg, 1959-FY2025',
                    'The counts the annual reports print for what Nashoba did in Lunenburg: sanitation and environmental health inspections and tests, '
                    'septic and well work, nursing and home health visits, clinics, school dental programme, and (from 1963) communicable disease cases, '
