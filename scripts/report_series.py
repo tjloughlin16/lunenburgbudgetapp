@@ -158,6 +158,9 @@ FAMILIES = {
                    'table and statistics cells, the 1976 personnel listing (names), 1985 teaching-staff pages 150 and 156 '
                    '(names), the LHS School Council lists 1993-1995, and the school-council lists and staffing counts '
                    'on the Passios and Primary School pages of 2001 and 2005-2007. The rest is in staff-roster-entries.csv.'),
+    'treasurer-cash-investments': ("Treasurer's cash investments, 1977-FY1981",
+                   'The Treasurer\'s Recapitulation of Revenue Cash Invested in the 1978, 1979 and 1980 reports: by half year, each bank and vehicle line with its number of instruments, liquidity, denominations, rate range, total invested and interest earned, '
+                   'the half-year, fiscal-year and calendar-year totals and the interest received and to-be-received reconciliation; the 1977 weekly cash flow worksheet for February 1978 (columns that are whole on the page); and the 1977 table of Town Office cost, interest paid and interest earned, 1970-FY1979. All read from page images.'),
 }
 
 
