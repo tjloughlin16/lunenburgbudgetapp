@@ -125,6 +125,8 @@ FAMILIES = {
     'meeting-schedules-due-dates': ('Meeting schedules and tax due dates',
                    'The front-of-book list of when and where each board meets, 1960-FY2018, and the 1960-1963 list of when '
                    'real estate, excise and poll taxes and dog licences fall due, each as printed text. Boards that print their own regular meeting time on their report page are not rows.'),
+    'school-calendars': ('School calendars, 1959-1986',
+                   'The school calendar the School Committee printed each year 1959-1986: term and event dates as printed text, the number of no-school days the calendar allows, school days per month with the printed 185-day total (1974-1985), and the times and groups of the no-school horn signal; plus the FY2020 and FY2021 prose on the 180- to 170-day school year.'),
     'fire-calls': ('Fire Department calls by year and category, 1959-FY2025',
                    'What the Fire Department printed about its calls in every annual report: the '
                    'total and each category as printed, with the quote and the PDF page. Parts '
