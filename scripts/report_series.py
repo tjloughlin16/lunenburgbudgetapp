@@ -61,6 +61,10 @@ FAMILIES = {
                    'October 1 enrolment tables as printed: 1959-1986 each classroom (grade, teacher, boys, girls, total) under its school with the printed school and grand totals, grade breakdowns and year comparisons; 1988-2000 the enrolment summaries by school and grade; the principal enrolment-by-grade lists 1981-1990; the school census of minors 1959-1973 and the educational census by age 1985-1986. A school total is the total of its class or grade figures.'),
     'enrolment-2006': ('School enrolment by grade, 2006 gap',
                    'Grade-by-school enrolment tables as of October 1: this pass adds only the one 2006 page-36 cell (Grade 10, 10/02/06) that report-enrollment-mcas leaves blank; the other 2006 cells are held there.'),
+    'trust-fund-ledgers': ('Trust fund balance and income ledgers, 1972-FY2019',
+                   'The Balances and Income ledgers of the trust fund pages: for each fund (cemetery perpetual care, worthy poor, library, sidewalks and grounds, conservation land purchase, stabilization, school prize) '
+                   'the opening balance, each donor bequest, interest and dividend received, grants, transfers and withdrawals, and the closing balance as printed. Read from the page images. '
+                   'Section subtotals are totals of the rows above them; opening and closing balances and printed grand totals are singles.'),
     'trust-fund-holdings': ('Trust fund holdings by bank, 1961-FY2025',
                    'The Trust Fund Commission\'s Investment of Funds pages: for each trust fund (library, sidewalks and grounds, worthy poor, cemetery perpetual care and later funds) '
                    'the donor, bank, passbook or certificate number and amount as printed, with the fund totals and summary of funds. Read from the page images because the '
