@@ -146,6 +146,9 @@ FAMILIES = {
                    'The category and percent printed on the town\'s pie charts: Where Did Your Tax Dollar Go (cents per dollar, 1959-1967; percents, 1968), We Received and We Spent (1959-1968), the FY 1983 expenditures pie, and General Fund revenues and expenditures (1996-FY2023, no revenues pie in 2005 or FY2019), '
                    'plus the 1965 chart of tax rate, valuation and population at each five-year point 1930-1965. Percents are as printed, never computed; the legend percents beside the 1960-1967 and 1983 pies are in report-expenditure-shares.csv and are not repeated. '
                    'Three small slices of the 1959 payments pie were too small to read and are left out.'),
+    'official-lists': ('Other named lists of officials, 1959-FY2025',
+                   'Name and rank or role as printed for people on lists town-roster-entries.csv and staff-roster-entries.csv do not hold: the Fire Department company rosters of 1964-1968, the 1985 fire history, committee, commission and board lists and signature blocks, '
+                   'school central-office and Montachusett administration lists, and the 1969 Montachusett district committee by town. Only lines where the role ends the printed line are read; a name inside a sentence is not a row.'),
     'staff-roster-pages': ('School staff rosters: pages the staff-roster-entries reader did not load',
                    'Named school staff and councils on pages staff-roster-entries does not hold: the 1964 new-teacher '
                    'table and statistics cells, the 1976 personnel listing (names), 1985 teaching-staff pages 150 and 156 '
