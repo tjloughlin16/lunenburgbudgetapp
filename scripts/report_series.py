@@ -47,6 +47,9 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'conservation-filings': ('Conservation Commission filings, decisions, hearings and wetlands fees, 1972-FY2025',
+                   'The Conservation Commission counts the reports print in prose (hearings, requests for determination, Notices of Intent, Orders of Conditions, determinations, Certificates of Compliance, enforcement orders, inspections; 1972-2007 and FY2024-FY2025) and the wetlands filing, advertising and bylaw fee lines in the Detailed Statement of Receipts (1973-FY2022). '
+                   'The wording changes by year (hearings, requests for determination, Wetland Determinations, Determinations of Applicability, Administrative Determinations) and each is kept as printed; counts are what the page counts, with some partial-year or caveated.'),
     'pay-grades-fy2011': ('Pay grades by class title, FY2011 and FY2015, and 1984 pay rates',
                    'The Classification Plan lists of class title and grade the report prints (FY2011 p89, FY2015 Schedule A), and the 1984 amended hourly, weekly and yearly rates by year of service, as printed. '
                    'The 2010 list is in report-classification-plan.csv; the grade-and-step salary schedules are in salary-schedule.csv.'),
