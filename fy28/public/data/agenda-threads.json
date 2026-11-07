@@ -2,16 +2,16 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "window": {
-  "from": "2026-10-23",
-  "to": "2026-12-04"
+  "from": "2026-10-24",
+  "to": "2026-12-05"
  },
  "counts": {
-  "agendas": 34,
+  "agendas": 33,
   "agendas_upcoming": 12,
   "agendas_unreadable": 5,
-  "items": 262,
+  "items": 259,
   "business_items": 164,
   "matched_items": 15,
   "upcoming_business_items": 67,
@@ -51,40 +51,6 @@
   }
  ],
  "meetings": [
-  {
-   "board": "Library Board of Trustees",
-   "board_slug": "library-board-of-trustees",
-   "date": "2026-10-23",
-   "file_id": "8089",
-   "body_as_printed": "NDA Lunenburg Public Library Board of Trustees Strategic Plan Subcommittee",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10232026-8089",
-   "agenda_doc": "/docs/meetings/library-board-of-trustees/2026-10-23-agenda-8089.pdf",
-   "items": [
-    {
-     "line": "1023 Massachusetts Avenue",
-     "parent": "",
-     "n": 1,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "Lunenburg, MA 01462",
-     "parent": "",
-     "n": 2,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "(978) 582-4140 Agenda Lunenburg Public Library Board of Trustees",
-     "parent": "",
-     "n": 3,
-     "procedural": true,
-     "threads": []
-    }
-   ],
-   "threads": []
-  },
   {
    "board": "Lunenburg 300th Anniversary Committee",
    "board_slug": "lunenburg-300th-anniversary-committee",
