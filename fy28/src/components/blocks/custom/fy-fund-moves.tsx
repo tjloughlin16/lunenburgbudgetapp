@@ -13,7 +13,7 @@ import { useFyYear } from './fy-year'
 import type { CustomProps } from './index'
 
 export type MoveRow = { d: string; iso: string; memo: string; j: string; rev: string; school: boolean; a: string; b: string; t: string; n: number }
-export type MoveGroup = { cls: string; prog: string; a: string; b: string; dir: 'later' | 'earlier' | null; t: string; n: number
+export type MoveGroup = { cls: string; prog: string; a: string; b: string; ha?: string; hb?: string; dir: 'later' | 'earlier' | null; t: string; n: number
   cancels: boolean; count: number; gross: string; rows: MoveRow[]; funds: string[] }
 type Year = { fy: string; groups: MoveGroup[]; n: number; t: string; t_award: string; n_award: number; t_undone: string }
 type Data = { years: Year[]; classes: { id: string; label: string }[]; text: Record<string, string> }
@@ -21,11 +21,17 @@ type Data = { years: Year[]; classes: { id: string; label: string }[]; text: Rec
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 const AWARD = 'var(--thread-5)'
 
-function Box({ label }: { label: string }) {
+/** One end of a move. Where that end is one fund with a page of its own, its name links there,
+ *  so a fund's page and a grant's page each lead to the other (TJ, 7 November 2026). The page
+ *  a reader is already on is not linked to itself. */
+function Box({ label, href }: { label: string; href?: string }) {
   const [name, num] = label.split(' · ')
+  const here = typeof window !== 'undefined' && href === window.location.pathname
   return (
     <div className="rounded border px-2.5 py-1.5 min-w-0 flex-1" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1, var(--bg))' }}>
-      <span className="block text-[13px] leading-snug">{name}</span>
+      {href && !here
+        ? <a href={href} onClick={e => e.stopPropagation()} className="block text-[13px] leading-snug underline">{name}</a>
+        : <span className="block text-[13px] leading-snug">{name}</span>}
       {num ? <span className="block text-[11px]" style={muted}>{num}</span> : null}
     </div>)
 }
@@ -36,7 +42,7 @@ function Flow({ g, t }: { g: MoveGroup; t: Record<string, string> }) {
     <details className="rounded border" style={{ borderColor: 'var(--grid)' }}>
       <summary className="cursor-pointer list-none px-2.5 py-2">
         <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2">
-          <Box label={g.a} />
+          <Box label={g.a} href={g.ha} />
           <div className="flex sm:flex-col items-center gap-1 sm:w-40 shrink-0 text-center" aria-hidden={false}>
             <span className="tabular-nums font-semibold text-[14px]" style={{ color: g.cancels ? 'var(--text-muted)' : c }}>
               {g.cancels ? t.cancels : g.t}</span>
@@ -47,7 +53,7 @@ function Flow({ g, t }: { g: MoveGroup; t: Record<string, string> }) {
             <span className="text-[11.5px]" style={muted}>{g.count} {g.count === 1 ? t.entry : t.entries}
               {g.dir ? ` · ${t[g.dir]}` : ''}</span>
           </div>
-          <Box label={g.b} />
+          <Box label={g.b} href={g.hb} />
         </div>
       </summary>
       <div className="px-2.5 pb-2.5">

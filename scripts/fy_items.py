@@ -193,6 +193,17 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
         node_href['l:' + a] = '/school-lines/' + s
     for f, p in program.items():
         node_href['f:' + f] = '/school-funds/' + fund_slug[p]
+    # COST MOVED BETWEEN FUNDS LINKS BOTH ENDS (TJ, 7 November 2026: "on the FUND page, i would
+    # expect bidirectional linking from fund to grant and back"). Each side of a move names ONE
+    # fund as `<name> · <number>`; that fund's own page goes beside it, so the grant's page links
+    # to the fund and the fund's page links to the grant. A side naming several funds (an entry
+    # the books do not pair) or the town's side of the general fund has no single page: none.
+    def fund_href(label):
+        parts = label.split(' · ')
+        return node_href.get('f:' + parts[-1], '') if len(parts) == 2 else ''
+    for y in MV['years']:
+        for g in y['groups']:
+            g['ha'], g['hb'] = fund_href(g['a']), fund_href(g['b'])
     LINE_PATH = '/school-lines/'
     # a payer as the expense rows name it (fy_breakdown.payer) -> its fund page, where that name
     # is ONE programme; a name covering several (revolving funds and lunch) links nowhere
