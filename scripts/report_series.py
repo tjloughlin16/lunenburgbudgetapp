@@ -214,6 +214,12 @@ def read_family(path, eds, problems):
         r['quote_found'] = 'apart' if found == 'apart' else 'yes' if found else 'no'
         if r['quote_found'] == 'no':
             problems.append('%s: quote not on the page: %r' % (where, r['quote'][:70]))
+        if r['year'].startswith('FY'):                    # `year` compares as a number; the basis keeps the kind
+            r['year'] = r['year'][2:]
+            if 'fiscal' not in r['year_basis']:
+                r['year_basis'] = 'fiscal'
+        if not re.fullmatch(r'\d{4}', r['year']):
+            problems.append('%s: year %r' % (where, r['year']))
         digits = r['value'].replace(',', '').lstrip('-')  # a printed (25,900) is read as -25900
         if re.fullmatch(r'-?[\d,]*\.?\d+', r['value']):
             r['value'] = r['value'].replace(',', '')      # so a column of figures sums in SQL
