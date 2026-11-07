@@ -47,6 +47,10 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'trust-fund-holdings': ('Trust fund holdings by bank, 1961-FY2025',
+                   'The Trust Fund Commission\'s Investment of Funds pages: for each trust fund (library, sidewalks and grounds, worthy poor, cemetery perpetual care and later funds) '
+                   'the donor, bank, passbook or certificate number and amount as printed, with the fund totals and summary of funds. Read from the page images because the '
+                   'side-by-side fund panels cannot be read from the text layer. Bank subtotals are rows that add to nothing.'),
     'trade-permits': ('Plumbing, gas and wiring permits, inspections and fees, 1961-FY2022',
                    'The Plumbing, Gas Fitting and Wiring Inspectors\' counts of permits and inspections and fees collected (1961-2001, as each report words them) and the permit fee lines in the Detailed Statement of Receipts (plumbing 1960-FY2022, gas fitting from 1964, wiring from 1982). '
                    'Plumbing, gas and wiring are kept as separate measures; combined plumbing-and-gas counts are kept as printed; FY2019-FY2025 counts are in building-activity.csv.'),
