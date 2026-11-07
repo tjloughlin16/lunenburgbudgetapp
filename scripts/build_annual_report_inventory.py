@@ -149,8 +149,10 @@ def search_pages():
         return None
     s = sqlite3.connect(SEARCH)
     try:
+        # The report text files only: a letter about a report has 'annual-town-report' in
+        # its name too, and counting it put 133 pages of correspondence in this figure.
         return s.execute("SELECT COUNT(*) FROM search WHERE corpus='source' "
-                         "AND file_key LIKE '%annual-town-report%'").fetchone()[0]
+                         "AND file_key LIKE 'sources/town-annual-reports/text/%'").fetchone()[0]
     except sqlite3.Error:
         return None
 

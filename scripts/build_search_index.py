@@ -64,6 +64,7 @@ import csv
 import datetime as dt
 import glob
 import html
+import hashlib
 import json
 import os
 import re
@@ -104,6 +105,48 @@ SITE = M.SITE
 
 TOKENIZE = M.TOKENIZE
 PAGE_MARKER = re.compile(r'^===PAGE (\d+)===$', re.M)
+
+# A PAGE WITH NO WORDS IN ITS TEXT FILE MAY STILL HAVE WORDS ON IT. Found 7 November 2026:
+# 639 annual-report pages had under 40 characters of text and were skipped, and 316 of
+# them were full pages -- payroll lists, fund tables, department narratives -- embedded as
+# PICTURES in otherwise digital reports, so the text layer held only the page number.
+# `searchable_pdfs.py` had already sent those pages to Textract and cached the reads. So a
+# page shorter than SHORT_PAGE takes its cached Textract read, if there is one: no new read
+# is made here, ever. The cache is under build/ and gitignored, so a clone without it
+# indexes only the text files; the fingerprint below makes that difference visible.
+SHORT_PAGE = 40
+TEXTRACT_CACHE = os.path.join(ROOT, 'build', 'textract', 'cache')
+
+
+def _textract_lines(path):
+    try:
+        blocks = json.load(open(path, encoding='utf-8')).get('Blocks') or []
+    except (OSError, ValueError):
+        return ''
+    return '\n'.join(b.get('Text', '') for b in blocks if b.get('BlockType') == 'LINE')
+
+
+def textract_fill(entry):
+    """{page: text} for this document's short pages that a cached Textract read covers."""
+    if 'fill' in entry:
+        return entry['fill']
+    fill = {}
+    d = os.path.join(TEXTRACT_CACHE, entry.get('pdf_sha') or '-')
+    if entry.get('pdf_sha') and os.path.isdir(d):
+        parts = PAGE_MARKER.split(open(entry['file'], encoding='utf-8', errors='replace').read())
+        for i in range(1, len(parts) - 1, 2):
+            n = int(parts[i])
+            if len(re.sub(r'[ \t]+', ' ', parts[i + 1]).strip()) >= SHORT_PAGE:
+                continue
+            for feature in ('text', 'tables', 'tables-reread'):
+                f = os.path.join(d, 'p%03d-%s.json' % (n, feature))
+                if os.path.exists(f):
+                    t = _textract_lines(f)
+                    if len(re.sub(r'\s+', ' ', t).strip()) >= SHORT_PAGE:
+                        fill[n] = t
+                    break
+    entry['fill'] = fill
+    return fill
 
 # Source folders whose documents are indexed by page. DISCOVERED, never listed.
 #
@@ -234,6 +277,7 @@ def source_files():
                 'label': (r.get('label') or '').strip() or os.path.basename(local),
                 'local': local,
                 'upstream': (r.get('upstream') or '').strip(),
+                'pdf_sha': (r.get('sha256') or '').strip(),
             })
     # TWO FILES, ONE KEY. A source row's doc_key is `<folder>/<file stem>`, so the FY26 and
     # FY27 copies of `warrant-article-tracking-copy.xlsx` -- and the three PROVENANCE notes
@@ -278,10 +322,13 @@ def source_rows(entry):
     stem = entry.get('key_stem') or _stem(entry['file'])
     doc_url = '%s/docs/%s' % (SITE, entry['local'][len('sources/'):]) if entry['local'] else ''
     text_url = '%s/docs/%s' % (SITE, entry['file_key'][len('sources/'):])
+    fill = textract_fill(entry)
     out = []
     for n, text in pages:
         body = re.sub(r'[ \t]+', ' ', text).strip()
-        if len(body) < 40:
+        if len(body) < SHORT_PAGE and n in fill:
+            body = re.sub(r'[ \t]+', ' ', fill[n]).strip()
+        if len(body) < SHORT_PAGE:
             continue
         cite = ('%s#page=%d' % (doc_url, n)) if (doc_url and n) else (doc_url or text_url)
         out.append(({
@@ -784,6 +831,12 @@ def wanted():
             e['sha256'] += ':reader=' + READER_VERSION[e['corpus']]
         if e.get('fingerprint'):
             e['sha256'] += ':' + e['fingerprint']
+        if e['corpus'] == 'source' and textract_fill(e):
+            # Only a document that GAINS pages changes its fingerprint, so sync_search_d1.py
+            # re-sends those documents and leaves every other source file alone.
+            fill = textract_fill(e)
+            e['sha256'] += ':textract=' + hashlib.sha256(json.dumps(
+                sorted(fill.items())).encode()).hexdigest()[:12]
         out[e['file_key']] = e
     if not out:
         raise SystemExit('no inputs found at all; refusing to write an empty index')
