@@ -120,6 +120,9 @@ FAMILIES = {
     'receipts-fragments': ('Receipts and payments fragments, 1985 and FY2023',
                    'Pieces of the Treasurer\'s receipts and payments statements that the receipts and payments datasets lack: the 1985 receipts-list subtotals and total receipts, the 1985 Assessments group of payments, '
                    'and the FY2023 summary of receipts by category read from a 93 dpi page image. The FY2023 detail lines are not legible and are left out.'),
+    'meeting-schedules-due-dates': ('Meeting schedules and tax due dates',
+                   'The front-of-book list of when and where each board meets, 1960-FY2018, and the 1960-1963 list of when '
+                   'real estate, excise and poll taxes and dog licences fall due, each as printed text. Boards that print their own regular meeting time on their report page are not rows.'),
     'fire-calls': ('Fire Department calls by year and category, 1959-FY2025',
                    'What the Fire Department printed about its calls in every annual report: the '
                    'total and each category as printed, with the quote and the PDF page. Parts '
