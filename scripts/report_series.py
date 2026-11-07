@@ -52,7 +52,7 @@ FAMILIES = {
                    'The 2010 list is in report-classification-plan.csv; the grade-and-step salary schedules are in salary-schedule.csv.'),
     'births-census': ('Births recorded and census counts, 1945-FY2025',
                    'The births the Town Clerk\'s report prints (a chart or tabulation: 1950-1959, 1961, 1965, 1963-1973, 1970-1981) and the dated census populations '
-                   'the school Statistics page prints (1945 to the State census of 1971), as printed in each edition, plus the State, U.S. and Town census populations the town-facts page prints (1974-FY2013 editions) and the Town Clerk\'s printed birth totals (1976, 2008-FY2025 editions). Not the names in the vital-records lists, and not the ACS (census-acs.csv).'),
+                   'the school Statistics page prints (1945 to the State census of 1971), as printed in each edition, plus the Town Clerk\'s printed birth totals (1976, 2008-FY2025 editions). Later census populations are in series-town-facts.csv. Not the names in the vital-records lists, and not the ACS (census-acs.csv).'),
     'monty-tech-enrollment': ('Monty Tech enrolment of Lunenburg students, 1971-FY2016',
                    'How many Lunenburg students the Montachusett Regional Vocational Technical School report or the School Committee report prints as enrolled: the member-town list '
                    'in the school\'s annual report (2002-FY2016, on October 1 or, FY2014-FY2016, June 1), plus the 1971 entrants and the 1973 students sent. '

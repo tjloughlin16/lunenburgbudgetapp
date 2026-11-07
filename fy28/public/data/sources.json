@@ -5598,6 +5598,18 @@
      "textUrl": "/docs/data/annual-report-receipts.csv"
     },
     {
+     "path": "data/dataset-provenance.csv",
+     "title": "Every dataset row joined to the document it came from",
+     "stars": 3,
+     "what": "225 rows: dataset, edition, pages, the report’s own filename, both of the town’s addresses for it, and the sha256 of our copy. Rule 12 wants the address at the same time as the figure; this is that join, and notes/generated/DATASET-PROVENANCE.md is its readable form.",
+     "kind": "Data",
+     "bytes": 354292,
+     "url": "/docs/data/dataset-provenance.csv",
+     "count": 1386,
+     "unit": "rows",
+     "textUrl": "/docs/data/dataset-provenance.csv"
+    },
+    {
      "path": "data/special-revenue-read.csv",
      "title": "The special revenue funds, read from the page",
      "stars": 3,
@@ -5620,18 +5632,6 @@
      "count": 1701,
      "unit": "rows",
      "textUrl": "/docs/data/balance-sheet.csv"
-    },
-    {
-     "path": "data/dataset-provenance.csv",
-     "title": "Every dataset row joined to the document it came from",
-     "stars": 3,
-     "what": "225 rows: dataset, edition, pages, the report’s own filename, both of the town’s addresses for it, and the sha256 of our copy. Rule 12 wants the address at the same time as the figure; this is that join, and notes/generated/DATASET-PROVENANCE.md is its readable form.",
-     "kind": "Data",
-     "bytes": 205155,
-     "url": "/docs/data/dataset-provenance.csv",
-     "count": 778,
-     "unit": "rows",
-     "textUrl": "/docs/data/dataset-provenance.csv"
     },
     {
      "path": "data/page-blocked.csv",
@@ -6042,6 +6042,30 @@
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
     {
+     "path": "data/series-mcas-from-reports.csv",
+     "title": "School test results (MCAS) as the annual reports print them, 1998-FY2025",
+     "stars": 2,
+     "what": "Lunenburg MCAS results as printed: the share of students at each performance level by grade and subject (1998-2005), the share at the top levels against the state for the middle school and the high school (2006-FY2025), grade 3 Primary School results, state rank and percentile where printed, and the FY2013 index scores for students with disabilities. Two different scales run through it: Advanced / Proficient (to 2016) and Meeting / Exceeding Expectations (from 2017); they are not merged, and each row says which it is.",
+     "kind": "Data",
+     "bytes": 395700,
+     "url": "/docs/data/series-mcas-from-reports.csv",
+     "count": 1142,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-mcas-from-reports.csv"
+    },
+    {
+     "path": "data/series-ballot-questions-local.csv",
+     "title": "Local ballot questions: votes by precinct, 1960-FY2025",
+     "stars": 2,
+     "what": "Every question the Town put to its own voters that the annual reports print a tally for (debt exclusions, overrides, regional school, charter, advisory questions, local acts and liquor licensing), with Yes, No and Blanks by precinct and the total the page prints. State questions and candidates' returns are not here; the four tallies already in ballot-questions.csv are listed as held elsewhere.",
+     "kind": "Data",
+     "bytes": 321044,
+     "url": "/docs/data/series-ballot-questions-local.csv",
+     "count": 1761,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-ballot-questions-local.csv"
+    },
+    {
      "path": "data/extraction-plan.csv",
      "title": "Which pages each dataset was read from",
      "stars": 2,
@@ -6052,6 +6076,54 @@
      "count": 555,
      "unit": "rows",
      "textUrl": "/docs/data/extraction-plan.csv"
+    },
+    {
+     "path": "data/series-monty-tech-budgets.csv",
+     "title": "Monty Tech budgets and assessments, 1998-FY2025",
+     "stars": 2,
+     "what": "What the Montachusett Regional Vocational Technical School District printed in the annual reports about its own money: the FY2017 report's financial pages (assessment on each of 18 member towns 1998-2017, FY2018 assessments by town, budget build-up, ratio percentages, balance sheet) and the Educational Plan totals, grants and expense categories in the district's reports to the towns, each tied to the total the page prints.",
+     "kind": "Data",
+     "bytes": 264901,
+     "url": "/docs/data/series-monty-tech-budgets.csv",
+     "count": 859,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-monty-tech-budgets.csv"
+    },
+    {
+     "path": "data/series-tax-collection-holes.csv",
+     "title": "Tax collection by levy year: the editions the other two datasets do not hold",
+     "stars": 2,
+     "what": "The Tax Collector's receivable table for 1961, 1962, 1967, FY2011-FY2013, FY2019 and FY2024, by column and levy year, each column tied to the total the page prints.",
+     "kind": "Data",
+     "bytes": 235201,
+     "url": "/docs/data/series-tax-collection-holes.csv",
+     "count": 1336,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-tax-collection-holes.csv"
+    },
+    {
+     "path": "data/series-nashoba-public-health.csv",
+     "title": "Nashoba Associated Boards of Health services for Lunenburg, 1959-FY2025",
+     "stars": 2,
+     "what": "The counts the annual reports print for what Nashoba did in Lunenburg: sanitation and environmental health inspections and tests, septic and well work, nursing and home health visits, clinics, school dental programme, and (from 1963) communicable disease cases, by disease where listed. Measures are kept as printed; renamed services are not merged. 2001-2007 are held in report-dept-activity.csv.",
+     "kind": "Data",
+     "bytes": 229711,
+     "url": "/docs/data/series-nashoba-public-health.csv",
+     "count": 1317,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-nashoba-public-health.csv"
+    },
+    {
+     "path": "data/series-sped-indicators.csv",
+     "title": "Special education students served and state indicators, 1991-FY2025",
+     "stars": 2,
+     "what": "What the Special Services reports say in sentences: students receiving special education and their share of the student population against the state average, 504-plan counts, and from FY2013 the state indicators (graduation, dropout, suspension, parent involvement, MCAS index or scaled scores) with the district figure, state rate and state target. Out-of-district placement counts are in placement-counts.csv; placement-mix and compliance indicators are shares the page reports, not counts of children. Index scores (CPI) and scaled scores (SS) are different scales and are labelled as printed.",
+     "kind": "Data",
+     "bytes": 220236,
+     "url": "/docs/data/series-sped-indicators.csv",
+     "count": 841,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-sped-indicators.csv"
     },
     {
      "path": "data/report-anomalies.csv",
@@ -6071,9 +6143,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 134894,
+     "bytes": 146505,
      "url": "/docs/data/table-semantics.csv",
-     "count": 214,
+     "count": 234,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -6102,6 +6174,18 @@
      "textUrl": "/docs/data/stated-cuts.csv"
     },
     {
+     "path": "data/series-revolving-fund-limits.csv",
+     "title": "Revolving fund spending limits voted at town meeting, 1992-FY2025",
+     "stars": 2,
+     "what": "The dollar limit town meeting voted on each revolving fund (fund, limit, and from FY2017 the spender, revenue source and purpose where the page prints them), read from the town meeting articles in each report. These are voted limits, not spending; articles passed over are not rows.",
+     "kind": "Data",
+     "bytes": 85301,
+     "url": "/docs/data/series-revolving-fund-limits.csv",
+     "count": 221,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-revolving-fund-limits.csv"
+    },
+    {
      "path": "data/balance-sheet-printed-totals.csv",
      "title": "The TOTAL rows each balance sheet prints",
      "stars": 2,
@@ -6126,6 +6210,42 @@
      "textUrl": "/docs/data/staff-roster-counts.csv"
     },
     {
+     "path": "data/series-police-activity.csv",
+     "title": "Police Department activity counts by year, 1959-FY2025",
+     "stars": 2,
+     "what": "The headline counts the Police Department printed each year: calls for service, incidents or complaints handled, arrests or court cases, motor vehicle stops, accidents and protective custody, with the tabulation totals where the page ties its parts. The wording of the headline count changes by era (miscellaneous calls, calls for service, incidents, incidents/calls) and is kept as printed, not merged.",
+     "kind": "Data",
+     "bytes": 69767,
+     "url": "/docs/data/series-police-activity.csv",
+     "count": 342,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-police-activity.csv"
+    },
+    {
+     "path": "data/series-town-facts.csv",
+     "title": "Town facts that change: population, registered voters, road miles and area, 1959-FY2025",
+     "stars": 2,
+     "what": "The measures on the About the Town / Lunenburg Profile page that change from year to year (population with its source kept apart: federal, state or town census; registered voters; road miles; area), plus the census list on the school statistics page 1959-1973. Valuation and tax rate are held elsewhere.",
+     "kind": "Data",
+     "bytes": 67931,
+     "url": "/docs/data/series-town-facts.csv",
+     "count": 375,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-town-facts.csv"
+    },
+    {
+     "path": "data/series-building-activity.csv",
+     "title": "Building permits issued by year, 1963-FY2025",
+     "stars": 2,
+     "what": "What the Building Department (before 1975, the Zoning Authorities) printed about permits: applications received and permits issued by type with the printed totals for 1967-1982, the sentence counts for 1986-2005, and the permits issued by type from FY2019 to FY2025 with the printed total. The definition of a permit changes (zoning permits to 1974, building permits only to 2005, then building, electrical, plumbing and gas together), so rows are only comparable within a run.",
+     "kind": "Data",
+     "bytes": 65090,
+     "url": "/docs/data/series-building-activity.csv",
+     "count": 484,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-building-activity.csv"
+    },
+    {
      "path": "data/annual-report-catalogue-sort.csv",
      "title": "Which catalogued tables we hold nothing of, and whether each is worth taking",
      "stars": 2,
@@ -6143,11 +6263,35 @@
      "stars": 2,
      "what": "One row per report, 1959 to FY2025: its pages, the tables found in it, how many are in a dataset and whether that dataset is in the database, and the datasets it feeds. Generated by build_annual_report_coverage.py; its readable form is notes/reference/EXTRACTION-GAPS.md.",
      "kind": "Data",
-     "bytes": 38610,
+     "bytes": 55639,
      "url": "/docs/data/annual-report-coverage.csv",
      "count": 67,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-coverage.csv"
+    },
+    {
+     "path": "data/series-library-usage.csv",
+     "title": "Library usage: circulation, visits, volumes and hours, 1959-FY2025",
+     "stars": 2,
+     "what": "What the Ritter Memorial Library and Lunenburg Public Library reports print about use: circulation (by section where printed, with totals; physical and electronic counted separately in FY2025), visits, registered borrowers, volumes held and hours open. Wording, scope and rounding vary and are kept as printed; items in the 1960s-1970s include periodicals, and later counts add videos and audio. Not the library service values table.",
+     "kind": "Data",
+     "bytes": 44158,
+     "url": "/docs/data/series-library-usage.csv",
+     "count": 252,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-library-usage.csv"
+    },
+    {
+     "path": "data/series-oneoff-finance.csv",
+     "title": "One-off finance tables worth keeping, 1962-FY2025",
+     "stars": 2,
+     "what": "Single finance tables printed in one edition each: the 1958-62 five-year tax rate recap (1962), the county retirement assessment worked example (1981), the FY2020 revenue by source and department changes (FY2019 report), the FY2024 undesignated fund balance roll-forward (marked unaudited) and FY13-FY26 foundation enrolment with Chapter 70 aid (FY2025). Each table is its own row_group; the other editions print no such table in this family.",
+     "kind": "Data",
+     "bytes": 38291,
+     "url": "/docs/data/series-oneoff-finance.csv",
+     "count": 153,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-oneoff-finance.csv"
     },
     {
      "path": "data/money-classification.csv",
@@ -6162,6 +6306,18 @@
      "textUrl": "/docs/data/money-classification.csv"
     },
     {
+     "path": "data/series-capital-plan-holes.csv",
+     "title": "Capital plans: the editions capital-plans.csv does not hold",
+     "stars": 2,
+     "what": "Capital plan items by department, item and amount for the May 2008, 2009, 2011, 2012, 2013 and 2023-2025 editions, each list tied to the plan total the page prints, with the FY2013 and FY2024 lists the extractor refused read from the page image.",
+     "kind": "Data",
+     "bytes": 31895,
+     "url": "/docs/data/series-capital-plan-holes.csv",
+     "count": 123,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-capital-plan-holes.csv"
+    },
+    {
      "path": "data/column-glossary.csv",
      "title": "What each column name means, across every table",
      "stars": 2,
@@ -6174,6 +6330,42 @@
      "textUrl": "/docs/data/column-glossary.csv"
     },
     {
+     "path": "data/series-pay-grades-fy2011.csv",
+     "title": "Pay grades by class title, FY2011 and FY2015, and 1984 pay rates",
+     "stars": 2,
+     "what": "The Classification Plan lists of class title and grade the report prints (FY2011 p89, FY2015 Schedule A), and the 1984 amended hourly, weekly and yearly rates by year of service, as printed. The 2010 list is in report-classification-plan.csv; the grade-and-step salary schedules are in salary-schedule.csv.",
+     "kind": "Data",
+     "bytes": 23834,
+     "url": "/docs/data/series-pay-grades-fy2011.csv",
+     "count": 98,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-pay-grades-fy2011.csv"
+    },
+    {
+     "path": "data/series-cultural-council-grants.csv",
+     "title": "Cultural Council grants: applicant, project and amount, 1984-FY2024",
+     "stars": 2,
+     "what": "What the local Cultural Council (earlier the Arts Lottery Council) printed about its grants: amounts named in the 1984-1985 reports, totals distributed 1986-1991 and FY2015, the FY2016 account form, and applicant, project and amount lists for FY2016, FY2017, FY2018 and FY2021 (totals printed only for FY2016 and FY2018), with later totals and program counts.",
+     "kind": "Data",
+     "bytes": 20906,
+     "url": "/docs/data/series-cultural-council-grants.csv",
+     "count": 87,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-cultural-council-grants.csv"
+    },
+    {
+     "path": "data/series-births-census.csv",
+     "title": "Births recorded and census counts, 1945-FY2025",
+     "stars": 2,
+     "what": "The births the Town Clerk's report prints (a chart or tabulation: 1950-1959, 1961, 1965, 1963-1973, 1970-1981) and the dated census populations the school Statistics page prints (1945 to the State census of 1971), as printed in each edition, plus the Town Clerk's printed birth totals (1976, 2008-FY2025 editions). Later census populations are in series-town-facts.csv. Not the names in the vital-records lists, and not the ACS (census-acs.csv).",
+     "kind": "Data",
+     "bytes": 19489,
+     "url": "/docs/data/series-births-census.csv",
+     "count": 96,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-births-census.csv"
+    },
+    {
      "path": "data/PROVENANCE-peg-access.md",
      "title": "Whose money PEG Access is, and why the balance series is not a series",
      "stars": 2,
@@ -6184,6 +6376,30 @@
      "count": 330,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-peg-access.md"
+    },
+    {
+     "path": "data/series-sewer-billing.csv",
+     "title": "Sewer Commission: amount billed, delinquencies and connections, 2007-FY2025",
+     "stars": 2,
+     "what": "What the Sewer Commission report printed about the sewer system: connection counts in a sentence for 2007-FY2011, then from FY2012 properties connected, properties with access not yet connected, new accounts in the year, quarterly sewer bills billed out and delinquencies added to tax bills (billed and delinquent from FY2013).",
+     "kind": "Data",
+     "bytes": 18135,
+     "url": "/docs/data/series-sewer-billing.csv",
+     "count": 76,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-sewer-billing.csv"
+    },
+    {
+     "path": "data/series-veterans-services.csv",
+     "title": "Veterans services: recipients and dollars paid, 1959-FY2025",
+     "stars": 2,
+     "what": "The counts and dollars the Veterans' Agent or Veterans Services Officer report prints: families, cases, recipients or clients aided, dollars paid out and (from 1962) reimbursed by the State, as printed. Wording and measure change by era (families aided to 1968, cases 1965-1982, monthly average recipients from FY2021) and are kept as printed. Not the 1964 and 1971 tables (report-veterans-services.csv). Most editions print no count.",
+     "kind": "Data",
+     "bytes": 15512,
+     "url": "/docs/data/series-veterans-services.csv",
+     "count": 69,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-veterans-services.csv"
     },
     {
      "path": "data/PROVENANCE-enterprise-balance-sheet.md",
@@ -6210,6 +6426,18 @@
      "textUrl": "/docs/data/PROVENANCE-balance-sheet.md"
     },
     {
+     "path": "data/annual-report-coverage-datasets.csv",
+     "title": "Every dataset the annual reports feed, and whether it is in the database",
+     "stars": 2,
+     "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
+     "kind": "Data",
+     "bytes": 12830,
+     "url": "/docs/data/annual-report-coverage-datasets.csv",
+     "count": 141,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-coverage-datasets.csv"
+    },
+    {
      "path": "data/peg-access-printed-totals.csv",
      "title": "The revenue-versus-expenses statement each report prints",
      "stars": 2,
@@ -6234,18 +6462,6 @@
      "textUrl": "/docs/data/enterprise-balance-sheet-printed-totals.csv"
     },
     {
-     "path": "data/annual-report-coverage-datasets.csv",
-     "title": "Every dataset the annual reports feed, and whether it is in the database",
-     "stars": 2,
-     "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
-     "kind": "Data",
-     "bytes": 10939,
-     "url": "/docs/data/annual-report-coverage-datasets.csv",
-     "count": 119,
-     "unit": "rows",
-     "textUrl": "/docs/data/annual-report-coverage-datasets.csv"
-    },
-    {
      "path": "data/PROVENANCE-annual-report-receipts.md",
      "title": "Where the receipts came from",
      "stars": 2,
@@ -6268,6 +6484,18 @@
      "count": 41,
      "unit": "rows",
      "textUrl": "/docs/data/stabilization-balances.csv"
+    },
+    {
+     "path": "data/series-coa-services.csv",
+     "title": "Council on Aging service counts: Meals on Wheels and the senior van, 1976-FY2019",
+     "stars": 2,
+     "what": "The counts the Council on Aging report prints for meals delivered to homebound elders and rides on the senior van, with the number of clients where printed (FY2015-FY2019), and the Eagle House meal-site meals where the same page prints them (1996-1999). Counts only; clients are never named. Wording and period vary (the year the page names to 1990, fiscal years from 1996, monthly averages in 1984, 1986 and 1987, one-way trips in 1996) and are kept as printed.",
+     "kind": "Data",
+     "bytes": 7480,
+     "url": "/docs/data/series-coa-services.csv",
+     "count": 40,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-coa-services.csv"
     },
     {
      "path": "data/PROVENANCE-special-revenue-funds.md",
@@ -6304,6 +6532,18 @@
      "count": 110,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-special-revenue-read.md"
+    },
+    {
+     "path": "data/series-monty-tech-enrollment.csv",
+     "title": "Monty Tech enrolment of Lunenburg students, 1971-FY2016",
+     "stars": 2,
+     "what": "How many Lunenburg students the Montachusett Regional Vocational Technical School report or the School Committee report prints as enrolled: the member-town list in the school's annual report (2002-FY2016, on October 1 or, FY2014-FY2016, June 1), plus the 1971 entrants and the 1973 students sent. Not the DESE enrolment file (dese-enrollment.csv), and no school-wide totals or shop lists.",
+     "kind": "Data",
+     "bytes": 5875,
+     "url": "/docs/data/series-monty-tech-enrollment.csv",
+     "count": 19,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-monty-tech-enrollment.csv"
     },
     {
      "path": "data/ingest-plan.csv",
@@ -6522,6 +6762,18 @@
      "textUrl": "/docs/data/report-officials.csv"
     },
     {
+     "path": "data/report-series/mcas-from-reports.csv",
+     "title": "School test results (MCAS) as the annual reports print them, 1998-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 370466,
+     "url": "/docs/data/report-series/mcas-from-reports.csv",
+     "count": 1142,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/mcas-from-reports.csv"
+    },
+    {
      "path": "data/report-valuation.csv",
      "title": "Valuation and tax rate history",
      "stars": 1,
@@ -6534,6 +6786,18 @@
      "textUrl": "/docs/data/report-valuation.csv"
     },
     {
+     "path": "data/report-series/ballot-questions-local.csv",
+     "title": "Local ballot questions: votes by precinct, 1960-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 292597,
+     "url": "/docs/data/report-series/ballot-questions-local.csv",
+     "count": 1761,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/ballot-questions-local.csv"
+    },
+    {
      "path": "data/annual-report-survey.csv",
      "title": "Every page of every report, and how it can be read",
      "stars": 1,
@@ -6544,6 +6808,18 @@
      "count": 2751,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-survey.csv"
+    },
+    {
+     "path": "data/report-series/monty-tech-budgets.csv",
+     "title": "Monty Tech budgets and assessments, 1998-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 230808,
+     "url": "/docs/data/report-series/monty-tech-budgets.csv",
+     "count": 859,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/monty-tech-budgets.csv"
     },
     {
      "path": "data/report-treasurers-cash-reconciliation.csv",
@@ -6570,6 +6846,42 @@
      "textUrl": "/docs/data/report-enrollment-mcas.csv"
     },
     {
+     "path": "data/report-series/sped-indicators.csv",
+     "title": "Special education students served and state indicators, 1991-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 201676,
+     "url": "/docs/data/report-series/sped-indicators.csv",
+     "count": 841,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/sped-indicators.csv"
+    },
+    {
+     "path": "data/report-series/nashoba-public-health.csv",
+     "title": "Nashoba Associated Boards of Health services for Lunenburg, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 201470,
+     "url": "/docs/data/report-series/nashoba-public-health.csv",
+     "count": 1317,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/nashoba-public-health.csv"
+    },
+    {
+     "path": "data/report-series/tax-collection-holes.csv",
+     "title": "Tax collection by levy year: the editions the other two datasets do not hold: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 196178,
+     "url": "/docs/data/report-series/tax-collection-holes.csv",
+     "count": 1336,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/tax-collection-holes.csv"
+    },
+    {
      "path": "data/report-school-staff-fte.csv",
      "title": "Annual-report extract: school staff fte",
      "stars": 1,
@@ -6580,6 +6892,18 @@
      "count": 450,
      "unit": "rows",
      "textUrl": "/docs/data/report-school-staff-fte.csv"
+    },
+    {
+     "path": "data/series-coverage.csv",
+     "title": "Which annual reports were checked for each series",
+     "stars": 1,
+     "what": "One row per series per edition: whether the series is printed there and, if not, which pages were looked at.",
+     "kind": "Data",
+     "bytes": 192008,
+     "url": "/docs/data/series-coverage.csv",
+     "count": 1407,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-coverage.csv"
     },
     {
      "path": "data/report-school-state-aid.csv",
@@ -6666,6 +6990,18 @@
      "textUrl": "/docs/data/report-tax-bill-breakdown.csv"
     },
     {
+     "path": "data/report-series/revolving-fund-limits.csv",
+     "title": "Revolving fund spending limits voted at town meeting, 1992-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 80381,
+     "url": "/docs/data/report-series/revolving-fund-limits.csv",
+     "count": 221,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/revolving-fund-limits.csv"
+    },
+    {
      "path": "data/report-transitional-receipts.csv",
      "title": "Annual-report extract: transitional receipts",
      "stars": 1,
@@ -6714,6 +7050,30 @@
      "textUrl": "/docs/data/report-warrant-article-amounts.csv"
     },
     {
+     "path": "data/report-series/police-activity.csv",
+     "title": "Police Department activity counts by year, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 62313,
+     "url": "/docs/data/report-series/police-activity.csv",
+     "count": 342,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/police-activity.csv"
+    },
+    {
+     "path": "data/report-series/town-facts.csv",
+     "title": "Town facts that change: population, registered voters, road miles and area, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 59623,
+     "url": "/docs/data/report-series/town-facts.csv",
+     "count": 375,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/town-facts.csv"
+    },
+    {
      "path": "data/report-fee-schedule.csv",
      "title": "Annual-report extract: fee schedule",
      "stars": 1,
@@ -6738,6 +7098,18 @@
      "textUrl": "/docs/data/report-surplus-free-cash.csv"
     },
     {
+     "path": "data/report-series/building-activity.csv",
+     "title": "Building permits issued by year, 1963-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 56587,
+     "url": "/docs/data/report-series/building-activity.csv",
+     "count": 484,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/building-activity.csv"
+    },
+    {
      "path": "data/report-auditors-cash-schedule.csv",
      "title": "Annual-report extract: auditors cash schedule",
      "stars": 1,
@@ -6760,6 +7132,30 @@
      "count": 179,
      "unit": "rows",
      "textUrl": "/docs/data/report-property-tax-exemptions.csv"
+    },
+    {
+     "path": "data/report-series/library-usage.csv",
+     "title": "Library usage: circulation, visits, volumes and hours, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 38741,
+     "url": "/docs/data/report-series/library-usage.csv",
+     "count": 252,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/library-usage.csv"
+    },
+    {
+     "path": "data/report-series/oneoff-finance.csv",
+     "title": "One-off finance tables worth keeping, 1962-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 34453,
+     "url": "/docs/data/report-series/oneoff-finance.csv",
+     "count": 153,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/oneoff-finance.csv"
     },
     {
      "path": "data/report-monty-tech.csv",
@@ -6796,6 +7192,18 @@
      "count": 199,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-contents.csv"
+    },
+    {
+     "path": "data/report-series/capital-plan-holes.csv",
+     "title": "Capital plans: the editions capital-plans.csv does not hold: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 28245,
+     "url": "/docs/data/report-series/capital-plan-holes.csv",
+     "count": 123,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/capital-plan-holes.csv"
     },
     {
      "path": "data/report-cash-management.csv",
@@ -6846,6 +7254,30 @@
      "textUrl": "/docs/data/report-expenditure-shares.csv"
     },
     {
+     "path": "data/report-series/pay-grades-fy2011.csv",
+     "title": "Pay grades by class title, FY2011 and FY2015, and 1984 pay rates: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 21632,
+     "url": "/docs/data/report-series/pay-grades-fy2011.csv",
+     "count": 98,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/pay-grades-fy2011.csv"
+    },
+    {
+     "path": "data/report-series/sped-indicators.coverage.csv",
+     "title": "Special education students served and state indicators, 1991-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 20934,
+     "url": "/docs/data/report-series/sped-indicators.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/sped-indicators.coverage.csv"
+    },
+    {
      "path": "data/meeting-videos.csv",
      "title": "Meetings posted to the channel more than once, and how the postings relate",
      "stars": 1,
@@ -6858,6 +7290,42 @@
      "textUrl": "/docs/data/meeting-videos.csv"
     },
     {
+     "path": "data/report-series/cultural-council-grants.csv",
+     "title": "Cultural Council grants: applicant, project and amount, 1984-FY2024: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 19124,
+     "url": "/docs/data/report-series/cultural-council-grants.csv",
+     "count": 87,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/cultural-council-grants.csv"
+    },
+    {
+     "path": "data/report-series/monty-tech-budgets.coverage.csv",
+     "title": "Monty Tech budgets and assessments, 1998-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 18342,
+     "url": "/docs/data/report-series/monty-tech-budgets.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/monty-tech-budgets.coverage.csv"
+    },
+    {
+     "path": "data/report-series/births-census.csv",
+     "title": "Births recorded and census counts, 1945-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 17222,
+     "url": "/docs/data/report-series/births-census.csv",
+     "count": 96,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/births-census.csv"
+    },
+    {
      "path": "data/report-tax-collection-by-levy-year.csv",
      "title": "Annual-report extract: tax collection by levy year",
      "stars": 1,
@@ -6868,6 +7336,78 @@
      "count": 39,
      "unit": "rows",
      "textUrl": "/docs/data/report-tax-collection-by-levy-year.csv"
+    },
+    {
+     "path": "data/report-series/sewer-billing.csv",
+     "title": "Sewer Commission: amount billed, delinquencies and connections, 2007-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 16405,
+     "url": "/docs/data/report-series/sewer-billing.csv",
+     "count": 76,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/sewer-billing.csv"
+    },
+    {
+     "path": "data/report-series/veterans-services.csv",
+     "title": "Veterans services: recipients and dollars paid, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 13934,
+     "url": "/docs/data/report-series/veterans-services.csv",
+     "count": 69,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/veterans-services.csv"
+    },
+    {
+     "path": "data/report-series/sewer-billing.coverage.csv",
+     "title": "Sewer Commission: amount billed, delinquencies and connections, 2007-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 13894,
+     "url": "/docs/data/report-series/sewer-billing.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/sewer-billing.coverage.csv"
+    },
+    {
+     "path": "data/report-series/pay-grades-fy2011.coverage.csv",
+     "title": "Pay grades by class title, FY2011 and FY2015, and 1984 pay rates: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 13485,
+     "url": "/docs/data/report-series/pay-grades-fy2011.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/pay-grades-fy2011.coverage.csv"
+    },
+    {
+     "path": "data/report-series/coa-services.coverage.csv",
+     "title": "Council on Aging service counts: Meals on Wheels and the senior van, 1976-FY2019: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 13145,
+     "url": "/docs/data/report-series/coa-services.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/coa-services.coverage.csv"
+    },
+    {
+     "path": "data/report-series/monty-tech-enrollment.coverage.csv",
+     "title": "Monty Tech enrolment of Lunenburg students, 1971-FY2016: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 13036,
+     "url": "/docs/data/report-series/monty-tech-enrollment.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/monty-tech-enrollment.coverage.csv"
     },
     {
      "path": "data/report-special-education.csv",
@@ -6906,6 +7446,18 @@
      "textUrl": "/docs/data/senior-tax-workoff.csv"
     },
     {
+     "path": "data/report-series/veterans-services.coverage.csv",
+     "title": "Veterans services: recipients and dollars paid, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 12017,
+     "url": "/docs/data/report-series/veterans-services.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/veterans-services.coverage.csv"
+    },
+    {
      "path": "data/report-revenue-cash-invested.csv",
      "title": "Annual-report extract: revenue cash invested",
      "stars": 1,
@@ -6916,6 +7468,18 @@
      "count": 21,
      "unit": "rows",
      "textUrl": "/docs/data/report-revenue-cash-invested.csv"
+    },
+    {
+     "path": "data/report-series/revolving-fund-limits.coverage.csv",
+     "title": "Revolving fund spending limits voted at town meeting, 1992-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 9958,
+     "url": "/docs/data/report-series/revolving-fund-limits.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/revolving-fund-limits.coverage.csv"
     },
     {
      "path": "data/youtube-boards.csv",
@@ -6930,6 +7494,30 @@
      "textUrl": "/docs/data/youtube-boards.csv"
     },
     {
+     "path": "data/report-series/cultural-council-grants.coverage.csv",
+     "title": "Cultural Council grants: applicant, project and amount, 1984-FY2024: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 9263,
+     "url": "/docs/data/report-series/cultural-council-grants.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/cultural-council-grants.coverage.csv"
+    },
+    {
+     "path": "data/report-series/capital-plan-holes.coverage.csv",
+     "title": "Capital plans: the editions capital-plans.csv does not hold: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 9058,
+     "url": "/docs/data/report-series/capital-plan-holes.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/capital-plan-holes.coverage.csv"
+    },
+    {
      "path": "data/report-highway-accounts.csv",
      "title": "Annual-report extract: highway accounts",
      "stars": 1,
@@ -6940,6 +7528,54 @@
      "count": 18,
      "unit": "rows",
      "textUrl": "/docs/data/report-highway-accounts.csv"
+    },
+    {
+     "path": "data/report-series/oneoff-finance.coverage.csv",
+     "title": "One-off finance tables worth keeping, 1962-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 8714,
+     "url": "/docs/data/report-series/oneoff-finance.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/oneoff-finance.coverage.csv"
+    },
+    {
+     "path": "data/report-series/ballot-questions-local.coverage.csv",
+     "title": "Local ballot questions: votes by precinct, 1960-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 8181,
+     "url": "/docs/data/report-series/ballot-questions-local.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/ballot-questions-local.coverage.csv"
+    },
+    {
+     "path": "data/report-series/nashoba-public-health.coverage.csv",
+     "title": "Nashoba Associated Boards of Health services for Lunenburg, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 7805,
+     "url": "/docs/data/report-series/nashoba-public-health.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/nashoba-public-health.coverage.csv"
+    },
+    {
+     "path": "data/report-series/births-census.coverage.csv",
+     "title": "Births recorded and census counts, 1945-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 7579,
+     "url": "/docs/data/report-series/births-census.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/births-census.coverage.csv"
     },
     {
      "path": "data/report-weights-measures.csv",
@@ -6976,6 +7612,18 @@
      "count": 10,
      "unit": "rows",
      "textUrl": "/docs/data/report-school-census-minors.csv"
+    },
+    {
+     "path": "data/report-series/coa-services.csv",
+     "title": "Council on Aging service counts: Meals on Wheels and the senior van, 1976-FY2019: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 6542,
+     "url": "/docs/data/report-series/coa-services.csv",
+     "count": 40,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/coa-services.csv"
     },
     {
      "path": "data/report-town-facts.csv",
@@ -7038,6 +7686,18 @@
      "textUrl": "/docs/data/report-veterans-services.csv"
     },
     {
+     "path": "data/report-series/town-facts.coverage.csv",
+     "title": "Town facts that change: population, registered voters, road miles and area, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 5650,
+     "url": "/docs/data/report-series/town-facts.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/town-facts.coverage.csv"
+    },
+    {
      "path": "data/staff-roster-contractors.csv",
      "title": "School bus contractors listed beside the staff rosters",
      "stars": 1,
@@ -7048,6 +7708,42 @@
      "count": 48,
      "unit": "rows",
      "textUrl": "/docs/data/staff-roster-contractors.csv"
+    },
+    {
+     "path": "data/report-series/tax-collection-holes.coverage.csv",
+     "title": "Tax collection by levy year: the editions the other two datasets do not hold: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 5525,
+     "url": "/docs/data/report-series/tax-collection-holes.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/tax-collection-holes.coverage.csv"
+    },
+    {
+     "path": "data/report-series/mcas-from-reports.coverage.csv",
+     "title": "School test results (MCAS) as the annual reports print them, 1998-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 5429,
+     "url": "/docs/data/report-series/mcas-from-reports.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/mcas-from-reports.coverage.csv"
+    },
+    {
+     "path": "data/report-series/monty-tech-enrollment.csv",
+     "title": "Monty Tech enrolment of Lunenburg students, 1971-FY2016: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 5399,
+     "url": "/docs/data/report-series/monty-tech-enrollment.csv",
+     "count": 19,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/monty-tech-enrollment.csv"
     },
     {
      "path": "data/report-expenditure-history.csv",
@@ -7110,6 +7806,30 @@
      "textUrl": "/docs/data/report-school-spending-shares.csv"
     },
     {
+     "path": "data/report-series/building-activity.coverage.csv",
+     "title": "Building permits issued by year, 1963-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 3599,
+     "url": "/docs/data/report-series/building-activity.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/building-activity.coverage.csv"
+    },
+    {
+     "path": "data/report-series/police-activity.coverage.csv",
+     "title": "Police Department activity counts by year, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 3568,
+     "url": "/docs/data/report-series/police-activity.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/police-activity.coverage.csv"
+    },
+    {
      "path": "data/report-capital-project-costs.csv",
      "title": "Annual-report extract: capital project costs",
      "stars": 1,
@@ -7134,6 +7854,18 @@
      "textUrl": "/docs/data/report-voted-pay-rates.csv"
     },
     {
+     "path": "data/report-series/library-usage.coverage.csv",
+     "title": "Library usage: circulation, visits, volumes and hours, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 3035,
+     "url": "/docs/data/report-series/library-usage.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/library-usage.coverage.csv"
+    },
+    {
      "path": "data/report-school-staff-changes.csv",
      "title": "Annual-report extract: school staff changes",
      "stars": 1,
@@ -7156,18 +7888,6 @@
      "count": 6,
      "unit": "rows",
      "textUrl": "/docs/data/report-school-building-approved-costs.csv"
-    },
-    {
-     "path": "data/series-coverage.csv",
-     "title": "Which annual reports were checked for each series",
-     "stars": 1,
-     "what": "One row per series per edition: whether the series is printed there and, if not, which pages were looked at.",
-     "kind": "Data",
-     "bytes": 1611,
-     "url": "/docs/data/series-coverage.csv",
-     "count": 67,
-     "unit": "rows",
-     "textUrl": "/docs/data/series-coverage.csv"
     },
     {
      "path": "data/report-series/fire-calls.coverage.csv",
@@ -7278,7 +7998,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 117583872,
+     "bytes": 120414208,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -64304,9 +65024,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5775,
+  "documents": 5835,
   "groups": 33,
-  "bytes": 7350583417,
+  "bytes": 7358110288,
   "loadBearing": 220
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 234 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
