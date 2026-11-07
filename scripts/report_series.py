@@ -115,6 +115,9 @@ FAMILIES = {
     'revolving-fund-limits': ('Revolving fund spending limits voted at town meeting, 1992-FY2025',
                    'The dollar limit town meeting voted on each revolving fund (fund, limit, and from FY2017 the spender, revenue source and purpose where the page prints them), '
                    'read from the town meeting articles in each report. These are voted limits, not spending; articles passed over are not rows.'),
+    'receipts-fragments': ('Receipts and payments fragments, 1985 and FY2023',
+                   'Pieces of the Treasurer\'s receipts and payments statements that the receipts and payments datasets lack: the 1985 receipts-list subtotals and total receipts, the 1985 Assessments group of payments, '
+                   'and the FY2023 summary of receipts by category read from a 93 dpi page image. The FY2023 detail lines are not legible and are left out.'),
     'fire-calls': ('Fire Department calls by year and category, 1959-FY2025',
                    'What the Fire Department printed about its calls in every annual report: the '
                    'total and each category as printed, with the quote and the PDF page. Parts '
