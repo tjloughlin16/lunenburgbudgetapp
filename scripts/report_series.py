@@ -47,6 +47,8 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'scan-debris': ('Scan debris and empty tables',
+                   'Real captions, names and figures on pages where the machine read a table out of rules, photograph lettering or empty cells (covers, photograph captions, committee pages), plus the school tuition rates printed 1973-1986 (the 1986 table held only its caption); lettering inside photographs is not loaded.'),
     'report-contents-pages': ("The report's own contents page",
                    'The department index at the front or back of each edition 1959-2010 (none in 1986): one row per department or section, the first printed page as the value and the printed range in the quote; FY2011-FY2025 are in report-index.csv.'),
     'office-hours-directories': ('Office hours and phone directories',
