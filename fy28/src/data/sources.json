@@ -5995,7 +5995,7 @@
     },
     {
      "path": "data/series-classification-schedules.csv",
-     "title": "Town classification and salary schedules: class, step and printed rate, 1966-1973, the FY2011 pay schedule and the FY2016 and FY2017 pay schedules",
+     "title": "Town classification and salary schedules, 1966-FY2017",
      "stars": 2,
      "what": "The Classification and Salary Schedule the town reports print 1966-1973 (nine full schedules, dated March 1967 to July 1974), one row per class and step or rate column, with the rates printed in the text of the police rate votes of 1972, 1974 and 1976, and the 2010 report's grade-and-step pay schedule for fiscal 2011. Figures are printed in different bases (annual, hourly, weekly or per-year payments, some with no period printed) and are not comparable across them; a rate printed once for a bracketed group of classes is repeated on a row for each class. Later schedules (1974-2009) were printed in the Finance Committee report, not the town report; 1984 and the class-title lists are in pay-grades-fy2011.csv, FY2015, FY2016 and FY2022 grade-and-step schedules are in salary-schedule.csv.",
      "kind": "Data",
@@ -6263,7 +6263,7 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 177206,
+     "bytes": 177143,
      "url": "/docs/data/table-semantics.csv",
      "count": 259,
      "unit": "rows",
@@ -6991,7 +6991,7 @@
     },
     {
      "path": "data/report-series/classification-schedules.csv",
-     "title": "Town classification and salary schedules: class, step and printed rate, 1966-1973, the FY2011 pay schedule and the FY2016 and FY2017 pay schedules: the read",
+     "title": "Town classification and salary schedules, 1966-FY2017: the read",
      "stars": 1,
      "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
      "kind": "Data",
@@ -7951,7 +7951,7 @@
     },
     {
      "path": "data/report-series/classification-schedules.coverage.csv",
-     "title": "Town classification and salary schedules: class, step and printed rate, 1966-1973, the FY2011 pay schedule and the FY2016 and FY2017 pay schedules: editions looked at",
+     "title": "Town classification and salary schedules, 1966-FY2017: editions looked at",
      "stars": 1,
      "what": "Written by us. Every edition, and whether the series is printed there.",
      "kind": "Data",
@@ -65926,7 +65926,7 @@
  "totals": {
   "documents": 5910,
   "groups": 33,
-  "bytes": 7393246886,
+  "bytes": 7393246823,
   "loadBearing": 220
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 234 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
