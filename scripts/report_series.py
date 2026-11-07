@@ -47,6 +47,8 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'report-contents-pages': ("The report's own contents page",
+                   'The department index at the front or back of each edition 1959-2010 (none in 1986): one row per department or section, the first printed page as the value and the printed range in the quote; FY2011-FY2025 are in report-index.csv.'),
     'office-hours-directories': ('Office hours and phone directories',
                    'Town office hours by office from the front matter of every edition 1959-FY2013, the telephone directories by subject 1962-2010 and FY2012, the FY2014-FY2025 office hours and telephone number tables, and hours stated in department reports; office, hours or number as printed in the quote, value blank.'),
     'enrolment-2006': ('School enrolment by grade, 2006 gap',
