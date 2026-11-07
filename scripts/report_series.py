@@ -47,6 +47,8 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'prose-boxed-as-tables': ('Prose and lists boxed as tables',
+                   'Paragraphs, lists and keys that the machine read as table cells: each list item is a row, each paragraph a row with its heading as the row group and a value only where it states a single figure (1966 teacher bargaining, highway definitions, tree warden notes, school lunch reports, keys to the accountant\'s marks, Council on Aging lists, DPW services); counts already held in the trade-permits, conservation-filings and births-census series stay there.'),
     'scan-debris': ('Scan debris and empty tables',
                    'Real captions, names and figures on pages where the machine read a table out of rules, photograph lettering or empty cells (covers, photograph captions, committee pages), plus the school tuition rates printed 1973-1986 (the 1986 table held only its caption); lettering inside photographs is not loaded.'),
     'report-contents-pages': ("The report's own contents page",
