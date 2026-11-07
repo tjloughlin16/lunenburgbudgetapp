@@ -50,6 +50,10 @@ FAMILIES = {
     'pay-grades-fy2011': ('Pay grades by class title, FY2011 and FY2015, and 1984 pay rates',
                    'The Classification Plan lists of class title and grade the report prints (FY2011 p89, FY2015 Schedule A), and the 1984 amended hourly, weekly and yearly rates by year of service, as printed. '
                    'The 2010 list is in report-classification-plan.csv; the grade-and-step salary schedules are in salary-schedule.csv.'),
+    'classification-schedules': ('Town classification and salary schedules: class, step and printed rate, 1966-1973 and the FY2011 pay schedule',
+                   'The Classification and Salary Schedule the town reports print 1966-1973 (nine full schedules, dated March 1967 to July 1974), one row per class and step or rate column, with the rates printed in the text of the police rate votes of 1972, 1974 and 1976, and the 2010 report\'s grade-and-step pay schedule for fiscal 2011. '
+                   'Figures are printed in different bases (annual, hourly, weekly or per-year payments, some with no period printed) and are not comparable across them; a rate printed once for a bracketed group of classes is repeated on a row for each class. '
+                   'Later schedules (1974-2009) were printed in the Finance Committee report, not the town report; 1984 and the class-title lists are in pay-grades-fy2011.csv, FY2015, FY2016 and FY2022 grade-and-step schedules are in salary-schedule.csv.'),
     'births-census': ('Births recorded and census counts, 1945-FY2025',
                    'The births the Town Clerk\'s report prints (a chart or tabulation: 1950-1959, 1961, 1965, 1963-1973, 1970-1981) and the dated census populations '
                    'the school Statistics page prints (1945 to the State census of 1971), as printed in each edition, plus the Town Clerk\'s printed birth totals (1976, 2008-FY2025 editions). Later census populations are in series-town-facts.csv. Not the names in the vital-records lists, and not the ACS (census-acs.csv).'),
