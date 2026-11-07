@@ -179,6 +179,8 @@ FAMILIES = {
     'official-lists': ('Other named lists of officials, 1959-FY2025',
                    'Name and rank or role as printed for people on lists town-roster-entries.csv and staff-roster-entries.csv do not hold: the Fire Department company rosters of 1964-1968, the 1985 fire history, committee, commission and board lists and signature blocks, '
                    'school central-office and Montachusett administration lists, and the 1969 Montachusett district committee by town. Only lines where the role ends the printed line are read; a name inside a sentence is not a row.'),
+    'school-personnel-changes': ('School personnel changes and roster detail, 1959-FY2017',
+                   'The School Department lists of resignations, retirements, appointments, transfers, leaves of absence and deaths 1959-1986 (one row per person, with the printed entry as the quote), the school retirees named in the 1996-FY2017 superintendents\' reports (with years of service where printed), and the columns the personnel rosters of 1976 (pages 133-149) and 1985 (pages 150 and 156) leave out of staff-roster-pages: position, education, experience and appointment year, row group roster detail.'),
     'staff-roster-pages': ('School staff rosters: pages the staff-roster-entries reader did not load',
                    'Named school staff and councils on pages staff-roster-entries does not hold: the 1964 new-teacher '
                    'table and statistics cells, the 1976 personnel listing (names), 1985 teaching-staff pages 150 and 156 '
