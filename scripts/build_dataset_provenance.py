@@ -123,7 +123,7 @@ def main():
                 continue
             b = by[ed]
             b['rows'] += 1
-            for p in re.findall(r'\d+', str(r.get('page') or r.get('pages') or '')):
+            for p in re.findall(r'\d+', str(r.get('page') or r.get('pages') or r.get('pdf_page') or '')):
                 b['pages'].add(int(p))
             if r.get('status'):
                 b['status'][r['status']] += 1

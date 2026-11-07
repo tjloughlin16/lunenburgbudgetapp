@@ -718,781 +718,781 @@ gets the document is to ask the town for it by name.
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1960 | 9 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1962 | 9 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1964 | 3 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 8 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1967 | 3 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 12 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1970 | 15 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1972 | 3 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1975 | 9 |  | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
-| 1976 | 9 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 9 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1978 | 9 |  | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
-| 1979 | 9 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1983 | 8 |  | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
-| 1984 | 12 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 24 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 72 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 72 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 96 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 64 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 196 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 96 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1992 | 144 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 256 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1994 | 16 |  | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
-| 1996 | 99 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 100 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1999 | 49 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2001 | 35 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 20 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 40 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 40 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2006 | 135 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 40 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| FY2025 | 40 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1960 | 9 | 65 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1962 | 9 | 73 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1964 | 3 | 62 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 8 | 84 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1967 | 3 | 71 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 12 | 80 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1970 | 15 | 68,78 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1972 | 3 | 71 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1975 | 9 | 41 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 9 | 44 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 9 | 74 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 9 | 76 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 9 | 83 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1983 | 8 | 75 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
+| 1984 | 12 | 74 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 24 | 82 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 72 | 68,69 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 72 | 49 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 96 | 66,67 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 64 | 66 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 196 | 42,57,58 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 96 | 54,55 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1992 | 144 | 57,58 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 256 | 44,45,46 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1994 | 16 | 58 | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
+| 1996 | 99 | 76,77 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 100 | 89 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1999 | 49 | 80 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2001 | 35 | 91 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 20 | 90 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 40 | 94,95 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 40 | 89 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2006 | 135 | 78,79,80 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 40 | 86 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| FY2025 | 40 | 175 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-births-census` — 96 rows across 35 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1959 | 14 |  | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
-| 1960 | 1 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1961 | 3 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 2 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1963 | 2 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1964 | 2 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 3 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 3 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 3 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 3 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1969 | 3 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1970 | 3 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1971 | 4 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1972 | 4 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1973 | 15 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 1976 | 1 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1981 | 12 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| 2008 | 1 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 1 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 1 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 1 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 1 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 1 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 1 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 1 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 1 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 1 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 1 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 1 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 1 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 1 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 1 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 1 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 1 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 1 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1959 | 14 | 10,11,102 | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
+| 1960 | 1 | 106 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1961 | 3 | 14,113 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 2 | 111 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1963 | 2 | 108 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1964 | 2 | 103 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 3 | 12,110 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 3 | 111 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 3 | 128 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 3 | 137 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1969 | 3 | 121 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1970 | 3 | 126 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1971 | 4 | 128 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 4 | 124 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 15 | 10,120 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1976 | 1 | 56 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1981 | 12 | 92 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| 2008 | 1 | 86 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 1 | 69 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 1 | 83 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 1 | 80 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 1 | 105 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 1 | 92 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 1 | 132 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 1 | 136 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 1 | 140 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 1 | 152 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 1 | 236 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 1 | 196 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 1 | 147 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 1 | 138 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 1 | 140 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 1 | 162 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 1 | 138 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 1 | 136 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-building-activity` — 484 rows across 57 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1963 | 4 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1964 | 1 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 14 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 16 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 21 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 18 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1969 | 17 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1970 | 18 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1971 | 15 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1972 | 15 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1973 | 14 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 1974 | 15 |  | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
-| 1975 | 12 |  | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
-| 1976 | 13 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 14 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1978 | 14 |  | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
-| 1979 | 15 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1980 | 17 |  | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
-| 1981 | 17 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| 1982 | 14 |  | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
-| 1983 | 13 |  | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
-| 1984 | 16 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 20 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 3 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 4 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 5 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 5 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 5 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 5 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1992 | 5 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 9 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1994 | 9 |  | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
-| 1995 | 2 |  | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
-| 1996 | 1 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 12 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 12 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 2 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 10 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 3 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 2 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 3 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 3 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 3 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2009 | 1 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| FY2011 | 1 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 1 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2015 | 2 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 1 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 1 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 1 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 5 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 5 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 5 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 5 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 6 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 7 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 7 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1963 | 4 | 10 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1964 | 1 | 6 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 14 | 16 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 16 | 10 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 21 | 10 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 18 | 62 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1969 | 17 | 51 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1970 | 18 | 66 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1971 | 15 | 17 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 15 | 25 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 14 | 16 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 15 | 7 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 12 | 23 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 13 | 35 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 14 | 22 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 14 | 17 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 15 | 31 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 17 | 29 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
+| 1981 | 17 | 29 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| 1982 | 14 | 29 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
+| 1983 | 13 | 27 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
+| 1984 | 16 | 31 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 20 | 40 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 3 | 26 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 4 | 15 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 5 | 20 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 5 | 19 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 5 | 17 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 5 | 20 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1992 | 5 | 7 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 9 | 7 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1994 | 9 | 8 | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
+| 1995 | 2 | 11 | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
+| 1996 | 1 | 24 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 12 | 11 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 12 | 11 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 2 | 10 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 10 | 13,14 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 3 | 11 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 2 | 11 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 3 | 12 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 3 | 12 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 3 | 22 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2009 | 1 | 14 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| FY2011 | 1 | 16 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 1 | 12 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2015 | 2 | 50 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 1 | 52 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 1 | 48 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 1 | 56 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 5 | 60 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 5 | 53 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 5 | 52 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 5 | 54 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 6 | 61 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 7 | 41 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 7 | 44 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-capital-plan-holes` — 123 rows across 8 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 2008 | 12 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 7 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| FY2011 | 14 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 12 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 17 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2023 | 9 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 14 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 38 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 2008 | 12 | 14 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 7 | 15 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| FY2011 | 14 | 83 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 12 | 12 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 17 | 12 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2023 | 9 | 108,163 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 14 | 87 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 38 | 138,139 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-coa-services` — 40 rows across 18 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1976 | 1 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 1 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1979 | 1 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1980 | 1 |  | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
-| 1984 | 1 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1986 | 1 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 2 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1989 | 2 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 1 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1996 | 3 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 2 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 2 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 2 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| FY2015 | 4 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 4 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 4 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 4 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 4 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| 1976 | 1 | 18 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 1 | 14 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1979 | 1 | 25 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 1 | 24 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
+| 1984 | 1 | 26 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1986 | 1 | 25 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 2 | 24 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1989 | 2 | 20,21 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 1 | 18 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1996 | 3 | 18 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 2 | 17 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 2 | 16 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 2 | 15 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| FY2015 | 4 | 53 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 4 | 56 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 4 | 53 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 4 | 60 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 4 | 64 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
 
 ## `series-cultural-council-grants` — 87 rows across 16 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1984 | 3 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 6 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 1 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 1 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 1 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 2 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 2 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 1 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| FY2015 | 1 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 25 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 10 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 12 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2021 | 15 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 5 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 1 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 1 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| 1984 | 3 | 29 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 6 | 41 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 1 | 27 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 1 | 14 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 1 | 24 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 2 | 23 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 2 | 18 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 1 | 21 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| FY2015 | 1 | 54 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 25 | 57,58 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 10 | 54 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 12 | 62 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2021 | 15 | 57 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 5 | 58 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 1 | 64 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 1 | 47 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 
 ## `series-fire-calls` — 926 rows across 67 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1959 | 11 |  | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
-| 1960 | 12 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1961 | 12 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 11 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1963 | 12 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1964 | 12 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 15 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 13 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 17 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 17 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1969 | 16 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1970 | 16 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1971 | 18 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1972 | 15 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1973 | 18 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 1974 | 19 |  | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
-| 1975 | 16 |  | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
-| 1976 | 19 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 18 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1978 | 20 |  | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
-| 1979 | 19 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1980 | 24 |  | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
-| 1981 | 22 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| 1982 | 15 |  | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
-| 1983 | 22 |  | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
-| 1984 | 24 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 20 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 21 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 22 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 22 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 21 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 17 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 16 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1992 | 17 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 21 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1994 | 22 |  | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
-| 1995 | 4 |  | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
-| 1996 | 3 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 33 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 35 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 2 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 10 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 12 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 11 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 9 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 52 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 10 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 9 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 11 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 4 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 5 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 9 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 5 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 5 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 5 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 5 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 5 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 5 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 5 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 5 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 5 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 5 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 5 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 5 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 5 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 5 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 5 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1959 | 11 | 39 | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
+| 1960 | 12 | 39 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1961 | 12 | 48 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 11 | 43 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1963 | 12 | 45 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1964 | 12 | 43 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 15 | 53 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 13 | 42 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 17 | 47 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 17 | 52 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1969 | 16 | 55 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1970 | 16 | 55 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1971 | 18 | 32 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 15 | 31 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 18 | 30 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 19 | 31 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 16 | 32 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 19 | 29 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 18 | 33 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 20 | 22 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 19 | 30 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 24 | 17 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
+| 1981 | 22 | 20 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| 1982 | 15 | 19 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
+| 1983 | 22 | 17 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
+| 1984 | 24 | 20 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 20 | 33 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 21 | 23 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 22 | 20 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 22 | 19 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 21 | 18 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 17 | 15 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 16 | 13,14 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1992 | 17 | 8 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 21 | 10 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1994 | 22 | 20 | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
+| 1995 | 4 | 28 | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
+| 1996 | 3 | 27 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 33 | 26 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 35 | 24,25 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 2 | 25 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 10 | 24 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 12 | 20 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 11 | 21,22 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 9 | 23,24 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 52 | 27,28 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 10 | 24 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 9 | 24 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 11 | 25 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 4 | 27 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 5 | 18 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 9 | 20 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 5 | 21 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 5 | 21,22 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 5 | 24 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 5 | 74 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 5 | 81 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 5 | 85 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 5 | 79 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 5 | 96 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 5 | 96 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 5 | 86 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 5 | 87 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 5 | 84 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 5 | 92 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 5 | 76 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 5 | 75 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-library-usage` — 252 rows across 59 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1959 | 3 |  | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
-| 1960 | 4 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1961 | 7 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 4 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1963 | 5 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1964 | 4 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 5 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 4 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 5 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 4 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1969 | 5 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1970 | 5 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1971 | 4 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1972 | 5 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1973 | 4 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 1974 | 4 |  | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
-| 1975 | 3 |  | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
-| 1976 | 11 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 11 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1978 | 10 |  | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
-| 1979 | 15 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1980 | 18 |  | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
-| 1981 | 5 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| 1982 | 4 |  | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
-| 1983 | 4 |  | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
-| 1984 | 4 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 4 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 4 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 4 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 4 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 1 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 5 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 4 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1992 | 2 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 1 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1996 | 1 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 2 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 2 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 4 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 1 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 9 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 6 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 1 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 5 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2006 | 1 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 1 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 5 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 2 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 2 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 5 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 3 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 5 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 2 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2017 | 1 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 1 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 2 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2023 | 1 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 1 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 3 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1959 | 3 | 53 | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
+| 1960 | 4 | 52 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1961 | 7 | 63,64 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 4 | 56 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1963 | 5 | 57 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1964 | 4 | 56 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 5 | 69 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 4 | 62 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 5 | 55 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 4 | 67 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1969 | 5 | 61,62 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1970 | 5 | 12,13 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1971 | 4 | 13 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 5 | 13 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 4 | 15 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 4 | 16 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 3 | 14 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 11 | 15 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 11 | 12 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 10 | 11 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 15 | 12 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 18 | 16 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
+| 1981 | 5 | 18,19 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| 1982 | 4 | 18 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
+| 1983 | 4 | 15 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
+| 1984 | 4 | 13 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 4 | 22 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 4 | 18 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 4 | 12 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 4 | 14 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 1 | 10 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 5 | 9 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 4 | 11 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1992 | 2 | 14 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 1 | 17 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1996 | 1 | 24 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 2 | 22 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 2 | 20 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 4 | 23 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 1 | 27 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 9 | 23 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 6 | 24 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 1 | 22 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 5 | 25 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2006 | 1 | 22 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 1 | 22 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 5 | 23 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 2 | 24 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 2 | 26 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 5 | 26 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 3 | 21 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 5 | 14 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 2 | 57,58 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2017 | 1 | 63 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 1 | 73 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 2 | 75 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2023 | 1 | 71 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 1 | 56 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 3 | 57 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-mcas-from-reports` — 1,142 rows across 27 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1998 | 72 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 72 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 72 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 78 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 70 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 78 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 78 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 90 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 4 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 43 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 8 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 20 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 20 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 20 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 30 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 75 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 55 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 54 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 26 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 26 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 26 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 27 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2021 | 18 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 18 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 20 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 20 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 22 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1998 | 72 | 35 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 72 | 45,46,47,48,49,50 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 72 | 55,56,57,58,59,60 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 78 | 45,46,47,48 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 70 | 36,37 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 78 | 47 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 78 | 47,48 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 90 | 42,49,50 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 4 | 37 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 43 | 40,43 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 8 | 53 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 20 | 35,38 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 20 | 43,45,46 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 20 | 41,44 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 30 | 36,39 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 75 | 34,36,38,41 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 55 | 100,103,107 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 54 | 106,109,113 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 26 | 114,118 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 26 | 113,118 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 26 | 125,130 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 27 | 129,134 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2021 | 18 | 117,119 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 18 | 113,115 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 20 | 133,136 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 20 | 109,112 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 22 | 104,107 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-monty-tech-budgets` — 859 rows across 24 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 2002 | 1 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 1 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 1 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 1 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 2 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 2 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 2 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 1 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 2 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 1 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 2 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 3 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 2 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 2 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 2 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 782 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 2 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 2 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 2 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 2 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 14 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 14 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 14 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 2 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 2002 | 1 | 30 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 1 | 31 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 1 | 32 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 1 | 30 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 2 | 29,33 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 2 | 32,36 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 2 | 32,35 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 1 | 41 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 2 | 48,53 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 1 | 47 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 2 | 44 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 3 | 46,59 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 2 | 115 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 2 | 119 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 2 | 124 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 782 | 124,125,140,141,147,148,149 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 2 | 137,138 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 2 | 141 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 2 | 133 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 2 | 125 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 14 | 123 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 14 | 143 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 14 | 119 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 2 | 115 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-monty-tech-enrollment` — 19 rows across 18 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1971 | 1 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1973 | 1 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 2002 | 1 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 1 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 1 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 1 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 1 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 1 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 1 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 1 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 1 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 1 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 1 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 1 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 1 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 1 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 1 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 2 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| 1971 | 1 | 94 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1973 | 1 | 81 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 2002 | 1 | 30 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 1 | 31 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 1 | 32 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 1 | 30 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 1 | 29 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 1 | 32 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 1 | 32 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 1 | 41 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 1 | 48 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 1 | 47 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 1 | 43 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 1 | 45 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 1 | 114 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 1 | 118 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 1 | 123 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 2 | 145 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
 
 ## `series-nashoba-public-health` — 1,317 rows across 57 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1959 | 18 |  | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
-| 1960 | 5 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1961 | 7 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 5 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1963 | 11 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1964 | 23 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 33 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 11 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 28 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 8 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1969 | 7 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1970 | 8 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1971 | 10 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1972 | 15 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1973 | 8 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 1974 | 7 |  | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
-| 1975 | 6 |  | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
-| 1979 | 13 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1980 | 20 |  | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
-| 1981 | 30 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| 1982 | 25 |  | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
-| 1983 | 23 |  | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
-| 1984 | 21 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 19 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 18 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 20 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 21 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 22 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 16 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 22 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1992 | 27 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 24 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1994 | 24 |  | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
-| 1995 | 31 |  | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
-| 1996 | 30 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 30 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 28 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 29 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 29 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2008 | 40 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 44 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 36 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 34 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 39 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 36 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 43 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 35 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 32 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 33 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 35 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 31 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 26 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 24 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 24 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 24 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 29 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 20 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1959 | 18 | 46,47 | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
+| 1960 | 5 | 45 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1961 | 7 | 56 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 5 | 53 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1963 | 11 | 53,54 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1964 | 23 | 53 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 33 | 66 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 11 | 52 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 28 | 57 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 8 | 59 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1969 | 7 | 60 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1970 | 8 | 60 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1971 | 10 | 16 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 15 | 21 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 8 | 18 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 7 | 7 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 6 | 7 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1979 | 13 | 8 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 20 | 7 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
+| 1981 | 30 | 8,9 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| 1982 | 25 | 8,9 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
+| 1983 | 23 | 7 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
+| 1984 | 21 | 7 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 19 | 9 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 18 | 8 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 20 | 7 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 21 | 9 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 22 | 7 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 16 | 7 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 22 | 7 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1992 | 27 | 16 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 24 | 12 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1994 | 24 | 12 | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
+| 1995 | 31 | 31,32 | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
+| 1996 | 30 | 20,21 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 30 | 19,20 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 28 | 17,18 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 29 | 17 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 29 | 31,32,33 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2008 | 40 | 17,18,19,20 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 44 | 20,21 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 36 | 22,23 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 34 | 18,19,20 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 39 | 15,16,17 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 36 | 16,17,18 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 43 | 69,70,71,72,73 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 35 | 77,78,79,80 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 32 | 81,82,83,84 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 33 | 75,76,77,78 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 35 | 92,93,94,95 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 31 | 92,93,94,95 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 26 | 83,84,85 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 24 | 83,84,85 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 24 | 81,82 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 24 | 89,90 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 29 | 73,74 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 20 | 72,73 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-oneoff-finance` — 153 rows across 5 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1962 | 56 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1981 | 9 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| FY2019 | 19 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2024 | 13 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 56 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1962 | 56 | 7 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1981 | 9 | 95 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| FY2019 | 19 | 71,72 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2024 | 13 | 30 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 56 | 53 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-pay-grades-fy2011` — 98 rows across 3 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1984 | 10 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| FY2011 | 42 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2015 | 46 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| 1984 | 10 | 86 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| FY2011 | 42 | 89 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2015 | 46 | 197,198 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
 
 ## `series-police-activity` — 342 rows across 62 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1959 | 3 |  | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
-| 1960 | 3 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1961 | 1 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 3 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1963 | 3 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1964 | 2 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 6 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 2 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 2 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1969 | 3 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1970 | 2 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1971 | 2 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1972 | 2 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1973 | 4 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 1974 | 3 |  | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
-| 1975 | 5 |  | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
-| 1976 | 7 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 5 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1978 | 6 |  | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
-| 1979 | 5 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1980 | 7 |  | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
-| 1981 | 5 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| 1982 | 7 |  | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
-| 1983 | 7 |  | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
-| 1984 | 6 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 7 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 5 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 6 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 6 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 7 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 5 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 5 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1992 | 5 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 7 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1994 | 7 |  | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
-| 1995 | 1 |  | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
-| 1996 | 8 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 8 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 8 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 9 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 3 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 2 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 5 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 5 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 5 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 4 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 4 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 3 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2009 | 5 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 5 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 2 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2015 | 9 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 6 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 8 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 8 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 9 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 10 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 11 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 11 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 11 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 11 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 10 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1959 | 3 | 38 | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
+| 1960 | 3 | 38 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1961 | 1 | 46 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 3 | 42 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1963 | 3 | 44 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1964 | 2 | 42 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 6 | 51,52 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 2 | 40 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 2 | 46 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1969 | 3 | 54 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1970 | 2 | 57 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1971 | 2 | 31 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 2 | 30 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 4 | 26,27 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 3 | 30,31 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 5 | 30,31 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 7 | 32,33 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 5 | 30,31 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 6 | 20,21 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 5 | 28,29 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 7 | 20,21 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
+| 1981 | 5 | 23 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| 1982 | 7 | 23,24 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
+| 1983 | 7 | 20 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
+| 1984 | 6 | 23,24 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 7 | 32 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 5 | 22 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 6 | 18 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 6 | 17 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 7 | 16 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 5 | 13 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 5 | 15 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1992 | 5 | 12 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 7 | 15 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1994 | 7 | 19 | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
+| 1995 | 1 | 26 | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
+| 1996 | 8 | 28 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 8 | 27 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 8 | 26 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 9 | 31 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 3 | 26 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 2 | 21 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 5 | 23,24 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 5 | 26 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 5 | 29,30 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 4 | 25,26 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 4 | 26 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 3 | 26,27 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2009 | 5 | 24 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 5 | 30 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 2 | 23 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2015 | 9 | 86 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 6 | 91 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 8 | 86 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 8 | 102 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 9 | 102 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 10 | 92,93 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 11 | 92 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 11 | 89 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 11 | 101 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 11 | 82,83 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 10 | 80,81 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-revolving-fund-limits` — 221 rows across 34 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1992 | 1 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 3 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1994 | 3 |  | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
-| 1995 | 4 |  | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
-| 1996 | 3 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 5 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 5 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 6 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 6 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 6 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 6 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 7 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 8 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 6 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 6 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 6 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 6 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 6 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 6 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 6 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 6 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 6 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 6 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 6 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 6 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 9 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 9 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 9 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 9 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 10 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 9 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 9 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 10 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 12 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1992 | 1 | 45 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 3 | 40,43 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1994 | 3 | 46,47,48 | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
+| 1995 | 4 | 78,79 | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
+| 1996 | 3 | 86 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 5 | 81,82,83 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 5 | 75,76,77 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 6 | 93,94 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 6 | 108,109 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 6 | 83,84 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 6 | 77,78 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 7 | 84,85 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 8 | 97,98,101 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 6 | 86,87 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 6 | 93,94 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 6 | 95 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 6 | 95 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 6 | 76,77 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 6 | 90,91 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 6 | 81,82 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 6 | 80,81 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 6 | 84,85 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 6 | 135,136 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 6 | 137,138 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 6 | 141,142 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 9 | 153,154,171 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 9 | 154 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 9 | 159 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 9 | 149 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 10 | 138 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 9 | 140 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 9 | 162 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 10 | 138,139 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 12 | 137 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-sewer-billing` — 76 rows across 19 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 2007 | 1 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 1 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 2 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 2 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 2 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 3 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 5 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 5 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 5 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 5 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 5 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 5 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 5 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 5 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 5 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 5 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 5 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 5 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 5 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 2007 | 1 | 28 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 1 | 29 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 2 | 26 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 2 | 31 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 2 | 29 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 3 | 28 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 5 | 23 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 5 | 59 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 5 | 70 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 5 | 76 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 5 | 71 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 5 | 85 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 5 | 86 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 5 | 78 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 5 | 76 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 5 | 74 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 5 | 82 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 5 | 67 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 5 | 67 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-sped-indicators` — 841 rows across 31 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1976 | 1 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1991 | 1 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1993 | 2 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1997 | 2 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 2 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 2 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 2 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 1 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2003 | 3 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 3 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 4 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 3 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 4 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 4 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 4 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 3 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 3 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 2 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 35 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 75 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 77 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 78 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 64 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 76 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 46 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 78 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 78 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 44 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 44 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 44 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 56 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1976 | 1 | 113 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1991 | 1 | 62 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1993 | 2 | 20 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1997 | 2 | 41 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 2 | 36 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 2 | 52,53 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 2 | 62,63 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 1 | 49 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2003 | 3 | 46 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 3 | 49 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 4 | 48 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 3 | 43 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 4 | 50 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 4 | 41 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 4 | 29,30 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 3 | 36 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 3 | 35 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 2 | 33 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 35 | 32,33,34,35 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 75 | 96,97,98 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 77 | 103,104,105 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 78 | 105,106,107 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 64 | 102,103,104 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 76 | 115,116,117,118 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 46 | 119,120,121 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 78 | 109,110,111,112 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 78 | 106,107,108 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 44 | 104,105 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 44 | 120,121,122 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 44 | 97,98 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 56 | 92,93,94 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-tax-collection-holes` — 1,336 rows across 8 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1961 | 45 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 49 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1967 | 41 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| FY2011 | 195 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 215 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 229 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2019 | 285 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2024 | 277 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| 1961 | 45 | 29 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 49 | 25 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1967 | 41 | 18 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| FY2011 | 195 | 78 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 215 | 78 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 229 | 83 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2019 | 285 | 53,54,55 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2024 | 277 | 38,39 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 
 ## `series-town-facts` — 375 rows across 67 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1959 | 7 |  | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
-| 1960 | 9 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1961 | 7 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 6 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1963 | 6 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1964 | 6 |  | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
-| 1965 | 6 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 8 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 8 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 8 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1969 | 8 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1970 | 8 |  | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
-| 1971 | 9 |  | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
-| 1972 | 8 |  | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
-| 1973 | 9 |  | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
-| 1974 | 5 |  | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
-| 1975 | 5 |  | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
-| 1976 | 5 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 5 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1978 | 4 |  | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
-| 1979 | 5 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1980 | 5 |  | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
-| 1981 | 5 |  | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
-| 1982 | 5 |  | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
-| 1983 | 5 |  | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
-| 1984 | 5 |  | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
-| 1985 | 5 |  | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
-| 1986 | 6 |  | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
-| 1987 | 6 |  | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
-| 1988 | 6 |  | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
-| 1989 | 6 |  | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
-| 1990 | 6 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 6 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| 1992 | 6 |  | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
-| 1993 | 6 |  | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
-| 1994 | 6 |  | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
-| 1995 | 6 |  | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
-| 1996 | 6 |  | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
-| 1997 | 6 |  | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
-| 1998 | 6 |  | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
-| 1999 | 6 |  | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
-| 2000 | 6 |  | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
-| 2001 | 6 |  | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
-| 2002 | 6 |  | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
-| 2003 | 6 |  | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
-| 2004 | 6 |  | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
-| 2005 | 6 |  | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
-| 2006 | 6 |  | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
-| 2007 | 6 |  | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
-| 2008 | 6 |  | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
-| 2009 | 6 |  | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
-| 2010 | 6 |  | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
-| FY2011 | 6 |  | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
-| FY2012 | 6 |  | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
-| FY2013 | 6 |  | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
-| FY2014 | 3 |  | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
-| FY2015 | 3 |  | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
-| FY2016 | 3 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2017 | 2 |  | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
-| FY2018 | 3 |  | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
-| FY2019 | 3 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 4 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 4 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 3 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 2 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 2 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 3 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1959 | 7 | 4,102 | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
+| 1960 | 9 | 6,106 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1961 | 7 | 8,113 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 6 | 4,111 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1963 | 6 | 4,108 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1964 | 6 | 4,103 | — | `4507-1964-annual-town-report.pdf` | `b009103ea8738036…` |
+| 1965 | 6 | 4,110 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 8 | 2,111 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 8 | 5,128 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 8 | 5,137 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1969 | 8 | 3,121 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1970 | 8 | 3,126 | — | `4492-1970-annual-town-report.pdf` | `27612d2002f0c9e4…` |
+| 1971 | 9 | 2,128 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 8 | 2,124 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 9 | 3,120 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 5 | 3 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 5 | 3 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 5 | 3 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 5 | 3 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 4 | 3 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 5 | 3 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 5 | 140 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
+| 1981 | 5 | 3 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
+| 1982 | 5 | 3 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
+| 1983 | 5 | 3 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
+| 1984 | 5 | 3 | — | `4484-1984-annual-town-report.pdf` | `41e023d099bddcb8…` |
+| 1985 | 5 | 3 | — | `4485-1985-annual-town-report.pdf` | `da2034b18547d9e3…` |
+| 1986 | 6 | 3 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 6 | 3 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 6 | 5 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 6 | 3 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 6 | 3 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 6 | 3 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| 1992 | 6 | 3 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
+| 1993 | 6 | 3 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
+| 1994 | 6 | 4 | — | `4520-1994-annual-town-report.pdf` | `5f04c35beaa011dc…` |
+| 1995 | 6 | 8 | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
+| 1996 | 6 | 7 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
+| 1997 | 6 | 5 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
+| 1998 | 6 | 5 | — | `4524-1998-annual-town-report.pdf` | `48caa0bdd06da03c…` |
+| 1999 | 6 | 5 | — | `4525-1999-annual-town-report.pdf` | `912bc582b45e043f…` |
+| 2000 | 6 | 5 | — | `4526-2000-annual-town-report.pdf` | `f19de9cdd9f9928e…` |
+| 2001 | 6 | 5 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
+| 2002 | 6 | 4 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
+| 2003 | 6 | 4 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
+| 2004 | 6 | 5 | — | `4530-2004-annual-town-report.pdf` | `c3ba5cd8876ac306…` |
+| 2005 | 6 | 4 | — | `4513-2005-annual-town-report.pdf` | `9d459be744d83690…` |
+| 2006 | 6 | 4 | — | `4514-2006-annual-town-report.pdf` | `95a8fec178bcc2f8…` |
+| 2007 | 6 | 5 | — | `4515-2007-annual-town-report.pdf` | `d93c9ebb9419e1c2…` |
+| 2008 | 6 | 5 | — | `4516-2008-annual-town-report.pdf` | `67d682a76defc4d2…` |
+| 2009 | 6 | 6 | — | `4517-2009-annual-town-report.pdf` | `a9281e2cf95e9f9b…` |
+| 2010 | 6 | 5 | — | `4518-2010-annual-town-report.pdf` | `4f235863ba7ae780…` |
+| FY2011 | 6 | 4 | — | `4117-fy-2011-annual-town-report.pdf` | `551f9edd75d051ae…` |
+| FY2012 | 6 | 4 | — | `4118-fy-2012-annual-town-report.pdf` | `75d645ee7055f68c…` |
+| FY2013 | 6 | 4 | — | `4119-fy-2013-annual-town-report.pdf` | `00670845b7d32216…` |
+| FY2014 | 3 | 6 | — | `4120-fy-2014-annual-town-report.pdf` | `f5ef6e9aec7866f7…` |
+| FY2015 | 3 | 6 | — | `4121-fy-2015-annual-town-report.pdf` | `712afbb458b2a452…` |
+| FY2016 | 3 | 6 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2017 | 2 | 5 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
+| FY2018 | 3 | 6 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
+| FY2019 | 3 | 9 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 4 | 5 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 4 | 6 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 3 | 6 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 2 | 6 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 2 | 6 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 3 | 9 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `series-veterans-services` — 69 rows across 25 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
-| 1959 | 2 |  | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
-| 1960 | 3 |  | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
-| 1961 | 1 |  | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
-| 1962 | 3 |  | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
-| 1963 | 4 |  | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
-| 1965 | 3 |  | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
-| 1966 | 1 |  | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
-| 1967 | 3 |  | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
-| 1968 | 3 |  | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
-| 1969 | 1 |  | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
-| 1974 | 2 |  | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
-| 1976 | 4 |  | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
-| 1977 | 2 |  | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
-| 1979 | 2 |  | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
-| 1982 | 1 |  | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
-| 1990 | 1 |  | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
-| 1991 | 2 |  | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
-| FY2016 | 1 |  | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
-| FY2019 | 5 |  | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
-| FY2020 | 4 |  | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
-| FY2021 | 4 |  | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
-| FY2022 | 4 |  | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
-| FY2023 | 4 |  | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
-| FY2024 | 4 |  | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
-| FY2025 | 5 |  | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
+| 1959 | 2 | 49 | — | `4550-1959-annual-town-report.pdf` | `ab3b0f25a702c46d…` |
+| 1960 | 3 | 48 | — | `4551-1960-annual-town-report.pdf` | `54f78e8e5eb7db87…` |
+| 1961 | 1 | 58 | — | `4548-1961-annual-town-report.pdf` | `27f079487ca3acff…` |
+| 1962 | 3 | 55 | — | `4505-1962-annual-town-report.pdf` | `73d3d092814cea2a…` |
+| 1963 | 4 | 56 | — | `4506-1963-annual-town-report.pdf` | `fcba376a44623db2…` |
+| 1965 | 3 | 68 | — | `4508-1965-annual-town-report.pdf` | `3883f3b9b48ab6b1…` |
+| 1966 | 1 | 55 | — | `4509-1966-annual-town-report.pdf` | `ed4877cde8319448…` |
+| 1967 | 3 | 59 | — | `4510-1967-annual-town-report.pdf` | `f7313e5ad9979855…` |
+| 1968 | 3 | 62 | — | `4511-1968-annual-town-report.pdf` | `e737937f356ec19e…` |
+| 1969 | 1 | 58 | — | `4512-1969-annual-town-report.pdf` | `3b36dfff1e247e32…` |
+| 1974 | 2 | 26 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1976 | 4 | 36 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 2 | 24 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1979 | 2 | 38 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1982 | 1 | 24 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
+| 1990 | 1 | 17 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
+| 1991 | 2 | 22 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
+| FY2016 | 1 | 78 | — | `4123-fy-2016-annual-town-report.pdf` | `f13af7a7c78d4a14…` |
+| FY2019 | 5 | 88 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
+| FY2020 | 4 | 80 | — | `4127-fy-2020-annual-town-report.pdf` | `c3bf67f1259a5c19…` |
+| FY2021 | 4 | 79 | — | `4128-fy-2021-annual-town-report.pdf` | `7ec4740034a2b9bd…` |
+| FY2022 | 4 | 77 | — | `4129-fy-2022-annual-town-report.pdf` | `d1673d634dba15c2…` |
+| FY2023 | 4 | 84 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
+| FY2024 | 4 | 69 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
+| FY2025 | 5 | 69 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
 ## `special-revenue-funds` — 4,532 rows across 35 report(s), **none reconciled**
 
