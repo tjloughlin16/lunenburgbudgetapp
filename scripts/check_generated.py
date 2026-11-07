@@ -80,6 +80,9 @@ CHECKS = [
     ('build_job_postings.py', ['--check']),
     # Every board's transfers, from the minutes the meeting process read, with the evidence.
     ('build_board_transfers.py', ['--check']),
+    # The Early Learning Center report: every timeline quotation found in its document, the
+    # fund series footed row by row. Offline, seconds.
+    ('build_early_learning_center.py', ['--check']),
     # The threads, from the same minutes. Absent from this list until 10 October 2026, which
     # is how threads.json went three weeks stale without a single check failing.
     ('build_threads.py', ['--check']),

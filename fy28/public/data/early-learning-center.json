@@ -1,0 +1,488 @@
+{
+ "conclusions": [
+  {
+   "basis": "munis-school-journal.csv, fund 1312, revenue lines whose description or comment contains ELC.",
+   "bearing": "sizes",
+   "claim": "Fees typed “ELC” came to $37,607 in FY2026, of the fund’s $274,325 in fees.",
+   "detail": "27 of 105 fee deposit lines in FY2026 say ELC, 13.7% of the fund’s fees. A deposit batches many families’ payments, and nothing requires the label.",
+   "figure": "e",
+   "figures": {
+    "a": {
+     "text": "$274,325",
+     "unit": "",
+     "value": 274325.30000000005
+    },
+    "e": {
+     "text": "$37,607",
+     "unit": "",
+     "value": 37607.11000000001
+    },
+    "m": {
+     "text": "105",
+     "unit": "deposit lines",
+     "value": 105
+    },
+    "n": {
+     "text": "27",
+     "unit": "deposit lines",
+     "value": 27
+    },
+    "p": {
+     "text": "13.7%",
+     "unit": "",
+     "value": 13.708947005617055
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    }
+   },
+   "id": "elc-fees-share",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "How many children, or what the ELC charges: neither is in the ledger, and the portal publishes no rates.",
+   "see": [],
+   "so_what": "That is a floor for the ELC’s fees, not its total: the label is optional."
+  },
+  {
+   "basis": "school-fund-flows.csv (fund 1312), which ties every year to the Town’s period-13 report; the opening balance is the annual report’s.",
+   "bearing": "sizes",
+   "claim": "The fund that pays ELC staff spent more than it took in, 3 of 4 years.",
+   "detail": "In FY2026 fees were $274,325 and spending $371,461. The closing balance is carried forward by us from the ledger; the town has not printed it.",
+   "figure": "c",
+   "figures": {
+    "c": {
+     "text": "-$2,569",
+     "unit": "",
+     "value": -2568.63
+    },
+    "d": {
+     "text": "$371,461",
+     "unit": "",
+     "value": 371460.95
+    },
+    "k": {
+     "text": "3",
+     "unit": "years",
+     "value": 3
+    },
+    "n": {
+     "text": "4",
+     "unit": "years",
+     "value": 4
+    },
+    "r": {
+     "text": "$274,325",
+     "unit": "",
+     "value": 274325.3
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "",
+     "value": 2026
+    }
+   },
+   "id": "fund-spent-more-than-fees",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "How much of the spending is the ELC and how much Extended Day: they share one payroll account.",
+   "see": [],
+   "so_what": "By our reckoning it closed FY2026 at -$2,569, which leaves nothing in reserve."
+  },
+  {
+   "basis": "School Committee agendas and minutes, the staff directory and the journal; each quoted in the timeline.",
+   "bearing": "lever",
+   "claim": "The ELC handbook came to the School Committee in 5 springs running.",
+   "detail": "Its director is district staff, its fees go to a school revolving fund, and it registers on its own dates, apart from Pre-K.",
+   "figure": "h",
+   "figures": {
+    "h": {
+     "text": "5",
+     "unit": "years",
+     "value": 5
+    }
+   },
+   "id": "run-by-the-schools",
+   "kind": "measured",
+   "literals": [],
+   "not_shown": "Whether the ELC is licensed as child care, or its age range: no document we hold says.",
+   "see": [],
+   "so_what": "The ELC is a school district programme, run separately from the preschool."
+  }
+ ],
+ "fees_by_year": [
+  {
+   "all": 306342.72,
+   "elc": 25574.18,
+   "fy": 2023,
+   "rest": 280768.54
+  },
+  {
+   "all": 280399.78,
+   "elc": 15604.81,
+   "fy": 2024,
+   "rest": 264794.97
+  },
+  {
+   "all": 271203.64,
+   "elc": 22353.47,
+   "fy": 2025,
+   "rest": 248850.17
+  },
+  {
+   "all": 274325.3,
+   "elc": 37607.11,
+   "fy": 2026,
+   "rest": 236718.19
+  }
+ ],
+ "fund_series": [
+  {
+   "closing": 95528.41,
+   "fy": 2005,
+   "opening": 0.0,
+   "received": 166291.68,
+   "source": "annual town report, 2005, p64",
+   "spent": 70763.27
+  },
+  {
+   "closing": 4467.69,
+   "fy": 2006,
+   "opening": 95528.41,
+   "received": 190362.6,
+   "source": "annual town report, 2006, p59",
+   "spent": 281423.32
+  },
+  {
+   "closing": 13638.85,
+   "fy": 2007,
+   "opening": 4467.69,
+   "received": 208977.84,
+   "source": "annual town report, 2007, p68",
+   "spent": 199806.68
+  },
+  {
+   "closing": 12370.92,
+   "fy": 2008,
+   "opening": 13638.85,
+   "received": 176745.88,
+   "source": "annual town report, 2008, p71",
+   "spent": 178013.81
+  },
+  {
+   "closing": 21878.27,
+   "fy": 2009,
+   "opening": 12370.92,
+   "received": 179251.84,
+   "source": "annual town report, 2009, p56",
+   "spent": 169744.49
+  },
+  {
+   "closing": 35285.31,
+   "fy": 2010,
+   "opening": 21878.27,
+   "received": 203643.23,
+   "source": "annual town report, 2010, p65",
+   "spent": 190236.19
+  },
+  {
+   "closing": 94409.59,
+   "fy": 2014,
+   "opening": 44339.65,
+   "received": 243501.76,
+   "source": "annual town report, FY2014, p30",
+   "spent": 193431.82
+  },
+  {
+   "closing": 112884.1,
+   "fy": 2015,
+   "opening": 94409.59,
+   "received": 237398.55,
+   "source": "annual town report, FY2015, p30",
+   "spent": 218924.04
+  },
+  {
+   "closing": 166530.82,
+   "fy": 2016,
+   "opening": 112884.1,
+   "received": 300590.66,
+   "source": "annual town report, FY2016-addendum, p3",
+   "spent": 246943.94
+  },
+  {
+   "closing": 85601.8,
+   "fy": 2017,
+   "opening": 166530.82,
+   "received": 295495.24,
+   "source": "annual town report, FY2017, p30",
+   "spent": 376424.26
+  },
+  {
+   "closing": 51384.99,
+   "fy": 2018,
+   "opening": 85601.8,
+   "received": 311152.46,
+   "source": "annual town report, FY2018, p36",
+   "spent": 345369.27
+  },
+  {
+   "closing": 31198.94,
+   "fy": 2019,
+   "opening": 51384.99,
+   "received": 313668.28,
+   "source": "annual town report, FY2019, p38",
+   "spent": 333854.33
+  },
+  {
+   "closing": 109856.63,
+   "fy": 2020,
+   "opening": 31198.94,
+   "received": 281944.55,
+   "source": "annual town report, FY2020, p32",
+   "spent": 203286.86
+  },
+  {
+   "closing": 166185.9,
+   "fy": 2021,
+   "opening": 109856.63,
+   "received": 106654.81,
+   "source": "annual town report, FY2021, p33",
+   "spent": 50325.54
+  },
+  {
+   "closing": 192012.95,
+   "fy": 2022,
+   "opening": 166185.9,
+   "received": 256958.76,
+   "source": "annual town report, FY2022, p34",
+   "spent": 231131.71
+  },
+  {
+   "closing": 238492.97,
+   "fy": 2023,
+   "opening": 192012.95,
+   "received": 306342.72,
+   "source": "annual town report, FY2023, p35",
+   "spent": 259862.7
+  },
+  {
+   "closing": 183356.08,
+   "fy": 2024,
+   "opening": 238492.97,
+   "received": 280399.78,
+   "source": "school journal (school-fund-flows.csv)",
+   "spent": 335536.67
+  },
+  {
+   "closing": 94567.02,
+   "fy": 2025,
+   "opening": 183356.08,
+   "received": 271203.64,
+   "source": "school journal (school-fund-flows.csv)",
+   "spent": 359992.7
+  },
+  {
+   "closing": -2568.63,
+   "fy": 2026,
+   "opening": 94567.02,
+   "received": 274325.3,
+   "source": "school journal (school-fund-flows.csv)",
+   "spent": 371460.95
+  }
+ ],
+ "grain": "Dollars in the school Extended Day Revolving Fund (fund 1312), which pays for the ELC and Extended Day together, and dated documents that name the ELC.",
+ "id": "early-learning-center",
+ "not_established": [
+  "How many children attend the ELC, in any year. No document we hold counts them; the Primary School reports its enrolment without them.",
+  "What the ELC charges. The payment portal sells it beside Extended Day and publishes no rates, and no fee schedule is in a budget book or a warrant.",
+  "What the ELC costs. It shares fund 1312, and its payroll account, with Extended Day, so its spending cannot be separated.",
+  "Whether the general fund carries any ELC cost, such as space, utilities or administration, that is not booked to the fund.",
+  "Its age range, hours, or whether it is licensed as child care."
+ ],
+ "sources": [
+  {
+   "what": "The Extended Day Revolving Fund’s own page: every posting, by year",
+   "where": "/school-funds/extended-day-revolving-fund"
+  },
+  {
+   "what": "Every school journal line, FY2023 to FY2026",
+   "where": "/docs/data/munis-school-journal.csv"
+  },
+  {
+   "what": "The fund’s money in, out and balance, by year, from the journal",
+   "where": "/docs/data/school-fund-flows.csv"
+  },
+  {
+   "what": "The fund’s balance from the annual town reports",
+   "where": "/docs/data/special-revenue-funds.csv"
+  },
+  {
+   "what": "Staff rosters from the annual reports",
+   "where": "/docs/data/staff-roster-entries.csv"
+  },
+  {
+   "what": "Meeting minutes and agendas (each cited in the timeline)",
+   "where": "/minutes/find/"
+  }
+ ],
+ "stats": [
+  {
+   "label": "fees typed “ELC”, FY2026",
+   "value": "$37,607"
+  },
+  {
+   "label": "all fees into the fund, FY2026",
+   "value": "$274,325"
+  },
+  {
+   "label": "fund balance at the FY2026 close (ours)",
+   "value": "-$2,569"
+  },
+  {
+   "label": "documents that name the ELC",
+   "value": "35"
+  }
+ ],
+ "timeline": [
+  {
+   "body": "Annual town report",
+   "date": "FY2012",
+   "tag": "place",
+   "url": "https://www.lunenburgma.gov/DocumentCenter/View/4118",
+   "what": "The earliest mention we hold: a staff post named for the ELC, and the programme housed at the T.C. Passios building."
+  },
+  {
+   "body": "Select Board",
+   "date": "2018-11-07",
+   "tag": "run",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11072018-5125",
+   "what": "The Superintendent lists the ELC and Extended Day among the district’s programmes while discussing space for Pre-K classrooms."
+  },
+  {
+   "body": "Select Board",
+   "date": "2019-05-07",
+   "tag": "distinct",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05072019-5159",
+   "what": "The Town Manager reports the ELC will move to T.C. Passios, and distinguishes it from the integrated preschool."
+  },
+  {
+   "body": "School Committee agenda, filed under advisory councils",
+   "date": "2021-10-20",
+   "tag": "rates",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10202021-4386",
+   "what": "A proposed Extended Day and ELC rate increase is on the agenda."
+  },
+  {
+   "body": "School Committee (agenda)",
+   "date": "2022-03-16",
+   "tag": "handbook",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03162022-4452",
+   "what": "Extended Day and ELC recommendations and handbooks are on the agenda."
+  },
+  {
+   "body": "Municipal Building Design Committee",
+   "date": "2022-05-16",
+   "tag": "place",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05162022-3097",
+   "what": "The teen center is ruled out as a home for the ELC because of its play equipment."
+  },
+  {
+   "body": "Select Board",
+   "date": "2022-12-20",
+   "tag": "place",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_12202022-5299",
+   "what": "The School Committee asks for the Brooks House as an ELC; the design committee expects the programmes to return to school buildings."
+  },
+  {
+   "body": "School Committee (agenda)",
+   "date": "2023-03-01",
+   "tag": "handbook",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03012023-215",
+   "what": "Extended Day and ELC handbooks are on the agenda for action."
+  },
+  {
+   "body": "School Committee",
+   "date": "2024-02-28",
+   "tag": "distinct",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02282024-6439",
+   "what": "Pre-K registration and ELC registration open on different dates, as separate programmes."
+  },
+  {
+   "body": "School Committee",
+   "date": "2024-05-01",
+   "tag": "handbook",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05012024-6554",
+   "what": "The Director presents the Extended Day and ELC handbooks: no price or policy changes."
+  },
+  {
+   "body": "School Committee",
+   "date": "2025-03-19",
+   "tag": "handbook",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03192025-7111",
+   "what": "The FY2026 handbooks move the ELC to the Primary School."
+  },
+  {
+   "body": "School Committee",
+   "date": "2025-03-19",
+   "tag": "money",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03192025-7111",
+   "what": "The committee adopts the unaffiliated salary schedule, described as mostly Extended Day and ELC staff paid from the revolving fund."
+  },
+  {
+   "body": "School Committee",
+   "date": "2025-09-03",
+   "tag": "distinct",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09032025-7385",
+   "what": "The Primary School reports its enrolment as not including the ELC."
+  },
+  {
+   "body": "Library Board of Trustees",
+   "date": "2025-11-20",
+   "tag": "place",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11202025-7518",
+   "what": "The library’s preschool storytime loses the ELC children after the move."
+  },
+  {
+   "body": "School Committee",
+   "date": "2026-03-18",
+   "tag": "handbook",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03182026-7719",
+   "what": "The FY2027 Extended Day and ELC handbooks are approved; the ELC stays at the Primary School."
+  },
+  {
+   "body": "School Committee",
+   "date": "2026-09-09",
+   "tag": "distinct",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-8002",
+   "what": "Preschool and ELC children start together, the week after kindergarten."
+  }
+ ],
+ "timeline_tags": [
+  {
+   "label": "where it was housed",
+   "tag": "place"
+  },
+  {
+   "label": "run by the schools",
+   "tag": "run"
+  },
+  {
+   "label": "handbooks",
+   "tag": "handbook"
+  },
+  {
+   "label": "rates",
+   "tag": "rates"
+  },
+  {
+   "label": "separate from preschool",
+   "tag": "distinct"
+  },
+  {
+   "label": "how it is paid for",
+   "tag": "money"
+  }
+ ],
+ "title": "The Early Learning Center"
+}

@@ -144,7 +144,9 @@ CATEGORIES = [
         # 2026: what a family pays is three topics on Budget options, and the School
         # Committee's finance page is four on School spending. The group stays, empty, as the
         # anchor the page draws the school shelves after.
-        ('', []),
+        # THE EARLY LEARNING CENTER, 7 November 2026, listed at TJ's request: a programme the
+        # district runs from fees, with no shelf of its own yet.
+        ('', ['early-learning-center']),
     ]),
     ('town', 'The town', [
         # WHO LIVES HERE, FIRST, and above the ledger on purpose. Every other report on
@@ -395,6 +397,9 @@ ABOUT = {
         'What can be followed from the school budget to the town’s books, and where it '
         'stops. Two levels join, the third cannot, and the format a report arrives in '
         'decides which.',
+    'early-learning-center':
+        'The district’s Early Learning Center, which is not the preschool: who runs it, the '
+        'revolving fund its fees go into, and every dated document that names it.',
     'fy26-closeout':
         'The school department’s FY26, read line by line from the town’s own ledger. '
         'What the $482,101 headline actually is, and three things it cannot explain.',

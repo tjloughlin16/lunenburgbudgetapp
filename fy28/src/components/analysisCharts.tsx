@@ -40,6 +40,9 @@ import {
   TransportationSchoolsAthletics, TransportationAthletics, TransportationSports,
   TransportationContract, TransportationSped,
 } from './TransportationCharts'
+import {
+  EarlyLearningCenterTimeline, EarlyLearningCenterFund, EarlyLearningCenterFees,
+} from './EarlyLearningCenterCharts'
 
 /* THE REGISTRY THAT LETS A CHART STOP BEING A PICTURE.
  *
@@ -139,6 +142,9 @@ export const ANALYSIS_CHARTS: Record<string, Entry> = {
   'transportation-sports': { render: TransportationSports, needs: has('sports') },
   'transportation-contract': { render: TransportationContract, needs: has('contract') },
   'transportation-sped': { render: TransportationSped, needs: has('sped') },
+  'early-learning-center-timeline': { render: EarlyLearningCenterTimeline, needs: has('timeline','timeline_tags') },
+  'early-learning-center-fund': { render: EarlyLearningCenterFund, needs: has('fund_series') },
+  'early-learning-center-fees': { render: EarlyLearningCenterFees, needs: has('fees_by_year') },
 }
 
 /** The chart registered for `charts/foo.svg` IF this payload can feed it, else undefined
