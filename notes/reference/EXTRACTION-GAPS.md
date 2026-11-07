@@ -17,7 +17,7 @@
 
 - **360 of 3,696 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
 - **268 of the 866 tables catalogued in FY2011-FY2025 sit on a page no dataset has a row from.** Step 4 (`scripts/sort_catalogue.py`) sorted them from the catalogue's descriptions, not from the pages: 166 gap, 5 repeat, 78 prose, 1 unsure, 18 deferred-to-list-survey. A `gap` is a judgement that nothing we hold looks like the table, not proof that the figures are absent. The other 598, on pages some dataset reads, are not sorted table by table.
-- **All 120 datasets holding report rows are in the database.**
+- **All 145 datasets holding report rows are in the database.**
 - **Lists are not counted yet.** Most years print officers and staff as running text, not tables, and every survey so far looked for tables. `lists_found` and `lists_in_dataset` are empty in the edition CSV until the list survey (step 3) runs.
 
 The proxy row is page grain, not table grain: a catalogued table counts if ANY dataset holds a row from ANY of its pages, so it is an upper bound on what has been read, never a count of tables read.
@@ -55,25 +55,36 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `town-roster-entries` | yes | 16,609 | 52 / 15 | - | - | - |
 | `staff-roster-entries` | yes | 12,278 | 48 / 15 | - | - | - |
 | `report-gross-wages` | yes | 11,512 | 15 / 13 | 7,965 | 0 | 3,547 |
+| `series-school-enrolment-by-grade` | yes | 9,900 | 38 / 0 | - | - | - |
 | `gross-wages` | yes | 8,880 | 0 / 15 | 8,313 | 567 | 0 |
 | `annual-report-receipts` | yes | 7,856 | 51 / 12 | 6,848 | 653 | 355 |
+| `series-student-names-and-honors` | yes | 6,073 | 42 / 14 | - | - | - |
 | `report-trust-funds` | yes | 5,508 | 50 / 13 | 3,434 | 546 | 1,528 |
+| `series-trust-fund-ledgers` | yes | 5,017 | 36 / 5 | - | - | - |
 | `report-statement-of-payments` | yes | 4,670 | 28 / 0 | 4,095 | 0 | 575 |
 | `special-revenue-funds` | yes | 4,532 | 19 / 15 | 3,018 | 1,368 | 146 |
+| `series-monty-tech-lists` | yes | 4,238 | 13 / 15 | - | - | - |
 | `report-elections` | yes | 3,863 | 27 / 15 | 1,664 | 1,725 | 474 |
 | `report-fund-balance-sheets` | yes | 3,720 | 28 / 0 | 2,275 | 0 | 1,445 |
 | `report-debt` | yes | 3,533 | 50 / 8 | 2,876 | 315 | 342 |
+| `series-classification-schedules` | yes | 3,173 | 12 / 2 | - | - | - |
+| `series-coverage` | yes | 3,082 | 52 / 15 | 0 | 0 | 0 |
+| `series-office-hours-directories` | yes | 2,672 | 52 / 15 | - | - | - |
+| `series-report-contents-pages` | yes | 2,637 | 51 / 14 | - | - | - |
+| `series-school-personnel-changes` | yes | 2,558 | 42 / 7 | - | - | - |
+| `series-burials` | yes | 2,448 | 52 / 14 | - | - | - |
 | `report-vital-records` | yes | 2,311 | 16 / 14 | 0 | 0 | 2,311 |
 | `report-dept-activity` | yes | 2,264 | 34 / 15 | 15 | 0 | 2,249 |
 | `special-revenue-read` | yes | 1,882 | 0 / 13 | - | - | - |
 | `report-officials` | yes | 1,838 | 20 / 13 | 0 | 0 | 1,838 |
 | `series-ballot-questions-local` | yes | 1,761 | 34 / 1 | - | - | - |
 | `balance-sheet` | yes | 1,701 | 24 / 12 | - | - | - |
+| `series-trust-fund-holdings` | yes | 1,696 | 28 / 1 | - | - | - |
 | `tax-collection` | yes | 1,449 | 49 / 3 | - | - | - |
-| `series-coverage` | yes | 1,407 | 52 / 15 | 0 | 0 | 0 |
 | `series-tax-collection-holes` | yes | 1,336 | 3 / 5 | - | - | - |
 | `report-capital-projects` | yes | 1,317 | 11 / 15 | 741 | 547 | 29 |
 | `series-nashoba-public-health` | yes | 1,317 | 42 / 15 | - | - | - |
+| `series-bylaw-warrant-text` | yes | 1,291 | 52 / 14 | - | - | - |
 | `series-mcas-from-reports` | yes | 1,142 | 13 / 14 | - | - | - |
 | `treasurers-cash` | yes | 1,130 | 40 / 15 | - | - | - |
 | `outstanding-debt` | yes | 1,038 | 0 / 15 | - | - | - |
@@ -81,29 +92,42 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-valuation` | yes | 1,029 | 28 / 9 | 265 | 100 | 664 |
 | `series-fire-calls` | yes | 926 | 52 / 15 | - | - | - |
 | `report-school-special-accounts` | yes | 913 | 28 / 0 | 400 | 0 | 513 |
-| `series-monty-tech-budgets` | yes | 859 | 9 / 15 | - | - | - |
+| `series-monty-tech-budgets` | yes | 862 | 11 / 15 | - | - | - |
+| `series-school-calendars` | yes | 848 | 28 / 2 | - | - | - |
 | `series-sped-indicators` | yes | 841 | 16 / 15 | - | - | - |
 | `salary-schedule` | yes | 779 | 1 / 3 | - | - | - |
+| `series-pie-chart-shares` | yes | 773 | 26 / 13 | - | - | - |
 | `balance-sheet-printed-totals` | yes | 758 | 24 / 12 | - | - | - |
 | `report-enrollment-mcas` | yes | 747 | 12 / 15 | 36 | 4 | 707 |
+| `series-small-one-offs` | yes | 721 | 31 / 5 | - | - | - |
 | `report-index` | yes | 702 | 0 / 15 | - | - | - |
+| `series-meeting-schedules-due-dates` | yes | 697 | 51 / 7 | - | - | - |
 | `report-school-lunch` | yes | 668 | 21 / 0 | 370 | 41 | 257 |
 | `report-school-budget-summary` | yes | 660 | 27 / 0 | 450 | 0 | 210 |
+| `series-treasurer-cash-investments` | yes | 553 | 4 / 0 | - | - | - |
 | `report-treasurers-cash-reconciliation` | yes | 545 | 47 / 0 | 519 | 15 | 11 |
 | `series-building-activity` | yes | 484 | 44 / 13 | - | - | - |
 | `town-meeting-votes` | yes | 483 | 0 / 15 | - | - | - |
+| `series-trade-permits` | yes | 465 | 51 / 12 | - | - | - |
 | `trust-fund-matrix` | yes | 462 | 0 / 1 | - | - | - |
+| `series-official-lists` | yes | 461 | 31 / 14 | - | - | - |
 | `report-school-staff-fte` | yes | 450 | 28 / 0 | 186 | 0 | 264 |
+| `series-prose-boxed-as-tables` | yes | 444 | 17 / 0 | - | - | - |
 | `report-school-state-aid` | yes | 378 | 27 / 0 | 283 | 0 | 95 |
 | `series-town-facts` | yes | 375 | 52 / 15 | - | - | - |
+| `series-staff-roster-pages` | yes | 345 | 10 / 0 | - | - | - |
 | `series-police-activity` | yes | 342 | 50 / 12 | - | - | - |
+| `series-receipts-fragments` | yes | 341 | 22 / 13 | - | - | - |
 | `receivables` | yes | 319 | 0 / 8 | - | - | - |
 | `report-proposed-salary-schedule` | yes | 302 | 7 / 0 | 0 | 0 | 302 |
+| `series-capital-plan-holes` | yes | 295 | 10 / 6 | - | - | - |
 | `report-revenue-sharing` | yes | 291 | 14 / 0 | 86 | 6 | 199 |
 | `capital-plans` | yes | 265 | 5 / 9 | 265 | 0 | 0 |
 | `series-library-usage` | yes | 252 | 49 / 10 | - | - | - |
+| `series-conservation-filings` | yes | 248 | 39 / 14 | - | - | - |
 | `series-revolving-fund-limits` | yes | 221 | 19 / 15 | - | - | - |
 | `report-fee-schedule` | yes | 218 | 16 / 0 | 8 | 0 | 210 |
+| `series-scan-debris` | yes | 208 | 26 / 0 | - | - | - |
 | `report-new-growth-history` | yes | 202 | 22 / 0 | 162 | 28 | 12 |
 | `report-transitional-receipts` | yes | 197 | 1 / 0 | 196 | 0 | 1 |
 | `report-treasurers-cash-calendar-year` | yes | 191 | 9 / 0 | 89 | 0 | 102 |
@@ -112,11 +136,11 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-warrant-article-amounts` | yes | 178 | 9 / 0 | 148 | 0 | 30 |
 | `scholarship-funds` | yes | 174 | 0 / 15 | - | - | - |
 | `valuation-by-class` | yes | 170 | 0 / 13 | 144 | 26 | 0 |
+| `series-town-nurse-visits` | yes | 169 | 18 / 0 | - | - | - |
 | `report-auditors-cash-schedule` | yes | 168 | 6 / 0 | 127 | 0 | 41 |
 | `peg-access-fund` | yes | 165 | 0 / 11 | 154 | 11 | 0 |
 | `series-oneoff-finance` | yes | 153 | 2 / 3 | - | - | - |
 | `report-tax-bill-breakdown` | yes | 135 | 2 / 0 | 135 | 0 | 0 |
-| `series-capital-plan-holes` | yes | 123 | 2 / 6 | - | - | - |
 | `enterprise-balance-sheet` | yes | 114 | 0 / 2 | - | - | - |
 | `peg-access` | yes | 110 | 0 / 11 | - | - | - |
 | `report-expenditure-shares` | yes | 104 | 9 / 0 | 0 | 0 | 104 |
@@ -171,7 +195,8 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-energy-use` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `scholarship-purposes` | yes | 3 | 3 / 0 | - | - | - |
-| **total** | | **152,255** | | **58,321** | **11,807** | **28,410** |
+| `series-enrolment-2006` | yes | 1 | 1 / 0 | - | - | - |
+| **total** | | **202,082** | | **58,321** | **11,807** | **28,410** |
 
 ## Registers and files about the reading
 
@@ -191,8 +216,8 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | `stabilization-unfooted` | register | 2 | no |
 | `annual-report-catalogue` | about the reading | 3,676 | yes |
 | `annual-report-survey` | about the reading | 2,751 | yes |
+| `dataset-provenance` | about the reading | 2,350 | no |
 | `annual-report-pages` | about the reading | 2,332 | no |
-| `dataset-provenance` | about the reading | 1,386 | no |
 | `extraction-plan` | about the reading | 555 | yes |
 | `report-anomalies` | about the reading | 521 | yes |
 | `annual-report-catalogue-sort` | about the reading | 268 | no |
@@ -205,73 +230,73 @@ Not data the reports print, and listed so that nothing disappears. A register re
 
 | edition | pages | financial pages (proven / blocked) | tables found | in a dataset | not landed | dataset in db | datasets fed | not in db |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| 1959 | 116 | 31 (30 / 1) | 53 | 51 | 2 | 51 | 29 |  |
-| 1960 | 120 | 31 (29 / 2) | 58 | 46 | 12 | 46 | 25 |  |
-| 1961 | 128 | 37 (33 / 4) | 65 | 60 | 5 | 60 | 30 |  |
-| 1962 | 128 | 36 (36 / 0) | 73 | 69 | 4 | 69 | 30 |  |
-| 1963 | 124 | 43 (42 / 1) | 87 | 82 | 5 | 82 | 30 |  |
-| 1964 | 124 | 39 (38 / 1) | 84 | 79 | 5 | 79 | 33 |  |
-| 1965 | 138 | 41 (37 / 4) | 73 | 71 | 2 | 71 | 34 |  |
-| 1966 | 126 | 36 (34 / 2) | 86 | 79 | 7 | 79 | 31 |  |
-| 1967 | 140 | 46 (40 / 6) | 89 | 79 | 10 | 79 | 35 |  |
-| 1968 | 148 | 43 (39 / 4) | 78 | 71 | 7 | 71 | 25 |  |
-| 1969 | 132 | 40 (37 / 3) | 79 | 72 | 7 | 72 | 27 |  |
-| 1970 | 136 | 38 (37 / 1) | 67 | 60 | 7 | 60 | 28 |  |
-| 1971 | 136 | 39 (39 / 0) | 68 | 61 | 7 | 61 | 28 |  |
-| 1972 | 132 | 38 (36 / 2) | 69 | 63 | 6 | 63 | 27 |  |
-| 1973 | 128 | 30 (27 / 3) | 63 | 52 | 11 | 52 | 26 |  |
-| 1974 | 150 | 44 (43 / 1) | 82 | 79 | 3 | 79 | 29 |  |
-| 1975 | 152 | 41 (39 / 2) | 68 | 63 | 5 | 63 | 26 |  |
-| 1976 | 160 | 42 (41 / 1) | 80 | 75 | 5 | 75 | 32 |  |
-| 1977 | 164 | 46 (44 / 2) | 85 | 73 | 12 | 73 | 28 |  |
-| 1978 | 184 | 47 (45 / 2) | 85 | 79 | 6 | 79 | 31 |  |
-| 1979 | 164 | 49 (47 / 2) | 89 | 82 | 7 | 82 | 33 |  |
-| 1980 | 140 | 47 (45 / 2) | 89 | 79 | 10 | 79 | 32 |  |
-| 1981 | 140 | 42 (39 / 3) | 82 | 74 | 8 | 74 | 34 |  |
-| 1982 | 168 | 46 (44 / 2) | 81 | 75 | 6 | 75 | 30 |  |
-| 1983 | 132 | 44 (39 / 5) | 83 | 79 | 4 | 79 | 32 |  |
-| 1984 | 146 | 39 (38 / 1) | 79 | 72 | 7 | 72 | 34 |  |
-| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 64 | 33 |  |
-| 1986 | 122 | 39 (31 / 8) | 80 | 75 | 5 | 75 | 33 |  |
-| 1987 | 76 | 22 (12 / 10) | 40 | 36 | 4 | 36 | 27 |  |
-| 1988 | 84 | 18 (12 / 6) | 37 | 32 | 5 | 32 | 26 |  |
-| 1989 | 84 | 22 (16 / 6) | 37 | 32 | 5 | 32 | 24 |  |
-| 1990 | 76 | 19 (17 / 2) | 31 | 26 | 5 | 26 | 25 |  |
-| 1991 | 68 | 21 (17 / 4) | 35 | 32 | 3 | 32 | 29 |  |
-| 1992 | 64 | 20 (19 / 1) | 37 | 34 | 3 | 34 | 25 |  |
-| 1993 | 60 | 18 (15 / 3) | 28 | 25 | 3 | 25 | 24 |  |
-| 1994 | 70 | 16 (14 / 2) | 23 | 18 | 5 | 18 | 20 |  |
-| 1995 | 90 | 29 (28 / 1) | 43 | 41 | 2 | 41 | 25 |  |
-| 1996 | 104 | 33 (33 / 0) | 45 | 43 | 2 | 43 | 28 |  |
-| 1997 | 100 | 31 (27 / 4) | 43 | 40 | 3 | 40 | 28 |  |
-| 1998 | 98 | 33 (31 / 2) | 48 | 43 | 5 | 43 | 27 |  |
-| 1999 | 110 | 33 (31 / 2) | 43 | 41 | 2 | 41 | 29 |  |
-| 2000 | 136 | 37 (33 / 4) | 48 | 46 | 2 | 46 | 27 |  |
-| 2001 | 94 | 24 (22 / 2) | 99 | 87 | 12 | 87 | 31 |  |
-| 2002 | 110 | 35 (33 / 2) | 121 | 105 | 16 | 105 | 32 |  |
-| 2003 | 104 | 36 (30 / 6) | 104 | 92 | 12 | 92 | 34 |  |
-| 2004 | 112 | 38 (29 / 9) | 106 | 96 | 10 | 96 | 36 |  |
-| 2005 | 104 | 32 (25 / 7) | 97 | 82 | 15 | 82 | 31 |  |
-| 2006 | 124 | 39 (32 / 7) | 115 | 105 | 10 | 105 | 34 |  |
-| 2007 | 124 | 38 (29 / 9) | 107 | 94 | 13 | 94 | 34 |  |
-| 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 80 | 34 |  |
-| 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 61 | 35 |  |
-| 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 81 | 37 |  |
-| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 48 |  |
-| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 43 |  |
-| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 43 |  |
-| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 43 |  |
-| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 53 |  |
-| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 53 |  |
-| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 54 |  |
-| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 51 |  |
-| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 52 |  |
-| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 47 |  |
-| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 49 |  |
-| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 50 |  |
-| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 46 |  |
-| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 50 |  |
-| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 50 |  |
+| 1959 | 116 | 31 (30 / 1) | 53 | 51 | 2 | 51 | 41 |  |
+| 1960 | 120 | 31 (29 / 2) | 58 | 46 | 12 | 46 | 40 |  |
+| 1961 | 128 | 37 (33 / 4) | 65 | 60 | 5 | 60 | 46 |  |
+| 1962 | 128 | 36 (36 / 0) | 73 | 69 | 4 | 69 | 46 |  |
+| 1963 | 124 | 43 (42 / 1) | 87 | 82 | 5 | 82 | 46 |  |
+| 1964 | 124 | 39 (38 / 1) | 84 | 79 | 5 | 79 | 50 |  |
+| 1965 | 138 | 41 (37 / 4) | 73 | 71 | 2 | 71 | 50 |  |
+| 1966 | 126 | 36 (34 / 2) | 86 | 79 | 7 | 79 | 50 |  |
+| 1967 | 140 | 46 (40 / 6) | 89 | 79 | 10 | 79 | 55 |  |
+| 1968 | 148 | 43 (39 / 4) | 78 | 71 | 7 | 71 | 43 |  |
+| 1969 | 132 | 40 (37 / 3) | 79 | 72 | 7 | 72 | 45 |  |
+| 1970 | 136 | 38 (37 / 1) | 67 | 60 | 7 | 60 | 45 |  |
+| 1971 | 136 | 39 (39 / 0) | 68 | 61 | 7 | 61 | 45 |  |
+| 1972 | 132 | 38 (36 / 2) | 69 | 63 | 6 | 63 | 45 |  |
+| 1973 | 128 | 30 (27 / 3) | 63 | 52 | 11 | 52 | 44 |  |
+| 1974 | 150 | 44 (43 / 1) | 82 | 79 | 3 | 79 | 47 |  |
+| 1975 | 152 | 41 (39 / 2) | 68 | 63 | 5 | 63 | 43 |  |
+| 1976 | 160 | 42 (41 / 1) | 80 | 75 | 5 | 75 | 50 |  |
+| 1977 | 164 | 46 (44 / 2) | 85 | 73 | 12 | 73 | 45 |  |
+| 1978 | 184 | 47 (45 / 2) | 85 | 79 | 6 | 79 | 49 |  |
+| 1979 | 164 | 49 (47 / 2) | 89 | 82 | 7 | 82 | 49 |  |
+| 1980 | 140 | 47 (45 / 2) | 89 | 79 | 10 | 79 | 49 |  |
+| 1981 | 140 | 42 (39 / 3) | 82 | 74 | 8 | 74 | 48 |  |
+| 1982 | 168 | 46 (44 / 2) | 81 | 75 | 6 | 75 | 45 |  |
+| 1983 | 132 | 44 (39 / 5) | 83 | 79 | 4 | 79 | 48 |  |
+| 1984 | 146 | 39 (38 / 1) | 79 | 72 | 7 | 72 | 50 |  |
+| 1985 | 172 | 38 (36 / 2) | 71 | 64 | 7 | 64 | 50 |  |
+| 1986 | 122 | 39 (31 / 8) | 80 | 75 | 5 | 75 | 46 |  |
+| 1987 | 76 | 22 (12 / 10) | 40 | 36 | 4 | 36 | 39 |  |
+| 1988 | 84 | 18 (12 / 6) | 37 | 32 | 5 | 32 | 38 |  |
+| 1989 | 84 | 22 (16 / 6) | 37 | 32 | 5 | 32 | 33 |  |
+| 1990 | 76 | 19 (17 / 2) | 31 | 26 | 5 | 26 | 35 |  |
+| 1991 | 68 | 21 (17 / 4) | 35 | 32 | 3 | 32 | 37 |  |
+| 1992 | 64 | 20 (19 / 1) | 37 | 34 | 3 | 34 | 35 |  |
+| 1993 | 60 | 18 (15 / 3) | 28 | 25 | 3 | 25 | 34 |  |
+| 1994 | 70 | 16 (14 / 2) | 23 | 18 | 5 | 18 | 34 |  |
+| 1995 | 90 | 29 (28 / 1) | 43 | 41 | 2 | 41 | 37 |  |
+| 1996 | 104 | 33 (33 / 0) | 45 | 43 | 2 | 43 | 42 |  |
+| 1997 | 100 | 31 (27 / 4) | 43 | 40 | 3 | 40 | 42 |  |
+| 1998 | 98 | 33 (31 / 2) | 48 | 43 | 5 | 43 | 41 |  |
+| 1999 | 110 | 33 (31 / 2) | 43 | 41 | 2 | 41 | 42 |  |
+| 2000 | 136 | 37 (33 / 4) | 48 | 46 | 2 | 46 | 42 |  |
+| 2001 | 94 | 24 (22 / 2) | 99 | 87 | 12 | 87 | 46 |  |
+| 2002 | 110 | 35 (33 / 2) | 121 | 105 | 16 | 105 | 47 |  |
+| 2003 | 104 | 36 (30 / 6) | 104 | 92 | 12 | 92 | 48 |  |
+| 2004 | 112 | 38 (29 / 9) | 106 | 96 | 10 | 96 | 50 |  |
+| 2005 | 104 | 32 (25 / 7) | 97 | 82 | 15 | 82 | 47 |  |
+| 2006 | 124 | 39 (32 / 7) | 115 | 105 | 10 | 105 | 50 |  |
+| 2007 | 124 | 38 (29 / 9) | 107 | 94 | 13 | 94 | 49 |  |
+| 2008 | 112 | 33 (33 / 0) | 88 | 80 | 8 | 80 | 47 |  |
+| 2009 | 92 | 29 (25 / 4) | 73 | 61 | 12 | 61 | 51 |  |
+| 2010 | 100 | 30 (19 / 11) | 102 | 81 | 21 | 81 | 54 |  |
+| FY2011 | 101 | 29 (29 / 0) | 55 catalogued | - | - | - | 63 |  |
+| FY2012 | 116 | 28 (28 / 0) | 64 catalogued | - | - | - | 57 |  |
+| FY2013 | 97 | 31 (31 / 0) | 58 catalogued | - | - | - | 57 |  |
+| FY2014 | 175 | 28 (28 / 0) | 64 catalogued | - | - | - | 57 |  |
+| FY2015 | 215 | 33 (33 / 0) | 60 catalogued | - | - | - | 67 |  |
+| FY2016 | 221 | 47 (45 / 2) | 71 catalogued | - | - | - | 65 |  |
+| FY2017 | 201 | 32 (32 / 0) | 64 catalogued | - | - | - | 68 |  |
+| FY2018 | 257 | 42 (42 / 0) | 62 catalogued | - | - | - | 63 |  |
+| FY2019 | 206 | 39 (39 / 0) | 55 catalogued | - | - | - | 65 |  |
+| FY2020 | 216 | 41 (41 / 0) | 46 catalogued | - | - | - | 59 |  |
+| FY2021 | 170 | 37 (37 / 0) | 56 catalogued | - | - | - | 61 |  |
+| FY2022 | 194 | 41 (41 / 0) | 56 catalogued | - | - | - | 61 |  |
+| FY2023 | 200 | 35 (34 / 1) | 42 catalogued | - | - | - | 54 |  |
+| FY2024 | 195 | 28 (28 / 0) | 44 catalogued | - | - | - | 58 |  |
+| FY2025 | 187 | 23 (23 / 0) | 69 catalogued | - | - | - | 58 |  |
 
 ## Why 1959-2010 tables were not landed, by what the map calls them
 

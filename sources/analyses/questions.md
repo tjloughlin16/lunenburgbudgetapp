@@ -922,7 +922,7 @@ Returns `dataset`, `editions`, `with_a_document` — for example: dataset=annual
 SELECT dataset, edition, pages, rows FROM dataset_document ORDER BY CAST(rows AS INTEGER) DESC LIMIT 20
 ```
 
-Returns `dataset`, `edition`, `pages`, `rows` — for example: dataset=series-monty-tech-budgets, edition=FY2017, pages=124,125,140,141,147,148,149, rows=782
+Returns `dataset`, `edition`, `pages`, `rows` — for example: dataset=series-school-personnel-changes, edition=1976, pages=127,128,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149, rows=1043
 
 ## Finding your way
 

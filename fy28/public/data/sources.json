@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06",
+ "generated": "2026-11-07",
  "origins": [
   {
    "id": "school",
@@ -5603,9 +5603,9 @@
      "stars": 3,
      "what": "225 rows: dataset, edition, pages, the report’s own filename, both of the town’s addresses for it, and the sha256 of our copy. Rule 12 wants the address at the same time as the figure; this is that join, and notes/generated/DATASET-PROVENANCE.md is its readable form.",
      "kind": "Data",
-     "bytes": 356715,
+     "bytes": 593369,
      "url": "/docs/data/dataset-provenance.csv",
-     "count": 1386,
+     "count": 2350,
      "unit": "rows",
      "textUrl": "/docs/data/dataset-provenance.csv"
     },
@@ -5675,7 +5675,7 @@
      "stars": 3,
      "what": "107 questions across ten subjects, every one executed against the database on each build — the build fails if one errors or returns nothing. It is a menu for a person, a set of worked examples for anything using /api/query, and a test that the tables still hold what it says they hold. It deliberately does not print the answers: those move when the data does.",
      "kind": "Notes",
-     "bytes": 41025,
+     "bytes": 41078,
      "url": "/docs/analyses/questions.md",
      "count": 952,
      "unit": "lines",
@@ -5958,6 +5958,30 @@
      "textUrl": "/docs/data/annual-report-catalogue.csv"
     },
     {
+     "path": "data/series-school-enrolment-by-grade.csv",
+     "title": "School enrolment by school and class",
+     "stars": 2,
+     "what": "October 1 enrolment tables as printed: 1959-1986 each classroom (grade, teacher, boys, girls, total) under its school with the printed school and grand totals, grade breakdowns and year comparisons; 1988-2000 the enrolment summaries by school and grade; the principal enrolment-by-grade lists 1981-1990; the school census of minors 1959-1973 and the educational census by age 1985-1986. A school total is the total of its class or grade figures.",
+     "kind": "Data",
+     "bytes": 1773111,
+     "url": "/docs/data/series-school-enrolment-by-grade.csv",
+     "count": 9900,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-school-enrolment-by-grade.csv"
+    },
+    {
+     "path": "data/series-monty-tech-lists.csv",
+     "title": "Monty Tech lists and sports notes",
+     "stars": 2,
+     "what": "Lists and counts from the Montachusett Regional Vocational Technical School district report: trades and programs offered (1967, 1969, 1988, 2001), the community projects each trade listed 2002-2009, athletic team records (wins, losses, ties; league records as printed) and team counts 2001-FY2019, and MCAS passing rates, proficient/advanced shares, results tables and graduation competency percentages 2001-FY2025, all as printed. The FY2011-FY2025 prose shop reports are entered one paragraph per shop (text as the page layer reads it) with each shop's enrollment and every figure in the prose, and the FY2012-FY2014 student group accountability tables (performance and progress by group). Names of outstanding athletes and of students recognised in the press are not entered.",
+     "kind": "Data",
+     "bytes": 1663573,
+     "url": "/docs/data/series-monty-tech-lists.csv",
+     "count": 4238,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-monty-tech-lists.csv"
+    },
+    {
      "path": "data/annual-report-reads.csv",
      "title": "What a model read off each annual-report page, folded into one table",
      "stars": 2,
@@ -5968,6 +5992,30 @@
      "count": 4370,
      "unit": "rows",
      "textUrl": "/docs/data/annual-report-reads.csv"
+    },
+    {
+     "path": "data/series-classification-schedules.csv",
+     "title": "Town classification and salary schedules: class, step and printed rate, 1966-1973, the FY2011 pay schedule and the FY2016 and FY2017 pay schedules",
+     "stars": 2,
+     "what": "The Classification and Salary Schedule the town reports print 1966-1973 (nine full schedules, dated March 1967 to July 1974), one row per class and step or rate column, with the rates printed in the text of the police rate votes of 1972, 1974 and 1976, and the 2010 report's grade-and-step pay schedule for fiscal 2011. Figures are printed in different bases (annual, hourly, weekly or per-year payments, some with no period printed) and are not comparable across them; a rate printed once for a bracketed group of classes is repeated on a row for each class. Later schedules (1974-2009) were printed in the Finance Committee report, not the town report; 1984 and the class-title lists are in pay-grades-fy2011.csv, FY2015, FY2016 and FY2022 grade-and-step schedules are in salary-schedule.csv.",
+     "kind": "Data",
+     "bytes": 1281535,
+     "url": "/docs/data/series-classification-schedules.csv",
+     "count": 3173,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-classification-schedules.csv"
+    },
+    {
+     "path": "data/series-student-names-and-honors.csv",
+     "title": "Named students: graduating classes, officers, prizes and recognition, 1959-FY2024",
+     "stars": 2,
+     "what": "Every name the annual reports print about students: the Lunenburg High School graduation programmes 1959-1986 (class officers, marshals, honor essays, graduate lists, Gold L, scholarships and financial assistance awards, senior awards, National Merit recognition, photograph captions), the class lists of 1987-1989, the Superintendent's Award recipients FY2011-FY2024, and named students in Monty Tech recognition, essay contests, spelling bees, athletic selections and the 4-H committee, leader and award lists of 1959-1961; the measure is the name (a surname-first form where printed that way), the row group is the list heading and class, and the value is a dollar amount only where a prize prints one. Also the three individual customers on the 2006 Monty Tech Graphic Communications job list. Parsed lists are checked against the printed totals where the page prints one (a few differ by one or two and are named in the coverage note); award attributions on pages where the text layer scrambles columns were read from the page images.",
+     "kind": "Data",
+     "bytes": 1151498,
+     "url": "/docs/data/series-student-names-and-honors.csv",
+     "count": 6073,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-student-names-and-honors.csv"
     },
     {
      "path": "data/youtube-video-classification.csv",
@@ -5994,6 +6042,42 @@
      "textUrl": "/docs/data/report-elections.csv"
     },
     {
+     "path": "data/series-trust-fund-ledgers.csv",
+     "title": "Trust fund balance and income ledgers, 1972-FY2019",
+     "stars": 2,
+     "what": "The Balances and Income ledgers of the trust fund pages: for each fund (cemetery perpetual care, worthy poor, library, sidewalks and grounds, conservation land purchase, stabilization, school prize) the opening balance, each donor bequest, interest and dividend received, grants, transfers and withdrawals, and the closing balance as printed. Read from the page images. Section subtotals are totals of the rows above them; opening and closing balances and printed grand totals are singles.",
+     "kind": "Data",
+     "bytes": 870594,
+     "url": "/docs/data/series-trust-fund-ledgers.csv",
+     "count": 5017,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-trust-fund-ledgers.csv"
+    },
+    {
+     "path": "data/series-school-personnel-changes.csv",
+     "title": "School personnel changes and roster detail, 1959-FY2017",
+     "stars": 2,
+     "what": "The School Department lists of resignations, retirements, appointments, transfers, leaves of absence and deaths 1959-1986 (one row per person, with the printed entry as the quote), the school retirees named in the 1996-FY2017 superintendents' reports (with years of service where printed), and the columns the personnel rosters of 1976 (pages 133-149) and 1985 (pages 150 and 156) leave out of staff-roster-pages: position, education, experience and appointment year, row group roster detail.",
+     "kind": "Data",
+     "bytes": 764346,
+     "url": "/docs/data/series-school-personnel-changes.csv",
+     "count": 2558,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-school-personnel-changes.csv"
+    },
+    {
+     "path": "data/series-office-hours-directories.csv",
+     "title": "Office hours and phone directories",
+     "stars": 2,
+     "what": "Town office hours by office from the front matter of every edition 1959-FY2013, the telephone directories by subject 1962-2010 and FY2012, the FY2014-FY2025 office hours and telephone number tables, and hours stated in department reports; office, hours or number as printed in the quote, value blank.",
+     "kind": "Data",
+     "bytes": 644029,
+     "url": "/docs/data/series-office-hours-directories.csv",
+     "count": 2672,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-office-hours-directories.csv"
+    },
+    {
      "path": "data/youtube-videos.csv",
      "title": "Every video on the town’s PEG access channel",
      "stars": 2,
@@ -6004,6 +6088,18 @@
      "count": 4753,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
+    },
+    {
+     "path": "data/series-bylaw-warrant-text.csv",
+     "title": "By-law, zoning and warrant text",
+     "stars": 2,
+     "what": "Fines, fees and dimensions printed in by-law, zoning and warrant text as figures with their unit (fines in dollars, yards, heights and lot areas in feet and square feet), and other article text as rows by section heading; each row is the text as printed in that report, not the current code. Also one row per warrant article amending the by-laws or zoning bylaw (article text as the quote), and the FY2018 Zoning Use Table, one row per use and district with the Y, SP or - mark.",
+     "kind": "Data",
+     "bytes": 569441,
+     "url": "/docs/data/series-bylaw-warrant-text.csv",
+     "count": 1291,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-bylaw-warrant-text.csv"
     },
     {
      "path": "data/money-gaps.csv",
@@ -6054,6 +6150,42 @@
      "textUrl": "/docs/data/series-mcas-from-reports.csv"
     },
     {
+     "path": "data/series-burials.csv",
+     "title": "Burials in the town cemeteries, by name, 1959-FY2025",
+     "stars": 2,
+     "what": "The list of persons buried in the North and South Cemeteries that the Cemetery Commission (or Cemetery Department) report prints in every edition but FY2023: one row per person as printed, with age, cemetery and month; 1959 to 1979 print age as years, months and days (1980 onward as one figure) and 1959 to 1968 print no cemetery. Also the printed counts: full burials, cremations and totals (FY2018-FY2025), prose counts, and the DPW's \"forty burials a year\" average (2008-FY2021). Not the cemetery revenue lines in dollars.",
+     "kind": "Data",
+     "bytes": 393098,
+     "url": "/docs/data/series-burials.csv",
+     "count": 2448,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-burials.csv"
+    },
+    {
+     "path": "data/series-report-contents-pages.csv",
+     "title": "The report's own contents page",
+     "stars": 2,
+     "what": "The department index at the front or back of each edition 1959-2010 (none in 1986): one row per department or section, the first printed page as the value and the printed range in the quote; FY2011-FY2025 are in report-index.csv.",
+     "kind": "Data",
+     "bytes": 343250,
+     "url": "/docs/data/series-report-contents-pages.csv",
+     "count": 2637,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-report-contents-pages.csv"
+    },
+    {
+     "path": "data/series-trust-fund-holdings.csv",
+     "title": "Trust fund holdings by bank, 1961-FY2025",
+     "stars": 2,
+     "what": "The Trust Fund Commission's Investment of Funds pages: for each trust fund (library, sidewalks and grounds, worthy poor, cemetery perpetual care and later funds) the donor, bank, passbook or certificate number and amount as printed, with the fund totals and summary of funds. Read from the page images because the side-by-side fund panels cannot be read from the text layer. Bank subtotals are rows that add to nothing.",
+     "kind": "Data",
+     "bytes": 337996,
+     "url": "/docs/data/series-trust-fund-holdings.csv",
+     "count": 1696,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-trust-fund-holdings.csv"
+    },
+    {
      "path": "data/series-ballot-questions-local.csv",
      "title": "Local ballot questions: votes by precinct, 1960-FY2025",
      "stars": 2,
@@ -6083,9 +6215,9 @@
      "stars": 2,
      "what": "What the Montachusett Regional Vocational Technical School District printed in the annual reports about its own money: the FY2017 report's financial pages (assessment on each of 18 member towns 1998-2017, FY2018 assessments by town, budget build-up, ratio percentages, balance sheet) and the Educational Plan totals, grants and expense categories in the district's reports to the towns, each tied to the total the page prints.",
      "kind": "Data",
-     "bytes": 264901,
+     "bytes": 266272,
      "url": "/docs/data/series-monty-tech-budgets.csv",
-     "count": 859,
+     "count": 862,
      "unit": "rows",
      "textUrl": "/docs/data/series-monty-tech-budgets.csv"
     },
@@ -6126,6 +6258,18 @@
      "textUrl": "/docs/data/series-sped-indicators.csv"
     },
     {
+     "path": "data/table-semantics.csv",
+     "title": "What each table in the database is",
+     "stars": 2,
+     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
+     "kind": "Data",
+     "bytes": 177206,
+     "url": "/docs/data/table-semantics.csv",
+     "count": 259,
+     "unit": "rows",
+     "textUrl": "/docs/data/table-semantics.csv"
+    },
+    {
      "path": "data/report-anomalies.csv",
      "title": "What looks wrong in the extracts, and where to look",
      "stars": 2,
@@ -6138,16 +6282,76 @@
      "textUrl": "/docs/data/report-anomalies.csv"
     },
     {
-     "path": "data/table-semantics.csv",
-     "title": "What each table in the database is",
+     "path": "data/series-small-one-offs.csv",
+     "title": "Catch-all: small one-offs",
      "stars": 2,
-     "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
+     "what": "Attendance Officer calls, trips, miles and contacts by month 1959-1979; the list of buildings the DPW maintains 2008-FY2013; retirees thanked at Annual Town Meeting 2002-FY2012; easement and land-right articles (1992, 1997); the FY2017 forest stewardship plan grants; the 1963 school lunch summary box; the FY2019 public access cable expense shares.",
      "kind": "Data",
-     "bytes": 146505,
-     "url": "/docs/data/table-semantics.csv",
-     "count": 234,
+     "bytes": 158204,
+     "url": "/docs/data/series-small-one-offs.csv",
+     "count": 721,
      "unit": "rows",
-     "textUrl": "/docs/data/table-semantics.csv"
+     "textUrl": "/docs/data/series-small-one-offs.csv"
+    },
+    {
+     "path": "data/series-pie-chart-shares.csv",
+     "title": "Revenue and spending pie charts, 1959-1968, 1983 and 1996-FY2023, and the 1930-1965 growth chart",
+     "stars": 2,
+     "what": "The category and percent printed on the town's pie charts: Where Did Your Tax Dollar Go (cents per dollar, 1959-1967; percents, 1968), We Received and We Spent (1959-1968), the FY 1983 expenditures pie, and General Fund revenues and expenditures (1996-FY2023, no revenues pie in 2005 or FY2019), plus the 1965 chart of tax rate, valuation and population at each five-year point 1930-1965. Percents are as printed, never computed; the legend percents beside the 1960-1967 and 1983 pies are in report-expenditure-shares.csv and are not repeated. Three small slices of the 1959 payments pie were too small to read and are left out.",
+     "kind": "Data",
+     "bytes": 156427,
+     "url": "/docs/data/series-pie-chart-shares.csv",
+     "count": 773,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-pie-chart-shares.csv"
+    },
+    {
+     "path": "data/series-meeting-schedules-due-dates.csv",
+     "title": "Meeting schedules and tax due dates",
+     "stars": 2,
+     "what": "The front-of-book list of when and where each board meets, 1960-FY2018, and the 1960-1963 list of when real estate, excise and poll taxes and dog licences fall due, each as printed text. Boards that print their own regular meeting time on their report page are not rows.",
+     "kind": "Data",
+     "bytes": 152999,
+     "url": "/docs/data/series-meeting-schedules-due-dates.csv",
+     "count": 697,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-meeting-schedules-due-dates.csv"
+    },
+    {
+     "path": "data/series-treasurer-cash-investments.csv",
+     "title": "Treasurer's cash investments, 1977-FY1981",
+     "stars": 2,
+     "what": "The Treasurer's Recapitulation of Revenue Cash Invested in the 1978, 1979 and 1980 reports: by half year, each bank and vehicle line with its number of instruments, liquidity, denominations, rate range, total invested and interest earned, the half-year, fiscal-year and calendar-year totals and the interest received and to-be-received reconciliation; the 1977 weekly cash flow worksheet for February 1978 (columns that are whole on the page); and the 1977 table of Town Office cost, interest paid and interest earned, 1970-FY1979. All read from page images.",
+     "kind": "Data",
+     "bytes": 135762,
+     "url": "/docs/data/series-treasurer-cash-investments.csv",
+     "count": 553,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-treasurer-cash-investments.csv"
+    },
+    {
+     "path": "data/series-school-calendars.csv",
+     "title": "School calendars, 1959-1986",
+     "stars": 2,
+     "what": "The school calendar the School Committee printed each year 1959-1986: term and event dates as printed text, the number of no-school days the calendar allows, school days per month with the printed 185-day total (1974-1985), and the times and groups of the no-school horn signal; plus the FY2020 and FY2021 prose on the 180- to 170-day school year.",
+     "kind": "Data",
+     "bytes": 131733,
+     "url": "/docs/data/series-school-calendars.csv",
+     "count": 848,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-school-calendars.csv"
+    },
+    {
+     "path": "data/series-prose-boxed-as-tables.csv",
+     "title": "Prose and lists boxed as tables",
+     "stars": 2,
+     "what": "Paragraphs, lists and keys that the machine read as table cells: each list item is a row, each paragraph a row with its heading as the row group and a value only where it states a single figure (1966 teacher bargaining, highway definitions, tree warden notes, school lunch reports, keys to the accountant's marks, Council on Aging lists, DPW services); counts already held in the trade-permits, conservation-filings and births-census series stay there.",
+     "kind": "Data",
+     "bytes": 116207,
+     "url": "/docs/data/series-prose-boxed-as-tables.csv",
+     "count": 444,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-prose-boxed-as-tables.csv"
     },
     {
      "path": "data/series-fire-calls.csv",
@@ -6174,6 +6378,30 @@
      "textUrl": "/docs/data/stated-cuts.csv"
     },
     {
+     "path": "data/series-capital-plan-holes.csv",
+     "title": "Capital plans: the editions capital-plans.csv does not hold",
+     "stars": 2,
+     "what": "Capital plan items by department, item and amount for the May 2008, 2009, 2011, 2012, 2013 and 2023-2025 editions, each list tied to the plan total the page prints, with the FY2013 and FY2024 lists the extractor refused read from the page image.",
+     "kind": "Data",
+     "bytes": 90306,
+     "url": "/docs/data/series-capital-plan-holes.csv",
+     "count": 295,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-capital-plan-holes.csv"
+    },
+    {
+     "path": "data/series-staff-roster-pages.csv",
+     "title": "School staff rosters: pages the staff-roster-entries reader did not load",
+     "stars": 2,
+     "what": "Named school staff and councils on pages staff-roster-entries does not hold: the 1964 new-teacher table and statistics cells, the 1976 personnel listing (names), 1985 teaching-staff pages 150 and 156 (names), the LHS School Council lists 1993-1995, and the school-council lists and staffing counts on the Passios and Primary School pages of 2001 and 2005-2007. The rest is in staff-roster-entries.csv.",
+     "kind": "Data",
+     "bytes": 88436,
+     "url": "/docs/data/series-staff-roster-pages.csv",
+     "count": 345,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-staff-roster-pages.csv"
+    },
+    {
      "path": "data/series-revolving-fund-limits.csv",
      "title": "Revolving fund spending limits voted at town meeting, 1992-FY2025",
      "stars": 2,
@@ -6184,6 +6412,42 @@
      "count": 221,
      "unit": "rows",
      "textUrl": "/docs/data/series-revolving-fund-limits.csv"
+    },
+    {
+     "path": "data/series-trade-permits.csv",
+     "title": "Plumbing, gas and wiring permits, inspections and fees, 1961-FY2022",
+     "stars": 2,
+     "what": "The Plumbing, Gas Fitting and Wiring Inspectors' counts of permits and inspections and fees collected (1961-2001, as each report words them) and the permit fee lines in the Detailed Statement of Receipts (plumbing 1960-FY2022, gas fitting from 1964, wiring from 1982). Plumbing, gas and wiring are kept as separate measures; combined plumbing-and-gas counts are kept as printed; FY2019-FY2025 counts are in building-activity.csv.",
+     "kind": "Data",
+     "bytes": 85293,
+     "url": "/docs/data/series-trade-permits.csv",
+     "count": 465,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-trade-permits.csv"
+    },
+    {
+     "path": "data/series-official-lists.csv",
+     "title": "Other named lists of officials, 1959-FY2025",
+     "stars": 2,
+     "what": "Name and rank or role as printed for people on lists town-roster-entries.csv and staff-roster-entries.csv do not hold: the Fire Department company rosters of 1964-1968, the 1985 fire history, committee, commission and board lists and signature blocks, school central-office and Montachusett administration lists, and the 1969 Montachusett district committee by town. Only lines where the role ends the printed line are read; a name inside a sentence is not a row.",
+     "kind": "Data",
+     "bytes": 84483,
+     "url": "/docs/data/series-official-lists.csv",
+     "count": 461,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-official-lists.csv"
+    },
+    {
+     "path": "data/annual-report-coverage.csv",
+     "title": "How much of each annual report is data, edition by edition",
+     "stars": 2,
+     "what": "One row per report, 1959 to FY2025: its pages, the tables found in it, how many are in a dataset and whether that dataset is in the database, and the datasets it feeds. Generated by build_annual_report_coverage.py; its readable form is notes/reference/EXTRACTION-GAPS.md.",
+     "kind": "Data",
+     "bytes": 81257,
+     "url": "/docs/data/annual-report-coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-coverage.csv"
     },
     {
      "path": "data/balance-sheet-printed-totals.csv",
@@ -6246,6 +6510,18 @@
      "textUrl": "/docs/data/series-building-activity.csv"
     },
     {
+     "path": "data/series-receipts-fragments.csv",
+     "title": "Receipts and payments fragments, 1985 and FY2023",
+     "stars": 2,
+     "what": "Pieces of the Treasurer's receipts and payments statements that the receipts and payments datasets lack: the 1985 receipts-list subtotals and total receipts, the 1985 Assessments group of payments, and the FY2023 summary of receipts by category read from a 93 dpi page image. The FY2023 detail lines are not legible and are left out.",
+     "kind": "Data",
+     "bytes": 59486,
+     "url": "/docs/data/series-receipts-fragments.csv",
+     "count": 341,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-receipts-fragments.csv"
+    },
+    {
      "path": "data/annual-report-catalogue-sort.csv",
      "title": "Which catalogued tables we hold nothing of, and whether each is worth taking",
      "stars": 2,
@@ -6258,16 +6534,28 @@
      "textUrl": "/docs/data/annual-report-catalogue-sort.csv"
     },
     {
-     "path": "data/annual-report-coverage.csv",
-     "title": "How much of each annual report is data, edition by edition",
+     "path": "data/series-conservation-filings.csv",
+     "title": "Conservation Commission filings, decisions, hearings and wetlands fees, 1972-FY2025",
      "stars": 2,
-     "what": "One row per report, 1959 to FY2025: its pages, the tables found in it, how many are in a dataset and whether that dataset is in the database, and the datasets it feeds. Generated by build_annual_report_coverage.py; its readable form is notes/reference/EXTRACTION-GAPS.md.",
+     "what": "The Conservation Commission counts the reports print in prose (hearings, requests for determination, Notices of Intent, Orders of Conditions, determinations, Certificates of Compliance, enforcement orders, inspections; 1972-2007 and FY2024-FY2025) and the wetlands filing, advertising and bylaw fee lines in the Detailed Statement of Receipts (1973-FY2022). The wording changes by year (hearings, requests for determination, Wetland Determinations, Determinations of Applicability, Administrative Determinations) and each is kept as printed; counts are what the page counts, with some partial-year or caveated.",
      "kind": "Data",
-     "bytes": 55639,
-     "url": "/docs/data/annual-report-coverage.csv",
-     "count": 67,
+     "bytes": 52235,
+     "url": "/docs/data/series-conservation-filings.csv",
+     "count": 248,
      "unit": "rows",
-     "textUrl": "/docs/data/annual-report-coverage.csv"
+     "textUrl": "/docs/data/series-conservation-filings.csv"
+    },
+    {
+     "path": "data/series-scan-debris.csv",
+     "title": "Scan debris and empty tables",
+     "stars": 2,
+     "what": "Real captions, names and figures on pages where the machine read a table out of rules, photograph lettering or empty cells (covers, photograph captions, committee pages), plus the school tuition rates printed 1973-1986 (the 1986 table held only its caption); lettering inside photographs is not loaded.",
+     "kind": "Data",
+     "bytes": 48219,
+     "url": "/docs/data/series-scan-debris.csv",
+     "count": 208,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-scan-debris.csv"
     },
     {
      "path": "data/series-library-usage.csv",
@@ -6306,16 +6594,16 @@
      "textUrl": "/docs/data/money-classification.csv"
     },
     {
-     "path": "data/series-capital-plan-holes.csv",
-     "title": "Capital plans: the editions capital-plans.csv does not hold",
+     "path": "data/series-town-nurse-visits.csv",
+     "title": "Town nurse visits and clinics, 1959-1976",
      "stars": 2,
-     "what": "Capital plan items by department, item and amount for the May 2008, 2009, 2011, 2012, 2013 and 2023-2025 editions, each list tied to the plan total the page prints, with the FY2013 and FY2024 lists the extractor refused read from the page image.",
+     "what": "The Town's own public health nurses' counts as the Health, Town Nurse and Town Nursing Service pages print them: nursing visits by kind, Well Child Conferences, Well Oldster Clinics and immunization doses. Nashoba's own counts are in nashoba-public-health; each clinic row notes where the page credits both.",
      "kind": "Data",
-     "bytes": 31895,
-     "url": "/docs/data/series-capital-plan-holes.csv",
-     "count": 123,
+     "bytes": 29235,
+     "url": "/docs/data/series-town-nurse-visits.csv",
+     "count": 217,
      "unit": "rows",
-     "textUrl": "/docs/data/series-capital-plan-holes.csv"
+     "textUrl": "/docs/data/series-town-nurse-visits.csv"
     },
     {
      "path": "data/column-glossary.csv",
@@ -6402,6 +6690,18 @@
      "textUrl": "/docs/data/series-veterans-services.csv"
     },
     {
+     "path": "data/annual-report-coverage-datasets.csv",
+     "title": "Every dataset the annual reports feed, and whether it is in the database",
+     "stars": 2,
+     "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
+     "kind": "Data",
+     "bytes": 15123,
+     "url": "/docs/data/annual-report-coverage-datasets.csv",
+     "count": 166,
+     "unit": "rows",
+     "textUrl": "/docs/data/annual-report-coverage-datasets.csv"
+    },
+    {
      "path": "data/PROVENANCE-enterprise-balance-sheet.md",
      "title": "Why the enterprise sheet is a dataset of its own",
      "stars": 2,
@@ -6424,18 +6724,6 @@
      "count": 247,
      "unit": "lines",
      "textUrl": "/docs/data/PROVENANCE-balance-sheet.md"
-    },
-    {
-     "path": "data/annual-report-coverage-datasets.csv",
-     "title": "Every dataset the annual reports feed, and whether it is in the database",
-     "stars": 2,
-     "what": "One row per dataset holding rows read from an annual report: rows, editions, the checked / check failed / no check split by era, and whether the database has the table. Generated by build_annual_report_coverage.py.",
-     "kind": "Data",
-     "bytes": 12830,
-     "url": "/docs/data/annual-report-coverage-datasets.csv",
-     "count": 141,
-     "unit": "rows",
-     "textUrl": "/docs/data/annual-report-coverage-datasets.csv"
     },
     {
      "path": "data/peg-access-printed-totals.csv",
@@ -6618,6 +6906,18 @@
      "textUrl": "/docs/data/special-revenue-printed-totals.csv"
     },
     {
+     "path": "data/series-enrolment-2006.csv",
+     "title": "School enrolment by grade, 2006 gap",
+     "stars": 2,
+     "what": "Grade-by-school enrolment tables as of October 1: this pass adds only the one 2006 page-36 cell (Grade 10, 10/02/06) that report-enrollment-mcas leaves blank; the other 2006 cells are held there.",
+     "kind": "Data",
+     "bytes": 418,
+     "url": "/docs/data/series-enrolment-2006.csv",
+     "count": 1,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-enrolment-2006.csv"
+    },
+    {
      "path": "data/report-gross-wages.csv",
      "title": "Gross wages paid, by employee",
      "stars": 1,
@@ -6654,6 +6954,30 @@
      "textUrl": "/docs/data/report-debt.csv"
     },
     {
+     "path": "data/report-series/school-enrolment-by-grade.csv",
+     "title": "School enrolment by school and class: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 1610091,
+     "url": "/docs/data/report-series/school-enrolment-by-grade.csv",
+     "count": 9900,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/school-enrolment-by-grade.csv"
+    },
+    {
+     "path": "data/report-series/monty-tech-lists.csv",
+     "title": "Monty Tech lists and sports notes: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 1573642,
+     "url": "/docs/data/report-series/monty-tech-lists.csv",
+     "count": 4238,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/monty-tech-lists.csv"
+    },
+    {
      "path": "data/report-statement-of-payments.csv",
      "title": "Annual-report extract: statement of payments",
      "stars": 1,
@@ -6664,6 +6988,18 @@
      "count": 4670,
      "unit": "rows",
      "textUrl": "/docs/data/report-statement-of-payments.csv"
+    },
+    {
+     "path": "data/report-series/classification-schedules.csv",
+     "title": "Town classification and salary schedules: class, step and printed rate, 1966-1973, the FY2011 pay schedule and the FY2016 and FY2017 pay schedules: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 1211671,
+     "url": "/docs/data/report-series/classification-schedules.csv",
+     "count": 3173,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/classification-schedules.csv"
     },
     {
      "path": "data/report-fund-balance-sheets.csv",
@@ -6678,6 +7014,18 @@
      "textUrl": "/docs/data/report-fund-balance-sheets.csv"
     },
     {
+     "path": "data/report-series/student-names-and-honors.csv",
+     "title": "Named students: graduating classes, officers, prizes and recognition, 1959-FY2024: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 1018202,
+     "url": "/docs/data/report-series/student-names-and-honors.csv",
+     "count": 6073,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/student-names-and-honors.csv"
+    },
+    {
      "path": "data/report-capital-projects.csv",
      "title": "Capital project authorisations",
      "stars": 1,
@@ -6690,6 +7038,30 @@
      "textUrl": "/docs/data/report-capital-projects.csv"
     },
     {
+     "path": "data/report-series/trust-fund-ledgers.csv",
+     "title": "Trust fund balance and income ledgers, 1972-FY2019: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 764484,
+     "url": "/docs/data/report-series/trust-fund-ledgers.csv",
+     "count": 5017,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/trust-fund-ledgers.csv"
+    },
+    {
+     "path": "data/report-series/school-personnel-changes.csv",
+     "title": "School personnel changes and roster detail, 1959-FY2017: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 708802,
+     "url": "/docs/data/report-series/school-personnel-changes.csv",
+     "count": 2558,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/school-personnel-changes.csv"
+    },
+    {
      "path": "data/report-dept-activity.csv",
      "title": "What each department reports doing",
      "stars": 1,
@@ -6700,6 +7072,42 @@
      "count": 2264,
      "unit": "rows",
      "textUrl": "/docs/data/report-dept-activity.csv"
+    },
+    {
+     "path": "data/report-series/office-hours-directories.csv",
+     "title": "Office hours and phone directories: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 582002,
+     "url": "/docs/data/report-series/office-hours-directories.csv",
+     "count": 2672,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/office-hours-directories.csv"
+    },
+    {
+     "path": "data/series-coverage.csv",
+     "title": "Which annual reports were checked for each series",
+     "stars": 1,
+     "what": "One row per series per edition: whether the series is printed there and, if not, which pages were looked at.",
+     "kind": "Data",
+     "bytes": 574874,
+     "url": "/docs/data/series-coverage.csv",
+     "count": 3082,
+     "unit": "rows",
+     "textUrl": "/docs/data/series-coverage.csv"
+    },
+    {
+     "path": "data/report-series/bylaw-warrant-text.csv",
+     "title": "By-law, zoning and warrant text: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 542601,
+     "url": "/docs/data/report-series/bylaw-warrant-text.csv",
+     "count": 1291,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/bylaw-warrant-text.csv"
     },
     {
      "path": "data/report-vital-records.csv",
@@ -6786,6 +7194,30 @@
      "textUrl": "/docs/data/report-valuation.csv"
     },
     {
+     "path": "data/report-series/burials.csv",
+     "title": "Burials in the town cemeteries, by name, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 338056,
+     "url": "/docs/data/report-series/burials.csv",
+     "count": 2448,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/burials.csv"
+    },
+    {
+     "path": "data/report-series/trust-fund-holdings.csv",
+     "title": "Trust fund holdings by bank, 1961-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 297143,
+     "url": "/docs/data/report-series/trust-fund-holdings.csv",
+     "count": 1696,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/trust-fund-holdings.csv"
+    },
+    {
      "path": "data/report-series/ballot-questions-local.csv",
      "title": "Local ballot questions: votes by precinct, 1960-FY2025: the read",
      "stars": 1,
@@ -6796,6 +7228,18 @@
      "count": 1761,
      "unit": "rows",
      "textUrl": "/docs/data/report-series/ballot-questions-local.csv"
+    },
+    {
+     "path": "data/report-series/report-contents-pages.csv",
+     "title": "The report's own contents page: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 285357,
+     "url": "/docs/data/report-series/report-contents-pages.csv",
+     "count": 2637,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/report-contents-pages.csv"
     },
     {
      "path": "data/annual-report-survey.csv",
@@ -6815,9 +7259,9 @@
      "stars": 1,
      "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
      "kind": "Data",
-     "bytes": 230808,
+     "bytes": 232110,
      "url": "/docs/data/report-series/monty-tech-budgets.csv",
-     "count": 859,
+     "count": 862,
      "unit": "rows",
      "textUrl": "/docs/data/report-series/monty-tech-budgets.csv"
     },
@@ -6894,18 +7338,6 @@
      "textUrl": "/docs/data/report-school-staff-fte.csv"
     },
     {
-     "path": "data/series-coverage.csv",
-     "title": "Which annual reports were checked for each series",
-     "stars": 1,
-     "what": "One row per series per edition: whether the series is printed there and, if not, which pages were looked at.",
-     "kind": "Data",
-     "bytes": 192008,
-     "url": "/docs/data/series-coverage.csv",
-     "count": 1407,
-     "unit": "rows",
-     "textUrl": "/docs/data/series-coverage.csv"
-    },
-    {
      "path": "data/report-school-state-aid.csv",
      "title": "Annual-report extract: school state aid",
      "stars": 1,
@@ -6930,6 +7362,54 @@
      "textUrl": "/docs/data/staff-position-map.csv"
     },
     {
+     "path": "data/report-series/small-one-offs.csv",
+     "title": "Catch-all: small one-offs: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 147203,
+     "url": "/docs/data/report-series/small-one-offs.csv",
+     "count": 721,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/small-one-offs.csv"
+    },
+    {
+     "path": "data/report-series/pie-chart-shares.csv",
+     "title": "Revenue and spending pie charts, 1959-1968, 1983 and 1996-FY2023, and the 1930-1965 growth chart: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 139531,
+     "url": "/docs/data/report-series/pie-chart-shares.csv",
+     "count": 773,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/pie-chart-shares.csv"
+    },
+    {
+     "path": "data/report-series/meeting-schedules-due-dates.csv",
+     "title": "Meeting schedules and tax due dates: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 137551,
+     "url": "/docs/data/report-series/meeting-schedules-due-dates.csv",
+     "count": 697,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/meeting-schedules-due-dates.csv"
+    },
+    {
+     "path": "data/report-series/treasurer-cash-investments.csv",
+     "title": "Treasurer's cash investments, 1977-FY1981: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 123204,
+     "url": "/docs/data/report-series/treasurer-cash-investments.csv",
+     "count": 553,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/treasurer-cash-investments.csv"
+    },
+    {
      "path": "data/youtube-title-classification.csv",
      "title": "What each video title says the video IS",
      "stars": 1,
@@ -6940,6 +7420,18 @@
      "count": 1595,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-title-classification.csv"
+    },
+    {
+     "path": "data/report-series/school-calendars.csv",
+     "title": "School calendars, 1959-1986: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 113767,
+     "url": "/docs/data/report-series/school-calendars.csv",
+     "count": 848,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/school-calendars.csv"
     },
     {
      "path": "data/report-proposed-salary-schedule.csv",
@@ -6966,6 +7458,18 @@
      "textUrl": "/docs/data/report-new-growth-history.csv"
     },
     {
+     "path": "data/report-series/prose-boxed-as-tables.csv",
+     "title": "Prose and lists boxed as tables: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 106294,
+     "url": "/docs/data/report-series/prose-boxed-as-tables.csv",
+     "count": 444,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/prose-boxed-as-tables.csv"
+    },
+    {
      "path": "data/report-series/fire-calls.csv",
      "title": "Fire Department calls by year and category, 1959-FY2025: the read",
      "stars": 1,
@@ -6988,6 +7492,30 @@
      "count": 135,
      "unit": "rows",
      "textUrl": "/docs/data/report-tax-bill-breakdown.csv"
+    },
+    {
+     "path": "data/report-series/capital-plan-holes.csv",
+     "title": "Capital plans: the editions capital-plans.csv does not hold: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 82700,
+     "url": "/docs/data/report-series/capital-plan-holes.csv",
+     "count": 295,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/capital-plan-holes.csv"
+    },
+    {
+     "path": "data/report-series/staff-roster-pages.csv",
+     "title": "School staff rosters: pages the staff-roster-entries reader did not load: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 80788,
+     "url": "/docs/data/report-series/staff-roster-pages.csv",
+     "count": 345,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/staff-roster-pages.csv"
     },
     {
      "path": "data/report-series/revolving-fund-limits.csv",
@@ -7014,6 +7542,18 @@
      "textUrl": "/docs/data/report-transitional-receipts.csv"
     },
     {
+     "path": "data/report-series/trade-permits.csv",
+     "title": "Plumbing, gas and wiring permits, inspections and fees, 1961-FY2022: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 76034,
+     "url": "/docs/data/report-series/trade-permits.csv",
+     "count": 465,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/trade-permits.csv"
+    },
+    {
      "path": "data/report-revenue-sharing.csv",
      "title": "Annual-report extract: revenue sharing",
      "stars": 1,
@@ -7024,6 +7564,18 @@
      "count": 291,
      "unit": "rows",
      "textUrl": "/docs/data/report-revenue-sharing.csv"
+    },
+    {
+     "path": "data/report-series/official-lists.csv",
+     "title": "Other named lists of officials, 1959-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 74167,
+     "url": "/docs/data/report-series/official-lists.csv",
+     "count": 461,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/official-lists.csv"
     },
     {
      "path": "data/report-treasurers-cash-calendar-year.csv",
@@ -7122,6 +7674,30 @@
      "textUrl": "/docs/data/report-auditors-cash-schedule.csv"
     },
     {
+     "path": "data/report-series/receipts-fragments.csv",
+     "title": "Receipts and payments fragments, 1985 and FY2023: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 49403,
+     "url": "/docs/data/report-series/receipts-fragments.csv",
+     "count": 341,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/receipts-fragments.csv"
+    },
+    {
+     "path": "data/report-series/conservation-filings.csv",
+     "title": "Conservation Commission filings, decisions, hearings and wetlands fees, 1972-FY2025: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 46742,
+     "url": "/docs/data/report-series/conservation-filings.csv",
+     "count": 248,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/conservation-filings.csv"
+    },
+    {
      "path": "data/report-property-tax-exemptions.csv",
      "title": "Annual-report extract: property tax exemptions",
      "stars": 1,
@@ -7132,6 +7708,30 @@
      "count": 179,
      "unit": "rows",
      "textUrl": "/docs/data/report-property-tax-exemptions.csv"
+    },
+    {
+     "path": "data/report-series/scan-debris.csv",
+     "title": "Scan debris and empty tables: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 43569,
+     "url": "/docs/data/report-series/scan-debris.csv",
+     "count": 208,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/scan-debris.csv"
+    },
+    {
+     "path": "data/report-series/bylaw-warrant-text.coverage.csv",
+     "title": "By-law, zoning and warrant text: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 40444,
+     "url": "/docs/data/report-series/bylaw-warrant-text.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/bylaw-warrant-text.coverage.csv"
     },
     {
      "path": "data/report-series/library-usage.csv",
@@ -7194,18 +7794,6 @@
      "textUrl": "/docs/data/annual-report-contents.csv"
     },
     {
-     "path": "data/report-series/capital-plan-holes.csv",
-     "title": "Capital plans: the editions capital-plans.csv does not hold: the read",
-     "stars": 1,
-     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
-     "kind": "Data",
-     "bytes": 28245,
-     "url": "/docs/data/report-series/capital-plan-holes.csv",
-     "count": 123,
-     "unit": "rows",
-     "textUrl": "/docs/data/report-series/capital-plan-holes.csv"
-    },
-    {
      "path": "data/report-cash-management.csv",
      "title": "Annual-report extract: cash management",
      "stars": 1,
@@ -7242,6 +7830,30 @@
      "textUrl": "/docs/data/report-financial-performance.csv"
     },
     {
+     "path": "data/report-series/town-nurse-visits.csv",
+     "title": "Town nurse visits and clinics, 1959-1976: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 25914,
+     "url": "/docs/data/report-series/town-nurse-visits.csv",
+     "count": 217,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/town-nurse-visits.csv"
+    },
+    {
+     "path": "data/report-series/monty-tech-lists.coverage.csv",
+     "title": "Monty Tech lists and sports notes: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 25060,
+     "url": "/docs/data/report-series/monty-tech-lists.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/monty-tech-lists.coverage.csv"
+    },
+    {
      "path": "data/report-expenditure-shares.csv",
      "title": "Annual-report extract: expenditure shares",
      "stars": 1,
@@ -7252,6 +7864,30 @@
      "count": 104,
      "unit": "rows",
      "textUrl": "/docs/data/report-expenditure-shares.csv"
+    },
+    {
+     "path": "data/report-series/official-lists.coverage.csv",
+     "title": "Other named lists of officials, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 23787,
+     "url": "/docs/data/report-series/official-lists.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/official-lists.coverage.csv"
+    },
+    {
+     "path": "data/report-series/prose-boxed-as-tables.coverage.csv",
+     "title": "Prose and lists boxed as tables: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 23673,
+     "url": "/docs/data/report-series/prose-boxed-as-tables.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/prose-boxed-as-tables.coverage.csv"
     },
     {
      "path": "data/report-series/pay-grades-fy2011.csv",
@@ -7290,6 +7926,18 @@
      "textUrl": "/docs/data/meeting-videos.csv"
     },
     {
+     "path": "data/report-series/pie-chart-shares.coverage.csv",
+     "title": "Revenue and spending pie charts, 1959-1968, 1983 and 1996-FY2023, and the 1930-1965 growth chart: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 19722,
+     "url": "/docs/data/report-series/pie-chart-shares.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/pie-chart-shares.coverage.csv"
+    },
+    {
      "path": "data/report-series/cultural-council-grants.csv",
      "title": "Cultural Council grants: applicant, project and amount, 1984-FY2024: the read",
      "stars": 1,
@@ -7302,16 +7950,52 @@
      "textUrl": "/docs/data/report-series/cultural-council-grants.csv"
     },
     {
+     "path": "data/report-series/classification-schedules.coverage.csv",
+     "title": "Town classification and salary schedules: class, step and printed rate, 1966-1973, the FY2011 pay schedule and the FY2016 and FY2017 pay schedules: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 18961,
+     "url": "/docs/data/report-series/classification-schedules.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/classification-schedules.coverage.csv"
+    },
+    {
      "path": "data/report-series/monty-tech-budgets.coverage.csv",
      "title": "Monty Tech budgets and assessments, 1998-FY2025: editions looked at",
      "stars": 1,
      "what": "Written by us. Every edition, and whether the series is printed there.",
      "kind": "Data",
-     "bytes": 18342,
+     "bytes": 18105,
      "url": "/docs/data/report-series/monty-tech-budgets.coverage.csv",
      "count": 67,
      "unit": "rows",
      "textUrl": "/docs/data/report-series/monty-tech-budgets.coverage.csv"
+    },
+    {
+     "path": "data/report-series/school-personnel-changes.coverage.csv",
+     "title": "School personnel changes and roster detail, 1959-FY2017: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 17559,
+     "url": "/docs/data/report-series/school-personnel-changes.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/school-personnel-changes.coverage.csv"
+    },
+    {
+     "path": "data/report-series/receipts-fragments.coverage.csv",
+     "title": "Receipts and payments fragments, 1985 and FY2023: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 17451,
+     "url": "/docs/data/report-series/receipts-fragments.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/receipts-fragments.coverage.csv"
     },
     {
      "path": "data/report-series/births-census.csv",
@@ -7350,6 +8034,78 @@
      "textUrl": "/docs/data/report-series/sewer-billing.csv"
     },
     {
+     "path": "data/report-series/treasurer-cash-investments.coverage.csv",
+     "title": "Treasurer's cash investments, 1977-FY1981: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 16230,
+     "url": "/docs/data/report-series/treasurer-cash-investments.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/treasurer-cash-investments.coverage.csv"
+    },
+    {
+     "path": "data/report-series/trust-fund-holdings.coverage.csv",
+     "title": "Trust fund holdings by bank, 1961-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 15933,
+     "url": "/docs/data/report-series/trust-fund-holdings.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/trust-fund-holdings.coverage.csv"
+    },
+    {
+     "path": "data/report-series/school-enrolment-by-grade.coverage.csv",
+     "title": "School enrolment by school and class: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 15488,
+     "url": "/docs/data/report-series/school-enrolment-by-grade.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/school-enrolment-by-grade.coverage.csv"
+    },
+    {
+     "path": "data/report-series/small-one-offs.coverage.csv",
+     "title": "Catch-all: small one-offs: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 15290,
+     "url": "/docs/data/report-series/small-one-offs.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/small-one-offs.coverage.csv"
+    },
+    {
+     "path": "data/report-series/school-calendars.coverage.csv",
+     "title": "School calendars, 1959-1986: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 14592,
+     "url": "/docs/data/report-series/school-calendars.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/school-calendars.coverage.csv"
+    },
+    {
+     "path": "data/report-series/scan-debris.coverage.csv",
+     "title": "Scan debris and empty tables: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 14313,
+     "url": "/docs/data/report-series/scan-debris.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/scan-debris.coverage.csv"
+    },
+    {
      "path": "data/report-series/veterans-services.csv",
      "title": "Veterans services: recipients and dollars paid, 1959-FY2025: the read",
      "stars": 1,
@@ -7374,16 +8130,52 @@
      "textUrl": "/docs/data/report-series/sewer-billing.coverage.csv"
     },
     {
+     "path": "data/report-series/trust-fund-ledgers.coverage.csv",
+     "title": "Trust fund balance and income ledgers, 1972-FY2019: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 13743,
+     "url": "/docs/data/report-series/trust-fund-ledgers.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/trust-fund-ledgers.coverage.csv"
+    },
+    {
      "path": "data/report-series/pay-grades-fy2011.coverage.csv",
      "title": "Pay grades by class title, FY2011 and FY2015, and 1984 pay rates: editions looked at",
      "stars": 1,
      "what": "Written by us. Every edition, and whether the series is printed there.",
      "kind": "Data",
-     "bytes": 13485,
+     "bytes": 13701,
      "url": "/docs/data/report-series/pay-grades-fy2011.coverage.csv",
      "count": 67,
      "unit": "rows",
      "textUrl": "/docs/data/report-series/pay-grades-fy2011.coverage.csv"
+    },
+    {
+     "path": "data/report-series/office-hours-directories.coverage.csv",
+     "title": "Office hours and phone directories: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 13305,
+     "url": "/docs/data/report-series/office-hours-directories.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/office-hours-directories.coverage.csv"
+    },
+    {
+     "path": "data/report-series/enrolment-2006.coverage.csv",
+     "title": "School enrolment by grade, 2006 gap: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 13153,
+     "url": "/docs/data/report-series/enrolment-2006.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/enrolment-2006.coverage.csv"
     },
     {
      "path": "data/report-series/coa-services.coverage.csv",
@@ -7434,6 +8226,18 @@
      "textUrl": "/docs/data/report-classification-plan.csv"
     },
     {
+     "path": "data/report-series/town-nurse-visits.coverage.csv",
+     "title": "Town nurse visits and clinics, 1959-1976: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 12700,
+     "url": "/docs/data/report-series/town-nurse-visits.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/town-nurse-visits.coverage.csv"
+    },
+    {
      "path": "data/senior-tax-workoff.csv",
      "title": "Senior property-tax work-off, one row per program season",
      "stars": 1,
@@ -7456,6 +8260,18 @@
      "count": 67,
      "unit": "rows",
      "textUrl": "/docs/data/report-series/veterans-services.coverage.csv"
+    },
+    {
+     "path": "data/report-series/conservation-filings.coverage.csv",
+     "title": "Conservation Commission filings, decisions, hearings and wetlands fees, 1972-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 11969,
+     "url": "/docs/data/report-series/conservation-filings.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/conservation-filings.coverage.csv"
     },
     {
      "path": "data/report-revenue-cash-invested.csv",
@@ -7494,6 +8310,18 @@
      "textUrl": "/docs/data/youtube-boards.csv"
     },
     {
+     "path": "data/report-series/capital-plan-holes.coverage.csv",
+     "title": "Capital plans: the editions capital-plans.csv does not hold: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 9272,
+     "url": "/docs/data/report-series/capital-plan-holes.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/capital-plan-holes.coverage.csv"
+    },
+    {
      "path": "data/report-series/cultural-council-grants.coverage.csv",
      "title": "Cultural Council grants: applicant, project and amount, 1984-FY2024: editions looked at",
      "stars": 1,
@@ -7506,16 +8334,16 @@
      "textUrl": "/docs/data/report-series/cultural-council-grants.coverage.csv"
     },
     {
-     "path": "data/report-series/capital-plan-holes.coverage.csv",
-     "title": "Capital plans: the editions capital-plans.csv does not hold: editions looked at",
+     "path": "data/report-series/trade-permits.coverage.csv",
+     "title": "Plumbing, gas and wiring permits, inspections and fees, 1961-FY2022: editions looked at",
      "stars": 1,
      "what": "Written by us. Every edition, and whether the series is printed there.",
      "kind": "Data",
-     "bytes": 9058,
-     "url": "/docs/data/report-series/capital-plan-holes.coverage.csv",
+     "bytes": 8916,
+     "url": "/docs/data/report-series/trade-permits.coverage.csv",
      "count": 67,
      "unit": "rows",
-     "textUrl": "/docs/data/report-series/capital-plan-holes.coverage.csv"
+     "textUrl": "/docs/data/report-series/trade-permits.coverage.csv"
     },
     {
      "path": "data/report-highway-accounts.csv",
@@ -7542,6 +8370,30 @@
      "textUrl": "/docs/data/report-series/oneoff-finance.coverage.csv"
     },
     {
+     "path": "data/report-series/staff-roster-pages.coverage.csv",
+     "title": "School staff rosters: pages the staff-roster-entries reader did not load: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 8697,
+     "url": "/docs/data/report-series/staff-roster-pages.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/staff-roster-pages.coverage.csv"
+    },
+    {
+     "path": "data/report-series/report-contents-pages.coverage.csv",
+     "title": "The report's own contents page: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 8315,
+     "url": "/docs/data/report-series/report-contents-pages.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/report-contents-pages.coverage.csv"
+    },
+    {
      "path": "data/report-series/ballot-questions-local.coverage.csv",
      "title": "Local ballot questions: votes by precinct, 1960-FY2025: editions looked at",
      "stars": 1,
@@ -7552,6 +8404,18 @@
      "count": 67,
      "unit": "rows",
      "textUrl": "/docs/data/report-series/ballot-questions-local.coverage.csv"
+    },
+    {
+     "path": "data/report-series/student-names-and-honors.coverage.csv",
+     "title": "Named students: graduating classes, officers, prizes and recognition, 1959-FY2024: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 8120,
+     "url": "/docs/data/report-series/student-names-and-honors.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/student-names-and-honors.coverage.csv"
     },
     {
      "path": "data/report-series/nashoba-public-health.coverage.csv",
@@ -7660,6 +8524,18 @@
      "count": 22,
      "unit": "rows",
      "textUrl": "/docs/data/report-committee-income-expenses.csv"
+    },
+    {
+     "path": "data/report-series/meeting-schedules-due-dates.coverage.csv",
+     "title": "Meeting schedules and tax due dates: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 5907,
+     "url": "/docs/data/report-series/meeting-schedules-due-dates.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/meeting-schedules-due-dates.coverage.csv"
     },
     {
      "path": "data/report-agency-funds.csv",
@@ -7890,6 +8766,18 @@
      "textUrl": "/docs/data/report-school-building-approved-costs.csv"
     },
     {
+     "path": "data/report-series/burials.coverage.csv",
+     "title": "Burials in the town cemeteries, by name, 1959-FY2025: editions looked at",
+     "stars": 1,
+     "what": "Written by us. Every edition, and whether the series is printed there.",
+     "kind": "Data",
+     "bytes": 1705,
+     "url": "/docs/data/report-series/burials.coverage.csv",
+     "count": 67,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/burials.coverage.csv"
+    },
+    {
      "path": "data/report-series/fire-calls.coverage.csv",
      "title": "Fire Department calls by year and category, 1959-FY2025: editions looked at",
      "stars": 1,
@@ -7950,6 +8838,18 @@
      "textUrl": "/docs/data/youtube-classification-overrides.csv"
     },
     {
+     "path": "data/report-series/enrolment-2006.csv",
+     "title": "School enrolment by grade, 2006 gap: the read",
+     "stars": 1,
+     "what": "Written by us. The read itself, before the checks in report_series.py add their columns.",
+     "kind": "Data",
+     "bytes": 336,
+     "url": "/docs/data/report-series/enrolment-2006.csv",
+     "count": 1,
+     "unit": "rows",
+     "textUrl": "/docs/data/report-series/enrolment-2006.csv"
+    },
+    {
      "path": "data/meeting-video-decisions.csv",
      "title": "A person’s ruling on whether two postings are one recording",
      "stars": 1,
@@ -7998,7 +8898,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 120418304,
+     "bytes": 133181440,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -65024,9 +65924,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5835,
+  "documents": 5910,
   "groups": 33,
-  "bytes": 7358116638,
+  "bytes": 7393246886,
   "loadBearing": 220
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 234 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
