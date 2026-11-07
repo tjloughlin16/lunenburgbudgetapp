@@ -115,6 +115,7 @@ PAGE_MARKER = re.compile(r'^===PAGE (\d+)===$', re.M)
 # is made here, ever. The cache is under build/ and gitignored, so a clone without it
 # indexes only the text files; the fingerprint below makes that difference visible.
 SHORT_PAGE = 40
+MORE_WORDS = 1.3
 TEXTRACT_CACHE = os.path.join(ROOT, 'build', 'textract', 'cache')
 
 
@@ -136,13 +137,19 @@ def textract_fill(entry):
         parts = PAGE_MARKER.split(open(entry['file'], encoding='utf-8', errors='replace').read())
         for i in range(1, len(parts) - 1, 2):
             n = int(parts[i])
-            if len(re.sub(r'[ \t]+', ' ', parts[i + 1]).strip()) >= SHORT_PAGE:
-                continue
+            own = parts[i + 1]
             for feature in ('text', 'tables', 'tables-reread'):
                 f = os.path.join(d, 'p%03d-%s.json' % (n, feature))
                 if os.path.exists(f):
                     t = _textract_lines(f)
-                    if len(re.sub(r'\s+', ' ', t).strip()) >= SHORT_PAGE:
+                    if len(re.sub(r'\s+', ' ', t).strip()) < SHORT_PAGE:
+                        break
+                    short = len(re.sub(r'[ \t]+', ' ', own).strip()) < SHORT_PAGE
+                    # A page that is PART picture: its text layer holds the typed half and
+                    # the read holds both. 114 annual-report pages had 30% more words in the
+                    # read (FY2012 p76: 101 in the file, 680 in the read), 7 November 2026.
+                    more = len(t.split()) >= MORE_WORDS * len(own.split()) + 30
+                    if short or more:
                         fill[n] = t
                     break
     entry['fill'] = fill
@@ -326,7 +333,7 @@ def source_rows(entry):
     out = []
     for n, text in pages:
         body = re.sub(r'[ \t]+', ' ', text).strip()
-        if len(body) < SHORT_PAGE and n in fill:
+        if n in fill:
             body = re.sub(r'[ \t]+', ' ', fill[n]).strip()
         if len(body) < SHORT_PAGE:
             continue

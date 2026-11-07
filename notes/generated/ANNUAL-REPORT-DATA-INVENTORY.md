@@ -6,7 +6,7 @@ Generated: 2026-11-07 by `scripts/build_annual_report_inventory.py`, from the da
 |---|---:|
 | Annual reports held, 1959 to FY2025 | 68 documents |
 | Pages of text read from them | 8,997 pages |
-| Pages in the word search | 8,683 pages |
+| Pages in the word search | 8,686 pages |
 | Tables built from them | 111 tables |
 | Rows in those tables | 157,481 rows |
 | Of which: year-by-year series | 44 tables, 55,924 rows |
@@ -16,7 +16,7 @@ Rows carry the edition and the page they were printed on, so a number can be che
 
 ## What you can do with it
 
-- **Search the pages by word.** Any phrase, across 8,683 pages of all 68 editions, at `https://lunenburgbudgetproject.org/search`. Each hit links to that page of the original PDF.
+- **Search the pages by word.** Any phrase, across 8,686 pages of all 68 editions, at `https://lunenburgbudgetproject.org/search`. Each hit links to that page of the original PDF.
 - **Ask a question in SQL.** Every table below is in a public database. One web address runs a read-only query, for example `https://lunenburgbudgetproject.org/api/query?sql=SELECT edition, measure, value FROM series_fire_calls LIMIT 20`.
 - **Follow a figure back to its page.** Rows carry `edition` and `page`; the original scanned report is at `https://lunenburgbudgetproject.org/docs/town-annual-reports/docs/<file>.pdf#page=N`.
 - **Download it.** Every table is a CSV in the public repository (`https://github.com/tjloughlin16/lunenburgbudgetapp`), named in the tables below.
@@ -28,7 +28,7 @@ Rows carry the edition and the page they were printed on, so a number can be che
 2. **The page text**: read from every page (by Amazon Textract for the scans), 21 MB of text, one file per report.
 3. **The tables**: CSV files in git, the source of truth. Rows name their page; where a report prints its own total, the extract is checked against it.
 4. **The database**: the CSVs are loaded into one SQLite database (`lunenburg.db`), copied online to Cloudflare D1 and queried at `/api/query`.
-5. **The search index**: a second database holding the text of every page with a word index (SQLite FTS5), 8,683 annual-report pages, searched at `/api/search`.
+5. **The search index**: a second database holding the text of every page with a word index (SQLite FTS5), 8,686 annual-report pages, searched at `/api/search`.
 
 Everything printed in the annual reports is public, names included.
 
