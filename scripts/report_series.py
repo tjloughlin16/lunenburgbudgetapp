@@ -76,8 +76,8 @@ FAMILIES = {
     'sped-indicators': ('Special education students served and state indicators, 1991-FY2025',
                    'What the Special Services reports say in sentences: students receiving special education and their share of the student population against the '
                    'state average, 504-plan counts, and from FY2013 the state indicators (graduation, dropout, suspension, parent involvement, MCAS index or scaled scores) '
-                   'with the district figure, state rate and state target. Out-of-district placement counts are in placement-counts.csv; in-district placement mix '
-                   'and compliance indicators are not taken. Index scores (CPI) and scaled scores (SS) are different scales and are labelled as printed.'),
+                   'with the district figure, state rate and state target. Out-of-district placement counts are in placement-counts.csv; placement-mix '
+                   'and compliance indicators are shares the page reports, not counts of children. Index scores (CPI) and scaled scores (SS) are different scales and are labelled as printed.'),
     'mcas-from-reports': ('School test results (MCAS) as the annual reports print them, 1998-FY2025',
                    'Lunenburg MCAS results as printed: the share of students at each performance level by grade and subject (1998-2005), '
                    'the share at the top levels against the state for the middle school and the high school (2006-FY2025), grade 3 Primary School results, '
@@ -214,7 +214,9 @@ def read_family(path, eds, problems):
         r['quote_found'] = 'apart' if found == 'apart' else 'yes' if found else 'no'
         if r['quote_found'] == 'no':
             problems.append('%s: quote not on the page: %r' % (where, r['quote'][:70]))
-        digits = r['value'].replace(',', '')
+        digits = r['value'].replace(',', '').lstrip('-')  # a printed (25,900) is read as -25900
+        if re.fullmatch(r'-?[\d,]*\.?\d+', r['value']):
+            r['value'] = r['value'].replace(',', '')      # so a column of figures sums in SQL
         if digits and 'spelled' not in r['note'] and 'misread' not in r['note'] \
                 and not re.search(r'(?<![\d.])%s(?![\d])' % re.escape(digits),
                                   r['quote'].replace(',', '')):

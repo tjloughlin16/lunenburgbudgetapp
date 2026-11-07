@@ -57,7 +57,6 @@ OUT_MD = os.path.join(ROOT, 'notes', 'generated', 'DATASET-PROVENANCE.md')
 # Datasets built from the annual town reports, and the column naming the source year.
 DATASETS = [
     ('placement-counts', 'fy'), ('ballot-questions', 'fy_report'),
-    ('series-fire-calls', 'edition'),
     ('annual-report-receipts', 'fy'), ('special-revenue-funds', 'edition'),
     ('staff-roster-entries', 'fy'), ('annual-report-catalogue', 'edition'),
     ('report-appropriations', 'edition'), ('report-trust-funds', 'edition'),
@@ -66,7 +65,9 @@ DATASETS = [
     ('report-officials', 'edition'), ('report-dept-activity', 'edition'),
     ('report-enrollment-mcas', 'edition'), ('report-monty-tech', 'edition'),
     ('report-gross-wages', 'edition'), ('report-vital-records', 'edition'),
-]
+] + [(os.path.basename(p)[:-4], 'edition')
+     for p in sorted(glob.glob(os.path.join(DATA, 'series-*.csv')))
+     if os.path.basename(p) != 'series-coverage.csv']
 
 
 def documents():
