@@ -142,6 +142,10 @@ FAMILIES = {
                    'The list of persons buried in the North and South Cemeteries that the Cemetery Commission (or Cemetery Department) report prints in every edition but FY2023: one row per person as printed, '
                    'with age, cemetery and month; 1959 to 1979 print age as years, months and days (1980 onward as one figure) and 1959 to 1968 print no cemetery. '
                    'Also the printed counts: full burials, cremations and totals (FY2018-FY2025), prose counts, and the DPW\'s "forty burials a year" average (2008-FY2021). Not the cemetery revenue lines in dollars.'),
+    'pie-chart-shares': ('Revenue and spending pie charts, 1959-1968, 1983 and 1996-FY2023, and the 1930-1965 growth chart',
+                   'The category and percent printed on the town\'s pie charts: Where Did Your Tax Dollar Go (cents per dollar, 1959-1967; percents, 1968), We Received and We Spent (1959-1968), the FY 1983 expenditures pie, and General Fund revenues and expenditures (1996-FY2023, no revenues pie in 2005 or FY2019), '
+                   'plus the 1965 chart of tax rate, valuation and population at each five-year point 1930-1965. Percents are as printed, never computed; the legend percents beside the 1960-1967 and 1983 pies are in report-expenditure-shares.csv and are not repeated. '
+                   'Three small slices of the 1959 payments pie were too small to read and are left out.'),
 }
 
 
