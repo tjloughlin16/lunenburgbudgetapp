@@ -47,6 +47,8 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'bylaw-warrant-text': ('By-law, zoning and warrant text',
+                   'Fines, fees and dimensions printed in by-law, zoning and warrant text as figures with their unit (fines in dollars, yards, heights and lot areas in feet and square feet), and other article text as rows by section heading; each row is the text as printed in that report, not the current code.'),
     'prose-boxed-as-tables': ('Prose and lists boxed as tables',
                    'Paragraphs, lists and keys that the machine read as table cells: each list item is a row, each paragraph a row with its heading as the row group and a value only where it states a single figure (1966 teacher bargaining, highway definitions, tree warden notes, school lunch reports, keys to the accountant\'s marks, Council on Aging lists, DPW services); counts already held in the trade-permits, conservation-filings and births-census series stay there.'),
     'scan-debris': ('Scan debris and empty tables',
