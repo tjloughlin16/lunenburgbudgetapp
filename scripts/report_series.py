@@ -47,6 +47,8 @@ TIES_TOLERANCE = 0.005  # below a cent; a count either ties or it does not
 
 # Every family says what it is, for the source catalogue (build_source_index.py).
 FAMILIES = {
+    'enrolment-2006': ('School enrolment by grade, 2006 gap',
+                   'Grade-by-school enrolment tables as of October 1: this pass adds only the one 2006 page-36 cell (Grade 10, 10/02/06) that report-enrollment-mcas leaves blank; the other 2006 cells are held there.'),
     'trust-fund-holdings': ('Trust fund holdings by bank, 1961-FY2025',
                    'The Trust Fund Commission\'s Investment of Funds pages: for each trust fund (library, sidewalks and grounds, worthy poor, cemetery perpetual care and later funds) '
                    'the donor, bank, passbook or certificate number and amount as printed, with the fund totals and summary of funds. Read from the page images because the '
