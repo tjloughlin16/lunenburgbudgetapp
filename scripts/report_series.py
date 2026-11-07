@@ -57,6 +57,8 @@ FAMILIES = {
                    'The department index at the front or back of each edition 1959-2010 (none in 1986): one row per department or section, the first printed page as the value and the printed range in the quote; FY2011-FY2025 are in report-index.csv.'),
     'office-hours-directories': ('Office hours and phone directories',
                    'Town office hours by office from the front matter of every edition 1959-FY2013, the telephone directories by subject 1962-2010 and FY2012, the FY2014-FY2025 office hours and telephone number tables, and hours stated in department reports; office, hours or number as printed in the quote, value blank.'),
+    'school-enrolment-by-grade': ('School enrolment by school and class',
+                   'October 1 enrolment tables as printed: 1959-1986 each classroom (grade, teacher, boys, girls, total) under its school with the printed school and grand totals, grade breakdowns and year comparisons; 1988-2000 the enrolment summaries by school and grade; the principal enrolment-by-grade lists 1981-1990; the school census of minors 1959-1973 and the educational census by age 1985-1986. A school total is the total of its class or grade figures.'),
     'enrolment-2006': ('School enrolment by grade, 2006 gap',
                    'Grade-by-school enrolment tables as of October 1: this pass adds only the one 2006 page-36 cell (Grade 10, 10/02/06) that report-enrollment-mcas leaves blank; the other 2006 cells are held there.'),
     'trust-fund-holdings': ('Trust fund holdings by bank, 1961-FY2025',
