@@ -181,6 +181,8 @@ FAMILIES = {
     'treasurer-cash-investments': ("Treasurer's cash investments, 1977-FY1981",
                    'The Treasurer\'s Recapitulation of Revenue Cash Invested in the 1978, 1979 and 1980 reports: by half year, each bank and vehicle line with its number of instruments, liquidity, denominations, rate range, total invested and interest earned, '
                    'the half-year, fiscal-year and calendar-year totals and the interest received and to-be-received reconciliation; the 1977 weekly cash flow worksheet for February 1978 (columns that are whole on the page); and the 1977 table of Town Office cost, interest paid and interest earned, 1970-FY1979. All read from page images.'),
+    'small-one-offs': ('Catch-all: small one-offs',
+                   'Attendance Officer calls, trips, miles and contacts by month 1959-1979; the list of buildings the DPW maintains 2008-FY2013; retirees thanked at Annual Town Meeting 2002-FY2012; easement and land-right articles (1992, 1997); the FY2017 forest stewardship plan grants; the 1963 school lunch summary box; the FY2019 public access cable expense shares.'),
     'monty-tech-lists': ('Monty Tech lists and sports notes',
                    'Lists and counts from the Montachusett Regional Vocational Technical School district report: trades and programs offered (1967, 1969, 1988, 2001), the community projects each trade listed 2002-2009, athletic team records (wins, losses, ties; league records as printed) and team counts 2001-FY2019, and MCAS passing rates, proficient/advanced shares, results tables and graduation competency percentages 2001-FY2025, all as printed. Student names, and the prose shop reports of FY2011-FY2025, are not entered.'),
 }
