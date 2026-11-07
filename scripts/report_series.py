@@ -125,6 +125,10 @@ FAMILIES = {
     'building-activity': ('Building permits issued by year, 1963-FY2025',
                    'What the Building Department (before 1975, the Zoning Authorities) printed about permits: applications received and permits issued by type with the printed totals for 1967-1982, '
                    'the sentence counts for 1986-2005, and the permits issued by type from FY2019 to FY2025 with the printed total. The definition of a permit changes (zoning permits to 1974, building permits only to 2005, then building, electrical, plumbing and gas together), so rows are only comparable within a run.'),
+    'burials': ('Burials in the town cemeteries, by name, 1959-FY2025',
+                   'The list of persons buried in the North and South Cemeteries that the Cemetery Commission (or Cemetery Department) report prints in every edition but FY2023: one row per person as printed, '
+                   'with age, cemetery and month; 1959 to 1979 print age as years, months and days (1980 onward as one figure) and 1959 to 1968 print no cemetery. '
+                   'Also the printed counts: full burials, cremations and totals (FY2018-FY2025), prose counts, and the DPW\'s "forty burials a year" average (2008-FY2021). Not the cemetery revenue lines in dollars.'),
 }
 
 
