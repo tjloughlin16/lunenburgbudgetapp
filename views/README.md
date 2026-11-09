@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**712 of 5914 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**712 of 5923 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5202 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5211 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -71,6 +71,9 @@ Listed so this view cannot look more complete than it is.
 - `analyses/charts/board-composition-where.svg` — Where the town’s seats are, by body
 - `analyses/charts/department-budgets-index.svg` — Chart: town and school starting budgets, indexed to FY2010
 - `analyses/charts/department-budgets-pull.svg` — Chart: each group’s pull on the gap
+- `analyses/charts/early-learning-center-fees.svg` — Chart: fees typed ELC against the rest of fund 1312
+- `analyses/charts/early-learning-center-fund.svg` — Chart: the Extended Day Revolving Fund, in, out and balance, by year
+- `analyses/charts/early-learning-center-timeline.svg` — Chart: the Early Learning Center in the documents, by date
 - `analyses/charts/historical-population.svg` — Population, as the reports print it
 - `analyses/charts/historical-rosters.svg` — Names printed in the school staff rosters
 - `analyses/charts/historical-tax-rate.svg` — The tax rate on the front of each annual report
@@ -121,6 +124,7 @@ Listed so this view cannot look more complete than it is.
 - `analyses/connecting-the-budget.md` — What connects the school budget to the Town’s books, and what does not
 - `analyses/connecting-the-budget.pdf` — The same analysis, rendered for reading on paper
 - `analyses/department-budgets.md` — The town departments and the schools, budget by budget, FY2010–FY2025
+- `analyses/early-learning-center.md` — The Early Learning Center: what we hold, where it comes from, and a timeline
 - `analyses/free-cash.md` — Free cash: is Lunenburg hoarding, or rebuilding?
 - `analyses/hiring-here-or-placing-there.md` — Hiring here instead of placing there
 - `analyses/historical-report.md` — Lunenburg Historical Report: what sixty-seven annual reports say
@@ -457,7 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/report-agency-funds.csv` — Annual-report extract: agency funds
 - `data/report-anomalies.csv` — What looks wrong in the extracts, and where to look
 - `data/report-appropriations-supplement-refused.csv` — Appropriation programs whose lines do not sum to their own subtotal
-- `data/report-appropriations-supplement.csv` — Appropriation lines from the pages the main extract could not take whole
-- `data/report-appropriations.csv` — The general fund appropriations, both tables, FY2011–FY2025
-- `data/report-auditors-cash-schedule.csv` — Annual-report extract: auditors cash schedule
-- `data/report-capital-project-costs.csv` — Annual-report extract: capital project costs

@@ -107,14 +107,47 @@ Revenue is negative in the ledger: a fee is a credit.
 
 ## People
 
-| year | where the town printed it | name | role or group |
-|---|---|---|---|
-| 2012 | annual report p31 | Tammy Perry | Extended Day & Early Learning Center |
-| 2025 | annual report p101 | Patty McCarthy-Guillette | Director |
-| 2025 | annual report p101 | Annette Queen | Ext Day/ELC |
-| 2025 | annual report p101 | Natalie Marabello | Ext Day/ELC |
+Who the annual town reports list under Extended Day, the ELC and the programmes beside them, as the town headed them each year.
 
-A roster lists names with no FTE and no funding source, so it is not a staffing level.
+| year | group, as printed | names (role, where printed) | page |
+|---|---|---|---|
+| FY2004 | THOMAS C. PASSIOS SCHOOL | Sandy Flanagan (Day Care) | p46 |
+| FY2005 | EXTENDED DAY | Sandy Flanagan; Colleen Gardner; Annette Queen; Tammy Priest | p47 |
+| FY2006 | EXTENDED DAY | Sandy Flanagan; Colleen Gardner; Annette Queen; Tammy Priest | p42 |
+| FY2007 | EXTENDED DAY | Tammy Perry; Annette Queen; Tammy Priest; Nora Pearson | p49 |
+| FY2008 | EXTENDED DAY | Tammy Perry (Coordinator); Annette Queen; Tammy Priest; Sandra Sheehy | p45 |
+| FY2009 | EXTENDED DAY | Tammy Perry (Coordinator); Annette Queen; Tammy Priest | p32 |
+| FY2010 | EXTENDED DAY PROGRAM | Tammy Perry (Coordinator); Annette Queen; Tammy Priest | p39 |
+| FY2011 | EXTENDED DAY PROGRAM | Tammy Perry (Coordinator); Annette Queen (Coordinator) | p38 |
+| FY2012 | Extended Day/School Linked Services | Tammy Perry (Extended Day & Early Learning Center); Patty McCarthy-Guillette (School Linked Services) | p31 |
+| FY2013 | *none printed* | the Primary School roster lists 69 names and no such group | |
+| FY2014 | *none printed* | the Primary School roster lists 69 names and no such group | |
+| FY2015 | *none printed* | the Primary School roster lists 82 names and no such group | |
+| FY2016 | *none printed* | the Primary School roster lists 62 names and no such group | |
+| FY2017 | Extended Day | Tammy Perry; Annette Queen; Christin Leger; Natalie Marabello; Mary Marino; Terri Green | p109 |
+| FY2018 | Extended Day | Tammy Perry; Annette Queen | p122 |
+| FY2019 | *none printed* | the Primary School roster lists 72 names and no such group | |
+| FY2020 | *none printed* | the Primary School roster lists 69 names and no such group | |
+| FY2021 | *none printed* | the Primary School roster lists 55 names and no such group | |
+| FY2022 | *none printed* | the Primary School roster lists 71 names and no such group | |
+| FY2023 | *none printed* | the Primary School roster lists 84 names and no such group | |
+| FY2024 | *none printed* | the Primary School roster lists 73 names and no such group | |
+| FY2025 | Ext Day/ELC | Patty McCarthy-Guillette (Director); Annette Queen; Natalie Marabello | p101 |
+| FY2025 | CFCE Grant Program | Meaghan Lamachia | p101 |
+
+In 10 of these 22 years the Primary School roster was printed and read but carries no Extended Day or ELC group. To check that the group was not simply filed under another name, each person listed in it in two or more years was searched for by full name, in either order, in the full text of those reports:
+
+| name | years in the group | named anywhere in the years with no group |
+|---|---:|---|
+| Annette Queen | 10 | FY2014, FY2015, FY2016, FY2019, FY2021 |
+| Tammy Perry | 8 | FY2014, FY2015, FY2016, FY2021 |
+| Tammy Priest | 6 | none |
+| Sandy Flanagan | 3 | FY2015 |
+| Colleen Gardner | 2 | none |
+| Natalie Marabello | 2 | FY2014, FY2015, FY2016, FY2019, FY2021 |
+| Patty McCarthy-Guillette | 2 | none |
+
+Where a name does appear in a year with no group, it is under another heading, such as a classroom or the town’s wage list, which names no programme; a name found does not say what the person did that year. A roster lists names with no FTE and no funding source, so it is not a staffing level.
 
 ## What we cannot say
 

@@ -247,7 +247,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">259</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">479,945</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">479,951</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">4195</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">79%</div><div class="l">columns described</div></div>
 </div>
@@ -2055,9 +2055,9 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>line_key</code></td><td class="ty">TEXT</td><td>Our normalised join key for a budget line.<br><span class="ccaut">Normalisation differs between budget_figure and workbook_figure — joining them on line_key matches only a fraction. Join on the normalised label instead.</span></td></tr>
 <tr><td><code>label</code></td><td class="ty">TEXT</td><td>The row&#x27;s name, as printed.<br><span class="ccaut">Not a key. MUNIS truncates to ten characters, so MS GUIDANC and HS GUIDANC collide.</span></td></tr>
 <tr><td><code>source</code></td><td class="ty">TEXT</td><td>Where the figure came from, as the extractor recorded it.<br><span class="ccaut">A loose reference — a filename — not a resolved address.</span></td></tr>
-<tr><td><code>value</code></td><td class="ty">NUM</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
-<tr><td><code>is_kept</code></td><td class="ty">NUM</td><td><span class="nul">not described yet</span></td></tr>
-<tr><td><code>spread</code></td><td class="ty">NUM</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>value</code></td><td class="ty">REAL</td><td>The figure, as printed. <span class="unit">dollars</span></td></tr>
+<tr><td><code>is_kept</code></td><td class="ty">INT</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>spread</code></td><td class="ty">REAL</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>kind</code></td><td class="ty">TEXT</td><td>What sort of row or record this is.<br><span class="ccaut">Meaning differs by table — see the per-table entry.</span></td></tr>
 </table></div>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
@@ -6349,7 +6349,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>39 tables &middot; 63,469 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>Both at once — the ledger and the model</b><span>39 tables &middot; 63,470 rows</span></summary>
 <p class="cap">Tables that carry every department together. The town&#x27;s books do not separate school from town, and neither do these: splitting them would invent a division the source does not make.</p>
 <p class="tierhead"><b>Tier 1 · totals</b><span>what was appropriated and what is left, by department</span></p>
 <details class="t"><summary><span class="srow"><code>balance_sheet</code> <span class="tag scope sboth">school + town</span> <span class="tag tier t1" title="what was appropriated and what is left, by department">Tier 1 · totals</span> <span class="tag">fact</span> <span class="n">1,701 rows</span> <span class="yr">1987–2022</span><button class="open" data-t="balance_sheet" data-q="SELECT fy, section, line, fund, amount FROM balance_sheet ORDER BY fy, section, line LIMIT 1000">Query table</button></span><span class="gr">one row per line per fund column per year</span></summary>
@@ -6779,7 +6779,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td><code>original</code></td><td class="ty">REAL</td><td>The appropriation as originally voted. <span class="unit">dollars</span></td></tr>
 <tr><td><code>transfers</code></td><td class="ty">REAL</td><td>Money moved into or out of the appropriation after it was voted. <span class="unit">dollars</span><br><span class="ccaut">This is why <code>original</code> and <code>revised</code> differ.</span></td></tr>
 <tr><td><code>revised</code></td><td class="ty">REAL</td><td>The appropriation after transfers. <span class="unit">dollars</span></td></tr>
-<tr><td><code>moved_since_last</code></td><td class="ty">NUM</td><td><span class="nul">not described yet</span></td></tr>
+<tr><td><code>moved_since_last</code></td><td class="ty">REAL</td><td><span class="nul">not described yet</span></td></tr>
 <tr><td><code>doc_id</code></td><td class="ty">TEXT</td><td>The archive path of the document this row&#x27;s figures came from.<br><span class="ccaut">Every fact row carries one. A figure that cannot name its document is not loaded.</span></td></tr>
 </table></div>
 <p class="cap sm">No rows. That is the honest state of this table, not a load that failed — see its entry in <code>SCHEMA.md</code>.</p>
@@ -6929,7 +6929,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>State teachers’ pension system</td><td>District teaching staff</td><td>unknown</td><td>Not appropriated by Lunenburg, not in our a…</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">653 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
+<details class="t"><summary><span class="srow"><code>money_gaps</code> <span class="tag scope sboth">school + town</span> <span class="tag">our model</span> <span class="n">654 rows</span><button class="open" data-t="money_gaps">Query table</button></span><span class="gr">one row per gap</span></summary>
 <p class="ans">The honest list of what CANNOT be answered — per side (money in, money out), what is missing and why the published documents do not close it.</p>
 <p class="warn">This table is the honest list of what cannot be answered.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -7241,7 +7241,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 16,259 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 16,264 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
 <details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">246 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
@@ -7267,7 +7267,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-11-07T12:23:03Z</td></tr>
+<tr><td>built_at</td><td>2026-11-09T18:08:56Z</td></tr>
 <tr><td>inputs</td><td>246</td></tr>
 </table></div>
 </details>
@@ -7387,7 +7387,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>series-receipts-fragments</td><td>2005</td><td>10</td><td>54</td><td>1</td><td>0</td><td>0</td><td>4513-2005-annual-town-report.pdf</td><td>2005 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>9d459be744d836904d2cbb40b3a17c012d9c976cbce…</td><td>5179748</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,470 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
+<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,475 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
 <p class="ans">One row per source document: its archive path, how it reached us, its publisher URL, whether that link still opens (<code>link_state</code>), whether our copy still matches the publisher&#x27;s (<code>copy_state</code>), and both checksums. Also which columns a workbook HIDES from a reader.</p>
 <p class="warn"><code>link_state</code> says whether the publisher&#x27;s copy still opens; <code>copy_state</code> whether it still matches ours.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -7407,7 +7407,7 @@ to $325</td><td>quoted in source</td></tr>
 <div class="scroll"><table class="samp"><tr><th>doc_id</th><th>path</th><th>source_type</th><th>basis</th><th>ledger_at</th><th>hidden_columns</th><th>url</th><th>link_state</th><th>copy_state</th><th>remote_sha256</th><th>local_sha256</th></tr>
 <tr><td>sources/district-budget/docs/sc-meetings/20…</td><td>sources/district-budget/docs/sc-meetings/20…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://drive.google.com/file/d/1PbYN1A8s17…</td><td>200</td><td>identical</td><td>3f48ff31a5a63e8507d7a1b3bb34e7a3eabfa8dde12…</td><td>3f48ff31a5a63e8507d7a1b3bb34e7a3eabfa8dde12…</td></tr>
 <tr><td>sources/district-budget/docs/personnel/staf…</td><td>sources/district-budget/docs/personnel/staf…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://docs.google.com/spreadsheets/d/e/2P…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>87cfc459488cd17abcdb9ad2299706924c21d46eb08…</td></tr>
-<tr><td>sources/town-supplementary/docs/staff-direc…</td><td>sources/town-supplementary/docs/staff-direc…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://www.lunenburgma.gov/m/directory/dep…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>70ea100409362fe6e441752b237ec6622c567a28100…</td></tr>
+<tr><td>sources/town-supplementary/docs/staff-direc…</td><td>sources/town-supplementary/docs/staff-direc…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://www.lunenburgma.gov/m/directory/dep…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>382679b81f39b505933b4e1dfb4709590c19e78cecc…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>extraction_plan</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">555 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="extraction_plan">Query table</button></span><span class="gr">one row per planned extract</span></summary>
@@ -7679,6 +7679,7 @@ stop.</p></div>
 <tr><td>money_in</td><td>How much of each year&#x27;s new growth was new homes, how much additions and renovations to existing homes, and how much business property?</td><td>THE STATE&#x27;S NEW GROWTH FILES PRINT ONE FIGURE FOR RESIDENTIAL NEW GROWTH, so /homes-and-taxes/growth-and-tax-rate can show that new growth outran the count of single-family homes but not which kind of building did it; whether the average bill rose because new homes are larger, because existing homes were enlarged, or both is our reading, untested. — closes: the Assessors&#x27; new growth detail by permit type (the LA-13 new growth worksheet the town files with the Division of Local Services each year).</td></tr>
 <tr><td>money_in</td><td>How much of free cash is the schools’</td><td>Free cash is certified for the town as a whole. Neither the DLS proof nor the Town’s own undesignated fund balance roll-forward attributes any component to any department, so <strong>nothing published says how much of it the school department’s unspent appropriation produced</strong> — nor how much of any appropriation of it reaches the schools. The projection on this site is built from budget columns and free cash is derived from actuals; they are subtracted once, side by side, and never joined. — closes: a departmental turnback schedule for the year-end close, which would split the unexpended appropriations line by department.</td></tr>
 <tr><td>money_in</td><td>How much of the After School Activities fund&#x27;s income is the student activity fee, and how much is families paying for one named trip, exam or prom?</td><td>MEASURED in the school journal, FY2023-FY2026: the fund&#x27;s income accounts are titled ACTIVITY FEES by school, and some deposits go in under a memo naming Nature&#x27;s Classroom, a test or a prom (the amount is computed on the page below); most name only the school. Deposits are posted in batches, so the journal cannot split them. The School Committee&#x27;s $70 student activity fee may not be deposited here at all: the district also keeps student activity accounts outside the Town&#x27;s books, and its payment portal sells an Afterschool Activity Fee and Field Trips separately. Shown on /school-all-funds/activities-fund. — closes: the deposit detail behind each batch, by activity, and which account the student activity fee is paid into.</td></tr>
+<tr><td>money_in</td><td>How much of the Extended Day Revolving Fund is the Early Learning Center, in fees, in staff and in children?</td><td>The ELC and Extended Day share fund 1312 and one payroll account. A deposit is labelled ELC only when whoever posts it types the word, so the ledger gives a floor for ELC fees and nothing at all for ELC spending, and no document we hold counts the children enrolled. See /analysis/early-learning-center. — closes: the district’s RevTrak payment report by item (Extended Day &amp; ELC versus the other items) with enrolment by programme, or a programme-level budget for fund 1312.</td></tr>
 <tr><td>money_in</td><td>How much of the FY2027 enacted state-aid increase is receipts and how much is offsetting assessments</td><td>model/finance.py grows a FY2027 base of $11,404,917 + $471,121. The first is the Governor’s GROSS cherry sheet Total Receipts, printed by the FY2027 Town Meeting booklet. The second is recorded in fy27-and-the-override.md as NET — &quot;+$471,121 net (Ch.70, charter/choice receiving tuition, Smart Growth, UGGA, vets/elderly exemptions; offset by higher charter assessments)&quot;. A gross figure and a net figure are being added, so the gross FY2027 receipt estimate the projection actually grows is not established, and neither is how much of the increase the Town keeps. This archive holds no Cherry Sheet for any year, which is the only document that prints receipts and assessments side by side. — closes: the FY2027 Cherry Sheet for Lunenburg on the enacted budget (DLS form CS 1-ER), which states each receipt and each assessment separately.</td></tr>
 <tr><td>money_in</td><td>How much of the SY2025 grant fall was ESSER, as against every other grant and revolving fund</td><td>The meeting record names ESSER as the cause repeatedly and with figures — the district told the School Committee on 15 November 2023 “We have a loss of $650,000 in ESSER funds, this is much more significant than we expected”, and on 17 January 2024 put the loss at $600,000 beside a $500,000 health insurance rise. DESE reports one combined <code>grants_revolving</code> column, which holds ESSER, Title I and the other federal and state grants together with circuit breaker, school choice, athletics, food service and every other revolving fund. The SY2025 fall of $2,023,188 across matched functions therefore cannot be attributed to any one of them. The district&#x27;s own stated ESSER figures and this fall are different quantities measured at different stages — a forward budget gap against a closed-year fund total — and this project does not difference one against the other. — closes: the district&#x27;s end-of-year grant expenditure detail by grant code for FY2024 and FY2025, or Schedule 19 of its End of Year Financial Report as filed, which lists each grant separately.</td></tr>
 <tr><td>money_in</td><td>How much of the federal grant money Monty Tech is allocated serves Lunenburg students</td><td>DESE allocates Perkins, IDEA and the Title grants to Montachusett Regional Vocational Technical as one district, and it serves students from every member town (/school-all-funds/grants-others-receive). Lunenburg gets no Perkins allocation of its own, and nothing published says what part of Monty Tech&#x27;s serves Lunenburg&#x27;s students. — closes: Monty Tech&#x27;s grant applications and budgets, by programme and by member town</td></tr>
@@ -8493,7 +8494,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') {
 </script>
 
 <p class="gen">Generated by <code>scripts/build_schema_page.py</code> from the live
-database on 2026-11-07. Do not edit — run the script. The CSVs in <code>sources/data/</code>
+database on 2026-11-09. Do not edit — run the script. The CSVs in <code>sources/data/</code>
 are the source of truth; this database is a derived read model, rebuilt from scratch on
 every run.</p>
 </div>
