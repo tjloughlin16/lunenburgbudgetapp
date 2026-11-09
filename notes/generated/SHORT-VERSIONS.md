@@ -16,10 +16,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Bend the curve](/bend-the-curve) | page | 4.4 / 38.3 min | 1. Next year the schools get $856k more. Here is who spends it.<br>2. Costs grow 5.18%. Revenue grows 3.22%. |
 | [The cost of closing the gap](/what-solved-requires) | page | 3.8 / 38.3 min | 1. There is no arrangement of the other five lines that reaches the bar while salaries go on rising 4%. |
 | [The budget gap](/the-situation) | page | 2.6 / 47.2 min | 1. Cutting every extra still funded — $376,207 — covers 40% of next year’s gap, once.<br>2. ~90% — Contracts, insurance and law set about 90% of the budget; after the extras, only classroom positions are big enough to cut.<br>3. 2.25 pts — The published cost increase is 3.98%; the one that comes back every year is 6.23%. |
-| [The money](/the-money) | reference | — / 9.3 min | *(none declared)* |
+| [The money](/the-money) | reference | — / 9.4 min | *(none declared)* |
 | [About this project](/about) | page | — / 6.6 min | *(none declared)* |
 | [The annual town reports](/analysis/annual-reports) | page | 1.9 / 18.2 min | 1. All 2,332 pages holding a financial table have been read.<br>2. 2,158 of 2,332 pages tie to a total the page itself prints.<br>3. Special Revenue is the least checked: 0 of its 147 pages have no check at all. |
 | [Connecting the school budget to the Town&#x27;s books](/analysis/connecting-the-budget) | page | 0.7 / 10.7 min | 1. Following a dollar from the school budget to the Town&#x27;s books works at two levels and stops at the third. |
+| [The Early Learning Center](/analysis/early-learning-center) | page | 1.6 / 20.8 min | 1. Fees typed “ELC” came to $37,607 in FY2026, of the fund’s $274,325 in fees.<br>2. -$2,569 — The fund that pays ELC staff spent more than it took in, 3 of 4 years.<br>3. The ELC handbook came to the School Committee in 5 springs running. |
 | [Lunenburg Historical Report](/analysis/historical-report) | page | — / 29.1 min | *(none declared)* |
 | [A hundred questions this archive can answer](/analysis/questions) | page | — / 31.2 min | *(none declared)* |
 | [Show your work](/analysis/show-your-work) | page | — / 70.9 min | *(none declared)* |
@@ -484,7 +485,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Historical Commission](/boards/historical-commission) | reference | — / 7.5 min | *(none declared)* |
 | [Historical Commission — about](/boards/historical-commission/about) | reference | — / 6.8 min | *(none declared)* |
 | [Historical Commission — finances](/boards/historical-commission/finance) | reference | — / 15.1 min | *(none declared)* |
-| [Historical Commission — meetings](/boards/historical-commission/meetings) | reference | — / 7.5 min | *(none declared)* |
+| [Historical Commission — meetings](/boards/historical-commission/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Historical Commission — missing records](/boards/historical-commission/records) | reference | — / 12.5 min | *(none declared)* |
 | [Historical Commission — budget schedule](/boards/historical-commission/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Historical Commission — where the time goes](/boards/historical-commission/time) | reference | — / 5.9 min | *(none declared)* |
@@ -551,9 +552,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [North Central Climate Change Coalition](/boards/north-central-climate-change-coalition) | reference | — / 6.1 min | *(none declared)* |
 | [North Central Climate Change Coalition — meetings](/boards/north-central-climate-change-coalition/meetings) | reference | — / 6.1 min | *(none declared)* |
 | [North Central Climate Change Coalition — missing records](/boards/north-central-climate-change-coalition/records) | reference | — / 7.3 min | *(none declared)* |
-| [Open Space Committee](/boards/open-space-committee) | reference | — / 7.6 min | *(none declared)* |
+| [Open Space Committee](/boards/open-space-committee) | reference | — / 7.7 min | *(none declared)* |
 | [Open Space Committee — about](/boards/open-space-committee/about) | reference | — / 6.7 min | *(none declared)* |
-| [Open Space Committee — meetings](/boards/open-space-committee/meetings) | reference | — / 10.0 min | *(none declared)* |
+| [Open Space Committee — meetings](/boards/open-space-committee/meetings) | reference | — / 9.7 min | *(none declared)* |
 | [Open Space Committee — missing records](/boards/open-space-committee/records) | reference | — / 10.2 min | *(none declared)* |
 | [Open Space Committee — budget schedule](/boards/open-space-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Open Space Committee — where the time goes](/boards/open-space-committee/time) | reference | — / 5.9 min | *(none declared)* |
@@ -620,7 +621,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School Committee — votes](/boards/school-committee/votes) | reference | — / 98.4 min | *(none declared)* |
 | [Select Board](/boards/select-board) | reference | — / 9.8 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
-| [Select Board Public Hearing — meetings](/boards/select-board-public-hearing/meetings) | reference | — / 6.5 min | *(none declared)* |
+| [Select Board Public Hearing — meetings](/boards/select-board-public-hearing/meetings) | reference | — / 6.4 min | *(none declared)* |
 | [Select Board — about](/boards/select-board/about) | reference | — / 6.1 min | *(none declared)* |
 | [Select Board — finances](/boards/select-board/finance) | reference | — / 17.8 min | *(none declared)* |
 | [Select Board — meetings](/boards/select-board/meetings) | reference | — / 11.7 min | *(none declared)* |
@@ -635,10 +636,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Senior Citizens Tax Work Off Committee — budget schedule](/boards/senior-citizens-tax-work-off-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — where the time goes](/boards/senior-citizens-tax-work-off-committee/time) | reference | — / 5.7 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — votes](/boards/senior-citizens-tax-work-off-committee/votes) | reference | — / 11.1 min | *(none declared)* |
-| [Sewer Commission](/boards/sewer-commission) | reference | — / 9.1 min | *(none declared)* |
+| [Sewer Commission](/boards/sewer-commission) | reference | — / 8.3 min | *(none declared)* |
 | [Sewer Commission — about](/boards/sewer-commission/about) | reference | — / 8.0 min | *(none declared)* |
 | [Sewer Commission — finances](/boards/sewer-commission/finance) | reference | — / 15.5 min | *(none declared)* |
-| [Sewer Commission — meetings](/boards/sewer-commission/meetings) | reference | — / 11.6 min | *(none declared)* |
+| [Sewer Commission — meetings](/boards/sewer-commission/meetings) | reference | — / 10.7 min | *(none declared)* |
 | [Sewer Commission — missing records](/boards/sewer-commission/records) | reference | — / 15.8 min | *(none declared)* |
 | [Sewer Commission — budget schedule](/boards/sewer-commission/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Sewer Commission — where the time goes](/boards/sewer-commission/time) | reference | — / 5.9 min | *(none declared)* |
@@ -685,7 +686,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals — missing records](/boards/zoning-board-of-appeals/records) | reference | — / 14.7 min | *(none declared)* |
 | [Zoning Board of Appeals — where the time goes](/boards/zoning-board-of-appeals/time) | reference | — / 5.9 min | *(none declared)* |
 | [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 32.4 min | *(none declared)* |
-| [The budget feed — FY28](/budget-feed) | reference | — / 22.7 min | *(none declared)* |
+| [The budget feed — FY28](/budget-feed) | reference | — / 22.8 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 16.4 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.8 min | *(none declared)* |
 | [The departments](/departments) | reference | — / 7.7 min | *(none declared)* |
@@ -711,7 +712,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Find the money](/find-the-money) | tool | — / 11.9 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.4 min | *(none declared)* |
 | [Grants open to Lunenburg — DESE programs a school district can apply for](/grants-open-to-lunenburg) | reference | — / 17.8 min | *(none declared)* |
-| [Job postings — the town and the schools](/jobs) | reference | — / 14.0 min | *(none declared)* |
+| [Job postings — the town and the schools](/jobs) | reference | — / 14.7 min | *(none declared)* |
 | [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 655.4 min | *(none declared)* |
 | [Agricultural Commission, June 18, 2020](/meeting-minutes/agricultural-commission/2020-06-18-FcoS_Nv9ecA) | reference | — / 9.7 min | *(none declared)* |
 | [Agricultural Commission, July 16, 2020](/meeting-minutes/agricultural-commission/2020-07-16-E1edQaRdCbg) | reference | — / 9.7 min | *(none declared)* |
@@ -3141,7 +3142,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals, August 26, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro) | reference | — / 10.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-14-aW3D8mIw_yw) | reference | — / 13.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 28, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-28-vBdjYw_h64M) | reference | — / 9.4 min | *(none declared)* |
-| [New reports](/new-reports) | reference | — / 36.4 min | *(none declared)* |
+| [New reports](/new-reports) | reference | — / 35.8 min | *(none declared)* |
 | [Town-wide org charts](/org-charts) | reference | — / 19.4 min | *(none declared)* |
 | [Adam Burney](/people/adam-burney) | reference | — / 10.6 min | *(none declared)* |
 | [Alfred Gravelle](/people/alfred-gravelle) | reference | — / 8.9 min | *(none declared)* |
@@ -3394,7 +3395,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Laura Brzozski](/people/laura-brzozski) | reference | — / 7.7 min | *(none declared)* |
 | [Laura F. Kelly](/people/laura-f-kelly) | reference | — / 7.6 min | *(none declared)* |
 | [Laura Forde Kelly](/people/laura-forde-kelly) | reference | — / 7.1 min | *(none declared)* |
-| [Leigh Bain](/people/leigh-bain) | reference | — / 7.7 min | *(none declared)* |
+| [Leigh Bain](/people/leigh-bain) | reference | — / 7.6 min | *(none declared)* |
 | [lichard McGrath](/people/lichard-mcgrath) | reference | — / 6.8 min | *(none declared)* |
 | [Linda M. McDonald](/people/linda-m-mcdonald) | reference | — / 10.0 min | *(none declared)* |
 | [Linda Vickery](/people/linda-vickery) | reference | — / 7.7 min | *(none declared)* |
@@ -3585,11 +3586,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.6 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 51.5 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 51.7 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 20.3 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 21.6 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 16.1 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 492.0 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
-| [What we cannot answer](/what-we-cannot-answer) | reference | — / 376.9 min | *(none declared)* |
+| [What we cannot answer](/what-we-cannot-answer) | reference | — / 377.4 min | *(none declared)* |
