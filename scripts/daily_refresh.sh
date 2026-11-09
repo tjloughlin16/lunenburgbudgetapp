@@ -32,7 +32,11 @@
 #     and scripts/check_refresh_safe.py fails the build if this file or refresh.py ever
 #     contains a command that could.
 set -u
-export PATH="/Users/tj/.nvm/versions/node/v22.22.2/bin:/usr/local/bin:/usr/bin:/bin"
+# PYTHON IS PINNED TO 3.11, FIRST ON PATH, because that is the interpreter the packages are
+# installed in. On 7 November 2026 Homebrew installed python@3.15 and made it
+# /usr/local/bin/python3, bare and package-less; the refresh then died at `import pypdf` on
+# 8 and 9 November. minutes_pacing.sh pins the same interpreter. Move both together.
+export PATH="/usr/local/opt/python@3.11/bin:/Users/tj/.nvm/versions/node/v22.22.2/bin:/usr/local/bin:/usr/bin:/bin"
 # ONCE STARTED, STAY AWAKE UNTIL DONE. On 10 October 2026 a job launched at 02:36 during a
 # dark wake went back to sleep 18 seconds later and then ran ~45 seconds an hour, so a
 # 14-minute search build read as "5.5 hours, too slow". This holds an idle-sleep assertion
