@@ -8940,7 +8940,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 135294976,
+     "bytes": 135303168,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -9960,9 +9960,9 @@
      "stars": 2,
      "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
      "kind": "Data",
-     "bytes": 2610542,
+     "bytes": 2610688,
      "url": "/docs/data/searchable-pdfs.csv",
-     "count": 16310,
+     "count": 16311,
      "unit": "rows",
      "textUrl": "/docs/data/searchable-pdfs.csv"
     },
@@ -10116,9 +10116,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 186592,
+     "bytes": 190475,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 59,
+     "count": 60,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -66582,7 +66582,7 @@
  "totals": {
   "documents": 5923,
   "groups": 33,
-  "bytes": 7396686044,
+  "bytes": 7396698265,
   "loadBearing": 221
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 754 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
