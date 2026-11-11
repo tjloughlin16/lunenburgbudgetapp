@@ -36,7 +36,14 @@ publisher, not only recorded at download time.
                      was being shown a login page. Nothing can be compared, and our copy
                      is the only public one -- which is the archive's entire reason for
                      existing.
-  * `unreachable` -- a network or host failure, including any non-2xx. Not a claim about
+  * `gone`        -- the host answered 404 or 410, twice. The address no longer serves a
+                     document. Not a host failure, and not proof the document is withdrawn:
+                     the town replaced the 1997 and 1999 annual reports on 3 November 2026 by
+                     posting rescans at NEW addresses (View/4615, 4616) and letting the old
+                     ones 404. Before this state existed that read as `unreachable`, which is
+                     a host having a bad minute. `watch_documents.py` is what pairs a gone
+                     address with the document re-posted under the same title.
+  * `unreachable` -- a network or host failure, including any other non-2xx. Not a claim about
                      the document and not a claim about permissions. A 503 once came back
                      labelled `restricted` here, because the classifier looked at the body
                      before the status code; a host having a bad minute was being reported
@@ -112,8 +119,13 @@ def eligible(prefixes=()):
     # links the same FY26 presentation under two Drive ids, and both are real addresses for
     # the same document. Both are checked and both are written out; collapsing them here
     # would throw away the fact that the page publishes it twice.
-    items = [(i['path'], i['upstream']) for g in doc['groups'] for i in g['items']
-             if i.get('upstream') and not NO_FILE.search(i['upstream'])]
+    # AND ONE `upstream` CAN HOLD SEVERAL ADDRESSES, space-joined: the fifteen FY2011-FY2025
+    # annual reports carry their DocumentCenter and ArchiveCenter addresses in one field. The
+    # whole string went to curl, which answered `000`, so those fifteen were recorded
+    # `unreachable` and never once compared (found 11 November 2026). Each address is its own
+    # check, like the two Drive ids above.
+    items = [(i['path'], u) for g in doc['groups'] for i in g['items']
+             for u in (i.get('upstream') or '').split() if not NO_FILE.search(u)]
     skip = socrata_locals()
     return [(p, u) for p, u in items
             if os.path.isfile(os.path.join(SRC, p))
@@ -184,11 +196,34 @@ def pdf_text(path):
 
 
 HTML = ('.html', '.htm')
+# The codes that say the ADDRESS is dead rather than the host. Anything else non-2xx --
+# a 5xx, a 403, a timeout's 000 -- stays `unreachable`.
+GONE = ('404', '410')
+
+
+def status_of(url, tries=2):
+    """The HTTP status an address answers, asked twice if the first answer is not 2xx.
+
+    Reads one byte, so it costs nothing on a 100MB scan. Shared with watch_documents.py,
+    which asks it of a held address when the same title appears somewhere new.
+    """
+    code = '000'
+    for attempt in range(tries):
+        r = subprocess.run(['curl', '-sL', '--max-time', '60', '-A', UA, '-r', '0-0',
+                            '-o', os.devnull, '-w', '%{http_code}', direct(url)],
+                           capture_output=True, text=True)
+        code = r.stdout.strip() or '000'
+        if code.startswith('2') or attempt == tries - 1:
+            break
+        time.sleep(5)
+    return code
 
 
 def classify(remote, local, code, url=''):
     # The status code first. HTML behind a 2xx is a sign-in wall; HTML behind anything
     # else is a host that did not serve the file, which says nothing about who may read it.
+    if code in GONE:
+        return 'gone'
     if not code.startswith('2'):
         return 'unreachable'
     if sha(remote) == sha(local):
@@ -235,14 +270,17 @@ def check(url, local_path, tmp, tries=2):
                             '-w', '%{http_code}', '-o', tmp, direct(url)],
                            capture_output=True, text=True)
         code = r.stdout.strip() or '000'
-        if not os.path.exists(tmp) or not os.path.getsize(tmp):
+        if code in GONE:
+            state = 'gone'
+        elif not os.path.exists(tmp) or not os.path.getsize(tmp):
             state = 'unreachable'
         else:
             state = classify(tmp, local_path, code, url)
-        if state != 'unreachable' or attempt == tries - 1:
+        if state not in ('unreachable', 'gone') or attempt == tries - 1:
             break
         time.sleep(5)
-    return code, state, sha(tmp) if state != 'unreachable' and os.path.getsize(tmp) else ''
+    return code, state, (sha(tmp) if state not in ('unreachable', 'gone')
+                         and os.path.getsize(tmp) else '')
 
 
 def main():
@@ -295,8 +333,12 @@ def main():
     checked = {(r[0], r[1]) for r in rows}
     if os.path.exists(OUT):
         with open(OUT, newline='') as fh:
+            # A space-joined row is the old two-addresses-in-one-field check that could
+            # never succeed (`000`, every time). Its addresses are rows of their own now and
+            # the scheduler finds them never-checked, so it is dropped rather than carried
+            # as `an earlier run` for ever.
             keep = [r for r in csv.DictReader(fh)
-                    if (r['path'], r['url']) not in checked]
+                    if (r['path'], r['url']) not in checked and len(r['url'].split()) < 2]
     with open(OUT, 'w', newline='') as fh:
         w = csv.writer(fh)
         w.writerow(['path', 'url', 'code', 'state', 'remote_sha256', 'local_sha256',

@@ -27,6 +27,22 @@ a document the town took down is still a document we hold, with its address.
 
 New rows -- an upstream address no index held before -- are the events, keyed on
 (folder, upstream). The event log is the memory; a second run on a day writes nothing.
+
+A NEW ROW MAY BE AN OLD DOCUMENT RE-POSTED. On 3 November 2026 the town replaced the 1997 and
+1999 annual reports with rescans that add pages, at new addresses (View/4615, 4616), and let
+the old ones (4523, 4525) 404. This filed them as two more "1997 Annual Town Report"s with
+nothing linking them, and nothing re-read the added pages. So every new row is now given a
+`kind`, by `replacement_verdict()`:
+
+    new                   no held row in its folder carries its title
+    replacement           exactly one does, and every address of that row now answers 404/410
+    possible replacement  exactly one does, and that row is still served -- two live copies
+                          under one title, which somebody has to look at
+    new address           a document we already hold, catalogued under another address
+
+and `replaces` names the held copy. A title shared by several held rows (a district agenda,
+say) identifies nothing, so it stays `new`. The replaced copy is never removed: re-reading a
+replacement is a person's decision (notes/findings/ANNUAL-REPORT-RESCANS-2026-11.md).
 """
 import argparse
 import csv
@@ -39,9 +55,11 @@ import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+from verify_source_copies import status_of  # noqa: E402
 SRC = os.path.join(ROOT, 'sources')
 EVENTS = os.path.join(ROOT, 'sources', 'data', 'document-watch-events.csv')
-EVENT_COLS = ['first_seen', 'folder', 'label', 'upstream', 'local', 'bytes']
+EVENT_COLS = ['first_seen', 'folder', 'label', 'upstream', 'local', 'bytes', 'kind', 'replaces']
 # `town-annual-reports` is written by fetch_town_docs.py like the other two town mirrors and
 # was missing here until 27 October 2026, so a new report raised no NEW event and its
 # catalogue was the one a short crawl could shrink unchallenged.
@@ -59,12 +77,42 @@ def index_of(folder):
     return os.path.join(SRC, folder, 'index.csv')
 
 
+def addresses(rows):
+    """Every single address a set of index rows carries. `upstream` can hold several,
+    space-joined, and gains one whenever a crawl finds the same bytes somewhere else -- so a
+    joined string is not an identity and is never compared whole."""
+    return {u for r in rows for u in (r.get('upstream') or '').split()}
+
+
+def title_key(label):
+    from fetch_town_docs import dedupe_key    # the crawler's own sameness, imported late
+    return dedupe_key(label or '')
+
+
+def replacement_verdict(row, held_rows, probe):
+    """-> (kind, replaces) for one catalogue row the crawl found new. See the docstring.
+
+    `held_rows` is the folder's catalogue BEFORE the crawl; `probe(url)` returns an HTTP
+    status as a string. Pure apart from `probe`, so the 1997/1999 case replays offline.
+    """
+    from verify_source_copies import GONE
+    if row.get('local') and row['local'] in {h.get('local') for h in held_rows}:
+        return 'new address', row['local']
+    k = title_key(row.get('label'))
+    same = [h for h in held_rows if k and title_key(h.get('label')) == k]
+    if len(same) != 1:
+        return 'new', ''
+    old = same[0]
+    codes = [probe(u) for u in (old.get('upstream') or '').split()]
+    if codes and all(c in GONE for c in codes):
+        return 'replacement', old.get('local', '')
+    return 'possible replacement', old.get('local', '')
+
+
 def check():
     ev = read_csv(EVENTS)
-    held = set()
-    for f in FOLDERS:
-        held |= {(f, r.get('upstream', '')) for r in read_csv(index_of(f))}
-    bad = [e for e in ev if (e['folder'], e['upstream']) not in held]
+    held = {f: addresses(read_csv(index_of(f))) for f in FOLDERS}
+    bad = [e for e in ev if not set(e['upstream'].split()) <= held.get(e['folder'], set())]
     dup = len(ev) - len({(e['folder'], e['upstream']) for e in ev})
     if bad or dup:
         print('FAIL: %d event(s) name a document no index holds; %d duplicated' % (len(bad), dup))
@@ -120,12 +168,19 @@ def main():
         if sorted(map(key, after)) == sorted(map(key, before[f])) and os.path.exists(os.path.join(snap, f + '.csv')):
             shutil.copy(os.path.join(snap, f + '.csv'), index_of(f))
             continue
-        known = {r.get('upstream', '') for r in before[f]}
+        known = addresses(before[f])
         for r in after:
-            if r.get('upstream', '') and r['upstream'] not in known:
-                fresh.append({'first_seen': a.as_of, 'folder': f, 'label': r.get('label', ''),
-                              'upstream': r['upstream'], 'local': r.get('local', ''), 'bytes': r.get('bytes', '')})
-                print('NEW  %-18s %s' % (f, r.get('label', '')[:70]))
+            mine = (r.get('upstream') or '').split()
+            if not mine or set(mine) <= known:
+                continue
+            kind, replaces = replacement_verdict(r, before[f], status_of)
+            fresh.append({'first_seen': a.as_of, 'folder': f, 'label': r.get('label', ''),
+                          'upstream': ' '.join(u for u in mine if u not in known),
+                          'local': r.get('local', ''), 'bytes': r.get('bytes', ''),
+                          'kind': kind, 'replaces': replaces})
+            print('%-11s %-18s %s%s' % (kind.upper() if kind != 'new' else 'NEW', f,
+                                        r.get('label', '')[:60],
+                                        '  (replaces %s)' % replaces if replaces and kind != 'new address' else ''))
     if a.dry_run:
         for f in FOLDERS:
             if os.path.exists(os.path.join(snap, f + '.csv')):

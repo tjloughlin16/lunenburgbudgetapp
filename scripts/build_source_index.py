@@ -3149,7 +3149,10 @@ GROUPS = [
              'One row per new document found by the daily re-walk of the listing pages the mirrors '
              'came from -- the district\'s budget page and the town\'s budget hub, town meeting and '
              'finance pages -- with the day it was first seen, its address and our copy. A first-seen '
-             'date is an upper bound on posting, no better than the gap since the last walk. See '
+             'date is an upper bound on posting, no better than the gap since the last walk. `kind` '
+             'says whether it is new, a new address for a document we hold, or a REPLACEMENT -- the '
+             'same title re-posted while the old address answers 404 -- with `replaces` naming our '
+             'copy of the old one; blank on events recorded before 11 November 2026. See '
              'scripts/watch_documents.py.'),
             ('data/meeting-record-explanations.csv',
              'Why a meeting record will never exist, when somebody has said so', 3,
@@ -5260,7 +5263,7 @@ def copy_status():
     # verify_source_copies.classify -- so neither counts as verified, and either loses to
     # any answer that was actually a comparison.
     rank = ['identical', 'resaved', 'reflowed', 'repackaged', 'differs', 'rerendered',
-            'page, not file', 'restricted', 'unreachable']
+            'page, not file', 'restricted', 'gone', 'unreachable']
     best = {}
     with open(path, newline='') as fh:
         for r in csv.DictReader(fh):
