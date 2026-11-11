@@ -27,6 +27,7 @@ a grouping across them is a judgement, not something the reports print.
 """
 import csv
 import glob
+import json
 import io
 import os
 import re
@@ -36,6 +37,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 READS = os.path.join(ROOT, 'sources', 'data', 'report-series')
 DATA = os.path.join(ROOT, 'sources', 'data')
 TEXT = os.path.join(ROOT, 'sources', 'town-annual-reports', 'text')
+SUPERSEDED = os.path.join(ROOT, 'sources', 'town-annual-reports', 'superseded')
 BUDGET_PAGES = os.path.join(ROOT, 'sources', 'town-budget', 'pages')
 
 READ_COLS = ['year', 'year_basis', 'edition', 'pdf_page', 'row_group', 'row_role', 'measure', 'value',
@@ -220,7 +222,7 @@ def normalise(s):
     return re.sub(r'[^a-z0-9]+', ' ', s.lower()).strip()
 
 
-def editions():
+def editions(superseded=False):
     """edition label -> every text layer we hold for it."""
     out = {}
     for path in sorted(glob.glob(os.path.join(TEXT, '*.txt'))):
@@ -233,6 +235,19 @@ def editions():
             out.setdefault(m.group(1), []).append(path)
     for path in sorted(glob.glob(os.path.join(BUDGET_PAGES, 'FY*.txt'))):
         out.setdefault(os.path.basename(path)[:6], []).append(path)
+    # A REPLACED SCAN IS ANOTHER READING OF THE SAME PAGES -- but only of the pages it shares.
+    # The town's 1997 and 1999 rescans (3 November 2026) inserted pages, so the first scan's
+    # text is a layer only below the edition's `superseded_pages_identical_below` (edition.json):
+    # a quote the rescan's Textract garbles (`Selectomer/Sever`) is still checked against a read
+    # of the same printed page, and a shifted page can never vouch for one.
+    for ed_json in (glob.glob(os.path.join(DATA, 'report-tables', '*', 'edition.json')) if superseded else ()):
+        with open(ed_json) as f:
+            ed = json.load(f)
+        below = ed.get('superseded_pages_identical_below')
+        for stem in ed.get('superseded_stems') or ():
+            path = os.path.join(SUPERSEDED, stem + '.txt')
+            if below and os.path.exists(path):
+                out.setdefault(ed['edition'], []).append((path, int(below)))
     return out
 
 
@@ -255,8 +270,9 @@ def quote_on_page(quote, edition, page_field, eds):
         pages = list(range(pages[0], pages[1] + 1))
     joined = ''
     for path in eds.get(edition, []):
+        path, below = path if isinstance(path, tuple) else (path, None)
         got = pages_of(path)
-        text = ' '.join(got.get(p, '') for p in pages)
+        text = ' '.join(got.get(p, '') for p in pages if below is None or p < below)
         if n and n in text:
             return True
         joined += ' ' + text
@@ -390,7 +406,7 @@ def main():
         i = sys.argv.index('--page')
         return show_page(sys.argv[i + 1], int(sys.argv[i + 2]))
     check = '--check' in sys.argv
-    eds, problems = editions(), []
+    eds, problems = editions(superseded=True), []
     outputs = build(eds, problems)
     if check:
         for path, text in outputs.items():

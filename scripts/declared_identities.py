@@ -172,5 +172,10 @@ def apply_cell_readings(readings, tables, parse):
         cell = row.cells.get(c) if row is not None else None
         if cell is None or cell.text != w['textract']:
             raise SystemExit('cell_readings: p%d t%d r%d c%d is not Textract `%s` any more' % (p, t, r, c, w['textract']))
-        cell.value, cell.places, cell.unparsed = parse(w['read_as'])
+        if w.get('as_label'):
+            # A LABEL Textract left in the neighbouring cell (`Fires 54` in the count cell, the
+            # label cell empty): this cell's text becomes the label as printed, with no figure
+            cell.text, cell.value, cell.places, cell.unparsed = w['read_as'], None, 0, ''
+        else:
+            cell.value, cell.places, cell.unparsed = parse(w['read_as'])
         cell.repair = 'cell reading: Textract `%s`, read as `%s` -- %s' % (w['textract'], w['read_as'], w['why'])

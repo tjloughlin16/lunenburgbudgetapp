@@ -32,10 +32,10 @@
   "basis_source": "the label `1999 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `TOWN REPORT / 1999`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
   "unlabeled_subtotals": true,
   "unlabeled_subtotals_why": "the accountant schedule prints a department subtotal with no label; a row is read as one only when it equals, to the cent, the detail lines above it since the last total (29 October 2026)",
-  "stem": "4525-1999-annual-town-report",
-  "pdf": "sources/town-annual-reports/docs/4525-1999-annual-town-report.pdf",
+  "stem": "4616-1999-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4616-1999-annual-town-report.pdf",
   "label": "1999 Annual Town Report",
-  "read_by": "AWS Textract: text on every page; tables on the financial pages only (find_financial_pages.py --list 1999); cells in build/textract/out/4525-1999-annual-town-report.cells.tsv",
+  "read_by": "AWS Textract, 10 November 2026, on the town's rescan of 3 November 2026 (DocumentCenter View/4616): text on every page; tables only on the 53 pages find_financial_pages.py picked (cells in build/textract/out/4616-1999-annual-town-report.cells.tsv). Replaces the first scan (View/4525), held at sources/town-annual-reports/superseded/",
   "periods": [
     {
       "what": "valuation",
@@ -126,5 +126,158 @@
   "forward_lines_identity": true,
   "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone above it, and the TOTAL FUNDS AVAILABLE of the account or department subtotal they fund is its appropriation plus them: tested as that run's identity (30 October 2026). Set where the layout puts AVAILABLE on the account or department subtotal only: measured on 1991-2010, on 2004-2010 a mark line belongs to one of several lines printing AVAILABLE; enabled for 1999 on p66 (Council on Aging fwd, Total Insurance fwd, Unemployment Comp rft), 30 October 2026",
   "forward_lines_skip_own": true,
-  "forward_lines_skip_own_why": "a line whose AVAILABLE equals its own APPROPRIATED carries no forward line, so pending forward lines belong to a later line of the group (30 October 2026); 1999 p66: the $4,071.00 fwd above Health Insurance CH 32B funds the Total Insurance subtotal"
+  "forward_lines_skip_own_why": "a line whose AVAILABLE equals its own APPROPRIATED carries no forward line, so pending forward lines belong to a later line of the group (30 October 2026); 1999 p66: the $4,071.00 fwd above Health Insurance CH 32B funds the Total Insurance subtotal",
+  "cell_readings": [
+    {
+      "cell": "82/1/2/7",
+      "textract": "$",
+      "read_as": "$ 114.23",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "82/1/3/7",
+      "textract": "114.23 $",
+      "read_as": "$ 765.11",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "82/1/4/7",
+      "textract": "765.11 $",
+      "read_as": "$ 113.98",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "82/1/5/7",
+      "textract": "113.98 $ 468.90",
+      "read_as": "$ 468.90",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "82/1/6/7",
+      "textract": "$",
+      "read_as": "$ 934.48",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "82/1/7/7",
+      "textract": "934.48 $ 469.51",
+      "read_as": "$ 469.51",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "82/1/12/7",
+      "textract": "$",
+      "read_as": "$ 42,564.54",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "82/1/13/7",
+      "textract": "42,564.54 $ 769.43",
+      "read_as": "$ 769.43",
+      "why": "p82 (printed sideways, folio 79) BOOK BALANCE column, rescan View/4616: Textract's table read slid the column down a row on these accounts, joining one figure to the next row's; read by claude-code-session:eyes on 2026-11-10 from a 216 dpi render, each figure on its own account's row, identical to the first scan's Textract cells (View/4525 p82)"
+    },
+    {
+      "cell": "26/1/2/1",
+      "textract": "Fires 54",
+      "read_as": "54",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)"
+    },
+    {
+      "cell": "26/1/2/2",
+      "textract": "",
+      "read_as": "Fires",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)",
+      "as_label": true
+    },
+    {
+      "cell": "26/1/9/1",
+      "textract": "Alarm Activations 60",
+      "read_as": "60",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)"
+    },
+    {
+      "cell": "26/1/9/2",
+      "textract": "",
+      "read_as": "Alarm Activations",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)",
+      "as_label": true
+    },
+    {
+      "cell": "26/1/17/1",
+      "textract": "Hazardous conditions 172",
+      "read_as": "172",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)"
+    },
+    {
+      "cell": "26/1/17/2",
+      "textract": "",
+      "read_as": "Hazardous conditions",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)",
+      "as_label": true
+    },
+    {
+      "cell": "26/1/36/1",
+      "textract": "Service Calls 83",
+      "read_as": "83",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)"
+    },
+    {
+      "cell": "26/1/36/2",
+      "textract": "",
+      "read_as": "Service Calls",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)",
+      "as_label": true
+    },
+    {
+      "cell": "26/1/46/1",
+      "textract": "Mutual aid responses 22",
+      "read_as": "22",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)"
+    },
+    {
+      "cell": "26/1/46/2",
+      "textract": "",
+      "read_as": "Mutual aid responses",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)",
+      "as_label": true
+    },
+    {
+      "cell": "26/1/49/1",
+      "textract": "Emergency Medical Calls 502",
+      "read_as": "502",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)"
+    },
+    {
+      "cell": "26/1/49/2",
+      "textract": "",
+      "read_as": "Emergency Medical Calls",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)",
+      "as_label": true
+    },
+    {
+      "cell": "26/1/55/1",
+      "textract": "Structure Inspections 397",
+      "read_as": "397",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)"
+    },
+    {
+      "cell": "26/1/55/2",
+      "textract": "",
+      "read_as": "Structure Inspections",
+      "why": "p26 Fire Department `Statistical Breakdown:` in the town's rescan (View/4616): Textract put each category heading and its count in the COUNT cell (`Fires 54`) and left the label cell empty; split back into count and label as printed, which is how the first scan's read (View/4525) returned them (10 November 2026)",
+      "as_label": true
+    }
+  ],
+  "rows_not_this_table": {
+    "82/1": {
+      "from_row": 34,
+      "why": "the town's rescan (View/4616) p82: Textract's table read runs on past GRAND TOTAL TRUST FUNDS (r32) into `TOTAL TRUST & INVESTMENT ACCOUNT JUNE 30, 199` / `SUMMARY OF FUNDS` (r34-49), one total per PURPOSE, a different grain from the account book, and stops at TIMOTHY STANLEY SCHOLARSHIP before ATHLETIC BOOSTER CLUB, PLAYGROUND FUND, STOCKS and the block's own GRAND TOTAL TRUST FUNDS. The first scan's read ended at r33 and never held it; 2000 and 2001 keep this block out of trust-funds-book too (2001 lands it as trust-funds-summary). Not landed from this read (10 November 2026)"
+    }
+  },
+  "superseded_stems": [
+    "4525-1999-annual-town-report"
+  ],
+  "superseded_stems_why": "the town's first scan, replaced by a rescan on 3 November 2026 and held at sources/town-annual-reports/superseded/; merge_report_tables.py treats rows citing it as this edition's, so they are replaced, not kept beside the new ones",
+  "superseded_pages_identical_below": 108,
+  "superseded_pages_identical_below_why": "pages 1-107 of the first scan and the rescan are the same printed pages (aligned by Textract text, 10 November 2026); from p108 the rescan inserts pages, so the first scan is never a reading of a page at or after it"
 }

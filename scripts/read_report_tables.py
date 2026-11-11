@@ -3317,6 +3317,14 @@ def build(edition, inventory_only=False):
             # for a decision rather than being published. The redaction principle identifies
             # PROVIDERS; whether a person paid as one is a provider is TJ's call, not ours
             recs = [r for r in recs if '%d/%d/%d' % (r['page'], r['table'], r['row']) not in held]
+        apart = (ed.get('rows_not_this_table') or {}).get('%s/%s' % k)
+        if apart:
+            # ROWS TEXTRACT FOLDED INTO A TABLE THEY ARE NOT PART OF (`edition.json`:
+            # `rows_not_this_table`, {"page/table": {"from_row": N, "why": ..}}): a second block
+            # printed below the table, of another grain, which the read returned as more rows of
+            # it. Not data withheld -- data that would land under the wrong columns and grain.
+            # The block's own reading, if any, is a map row of its own
+            recs = [r for r in recs if r['row'] < int(apart['from_row'])]
         target = m['dataset'] + '.csv'
         if m['dataset'] == 'report-treasurers-cash-reconciliation':
             rows = emit_cash_reconciliation(m, tables[k], ed)

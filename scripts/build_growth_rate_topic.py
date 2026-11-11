@@ -565,7 +565,7 @@ def build():
          for i, s in enumerate(h['sources'])]
     # The annual reports the earlier years are read from, and our extract of them.
     tk = []
-    for i, fn in enumerate(sorted(tfiles)):
+    for i, fn in enumerate(sorted(tfiles, key=lambda f: (f.split("-")[1], f))):   # by year: the DocumentCenter id is not one (the 1997 and 1999 rescans are 4615, 4616)
         key = 'town-annual-reports/docs/' + fn[:-4] + '.pdf'
         if key not in man:
             fail('%s is not in archive-manifest.csv' % key)

@@ -18,10 +18,10 @@
   "basis_source": "the label `1997 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `TOWNREPOR T / 1997`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
   "unlabeled_subtotals": true,
   "unlabeled_subtotals_why": "the accountant schedule prints a department subtotal with no label; a row is read as one only when it equals, to the cent, the detail lines above it since the last total (29 October 2026)",
-  "stem": "4523-1997-annual-town-report",
-  "pdf": "sources/town-annual-reports/docs/4523-1997-annual-town-report.pdf",
+  "stem": "4615-1997-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4615-1997-annual-town-report.pdf",
   "label": "1997 Annual Town Report",
-  "read_by": "AWS Textract: text on every page; tables only on the 50 pages find_financial_pages.py picked (cells in build/textract/out/4523-1997-annual-town-report.cells.tsv)",
+  "read_by": "AWS Textract, 10 November 2026, on the town's rescan of 3 November 2026 (DocumentCenter View/4615): text on every page; tables only on the 52 pages find_financial_pages.py picked (cells in build/textract/out/4615-1997-annual-town-report.cells.tsv). Replaces the first scan (View/4523), held at sources/town-annual-reports/superseded/",
   "periods": [
     {
       "what": "valuation, tax rate, levy, exemptions and abatements",
@@ -98,5 +98,11 @@
       "period": "NOT PRINTED beside the table; in the 1997 Board of Health report",
       "cited": "p20: `Dental Health Department / (Nashoba Program (funded through Environmental Assessment)`"
     }
-  ]
+  ],
+  "superseded_stems": [
+    "4523-1997-annual-town-report"
+  ],
+  "superseded_stems_why": "the town's first scan, replaced by a rescan on 3 November 2026 and held at sources/town-annual-reports/superseded/; merge_report_tables.py treats rows citing it as this edition's, so they are replaced, not kept beside the new ones",
+  "superseded_pages_identical_below": 98,
+  "superseded_pages_identical_below_why": "pages 1-97 of the first scan and the rescan are the same printed pages (aligned by Textract text, 10 November 2026); from p98 the rescan inserts pages, so the first scan is never a reading of a page at or after it"
 }

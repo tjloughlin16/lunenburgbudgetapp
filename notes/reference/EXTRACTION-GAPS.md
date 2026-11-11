@@ -6,16 +6,16 @@
 
 | | 1959-2010 (52 editions, Textract) | FY2011-FY2025 (15 editions) |
 |---|---:|---:|
-| pages | 6,246 | 2,751 |
-| tables found | 3,696 | 866 catalogued |
-| tables with a decision | 3,696 | 249 of the 268 on no read page (step 4) |
-| tables in a dataset | 3,336 | not known at table grain |
-| tables whose dataset is in the database | 3,336 | not known at table grain |
+| pages | 6,252 | 2,751 |
+| tables found | 3,700 | 866 catalogued |
+| tables with a decision | 3,700 | 249 of the 268 on no read page (step 4) |
+| tables in a dataset | 3,340 | not known at table grain |
+| tables whose dataset is in the database | 3,340 | not known at table grain |
 | **tables looked at and NOT in a dataset** | **360** | **166** judged `gap` from the description (step 4) |
 | catalogued tables on a page some dataset reads (page-level proxy) | | 598 of 866 |
 | named lists found (officers, staff, licences ...) | not surveyed yet (step 3) | not surveyed yet (step 3) |
 
-- **360 of 3,696 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
+- **360 of 3,700 tables in the 1959-2010 editions are not in any dataset.** Each was looked at by eye and its reason is in that edition's `map.csv` `note`, beginning `NOT LANDED`.
 - **268 of the 866 tables catalogued in FY2011-FY2025 sit on a page no dataset has a row from.** Step 4 (`scripts/sort_catalogue.py`) sorted them from the catalogue's descriptions, not from the pages: 166 gap, 5 repeat, 78 prose, 1 unsure, 18 deferred-to-list-survey. A `gap` is a judgement that nothing we hold looks like the table, not proof that the figures are absent. The other 598, on pages some dataset reads, are not sorted table by table.
 - **All 145 datasets holding report rows are in the database.**
 - **Lists are not counted yet.** Most years print officers and staff as running text, not tables, and every survey so far looked for tables. `lists_found` and `lists_in_dataset` are empty in the edition CSV until the list survey (step 3) runs.
@@ -51,22 +51,22 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 
 | dataset | in db | rows from reports | editions (cal / FY) | checked | check failed | no check |
 |---|---|---:|---:|---:|---:|---:|
-| `report-appropriations` | yes | 27,799 | 52 / 15 | 12,782 | 5,845 | 9,172 |
+| `report-appropriations` | yes | 27,799 | 52 / 15 | 12,781 | 5,843 | 9,175 |
 | `town-roster-entries` | yes | 16,609 | 52 / 15 | - | - | - |
 | `staff-roster-entries` | yes | 12,278 | 48 / 15 | - | - | - |
-| `report-gross-wages` | yes | 11,512 | 15 / 13 | 7,965 | 0 | 3,547 |
+| `report-gross-wages` | yes | 11,728 | 15 / 13 | 8,181 | 0 | 3,547 |
 | `series-school-enrolment-by-grade` | yes | 9,900 | 38 / 0 | - | - | - |
 | `gross-wages` | yes | 8,880 | 0 / 15 | 8,313 | 567 | 0 |
 | `annual-report-receipts` | yes | 7,856 | 51 / 12 | 6,848 | 653 | 355 |
 | `series-student-names-and-honors` | yes | 6,073 | 42 / 14 | - | - | - |
-| `report-trust-funds` | yes | 5,508 | 50 / 13 | 3,434 | 546 | 1,528 |
+| `report-trust-funds` | yes | 5,507 | 50 / 13 | 3,434 | 546 | 1,527 |
 | `series-trust-fund-ledgers` | yes | 5,017 | 36 / 5 | - | - | - |
 | `report-statement-of-payments` | yes | 4,670 | 28 / 0 | 4,095 | 0 | 575 |
 | `special-revenue-funds` | yes | 4,532 | 19 / 15 | 3,018 | 1,368 | 146 |
 | `series-monty-tech-lists` | yes | 4,238 | 13 / 15 | - | - | - |
 | `report-elections` | yes | 3,863 | 27 / 15 | 1,664 | 1,725 | 474 |
 | `report-fund-balance-sheets` | yes | 3,720 | 28 / 0 | 2,275 | 0 | 1,445 |
-| `report-debt` | yes | 3,533 | 50 / 8 | 2,876 | 315 | 342 |
+| `report-debt` | yes | 3,533 | 50 / 8 | 2,875 | 316 | 342 |
 | `series-classification-schedules` | yes | 3,173 | 12 / 2 | - | - | - |
 | `series-coverage` | yes | 3,082 | 52 / 15 | 0 | 0 | 0 |
 | `series-office-hours-directories` | yes | 2,672 | 52 / 15 | - | - | - |
@@ -74,7 +74,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `series-school-personnel-changes` | yes | 2,558 | 42 / 7 | - | - | - |
 | `series-burials` | yes | 2,448 | 52 / 14 | - | - | - |
 | `report-vital-records` | yes | 2,311 | 16 / 14 | 0 | 0 | 2,311 |
-| `report-dept-activity` | yes | 2,264 | 34 / 15 | 15 | 0 | 2,249 |
+| `report-dept-activity` | yes | 2,265 | 34 / 15 | 15 | 0 | 2,250 |
 | `special-revenue-read` | yes | 1,882 | 0 / 13 | - | - | - |
 | `report-officials` | yes | 1,838 | 20 / 13 | 0 | 0 | 1,838 |
 | `series-ballot-questions-local` | yes | 1,761 | 34 / 1 | - | - | - |
@@ -82,7 +82,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `series-trust-fund-holdings` | yes | 1,696 | 28 / 1 | - | - | - |
 | `tax-collection` | yes | 1,449 | 49 / 3 | - | - | - |
 | `series-tax-collection-holes` | yes | 1,336 | 3 / 5 | - | - | - |
-| `report-capital-projects` | yes | 1,317 | 11 / 15 | 741 | 547 | 29 |
+| `report-capital-projects` | yes | 1,318 | 11 / 15 | 741 | 547 | 30 |
 | `series-nashoba-public-health` | yes | 1,317 | 42 / 15 | - | - | - |
 | `series-bylaw-warrant-text` | yes | 1,291 | 52 / 14 | - | - | - |
 | `series-mcas-from-reports` | yes | 1,142 | 13 / 14 | - | - | - |
@@ -105,7 +105,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-school-lunch` | yes | 668 | 21 / 0 | 370 | 41 | 257 |
 | `report-school-budget-summary` | yes | 660 | 27 / 0 | 450 | 0 | 210 |
 | `series-treasurer-cash-investments` | yes | 553 | 4 / 0 | - | - | - |
-| `report-treasurers-cash-reconciliation` | yes | 545 | 47 / 0 | 519 | 15 | 11 |
+| `report-treasurers-cash-reconciliation` | yes | 546 | 47 / 0 | 520 | 15 | 11 |
 | `series-building-activity` | yes | 484 | 44 / 13 | - | - | - |
 | `town-meeting-votes` | yes | 483 | 0 / 15 | - | - | - |
 | `series-trade-permits` | yes | 465 | 51 / 12 | - | - | - |
@@ -196,7 +196,7 @@ One row per edition. Each entry's verdict, dataset and one-line reason is in `so
 | `report-per-capita-comparison` | yes | 3 | 1 / 0 | 0 | 0 | 3 |
 | `scholarship-purposes` | yes | 3 | 3 / 0 | - | - | - |
 | `series-enrolment-2006` | yes | 1 | 1 / 0 | - | - | - |
-| **total** | | **202,082** | | **58,321** | **11,807** | **28,410** |
+| **total** | | **202,300** | | **58,536** | **11,806** | **28,414** |
 
 ## Registers and files about the reading
 
@@ -217,11 +217,11 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | `annual-report-catalogue` | about the reading | 3,676 | yes |
 | `annual-report-survey` | about the reading | 2,751 | yes |
 | `dataset-provenance` | about the reading | 2,350 | no |
-| `annual-report-pages` | about the reading | 2,332 | no |
+| `annual-report-pages` | about the reading | 2,336 | no |
 | `extraction-plan` | about the reading | 555 | yes |
 | `report-anomalies` | about the reading | 521 | yes |
 | `annual-report-catalogue-sort` | about the reading | 268 | no |
-| `page-blocked` | about the reading | 174 | no |
+| `page-blocked` | about the reading | 172 | no |
 | `stabilization-pages` | about the reading | 65 | no |
 | `document-defects` | about the reading | 10 | no |
 | `thread-callouts` | about the reading | 1 | no |
@@ -268,9 +268,9 @@ Not data the reports print, and listed so that nothing disappears. A register re
 | 1994 | 70 | 16 (14 / 2) | 23 | 18 | 5 | 18 | 34 |  |
 | 1995 | 90 | 29 (28 / 1) | 43 | 41 | 2 | 41 | 37 |  |
 | 1996 | 104 | 33 (33 / 0) | 45 | 43 | 2 | 43 | 42 |  |
-| 1997 | 100 | 31 (27 / 4) | 43 | 40 | 3 | 40 | 42 |  |
+| 1997 | 104 | 33 (30 / 3) | 45 | 42 | 3 | 42 | 42 |  |
 | 1998 | 98 | 33 (31 / 2) | 48 | 43 | 5 | 43 | 41 |  |
-| 1999 | 110 | 33 (31 / 2) | 43 | 41 | 2 | 41 | 42 |  |
+| 1999 | 112 | 35 (34 / 1) | 45 | 43 | 2 | 43 | 42 |  |
 | 2000 | 136 | 37 (33 / 4) | 48 | 46 | 2 | 46 | 42 |  |
 | 2001 | 94 | 24 (22 / 2) | 99 | 87 | 12 | 87 | 46 |  |
 | 2002 | 110 | 35 (33 / 2) | 121 | 105 | 16 | 105 | 47 |  |
@@ -333,7 +333,7 @@ The `name` the map gives each NOT LANDED table, grouped; the reason for each tab
 
 ## How this is counted
 
-- **Pages** are the `===PAGE N===` markers in each report's text file, 8,997 across 67 editions; FY2016's addendum is counted with FY2016.
+- **Pages** are the `===PAGE N===` markers in each report's text file, 9,003 across 67 editions; FY2016's addendum is counted with FY2016.
 - **1959-2010:** `report-tables/<edition>/tables.csv` is every table Textract found on the pages it was asked to read; `map.csv` is the decision on each. The generator refuses to write if the two disagree about which tables exist. Textract read tables only on pages with money on them, so a table on a page with none is not in either file.
 - **FY2011-FY2025:** `annual-report-catalogue.csv` is the end-to-end survey. It records what exists, and nothing maps its entries to datasets yet.
 - **A dataset is fed by the reports** when at least one of its rows names an edition, by its `edition` column or a document column naming an annual town report. `report-filing` is DERIVED from the contents pages and names no edition, so it is not counted here; it is in the database.

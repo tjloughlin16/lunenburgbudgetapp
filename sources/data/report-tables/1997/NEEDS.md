@@ -149,3 +149,20 @@ Applied ONCE in the shared code (see `sources/data/report-tables/README.md`, "Ad
 - **10 wage family**: settled -- `gross-wages-school` (pp90-96), `gross-wages-town` (p97).
 - **Document defect**: the town list's truncation (p97 clipped, pp98-99 blank) is registered in `sources/data/document-defects.csv`.
 - **ROSTER PAGES**: p35, p38, p40 read into `sources/data/rosters/1997-p*.json`.
+
+## The town's rescan, 3 November 2026 (re-read 10 November 2026)
+
+The town replaced this report's PDF (View/4523, now 404) with a rescan, View/4615, 104 pages. The edition is
+now read from it; the first scan is held at `sources/town-annual-reports/superseded/`. Pages 1-97 are the same
+pages; the rescan ADDS p99 (town wages G-O) and p101 (P-Z, closing `TOTAL TOWN EMPLOYEES 155` / `TOTAL TOWN GROSS
+WAGES $2,103,949.08`), with blank backs at pp98, 100, 102 and 103; the old p100 (emergency numbers) is p104. So the
+"Document defects" above describe the superseded copy: the town list is now complete, 155 rows summing to its
+printed total. Page refs below p98 are unchanged.
+
+p55 is now PROVEN, and its `page-blocked.csv` row was removed: the rescan's Textract reads Liability Insurance
+TOTAL EXPENDED `$71542.68` where the first scan's (and a blind reader) read `$71642.68`. In this typeface the
+scan's 5 and 6 are near-identical at 720 dpi; the page settles it, since BALANCE TO REVENUE prints $3,457.32 =
+75,000.00 - 71,542.68.
+- Row statuses that moved with the re-read, pages unchanged in state: p48 appropriations 14 `checked` -> 11 (3 to
+  `no check`); p65 debt 25 `checked` -> 27; the p63 cash reconciliation now prints its second running subtotal
+  on its own row (9 rows, was 8, the subtotal had been folded into LESS REVENUE CASH INVESTED).

@@ -72,7 +72,7 @@ def yrs(a, b):
 
 NEW_GROWTH = {   # file stem -> (heading regex, columns, fiscal years printed, top to bottom)
     '4524-1998-annual-town-report': (r'^New Growth Revenue History$', NG5, yrs(1998, 1994)),
-    '4525-1999-annual-town-report': (r'^New Growth Revenue History$', NG5, yrs(1999, 1995)),
+    '4616-1999-annual-town-report': (r'^New Growth Revenue History$', NG5, yrs(1999, 1995)),
     '4526-2000-annual-town-report': (r'^New Growth Revenue$', NG4, yrs(2000, 1995)),
     '4527-2001-annual-town-report': (r'^New Growth Revenue$', NG4, yrs(2001, 1995)),
     '4528-2002-annual-town-report': (r'^New Growth Revenue$', NG4, yrs(2002, 1995)),
@@ -87,7 +87,7 @@ NEW_GROWTH = {   # file stem -> (heading regex, columns, fiscal years printed, t
 }
 VAL_HISTORY = {
     '4524-1998-annual-town-report': yrs(1998, 1994),
-    '4525-1999-annual-town-report': yrs(1999, 1995),
+    '4616-1999-annual-town-report': yrs(1999, 1995),
     '4526-2000-annual-town-report': yrs(1999, 1995),   # the FY2000 edition prints no FY2000 row
     '4527-2001-annual-town-report': yrs(2001, 1996),
     '4528-2002-annual-town-report': yrs(2002, 1997),
@@ -103,10 +103,10 @@ VAL_HISTORY = {
 PROPERTY_VALUATIONS = {   # file stem -> (two years side by side, levy-history years)
     '4521-1995-annual-town-report': ((1994, 1995), yrs(1993, 1990)),
     '4522-1996-annual-town-report': ((1995, 1996), yrs(1994, 1990)),
-    '4523-1997-annual-town-report': ((1996, 1997), yrs(1995, 1991)),
+    '4615-1997-annual-town-report': ((1996, 1997), yrs(1995, 1991)),
 }
 TOWN_DATA = ['4489-1990', '4490-1991', '4491-1992', '4519-1993', '4520-1994', '4521-1995',
-             '4522-1996', '4523-1997', '4524-1998', '4525-1999', '4526-2000']
+             '4522-1996', '4615-1997', '4524-1998', '4616-1999', '4526-2000']
 TAX_COLLECTOR = ('4485-1985-annual-town-report', 1986)
 
 FIELDS = ['new_structures', 'ng_added_valuation', 'ng_rate', 'ng_revenue',
@@ -118,12 +118,16 @@ COLUMNS = ['fy', 'printed_table', 'edition', 'edition_file', 'lines', 'raw'] + F
 NUM = re.compile(r'^-?[\d,]+(\.\d+)?$')
 SEP_AS_STOP = re.compile(r'^\d{1,3}\.\d{3},\d{3}$')   # '9.983,300': a comma scanned as a stop
 CHANGE = re.compile(r'^(-|-0-|-?\d+[.,]\d+%?)$')
+SPLIT_MINUS_PCT = re.compile(r'(^|\s)- (\d+[.,]\d+%)')
 
 
 def tokens(path):
     """Every whitespace token with its 1-based line number; lone '$' dropped."""
     out, lines = [], path.read_text(encoding='utf-8', errors='replace').splitlines()
     for n, line in enumerate(lines, 1):
+        # A PERCENTAGE WHOSE MINUS SIGN TEXTRACT SPACED OFF: `- 100.0000%` in the 1999 rescan
+        # (View/4616), `-100.0000%` in the first scan. Split, the `-` reads as a nil column
+        line = SPLIT_MINUS_PCT.sub(r'\1-\2', line)
         for t in line.split():
             t = t.lstrip('$')
             if t:

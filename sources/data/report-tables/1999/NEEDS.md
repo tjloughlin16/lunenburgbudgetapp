@@ -157,3 +157,26 @@ Applied ONCE in the shared code (see `sources/data/report-tables/README.md`, "Ad
 - **10 accountant GRAND TOTAL grouping**: NOT APPLIED (validator block walk).
 - **11 placement count in prose (p52)**: NOT LANDED, for the reason in 1997 item 9 (no `as_of` date, no SIMS source printed).
 - **ROSTER PAGES**: p40, p43 read into `sources/data/rosters/1999-p*.json`.
+
+## The town's rescan, 3 November 2026 (re-read 10 November 2026)
+
+The town replaced this report's PDF (View/4525, now 404) with a rescan, View/4616, 112 pages, which PRINTS
+folios 105 and 106 (item 1 above) as PDF pp108-109. Old PDF pp108-110 are now pp110-112; every page below 108 is
+unchanged. The school list now runs PDF p103-110 and its 390 rows sum to the printed TOTAL SCHOOL GROSS WAGES
+$8,198,325.62. The first scan is held at `sources/town-annual-reports/superseded/`.
+
+The rescan's Textract read differs from the first in places, each handled in `edition.json` / `map.csv`:
+- p58: the receipts table has two fewer spacer columns: `spans:1-2,4-5,7-8`.
+- p66: County Tax TOTAL FUNDS AVAILABLE read `$13,538.00` (the first scan's read `$13,638.00`); a 720 dpi render
+  of both scans shows the round-topped 6 in that cell and in EXPENDED, so a second witnessed cell joins the
+  first (`witnessed-cells.csv`).
+- p82: the header row lost its first three labels (`header_from: 83/1`), BOOK BALANCE slid a row on eight
+  accounts (`cell_readings`, read from the render), and the read ran on into SUMMARY OF FUNDS
+  (`rows_not_this_table`).
+- p26: seven category headings landed as `Fires 54` in the count cell (`cell_readings`, `as_label`). The rescan
+  also reads `residential ... 15` and `Abandoned 911 call 1` as two lines, where the first read merged them as 151.
+- p65 is now PROVEN, and its `page-blocked.csv` row removed: the rescan reads Town Forest Consultant TOTAL
+  EXPENDED `$500.00` (first scan, and a blind reader, `$600.00`); the line then closes on its own printed
+  identity with no BALANCE TO REVENUE. Same 5/6 glyph as p66.
+- Row statuses that moved with the re-read: p86 debt (already blocked) 24 `checked` -> 21, 15 failed -> 18. p82's
+  summary of funds is still not landed from any read.

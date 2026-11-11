@@ -110,7 +110,9 @@ def belongs(row, eds):
         if row.get('edition', None) is not None and row.get('edition') == ed['edition']:
             return True
         doc = row.get('document') or ''
-        if doc and ed['stem'] in doc:
+        # `superseded_stems`: a copy the town REPLACED (the 1997 and 1999 rescans, 3 November
+        # 2026). Rows read from the old copy are this edition's too, so a merge replaces them
+        if doc and any(s in doc for s in [ed['stem']] + list(ed.get('superseded_stems') or ())):
             return True
     return False
 

@@ -43,15 +43,15 @@ Read `column_meaning` before reading a value.
 | `report-agency-funds.csv` | 26 | 1987–1987 | 0 checked / 0 failed / 26 no check | yes | shared | **no** |
 | `report-appropriations-supplement-refused.csv` | 3 | — | — | **no** | shared | yes |
 | `report-appropriations-supplement.csv` | 32 | — | — | yes | shared | yes |
-| `report-appropriations.csv` | 27,799 | 1959–2025 | 12,782 checked / 5,845 failed / 9,172 no check | yes | shared | yes |
+| `report-appropriations.csv` | 27,799 | 1959–2025 | 12,781 checked / 5,843 failed / 9,175 no check | yes | shared | yes |
 | `report-auditors-cash-schedule.csv` | 168 | 1983–1988 | 127 checked / 0 failed / 41 no check | yes | shared | **no** |
 | `report-capital-project-costs.csv` | 13 | 1961–1961 | 2 checked / 0 failed / 11 no check | yes | shared | **no** |
-| `report-capital-projects.csv` | 1,317 | 1999–2025 | 741 checked / 547 failed / 29 no check | yes | shared | yes |
+| `report-capital-projects.csv` | 1,318 | 1999–2025 | 741 checked / 547 failed / 30 no check | yes | shared | yes |
 | `report-cash-management.csv` | 17 | 1981–1981 | 15 checked / 0 failed / 2 no check | yes | shared | **no** |
 | `report-classification-plan.csv` | 54 | 2010–2010 | 0 checked / 0 failed / 54 no check | yes | shared | **no** |
 | `report-committee-income-expenses.csv` | 22 | 1978–1978 | 22 checked / 0 failed / 0 no check | yes | shared | **no** |
-| `report-debt.csv` | 3,533 | 1959–2025 | 2,876 checked / 315 failed / 342 no check | yes | shared | yes |
-| `report-dept-activity.csv` | 2,264 | 1959–2025 | 15 checked / 0 failed / 2,249 no check | yes | shared | yes |
+| `report-debt.csv` | 3,533 | 1959–2025 | 2,875 checked / 316 failed / 342 no check | yes | shared | yes |
+| `report-dept-activity.csv` | 2,265 | 1959–2025 | 15 checked / 0 failed / 2,250 no check | yes | shared | yes |
 | `report-elections.csv` | 3,863 | 1959–2025 | 1,664 checked / 1,725 failed / 474 no check | yes | shared | yes |
 | `report-energy-use.csv` | 3 | 1976–1976 | 0 checked / 0 failed / 3 no check | yes | shared | **no** |
 | `report-enrollment-mcas.csv` | 747 | 1987–2025 | 36 checked / 4 failed / 707 no check | yes | shared | yes |
@@ -61,7 +61,7 @@ Read `column_meaning` before reading a value.
 | `report-filing.csv` | 109 | — | — | yes | shared | yes |
 | `report-financial-performance.csv` | 19 | 1979–1979 | 11 checked / 3 failed / 5 no check | yes | shared | **no** |
 | `report-fund-balance-sheets.csv` | 3,720 | 1959–1986 | 2,275 checked / 0 failed / 1,445 no check | yes | shared | **no** |
-| `report-gross-wages.csv` | 11,512 | 1995–2025 | 7,965 checked / 0 failed / 3,547 no check | yes | shared | yes |
+| `report-gross-wages.csv` | 11,728 | 1995–2025 | 8,181 checked / 0 failed / 3,547 no check | yes | shared | yes |
 | `report-highway-accounts.csv` | 18 | 1995–1995 | 18 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-index.csv` | 702 | 2011–2025 | — | yes | shared | yes |
 | `report-library-service-values.csv` | 10 | 2004–2004 | 10 checked / 0 failed / 0 no check | yes | shared | **no** |
@@ -91,10 +91,10 @@ Read `column_meaning` before reading a value.
 | `report-town-facts.csv` | 27 | 1959–1978 | 0 checked / 0 failed / 27 no check | yes | shared | **no** |
 | `report-transitional-receipts.csv` | 197 | 1974–1974 | 196 checked / 0 failed / 1 no check | yes | shared | **no** |
 | `report-treasurers-cash-calendar-year.csv` | 191 | 1978–1986 | 89 checked / 0 failed / 102 no check | yes | shared | **no** |
-| `report-treasurers-cash-reconciliation.csv` | 545 | 1959–2008 | 519 checked / 15 failed / 11 no check | yes | shared | **no** |
+| `report-treasurers-cash-reconciliation.csv` | 546 | 1959–2008 | 520 checked / 15 failed / 11 no check | yes | shared | **no** |
 | `report-treasurers-outlook.csv` | 14 | 1981–1981 | 6 checked / 0 failed / 8 no check | yes | shared | **no** |
 | `report-treasurers-then-and-now.csv` | 16 | 1961–1991 | 0 checked / 0 failed / 16 no check | yes | shared | **no** |
-| `report-trust-funds.csv` | 5,508 | 1959–2025 | 3,434 checked / 546 failed / 1,528 no check | yes | shared | yes |
+| `report-trust-funds.csv` | 5,507 | 1959–2025 | 3,434 checked / 546 failed / 1,527 no check | yes | shared | yes |
 | `report-valuation.csv` | 1,029 | 1960–2019 | 265 checked / 100 failed / 664 no check | yes | shared | yes |
 | `report-vehicle-inventory.csv` | 32 | 1995–1995 | 0 checked / 0 failed / 32 no check | yes | shared | **no** |
 | `report-vendor-payments.csv` | 98 | 1986–1986 | 0 checked / 0 failed / 98 no check | yes | shared | **no** |
@@ -120,7 +120,7 @@ Read `column_meaning` before reading a value.
 
 ### 1. 3087 of 3676 catalogued tables sit on pages no dataset reads
 
-About 98,823 rows by the catalogue's own estimate. Much of it is furniture — tables of
+About 99,073 rows by the catalogue's own estimate. Much of it is furniture — tables of
 contents, pie-chart labels, phone directories. These are the substantial ones, all marked
 `clean` in the catalogue:
 
