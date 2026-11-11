@@ -1,6 +1,6 @@
 {
  "about": "Every board and committee the town posts for, one page each: what is coming, what happened, every vote we have minutes for, where the board\u2019s time goes, and when budget season has fallen on its agendas in past years.",
- "as_of": "2026-11-10",
+ "as_of": "2026-11-11",
  "boards": [
   {
    "about_itself": [
@@ -313,7 +313,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 14,
      "made": 23,
@@ -3491,8 +3491,8 @@
       "meetings": 5
      },
      "recordings": {
-      "have": 8,
-      "meetings": 12
+      "have": 9,
+      "meetings": 13
      }
     },
     "video_lag_days": 7
@@ -30531,8 +30531,7 @@
        "dates": [
         "2026-08-04",
         "2026-09-03",
-        "2026-09-15",
-        "2026-11-17"
+        "2026-09-15"
        ],
        "fy": 2028
       }
@@ -30541,7 +30540,7 @@
      "key": "warrant-closes",
      "label": "the warrant closes",
      "latest": "Jan 15",
-     "meetings": 8,
+     "meetings": 7,
      "typical_first": "Jan 9",
      "typical_last": "Jan 9"
     },
@@ -30577,11 +30576,11 @@
     "last": "2026-11-10",
     "minutes": 601,
     "official_votes_read": 601,
-    "our_minutes": 359,
-    "recordings": 511,
-    "transcripts": 451,
+    "our_minutes": 360,
+    "recordings": 512,
+    "transcripts": 452,
     "vote_conflicts": 15,
-    "votes": 4315
+    "votes": 4321
    },
    "finance": {
     "accounts": 43,
@@ -30604,7 +30603,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 33,
      "made": 45,
@@ -30652,15 +30651,30 @@
    },
    "meetings": [
     {
-     "agenda_doc": "/docs/meetings/select-board/2026-11-17-agenda-7975.pdf",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11172026-7975",
+     "agenda_doc": "/docs/meetings/select-board/2026-11-17-agenda-8131.pdf",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11172026-8131",
      "attend": "in person",
      "body_as_printed": null,
      "captions_disabled": false,
      "date": "2026-11-17",
-     "hook": "Notice of the Special Town Meeting itself \u2014 no warrant articles are listed in this document",
-     "important": 0,
-     "items": [],
+     "hook": "Special Town Meeting warrant articles and possible votes on deferred articles",
+     "important": 2,
+     "items": [
+      {
+       "agenda_line": "Discussion on November 17, 2026 Special Town Meeting and Warrant Articles",
+       "important": true,
+       "kind": "other",
+       "vote_expected": false,
+       "why_it_matters": "The board may discuss the warrant articles for the Special Town Meeting held the same day."
+      },
+      {
+       "agenda_line": "o Potential Votes on Deferred Warrant Articles",
+       "important": true,
+       "kind": "vote",
+       "vote_expected": true,
+       "why_it_matters": "The board may vote on warrant articles that were deferred, so residents can learn where the board stands on them."
+      }
+     ],
      "join": null,
      "minutes_doc": null,
      "minutes_url": null,
@@ -30689,7 +30703,7 @@
        "url": null
       }
      },
-     "time": "7:00 PM",
+     "time": "6:30 PM",
      "transcript": false,
      "video_url": null,
      "where": "Lunenburg Middle/High School Auditorium"
@@ -30773,7 +30787,52 @@
      },
      "minutes_doc": null,
      "minutes_url": null,
-     "ours": null,
+     "ours": {
+      "digest": {
+       "watch_next": [
+        "Executive session on the 24th on the food pantry license agreement.",
+        "Return of the Pratt Street speeding referral on a future board agenda."
+       ],
+       "what_happened": [
+        {
+         "line": "The food pantry said it is suspending regular operations because it cannot move out of TC Passios by December 1; the board informally backed a DPW bay for pop-ups.",
+         "t": 1724
+        },
+        {
+         "line": "The board set an executive session on the 24th for the food pantry license agreement and asked for a liability letter for cold storage.",
+         "t": 1724
+        },
+        {
+         "line": "Pratt Street speeding was referred to the police chief and DPW, to return on a future agenda after residents described fast traffic and no sidewalks.",
+         "t": 1224
+        },
+        {
+         "line": "The board reached consensus on the more restrictive flag policy, to add half-staff language and send it to town counsel.",
+         "t": 5468
+        },
+        {
+         "line": "Article 9 stays deferred until the school committee acts, and the board ratified an appointment, an ADA committee seat and a fee waiver unanimously.",
+         "t": 3057
+        }
+       ],
+       "why_it_matters": [
+        "Residents who use the food pantry may find regular distribution unavailable until a new site is settled, and the town has not yet committed to one.",
+        "Pratt Street speed measures such as a lower limit or speed bumps depend on a later board agenda and on police and DPW review.",
+        "Free cash will not be certified by the special town meeting, which limits what that meeting can draw on."
+       ],
+       "written": {
+        "at": "2026-11-11T12:23:07Z",
+        "by": "scripts/write_recording_minutes.py --digest",
+        "cost_usd": 0.028908,
+        "model": "sonnet"
+       }
+      },
+      "discrepancies": 0,
+      "headline": "Board referred Pratt Street speeding to police; food pantry suspends operations; flag policy leans restrictive.",
+      "reconciled": false,
+      "slug": "select-board/2026-11-10-8Ybcshw2voM",
+      "votes": 3
+     },
      "record": {
       "due": null,
       "minutes": {
@@ -30783,24 +30842,24 @@
        "url": null
       },
       "our_minutes": {
-       "reason": "written from the recording",
-       "state": "needs-video"
+       "reason": null,
+       "state": "posted"
       },
       "transcript": {
        "captions_disabled": false,
-       "reason": "no recording",
-       "status": "n/a"
+       "reason": null,
+       "status": "posted"
       },
       "video": {
        "likely_none": false,
-       "reason": "within the approval window",
-       "status": "not-available",
-       "url": null
+       "reason": null,
+       "status": "posted",
+       "url": "https://www.youtube.com/watch?v=8Ybcshw2voM"
       }
      },
      "time": "7:00 PM",
-     "transcript": false,
-     "video_url": null,
+     "transcript": true,
+     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM",
      "where": "Bilotta Meeting Room, Town Hall"
     },
     {
@@ -33892,85 +33951,181 @@
    "time_by_tag": [
     {
      "label": "personnel",
-     "seconds": 391282,
-     "share": 0.14381492046444835,
+     "seconds": 391641,
+     "share": 0.1436147450060047,
      "tag": "personnel"
     },
     {
      "label": "capital",
-     "seconds": 340064,
-     "share": 0.12498984648622265,
+     "seconds": 340520,
+     "share": 0.1248686755713644,
      "tag": "capital"
     },
     {
      "label": "public comment",
-     "seconds": 328285,
-     "share": 0.12066049847596218,
+     "seconds": 329361,
+     "share": 0.12077667054757474,
      "tag": "public-comment"
     },
     {
      "label": "town meeting",
-     "seconds": 327412,
-     "share": 0.12033962906319731,
+     "seconds": 328135,
+     "share": 0.120327096377921,
      "tag": "town-meeting"
     },
     {
      "label": "policy",
-     "seconds": 322517,
-     "share": 0.1185404815540518,
+     "seconds": 325101,
+     "share": 0.11921452865301932,
      "tag": "policy"
     },
     {
      "label": "warrant article",
-     "seconds": 320413,
-     "share": 0.11776716054092776,
+     "seconds": 321136,
+     "share": 0.11776056325116198,
      "tag": "warrant-article"
     },
     {
      "label": "facilities",
-     "seconds": 316527,
-     "share": 0.11633886897391255,
+     "seconds": 317029,
+     "share": 0.11625452645281946,
      "tag": "facilities"
     },
     {
      "label": "planning and zoning",
      "seconds": 314833,
-     "share": 0.11571624264490489,
+     "share": 0.1154492533071754,
      "tag": "planning-and-zoning"
     },
     {
      "label": "legal",
-     "seconds": 308973,
-     "share": 0.11356241130607082,
+     "seconds": 309475,
+     "share": 0.11348447483979796,
      "tag": "legal"
     },
     {
      "label": "grants",
      "seconds": 222216,
-     "share": 0.08167504859903563,
+     "share": 0.08148660169965438,
      "tag": "grants"
     },
     {
      "label": "town departments",
      "seconds": 206935,
-     "share": 0.07605854745761528,
+     "share": 0.0758830593778935,
      "tag": "town-departments"
     },
     {
-     "label": "budget",
-     "seconds": 203542,
-     "share": 0.07481145705954977,
-     "tag": "budget"
+     "label": "public safety",
+     "seconds": 204094,
+     "share": 0.07484126474821463,
+     "tag": "public-safety"
     }
    ],
-   "time_meetings": 367,
-   "time_span_s": 2720733,
+   "time_meetings": 368,
+   "time_span_s": 2727025,
    "urls": {
     "minutes_text": "/minutes/select-board.txt",
     "this_week": "/this-week#m-select-board",
     "what_was_said": "/meeting-minutes"
    },
    "votes": [
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Ratify town manager's appointment of Kat Lemur as videographer",
+     "moved_by": "Bryan",
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-11-10-8Ybcshw2voM",
+     "procedural": false,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 2250,
+     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM&t=2250s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Ratify appointment of Damon McQuaid to the Americans with Disabilities Committee",
+     "moved_by": "Tom",
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-11-10-8Ybcshw2voM",
+     "procedural": false,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 2377,
+     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM&t=2377s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Waive technology fees for site plan application at 1625 Mass Ave",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-11-10-8Ybcshw2voM",
+     "procedural": false,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 2463,
+     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM&t=2463s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Approve minutes of September 29 and October 27, 2026",
+     "moved_by": null,
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-11-10-8Ybcshw2voM",
+     "procedural": true,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 6009,
+     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM&t=6009s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Approve minutes of August 4, 2026",
+     "moved_by": null,
+     "outcome": "passed",
+     "page": "/meeting-minutes/select-board/2026-11-10-8Ybcshw2voM",
+     "procedural": true,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 6040,
+     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM&t=6040s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Adjourn",
+     "moved_by": "Brian",
+     "outcome": "passed unanimously",
+     "page": "/meeting-minutes/select-board/2026-11-10-8Ybcshw2voM",
+     "procedural": true,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 6351,
+     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM&t=6351s"
+    },
     {
      "conflict": null,
      "date": "2026-10-27",
@@ -103397,7 +103552,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 10,
      "made": 17,
@@ -128197,7 +128352,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 10,
@@ -133492,7 +133647,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 5,
      "made": 8,
@@ -140725,7 +140880,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -141166,7 +141321,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -141424,19 +141579,19 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 3,
      "made": 16,
      "week": 8
     },
     "dates": [
-     "2026-11-11",
      "2026-11-25",
      "2026-12-02",
      "2026-12-09",
      "2026-12-23",
-     "2027-01-06"
+     "2027-01-06",
+     "2027-01-13"
     ],
     "explained": 16,
     "last_met": "2026-11-04",
@@ -144816,8 +144971,8 @@
       "meetings": 4
      },
      "recordings": {
-      "have": 7,
-      "meetings": 8
+      "have": 8,
+      "meetings": 9
      }
     },
     "video_lag_days": 7
@@ -156082,7 +156237,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 9,
      "made": 16,
@@ -168063,7 +168218,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 6,
@@ -169863,7 +170018,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -171436,7 +171591,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -173865,7 +174020,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 7,
@@ -176465,7 +176620,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 1,
@@ -178215,11 +178370,11 @@
     "last": "2026-11-10",
     "minutes": 75,
     "official_votes_read": 75,
-    "our_minutes": 53,
-    "recordings": 55,
-    "transcripts": 53,
+    "our_minutes": 54,
+    "recordings": 56,
+    "transcripts": 54,
     "vote_conflicts": 0,
-    "votes": 208
+    "votes": 210
    },
    "finance": {
     "accounts": 8,
@@ -178240,7 +178395,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 1,
      "made": 6,
@@ -178281,7 +178436,51 @@
      "join": null,
      "minutes_doc": null,
      "minutes_url": null,
-     "ours": null,
+     "ours": {
+      "digest": {
+       "watch_next": [
+        "Nov 17 special town meeting vote on Article 9, the track and field engineering and design study.",
+        "Capital Planning meetings tentatively on Nov 19 (police and fire), then Nov 30 and Dec 7 at 6:30 (DPW, school, facilities)."
+       ],
+       "what_happened": [
+        {
+         "line": "The Capital Planning Committee voted 4-1 to keep the Adult Activity Center network upgrade in the FY27 capital program and told IT to give far more accurate quotes in future.",
+         "t": 1985
+        },
+        {
+         "line": "The committee will make no recommendation on the school's Article 9 track and field engineering request, saying it did not go through the committee's process.",
+         "t": 1367
+        },
+        {
+         "line": "The committee advised that all capital projects should come through it.",
+         "t": 1367
+        },
+        {
+         "line": "The network upgrade had been planned just over the capital threshold and came in under it after a vendor quote.",
+         "t": 1428
+        },
+        {
+         "line": "A tentative Nov 19 meeting was set for police and fire, with Nov 30 and Dec 7 at 6:30 for DPW, school and facilities.",
+         "t": 2246
+        }
+       ],
+       "why_it_matters": [
+        "Article 9 goes to the Nov 17 special town meeting without a recommendation from the committee that reviews capital projects, so voters will decide it without that review.",
+        "The upcoming department presentations are where requests for the FY27 capital plan, which draws on the town budget, mostly taxes, will be heard."
+       ],
+       "written": {
+        "at": "2026-11-11T12:23:37Z",
+        "by": "scripts/write_recording_minutes.py --digest",
+        "cost_usd": 0.0223731,
+        "model": "sonnet"
+       }
+      },
+      "discrepancies": 0,
+      "headline": "Committee declined to weigh in on the track article, kept the senior center network project, and set meetings for Nov 19 and Nov 30.",
+      "reconciled": false,
+      "slug": "capital-planning-committee/2026-11-10-pa1BCL9YAJk",
+      "votes": 1
+     },
      "record": {
       "due": null,
       "minutes": {
@@ -178291,24 +178490,24 @@
        "url": null
       },
       "our_minutes": {
-       "reason": "written from the recording",
-       "state": "needs-video"
+       "reason": null,
+       "state": "posted"
       },
       "transcript": {
        "captions_disabled": false,
-       "reason": "no recording",
-       "status": "n/a"
+       "reason": null,
+       "status": "posted"
       },
       "video": {
        "likely_none": false,
-       "reason": "within the approval window",
-       "status": "not-available",
-       "url": null
+       "reason": null,
+       "status": "posted",
+       "url": "https://www.youtube.com/watch?v=pa1BCL9YAJk"
       }
      },
      "time": null,
-     "transcript": false,
-     "video_url": null,
+     "transcript": true,
+     "video_url": "https://www.youtube.com/watch?v=pa1BCL9YAJk",
      "where": null
     },
     {
@@ -178456,8 +178655,8 @@
       "due": "2026-11-10",
       "minutes": {
        "delivered": null,
-       "reason": "due by 2026-11-10",
-       "status": "not-available",
+       "reason": null,
+       "status": "missing",
        "url": null
       },
       "our_minutes": {
@@ -178466,8 +178665,8 @@
       },
       "transcript": {
        "captions_disabled": true,
-       "reason": "due by 2026-11-10",
-       "status": "not-available"
+       "reason": null,
+       "status": "missing"
       },
       "video": {
        "likely_none": false,
@@ -181630,85 +181829,117 @@
    "time_by_tag": [
     {
      "label": "capital",
-     "seconds": 216085,
-     "share": 0.8860518136414706,
+     "seconds": 218756,
+     "share": 0.8872862966192784,
      "tag": "capital"
     },
     {
      "label": "facilities",
      "seconds": 63932,
-     "share": 0.2621517668960201,
+     "share": 0.2593116875215478,
      "tag": "facilities"
     },
     {
      "label": "public safety",
      "seconds": 44626,
-     "share": 0.18298793639338348,
+     "share": 0.18100549595408547,
      "tag": "public-safety"
     },
     {
      "label": "roads and dpw",
      "seconds": 36452,
-     "share": 0.1494706282752569,
+     "share": 0.14785130503559188,
      "tag": "roads-and-dpw"
     },
     {
      "label": "policy",
-     "seconds": 28928,
-     "share": 0.11861863093236671,
+     "seconds": 29200,
+     "share": 0.1184367965280172,
      "tag": "policy"
     },
     {
      "label": "turkey hill",
      "seconds": 24322,
-     "share": 0.09973182873123006,
+     "share": 0.09865136182035734,
      "tag": "turkey-hill"
     },
     {
      "label": "grants",
      "seconds": 23475,
-     "share": 0.09625872376719126,
+     "share": 0.09521588351010972,
      "tag": "grants"
     },
     {
      "label": "water sewer",
      "seconds": 12883,
-     "share": 0.0528264595651853,
+     "share": 0.05225415238597416,
      "tag": "water-sewer"
     },
     {
      "label": "primary school",
      "seconds": 10851,
-     "share": 0.04449428803398476,
+     "share": 0.04401224928512036,
      "tag": "primary-school"
+    },
+    {
+     "label": "technology",
+     "seconds": 10489,
+     "share": 0.042543957492547,
+     "tag": "technology"
     },
     {
      "label": "recreation",
      "seconds": 10026,
-     "share": 0.04111139358849242,
+     "share": 0.04066600417773632,
      "tag": "recreation"
     },
     {
-     "label": "technology",
-     "seconds": 9847,
-     "share": 0.040377408005773475,
-     "tag": "technology"
-    },
-    {
-     "label": "public comment",
-     "seconds": 8718,
-     "share": 0.035747968213093645,
-     "tag": "public-comment"
+     "label": "seniors",
+     "seconds": 8742,
+     "share": 0.035458029974244056,
+     "tag": "seniors"
     }
    ],
-   "time_meetings": 54,
-   "time_span_s": 243874,
+   "time_meetings": 55,
+   "time_span_s": 246545,
    "urls": {
     "minutes_text": "/minutes/capital-planning-committee.txt",
     "this_week": "/this-week#m-capital-planning-committee",
     "what_was_said": "/meeting-minutes"
    },
    "votes": [
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Keep the Adult Activity Center network upgrade in the FY27 capital program and instruct IT to provide far more accurate quotes in future.",
+     "moved_by": null,
+     "outcome": "passed 4-1",
+     "page": "/meeting-minutes/capital-planning-committee/2026-11-10-pa1BCL9YAJk",
+     "procedural": false,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 1985,
+     "video_url": "https://www.youtube.com/watch?v=pa1BCL9YAJk&t=1985s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Adjourn.",
+     "moved_by": null,
+     "outcome": "not audible",
+     "page": "/meeting-minutes/capital-planning-committee/2026-11-10-pa1BCL9YAJk",
+     "procedural": true,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 2671,
+     "video_url": "https://www.youtube.com/watch?v=pa1BCL9YAJk&t=2671s"
+    },
     {
      "conflict": null,
      "date": "2026-04-30",
@@ -185217,7 +185448,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 11,
@@ -194133,7 +194364,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -198533,7 +198764,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 24,
      "made": 24,
@@ -201570,11 +201801,11 @@
      "fy": 2027,
      "minutes": {
       "have": 5,
-      "meetings": 8
+      "meetings": 9
      },
      "recordings": {
-      "have": 6,
-      "meetings": 12
+      "have": 7,
+      "meetings": 13
      }
     },
     "video_lag_days": 7
@@ -251071,11 +251302,11 @@
     "last": "2026-11-10",
     "minutes": 174,
     "official_votes_read": 157,
-    "our_minutes": 28,
-    "recordings": 28,
-    "transcripts": 28,
+    "our_minutes": 29,
+    "recordings": 29,
+    "transcripts": 29,
     "vote_conflicts": 0,
-    "votes": 374
+    "votes": 378
    },
    "finance": {
     "accounts": 8,
@@ -251098,7 +251329,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 12,
      "made": 13,
@@ -251151,7 +251382,51 @@
      "join": null,
      "minutes_doc": null,
      "minutes_url": null,
-     "ours": null,
+     "ours": {
+      "digest": {
+       "watch_next": [
+        "Pricing for the parking lot work, then a standalone capital request for town meeting or the next capital plan cycle.",
+        "Telehealth hub ribbon cutting on January 12, 2027, after the board meeting; policy suggestions due by end of November."
+       ],
+       "what_happened": [
+        {
+         "line": "The Council on Aging voted to have a member take steps toward adding a shower and making the center an official emergency shelter, including a capital plan request.",
+         "t": 1699
+        },
+        {
+         "line": "The council voted to send a member to the School Committee on its behalf about elevator signage and other ADA items.",
+         "t": 782
+        },
+        {
+         "line": "A member volunteered for the town ADA committee, and the council discussed small ADA fixes at town hall described as modest expenses.",
+         "t": 464
+        },
+        {
+         "line": "The council heard that the parking lot design contract has been issued, with pricing to follow and a separate capital request expected.",
+         "t": 3409
+        },
+        {
+         "line": "The council set a December meeting of the policies task force, with policy suggestions due by the end of November and a vote at a later meeting.",
+         "t": 2707
+        }
+       ],
+       "why_it_matters": [
+        "A shower and shelter designation would turn the senior center into an emergency shelter, and the expansion and the parking lot would need capital funding that residents may be asked to approve at Town Meeting or through the capital plan.",
+        "Council priorities for the FY28 budget, such as meals site staffing and homebound services, feed into the town budget, which is mostly taxes."
+       ],
+       "written": {
+        "at": "2026-11-11T12:24:10Z",
+        "by": "scripts/write_recording_minutes.py --digest",
+        "cost_usd": 0.0238691,
+        "model": "sonnet"
+       }
+      },
+      "discrepancies": 0,
+      "headline": "Council on Aging backed a push for a shower and official shelter at the center, and sent a member to the School Committee on elevator signs.",
+      "reconciled": false,
+      "slug": "council-on-aging/2026-11-10-5a4stY9KqE0",
+      "votes": 2
+     },
      "record": {
       "due": null,
       "minutes": {
@@ -251161,24 +251436,24 @@
        "url": null
       },
       "our_minutes": {
-       "reason": "written from the recording",
-       "state": "needs-video"
+       "reason": null,
+       "state": "posted"
       },
       "transcript": {
        "captions_disabled": false,
-       "reason": "no recording",
-       "status": "n/a"
+       "reason": null,
+       "status": "posted"
       },
       "video": {
        "likely_none": false,
-       "reason": "within the approval window",
-       "status": "not-available",
-       "url": null
+       "reason": null,
+       "status": "posted",
+       "url": "https://www.youtube.com/watch?v=5a4stY9KqE0"
       }
      },
      "time": null,
-     "transcript": false,
-     "video_url": null,
+     "transcript": true,
+     "video_url": "https://www.youtube.com/watch?v=5a4stY9KqE0",
      "where": null
     },
     {
@@ -251374,8 +251649,8 @@
       "due": "2026-11-10",
       "minutes": {
        "delivered": null,
-       "reason": "due by 2026-11-10",
-       "status": "not-available",
+       "reason": null,
+       "status": "missing",
        "url": null
       },
       "our_minutes": {
@@ -254034,85 +254309,149 @@
    "time_by_tag": [
     {
      "label": "seniors",
-     "seconds": 62700,
-     "share": 0.5316713304502672,
+     "seconds": 64121,
+     "share": 0.5244428086533349,
      "tag": "seniors"
     },
     {
      "label": "facilities",
-     "seconds": 19587,
-     "share": 0.16609005342152125,
+     "seconds": 20892,
+     "share": 0.17087473929579192,
      "tag": "facilities"
     },
     {
      "label": "policy",
-     "seconds": 19399,
-     "share": 0.16449588739082507,
+     "seconds": 20638,
+     "share": 0.16879728458675827,
      "tag": "policy"
     },
     {
      "label": "personnel",
      "seconds": 14934,
-     "share": 0.1266344441617909,
+     "share": 0.12214452214452215,
      "tag": "personnel"
     },
     {
      "label": "grants",
      "seconds": 13366,
-     "share": 0.11333842109726108,
+     "share": 0.10931991984623564,
      "tag": "grants"
+    },
+    {
+     "label": "capital",
+     "seconds": 11584,
+     "share": 0.09474502106081054,
+     "tag": "capital"
     },
     {
      "label": "staffing",
      "seconds": 11173,
-     "share": 0.09474264394132112,
+     "share": 0.09138347033083875,
      "tag": "staffing"
     },
     {
-     "label": "capital",
-     "seconds": 10604,
-     "share": 0.08991774781650132,
-     "tag": "capital"
-    },
-    {
      "label": "budget",
-     "seconds": 9625,
-     "share": 0.08161621300771645,
+     "seconds": 9665,
+     "share": 0.07904960536539483,
      "tag": "budget"
     },
     {
      "label": "hiring",
      "seconds": 8531,
-     "share": 0.0723395234461121,
+     "share": 0.06977466977466977,
      "tag": "hiring"
     },
     {
      "label": "recreation",
      "seconds": 7632,
-     "share": 0.06471635716102773,
+     "share": 0.06242178873757821,
      "tag": "recreation"
     },
     {
      "label": "fees",
      "seconds": 6783,
-     "share": 0.05751717120325617,
+     "share": 0.05547785547785548,
      "tag": "fees"
     },
     {
      "label": "housing",
-     "seconds": 4842,
-     "share": 0.04105825489697278,
+     "seconds": 5212,
+     "share": 0.04262871631292684,
      "tag": "housing"
     }
    ],
-   "time_meetings": 28,
-   "time_span_s": 117930,
+   "time_meetings": 29,
+   "time_span_s": 122265,
    "urls": {
     "minutes_text": "/minutes/council-on-aging.txt",
     "this_week": "/this-week#m-council-on-aging",
     "what_was_said": "/meeting-minutes"
    },
    "votes": [
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Approve the October minutes with an amendment noting a housing volunteer",
+     "moved_by": null,
+     "outcome": "passed",
+     "page": "/meeting-minutes/council-on-aging/2026-11-10-5a4stY9KqE0",
+     "procedural": true,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 190,
+     "video_url": "https://www.youtube.com/watch?v=5a4stY9KqE0&t=190s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Authorize a member to go before the School Committee on behalf of the council about elevator signage and ADA items",
+     "moved_by": null,
+     "outcome": "passed",
+     "page": "/meeting-minutes/council-on-aging/2026-11-10-5a4stY9KqE0",
+     "procedural": false,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 782,
+     "video_url": "https://www.youtube.com/watch?v=5a4stY9KqE0&t=782s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Anna to take steps toward adding a shower and making the center an official shelter, working with the fire chief and town officials, and requesting it in the capital plan",
+     "moved_by": null,
+     "outcome": "passed",
+     "page": "/meeting-minutes/council-on-aging/2026-11-10-5a4stY9KqE0",
+     "procedural": false,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 1699,
+     "video_url": "https://www.youtube.com/watch?v=5a4stY9KqE0&t=1699s"
+    },
+    {
+     "conflict": null,
+     "date": "2026-11-10",
+     "minutes_doc": null,
+     "minutes_url": null,
+     "motion": "Adjourn",
+     "moved_by": null,
+     "outcome": "passed",
+     "page": "/meeting-minutes/council-on-aging/2026-11-10-5a4stY9KqE0",
+     "procedural": true,
+     "quote": null,
+     "seconded_by": null,
+     "source": "recording",
+     "t": 4302,
+     "video_url": "https://www.youtube.com/watch?v=5a4stY9KqE0&t=4302s"
+    },
     {
      "conflict": null,
      "date": "2026-10-13",
@@ -260128,7 +260467,7 @@
     "agendas": 65,
     "captions_disabled": 0,
     "first": "2011-12-01",
-    "last": "2026-10-07",
+    "last": "2026-11-11",
     "minutes": 21,
     "official_votes_read": 21,
     "our_minutes": 0,
@@ -260149,29 +260488,39 @@
     "open_seats": 0,
     "open_seats_filled_by": "",
     "open_seats_fy": "2025",
-    "place": "LUNENBURG CULTURAL COUNCIL LOCATION: Ritter Memorial Building DATE/TIME: 10/07/2",
+    "place": "LUNENBURG CULTURAL COUNCIL LOCATION: Ritter Memorial Building DATE/TIME: 11/11/2",
     "time": "6:45 pm",
     "weekday": "Wednesday",
     "weekday_share": 1.0,
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 4,
      "week": 0
     },
-    "dates": [],
-    "last_met": "2026-10-07",
-    "reason": "no regular pattern",
-    "rule": null,
+    "dates": [
+     "2027-01-13",
+     "2027-02-10",
+     "2027-03-10",
+     "2027-04-14",
+     "2027-05-12",
+     "2027-06-09"
+    ],
+    "explained": 3,
+    "last_met": "2026-11-11",
+    "of": 5,
+    "reason": "too few predictions to test",
+    "rule": "2nd Wednesday of the month, not in October or December",
     "show": false,
     "threshold": {
      "min_exact_share": 0.7,
      "min_predictions": 6
     },
-    "time": null
+    "time": "6:45 pm",
+    "weekday": "Wednesday"
    },
    "meetings": [
     {
@@ -263620,7 +263969,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -264645,7 +264994,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 3,
      "made": 9,
@@ -270726,7 +271075,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 3,
@@ -277100,7 +277449,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 2,
      "made": 11,
@@ -281439,7 +281788,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -282372,7 +282721,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 10,
      "made": 11,
@@ -294905,7 +295254,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 6,
      "made": 8,
@@ -296143,7 +296492,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -296386,7 +296735,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 3,
      "made": 7,
@@ -306067,7 +306416,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 8,
      "made": 15,
@@ -322091,7 +322440,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 2,
      "made": 4,
@@ -325382,7 +325731,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -326807,7 +327156,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -327178,7 +327527,7 @@
     "agendas": 124,
     "captions_disabled": 0,
     "first": "2011-10-07",
-    "last": "2026-10-14",
+    "last": "2026-11-11",
     "minutes": 56,
     "official_votes_read": 55,
     "our_minutes": 41,
@@ -327204,26 +327553,26 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
-     "exact": 7,
-     "made": 9,
-     "week": 6
+     "exact": 8,
+     "made": 10,
+     "week": 7
     },
     "dates": [
-     "2026-11-11",
      "2026-12-09",
      "2027-01-13",
      "2027-02-10",
      "2027-03-10",
-     "2027-04-14"
+     "2027-04-14",
+     "2027-05-12"
     ],
-    "explained": 9,
-    "last_met": "2026-10-14",
-    "of": 10,
-    "reason": "the pattern did not hold often enough",
+    "explained": 10,
+    "last_met": "2026-11-11",
+    "of": 11,
+    "reason": null,
     "rule": "2nd Wednesday of the month, not in August",
-    "show": false,
+    "show": true,
     "threshold": {
      "min_exact_share": 0.7,
      "min_predictions": 6
@@ -332665,7 +333014,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 3,
      "made": 11,
@@ -344115,7 +344464,7 @@
     2028
    ],
    "counts": {
-    "agendas": 175,
+    "agendas": 176,
     "captions_disabled": 0,
     "first": "2009-01-27",
     "last": "2026-10-19",
@@ -344142,7 +344491,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 3,
@@ -344170,6 +344519,49 @@
     "weekday": "Monday"
    },
    "meetings": [
+    {
+     "agenda_doc": "/docs/meetings/personnel-committee/2026-11-16-agenda-8130.pdf",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11162026-8130",
+     "attend": null,
+     "body_as_printed": null,
+     "captions_disabled": false,
+     "date": "2026-11-16",
+     "hook": null,
+     "important": null,
+     "items": null,
+     "join": null,
+     "minutes_doc": null,
+     "minutes_url": null,
+     "ours": null,
+     "record": {
+      "due": null,
+      "minutes": {
+       "delivered": null,
+       "reason": "within the approval window",
+       "status": "not-available",
+       "url": null
+      },
+      "our_minutes": {
+       "reason": "written from the recording",
+       "state": "needs-video"
+      },
+      "transcript": {
+       "captions_disabled": false,
+       "reason": "no recording",
+       "status": "n/a"
+      },
+      "video": {
+       "likely_none": false,
+       "reason": "within the approval window",
+       "status": "not-available",
+       "url": null
+      }
+     },
+     "time": null,
+     "transcript": false,
+     "video_url": null,
+     "where": null
+    },
     {
      "agenda_doc": "/docs/meetings/personnel-committee/2026-10-19-agenda-8072.pdf",
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10192026-8072",
@@ -344359,10 +344751,10 @@
       "votes": 0
      },
      "record": {
-      "due": null,
+      "due": "2026-11-16",
       "minutes": {
        "delivered": null,
-       "reason": "within the approval window",
+       "reason": "due by 2026-11-16",
        "status": "not-available",
        "url": null
       },
@@ -346927,94 +347319,6 @@
      "time": null,
      "transcript": true,
      "video_url": "https://www.youtube.com/watch?v=xkzTl4oB6oY",
-     "where": null
-    },
-    {
-     "agenda_doc": "/docs/meetings/personnel-committee/2023-03-06-agenda-142.pdf",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03062023-142",
-     "attend": null,
-     "body_as_printed": null,
-     "captions_disabled": false,
-     "date": "2023-03-06",
-     "hook": null,
-     "important": null,
-     "items": null,
-     "join": null,
-     "minutes_doc": "/docs/meetings/personnel-committee/2023-03-06-minutes-142.pdf",
-     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03062023-142",
-     "ours": {
-      "digest": {
-       "watch_next": [
-        "Personnel Committee meeting set for Monday March 13 at 7 pm, with the HR consultant invited, to take up the salary grid and job descriptions.",
-        "March 20 deadline for town meeting articles; the grid is to be finalized by about March 30, ahead of the Finance Committee hearings."
-       ],
-       "what_happened": [
-        {
-         "line": "The committee heard the HR consultant's draft compensation study and shorter salary grid, but members said the materials came too late to review.",
-         "t": 130
-        },
-        {
-         "line": "The salary grid and job descriptions were pushed to the next meeting rather than discussed substantively.",
-         "t": 1855
-        },
-        {
-         "line": "A motion was made on the HR Director's proposed town meeting article; the captions do not capture the vote result.",
-         "t": 2288
-        },
-        {
-         "line": "The committee agreed a blank placeholder article is enough to meet the March 20 article deadline, with the grid to be finalized by about March 30.",
-         "t": 2102
-        },
-        {
-         "line": "A public commenter objected that the consultant's report was not shared with employees in advance so they could give input.",
-         "t": 1313
-        }
-       ],
-       "why_it_matters": [
-        "The salary grid sets what town employees are paid and what each step costs, so it feeds the town budget, which is mostly taxes, and the compensation article residents may be asked to vote on at town meeting.",
-        "The committee has not yet seen a cost comparison of adopting the grid at once versus phasing it in, so the size of the budget effect is not yet on the record.",
-        "The vote on the article is not audible in the captions, so the outcome should be confirmed from the official minutes."
-       ],
-       "written": {
-        "at": "2026-10-14T01:10:44Z",
-        "by": "scripts/write_recording_minutes.py --digest",
-        "cost_usd": 0.22312890000000002,
-        "model": "sonnet"
-       }
-      },
-      "discrepancies": 5,
-      "headline": "Committee heard the HR consultant's draft salary grid, deferred review, and set a placeholder town meeting article.",
-      "reconciled": true,
-      "slug": "personnel-committee/2023-03-06-9VB9yoo9KT0",
-      "votes": 1
-     },
-     "record": {
-      "due": "2023-04-05",
-      "minutes": {
-       "delivered": null,
-       "reason": null,
-       "status": "posted",
-       "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03062023-142"
-      },
-      "our_minutes": {
-       "reason": null,
-       "state": "posted"
-      },
-      "transcript": {
-       "captions_disabled": false,
-       "reason": null,
-       "status": "posted"
-      },
-      "video": {
-       "likely_none": false,
-       "reason": null,
-       "status": "posted",
-       "url": "https://www.youtube.com/watch?v=9VB9yoo9KT0"
-      }
-     },
-     "time": null,
-     "transcript": true,
-     "video_url": "https://www.youtube.com/watch?v=9VB9yoo9KT0",
      "where": null
     }
    ],
@@ -354415,7 +354719,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 15,
      "made": 21,
@@ -354736,8 +355040,8 @@
       "due": "2026-11-10",
       "minutes": {
        "delivered": null,
-       "reason": "due by 2026-11-10",
-       "status": "not-available",
+       "reason": null,
+       "status": "missing",
        "url": null
       },
       "our_minutes": {
@@ -393607,8 +393911,8 @@
     "captions_disabled": 0,
     "first": "2010-08-16",
     "last": "2026-11-09",
-    "minutes": 164,
-    "official_votes_read": 152,
+    "minutes": 165,
+    "official_votes_read": 153,
     "our_minutes": 72,
     "recordings": 73,
     "transcripts": 73,
@@ -393630,7 +393934,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 8,
      "made": 12,
@@ -393756,8 +394060,8 @@
      "important": null,
      "items": null,
      "join": null,
-     "minutes_doc": null,
-     "minutes_url": null,
+     "minutes_doc": "/docs/meetings/public-access-cable-committee-pacc/2026-10-19-minutes-8055.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10192026-8055",
      "ours": {
       "digest": {
        "watch_next": [
@@ -393803,9 +394107,9 @@
       "due": null,
       "minutes": {
        "delivered": null,
-       "reason": "within the approval window",
-       "status": "not-available",
-       "url": null
+       "reason": null,
+       "status": "posted",
+       "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10192026-8055"
       },
       "our_minutes": {
        "reason": null,
@@ -397053,64 +397357,64 @@
     {
      "conflict": null,
      "date": "2026-10-19",
-     "minutes_doc": null,
-     "minutes_url": null,
-     "motion": "Accept the minutes of the September 8 meeting",
-     "moved_by": "",
-     "outcome": "not audible",
+     "minutes_doc": "/docs/meetings/public-access-cable-committee-pacc/2026-10-19-minutes-8055.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10192026-8055",
+     "motion": "Accept the 9/8/26 minutes.",
+     "moved_by": "B.Vienneau",
+     "outcome": "passed",
      "page": "/meeting-minutes/public-access-cable-committee-pacc/2026-10-19-j9toEn9gN2o",
      "procedural": true,
-     "quote": null,
-     "seconded_by": null,
-     "source": "recording",
+     "quote": "motion to accept 9/8/26 minutes (b.vienneau,",
+     "seconded_by": "F. Beall",
+     "source": "both",
      "t": 155,
      "video_url": "https://www.youtube.com/watch?v=j9toEn9gN2o&t=155s"
     },
     {
      "conflict": null,
      "date": "2026-10-19",
-     "minutes_doc": null,
-     "minutes_url": null,
-     "motion": "Accept the minutes of the September 16 special meeting",
-     "moved_by": null,
-     "outcome": "not audible",
+     "minutes_doc": "/docs/meetings/public-access-cable-committee-pacc/2026-10-19-minutes-8055.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10192026-8055",
+     "motion": "Accept the 9/16/26 minutes.",
+     "moved_by": "F .Bealle",
+     "outcome": "passed",
      "page": "/meeting-minutes/public-access-cable-committee-pacc/2026-10-19-j9toEn9gN2o",
      "procedural": true,
-     "quote": null,
-     "seconded_by": null,
-     "source": "recording",
+     "quote": "motion to accept 9/16/26 minutes (f .bealle, 2nd b.vienneau), passed",
+     "seconded_by": "B.Vienneau",
+     "source": "both",
      "t": 195,
      "video_url": "https://www.youtube.com/watch?v=j9toEn9gN2o&t=195s"
     },
     {
      "conflict": null,
      "date": "2026-10-19",
-     "minutes_doc": null,
-     "minutes_url": null,
-     "motion": "Support the roughly $19,8xx warrant request recommendation for the November warrant, pending the town manager's review",
-     "moved_by": null,
-     "outcome": "not audible",
+     "minutes_doc": "/docs/meetings/public-access-cable-committee-pacc/2026-10-19-minutes-8055.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10192026-8055",
+     "motion": "Support the $19,827.93 amount recommended for the November Warrant.",
+     "moved_by": "F .Beall",
+     "outcome": "passed",
      "page": "/meeting-minutes/public-access-cable-committee-pacc/2026-10-19-j9toEn9gN2o",
      "procedural": false,
-     "quote": null,
-     "seconded_by": null,
-     "source": "recording",
+     "quote": "motion to support the $19,827.93 amount recommended for the november warrant (f .beall, 2nd s.archambault), passed",
+     "seconded_by": "S.Archambault",
+     "source": "both",
      "t": 2376,
      "video_url": "https://www.youtube.com/watch?v=j9toEn9gN2o&t=2376s"
     },
     {
      "conflict": null,
      "date": "2026-10-19",
-     "minutes_doc": null,
-     "minutes_url": null,
-     "motion": "Adjourn",
-     "moved_by": null,
-     "outcome": "not audible",
+     "minutes_doc": "/docs/meetings/public-access-cable-committee-pacc/2026-10-19-minutes-8055.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10192026-8055",
+     "motion": "Adjourn the meeting.",
+     "moved_by": "S,Archambault",
+     "outcome": "passed",
      "page": "/meeting-minutes/public-access-cable-committee-pacc/2026-10-19-j9toEn9gN2o",
      "procedural": true,
-     "quote": null,
-     "seconded_by": null,
-     "source": "recording",
+     "quote": "(s,archambault, 2nd b.vienneau,) - passed)",
+     "seconded_by": "B.Vienneau",
+     "source": "both",
      "t": 2971,
      "video_url": "https://www.youtube.com/watch?v=j9toEn9gN2o&t=2971s"
     },
@@ -404573,7 +404877,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 1,
      "made": 9,
@@ -408410,7 +408714,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -413650,7 +413954,7 @@
     "zoom": false
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -416130,7 +416434,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 20,
      "made": 22,
@@ -437609,7 +437913,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 4,
      "made": 20,
@@ -440807,8 +441111,8 @@
       "meetings": 4
      },
      "recordings": {
-      "have": 7,
-      "meetings": 10
+      "have": 8,
+      "meetings": 11
      }
     },
     "video_lag_days": 7
@@ -448206,7 +448510,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 0,
      "made": 0,
@@ -457500,7 +457804,7 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 7,
      "made": 16,
@@ -461502,8 +461806,8 @@
     "captions_disabled": 21,
     "first": "2010-04-14",
     "last": "2026-10-28",
-    "minutes": 17,
-    "official_votes_read": 15,
+    "minutes": 18,
+    "official_votes_read": 16,
     "our_minutes": 110,
     "recordings": 167,
     "transcripts": 146,
@@ -461531,19 +461835,19 @@
     "zoom": true
    },
    "likely_next": {
-    "as_of": "2026-11-10",
+    "as_of": "2026-11-11",
     "backtest": {
      "exact": 7,
      "made": 12,
      "week": 7
     },
     "dates": [
-     "2026-11-11",
      "2026-11-25",
      "2026-12-09",
      "2026-12-23",
      "2027-01-13",
-     "2027-01-27"
+     "2027-01-27",
+     "2027-02-10"
     ],
     "explained": 13,
     "last_met": "2026-10-28",
@@ -461570,8 +461874,8 @@
      "important": null,
      "items": null,
      "join": null,
-     "minutes_doc": null,
-     "minutes_url": null,
+     "minutes_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-28-minutes-8103.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282026-8103",
      "ours": {
       "digest": {
        "watch_next": [
@@ -461617,9 +461921,9 @@
       "due": null,
       "minutes": {
        "delivered": null,
-       "reason": "within the approval window",
-       "status": "not-available",
-       "url": null
+       "reason": null,
+       "status": "posted",
+       "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282026-8103"
       },
       "our_minutes": {
        "reason": null,
@@ -465023,48 +465327,48 @@
     {
      "conflict": null,
      "date": "2026-10-28",
-     "minutes_doc": null,
-     "minutes_url": null,
-     "motion": "Approve the special permit for dimensional variation for an attached ADU at 440 Howard Street, with 13 feet of side setback relief.",
-     "moved_by": null,
-     "outcome": "passed",
+     "minutes_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-28-minutes-8103.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282026-8103",
+     "motion": "Approve the Thirteen Foot (13') relief and grant the Special Permit for the attached ADU side setback.",
+     "moved_by": "Patrick Callahan",
+     "outcome": "passed 5-0",
      "page": "/meeting-minutes/zoning-board-of-appeals/2026-10-28-vBdjYw_h64M",
      "procedural": false,
-     "quote": null,
-     "seconded_by": null,
-     "source": "recording",
+     "quote": "patrick callahan motioned to approve the thirteen foot (13') relief. karin menard, second the motion.",
+     "seconded_by": "Karin Menard",
+     "source": "both",
      "t": 771,
      "video_url": "https://www.youtube.com/watch?v=vBdjYw_h64M&t=771s"
     },
     {
      "conflict": null,
      "date": "2026-10-28",
-     "minutes_doc": null,
-     "minutes_url": null,
-     "motion": "Allow the chair of the meeting to sign the meeting minutes and send them to the town clerk.",
+     "minutes_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-28-minutes-8103.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282026-8103",
+     "motion": "Vote that the Chairman approve and sign the meeting minutes.",
      "moved_by": null,
-     "outcome": "passed",
+     "outcome": "passed 5-0",
      "page": "/meeting-minutes/zoning-board-of-appeals/2026-10-28-vBdjYw_h64M",
-     "procedural": true,
-     "quote": null,
+     "procedural": false,
+     "quote": "alfred gravelle chairmain, voted to have chairman approve and sign the meeting minutes",
      "seconded_by": null,
-     "source": "recording",
+     "source": "both",
      "t": 1156,
      "video_url": "https://www.youtube.com/watch?v=vBdjYw_h64M&t=1156s"
     },
     {
      "conflict": null,
      "date": "2026-10-28",
-     "minutes_doc": null,
-     "minutes_url": null,
-     "motion": "Adjourn.",
-     "moved_by": null,
-     "outcome": "not audible",
+     "minutes_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-28-minutes-8103.pdf",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10282026-8103",
+     "motion": "Adjourn the meeting at 7:20pm.",
+     "moved_by": "Donald Gurney",
+     "outcome": "passed 5-0",
      "page": "/meeting-minutes/zoning-board-of-appeals/2026-10-28-vBdjYw_h64M",
      "procedural": true,
-     "quote": null,
-     "seconded_by": null,
-     "source": "recording",
+     "quote": "donald gurney moved to adjourn. karin menard second.",
+     "seconded_by": "Karin Menard",
+     "source": "both",
      "t": 1203,
      "video_url": "https://www.youtube.com/watch?v=vBdjYw_h64M&t=1203s"
     },
