@@ -75,8 +75,9 @@ WEEK_LAST_DAY = 6 / 7    # the goal holds until here, then climbs to 100% by the
 # cores that morning, none of it ours). So a worker is ADDED only while the one-minute load
 # per core is under LOAD_ADD, and one is SHED while it is over LOAD_SHED. Never below one:
 # a single worker is what the run did for a month without anybody noticing it.
-LOAD_ADD = 1.0
-LOAD_SHED = 2.5
+LOAD_ADD = 2.0     # 24 on a 12-core machine. 1.0 held the run at one worker while games and other
+                   # sessions kept the load at 15-30, none of it ours (12 November 2026)
+LOAD_SHED = 4.0
 
 
 def load_per_core():
@@ -674,17 +675,17 @@ def _test():
         case('describe: says there is no 5h window', 'no 5h window' in describe(Plan(), [NW(now - 60, 10)], now))
         # ...and the machine's limit on a busy one.
         p = Plan(week_cap=101, week_goal=100, max_jobs=6)
-        p.load_fn = lambda: 1.5
+        p.load_fn = lambda: 2.5
         d = decide(p, [NW(now - 60, 10)], now)
-        case('CPU: far under the line but load 1.5/core -> no worker added', d['start'] and d['jobs'] == 1 and 'CPU busy' in d['note'])
-        p.load_fn, p.jobs, p.last_change = (lambda: 3.0), 4, 0
+        case('CPU: far under the line but load 2.5/core -> no worker added', d['start'] and d['jobs'] == 1 and 'CPU busy' in d['note'])
+        p.load_fn, p.jobs, p.last_change = (lambda: 5.0), 4, 0
         d = decide(p, [NW(now - 60, 10)], now)
-        case('CPU: load 3/core at four workers -> sheds one', d['jobs'] == 3)
+        case('CPU: load 5/core at four workers -> sheds one', d['jobs'] == 3)
         p.jobs, p.last_change = 1, 0
         d = decide(p, [NW(now - 60, 10)], now)
         case('CPU: never sheds below one worker', d['jobs'] == 1 and d['start'])
         p = Plan(session_cap=90, max_jobs=3)
-        p.load_fn = lambda: 1.5
+        p.load_fn = lambda: 2.5
         decide(p, [R(now - 10, 40)], now)
         d = decide(p, [R(now - 10, 40), R(now + 3590, 40)], now + 3600)
         case('CPU: the session rule does not add a worker on a busy machine either', d['jobs'] == 1)

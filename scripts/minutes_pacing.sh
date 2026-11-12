@@ -27,10 +27,11 @@ fi
 if pgrep -f "[p]rocess_meeting.py --until-usage" >/dev/null; then
   exit 0                                   # already running: the normal case, said nothing
 fi
-# SIX WORKERS AT MOST, 12 November 2026: the plan has no five-hour window any more, so the only
+# TEN WORKERS AT MOST, ONE A MINUTE (TJ, 12 November 2026: "max out the workers. we have a LOT of
+# room and only 12 hours to go"). Raised from six the same morning: the plan has no five-hour window any more, so the only
 # reasons to hold back are the weekly line and the machine -- and the governor watches both
-# (usage_governor.LOAD_ADD / LOAD_SHED). It ramps one worker per five minutes.
+# (usage_governor.LOAD_ADD / LOAD_SHED). 
 say "not running -- starting the paced run (log: $LOG)"
 echo "=== WEEKLY PACED RUN, started by minutes_pacing.sh $(date)" >> "$LOG"
-nohup "$PY" scripts/process_meeting.py --until-usage --week-margin 3 --session-cap 80 --max-jobs 6 --notify \
+nohup "$PY" scripts/process_meeting.py --until-usage --week-margin 3 --session-cap 80 --max-jobs 10 --ramp 60 --notify \
   >> "$LOG" 2>&1 < /dev/null &
