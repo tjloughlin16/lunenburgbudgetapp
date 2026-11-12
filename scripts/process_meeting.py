@@ -643,8 +643,8 @@ def run_governed(plan, a, S, ceiling):
     h0 = G.readings()
     say('[gov %s] projection: ~%d meetings -- %s points of room (caps %s, now %s%%) at ~%.2f points a meeting%s'
         % (dt.datetime.now().strftime('%H:%M'), projected_remaining(gp, h0),
-           '%.0f' % (max(0.0, gp.caps[0] - (h0[-1]['u5'] if h0 else 0)) + sum(gp.caps[1:])),
-           ','.join('%g' % c for c in gp.caps), ('%g' % h0[-1]['u5']) if h0 else '?', gp.per_meeting,
+           '%.0f' % (max(0.0, gp.caps[0] - ((h0[-1]['u5'] or 0) if h0 else 0)) + sum(gp.caps[1:])),
+           ','.join('%g' % c for c in gp.caps), ('%g' % h0[-1]['u5']) if (h0 and h0[-1]['u5'] is not None) else 'none', gp.per_meeting,
            '' if seed else ' (a guess: too few recent meetings in the ledger)'))
     T, stop = Tally(), None
     pool = cf.ThreadPoolExecutor(max_workers=a.max_jobs)
@@ -712,7 +712,7 @@ def run_governed(plan, a, S, ceiling):
                     last_fetch = now
                 h = G.readings()
                 if h and now - h[-1]['t'] < G.STALE_S:
-                    gp.measured(T.done, h[-1]['u5'])
+                    gp.measured(T.done, h[-1]['u5'], h[-1]['u7'])
                     # THE BACKSTOP FOLLOWS THE WEEK. The dollar ceiling is the weekly headroom in
                     # dollars, and it was computed ONCE, at start. The run of 22 October 2026
                     # started at 07:53 with the week at 100% -- fifteen hours before it reset --
@@ -733,7 +733,9 @@ def run_governed(plan, a, S, ceiling):
                 # an hour on 7 October) decide() drops to one worker but cannot see a cap. So the
                 # bar is ESTIMATED: the last good reading plus dollars spent since, at a cautious
                 # DOLLARS_PER_POINT -- low, so the estimate runs high and stops early, never late.
-                if 'STALE' in d['note'] and h:
+                # NO SESSION WINDOW, NO SESSION ESTIMATE: the dollars-to-points rate below is the
+                # five-hour bar's, and a plan without that bar has nothing for it to protect.
+                if 'STALE' in d['note'] and h and h[-1]['u5'] is not None:
                     # From the LEDGER, so spending by any run since the last good reading counts.
                     last = h[-1]
                     if last['reset'] and now > last['reset']:           # that window is over
@@ -747,7 +749,7 @@ def run_governed(plan, a, S, ceiling):
                         d.update(start=False, jobs=0, wait_reset=limit_means_wait(gp) or bool(gp.by and now < gp.by),
                                  note='STALE -- estimated %.0f%% >= cap %g%%: stop starting' % (est, cap))
                 line = '5h %s%s (target %s) workers %d/%d  %s  [%.2f pt/meeting]' % (
-                    ('%g%%' % h[-1]['u5']) if h else '?',
+                    ('%g%%' % h[-1]['u5']) if (h and h[-1]['u5'] is not None) else ('none' if h else '?'),
                     ('  7d %g%%' % h[-1]['u7']) if (h and gp.week_goal) else '',
                     ('%.0f%%' % d['target']) if d['target'] is not None else '-',
                     len(active), d['jobs'], d['note'], gp.per_meeting)
@@ -824,7 +826,11 @@ def ledger_points_per_meeting(hours=6):
 
 def projected_remaining(gp, h):
     """Meetings the plan has room for from here: the points left under this window's cap,
-    plus every later window's cap in full, over the points one meeting costs."""
+    plus every later window's cap in full, over the points one meeting costs. On a plan with
+    no session window (12 November 2026), the room is the WEEK's: points left under the week
+    cap over the measured weekly points a meeting costs."""
+    if h and h[-1]['u5'] is None:
+        return int(max(0.0, gp.week_cap - h[-1]['u7']) / max(gp.week_per_meeting, 0.002))
     u5 = h[-1]['u5'] if h else 0.0
     i = min(gp.windows_seen, len(gp.caps) - 1)
     points = max(0.0, gp.caps[i] - u5) + sum(gp.caps[gp.windows_seen + 1:])
@@ -923,7 +929,7 @@ class Notifier:
                 self.send('Paced minutes: waiting', 'Cannot read the usage bars right now -- waiting until it can.')
             elif mode == 'session cap':
                 self.send('Paced minutes: waiting', '5-hour window at %g%%, its cap -- waiting for it to reset.'
-                          % (last['u5'] if last else 0))
+                          % ((last['u5'] or 0) if last else 0))
             else:
                 self.send('Paced minutes: paused', '%s -- %s.' % (why or 'No reading', (d or {}).get('note', '')))
             self.last_t = now
@@ -944,7 +950,7 @@ def wait_for_reset(gp, S, G):
     h = G.readings()
     when = dt.datetime.fromtimestamp(h[-1]['reset']).strftime('%H:%M') if h and h[-1]['reset'] else '?'
     say('[gov %s] window done at %s%% -- waiting for the %s reset' % (
-        dt.datetime.now().strftime('%H:%M'), ('%g' % h[-1]['u5']) if h else '?', when))
+        dt.datetime.now().strftime('%H:%M'), ('%g' % h[-1]['u5']) if (h and h[-1]['u5'] is not None) else '?', when))
     while not S.kill_switch():
         time.sleep(30)
         asker = yield_requested() if PACED else None
@@ -964,7 +970,7 @@ def wait_for_reset(gp, S, G):
         # The old reset passing is a CLOCK fact -- it needs no reading, so a refusing endpoint
         # cannot hold the run here all night. A newly named reset still needs a fresh one.
         if passed or (named and time.time() - h[-1]['t'] < G.STALE_S):
-            say('[gov %s] new window: %g%% -- resuming' % (dt.datetime.now().strftime('%H:%M'), h[-1]['u5']))
+            say('[gov %s] new window: %g%% -- resuming' % (dt.datetime.now().strftime('%H:%M'), h[-1]['u5'] or 0))
             return
 
 

@@ -48,6 +48,7 @@ FETCH_EVERY_S = 150      # the endpoint answers 429 when polled every minute (7 
 BACKOFF_S = 600          # after a refusal, ask nothing for this long
 _BACKOFF = os.path.expanduser('~/.claude/usage-api-backoff')
 ERRORS = os.path.expanduser('~/.claude/usage-api-errors.csv')   # every failed fetch, by fetch()
+RAW = os.path.expanduser('~/.claude/usage-api-last.json')         # the server's last reply, verbatim
 STALE_S = 420            # a reading older than this is unknown, never current (> FETCH_EVERY_S x 2)
 BAND = 2.0               # points either side of the line that count as "on it"
 RAMP_S = 300             # at most one added worker per five minutes
@@ -68,6 +69,35 @@ WEEK_RESET = os.path.expanduser('~/.claude/usage-week-reset.txt')   # written by
 WEEK_PER_MEETING = 0.1   # points of the WEEK one in-flight meeting adds; measured 7-8 Oct
                          # 2026 at ~0.1% (notes/findings/METERED-BATCH-COST.md section 7)
 WEEK_LAST_DAY = 6 / 7    # the goal holds until here, then climbs to 100% by the reset
+# THE MACHINE IS A LIMIT TOO. TJ, 12 November 2026, asking the run to go as fast as the week
+# allows: *"without crushing the CPU to death"*. A worker is mostly a model call waiting on the
+# network, but the machine is shared with games, builds and other sessions (load 62 on 12
+# cores that morning, none of it ours). So a worker is ADDED only while the one-minute load
+# per core is under LOAD_ADD, and one is SHED while it is over LOAD_SHED. Never below one:
+# a single worker is what the run did for a month without anybody noticing it.
+LOAD_ADD = 1.0
+LOAD_SHED = 2.5
+
+
+def load_per_core():
+    """One-minute load average over the core count, or 0.0 where it cannot be read."""
+    try:
+        return os.getloadavg()[0] / (os.cpu_count() or 1)
+    except (OSError, AttributeError):
+        return 0.0
+
+
+def _cpu(plan, now, note):
+    """Apply the machine's limit after the usage rules: shed one worker over LOAD_SHED, and
+    report a held ramp under it. Returns the note, amended."""
+    load = getattr(plan, 'load_fn', load_per_core)()
+    if load > LOAD_SHED and plan.jobs > 1:
+        plan.jobs -= 1
+        plan.last_change = now
+        return note + '; CPU busy (load %.1f/core) -- one fewer worker' % load
+    return note
+
+
 MARGIN_MAX_S = 600       # stop aiming this long before the deadline...
 MARGIN_FRAC = 0.10       # ...or this fraction of a short horizon, whichever is smaller
 
@@ -155,8 +185,19 @@ def fetch(force=False):
         req = urllib.request.Request(URL, headers={
             'Authorization': 'Bearer ' + _token(), 'anthropic-beta': 'oauth-2025-04-20',
             'Content-Type': 'application/json', 'User-Agent': 'claude-cli'})
-        d = json.loads(urllib.request.urlopen(req, timeout=15).read())
-        f5, f7 = d['five_hour'], d['seven_day']
+        body = urllib.request.urlopen(req, timeout=15).read()
+        # THE LAST ANSWER, KEPT. When the server changes the shape of its reply, the parse below is
+        # what fails, and the reply is the only thing that says why.
+        with open(RAW + '.tmp', 'wb') as fh:
+            fh.write(body)
+        os.replace(RAW + '.tmp', RAW)
+        d = json.loads(body)
+        # A PLAN WITH NO FIVE-HOUR WINDOW. 12 November 2026: after TJ's subscription changed, the
+        # server began answering `"five_hour": null` -- only the weekly bar exists -- and every
+        # fetch from 07:20 crashed on `None.get`, so the paced run sat STALE and waited all day.
+        # No session window is a real reading, not a failure: u5 is recorded EMPTY, and decide()
+        # paces by the weekly line alone (see NO_WINDOW there).
+        f5, f7 = d.get('five_hour') or {}, d['seven_day']
         # AFTER A RESET THE SERVER NAMES NO NEW ONE until something calls the model, so
         # `resets_at` is null -- and reading it unguarded threw, the reading was discarded, and
         # the run went STALE five minutes after the 22:00 reset on 9 October 2026. An empty
@@ -171,7 +212,7 @@ def fetch(force=False):
             if new:
                 fh.write('at,five_hour,seven_day,five_hour_resets_at\n')
             fh.write('%s,%s,%s,%s\n' % (dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                                         f5['utilization'], f7['utilization'], '%d' % reset if reset else ''))
+                                         '' if f5.get('utilization') is None else f5['utilization'], f7['utilization'], '%d' % reset if reset else ''))
         return True
     except Exception as e:                              # noqa: BLE001 -- any failure is "unknown"
         if getattr(e, 'code', None) == 429:
@@ -219,8 +260,9 @@ def readings(path=LOG):
     for r in csv.DictReader(open(path, encoding='utf-8')):
         try:
             rs = float(r.get('five_hour_resets_at') or 0)
+            u5 = r.get('five_hour')
             out.append(dict(t=dt.datetime.fromisoformat(r['at'].replace('Z', '+00:00')).timestamp(),
-                            u5=float(r['five_hour']), u7=float(r['seven_day']),
+                            u5=float(u5) if u5 not in (None, '') else None, u7=float(r['seven_day']),
                             reset=(round(rs / 60) * 60) if rs else None))
         except (ValueError, KeyError, TypeError):
             continue
@@ -302,17 +344,33 @@ class Plan:
         # calls measured() as meetings finish and the bar moves.
         self.per_meeting = PER_MEETING_PCT
         self.m0 = self.mu0 = None
+        # THE WEEK'S SHARE OF A MEETING IS MEASURED TOO. 0.1 was the old plan's figure; a plan
+        # change moves it (12 November 2026), and a fixed reserve is wrong by the ratio of the
+        # two allowances. Seeded at the old figure, which can only be too HIGH on a bigger plan,
+        # so the error is a run that starts slightly later, never one that overshoots.
+        self.week_per_meeting = WEEK_PER_MEETING
+        self.w0 = self.wu0 = None
 
-    def measured(self, done, u5):
+    def measured(self, done, u5, u7=None):
         """Points per finished meeting since the first call: the bar's rise over the
         meetings done. Only once the bar has moved 2 points (it reports whole percents),
-        and bounded, so one odd reading cannot make the reserve 0 or 10."""
-        if self.m0 is None:
-            self.m0, self.mu0 = done, u5
-            return
-        dn, du = done - self.m0, u5 - self.mu0
-        if dn >= 10 and du >= 2:
-            self.per_meeting = min(1.0, max(0.02, du / dn))
+        and bounded, so one odd reading cannot make the reserve 0 or 10. The five-hour bar
+        and the weekly bar are measured separately; either may be absent (u5 None on a plan
+        with no session window)."""
+        if u5 is not None:
+            if self.m0 is None:
+                self.m0, self.mu0 = done, u5
+            else:
+                dn, du = done - self.m0, u5 - self.mu0
+                if dn >= 10 and du >= 2:
+                    self.per_meeting = min(1.0, max(0.02, du / dn))
+        if u7 is not None:
+            if self.w0 is None:
+                self.w0, self.wu0 = done, u7
+            else:
+                dn, du = done - self.w0, u7 - self.wu0
+                if dn >= 10 and du >= 2:
+                    self.week_per_meeting = min(1.0, max(0.002, du / dn))
 
     def deadline(self, reset):
         if self.by and reset:
@@ -342,7 +400,7 @@ def decide(plan, hist, now, in_flight=0):
         return dict(jobs=1, start=True, stop=None, wait_reset=False, target=None,
                     note='STALE reading -- one worker, caps unseen')
     u5, u7, reset = last['u5'], last['u7'], last['reset']
-    if plan.window and now > plan.window and (reset is None or reset == plan.window):
+    if u5 is not None and plan.window and now > plan.window and (reset is None or reset == plan.window):
         # THE OLD WINDOW IS OVER and the next opens on first use. The latest reading still
         # carries the OLD window's figure until something calls the model -- 8 October 03:11 it
         # said 100% and the run stopped "at the 80% cap" of a window that was really at 0.
@@ -359,9 +417,12 @@ def decide(plan, hist, now, in_flight=0):
         wr = week_reset(now)
         if wr:
             line = week_line(plan.week_goal, wr, now, getattr(plan, 'week_margin', None))
-            if u7 + in_flight * WEEK_PER_MEETING >= line:
+            if u7 + in_flight * getattr(plan, 'week_per_meeting', WEEK_PER_MEETING) >= line:
                 return dict(jobs=0, start=False, stop=None, wait_reset=False, target=None,
                             note='weekly line: %g%% used against %.1f%% -- waiting for it' % (u7, line))
+
+    if u5 is None:                       # no session window on this plan: the weekly line paces
+        return _decide_no_window(plan, u7, now, in_flight)
 
     # A NEW WINDOW re-anchors the line where it starts.
     # AN IDLE WINDOW HAS NO RESET TIME, and on a run's first reading that left `window` and
@@ -417,13 +478,51 @@ def decide(plan, hist, now, in_flight=0):
         else:
             return dict(jobs=1, start=False, stop=None, wait_reset=False, target=target,
                         note='ahead by %.0f -- pausing' % gap)
-    elif gap < -BAND and plan.jobs < plan.max_jobs and now - plan.last_change >= plan.ramp:
+    elif gap < -BAND and plan.jobs < plan.max_jobs and now - plan.last_change >= plan.ramp \
+            and getattr(plan, 'load_fn', load_per_core)() < LOAD_ADD:
         plan.jobs += 1
         plan.last_change = now
         note = 'behind by %.0f -- one more worker' % -gap
     elif gap < -BAND:
         note = 'behind by %.0f' % -gap
+    note = _cpu(plan, now, note)
     return dict(jobs=plan.jobs, start=True, stop=None, wait_reset=False, target=target, note=note)
+
+
+def _decide_no_window(plan, u7, now, in_flight):
+    """NO_WINDOW: the plan has no five-hour session bar (12 November 2026 on), so there is no
+    session cap, no session line and no session emergency. The weekly cap and the weekly line
+    have already been checked by decide() before this is called. What is left is HOW MANY
+    workers: the same ramp as the session rule, measured against the weekly line instead --
+    behind it by more than BAND, one more worker per RAMP_S up to max_jobs; within BAND of it,
+    drop back to one, so the run eases into the line rather than arriving at it at full width.
+    With no weekly line either (a plain --until-usage batch), the week cap is the only limit,
+    and the run holds at one worker: nothing it can see says faster is safe."""
+    if plan.by and now >= plan.by:
+        return dict(jobs=0, start=False, stop='the --by time passed at weekly %g%%' % u7,
+                    wait_reset=False, target=None, note='')
+    wr = week_reset(now) if plan.week_goal else None
+    if not wr:
+        plan.jobs = 1
+        return dict(jobs=1, start=True, stop=None, wait_reset=False, target=None,
+                    note='no session window, no weekly line -- one worker, weekly cap %g%%' % plan.week_cap)
+    line = week_line(plan.week_goal, wr, now, getattr(plan, 'week_margin', None))
+    gap = line - (u7 + in_flight * plan.week_per_meeting)
+    load = getattr(plan, 'load_fn', load_per_core)()
+    if gap > BAND and plan.jobs < plan.max_jobs and now - plan.last_change >= plan.ramp and load >= LOAD_ADD:
+        note = 'no session window; %.1f under the weekly line -- CPU busy (load %.1f/core), not adding' % (gap, load)
+    elif gap > BAND and plan.jobs < plan.max_jobs and now - plan.last_change >= plan.ramp:
+        plan.jobs += 1
+        plan.last_change = now
+        note = 'no session window; %.1f under the weekly line -- one more worker' % gap
+    elif gap <= BAND and plan.jobs > 1:
+        plan.jobs = 1
+        plan.last_change = now
+        note = 'no session window; within %.1f of the weekly line -- back to one worker' % gap
+    else:
+        note = 'no session window; %.1f under the weekly line' % gap
+    note = _cpu(plan, now, note)
+    return dict(jobs=plan.jobs, start=True, stop=None, wait_reset=False, target=line, note=note)
 
 
 def describe(plan, hist, now):
@@ -433,14 +532,15 @@ def describe(plan, hist, now):
     last = hist[-1]
     age = now - last['t']
     dl = plan.deadline(last['reset'])
-    s = '5h %g%%  7d %g%%  (reading %ds old%s)' % (last['u5'], last['u7'], age, ', STALE' if age > STALE_S else '')
+    s = '%s  7d %g%%  (reading %ds old%s)' % ('5h %g%%' % last['u5'] if last['u5'] is not None else 'no 5h window',
+                                              last['u7'], age, ', STALE' if age > STALE_S else '')
     wr = week_reset(now) if plan.week_goal else None
     if wr:
         s += '  week line %.1f%% (goal %g%%%s, resets %s)' % (
             week_line(plan.week_goal, wr, now, plan.week_margin), plan.week_goal,
             (' less %g points' % plan.week_margin) if plan.week_margin else '',
             dt.datetime.fromtimestamp(wr).strftime('%a %H:%M'))
-    if dl and dl > now:
+    if dl and dl > now and last['u5'] is not None:
         need = (plan.session_cap - last['u5']) / ((dl - now) / 3600)
         s += '  -> %g%% by %s needs %.0f%%/h' % (plan.session_cap,
                                                 dt.datetime.fromtimestamp(dl).strftime('%H:%M'), need)
@@ -455,6 +555,12 @@ def _test():
     reset = now + 3 * 3600
     R = lambda t, u5, u7=30: dict(t=t, u5=u5, u7=u7, reset=reset)
     fails = []
+    _orig_init = Plan.__init__
+
+    def _quiet_init(self, *a, **k):           # the rules are tested on an idle machine...
+        _orig_init(self, *a, **k)
+        self.load_fn = lambda: 0.0
+    Plan.__init__ = _quiet_init
 
     def case(name, cond):
         print('  %-55s %s' % (name, 'ok' if cond else 'FAIL'))
@@ -547,6 +653,41 @@ def _test():
         p = Plan(session_cap=80, week_cap=101, week_goal=90)
         d = decide(p, [WR(now - 60, 38)], now, in_flight=8)
         case('weekly: in-flight meetings count against the line', not d['start'])
+        # NO SESSION WINDOW (12 November 2026): five_hour null, only the weekly bar.
+        NW = lambda t, u7: dict(t=t, u5=None, u7=u7, reset=None)
+        p = Plan(session_cap=80, week_cap=101, week_goal=100, max_jobs=3)
+        d = decide(p, [NW(now - 60, 10)], now)
+        case('no window: well under the line -> starts, adds a worker', d['start'] and d['jobs'] == 2 and not d['stop'])
+        d = decide(p, [NW(now + 60, 10)], now + 120)
+        case('no window: ...but not a second inside RAMP_S', d['jobs'] == 2)
+        d = decide(p, [NW(now + 400, 42)], now + 420)
+        case('no window: within BAND of the line -> back to one worker', d['start'] and d['jobs'] == 1)
+        d = decide(Plan(session_cap=80, week_cap=101, week_goal=100), [NW(now - 60, 50)], now)
+        case('no window: over the weekly line -> wait, never stop', not d['start'] and d['stop'] is None)
+        d = decide(Plan(week_cap=90), [NW(now - 60, 91)], now)
+        case('no window: weekly cap -> stop', bool(d['stop']) and 'weekly' in d['stop'])
+        d = decide(Plan(week_cap=90), [NW(now - 60, 30)], now)
+        case('no window, no line: one worker under the week cap', d['start'] and d['jobs'] == 1)
+        pm = Plan()
+        pm.measured(0, None, 10); pm.measured(40, None, 12)
+        case('no window: the weekly reserve is MEASURED (2 points / 40 meetings)', abs(pm.week_per_meeting - 0.05) < 1e-9 and pm.per_meeting == PER_MEETING_PCT)
+        case('describe: says there is no 5h window', 'no 5h window' in describe(Plan(), [NW(now - 60, 10)], now))
+        # ...and the machine's limit on a busy one.
+        p = Plan(week_cap=101, week_goal=100, max_jobs=6)
+        p.load_fn = lambda: 1.5
+        d = decide(p, [NW(now - 60, 10)], now)
+        case('CPU: far under the line but load 1.5/core -> no worker added', d['start'] and d['jobs'] == 1 and 'CPU busy' in d['note'])
+        p.load_fn, p.jobs, p.last_change = (lambda: 3.0), 4, 0
+        d = decide(p, [NW(now - 60, 10)], now)
+        case('CPU: load 3/core at four workers -> sheds one', d['jobs'] == 3)
+        p.jobs, p.last_change = 1, 0
+        d = decide(p, [NW(now - 60, 10)], now)
+        case('CPU: never sheds below one worker', d['jobs'] == 1 and d['start'])
+        p = Plan(session_cap=90, max_jobs=3)
+        p.load_fn = lambda: 1.5
+        decide(p, [R(now - 10, 40)], now)
+        d = decide(p, [R(now - 10, 40), R(now + 3590, 40)], now + 3600)
+        case('CPU: the session rule does not add a worker on a busy machine either', d['jobs'] == 1)
         open(WEEK_RESET, 'w').write('%d\n' % (now - 3600))
         case('a reset in the past rolls forward a week', week_reset(now) == now - 3600 + WEEK_S)
     finally:
@@ -558,7 +699,8 @@ def _test():
         p = Plan(session_cap=80, week_cap=101, week_goal=90)
         d = decide(p, [WR(now - 99999, 5)], now)
         case('weekly: a STALE reading with a line -> wait, not one blind worker', not d['start'] and d['stop'] is None)
-    total = 16 + 8
+    total = 16 + 8 + 8 + 4
+    Plan.__init__ = _orig_init
     print('%d of %d rules hold' % (total - len(fails), total))
     return 1 if fails else 0
 
