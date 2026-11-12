@@ -15,7 +15,7 @@
 ## What we made from it
 
 - **4,562 hours of meeting recordings transcribed** — 2,715 meetings, 190.1 days of audio end to end, 2012-05-02 to 2026-11-10. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
-- **2435 meetings with our own minutes** written from those recordings — **8210 substantive votes** and **1019 transfers** logged, each linked to the second of the video.
+- **2439 meetings with our own minutes** written from those recordings — **8223 substantive votes** and **1021 transfers** logged, each linked to the second of the video.
 - **A database of 458,419 rows in 243 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **8 analyses** and **271 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
