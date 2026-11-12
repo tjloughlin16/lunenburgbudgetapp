@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2017-06-06",
  "docid": "721",
@@ -12,45 +12,286 @@
  },
  "votes": [
   {
-   "motion": "to approve current expense vouchers, abatements, warrants, commitments, May 9, 2017 minutes and payroll",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, may 9, 2017 minutes and payroll."
-  },
-  {
-   "motion": "that Lou Franco continue to serve as Chairman of the Board",
-   "moved_by": "Rich",
-   "seconded_by": "Rena",
+   "motion": "Continue Lou Franco as Chairman of the Board (reorganization).",
+   "moved_by": "Rich (Richard Letarte)",
+   "seconded_by": "Rena (Rena Swezey)",
    "outcome": "not stated",
    "procedural": false,
    "quote": "rich motioned that lou continue to serve as chairman of the board and was seconded by rena."
   },
   {
-   "motion": "to approve the FY17 Preliminary RE Commitment",
+   "motion": "Abate personal property FY10 Bill # 407 ($6,891.40) and PP FY11 Bill # 399 ($7,806.41) per the Verizon settlement.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": false,
-   "quote": "the board reviewed and approved the fy17 preliminary re commitment:"
+   "quote": "the board voted to abate personal property fy10 bill # 407 in the amount of $6,891.40"
   },
   {
-   "motion": "to accept the contracts for Property Tax Assessing Services for the period of July 1, 2017 - June 30, 2020",
+   "motion": "Accept the contracts for Property Tax Assessing Services for July 1, 2017 - June 30, 2020 (Regional Resource Group, Inc.; Real Estate Research Consultants, Inc.).",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": false,
-   "quote": "boa voted to accept the contracts for property tax assessing services for the period of july 1, 2017 - june 30, 2020"
+   "quote": "boa voted to accept the contracts for property tax assessing services for the"
   },
   {
-   "motion": "to abate personal property FY10 Bill # 407 in the amount of $6,891.40 and PP FY11 Bill # 399 in the amount of $7,806.41",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "the board voted to abate personal property fy10 bill # 407 in the amount of $6,891.40 as agreed upon on 5/30/2017 docket # c301034 and pp fy11 bill # 399 in the amount of $7,806.41, docket # c306624."
-  },
-  {
-   "motion": "to meet on Monday, July 10 at 4:00 pm",
+   "motion": "Hold the next Board meeting on Monday, July 10 at 4:00 pm.",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
    "outcome": "passed",
    "procedural": true,
    "quote": "board voted to meet on monday, july 10\" at 4:00 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; readable. No vote counts are recorded for any of the six votes.",
- "cost_usd": 0.1368905
+ "note": "Scan read via OCR (macOS Vision) with visible errors (e.g. \"Respeatfully\", \"Ration Study\"); figures taken as OCR printed them. Page 2 and page 3 are OCR of chart pages with no narrative and no votes. The \"Associate\" role for Richard Letarte is as printed and may be a title rather than a role. Approvals of vouchers, the FY17 commitment, and the residential increase are worded as approved/authorized with no motion or count recorded, so they are listed as decisions. Verizon abatement wording (\"voted to abate\") gives no count; outcome recorded as passed. Reorganization motion has no printed result.",
+ "cost_usd": 0.00859992,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Louis Franco",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey, richard"
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "present: chairman, louis franco, board members, rena swezey, richard"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Associate",
+   "status": "present",
+   "quote": "letarte, associate, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Harald Scheid",
+   "role": "Regional Assessor",
+   "status": "present",
+   "quote": "letarte, associate, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  },
+  {
+   "name": "Louise Paquette",
+   "role": "Administrative Assessor",
+   "status": "present",
+   "quote": "letarte, associate, regional assessor, harald scheid, and louise paquette, administrative assessor."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Routine approvals: the Board reviewed and approved current expense vouchers, abatements, warrants, commitments, the May 9, 2017 minutes and payroll (no motion or count recorded).",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, may 9, 2017"
+  },
+  {
+   "decision": "The Board reviewed and approved the FY17 Preliminary RE Commitment (no motion or count recorded).",
+   "quote": "the board reviewed and approved the fy17 preliminary re commitment:"
+  },
+  {
+   "decision": "The Board authorized an overall increase of residential assessments by 5-6% after discussing Harald Scheid's study (no motion recorded).",
+   "quote": "the board authorized an overall increase of residential assessments by 5-"
+  },
+  {
+   "decision": "Abatement notification to be sent to Verizon New England, Inc.",
+   "quote": "abatement notification will be sent to verizon new england, inc."
+  },
+  {
+   "decision": "Notice of Award to be sent once the Town Manager, Board of Selectmen and Finance Director accept the contracts.",
+   "quote": "louise stated that a notice of award will be sent upon the acceptance of the contracts"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Omitted and revised FY17 assessment report",
+   "what_was_recorded": "Personal property omitted and real estate roll-back tax were each reported at zero.",
+   "figures_as_printed": [
+    "$0.00"
+   ],
+   "quote": "personal property omitted - $0.00"
+  },
+  {
+   "topic": "FY17 Preliminary RE Commitment",
+   "what_was_recorded": "Total real estate preliminary tax on the FY17 commitment, reported with 5,043 properties.",
+   "figures_as_printed": [
+    "$ 12,688,379.75"
+   ],
+   "quote": "total re prelim tax: $ 12,688,379.75"
+  },
+  {
+   "topic": "FY16 preliminary RE bills comparison",
+   "what_was_recorded": "Louise reported last year's FY16 preliminary RE bills committed as 5035 bills totaling the amount shown.",
+   "figures_as_printed": [
+    "$12,143,957.24"
+   ],
+   "quote": "were 5035 bills totaling $12,143,957.24."
+  },
+  {
+   "topic": "Verizon settlement personal property abatements",
+   "what_was_recorded": "Abatements of PP FY10 Bill # 407 and PP FY11 Bill # 399 under the Verizon settlement.",
+   "figures_as_printed": [
+    "$6,891.40",
+    "$7,806.41"
+   ],
+   "quote": "pp fy11 bill # 399 in the amount of $7,806.41"
+  },
+  {
+   "topic": "Verizon settlement payment to Verizon NE's attorneys",
+   "what_was_recorded": "Lunenburg must have a check payable to Verizon New England, Inc. received by Verizon NE's attorneys within 60 days of receiving the Verizon NE withdrawals.",
+   "figures_as_printed": [
+    "$14,697.81"
+   ],
+   "quote": "in the amount of $14,697.81 to be received by the verizon ne's attorneys."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Opening and routine approvals",
+   "resolution": "approved (no motion recorded)",
+   "quote": "board reviewed and approved current expense vouchers, abatements, warrants, commitments, may 9, 2017",
+   "tags": [
+    "vouchers",
+    "warrants",
+    "commitments",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Reorganization: Chairman",
+   "resolution": "continued (motion, result not stated)",
+   "quote": "rich motioned that lou continue to serve as chairman of the board and was seconded by rena.",
+   "tags": [
+    "reorganization",
+    "chairman"
+   ]
+  },
+  {
+   "topic": "Omitted and revised FY17 assessment report",
+   "resolution": "reported, no action",
+   "quote": "personal property omitted - $0.00",
+   "tags": [
+    "omitted assessments",
+    "roll-back tax"
+   ]
+  },
+  {
+   "topic": "FY18 preliminary real estate billing",
+   "resolution": "reported, no action",
+   "quote": "louise reported that the billing process for the fy18 preliminary real estate bills went well",
+   "tags": [
+    "tax bills",
+    "billing"
+   ]
+  },
+  {
+   "topic": "FY17 Preliminary RE Commitment",
+   "resolution": "approved (no motion recorded)",
+   "quote": "the board reviewed and approved the fy17 preliminary re commitment:",
+   "tags": [
+    "commitment",
+    "real estate tax"
+   ]
+  },
+  {
+   "topic": "Property tax assessing services contracts",
+   "resolution": "accepted (voted)",
+   "quote": "boa voted to accept the contracts for property tax assessing services for the",
+   "tags": [
+    "contracts",
+    "assessing services"
+   ]
+  },
+  {
+   "topic": "Verizon settlement abatements",
+   "resolution": "abated (voted)",
+   "quote": "the board voted to abate personal property fy10 bill # 407 in the amount of $6,891.40",
+   "tags": [
+    "abatement",
+    "Verizon",
+    "personal property"
+   ]
+  },
+  {
+   "topic": "Residential market trend and FY2018 ratio study",
+   "resolution": "residential increase of 5-6% authorized",
+   "quote": "the board authorized an overall increase of residential assessments by 5-",
+   "tags": [
+    "residential valuation",
+    "market trend",
+    "ratio study",
+    "FY2018 revaluation"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for July 10 at 4:00 pm; adjourned at 7:20 pm",
+   "quote": "board voted to meet on monday, july 10\" at 4:00 pm.",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lunenburg Residential Market Trend, 2007 thru 2016 (Market Relative to Assessment Date 1/1/2017)",
+   "where": "list",
+   "quote": "reported on lunenburg's residential market trend for years"
+  },
+  {
+   "name": "FY 2018 Single Family Ratio Study Lunenburg (calendar year 2016)",
+   "where": "list",
+   "quote": "fy 2018 single family ration study for calendar year 2016"
+  },
+  {
+   "name": "Omitted and Revised Assessment Report For FY17",
+   "where": "text",
+   "quote": "omitted and revised assessment report for fy17:"
+  },
+  {
+   "name": "FY17 Preliminary RE Commitment",
+   "where": "text",
+   "quote": "the board reviewed and approved the fy17 preliminary re commitment:"
+  },
+  {
+   "name": "Property Tax Assessing Services contracts, July 1, 2017 - June 30, 2020",
+   "where": "text",
+   "quote": "accept the contracts for property tax assessing services for the"
+  },
+  {
+   "name": "Notice of Award",
+   "where": "text",
+   "quote": "louise stated that a notice of award will be sent upon the acceptance of the contracts"
+  },
+  {
+   "name": "Abatement Notification to Verizon New England, Inc.",
+   "where": "text",
+   "quote": "abatement notification will be sent to verizon new england, inc."
+  },
+  {
+   "name": "Verizon settlement directives",
+   "where": "text",
+   "quote": "louise reported that the directives in the settlement"
+  }
+ ],
+ "tags": [
+  "property assessment",
+  "tax commitment",
+  "abatement",
+  "Verizon settlement",
+  "personal property",
+  "residential valuation",
+  "FY2018 revaluation",
+  "assessing contracts",
+  "reorganization"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "harald provided \"hand-outs\" (see attachments)"
+ },
+ "dropped_unquoted_by_field": {}
 }

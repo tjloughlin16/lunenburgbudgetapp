@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2017-06-07",
  "docid": "6173",
@@ -12,66 +12,441 @@
  },
  "votes": [
   {
-   "motion": "Issue negative determination for above-ground swimming pool installation at 1134 Northfield Road within wetland buffer zone",
-   "moved_by": "Tom Bertram",
-   "seconded_by": "Carl Luck",
+   "motion": "Issue a negative determination for Robin LaTouche's work at 1134 Northfiled Road (above-ground swimming pool within the 100 foot buffer zone).",
+   "moved_by": "TB",
+   "seconded_by": "CL",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "tb moved to issue a negative number 3. cl seconded and the commission voted unanimously."
   },
   {
-   "motion": "Issue negative determination for road repaving project at Northfield and Chase to Route 13 within wetland buffer zone",
-   "moved_by": "Tom Bertram",
-   "seconded_by": "Carl Luck",
+   "motion": "Issue a negative determination for the Lunenburg DPW repaving project from Northfield and Chase to the town line at Route 13.",
+   "moved_by": "TB",
+   "seconded_by": "CL",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "the commission issued a negative with a motion of tb and a second of cl and a unanimous vote."
   },
   {
-   "motion": "Continue hearing to June 21, 2017 for car wash and bus parking project at 380-400 Electric Avenue pending DEP number",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Continue the Notice of Intent hearing by Daniel and Jean Proctor (380, 390 and 400 Electric Ave) to June 21, 2017.",
+   "moved_by": "CL",
+   "seconded_by": "JR",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "the meeting was continued to june 21 with a motion by cl and a second by jr."
   },
   {
-   "motion": "Approve order of conditions with level spreader modification for driveway at 331R Burrage Street",
-   "moved_by": "Tom Bertram",
-   "seconded_by": "Carl Luck",
+   "motion": "Approve the order of conditions for 331R Burrage Street with a level spreader in place of the original rip rap.",
+   "moved_by": "TB",
+   "seconded_by": "CL",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "an order of conditions was approved with the addition of a level spreader in place of the original rip rap. this was approved by a motio n of tb and a second by cl with a unanimous vot",
-   "quote_taken_from_text": true
+   "quote": "this was approved by a motio n of tb and a second by cl with a unanimous vote"
   },
   {
-   "motion": "Issue standard order of conditions for septic system and garage addition at 12 Johnson Street",
-   "moved_by": "Tom Bertram",
-   "seconded_by": "Carl Luck",
+   "motion": "Issue a standard order of conditions for 12 Johnson Street (septic system and garage addition) by Monica Farley, with erosion control added.",
+   "moved_by": "TB",
+   "seconded_by": "CL",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "tb moved to issue standard order of conditions. cl seconded and the commission voted unanimously ",
-   "quote_taken_from_text": true
+   "quote": "tb moved to issue standard order of conditions. cl seconded and the commission voted unanimously"
   },
   {
-   "motion": "Issue negative determination for tree removal at 28 Birch Island Way within wetland buffer zone",
-   "moved_by": "Tom Bertram",
-   "seconded_by": "Carl Luck",
-   "outcome": "not stated",
+   "motion": "Issue a negative determination for Nancy Sullivan's tree removal at 28 Birch Island Way, based on the revised sketch plan.",
+   "moved_by": "TB",
+   "seconded_by": "CL",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the commission issued a negative determination by a motion of tb and a second by cl."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Tom Bertram",
+   "motion": "Adjourn the meeting at 9:10 PM.",
+   "moved_by": "JR",
+   "seconded_by": "TB",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 9:10 pm by a motion of jr and a second by tb",
-   "quote_taken_from_text": true
+   "quote": "meeting adjourned at 9:10 pm by a motion of jr and a second by tb"
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are clearly readable; seven votes recorded. One additional motion (to reschedule the Gerald Croteau barn hearing) was not put to a vote—it was rescheduled due to abutter notification issues. One continued hearing (Jeffrey Viviano) had no vote recorded because the commission lacked quorum when that item was called.",
- "cost_usd": 0.13307449999999998
+ "dropped_unquoted": 1,
+ "note": "Minutes are readable text with no scan issues, but they contain typos and spacing errors. Attendance is not recorded in the minutes: board members appear only in the header block, so their status is 'not stated'. Members speak by initials (TB, CL, JR, TD, MM); names are not expanded in the body, and I have not assumed MM is Matthew S. Marro beyond the header. The Proctor car wash hearing notice prints the meeting date as March 1, 2017, while the rest of the notices say June 7, 2017. The Viviano hearing had no quorum after CL recused and was continued. Vote results are as printed: where the minutes state no count, 'passed' is used.",
+ "cost_usd": 0.011298420000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "richard bursch, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "td examined the extent of the filter socks and recommended some modifications."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "not stated",
+   "quote": "bob pease lunenburg, ma 01462"
+  },
+  {
+   "name": "Tom Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "tb noted it is his last meeting as a commissioner."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "",
+   "status": "present",
+   "quote": "cl noted selectmen approved giving rain barrels and compost bins."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "jr spoke about storm water cruise night june 14,2017."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "",
+   "status": "not stated",
+   "quote": "jack rabbitt matthew s. marro, kenneth jones"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm feels the as built should be submitted and will speak with the builder about it."
+  },
+  {
+   "name": "Kevin McGinnis",
+   "role": "of 119 Reservoir Road",
+   "status": "present",
+   "quote": "kevin mcginnis of 119 reservoir road presented the commission with a proposal for use of the rear section of his property."
+  },
+  {
+   "name": "Chris LaTouche",
+   "role": "representing himself",
+   "status": "present",
+   "quote": "chris latouche representing himself oriented the commission as to the site and the work."
+  },
+  {
+   "name": "Kevin Surette",
+   "role": "representing MASSDOT",
+   "status": "present",
+   "quote": "kevin surette representing massdot appeared and explained this project"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "appeared before the commission",
+   "status": "present",
+   "quote": "greg roy appeared before the commission and explained the project and oriented the commission"
+  },
+  {
+   "name": "Claire Jancaitis",
+   "role": "from 315 Burrage",
+   "status": "present",
+   "quote": "claire jancaitis from 315 burrage reviewed the location of the"
+  },
+  {
+   "name": "Robert Parent",
+   "role": "of Page Street",
+   "status": "present",
+   "quote": "robert parent of page street was examining the house location."
+  },
+  {
+   "name": "Monica Farley",
+   "role": "representing herself",
+   "status": "present",
+   "quote": "monica farley representing herself. tb asked for addition of erosion control and td agreed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kevin McGinnis (119 Reservoir Road): the Commission will continue to work with him pending the as-built; MM to speak with the builder about the as-built.",
+   "quote": "mm feels the as built should be submitted and will speak with the builder about it. the commission will continue to work with him pending the as-built."
+  },
+  {
+   "decision": "393 Arbor Street tree house: an RDA should be submitted, since the Commission was split and there is no bylaw regulating tree houses.",
+   "quote": "mm recommended the filing of an rda to the commission. with the commission being split in opinion there should be an rda submitted."
+  },
+  {
+   "decision": "Jeffry Viviano hearing (338 Sunset Lane) continued at the applicant's request to the next regular meeting, June 21, because no quorum was present after CL recused.",
+   "quote": "continued at the applicant's request to the next meeting. as cl recused, there was no quorum to consider this matter"
+  },
+  {
+   "decision": "Gerald Croteau hearing (55 Wildwood Road) was re-scheduled to June 21, 2017 because the meeting could not be opened due to an abutter notification issue.",
+   "quote": "this meeting was re-scheduled to june 21, 2017 due to an issue with abutter notification, the meeting could not be opened."
+  },
+  {
+   "decision": "183 Hemlock Dr continued from May 17 to the next meeting.",
+   "quote": "183 hemlock dr - continued from may 17 to the next meeting."
+  },
+  {
+   "decision": "Emerald Place Beach Erosion: MM to notify of potential fines in a letter if the party is not present at the next meeting.",
+   "quote": "mm to notify of potential fines in a letter if not present at the next meeting"
+  },
+  {
+   "decision": "Forest Stewardship Grant implementation: Gary Gouldrup will appear at the next meeting to discuss the formulation of an RFP.",
+   "quote": "forest stewardship grant implementation - gary gouldrup will appear at the next meeting to discuss"
+  },
+  {
+   "decision": "Approval of the 3/1, 3/15, 3/29, 4/5, 5/3 and 5/17 minutes placed on hold until the next meeting due to low attendance.",
+   "quote": "approval of 3/1,3/15,3/29, 4/5 5/3, 5/17 minutes - on hold until next meeting due to low attendance."
+  },
+  {
+   "decision": "Agent's report / action items placed on hold until the next meeting due to low attendance.",
+   "quote": "agents report /action items : ( placed on hold until next meeting due to low attendance)"
+  },
+  {
+   "decision": "Commission opening for TB's seat: candidates listed in the talent bank to be notified.",
+   "quote": "commission opening for tb's spot. candidate's listed in talent bank notified"
+  },
+  {
+   "decision": "Matters 72 Page (Robert Ullo) and National Grid closed as resolved.",
+   "quote": "72 page- robert ullo - resolution achieved- matter closed"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Forest Stewardship Grant implementation",
+   "what_was_recorded": "Old business on implementing the Forest Stewardship Grant, with Gary Gouldrup to appear at the next meeting on formulating an RFP; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "forest stewardship grant implementation - gary gouldrup will appear at the next meeting to discuss"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements and public comment",
+   "resolution": "no action",
+   "quote": "tb noted it is his last meeting as a commissioner. the commission wished him well.",
+   "tags": [
+    "announcements",
+    "commission membership"
+   ]
+  },
+  {
+   "topic": "Kevin McGinnis, 119 Reservoir Road (rear section proposal, deed restriction)",
+   "resolution": "continued pending as-built",
+   "quote": "the commission will continue to work with him pending the as-built.",
+   "tags": [
+    "deed restriction",
+    "lawn",
+    "as-built"
+   ]
+  },
+  {
+   "topic": "393 Arbor Street tree house",
+   "resolution": "RDA to be submitted",
+   "quote": "with the commission being split in opinion there should be an rda submitted.",
+   "tags": [
+    "tree house",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "Robin LaTouche determination, 1134 Northfiled Road (above-ground pool)",
+   "resolution": "negative determination issued",
+   "quote": "tb moved to issue a negative number 3. cl seconded and the commission voted unanimously.",
+   "tags": [
+    "determination",
+    "pool",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Gerald Croteau determination, 55 Wildwood Road (post and beam barn)",
+   "resolution": "re-scheduled to June 21",
+   "quote": "this meeting was re-scheduled to june 21, 2017 due to an issue with abutter notification, the meeting could not be opened.",
+   "tags": [
+    "determination",
+    "barn",
+    "abutter notification"
+   ]
+  },
+  {
+   "topic": "Lunenburg DPW / MASSDOT repaving, Northfield and Chase to Route 13",
+   "resolution": "negative determination issued",
+   "quote": "the commission issued a negative with a motion of tb and a second of cl and a unanimous vote.",
+   "tags": [
+    "road repaving",
+    "erosion",
+    "stormwater",
+    "Mulpus brook"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, Daniel and Jean Proctor, 380/390/400 Electric Ave (car wash and bus parking)",
+   "resolution": "continued to June 21",
+   "quote": "the meeting was continued to june 21 with a motion by cl and a second by jr.",
+   "tags": [
+    "notice of intent",
+    "river front",
+    "bus parking",
+    "DEP number"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, Daniel and Jean Proctor, 331R Burrage Street (driveway)",
+   "resolution": "order of conditions approved with level spreader",
+   "quote": "this was approved by a motio n of tb and a second by cl with a unanimous vote",
+   "tags": [
+    "driveway",
+    "drainage",
+    "rip rap",
+    "level spreader"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, Monica Farley, 12 Johnson Street (septic and garage)",
+   "resolution": "standard order of conditions issued",
+   "quote": "tb moved to issue standard order of conditions. cl seconded and the commission voted unanimously",
+   "tags": [
+    "septic",
+    "garage",
+    "erosion control"
+   ]
+  },
+  {
+   "topic": "Nancy Sullivan determination, 28 Birch Island Way (tree removal)",
+   "resolution": "negative determination issued",
+   "quote": "the commission issued a negative determination by a motion of tb and a second by cl.",
+   "tags": [
+    "tree removal",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Jeffry Viviano amended Notice of Intent, 338 Sunset Lane (continued hearing)",
+   "resolution": "continued to June 21 (no quorum)",
+   "quote": "continued at the applicant's request to the next meeting.",
+   "tags": [
+    "boulder",
+    "tree house",
+    "dock",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Current business: signatures, certificates of compliance, enforcement",
+   "resolution": "no action beyond items noted",
+   "quote": "mm noted that notice of intent has been filed as required",
+   "tags": [
+    "enforcement",
+    "43 Island Road",
+    "Emerald Place",
+    "fines"
+   ]
+  },
+  {
+   "topic": "New business: commission opening",
+   "resolution": "candidates to be notified",
+   "quote": "commission opening for tb's spot.",
+   "tags": [
+    "vacancy",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Old business: Forest Stewardship Grant",
+   "resolution": "continued to next meeting",
+   "quote": "forest stewardship grant implementation - gary gouldrup will appear at the next meeting to discuss",
+   "tags": [
+    "forest stewardship",
+    "grant",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "on hold",
+   "quote": "approval of 3/1,3/15,3/29, 4/5 5/3, 5/17 minutes - on hold until next meeting due to low attendance.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Agent's report / action items",
+   "resolution": "on hold",
+   "quote": "agents report /action items : ( placed on hold until next meeting due to low attendance)",
+   "tags": [
+    "inspections",
+    "reservoir road",
+    "pleasant street"
+   ]
+  },
+  {
+   "topic": "Communications and meeting schedule",
+   "resolution": "next meeting set for June 21, 2017",
+   "quote": "next meeting for june 21, 2017",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:10 PM",
+   "quote": "meeting adjourned at 9:10 pm by a motion of jr and a second by tb",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Determination FORM 1 by Robin LaTouche; modified 20 scale plan by the applicant dated May 2017",
+   "where": "list",
+   "quote": "documents presented to the commission was the determination form 1 by robin latouche and a modified 20 scale plan by the applicant dated may 2017."
+  },
+  {
+   "name": "RDA by World Tech; modified ortho photo plan by World Tech dated May 2017",
+   "where": "list",
+   "quote": "documents presented to the commission was the rda by world tech and a modified ortho photo plan by world tech dated may 2017."
+  },
+  {
+   "name": "Notice of Intent by Daniel and Jean Proctor and plan by Ducharme and Dillis entitled \"Proposed Site Plan\", dated May 18, 2017, plan number 5456",
+   "where": "list",
+   "quote": "notice of intent by daniel and jean proctor and a plan by ducharme and dillis entitled \"proposed site plan\", dated may 18, 2017 plan number 5456."
+  },
+  {
+   "name": "Notice of Intent by Daniel and Jean Proctor and plan by Ducharme and Dillis entitled \"Proposed Driveway Plan\", dated May 19, 2017, plan number 1051P",
+   "where": "list",
+   "quote": "plan by ducharme and dillis entitled \"proposed driveway plan\", dated may 19, 2017 plan number 1051p."
+  },
+  {
+   "name": "Notice of Intent by Monica Farley and plan by David E. Ross Associates entitled \"Site Plan\", 20 scale, dated May 26, 2017, plan number L-13204",
+   "where": "list",
+   "quote": "documents presented was a notice of intent by monica farley and a plan by david e. ross associates"
+  },
+  {
+   "name": "Revised sketch plan by the Conservation Administrator dated June 2017, and accompanying photos",
+   "where": "list",
+   "quote": "document presented for consideration was a revised sketch plan by the conservation administrator dated june 2017 and accompanying photos."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "determinations",
+  "orders of conditions",
+  "public hearings",
+  "notice of intent",
+  "enforcement",
+  "forest stewardship",
+  "commission vacancy",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents presented to the commission was"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }
