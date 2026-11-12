@@ -1,0 +1,78 @@
+{
+  "about": "Refresh of the Nov 17 Special Town Meeting post, five days out, from the warrant signed 27 Oct 2026. The new fact: on the four big questions the Select Board has backed none (one against, two no position, one deferred), the School Committee voted 4 Nov to pass over its own special education reserve request, and Capital Planning will make no recommendation on the track (10 Nov, recording). Finance Committee recommendations are still blank on the warrant; it takes the articles up the night this was built. Board positions from the warrant; the School Committee pass-over and Capital Planning stance from the recordings, checked by reading the captions at the cited seconds.",
+  "data": {
+    "m": "app-metrics.json",
+    "tm": "threads.json#threads[id=stm-2026-11-17].warrant",
+    "pass": "threads.json#threads[id=stm-2026-11-17].stands.vote",
+    "sped": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=4]",
+    "tcp": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=7]",
+    "sw": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=8]",
+    "trk": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=9]",
+    "hear": "threads.json#threads[id=stm-2026-11-17].warrant.next[0]"
+  },
+  "literal": ["Proposition 2 1/2"],
+  "image": {
+    "layout": "auto",
+    "size": "square",
+    "headline": "On the big questions, Town Meeting decides on its own",
+    "emphasis": "on its own",
+    "headline_size": 50,
+    "sub": "Special Town Meeting · {tm.date|day} · {tm.time}",
+    "tiles": [
+      {
+        "eyebrow": "SPECIAL ED RESERVE",
+        "value": "{sped.heard[0].figure}",
+        "label": "from free cash",
+        "text": "Select Board: against. Its own sponsor, the School Committee, voted to pass it over.",
+        "path": "/threads/stm-2026-11-17"
+      },
+      {
+        "eyebrow": "TRACK AND FIELD",
+        "value": "{trk.amount}",
+        "label": "to engineer it · {trk.heard[1].figure} to rebuild",
+        "text": "Select Board: deferred. Capital Planning: no recommendation.",
+        "path": "/threads/turf-field-study"
+      },
+      {
+        "eyebrow": "TC PASSIOS",
+        "value": "{tcp.heard[0].figure}",
+        "label": "to tear it down, a rough estimate",
+        "text": "Advisory only. Select Board: no position.",
+        "path": "/threads/tc-passios-site"
+      },
+      {
+        "eyebrow": "STORMWATER",
+        "value": "{sw.heard[2].figure} or {sw.heard[1].figure}",
+        "label": "a home, a year: fee or taxes",
+        "text": "Advisory only. Select Board: no position.",
+        "path": "/threads/stormwater-fee"
+      }
+    ],
+    "path": "/threads/stm-2026-11-17",
+    "as_of": "As of {m.as_of|short} · Finance Committee positions not yet posted · figures as presented, not voted",
+    "conclusion": "Registered voters decide, in the room",
+    "conclusion_em": "in the room",
+    "conclusion_size": 40
+  },
+  "text": [
+    "Five days out, here is where Lunenburg's boards stand on the biggest questions at Special Town Meeting, {tm.date|day}, {tm.time}, {tm.place}. On the ones that cost money or change what you pay, the Select Board has backed none of them. The room decides.",
+    "👉 Every article, on one page: lburg.org/threads/stm-2026-11-17",
+    "",
+    "🎒 {sped.heard[0].figure} from free cash for the special education reserve. Select Board: {sped.select_board}. Then on {pass.date|day}, the School Committee, which put it on the warrant, voted to pass it over at Town Meeting. The chair voted yes, calling it \"a very sad aye.\"",
+    "",
+    "🏟️ {trk.amount} to engineer the Middle/High School track and field, design and bid documents only, toward a project estimated at {trk.heard[1].figure}. The Select Board has deferred it until the School Committee takes a position. The Capital Planning Committee says it will make no recommendation because the project did not go through its process.",
+    "",
+    "🏚️ Tear down TC Passios? Advisory only: no money and no demolition is voted. A yes asks the Select Board to come back with costs, funding and a timeline; a no asks it to keep looking at reuse. A building committee member put demolition at {tcp.heard[0].figure}. Select Board: {tcp.select_board}.",
+    "",
+    "💧 Stormwater: a new fee, or property taxes? Also advisory. As presented, the program costs about {sw.heard[0].figure} a year: about {sw.heard[2].figure} a year for a typical home under a fee, about {sw.heard[1].figure} through taxes. The warrant itself says the tax route \"will likely require a Proposition 2 1/2 override in the future.\" Select Board: {sw.select_board}.",
+    "",
+    "…plus budget adjustments, a prior-year bill, corrective zoning, and letting the Planning Board set stormwater permit fees.",
+    "",
+    "📣 The Finance Committee takes up the articles {hear.date|day} at {hear.time}, on Zoom. Its recommendations are still blank on the warrant.",
+    "",
+    "👉 LEARN MORE: every article, every board's position, and the recordings where they said it:",
+    "👉 lburg.org/threads/stm-2026-11-17",
+    "",
+    "Which one are you going to Town Meeting for?"
+  ]
+}
