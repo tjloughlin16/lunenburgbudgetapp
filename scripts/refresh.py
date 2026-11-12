@@ -1013,16 +1013,24 @@ def scoped_gate(a, notes, ctx):
         return []
     base, set_aside = ctx.get('base'), set()
     theirs = dict(base.dirty) if base else {}
-    for name in sorted({n for n, _ in blocking}):
-        for job in C.CHECKS:
-            cmd = C._rebuild_cmd(job) if job[0] == name else None
-            if cmd and name not in BY_HAND:
-                print('  repairing %s' % name)
-                py(cmd[0], *cmd[1], check=False)
-                if any(G._sha(os.path.join(ROOT, p)) != h for p, h in theirs.items()):
-                    set_aside.add(name)
-    commit_run(a, notes, ctx, 'repair')
-    blocking, _ = split(failing_checks())
+    # A REPAIR CAN STALE ANOTHER OUTPUT. 12 November 2026: rebuilding boards.json changed a file
+    # build_reports_index.py hashes, so reports.json -- fresh when the pass began -- was stale
+    # when it ended, and the deploy was refused for a generator nobody had touched. So the pass
+    # repeats until nothing new needs rebuilding, at most REPAIR_PASSES times.
+    for _pass in range(REPAIR_PASSES):
+        todo = sorted({n for n, _ in blocking} - set_aside)
+        if not todo:
+            break
+        for name in todo:
+            for job in C.CHECKS:
+                cmd = C._rebuild_cmd(job) if job[0] == name else None
+                if cmd and name not in BY_HAND:
+                    print('  repairing %s' % name)
+                    py(cmd[0], *cmd[1], check=False)
+                    if any(G._sha(os.path.join(ROOT, p)) != h for p, h in theirs.items()):
+                        set_aside.add(name)
+        commit_run(a, notes, ctx, 'repair')
+        blocking, _r = split(failing_checks())
     theirs_too = sorted({n for n, _ in blocking if n in set_aside})
     if theirs_too:
         notes.append('not refreshed, because a file they write holds somebody\u2019s uncommitted '
@@ -1084,6 +1092,7 @@ def ship_failed(notes, ctx, cause):
 # a new one lands; build_reports_index.py also reads the date of the commit just made. After the
 # build of 6 November 2026, reports.json changed by one `updated` date for exactly that reason,
 # and short-versions.csv stayed stale.
+REPAIR_PASSES = 3   # rebuild-then-recheck rounds before a stale output stops the deploy
 AFTER_BUILD = (('build_reading_time.py',), ('build_short_versions.py',), ('build_reports_index.py',),
                ('build_search_index.py', '--quiet'), ('build_sitemap.py',),
                ('build_app_metrics.py',))
