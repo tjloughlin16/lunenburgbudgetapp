@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5152
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5154
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -888,7 +888,7 @@ Returns `edition`, `rows` — for example: edition=FY2021, rows=170
 SELECT 'appropriations' AS t, status, COUNT(*) AS rows FROM report_appropriations GROUP BY status UNION ALL SELECT 'gross_wages', status, COUNT(*) FROM report_gross_wages GROUP BY status ORDER BY t, rows DESC
 ```
 
-Returns `t`, `status`, `rows` — for example: t=appropriations, status=checked, rows=12782
+Returns `t`, `status`, `rows` — for example: t=appropriations, status=checked, rows=12781
 
 **Which documents were obtained by records request rather than published?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=checked,
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=5152
+Returns `source_type`, `documents` — for example: source_type=primary, documents=5154
 
 **What basis does each document have for the figures it prints?**
 
