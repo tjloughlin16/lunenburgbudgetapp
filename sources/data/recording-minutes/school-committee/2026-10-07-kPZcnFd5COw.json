@@ -1,548 +1,802 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "school-committee",
-  "board": "School Committee",
-  "video_title": "School Committee",
-  "meeting_date": "2026-10-07",
-  "video_id": "kPZcnFd5COw",
-  "video_url": "https://www.youtube.com/watch?v=kPZcnFd5COw",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/school-committee/2026-10-07-kPZcnFd5COw.json",
-    "sha256": "e339ea5f71d0a2d0fcea7762f79ad5b840ae437eded82ce71c686f1b65207f78",
-    "caption_lines": 337,
-    "segments": 2524
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "video_title": "School Committee",
+ "meeting_date": "2026-10-07",
+ "video_id": "kPZcnFd5COw",
+ "video_url": "https://www.youtube.com/watch?v=kPZcnFd5COw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2026-10-07-kPZcnFd5COw.json",
+  "sha256": "e339ea5f71d0a2d0fcea7762f79ad5b840ae437eded82ce71c686f1b65207f78",
+  "caption_lines": 337,
+  "segments": 2524
+ },
+ "recording": {
+  "duration_s": 7871,
+  "duration": "2:11",
+  "spoken_chars": 78107,
+  "words_approx": 13017
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt",
+   "path": "sources/meetings/school-committee/2026-10-07-agenda-8058.pdf"
   },
-  "recording": {
-    "duration_s": 7871,
-    "duration": "2:11",
-    "spoken_chars": 78107,
-    "words_approx": 13017
-  },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10072026-8058",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-agenda-8058.txt",
-      "path": "sources/meetings/school-committee/2026-10-07-agenda-8058.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072026-8058",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-minutes-8058.txt",
-      "path": "sources/meetings/school-committee/2026-10-07-minutes-8058.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072026-8058",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-minutes-8058.txt",
+   "path": "sources/meetings/school-committee/2026-10-07-minutes-8058.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-17T13:10:03Z",
+  "cost_usd": 0.7059842
+ },
+ "minutes": {
+  "headline": "Committee hired Rich Matthew as finance director and voted to request $300,000 free cash for the special education reserve.",
+  "summary": "The committee interviewed and voted to hire a director of finance and operations, pending contract negotiation. It declared outdated literacy materials surplus, heard spring test results and fall reading screening data, and voted to request free cash for a special education reserve. It also discussed track and field drainage and wall costs, the Brooks House and the paraprofessional contract.",
+  "attendees": [
+   {
+    "name_as_heard": "Jean",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Emily Young",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mandy",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Tony (Mr. Schooly)",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dr. Fortuna",
+    "role": "superintendent",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dr. Sari",
+    "role": "presenter (curriculum)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Moore",
+    "role": "interim director of finance",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Liz",
+    "role": "staff",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Rich Matthew",
+    "role": "candidate for director of finance and operations",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 126,
+    "speaker_as_heard": "Sundrea Harp",
+    "stated_role": "chairperson of the special education parent group",
+    "topic": "Announced the parent group meets the first Wednesday of each month at 6 PM, alternating official meetings and support groups."
+   }
+  ],
+  "tags": [
+   "athletics",
+   "budget",
+   "budget-fy27",
+   "capital",
+   "contracts-and-unions",
+   "curriculum",
+   "executive-session",
+   "facilities",
+   "free-cash",
+   "hiring",
+   "out-of-district",
+   "personnel",
+   "primary-school",
+   "public-comment",
+   "special-education",
+   "staffing",
+   "town-meeting",
+   "transfers",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 787,
+    "motion": "Accept FY27 line item transfers",
+    "moved_by": "Tony",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1968,
+    "motion": "Hire Mr. Matthew as director of finance and operations, pending contract negotiations",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2258,
+    "motion": "Declare non-compliant literacy materials and damaged textbooks surplus property and authorize disposal or recycling",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4209,
+    "motion": "Accept the report on spring 2026 MCAS and fall DIBELS data",
+    "outcome": "passed (roll call, all yes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4468,
+    "motion": "Change the previously voted KOD position to 0.5 FTE",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4639,
+    "motion": "State that the school department has no need for the Brooks House",
+    "outcome": "passed (roll call, all yes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4860,
+    "motion": "Maintain the high school driveway as is, not allowing a Brooks House buyer to use it for access",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5014,
+    "motion": "Update the 2026-27 school calendar with the new parent-teacher conference dates",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5160,
+    "motion": "Accept the fall 2026 athletics participation report",
+    "outcome": "passed (roll call, all yes heard)",
+    "procedural": false
+   },
+   {
+    "t": 6531,
+    "motion": "Request $300,000 in free cash for the special education reserve fund if certified at the November town meeting",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 7427,
+    "motion": "Accept the new terms of the paraprofessional contract",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 7847,
+    "motion": "Enter executive session, then adjourn",
+    "outcome": "passed (roll call, all yes heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 807,
+    "topic": "FY27 line item transfers",
+    "what_was_said": "Transfers moved money to cover accounts that were negative or needed more; some invoices still pending.",
+    "figures_as_heard": [
+     "$18,73.94",
+     "22,85612"
+    ]
+   },
+   {
+    "t": 5589,
+    "topic": "Special education reserve fund",
+    "what_was_said": "Members discussed funding the reserve with free cash given rising out-of-district placement costs; overages were noted.",
+    "figures_as_heard": [
+     "$300,000",
+     "almost $600,000"
+    ]
+   },
+   {
+    "t": 6304,
+    "topic": "Out-of-district placement cost",
+    "what_was_said": "Fifteen placements at an average cost would be a large fixed obligation regardless of reserve.",
+    "figures_as_heard": [
+     "2,250,000",
+     "150,000 per child"
+    ]
+   },
+   {
+    "t": 6531,
+    "topic": "Free cash request",
+    "what_was_said": "Motion to request free cash if certified at the November town meeting.",
+    "figures_as_heard": [
+     "$300,000"
+    ]
+   },
+   {
+    "t": 2764,
+    "topic": "Right to Read Act",
+    "what_was_said": "A member called the literacy curriculum requirement an unfunded mandate.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6983,
+    "topic": "Track and field drainage and walls",
+    "what_was_said": "Drainage and wall work was described as costing about a million dollars before the turf.",
+    "figures_as_heard": [
+     "a million dollars"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 807,
+    "description": "FY27 line item transfers between school accounts",
+    "amount_as_heard": "$18,73.94 and 22,85612",
+    "outcome": "voted"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 7703,
+    "decision": "Future agenda to include a facilities report, track and field discussion with the facilities director, and MCAS alternative assessment data."
+   },
+   {
+    "t": 7050,
+    "decision": "Members asked for a one-page timeline of track and field project steps for the next meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 206,
+    "topic": "Opening and public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 598,
+    "t_end": 930,
+    "topic": "Line item transfers and warrants",
+    "resolution": "voted",
+    "tags": [
+     "transfers",
+     "budget-fy27"
+    ]
+   },
+   {
+    "t_start": 930,
+    "t_end": 2049,
+    "topic": "Interview and hire of director of finance and operations",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2049,
+    "t_end": 2340,
+    "topic": "Surplus literacy materials",
+    "resolution": "voted",
+    "tags": [
+     "curriculum",
+     "primary-school",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 2341,
+    "t_end": 4250,
+    "topic": "MCAS and DIBELS results",
+    "resolution": "voted",
+    "tags": [
+     "curriculum",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 4250,
+    "t_end": 4520,
+    "topic": "KOD position change to half-time",
+    "resolution": "voted",
+    "tags": [
+     "staffing",
+     "special-education"
+    ]
+   },
+   {
+    "t_start": 4520,
+    "t_end": 4960,
+    "topic": "Brooks House redevelopment",
+    "resolution": "voted",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 4960,
+    "t_end": 5035,
+    "topic": "School calendar amendment",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5035,
+    "t_end": 5200,
+    "topic": "Fall athletics report",
+    "resolution": "voted",
+    "tags": [
+     "athletics"
+    ]
+   },
+   {
+    "t_start": 5200,
+    "t_end": 6560,
+    "topic": "Special education reserve fund amount",
+    "resolution": "voted",
+    "tags": [
+     "special-education",
+     "free-cash",
+     "out-of-district"
+    ]
+   },
+   {
+    "t_start": 6560,
+    "t_end": 7169,
+    "topic": "Track and field turf future costs",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 7169,
+    "t_end": 7490,
+    "topic": "Paraprofessional salary schedule contract",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 7490,
+    "t_end": 7868,
+    "topic": "Public comment, subcommittee reports, future topics, executive session",
+    "resolution": "voted to enter executive session and adjourn",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Superintendent and presenter remarks around 334-532 and several stretches between 1398-1735, 3539-3653, 4288-4447, 4563-4600, 5234-5568, 5786-5994, 6644-6696, 7211-7340 are garbled or missing.",
+   "Exact transfer amounts are garbled.",
+   "Roll call for some votes shows only partial responses in the captions."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 6778,
+    "about": "Members criticised the town's capital planning process for not funding schools.",
+    "sides": "several members against the town's capital planning process",
+    "words_as_heard": "the town doesn't want to fund the schools. They just want to fund new town halls.",
+    "kind": "charged language"
+   },
+   {
+    "t": 4087,
+    "about": "The chair said the town did not prioritize the schools in the budget.",
+    "sides": "the chair against the town's funding of schools",
+    "words_as_heard": "we're not funding our schools and this is one of the results.",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 4819,
+    "kind": "safety",
+    "about": "Security and safety of connecting a Brooks House buyer's driveway to the high school driveway.",
+    "who": "a member",
+    "words_as_heard": "I have serious concerns about that."
+   },
+   {
+    "t": 6843,
+    "kind": "safety",
+    "about": "A wall at the fields was described as likely to collapse.",
+    "who": "a member",
+    "words_as_heard": "that wall is going to collapse on someone."
+   },
+   {
+    "t": 6876,
+    "kind": "safety",
+    "about": "Fire trucks cannot get down the primary school driveway at pickup.",
+    "who": "a member",
+    "words_as_heard": "It's not safe."
+   },
+   {
+    "t": 2217,
+    "kind": "safety",
+    "about": "Moldy textbooks are dangerous to children.",
+    "who": "a member",
+    "words_as_heard": "the moldy ones are dangerous."
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 618,
+    "name_as_heard": "line item transfers and warrant",
+    "kind": "spreadsheet",
+    "words_as_heard": "we do have some line item transfers to go over those are in your folder"
+   },
+   {
+    "t": 970,
+    "name_as_heard": "candidate resume",
+    "kind": "other",
+    "words_as_heard": "he's got his own little subfolder with his resume"
+   },
+   {
+    "t": 2049,
+    "name_as_heard": "surplus excess materials declaration",
+    "kind": "memo",
+    "words_as_heard": "in your folder for the declaration of surplus excess materials"
+   },
+   {
+    "t": 2341,
+    "name_as_heard": "PowerPoint on student results",
+    "kind": "presentation",
+    "words_as_heard": "now we're going to do a PowerPoint"
+   },
+   {
+    "t": 4520,
+    "name_as_heard": "Brooks House redevelopment summary",
+    "kind": "report",
+    "words_as_heard": "there is a Brooks House redevelopment summary"
+   },
+   {
+    "t": 6983,
+    "name_as_heard": "facilities report on track and field",
+    "kind": "report",
+    "words_as_heard": "I skimmed the report that was written a few years ago"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "special-education-reserve-fund",
+    "title": "Special education reserve fund",
+    "question": "How much should be put into the special education reserve given out-of-district placement costs?",
+    "t": 5589,
+    "words_as_heard": "I mean I think we should try to put $300,000 in it.",
+    "data_in_play": [
+     "$300,000",
+     "2,250,000",
+     "150,000 per child"
+    ],
+    "existing": "topic:out-of-district-placements"
+   },
+   {
+    "slug": "track-field-drainage-walls",
+    "title": "Track and field repairs",
+    "question": "What would the drainage and wall work at the track and field cost, and how would it be funded?",
+    "t": 6983,
+    "words_as_heard": "it looks like a million dollars just to fix the drainage",
+    "data_in_play": [
+     "a million dollars"
+    ],
+    "existing": "thread:turf-field-study"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The School Committee voted unanimously to hire a director of finance and operations, pending contract negotiations.",
+    "t": 1968
+   },
+   {
+    "line": "The committee voted unanimously to request free cash for the special education reserve fund, if certified at the November town meeting.",
+    "t": 6531
+   },
+   {
+    "line": "Members discussed funding the reserve with free cash given rising out-of-district placement costs, and noted overages on that line.",
+    "t": 5589
+   },
+   {
+    "line": "The committee voted to accept the new terms of the paraprofessional contract, unanimously.",
+    "t": 7427
+   },
+   {
+    "line": "Members heard that track and field drainage and wall work would come before the turf, and asked for a one-page timeline of project steps.",
+    "t": 7050
+   }
+  ],
+  "why_it_matters": [
+   "The free cash request is a vote residents may be asked to take at the November town meeting, and it moves money from the town's year-end surplus toward a school reserve for placement costs that the district must meet.",
+   "The paraprofessional contract and the track and field work are both costs that will need to be funded in the school budget, and the minutes do not give the amounts."
+  ],
+  "watch_next": [
+   "The November town meeting, where the free cash request for the special education reserve depends on certification.",
+   "The next meeting's one-page track and field timeline and a facilities report."
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-10-17T13:10:03Z",
-    "cost_usd": 0.7059842
-  },
-  "minutes": {
-    "headline": "Committee hired Rich Matthew as finance director and voted to request $300,000 free cash for the special education reserve.",
-    "summary": "The committee interviewed and voted to hire a director of finance and operations, pending contract negotiation. It declared outdated literacy materials surplus, heard spring test results and fall reading screening data, and voted to request free cash for a special education reserve. It also discussed track and field drainage and wall costs, the Brooks House and the paraprofessional contract.",
-    "attendees": [
-      {
-        "name_as_heard": "Jean",
-        "role": "member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Emily Young",
-        "role": "member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Mandy",
-        "role": "member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Tony (Mr. Schooly)",
-        "role": "member",
-        "remote": true
-      },
-      {
-        "name_as_heard": "Dr. Fortuna",
-        "role": "superintendent",
-        "remote": true
-      },
-      {
-        "name_as_heard": "Dr. Sari",
-        "role": "presenter (curriculum)",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Mr. Moore",
-        "role": "interim director of finance",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Liz",
-        "role": "staff",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Rich Matthew",
-        "role": "candidate for director of finance and operations",
-        "remote": false
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 126,
-        "speaker_as_heard": "Sundrea Harp",
-        "stated_role": "chairperson of the special education parent group",
-        "topic": "Announced the parent group meets the first Wednesday of each month at 6 PM, alternating official meetings and support groups."
-      }
-    ],
-    "tags": [
-      "athletics",
-      "budget",
-      "budget-fy27",
-      "capital",
-      "contracts-and-unions",
-      "curriculum",
-      "executive-session",
-      "facilities",
-      "free-cash",
-      "hiring",
-      "out-of-district",
-      "personnel",
-      "primary-school",
-      "public-comment",
-      "special-education",
-      "staffing",
-      "town-meeting",
-      "transfers",
-      "turkey-hill"
-    ],
-    "votes": [
-      {
-        "t": 787,
-        "motion": "Accept FY27 line item transfers",
-        "moved_by": "Tony",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 1968,
-        "motion": "Hire Mr. Matthew as director of finance and operations, pending contract negotiations",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 2258,
-        "motion": "Declare non-compliant literacy materials and damaged textbooks surplus property and authorize disposal or recycling",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 4209,
-        "motion": "Accept the report on spring 2026 MCAS and fall DIBELS data",
-        "outcome": "passed (roll call, all yes heard)",
-        "procedural": false
-      },
-      {
-        "t": 4468,
-        "motion": "Change the previously voted KOD position to 0.5 FTE",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 4639,
-        "motion": "State that the school department has no need for the Brooks House",
-        "outcome": "passed (roll call, all yes heard)",
-        "procedural": false
-      },
-      {
-        "t": 4860,
-        "motion": "Maintain the high school driveway as is, not allowing a Brooks House buyer to use it for access",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 5014,
-        "motion": "Update the 2026-27 school calendar with the new parent-teacher conference dates",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 5160,
-        "motion": "Accept the fall 2026 athletics participation report",
-        "outcome": "passed (roll call, all yes heard)",
-        "procedural": false
-      },
-      {
-        "t": 6531,
-        "motion": "Request $300,000 in free cash for the special education reserve fund if certified at the November town meeting",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 7427,
-        "motion": "Accept the new terms of the paraprofessional contract",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 7847,
-        "motion": "Enter executive session, then adjourn",
-        "outcome": "passed (roll call, all yes heard)",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 807,
-        "topic": "FY27 line item transfers",
-        "what_was_said": "Transfers moved money to cover accounts that were negative or needed more; some invoices still pending.",
-        "figures_as_heard": [
-          "$18,73.94",
-          "22,85612"
-        ]
-      },
-      {
-        "t": 5589,
-        "topic": "Special education reserve fund",
-        "what_was_said": "Members discussed funding the reserve with free cash given rising out-of-district placement costs; overages were noted.",
-        "figures_as_heard": [
-          "$300,000",
-          "almost $600,000"
-        ]
-      },
-      {
-        "t": 6304,
-        "topic": "Out-of-district placement cost",
-        "what_was_said": "Fifteen placements at an average cost would be a large fixed obligation regardless of reserve.",
-        "figures_as_heard": [
-          "2,250,000",
-          "150,000 per child"
-        ]
-      },
-      {
-        "t": 6531,
-        "topic": "Free cash request",
-        "what_was_said": "Motion to request free cash if certified at the November town meeting.",
-        "figures_as_heard": [
-          "$300,000"
-        ]
-      },
-      {
-        "t": 2764,
-        "topic": "Right to Read Act",
-        "what_was_said": "A member called the literacy curriculum requirement an unfunded mandate.",
-        "figures_as_heard": []
-      },
-      {
-        "t": 6983,
-        "topic": "Track and field drainage and walls",
-        "what_was_said": "Drainage and wall work was described as costing about a million dollars before the turf.",
-        "figures_as_heard": [
-          "a million dollars"
-        ]
-      }
-    ],
-    "transfers": [
-      {
-        "t": 807,
-        "description": "FY27 line item transfers between school accounts",
-        "amount_as_heard": "$18,73.94 and 22,85612",
-        "outcome": "voted"
-      }
-    ],
-    "decisions": [
-      {
-        "t": 7703,
-        "decision": "Future agenda to include a facilities report, track and field discussion with the facilities director, and MCAS alternative assessment data."
-      },
-      {
-        "t": 7050,
-        "decision": "Members asked for a one-page timeline of track and field project steps for the next meeting."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 0,
-        "t_end": 206,
-        "topic": "Opening and public comment",
-        "resolution": "informational",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 598,
-        "t_end": 930,
-        "topic": "Line item transfers and warrants",
-        "resolution": "voted",
-        "tags": [
-          "transfers",
-          "budget-fy27"
-        ]
-      },
-      {
-        "t_start": 930,
-        "t_end": 2049,
-        "topic": "Interview and hire of director of finance and operations",
-        "resolution": "voted",
-        "tags": [
-          "hiring",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 2049,
-        "t_end": 2340,
-        "topic": "Surplus literacy materials",
-        "resolution": "voted",
-        "tags": [
-          "curriculum",
-          "primary-school",
-          "turkey-hill"
-        ]
-      },
-      {
-        "t_start": 2341,
-        "t_end": 4250,
-        "topic": "MCAS and DIBELS results",
-        "resolution": "voted",
-        "tags": [
-          "curriculum",
-          "budget"
-        ]
-      },
-      {
-        "t_start": 4250,
-        "t_end": 4520,
-        "topic": "KOD position change to half-time",
-        "resolution": "voted",
-        "tags": [
-          "staffing",
-          "special-education"
-        ]
-      },
-      {
-        "t_start": 4520,
-        "t_end": 4960,
-        "topic": "Brooks House redevelopment",
-        "resolution": "voted",
-        "tags": [
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 4960,
-        "t_end": 5035,
-        "topic": "School calendar amendment",
-        "resolution": "voted",
-        "tags": [
-          "policy"
-        ]
-      },
-      {
-        "t_start": 5035,
-        "t_end": 5200,
-        "topic": "Fall athletics report",
-        "resolution": "voted",
-        "tags": [
-          "athletics"
-        ]
-      },
-      {
-        "t_start": 5200,
-        "t_end": 6560,
-        "topic": "Special education reserve fund amount",
-        "resolution": "voted",
-        "tags": [
-          "special-education",
-          "free-cash",
-          "out-of-district"
-        ]
-      },
-      {
-        "t_start": 6560,
-        "t_end": 7169,
-        "topic": "Track and field turf future costs",
-        "resolution": "informational",
-        "tags": [
-          "capital",
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 7169,
-        "t_end": 7490,
-        "topic": "Paraprofessional salary schedule contract",
-        "resolution": "voted",
-        "tags": [
-          "contracts-and-unions"
-        ]
-      },
-      {
-        "t_start": 7490,
-        "t_end": 7868,
-        "topic": "Public comment, subcommittee reports, future topics, executive session",
-        "resolution": "voted to enter executive session and adjourn",
-        "tags": [
-          "executive-session"
-        ]
-      }
-    ],
-    "not_audible": [
-      "Superintendent and presenter remarks around 334-532 and several stretches between 1398-1735, 3539-3653, 4288-4447, 4563-4600, 5234-5568, 5786-5994, 6644-6696, 7211-7340 are garbled or missing.",
-      "Exact transfer amounts are garbled.",
-      "Roll call for some votes shows only partial responses in the captions."
-    ],
-    "confidence": "moderate",
-    "contention": [
-      {
-        "t": 6778,
-        "about": "Members criticised the town's capital planning process for not funding schools.",
-        "sides": "several members against the town's capital planning process",
-        "words_as_heard": "the town doesn't want to fund the schools. They just want to fund new town halls.",
-        "kind": "charged language"
-      },
-      {
-        "t": 4087,
-        "about": "The chair said the town did not prioritize the schools in the budget.",
-        "sides": "the chair against the town's funding of schools",
-        "words_as_heard": "we're not funding our schools and this is one of the results.",
-        "kind": "public criticism"
-      }
-    ],
-    "concerns_and_conditions": [
-      {
-        "t": 4819,
-        "kind": "safety",
-        "about": "Security and safety of connecting a Brooks House buyer's driveway to the high school driveway.",
-        "who": "a member",
-        "words_as_heard": "I have serious concerns about that."
-      },
-      {
-        "t": 6843,
-        "kind": "safety",
-        "about": "A wall at the fields was described as likely to collapse.",
-        "who": "a member",
-        "words_as_heard": "that wall is going to collapse on someone."
-      },
-      {
-        "t": 6876,
-        "kind": "safety",
-        "about": "Fire trucks cannot get down the primary school driveway at pickup.",
-        "who": "a member",
-        "words_as_heard": "It's not safe."
-      },
-      {
-        "t": 2217,
-        "kind": "safety",
-        "about": "Moldy textbooks are dangerous to children.",
-        "who": "a member",
-        "words_as_heard": "the moldy ones are dangerous."
-      }
-    ],
-    "documents_mentioned": [
-      {
-        "t": 618,
-        "name_as_heard": "line item transfers and warrant",
-        "kind": "spreadsheet",
-        "words_as_heard": "we do have some line item transfers to go over those are in your folder"
-      },
-      {
-        "t": 970,
-        "name_as_heard": "candidate resume",
-        "kind": "other",
-        "words_as_heard": "he's got his own little subfolder with his resume"
-      },
-      {
-        "t": 2049,
-        "name_as_heard": "surplus excess materials declaration",
-        "kind": "memo",
-        "words_as_heard": "in your folder for the declaration of surplus excess materials"
-      },
-      {
-        "t": 2341,
-        "name_as_heard": "PowerPoint on student results",
-        "kind": "presentation",
-        "words_as_heard": "now we're going to do a PowerPoint"
-      },
-      {
-        "t": 4520,
-        "name_as_heard": "Brooks House redevelopment summary",
-        "kind": "report",
-        "words_as_heard": "there is a Brooks House redevelopment summary"
-      },
-      {
-        "t": 6983,
-        "name_as_heard": "facilities report on track and field",
-        "kind": "report",
-        "words_as_heard": "I skimmed the report that was written a few years ago"
-      }
-    ],
-    "suggested_reports": [
-      {
-        "slug": "special-education-reserve-fund",
-        "title": "Special education reserve fund",
-        "question": "How much should be put into the special education reserve given out-of-district placement costs?",
-        "t": 5589,
-        "words_as_heard": "I mean I think we should try to put $300,000 in it.",
-        "data_in_play": [
-          "$300,000",
-          "2,250,000",
-          "150,000 per child"
-        ],
-        "existing": "topic:out-of-district-placements"
-      },
-      {
-        "slug": "track-field-drainage-walls",
-        "title": "Track and field repairs",
-        "question": "What would the drainage and wall work at the track and field cost, and how would it be funded?",
-        "t": 6983,
-        "words_as_heard": "it looks like a million dollars just to fix the drainage",
-        "data_in_play": [
-          "a million dollars"
-        ],
-        "existing": "thread:turf-field-study"
-      }
-    ]
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The School Committee voted unanimously to hire a director of finance and operations, pending contract negotiations.",
-        "t": 1968
-      },
-      {
-        "line": "The committee voted unanimously to request free cash for the special education reserve fund, if certified at the November town meeting.",
-        "t": 6531
-      },
-      {
-        "line": "Members discussed funding the reserve with free cash given rising out-of-district placement costs, and noted overages on that line.",
-        "t": 5589
-      },
-      {
-        "line": "The committee voted to accept the new terms of the paraprofessional contract, unanimously.",
-        "t": 7427
-      },
-      {
-        "line": "Members heard that track and field drainage and wall work would come before the turf, and asked for a one-page timeline of project steps.",
-        "t": 7050
-      }
-    ],
-    "why_it_matters": [
-      "The free cash request is a vote residents may be asked to take at the November town meeting, and it moves money from the town's year-end surplus toward a school reserve for placement costs that the district must meet.",
-      "The paraprofessional contract and the track and field work are both costs that will need to be funded in the school budget, and the minutes do not give the amounts."
-    ],
-    "watch_next": [
-      "The November town meeting, where the free cash request for the special education reserve depends on certification.",
-      "The next meeting's one-page track and field timeline and a facilities report."
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-10-17T13:10:13Z",
-      "cost_usd": 0.29263599999999995
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-17T13:10:13Z",
+   "cost_usd": 0.29263599999999995
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072026-8058",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-10-07-minutes-8058.txt",
+   "path": "sources/meetings/school-committee/2026-10-07-minutes-8058.pdf"
+  },
+  "official_sha256": "421f5bc40a55409820cfb2a6728b5ceeac178930038b3ef1cceddd2d2964fbc8",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on most votes and outcomes, with several caption-garbled names and figures. Key differences: the KOD vs COTA position, the driveway motion wording, and unrecorded vote outcomes in the official minutes for roll-call items.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 6,
+   "discrepancy": 5,
+   "only_in_ours": 3,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "FY27 line item transfer amounts",
+    "ours": "$18,73.94 and 22,85612 (voted)",
+    "official": "ms. gilman moved to approve line item transfers in the amounts of $18,703.94 and $22,856.12.",
+    "official_reading": "$18,703.94 and $22,856.12",
+    "note": "Same transfers and unanimous pass; captions garbled the digits.",
+    "t": 807
+   },
+   {
+    "kind": "agree",
+    "about": "Accept FY27 line item transfers vote",
+    "ours": "Accept FY27 line item transfers — passed unanimously",
+    "official": "ms. gilman moved to approve line item transfers in the amounts of $18,703.94 and $22,856.12.",
+    "note": "Same motion and outcome.",
+    "t": 787
+   },
+   {
+    "kind": "caption_error",
+    "about": "Director of finance and operations candidate name",
+    "ours": "Hire Mr. Matthew as director of finance and operations, pending contract negotiations — passed unanimously",
+    "official": "a motion was made and seconded to hire richard mathieu as director of finance and operations, pending successful contract negotiations.",
+    "official_reading": "Richard Mathieu",
+    "note": "Same vote and outcome; name misheard as Matthew.",
+    "t": 1968
+   },
+   {
+    "kind": "agree",
+    "about": "Surplus literacy materials and textbooks",
+    "ours": "Declare non-compliant literacy materials and damaged textbooks surplus property and authorize disposal or recycling — passed unanimously",
+    "official": "a motion was made to declare the identified inventory of noncompliant literacy materials",
+    "note": "Same motion and unanimous outcome.",
+    "t": 2258
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MCAS/DIBELS report vote outcome",
+    "ours": "Accept the report on spring 2026 MCAS and fall DIBELS data — passed (roll call, all yes heard)",
+    "official": "a motion was made and seconded to accept the report on the spring 2026 mcas and fall 2026 dibels data.",
+    "note": "Official minutes record the motion but no outcome or roll call; check the result against the recording.",
+    "t": 4209
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Previously voted position changed to 0.5 FTE",
+    "ours": "Change the previously voted KOD position to 0.5 FTE — passed unanimously",
+    "official": "a motion was made and seconded to change the previously approved cota position to a .5 ot position.",
+    "note": "Position is KOD in ours and COTA (.5 OT) in official; probably a mishearing of COTA, but check the recording and the position title.",
+    "t": 4468
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Brooks House motion",
+    "ours": "State that the school department has no need for the Brooks House — passed (roll call, all yes heard)",
+    "official": "a motion was made stating that the school department had no need for the town to transfer the brooks house to the department.",
+    "note": "Motion is the same, but the official minutes give no outcome while ours records a passing roll call; confirm the result.",
+    "t": 4639
+   },
+   {
+    "kind": "discrepancy",
+    "about": "High school driveway motion",
+    "ours": "Maintain the high school driveway as is, not allowing a Brooks House buyer to use it for access — passed",
+    "official": "following discussion of the wording, a motion was seconded to maintain the safety and security of the school driveway.",
+    "note": "Wording of the motion differs (as is/no buyer access vs. safety and security); official says unanimous, ours does not say. Check the final motion text and the vote.",
+    "t": 4860
+   },
+   {
+    "kind": "agree",
+    "about": "School calendar update with parent-teacher conference dates",
+    "ours": "Update the 2026-27 school calendar with the new parent-teacher conference dates — passed unanimously",
+    "official": "a motion was made and seconded to update the 2026-2027 school calendar to include the previously approved parent/teacher conference dates.",
+    "note": "Same motion and outcome (official says previously approved dates; ours says new).",
+    "t": 5014
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fall athletics participation report vote outcome",
+    "ours": "Accept the fall 2026 athletics participation report — passed (roll call, all yes heard)",
+    "official": "a motion was made and seconded to accept the fall 2026 athletics participation report.",
+    "note": "Official minutes record the motion with no outcome; check the result against the recording.",
+    "t": 5160
+   },
+   {
+    "kind": "agree",
+    "about": "$300,000 free cash request for special education reserve",
+    "ours": "Request $300,000 in free cash for the special education reserve fund if certified at the November town meeting — passed unanimously",
+    "official": "a motion was made and seconded to request $300,000 in free cash, contingent upon certification for the november town meeting",
+    "note": "Same amount, condition and outcome.",
+    "t": 6531
+   },
+   {
+    "kind": "agree",
+    "about": "Paraprofessional contract terms",
+    "ours": "Accept the new terms of the paraprofessional contract — passed unanimously",
+    "official": "a motion was made and seconded to accept the new terms of the paraprofessional contract.",
+    "note": "Same motion and outcome.",
+    "t": 7427
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Special education reserve amounts considered",
+    "ours": "Special education reserve fund: $300,000, almost $600,000",
+    "official": "the committee considered amounts of $250,000 and $300,000, the relationship to unspent prior-year school funds",
+    "note": "Ours has almost $600,000 where the official has $250,000; this is more than misheard digits would explain, so check the recording.",
+    "t": 5589
+   },
+   {
+    "kind": "caption_error",
+    "about": "Out-of-district placement cost",
+    "ours": "2,250,000, 150,000 per child",
+    "official": "using an illustrative average of $150,000 per placement, members noted that 15 placements could cost approximately $2.25 million.",
+    "official_reading": "$2.25 million",
+    "note": "Same figures, formatted differently.",
+    "t": 6304
+   },
+   {
+    "kind": "agree",
+    "about": "Track and field drainage and walls cost",
+    "ours": "Track and field drainage and walls: a million dollars",
+    "official": "drainage and wall repairs could cost approximately $1 million before addressing turf replacement.",
+    "note": "Same figure.",
+    "t": 6983
+   },
+   {
+    "kind": "agree",
+    "about": "One-page timeline for track and field",
+    "ours": "Members asked for a one-page timeline of track and field project steps for the next meeting.",
+    "official": "the committee requested that mr. stevens provide an overview, preferably including a concise written timeline",
+    "note": "Same request; the official minutes name Mr. Stevens.",
+    "t": 7050
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Future agenda items",
+    "ours": "Future agenda to include a facilities report, track and field discussion with the facilities director, and MCAS alternative assessment data.",
+    "official": "",
+    "note": "The official minutes only say Dr. Sarfide would consult an administrator about MCAS Alternate Assessment information; no facilities report agenda item is recorded.",
+    "t": 7703
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Warrants reported",
+    "ours": "",
+    "official": "chair brzozoski reported warrants totaling $315,036.56 for the period september 15 through october 5, 2026.",
+    "note": "Warrant total is not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Donations not approved",
+    "ours": "",
+    "official": "the chair indicated that the matter would be addressed in two weeks.",
+    "note": "Our minutes have no record of the donations item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Legislator visit topics",
+    "ours": "",
+    "official": "members also identified special education funding and reimbursement timing as topics to raise with legislators during an upcoming visit.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sixth-grade targeted support",
+    "ours": "",
+    "official": "requested further discussion of targeted support for the current sixth-grade class.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "September 16 minutes",
+    "ours": "",
+    "official": "no action was taken on the september 16, 2026 regular session minutes.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Dr. Sarfide",
+    "ours": "Dr. Sari (presenter (curriculum))",
+    "official": "kimberly sarfide - director of teaching & learning",
+    "official_reading": "Kimberly Sarfide",
+    "note": "Name misheard."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: candidate for finance director",
+    "ours": "Rich Matthew (candidate for director of finance and operations)",
+    "official": "richard mathieu - candidate for director of finance and",
+    "official_reading": "Richard Mathieu",
+    "note": "Name misheard."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Mr. Moore, interim director of finance",
+    "ours": "Mr. Moore (interim director of finance)",
+    "official": "",
+    "note": "The official attendee list does not include him; check whether he attended."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Emily Young, Mandy Gilman, Jean Russell",
+    "ours": "Emily Young (member); Mandy (member); Jean (member)",
+    "official": "ms. young reported that she had attended the pacsel support group meeting that evening.",
+    "note": "Members present in both; Jean Russell's attendance status is not stated in the official minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Tony (Mr. Schooly)",
+    "ours": "Tony (Mr. Schooly) (member)",
+    "official": "vice chair sculimbrene joined the meeting remotely during the discussion of line item transfers.",
+    "official_reading": "Anthony Sculimbrene",
+    "note": "Name misheard; he attended remotely."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Laura Brzozoski",
+    "ours": "",
+    "official": "chair brzozoski called the meeting to order.",
+    "note": "Chair not named in our attendee list."
+   },
+   {
+    "kind": "agree",
+    "about": "Dr. Fortuna attendance",
+    "ours": "Dr. Fortuna (superintendent)",
+    "official": "dr. fortuna participated remotely.",
+    "note": "Same person; the official minutes add that she was remote."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T13:27:18Z",
+   "cost_usd": 0.06987399999999999
+  }
+ }
 }

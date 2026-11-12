@@ -1,631 +1,878 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "school-committee",
-  "board": "School Committee",
-  "meeting_date": "2026-09-09",
-  "video_id": "tKWYbMFWJtI",
-  "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/school-committee/2026-09-09-tKWYbMFWJtI.json",
-    "sha256": "52bfffd5d3558668bc60ed0297e6d5d0f7fdaa70bd9856ae1a5c007911463662",
-    "caption_lines": 376,
-    "segments": 3352
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "meeting_date": "2026-09-09",
+ "video_id": "tKWYbMFWJtI",
+ "video_url": "https://www.youtube.com/watch?v=tKWYbMFWJtI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2026-09-09-tKWYbMFWJtI.json",
+  "sha256": "52bfffd5d3558668bc60ed0297e6d5d0f7fdaa70bd9856ae1a5c007911463662",
+  "caption_lines": 376,
+  "segments": 3352
+ },
+ "recording": {
+  "duration_s": 7849,
+  "duration": "2:10",
+  "spoken_chars": 112090,
+  "words_approx": 18681
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09092026-8002",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-09-09-agenda-8002.txt",
+   "path": "sources/meetings/school-committee/2026-09-09-agenda-8002.pdf"
   },
-  "recording": {
-    "duration_s": 7849,
-    "duration": "2:10",
-    "spoken_chars": 112090,
-    "words_approx": 18681
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-8002",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-09-09-minutes-8002.txt",
+   "path": "sources/meetings/school-committee/2026-09-09-minutes-8002.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-12T01:42:48Z",
+  "cost_usd": 0.5540660000000001,
+  "retagged": {
+   "at": "2026-09-12T11:59:41Z",
+   "cost_usd": 0.1423876
   },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09092026-8002",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-09-09-agenda-8002.txt",
-      "path": "sources/meetings/school-committee/2026-09-09-agenda-8002.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-8002",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-09-09-minutes-8002.txt",
-      "path": "sources/meetings/school-committee/2026-09-09-minutes-8002.pdf"
-    }
+  "backfilled": [
+   {
+    "field": "headline",
+    "at": "2026-09-12T12:19:43Z",
+    "cost_usd": 0.1371402
+   }
+  ]
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair (name not stated)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Manny Gilman's",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jean",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Emily",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Laura",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Liz",
+    "role": "recording secretary / staff (as addressed)"
+   },
+   {
+    "name_as_heard": "Dr. Fortuna",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Derek Andrews",
+    "role": "candidate for school business administrator (presenter)"
+   },
+   {
+    "name_as_heard": "Rob",
+    "role": "Turkey Hill Elementary principal"
+   },
+   {
+    "name_as_heard": "Tim",
+    "role": "middle school / high school principal (joint report)"
+   },
+   {
+    "name_as_heard": "(unnamed)",
+    "role": "primary school principal"
+   },
+   {
+    "name_as_heard": "Monica",
+    "role": "student representative"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 26,
+    "topic": "Public comment for prior issues invited; no one on Zoom or in the room."
+   },
+   {
+    "t": 3682,
+    "topic": "A resident (addressed as 'Mr. Rogers') objected during the business administrator agenda item that the public could not ask the candidate questions, arguing the 'public interview' label was misleading since only the committee interviews him; said he wanted to register concern about how the hiring process was 'orchestrated' and was told to raise it during public comment at the end."
+   },
+   {
+    "t": 3436,
+    "topic": "A Girl Scout troop leader (introduced by the chair as Michelle Taylor) presented a hand-painted memorial picnic table, a Girl Scout Gold/Silver-type project, proposed for donation to the primary school playground in memory of a former Girl Scout, and discussed maintenance and delivery arrangements.",
+    "stated_role": "Girl Scout troop leader"
+   },
+   {
+    "t": 7598,
+    "topic": "Public comment for issues discussed tonight invited; no one on Zoom or in the room."
+   }
+  ],
+  "tags": [
+   "athletics",
+   "budget",
+   "budget-fy26",
+   "capital",
+   "chapter-70",
+   "contracts-and-unions",
+   "curriculum",
+   "enrollment",
+   "executive-session",
+   "facilities",
+   "free-cash",
+   "grants",
+   "high-school",
+   "hiring",
+   "middle-school",
+   "msba",
+   "out-of-district",
+   "override",
+   "personnel",
+   "policy",
+   "primary-school",
+   "public-comment",
+   "school-choice",
+   "staffing",
+   "state-aid",
+   "superintendent-report",
+   "town-meeting",
+   "transfers",
+   "transportation",
+   "turkey-hill",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 383,
+    "motion": "Accept the minutes of 7/29/26",
+    "outcome": "not audible",
+    "procedural": true
+   },
+   {
+    "t": 403,
+    "motion": "Accept the minutes of 8/26/26",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3894,
+    "motion": "Waive/skip executive session for the business administrator interview since no hiring decision was being made tonight",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3915,
+    "motion": "Accept the donation of the memorial picnic table from the Girl Scout troop for the primary school",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3935,
+    "motion": "Skip the agenda item to vote on the warrant articles from the 9/3/26 town meeting, since that vote was already taken at town meeting",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5388,
+    "motion": "Accept/ratify the cafeteria workers' three-year contract (MOA) with new hourly salary schedule",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7538,
+    "motion": "Pass over the Prism 2 grant discussion (already addressed)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 7598,
+    "motion": "Pass over the FY26 year-end budget review to next week",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 7825,
+    "motion": "Adjourn the meeting at 9:12 p.m.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 70,
+    "topic": "Special town meeting override funding for class size",
+    "figures_as_heard": [
+     "$418,000"
+    ],
+    "what_was_said": "The chair said this funding does not erase the gap between the district's needs and its budget but will go directly toward improving what the district can offer, citing smaller second-grade classes as a result."
+   },
+   {
+    "t": 424,
+    "topic": "Warrants 7/28/26–8/27/26",
+    "figures_as_heard": [
+     "$396,688.90"
+    ],
+    "what_was_said": "Warrants covering that period were presented in this amount as part of the meeting's review-and-approve business."
+   },
+   {
+    "t": 1196,
+    "topic": "Prior budget experience of business administrator candidate",
+    "figures_as_heard": [
+     "56 to 60 million"
+    ],
+    "what_was_said": "Candidate Derek Andrews said the total budget he helped manage at the Executive Office of Education was around this size, including grant compliance work."
+   },
+   {
+    "t": 2873,
+    "topic": "Unspent school funds returned to the town",
+    "figures_as_heard": [
+     "100 and $200,000"
+    ],
+    "what_was_said": "A member said the district typically returns roughly this range to the town annually, and returned significantly more two years ago, with this year's return amount still unknown."
+   },
+   {
+    "t": 2914,
+    "topic": "Prior business manager's spend-down reporting",
+    "figures_as_heard": [
+     "99.1",
+     "99.2%"
+    ],
+    "what_was_said": "A member said the previous business manager reported the district had spent down close to this percentage of its budget when asked, but that figure later turned out to be incorrect."
+   },
+   {
+    "t": 4003,
+    "topic": "Primary school enrollment",
+    "figures_as_heard": [
+     "385"
+    ],
+    "what_was_said": "The primary school principal reported this many students enrolled for the new school year."
+   },
+   {
+    "t": 4416,
+    "topic": "Turkey Hill Elementary enrollment",
+    "figures_as_heard": [
+     "362",
+     "109",
+     "115",
+     "138"
+    ],
+    "what_was_said": "The Turkey Hill principal gave a total enrollment and a breakdown by grade (third, fourth, fifth), noting class-size averages by grade as well."
+   },
+   {
+    "t": 4691,
+    "topic": "Middle school enrollment",
+    "figures_as_heard": [
+     "387",
+     "112",
+     "115",
+     "160"
+    ],
+    "what_was_said": "The middle/high school principal reported total middle school enrollment and counts by grade, noting eighth grade grew after summer move-ins."
+   },
+   {
+    "t": 4967,
+    "topic": "High school enrollment",
+    "figures_as_heard": [
+     "86",
+     "92",
+     "110",
+     "160"
+    ],
+    "what_was_said": "Enrollment by grade nine through twelve (the graduating class) was given for the high school."
+   },
+   {
+    "t": 5029,
+    "topic": "School choice / Chapter 70 loss from students leaving the district",
+    "figures_as_heard": [
+     "82"
+    ],
+    "what_was_said": "The principal noted the freshman class size of 82 reflects families choosing other districts for opportunities Lunenburg could not offer, and a member noted the district loses Chapter 70 funding and pays tuition when students leave via school choice."
+   },
+   {
+    "t": 5308,
+    "topic": "Cafeteria workers three-year contract (MOA)",
+    "figures_as_heard": [],
+    "what_was_said": "The committee reviewed and ratified a new three-year hourly salary schedule for cafeteria workers negotiated by a committee; no dollar figures were stated in the captions."
+   },
+   {
+    "t": 5430,
+    "topic": "Potential financial audit funding",
+    "figures_as_heard": [],
+    "what_was_said": "The superintendent said the town finance committee would consider, at its meeting the next night, funding a financial/process audit from its finance reserve rather than the school budget."
+   },
+   {
+    "t": 6208,
+    "topic": "Primary school parking lot and playground study",
+    "figures_as_heard": [],
+    "what_was_said": "A member confirmed capital funding had already been obtained for a study of the primary school parking lot and playground, with next steps (implementation funding) still to be planned."
+   },
+   {
+    "t": 6915,
+    "topic": "Assistant town manager position vs. second-grade teacher cost",
+    "figures_as_heard": [],
+    "what_was_said": "A member said the town's decision to fund an assistant town manager position this budget cycle cost about the same as it would have cost to fund a second-grade teacher, framing it as a town-wide priorities tradeoff."
+   },
+   {
+    "t": 7724,
+    "topic": "Possible reserve fund for out-of-district placement overages",
+    "figures_as_heard": [],
+    "what_was_said": "A member recalled a town-meeting-approved fund that could hold school overages for district placements, and wants to consider it for the November special town meeting warrant, pending free cash certification."
+   }
+  ],
+  "transfers": [
+   {
+    "t": 403,
+    "description": "Line item transfers for the period",
+    "amount_as_heard": "none reported",
+    "outcome": "discussed only — stated there were no line item transfers to review this meeting"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1012,
+    "decision": "The school committee itself (not the superintendent) will make the final hiring decision on the business administrator, expected the following Wednesday, after tonight's public interview."
+   },
+   {
+    "t": 1074,
+    "decision": "The committee decided to waive the scheduled executive session for the business administrator interview entirely rather than holding a private portion."
+   },
+   {
+    "t": 5452,
+    "decision": "The school department will ask the town finance committee to fund a financial/process audit out of its finance reserve rather than the school budget; two officials will raise it at finance committee's meeting the next night."
+   },
+   {
+    "t": 5619,
+    "decision": "The audit should include documenting and codifying financial procedures and information flow between the school business office and town hall."
+   },
+   {
+    "t": 5681,
+    "decision": "The scope of the audit will be limited to where town and school finances intersect, not the whole town or whole district."
+   },
+   {
+    "t": 6019,
+    "decision": "Vote on the school committee operating protocols is deferred to next week's meeting."
+   },
+   {
+    "t": 6165,
+    "decision": "Formal review/vote on school committee goals for the year is deferred to next week; goals discussed include continuing the Turkey Hill MSBA process, implementing the primary school parking lot/playground study, and pursuing financial stability including using audit findings."
+   },
+   {
+    "t": 6396,
+    "decision": "Two school committee members will serve on a committee for the Turkey Hill Elementary MSBA Statement of Interest (SOI) process, which opens in January and closes in April."
+   },
+   {
+    "t": 7145,
+    "decision": "The committee will plan a 'legislator day' to invite state legislators to visit Lunenburg schools this year."
+   },
+   {
+    "t": 7805,
+    "decision": "A capital plan presentation will be scheduled for an upcoming meeting since the capital planning committee wants to start its process earlier this year."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 26,
+    "topic": "Pledge of Allegiance and opening",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 26,
+    "t_end": 50,
+    "topic": "Public comment for prior issues",
+    "resolution": "no speakers",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 50,
+    "t_end": 260,
+    "topic": "Chair's report: special town meeting override results, class size reduction, AV/sound issues and staff response, start of school",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 260,
+    "t_end": 342,
+    "topic": "Student representative report: upcoming dates and reminders",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 342,
+    "t_end": 403,
+    "topic": "Review and approve minutes of 7/29/26 and 8/26/26",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 403,
+    "t_end": 446,
+    "topic": "Review line item transfers, warrants, and donations",
+    "resolution": "warrants reported, no transfers this period",
+    "tags": [
+     "budget",
+     "transfers"
+    ]
+   },
+   {
+    "t_start": 446,
+    "t_end": 905,
+    "topic": "Superintendent's report: opening-of-school updates, literacy initiatives (NTC landscape analysis, Reading Buddies), new second-grade classroom, financial pressures ahead of FY27 budget cycle",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy27",
+     "curriculum",
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 905,
+    "t_end": 3436,
+    "topic": "Public interview of school business administrator candidate Derek Andrews, including committee questioning and a floor objection about public participation in the process",
+    "resolution": "no decision — hiring vote deferred to next week; executive session waived",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3436,
+    "t_end": 3662,
+    "topic": "Girl Scout troop donation of a memorial picnic table for the primary school",
+    "resolution": "voted (accepted)",
+    "tags": [
+     "facilities",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 3894,
+    "t_end": 3957,
+    "topic": "Procedural votes: waive executive session, accept donation, skip re-vote on already-approved warrant articles",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 3979,
+    "t_end": 5288,
+    "topic": "Principals' back-to-school updates for primary, Turkey Hill, middle, and high schools (enrollment, staffing, class sizes, school choice concerns)",
+    "resolution": "informational",
+    "tags": [
+     "enrollment",
+     "school-choice",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 5288,
+    "t_end": 5430,
+    "topic": "Cafeteria workers contract ratification",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 5430,
+    "t_end": 5956,
+    "topic": "Discussion of a potential financial/process audit of the school business office, funding source, scope and goals",
+    "resolution": "no vote — direction set to seek town finance committee funding",
+    "tags": [
+     "budget",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 5956,
+    "t_end": 6123,
+    "topic": "Review of school committee operating protocols",
+    "resolution": "tabled to next week",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 6123,
+    "t_end": 7538,
+    "topic": "Review of prior-year school committee goals and discussion of new goals (Turkey Hill/MSBA, primary parking lot and playground, budget process, tri-board communication, legislative outreach)",
+    "resolution": "tabled — vote planned for next meeting",
+    "tags": [
+     "budget",
+     "msba",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 7538,
+    "t_end": 7558,
+    "topic": "Pass over Prism 2 grant discussion (already addressed previously)",
+    "resolution": "voted to skip",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 7558,
+    "t_end": 7598,
+    "topic": "Pass over FY26 year-end budget review",
+    "resolution": "voted to defer to next week",
+    "tags": [
+     "budget-fy26"
+    ]
+   },
+   {
+    "t_start": 7598,
+    "t_end": 7620,
+    "topic": "Public comment for issues discussed tonight",
+    "resolution": "no speakers",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 7620,
+    "t_end": 7683,
+    "topic": "Reports from subcommittees",
+    "resolution": "informational — little to report",
+    "tags": []
+   },
+   {
+    "t_start": 7683,
+    "t_end": 7825,
+    "topic": "Topics for future discussion: November town meeting warrant article, free cash/year-end closeout timing, capital plan presentation",
+    "resolution": "discussed, added to future agendas",
+    "tags": [
+     "capital",
+     "free-cash",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 7825,
+    "t_end": 7846,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact vote counts for every 'all in favor' motion — only 'motion passes' or silence is captured, never a tally.",
+   "The chair's and vice chair's actual names (heard only as 'that's me' and 'Manny Gilman's', likely mangled).",
+   "The primary school principal's name was never stated in the captions.",
+   "The precise cause of the sound/AV equipment failure at the special town meeting.",
+   "The exact prior spend-down percentage reported by the former business manager ('99.1' vs '99.2%').",
+   "Portions of the business administrator interview involving technical procurement/MARS/Munis terminology are garbled.",
+   "Who specifically said 'Jody and I are going to go to finance committee' and Jody's role."
+  ],
+  "confidence": "moderate",
+  "summary": "The Lunenburg School Committee opened by thanking the town for passing special town-meeting override funding that is already reducing second-grade class sizes, then heard a superintendent's report on literacy initiatives and a new primary classroom. Most of the meeting was spent publicly interviewing a candidate for school business administrator (a position the committee itself hires and will vote on the following week), hearing principals' start-of-school updates, ratifying a cafeteria workers' contract, discussing a possible town-funded financial/process audit of the business office, and reviewing (but deferring votes on) operating protocols and committee goals, including the Turkey Hill Elementary MSBA process and a primary school parking lot/playground study.",
+  "headline": "The school committee will hire its own next business administrator, deciding by vote next week after tonight's public interview."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The school committee will vote next week on hiring a school business administrator, after publicly interviewing a candidate tonight.",
+    "t": 1012
+   },
+   {
+    "line": "The school department will ask the town finance committee to fund a financial and process audit of the school business office from the town's reserve rather than the school budget.",
+    "t": 5452
+   },
+   {
+    "line": "The committee ratified a new three-year contract for cafeteria workers.",
+    "t": 5308
+   },
+   {
+    "line": "Votes on committee operating protocols and this year's goals, including the Turkey Hill Elementary MSBA process, were pushed to next week.",
+    "t": 6019
+   },
+   {
+    "line": "The chair said override funding approved at the recent special town meeting is already being used to reduce second-grade class sizes.",
+    "t": 70
+   }
+  ],
+  "why_it_matters": [
+   "The business administrator runs school finance day to day, and the committee itself controls this hire and expects to decide it next week.",
+   "The proposed audit's funding source determines whose budget absorbs the cost, and it goes to the town finance committee for a decision, not the school committee.",
+   "The Turkey Hill Elementary MSBA process is an early procedural step that can lead toward a future building project and a town vote."
+  ],
+  "watch_next": [
+   "School committee vote on the business administrator hire, expected next Wednesday",
+   "Town finance committee meeting the next night, where audit funding is on the agenda"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-12T01:42:48Z",
-    "cost_usd": 0.5540660000000001,
-    "retagged": {
-      "at": "2026-09-12T11:59:41Z",
-      "cost_usd": 0.1423876
-    },
-    "backfilled": [
-      {
-        "field": "headline",
-        "at": "2026-09-12T12:19:43Z",
-        "cost_usd": 0.1371402
-      }
-    ]
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "the chair (name not stated)",
-        "role": "chair"
-      },
-      {
-        "name_as_heard": "Manny Gilman's",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Jean",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Emily",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Laura",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Liz",
-        "role": "recording secretary / staff (as addressed)"
-      },
-      {
-        "name_as_heard": "Dr. Fortuna",
-        "role": "superintendent"
-      },
-      {
-        "name_as_heard": "Derek Andrews",
-        "role": "candidate for school business administrator (presenter)"
-      },
-      {
-        "name_as_heard": "Rob",
-        "role": "Turkey Hill Elementary principal"
-      },
-      {
-        "name_as_heard": "Tim",
-        "role": "middle school / high school principal (joint report)"
-      },
-      {
-        "name_as_heard": "(unnamed)",
-        "role": "primary school principal"
-      },
-      {
-        "name_as_heard": "Monica",
-        "role": "student representative"
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 26,
-        "topic": "Public comment for prior issues invited; no one on Zoom or in the room."
-      },
-      {
-        "t": 3682,
-        "topic": "A resident (addressed as 'Mr. Rogers') objected during the business administrator agenda item that the public could not ask the candidate questions, arguing the 'public interview' label was misleading since only the committee interviews him; said he wanted to register concern about how the hiring process was 'orchestrated' and was told to raise it during public comment at the end."
-      },
-      {
-        "t": 3436,
-        "topic": "A Girl Scout troop leader (introduced by the chair as Michelle Taylor) presented a hand-painted memorial picnic table, a Girl Scout Gold/Silver-type project, proposed for donation to the primary school playground in memory of a former Girl Scout, and discussed maintenance and delivery arrangements.",
-        "stated_role": "Girl Scout troop leader"
-      },
-      {
-        "t": 7598,
-        "topic": "Public comment for issues discussed tonight invited; no one on Zoom or in the room."
-      }
-    ],
-    "tags": [
-      "athletics",
-      "budget",
-      "budget-fy26",
-      "capital",
-      "chapter-70",
-      "contracts-and-unions",
-      "curriculum",
-      "enrollment",
-      "executive-session",
-      "facilities",
-      "free-cash",
-      "grants",
-      "high-school",
-      "hiring",
-      "middle-school",
-      "msba",
-      "out-of-district",
-      "override",
-      "personnel",
-      "policy",
-      "primary-school",
-      "public-comment",
-      "school-choice",
-      "staffing",
-      "state-aid",
-      "superintendent-report",
-      "town-meeting",
-      "transfers",
-      "transportation",
-      "turkey-hill",
-      "warrant-article"
-    ],
-    "votes": [
-      {
-        "t": 383,
-        "motion": "Accept the minutes of 7/29/26",
-        "outcome": "not audible",
-        "procedural": true
-      },
-      {
-        "t": 403,
-        "motion": "Accept the minutes of 8/26/26",
-        "outcome": "passed",
-        "procedural": true
-      },
-      {
-        "t": 3894,
-        "motion": "Waive/skip executive session for the business administrator interview since no hiring decision was being made tonight",
-        "outcome": "passed",
-        "procedural": true
-      },
-      {
-        "t": 3915,
-        "motion": "Accept the donation of the memorial picnic table from the Girl Scout troop for the primary school",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3935,
-        "motion": "Skip the agenda item to vote on the warrant articles from the 9/3/26 town meeting, since that vote was already taken at town meeting",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 5388,
-        "motion": "Accept/ratify the cafeteria workers' three-year contract (MOA) with new hourly salary schedule",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 7538,
-        "motion": "Pass over the Prism 2 grant discussion (already addressed)",
-        "outcome": "not audible",
-        "procedural": false
-      },
-      {
-        "t": 7598,
-        "motion": "Pass over the FY26 year-end budget review to next week",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 7825,
-        "motion": "Adjourn the meeting at 9:12 p.m.",
-        "outcome": "not audible",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 70,
-        "topic": "Special town meeting override funding for class size",
-        "figures_as_heard": [
-          "$418,000"
-        ],
-        "what_was_said": "The chair said this funding does not erase the gap between the district's needs and its budget but will go directly toward improving what the district can offer, citing smaller second-grade classes as a result."
-      },
-      {
-        "t": 424,
-        "topic": "Warrants 7/28/26–8/27/26",
-        "figures_as_heard": [
-          "$396,688.90"
-        ],
-        "what_was_said": "Warrants covering that period were presented in this amount as part of the meeting's review-and-approve business."
-      },
-      {
-        "t": 1196,
-        "topic": "Prior budget experience of business administrator candidate",
-        "figures_as_heard": [
-          "56 to 60 million"
-        ],
-        "what_was_said": "Candidate Derek Andrews said the total budget he helped manage at the Executive Office of Education was around this size, including grant compliance work."
-      },
-      {
-        "t": 2873,
-        "topic": "Unspent school funds returned to the town",
-        "figures_as_heard": [
-          "100 and $200,000"
-        ],
-        "what_was_said": "A member said the district typically returns roughly this range to the town annually, and returned significantly more two years ago, with this year's return amount still unknown."
-      },
-      {
-        "t": 2914,
-        "topic": "Prior business manager's spend-down reporting",
-        "figures_as_heard": [
-          "99.1",
-          "99.2%"
-        ],
-        "what_was_said": "A member said the previous business manager reported the district had spent down close to this percentage of its budget when asked, but that figure later turned out to be incorrect."
-      },
-      {
-        "t": 4003,
-        "topic": "Primary school enrollment",
-        "figures_as_heard": [
-          "385"
-        ],
-        "what_was_said": "The primary school principal reported this many students enrolled for the new school year."
-      },
-      {
-        "t": 4416,
-        "topic": "Turkey Hill Elementary enrollment",
-        "figures_as_heard": [
-          "362",
-          "109",
-          "115",
-          "138"
-        ],
-        "what_was_said": "The Turkey Hill principal gave a total enrollment and a breakdown by grade (third, fourth, fifth), noting class-size averages by grade as well."
-      },
-      {
-        "t": 4691,
-        "topic": "Middle school enrollment",
-        "figures_as_heard": [
-          "387",
-          "112",
-          "115",
-          "160"
-        ],
-        "what_was_said": "The middle/high school principal reported total middle school enrollment and counts by grade, noting eighth grade grew after summer move-ins."
-      },
-      {
-        "t": 4967,
-        "topic": "High school enrollment",
-        "figures_as_heard": [
-          "86",
-          "92",
-          "110",
-          "160"
-        ],
-        "what_was_said": "Enrollment by grade nine through twelve (the graduating class) was given for the high school."
-      },
-      {
-        "t": 5029,
-        "topic": "School choice / Chapter 70 loss from students leaving the district",
-        "figures_as_heard": [
-          "82"
-        ],
-        "what_was_said": "The principal noted the freshman class size of 82 reflects families choosing other districts for opportunities Lunenburg could not offer, and a member noted the district loses Chapter 70 funding and pays tuition when students leave via school choice."
-      },
-      {
-        "t": 5308,
-        "topic": "Cafeteria workers three-year contract (MOA)",
-        "figures_as_heard": [],
-        "what_was_said": "The committee reviewed and ratified a new three-year hourly salary schedule for cafeteria workers negotiated by a committee; no dollar figures were stated in the captions."
-      },
-      {
-        "t": 5430,
-        "topic": "Potential financial audit funding",
-        "figures_as_heard": [],
-        "what_was_said": "The superintendent said the town finance committee would consider, at its meeting the next night, funding a financial/process audit from its finance reserve rather than the school budget."
-      },
-      {
-        "t": 6208,
-        "topic": "Primary school parking lot and playground study",
-        "figures_as_heard": [],
-        "what_was_said": "A member confirmed capital funding had already been obtained for a study of the primary school parking lot and playground, with next steps (implementation funding) still to be planned."
-      },
-      {
-        "t": 6915,
-        "topic": "Assistant town manager position vs. second-grade teacher cost",
-        "figures_as_heard": [],
-        "what_was_said": "A member said the town's decision to fund an assistant town manager position this budget cycle cost about the same as it would have cost to fund a second-grade teacher, framing it as a town-wide priorities tradeoff."
-      },
-      {
-        "t": 7724,
-        "topic": "Possible reserve fund for out-of-district placement overages",
-        "figures_as_heard": [],
-        "what_was_said": "A member recalled a town-meeting-approved fund that could hold school overages for district placements, and wants to consider it for the November special town meeting warrant, pending free cash certification."
-      }
-    ],
-    "transfers": [
-      {
-        "t": 403,
-        "description": "Line item transfers for the period",
-        "amount_as_heard": "none reported",
-        "outcome": "discussed only — stated there were no line item transfers to review this meeting"
-      }
-    ],
-    "decisions": [
-      {
-        "t": 1012,
-        "decision": "The school committee itself (not the superintendent) will make the final hiring decision on the business administrator, expected the following Wednesday, after tonight's public interview."
-      },
-      {
-        "t": 1074,
-        "decision": "The committee decided to waive the scheduled executive session for the business administrator interview entirely rather than holding a private portion."
-      },
-      {
-        "t": 5452,
-        "decision": "The school department will ask the town finance committee to fund a financial/process audit out of its finance reserve rather than the school budget; two officials will raise it at finance committee's meeting the next night."
-      },
-      {
-        "t": 5619,
-        "decision": "The audit should include documenting and codifying financial procedures and information flow between the school business office and town hall."
-      },
-      {
-        "t": 5681,
-        "decision": "The scope of the audit will be limited to where town and school finances intersect, not the whole town or whole district."
-      },
-      {
-        "t": 6019,
-        "decision": "Vote on the school committee operating protocols is deferred to next week's meeting."
-      },
-      {
-        "t": 6165,
-        "decision": "Formal review/vote on school committee goals for the year is deferred to next week; goals discussed include continuing the Turkey Hill MSBA process, implementing the primary school parking lot/playground study, and pursuing financial stability including using audit findings."
-      },
-      {
-        "t": 6396,
-        "decision": "Two school committee members will serve on a committee for the Turkey Hill Elementary MSBA Statement of Interest (SOI) process, which opens in January and closes in April."
-      },
-      {
-        "t": 7145,
-        "decision": "The committee will plan a 'legislator day' to invite state legislators to visit Lunenburg schools this year."
-      },
-      {
-        "t": 7805,
-        "decision": "A capital plan presentation will be scheduled for an upcoming meeting since the capital planning committee wants to start its process earlier this year."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 2,
-        "t_end": 26,
-        "topic": "Pledge of Allegiance and opening",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 26,
-        "t_end": 50,
-        "topic": "Public comment for prior issues",
-        "resolution": "no speakers",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 50,
-        "t_end": 260,
-        "topic": "Chair's report: special town meeting override results, class size reduction, AV/sound issues and staff response, start of school",
-        "resolution": "informational",
-        "tags": [
-          "override",
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 260,
-        "t_end": 342,
-        "topic": "Student representative report: upcoming dates and reminders",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 342,
-        "t_end": 403,
-        "topic": "Review and approve minutes of 7/29/26 and 8/26/26",
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "t_start": 403,
-        "t_end": 446,
-        "topic": "Review line item transfers, warrants, and donations",
-        "resolution": "warrants reported, no transfers this period",
-        "tags": [
-          "budget",
-          "transfers"
-        ]
-      },
-      {
-        "t_start": 446,
-        "t_end": 905,
-        "topic": "Superintendent's report: opening-of-school updates, literacy initiatives (NTC landscape analysis, Reading Buddies), new second-grade classroom, financial pressures ahead of FY27 budget cycle",
-        "resolution": "informational",
-        "tags": [
-          "budget-fy27",
-          "curriculum",
-          "superintendent-report"
-        ]
-      },
-      {
-        "t_start": 905,
-        "t_end": 3436,
-        "topic": "Public interview of school business administrator candidate Derek Andrews, including committee questioning and a floor objection about public participation in the process",
-        "resolution": "no decision — hiring vote deferred to next week; executive session waived",
-        "tags": [
-          "hiring",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 3436,
-        "t_end": 3662,
-        "topic": "Girl Scout troop donation of a memorial picnic table for the primary school",
-        "resolution": "voted (accepted)",
-        "tags": [
-          "facilities",
-          "primary-school"
-        ]
-      },
-      {
-        "t_start": 3894,
-        "t_end": 3957,
-        "topic": "Procedural votes: waive executive session, accept donation, skip re-vote on already-approved warrant articles",
-        "resolution": "voted",
-        "tags": [
-          "executive-session",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 3979,
-        "t_end": 5288,
-        "topic": "Principals' back-to-school updates for primary, Turkey Hill, middle, and high schools (enrollment, staffing, class sizes, school choice concerns)",
-        "resolution": "informational",
-        "tags": [
-          "enrollment",
-          "school-choice",
-          "staffing"
-        ]
-      },
-      {
-        "t_start": 5288,
-        "t_end": 5430,
-        "topic": "Cafeteria workers contract ratification",
-        "resolution": "voted",
-        "tags": [
-          "contracts-and-unions",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 5430,
-        "t_end": 5956,
-        "topic": "Discussion of a potential financial/process audit of the school business office, funding source, scope and goals",
-        "resolution": "no vote — direction set to seek town finance committee funding",
-        "tags": [
-          "budget",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 5956,
-        "t_end": 6123,
-        "topic": "Review of school committee operating protocols",
-        "resolution": "tabled to next week",
-        "tags": [
-          "policy"
-        ]
-      },
-      {
-        "t_start": 6123,
-        "t_end": 7538,
-        "topic": "Review of prior-year school committee goals and discussion of new goals (Turkey Hill/MSBA, primary parking lot and playground, budget process, tri-board communication, legislative outreach)",
-        "resolution": "tabled — vote planned for next meeting",
-        "tags": [
-          "budget",
-          "msba",
-          "turkey-hill"
-        ]
-      },
-      {
-        "t_start": 7538,
-        "t_end": 7558,
-        "topic": "Pass over Prism 2 grant discussion (already addressed previously)",
-        "resolution": "voted to skip",
-        "tags": [
-          "grants"
-        ]
-      },
-      {
-        "t_start": 7558,
-        "t_end": 7598,
-        "topic": "Pass over FY26 year-end budget review",
-        "resolution": "voted to defer to next week",
-        "tags": [
-          "budget-fy26"
-        ]
-      },
-      {
-        "t_start": 7598,
-        "t_end": 7620,
-        "topic": "Public comment for issues discussed tonight",
-        "resolution": "no speakers",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 7620,
-        "t_end": 7683,
-        "topic": "Reports from subcommittees",
-        "resolution": "informational — little to report",
-        "tags": []
-      },
-      {
-        "t_start": 7683,
-        "t_end": 7825,
-        "topic": "Topics for future discussion: November town meeting warrant article, free cash/year-end closeout timing, capital plan presentation",
-        "resolution": "discussed, added to future agendas",
-        "tags": [
-          "capital",
-          "free-cash",
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 7825,
-        "t_end": 7846,
-        "topic": "Adjournment",
-        "resolution": "voted",
-        "tags": []
-      }
-    ],
-    "not_audible": [
-      "Exact vote counts for every 'all in favor' motion — only 'motion passes' or silence is captured, never a tally.",
-      "The chair's and vice chair's actual names (heard only as 'that's me' and 'Manny Gilman's', likely mangled).",
-      "The primary school principal's name was never stated in the captions.",
-      "The precise cause of the sound/AV equipment failure at the special town meeting.",
-      "The exact prior spend-down percentage reported by the former business manager ('99.1' vs '99.2%').",
-      "Portions of the business administrator interview involving technical procurement/MARS/Munis terminology are garbled.",
-      "Who specifically said 'Jody and I are going to go to finance committee' and Jody's role."
-    ],
-    "confidence": "moderate",
-    "summary": "The Lunenburg School Committee opened by thanking the town for passing special town-meeting override funding that is already reducing second-grade class sizes, then heard a superintendent's report on literacy initiatives and a new primary classroom. Most of the meeting was spent publicly interviewing a candidate for school business administrator (a position the committee itself hires and will vote on the following week), hearing principals' start-of-school updates, ratifying a cafeteria workers' contract, discussing a possible town-funded financial/process audit of the business office, and reviewing (but deferring votes on) operating protocols and committee goals, including the Turkey Hill Elementary MSBA process and a primary school parking lot/playground study.",
-    "headline": "The school committee will hire its own next business administrator, deciding by vote next week after tonight's public interview."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The school committee will vote next week on hiring a school business administrator, after publicly interviewing a candidate tonight.",
-        "t": 1012
-      },
-      {
-        "line": "The school department will ask the town finance committee to fund a financial and process audit of the school business office from the town's reserve rather than the school budget.",
-        "t": 5452
-      },
-      {
-        "line": "The committee ratified a new three-year contract for cafeteria workers.",
-        "t": 5308
-      },
-      {
-        "line": "Votes on committee operating protocols and this year's goals, including the Turkey Hill Elementary MSBA process, were pushed to next week.",
-        "t": 6019
-      },
-      {
-        "line": "The chair said override funding approved at the recent special town meeting is already being used to reduce second-grade class sizes.",
-        "t": 70
-      }
-    ],
-    "why_it_matters": [
-      "The business administrator runs school finance day to day, and the committee itself controls this hire and expects to decide it next week.",
-      "The proposed audit's funding source determines whose budget absorbs the cost, and it goes to the town finance committee for a decision, not the school committee.",
-      "The Turkey Hill Elementary MSBA process is an early procedural step that can lead toward a future building project and a town vote."
-    ],
-    "watch_next": [
-      "School committee vote on the business administrator hire, expected next Wednesday",
-      "Town finance committee meeting the next night, where audit funding is on the agenda"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-12T14:12:11Z",
-      "cost_usd": 0.1439984
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-12T14:12:11Z",
+   "cost_usd": 0.1439984
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-8002",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-09-09-minutes-8002.txt",
+   "path": "sources/meetings/school-committee/2026-09-09-minutes-8002.pdf"
+  },
+  "official_sha256": "9d50f6a5d02a1527aae9a4b9c24e50a4077562caf4c44f21dea7430def08d20b",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the donation vote, cafeteria contract vote, warrants, $418,000 and the $56–60 million figure, but the official minutes are partial and omit many items our minutes record. The key difference is the business administrator hiring process: ours says the committee decided to make the final decision the following Wednesday, while the official says the decision was deferred to the next meeting; the official also shows no vote to pass over the FY26 review and no audit funding decision.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 2,
+   "discrepancy": 6,
+   "only_in_ours": 9,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to accept Girl Scout picnic table donation",
+    "ours": "Accept the donation of the memorial picnic table from the Girl Scout troop for the primary school — passed",
+    "official": "a motion was made and seconded to accept the donation from girl scout troop 64501. the",
+    "note": "Both record the donation accepted.",
+    "t": 3915
+   },
+   {
+    "kind": "agree",
+    "about": "Cafeteria workers' three-year contract vote",
+    "ours": "Accept/ratify the cafeteria workers' three-year contract (MOA) with new hourly salary schedule — passed",
+    "official": "a motion was made and seconded to approve the cafeteria workers' three-year contract and associated hourly rates.",
+    "note": "Both record approval of the contract.",
+    "t": 5388
+   },
+   {
+    "kind": "agree",
+    "about": "Special town meeting appropriation $418,000",
+    "ours": "Special town meeting override funding for class size: $418,000",
+    "official": "she reported that the $418,000 appropriation would directly support students",
+    "note": "Same figure.",
+    "t": 70
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants total",
+    "ours": "Warrants 7/28/26–8/27/26: $396,688.90",
+    "official": "warrants totaling $396,688.90 were reported.",
+    "note": "Same figure and period.",
+    "t": 424
+   },
+   {
+    "kind": "agree",
+    "about": "Candidate's prior budget experience",
+    "ours": "Prior budget experience of business administrator candidate: 56 to 60 million",
+    "official": "he had worked with financial leadership on a budget of approximately $56 million to $60 million.",
+    "note": "Same range.",
+    "t": 1196
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Business administrator hiring decision timing/maker",
+    "ours": "The school committee itself (not the superintendent) will make the final hiring decision on the business administrator, expected the following Wednesday, after tonight's public interview.",
+    "official": "the committee would conduct the public interview that evening and discuss the hiring decision at its next meeting.",
+    "note": "Ours says a decision is expected the following Wednesday; official says it will be discussed at the next meeting; check the recording and the date of the next meeting.",
+    "t": 1012
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Waiving executive session for business administrator interview",
+    "ours": "The committee decided to waive the scheduled executive session for the business administrator interview entirely rather than holding a private portion.",
+    "official": "",
+    "note": "Official minutes do not mention waiving the executive session.",
+    "t": 1074
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to pass over FY26 year-end budget review",
+    "ours": "Pass over the FY26 year-end budget review to next week — passed",
+    "official": "the committee agreed to defer the fy26 year-end budget review until the next meeting because the necessary information was not available.",
+    "note": "Ours records a passed vote; official describes an agreement to defer with no vote; check whether a formal vote was taken.",
+    "t": 7598
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Skipping warrant article vote from 9/3/26 town meeting",
+    "ours": "Skip the agenda item to vote on the warrant articles from the 9/3/26 town meeting, since that vote was already taken at town meeting — passed",
+    "official": "",
+    "note": "Ours records a vote; the official minutes record no such vote; check the recording.",
+    "t": 3935
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Pass over Prism 2 grant discussion",
+    "ours": "Pass over the Prism 2 grant discussion (already addressed) — not audible",
+    "official": "",
+    "note": "Official minutes have no mention; outcome not audible in ours, so check whether a vote occurred.",
+    "t": 7538
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Audit funding request",
+    "ours": "The school department will ask the town finance committee to fund a financial/process audit out of its finance reserve rather than the school budget; two officials will raise it at finance committee's meeting the next night.",
+    "official": "chair brzozoski and dr. fortuna planned to attend the finance committee meeting to discuss the request.",
+    "note": "Substantially similar, but official says the Town Manager requested the reserve funds and the chair worried about student services; ours says the school will ask. Check who initiated the request.",
+    "t": 5452
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Audit scope and codifying procedures",
+    "ours": "The audit should include documenting and codifying financial procedures and information flow between the school business office and town hall; scope limited to where town and school finances intersect.",
+    "official": "",
+    "note": "Official minutes do not describe the audit scope.",
+    "t": 5619
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Operating protocols",
+    "ours": "Vote on the school committee operating protocols is deferred to next week's meeting.",
+    "official": "chair brzozoski asked members to review the committee's operating protocols and identify proposed changes before the next meeting.",
+    "note": "Both defer, but ours says a vote is deferred while official only says members review for changes; check whether a vote is planned.",
+    "t": 6019
+   },
+   {
+    "kind": "agree",
+    "about": "Committee goals deferred",
+    "ours": "Formal review/vote on school committee goals for the year is deferred to next week",
+    "official": "chair brzozoski would organize the proposed goals for further review at the next meeting. no goals were formally adopted.",
+    "note": "Both defer goals to the next meeting.",
+    "t": 6165
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MSBA Statement of Interest committee",
+    "ours": "Two school committee members will serve on a committee for the Turkey Hill Elementary MSBA Statement of Interest (SOI) process, which opens in January and closes in April.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 6396
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Legislator day",
+    "ours": "The committee will plan a 'legislator day' to invite state legislators to visit Lunenburg schools this year.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 7145
+   },
+   {
+    "kind": "agree",
+    "about": "Capital plan presentation scheduling",
+    "ours": "A capital plan presentation will be scheduled for an upcoming meeting since the capital planning committee wants to start its process earlier this year.",
+    "official": "chair brzozoski would coordinate with mr. sculimbrene, the committee's capital planning representative, because the town's capital planning process was beginning earlier.",
+    "note": "Same item: presentation to be scheduled because capital planning starts earlier.",
+    "t": 7805
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unspent funds returned to the town",
+    "ours": "Unspent school funds returned to the town: 100 and $200,000",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2873
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Prior business manager spend-down",
+    "ours": "Prior business manager's spend-down reporting: 99.1, 99.2%",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 2914
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School enrollment figures",
+    "ours": "Primary 385; Turkey Hill 362, 109, 115, 138; Middle 387, 112, 115, 160; High 86, 92, 110, 160; school choice/Chapter 70 loss 82",
+    "official": "",
+    "note": "Official minutes print no enrollment or school choice figures.",
+    "t": 4003
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Possible November Town Meeting warrant articles",
+    "ours": "",
+    "official": "members requested discussion at the next meeting of possible warrant articles for the november town meeting.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Reserve fund for out-of-district placements",
+    "ours": "",
+    "official": "members favored placing the matter on the next agenda to preserve the opportunity for consideration and coordinating with the town manager regarding timing.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Manny Gilman's",
+    "ours": "Manny Gilman's (member)",
+    "official": "mandy gilman, secretary recording secretary",
+    "official_reading": "Mandy Gilman",
+    "note": "Misheard name; official lists her as Secretary, ours as member.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Recording secretary",
+    "ours": "Liz (recording secretary / staff (as addressed))",
+    "official": "jean russell, member gina gonsalves emily young, member",
+    "note": "Ours names Liz; official lists Gina Gonsalves as recording secretary; check who recorded.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Candidate name",
+    "ours": "Derek Andrews",
+    "official": "dr. fortuna introduced derrick andrews, a candidate for school business administrator.",
+    "official_reading": "Derrick Andrews",
+    "note": "Spelling differs.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vice Chair Anthony Sculimbrene attendance",
+    "ours": "",
+    "official": "mr. sculimbrene left the meeting at approximately 8:07 p.m.",
+    "note": "Our attendee list omits the vice chair.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Turkey Hill principal",
+    "ours": "Rob (Turkey Hill Elementary principal)",
+    "official": "mr. mcgrath reported a positive start to the year",
+    "official_reading": "",
+    "note": "Ours names Rob; official names Mr. McGrath for Turkey Hill; check the name.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-12T13:28:04Z",
+   "cost_usd": 0.0638511
+  }
+ }
 }

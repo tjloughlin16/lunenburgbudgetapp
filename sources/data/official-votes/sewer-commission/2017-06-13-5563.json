@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2017-06-13",
  "docid": "5563",
@@ -12,83 +12,436 @@
  },
  "votes": [
   {
-   "motion": "Delay election of officers for 2 months",
+   "motion": "Delay election of officers for 2 months until the Sewer Commission can discuss, at various levels, roles and responsibilities.",
    "moved_by": "Joan P.",
    "seconded_by": "Troy D.",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "motion: joan p. second: troy d. to delay election of officers for 2 months until the sewer commission can discuss, at various levels, roles and responsibility. discussion: none vote: unanimous"
+   "outcome": "passed, unanimous",
+   "procedural": false,
+   "quote": "motion: joan p. second: troy d. to delay election of officers for 2 months until the sewer commission can discuss, at various levels, roles and responsibility."
   },
   {
-   "motion": "Have Jack Rodriquenz go out for quotes for the Fitchburg meter relocation",
+   "motion": "Have Jack Rodriquenz go out for quotes for the Fitchburg meter relocation.",
    "moved_by": "Joe A.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "motion: joe a. second: john r. to have jack rodriquenz go out for quotes for the fitchburg meter relocation discussion: none vote: unanimous"
   },
   {
-   "motion": "Approve minutes of 1/10/2017",
+   "motion": "Approve minutes of 1/10/2017.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: john reynolds second: joe a. to approve minutes of 1/10/2017 discussion: none vote: unanimous"
   },
   {
-   "motion": "Approve minutes of 1/31/2017",
+   "motion": "Approve minutes of 1/31/2017.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion: john reynolds to approve minutes of 1/31/2017 discussion: none second: joe a. vote: unanimous"
   },
   {
-   "motion": "Approve minutes of 2/14/2017",
+   "motion": "Approve minutes of 2/14/2017.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: john reynolds second: joe a. to approve minutes of 1/10/2017 discussion: none vote: unanimous",
-   "quote_taken_from_text": true
+   "quote": "motion: john reynolds to approve minutes of 2/14/2017 discussion: none second: joe a. vote: unanimous"
   },
   {
-   "motion": "Approve minutes of 4/4/2017",
+   "motion": "Approve minutes of 4/4/2017.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: john reynolds second: joe a. to approve minutes of 1/10/2017 discussion: none vote: unanimou",
-   "quote_taken_from_text": true
+   "quote": "motion: john reynolds to approve minutes of 4/4/2017 discussion: none second: joe a. vote: unanimous"
   },
   {
-   "motion": "Approve minutes of 4/11/2017",
+   "motion": "Approve minutes of 4/11/2017.",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: john reynolds second: joe a. to approve minutes of 1/10/2017 discussion: none vote: unanimous",
-   "quote_taken_from_text": true
+   "quote": "motion: john reynolds to approve minutes of 4/11/2017 discussion: none second: joe a. vote: unanimous"
   },
   {
-   "motion": "Approve minutes of 4/252017",
+   "motion": "Approve minutes of 4/25/2017 (printed as 4/252017).",
    "moved_by": "John Reynolds",
    "seconded_by": "Joe A.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "motion: john reynolds second: joe a. to approve minutes of 1/10/2017 discussion: none vote: unanimou",
-   "quote_taken_from_text": true
+   "quote": "motion: john reynolds to approve minutes of 4/252017 discussion: none second: joe a. vote: unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:45pm.",
    "moved_by": "Joe A.",
    "seconded_by": "John R.",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "motion to adjourn: joe a. to adjourn at 8:45pm discussion: none second: john r. vote: unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision. All votes recorded as unanimous.\"",
- "cost_usd": 0.15170050000000002
+ "note": "Text is OCR of a scanned page set (macOS Vision), so some names and numbers are garbled and copied as printed: 'Sean/Péasd, FilGE Daniels' (likely a split name), '4/252017' for 4/25/2017, 'Emily Lehte' as the signature, and 'I/l' for I/I. Attendance is taken from the Attendees line; no roll-call votes are recorded and each motion is listed as 'Unanimous' with no per-member count. Joan P. and Troy D. have no printed role. Dollar figures: none are printed. Jack Rodriquenz and the Town Manager are discussed but not recorded as present, so they are not listed as attendees.",
+ "cost_usd": 0.010289220000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Carl Luck",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: carl luck, chair, john reynolds, vice-chair, joe anderson, clerk, sean/péasd, filge"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: carl luck, chair, john reynolds, vice-chair, joe anderson, clerk, sean/péasd, filge"
+  },
+  {
+   "name": "Joe Anderson",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "joe anderson, clerk, sean/péasd, filge daniels, members, barbara lefebvre, business manager"
+  },
+  {
+   "name": "Sean/Péasd",
+   "role": "Members",
+   "status": "present",
+   "quote": "joe anderson, clerk, sean/péasd, filge daniels, members, barbara lefebvre, business manager"
+  },
+  {
+   "name": "FilGE Daniels",
+   "role": "Members",
+   "status": "present",
+   "quote": "joe anderson, clerk, sean/péasd, filge daniels, members, barbara lefebvre, business manager"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "joe anderson, clerk, sean/péasd, filge daniels, members, barbara lefebvre, business manager"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Highland St (public speaker)",
+   "status": "present",
+   "quote": "dave rodgers(highland st) came forward and shared his concern about the high cost, how it was calculated and how this will be handled going forward."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "from Ducharme and Dillis",
+   "status": "present",
+   "quote": "greg roy from ducharme and dillis presented plans for a carwash to the sewer commission."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "appointment: Car Wash Proposal, 380 Electric Ave.",
+   "status": "present",
+   "quote": "6:30pm - dan proctor, 380 electric ave. car wash proposal - greg roy from ducharme and dillis"
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guest - dave rodgers, greg roy, ducharme & dillis, dan & jean proctor"
+  },
+  {
+   "name": "Joan P.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "joan p. presented an organizational flowchart to the commission."
+  },
+  {
+   "name": "Troy D.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: joan p. second: troy d. to delay election of officers for 2 months"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ask Counsel for input on reducing the Privilege Fee for the car wash project as a consideration.",
+   "quote": "the commission will ask counsel for input on reducing the fee as a consideration."
+  },
+  {
+   "decision": "Greg Roy will send a revised set of car wash plans to Jeff Walsh of Graves Engineering, who will review them for the Commission.",
+   "quote": "greg r. will be giving a revised set of plans to jeff walsh with graves engineering and will ask him to review for the commission."
+  },
+  {
+   "decision": "Hold a workshop on 6/20 to discuss roles and responsibilities within the Sewer Commission.",
+   "quote": "the commission will have the workshop on 6/20."
+  },
+  {
+   "decision": "The system maintenance documentation policy is tabled until after the discussion of roles and responsibilities.",
+   "quote": "it was decided that this will be tabled until after the discussion of roles and responsibilities."
+  },
+  {
+   "decision": "FY 18 Sewer Commission Goals deferred until roles and responsibilities are in place.",
+   "quote": "this will be deferred until roles and responsibilities are in place."
+  },
+  {
+   "decision": "Pump station report usefulness to be discussed further with Small Water System Services (SWSS); Commission to send a list of issues for the SWSS contract discussion.",
+   "quote": "the sewer commission will also send in list of issues to add to swss contract discussion."
+  },
+  {
+   "decision": "Counsel will be consulted on putting a restaurant name on the agenda if non-compliant restaurants are to be discussed.",
+   "quote": "counsel will be consulted on having the restaurant name on the agenda if they are to be discussed."
+  },
+  {
+   "decision": "Concern about monthly reports putting undue responsibility on restaurants to be put on a future agenda.",
+   "quote": "this will be put on a future agenda to discuss further."
+  },
+  {
+   "decision": "Billing Outsource Investigation Plan deferred until roles and responsibilities are established.",
+   "quote": "billing outsource investigation plan - this will be deferred until roles and responsibilities are established."
+  },
+  {
+   "decision": "John Reynolds to talk with Jack Rodriquenz about whether a Commission representative should attend the irrigation meter sale rep discussion.",
+   "quote": "john r. will talk with jack rodriquenz about this meeting"
+  },
+  {
+   "decision": "Minutes of 12/13/16 and 5/30/17 deferred until all members have had a chance to review them.",
+   "quote": "minutes from 12/13/16 and 5/30/17 will be deferred until all members have had a chance to review them."
+  },
+  {
+   "decision": "Per the Town Manager, the Business Manager vacancy will be posted in the Ledger for 10 days.",
+   "quote": "per the town manager, the position will be posted in the ledger for 10 days."
+  },
+  {
+   "decision": "Greg Roy will send the Sewer Commission a revised set of plans (timing of construction reviewed).",
+   "quote": "greg r. will send the sewer commission a revised set of plans."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Privilege Fee - car wash project (380 Electric Ave.)",
+   "what_was_recorded": "The Privilege Fee was discussed; the applicant said it was too high and would end the project, and the Commission will ask Counsel about reducing it. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the privilege fee was discussed. dan stated that it was too high and would put an end to the project."
+  },
+  {
+   "topic": "Privilege Fee - cost calculation and future handling",
+   "what_was_recorded": "A resident raised concern about the high cost of the privilege fee, how it was calculated, and how it will be handled going forward. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "came forward and shared his concern about the high cost, how it was calculated and how this will be handled going forward."
+  },
+  {
+   "topic": "Privilege fee assessment letter",
+   "what_was_recorded": "The privilege fee letter was sent to 15 Oak Ave.; the Commission discussed whether an address or a name should be listed on the agenda. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "business manager report: privilege fee assessment- the privilege fee letter has been sent to 15 oak ave."
+  },
+  {
+   "topic": "Invoices",
+   "what_was_recorded": "The Business Manager reported there are no invoices. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "invoices - there are no invoices."
+  },
+  {
+   "topic": "Grease trap annual permit invoices",
+   "what_was_recorded": "Annual permit letters and invoices were sent out on 5/31, and the Commission discussed when certified letters would be sent. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the commission discussed the annual permit letters and invoices that were sent out on 5/31 and when certified letters would be sent."
+  },
+  {
+   "topic": "Fitchburg meter relocation",
+   "what_was_recorded": "The Commission voted for Jack Rodriquenz to go out for quotes for the Fitchburg meter relocation. No cost or dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "to have jack rodriquenz go out for quotes for the fitchburg meter relocation"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "Highland St",
+   "topic": "High cost of the privilege fee",
+   "quote": "dave rodgers(highland st) came forward and shared his concern about the high cost, how it was calculated and how this will be handled going forward."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Appointment: 6:30pm Dan Proctor car wash proposal, 380 Electric Ave.",
+   "resolution": "discussed; Counsel to be asked about fee; revised plans to be sent",
+   "tags": [
+    "car wash",
+    "sewer connection",
+    "privilege fee",
+    "peer review"
+   ],
+   "quote": "6:30pm - dan proctor, 380 electric ave. car wash proposal - greg roy from ducharme and dillis"
+  },
+  {
+   "topic": "Election of Officers",
+   "resolution": "delayed 2 months (motion passed unanimously)",
+   "tags": [
+    "officers",
+    "charter",
+    "election"
+   ],
+   "quote": "election of officers - the commission discussed getting clarification on the charter before electing officers."
+  },
+  {
+   "topic": "Operations & System Management (I/I reduction updates, pump station reports, Fitchburg meter relocation)",
+   "resolution": "Fitchburg meter relocation quotes approved; other items discussed and referred to SWSS",
+   "tags": [
+    "I/I reduction",
+    "leaks",
+    "pump station",
+    "SWSS",
+    "meter relocation"
+   ],
+   "quote": "operations & system management - i/l reduction updates- the commission discussed a 6/13* email form jack rodriquenz"
+  },
+  {
+   "topic": "System Maintenance Planning (documentation policy, I/I reduction)",
+   "resolution": "documentation policy tabled; I/I plan deferred to roles discussion",
+   "tags": [
+    "maintenance policy",
+    "I/I reduction"
+   ],
+   "quote": "system maintenance planning - the commission discussed the need for a system maintenance documentation policy."
+  },
+  {
+   "topic": "FY 18 Sewer Commission Goals",
+   "resolution": "deferred",
+   "tags": [
+    "goals",
+    "roles and responsibilities"
+   ],
+   "quote": "fy 18 sewer commission goals - this will be deferred until roles and responsibilities are in place."
+  },
+  {
+   "topic": "Grease Trap Compliance issues and 1st Tuesday Report",
+   "resolution": "discussed; Counsel to be consulted; future agenda item",
+   "tags": [
+    "grease trap",
+    "restaurants",
+    "open meeting law",
+    "compliance letters"
+   ],
+   "quote": "grease trap compliance issues- the commission discussed the annual permit letters and invoices that were sent out on 5/31"
+  },
+  {
+   "topic": "Billing Outsource Investigation Plan",
+   "resolution": "deferred",
+   "tags": [
+    "billing",
+    "outsourcing"
+   ],
+   "quote": "billing outsource investigation plan - this will be deferred until roles and responsibilities are established."
+  },
+  {
+   "topic": "Irrigation Meter Policy/Upgrade",
+   "resolution": "John R. to follow up with Jack Rodriquenz",
+   "tags": [
+    "irrigation meter",
+    "sales representative"
+   ],
+   "quote": "irrigation meter policy/upgrade - john r. was given name of sale rep."
+  },
+  {
+   "topic": "Business Manager Report (privilege fee letter, invoices, vacancy)",
+   "resolution": "reported; vacancy to be posted 10 days",
+   "tags": [
+    "privilege fee",
+    "invoices",
+    "staffing",
+    "vacancy"
+   ],
+   "quote": "business manager report: privilege fee assessment- the privilege fee letter has been sent to 15 oak ave."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "six sets approved; 12/13/16 and 5/30/17 deferred",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes - the following minutes were presented for approval: 12/13/16, 1/10/17, 1/31/17, 2/14/17, 4/4/17, 4/11/17, 4/25/17 and 5/30/17."
+  },
+  {
+   "topic": "Upcoming Sewer Commission activities",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming sewer commission activities - june 27, 2017 regular meeting, town hall; july 11, 2017"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Jack Rodriquenz dated 6/13 (printed as 6/13*), detailing leaks found",
+   "where": "text",
+   "quote": "the commission discussed a 6/13* email form jack rodriquenz detailing the leaks that were found."
+  },
+  {
+   "name": "Jack's email of 6/13/17",
+   "where": "text",
+   "quote": "the sewer commission discussed jack's email of 6/13/17."
+  },
+  {
+   "name": "Revised set of car wash plans",
+   "where": "text",
+   "quote": "greg r. will be giving a revised set of plans to jeff walsh with graves engineering"
+  },
+  {
+   "name": "Organizational flowchart presented by Joan P.",
+   "where": "text",
+   "quote": "joan p. presented an organizational flowchart to the commission."
+  },
+  {
+   "name": "Sewer Commission charter",
+   "where": "text",
+   "quote": "the commission discussed getting clarification on the charter before electing officers."
+  },
+  {
+   "name": "Privilege fee letter (sent to 15 Oak Ave.)",
+   "where": "text",
+   "quote": "the privilege fee letter has been sent to 15 oak ave."
+  },
+  {
+   "name": "Annual Permit letters and invoices sent out 5/31",
+   "where": "text",
+   "quote": "the commission discussed the annual permit letters and invoices that were sent out on 5/31"
+  },
+  {
+   "name": "Email from Melanie Rich dated 5/31",
+   "where": "text",
+   "quote": "melanie rich sent an email 5/31 that she will be unable to continue."
+  },
+  {
+   "name": "1st Tuesday Report (on Google Drive)",
+   "where": "text",
+   "quote": "1s' tuesday report - the commission discussed listing names of non-compliant restaurants on the agenda"
+  },
+  {
+   "name": "Minutes of 12/13/16, 1/10/17, 1/31/17, 2/14/17, 4/4/17, 4/11/17, 4/25/17 and 5/30/17",
+   "where": "text",
+   "quote": "the following minutes were presented for approval: 12/13/16, 1/10/17, 1/31/17, 2/14/17, 4/4/17, 4/11/17, 4/25/17 and 5/30/17."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "car wash",
+  "privilege fee",
+  "roles and responsibilities",
+  "officers election",
+  "I/I reduction",
+  "grease trap",
+  "minutes approval",
+  "billing",
+  "irrigation meter",
+  "staffing",
+  "Fitchburg meter relocation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

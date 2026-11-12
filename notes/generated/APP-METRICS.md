@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **16,869 documents** — PDFs, spreadsheets, Word files and slide decks — 49,328 files and 11.3 GB in all, each with its address, its publisher’s filename and a checksum.
+- **16,869 documents** — PDFs, spreadsheets, Word files and slide decks — 49,331 files and 11.3 GB in all, each with its address, its publisher’s filename and a checksum.
 - **16 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, federal-bls, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,305 meeting documents** from **51 town boards**: 4,783 sets of minutes and 7,522 agendas, 2009-01-05 to 2026-11-12 — **18 years**.
 - **27,799 annual town report appropriation lines**, FY1959–FY2025, read page by page.
@@ -15,7 +15,7 @@
 ## What we made from it
 
 - **4,562 hours of meeting recordings transcribed** — 2,715 meetings, 190.1 days of audio end to end, 2012-05-02 to 2026-11-10. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
-- **2433 meetings with our own minutes** written from those recordings — **8204 substantive votes** and **1019 transfers** logged, each linked to the second of the video.
+- **2435 meetings with our own minutes** written from those recordings — **8210 substantive votes** and **1019 transfers** logged, each linked to the second of the video.
 - **A database of 458,419 rows in 243 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **8 analyses** and **271 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.

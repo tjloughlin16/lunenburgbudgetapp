@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2017-06-19",
  "docid": "976",
@@ -12,23 +12,143 @@
  },
  "votes": [
   {
-   "motion": "sign the Building Permit in accordance with the plans submitted",
+   "motion": "Sign the Building Permit for 17 Ruth Street in accordance with the plans submitted.",
    "moved_by": "Jewell",
    "seconded_by": "Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "an on motion by jewell and second by passios the board voted to sign the building permit in accordance with the plans submitted."
+   "quote": "an on motion by jewell and second by passios the board voted to sign the building permit in accordance with the plans submitted"
   },
   {
-   "motion": "sign the necessary permits for the Unifer event",
+   "motion": "Sign the necessary permits for the Unifer event at 300 Holman Street.",
    "moved_by": "Passios",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by passios and second by fortin, the necessary permits were signed by the board"
+   "quote": "after a lengthy discussion and on motion by passios and second by fortin, the necessary permits were signed by the board"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1136615
+ "note": "OCR text from a scanned page, one page only. No meeting date appears in the text; the 'Next Meeting' line reads 'July 17, 2007' and the clerk's received stamp reads 'APR 2 3 2018', which do not match the user-supplied meeting date of 2017-06-19. Board members are identified by surname only. Votes are recorded as motions with no printed tally, so counts are not stated. No public comment section, documents list, or dollar figures appear.",
+ "cost_usd": 0.00282052,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joel Swenson",
+   "role": "owner of the property (17 Ruth Street)",
+   "status": "present",
+   "quote": "joel and marilyn swenson, owners of the property, met with the board."
+  },
+  {
+   "name": "Marilyn Swenson",
+   "role": "owner of the property (17 Ruth Street)",
+   "status": "present",
+   "quote": "joel and marilyn swenson, owners of the property, met with the board."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "not stated",
+   "quote": "a building permit had been completed and submitted to the board through agent jim garreffi."
+  },
+  {
+   "name": "Jason",
+   "role": "Member of the Unifer Team",
+   "status": "present",
+   "quote": "member of the unifer team (jason and eva) met with the board."
+  },
+  {
+   "name": "Eva",
+   "role": "Member of the Unifer Team",
+   "status": "present",
+   "quote": "member of the unifer team (jason and eva) met with the board."
+  },
+  {
+   "name": "Heather Bowen",
+   "role": "in support of the event",
+   "status": "present",
+   "quote": "also present was heather bowen in support of the event."
+  },
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "not stated",
+   "quote": "chairman george emond and agent jim garreffi have been in contact with the unifer team."
+  },
+  {
+   "name": "Jewell",
+   "role": "Board member (moved motion, first name not printed)",
+   "status": "not stated",
+   "quote": "an on motion by jewell and second by passios the board voted to sign the building permit"
+  },
+  {
+   "name": "Passios",
+   "role": "Board member (seconded/moved motions, first name not printed)",
+   "status": "not stated",
+   "quote": "after a lengthy discussion and on motion by passios and second by fortin, the necessary permits were signed by the board"
+  },
+  {
+   "name": "Fortin",
+   "role": "Board member (seconded motion, first name not printed)",
+   "status": "not stated",
+   "quote": "after a lengthy discussion and on motion by passios and second by fortin, the necessary permits were signed by the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board deemed the existing septic permit (listed as 2/3 bedroom) a 3 bedroom for the 17 Ruth Street proposal.",
+   "quote": "the current septic permit is a 2/3 bedroom and the board deemed it a 3 bedroom."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "17 Ruth Street building permit and septic bedroom count",
+   "resolution": "approved: board voted to sign the building permit",
+   "quote": "joel and marilyn swenson, owners of the property, met with the board. a building permit had been completed and submitted",
+   "tags": [
+    "building permit",
+    "septic",
+    "bedrooms",
+    "addition"
+   ]
+  },
+  {
+   "topic": "Unifer event at 300 Holman Street",
+   "resolution": "approved: board voted to sign the necessary permits after discussion",
+   "quote": "member of the unifer team (jason and eva) met with the board. also present was heather bowen in support of the event.",
+   "tags": [
+    "special event",
+    "camping",
+    "food vendors",
+    "potable water",
+    "gray water",
+    "Nashoba"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Building Permit (17 Ruth Street)",
+   "where": "text",
+   "quote": "the board voted to sign the building permit in accordance with the plans submitted"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "building permit",
+  "septic",
+  "special event permit",
+  "camping",
+  "food vendors",
+  "water supply"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cable-advisory-committee",
  "meeting_date": "2017-06-19",
  "docid": "1538",
@@ -10,15 +10,173 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06192017-1538",
   "doc_url": "/docs/meetings/cable-advisory-committee/2017-06-19-minutes-1538.pdf"
  },
- "votes": [
+ "votes": [],
+ "dropped_unquoted": 0,
+ "note": "Scanned page read by OCR with garbled words (e.g., 'emalis', 'askee', 'relalive', 'INE!', 'Atiomey'); quotes copied as OCR printed them. No motions or votes are recorded; the minutes approval, the decision to forward the business plan, and the adjournment at 6:35 p.m. appear without any vote. Meeting attendance is stated only as the three named members being present; no roles are printed.",
+ "cost_usd": 0.0051068,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
   {
-   "motion": "Approve prior minutes from October 26, 2015 and June 12, 2017",
-   "outcome": "approved",
-   "procedural": true,
-   "quote": "committee reviewed & approved minutes of : • october 26, 2015 • june 12, 2017"
+   "name": "Steve Walker",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with steve walker, tom alonzo and paula bertram present."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with steve walker, tom alonzo and paula bertram present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "",
+   "status": "present",
+   "quote": "the cable advisory committee met in the selectmen conference room as scheduled with steve walker, tom alonzo and paula bertram present."
+  },
+  {
+   "name": "Attorney Hewig",
+   "role": "Attorney",
+   "status": "not stated",
+   "quote": "attorney hewig has scanned the business plan and is awaiting a formal list of our requests."
+  },
+  {
+   "name": "Steve Malandrinos",
+   "role": "",
+   "status": "not stated",
+   "quote": "had askee steve malandrines about dark fiber who suggested that 100 up 100 down in 10 places would be preferable"
+  },
+  {
+   "name": "Loxi Calmes",
+   "role": "Superintendent",
+   "status": "not stated",
+   "quote": "loxi calmes, superintendent, forwarded comments through steve malandrinos."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11526449999999999
+ "decisions": [
+  {
+   "decision": "Committee reviewed and approved the minutes of October 26, 2015 and June 12, 2017 (no motion or vote recorded).",
+   "quote": "committee reviewed & approved minutes of :"
+  },
+  {
+   "decision": "Steve Walker to make one minor change to the business plan and forward it to Heather Lemieux for distribution to the Board of Selectmen and as a public document.",
+   "quote": "he will make the change and forward to heather lemieux for distribution to the board of selectmen and as a public document."
+  },
+  {
+   "decision": "Committee decided to forward the business plan prepared by Steve Walker to Attorney Hewig as the starting point for negotiations.",
+   "quote": "committee decided to forward the document prepared by steve walker to attorney hewig as the starting point for negotiations."
+  },
+  {
+   "decision": "Tom Alonzo to talk with Attorney Hewig about the iNET issue, since iNET was left out of the contract.",
+   "quote": "he will talk with atiomey hewig."
+  },
+  {
+   "decision": "Next meeting to be scheduled in early July; Paula Bertram to forward her vacation schedule to Tom Alonzo.",
+   "quote": "next meeting will be scheduled in early july, paula will forward her vacation schedule to tom alonzo."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dark fiber alternative to iNET",
+   "what_was_recorded": "Steve Malandrinos suggested dark fiber at 100 up 100 down in 10 places; the cost was put at over $720,000 over the 10-year contract, at $600 per month per site.",
+   "figures_as_printed": [
+    "$720,000",
+    "$600"
+   ],
+   "quote": "cost would be over $720,000 over the course of the 10 year contract, ($600 per month per site)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment and Announcements",
+   "resolution": "no action (none offered)",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment none announcements none"
+  },
+  {
+   "topic": "Minutes/Correspondence",
+   "resolution": "approved minutes of October 26, 2015 and June 12, 2017",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "committee reviewed & approved minutes of :"
+  },
+  {
+   "topic": "Outcome of public hearing of 6/15/17",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "public hearing",
+    "cable contract"
+   ],
+   "quote": "discuss and review outcome of public hearing of 6/15/17"
+  },
+  {
+   "topic": "Final review of PACC Business Plan",
+   "resolution": "minor change to be made; plan to be forwarded for distribution",
+   "tags": [
+    "business plan",
+    "INET"
+   ],
+   "quote": "final review of pacc business plan - steve walker discussed inet"
+  },
+  {
+   "topic": "Next steps in renewal process",
+   "resolution": "forward business plan to Attorney Hewig as starting point for negotiations",
+   "tags": [
+    "renewal",
+    "negotiations"
+   ],
+   "quote": "discuss and plan next steps in renewal process - attorney hewig has scanned the business plan"
+  },
+  {
+   "topic": "Upcoming Meeting Schedule",
+   "resolution": "next meeting set for early July",
+   "tags": [
+    "meeting schedule"
+   ],
+   "quote": "upcoming meeting schedule - next meeting will be scheduled in early july"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint Presentation (public hearing, given by Steve Walker)",
+   "where": "text",
+   "quote": "steve walker gave a powerpoint presentation."
+  },
+  {
+   "name": "6 emalis (emails received for the public hearing, read into the record)",
+   "where": "text",
+   "quote": "we also received 6 emalis that were read into the record"
+  },
+  {
+   "name": "PACC Business Plan (prepared by Steve Walker)",
+   "where": "text",
+   "quote": "final review of pacc business plan - steve walker discussed inet"
+  },
+  {
+   "name": "Minutes of October 26, 2015 and June 12, 2017 (approved)",
+   "where": "text",
+   "quote": "committee reviewed & approved minutes of :"
+  }
+ ],
+ "tags": [
+  "cable contract",
+  "Comcast renewal",
+  "public hearing",
+  "business plan",
+  "iNET",
+  "dark fiber",
+  "minutes approval",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }
