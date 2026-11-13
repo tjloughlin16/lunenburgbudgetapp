@@ -986,6 +986,28 @@ def streams():
     v_done, vp = register_split(lambda r: r.get('minutes') == '1', 'official-votes', keep=structured)
     v_any, _ = register_split(lambda r: r.get('minutes') == '1', 'official-votes')
     v_votes_only = v_any - v_done
+    # NOTHING TO READ IS NOT OWED. TJ, 13 November 2026, of `4,477 of 4,497`: "why is this
+    # true?!" Because the card counted every register meeting with minutes, while the
+    # reader (process_meeting) skips minutes whose text is under extract_official_votes'
+    # MIN_CHARS -- almost all a page saying the meeting was not held -- and a register row
+    # with no board slug can never be matched to a file. Those are BLOCKED, named, not
+    # work anybody can do by running the queue. A blocked one may still be a defect: a
+    # scan whose only text layer is a browser's print header reads as short too, which is
+    # why the reason says so rather than "cancelled".
+    import extract_official_votes as E
+    short = {}
+    for e in E.minutes_files():
+        if len(E.norm(open(e['path'], encoding='utf-8', errors='replace').read())) < E.MIN_CHARS:
+            short.setdefault((e['board_slug'], e['date']), True)
+    long_ = {(e['board_slug'], e['date']) for e in E.minutes_files()
+             if (e['board_slug'], e['date']) not in short}
+    v_blocked, vp2 = 0, []
+    for p in vp:
+        keep = [d for d in p['dates'] if p['board'] and not ((p['board'], d) in short and (p['board'], d) not in long_)]
+        v_blocked += len(p['dates']) - len(keep)
+        if keep:
+            vp2.append(dict(p, n=len(keep), dates=keep, first=keep[0], last=keep[-1]))
+    vp = vp2
     # NAMED FOR WHAT IT PRODUCES, WHICH IS ONLY VOTES. TJ, 19 September 2026: "why do you
     # call it 'Votes from the town's minutes'? I assume this means 'Our own minutes'
     # because its more than votes isnt it that we're processing for?" -- a fair reading,
@@ -1020,7 +1042,9 @@ def streams():
                      'before 6 October 2026 and wait to be re-read structured; the rest have '
                      'never been read' % '{:,}'.format(v_votes_only),
                   done=v_done,
-                  todo=sum(p['n'] for p in vp), blocked=0, blocked_why='',
+                  todo=sum(p['n'] for p in vp), blocked=v_blocked,
+                  blocked_why='minutes with under %d characters of text (a meeting not held or '
+                              'cancelled, or a scan never read) or filed under no board' % E.MIN_CHARS,
                   # DERIVED, NOT TYPED. This said `~0.03% of the week each` and the
                   # measured figure is <=0.0193% -- a 35-55% overstatement in the number
                   # anybody sizes a batch against. Every vote file carries its own

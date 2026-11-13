@@ -235,11 +235,21 @@ def minutes_files(board=None):
     pat = os.path.join(TEXT, board or '*', '*-minutes-*.txt')
     out = []
     for p in sorted(glob.glob(pat), reverse=True):
-        m = re.match(r'(\d{4}-\d{2}-\d{2})-minutes-(\w+)\.txt$', os.path.basename(p))
+        # [\w-]+, not \w+: minutes a board DELIVERED are filed `-minutes-rr2026-09-18.txt`
+        # (and `-draft`), and \w+ never matched them -- so four Select Board meetings sat
+        # `still to process` on the dashboard while the reader could not see them at all
+        # (found 13 November 2026).
+        m = re.match(r'(\d{4}-\d{2}-\d{2})-minutes-([\w-]+)\.txt$', os.path.basename(p))
         if not m:
             continue
         out.append(dict(path=p, rel=os.path.relpath(p, ROOT), board_slug=os.path.basename(os.path.dirname(p)),
                         date=m.group(1), docid=m.group(2)))
+    # A DELIVERED COPY IS READ ONLY WHERE IT IS THE MEETING'S ONLY MINUTES. Thirteen of the
+    # seventeen delivered by records request duplicate minutes the town also posted (often
+    # as a draft), and those posted ones are read already; reading both would put two
+    # records of one meeting side by side, one of them a draft.
+    posted = {(e['board_slug'], e['date']) for e in out if not e['docid'].startswith('rr')}
+    out = [e for e in out if not e['docid'].startswith('rr') or (e['board_slug'], e['date']) not in posted]
     # NEWEST FIRST ACROSS EVERY BOARD, not board by board: the last two years matter more
     # than any one board's depth (TJ, 17 September 2026).
     out.sort(key=lambda e: e['date'], reverse=True)
