@@ -2,8 +2,8 @@
  "board": "Sewer Commission",
  "grain": "A row is a transfer as the Sewer Commission’s minutes record it: sometimes one line to another, sometimes one total for a batch, sometimes only the vote. Totals add the amounts the minutes print; a transfer approved with no amount printed is counted and adds nothing. The fiscal year is the one the minutes state where they state one, otherwise the year the meeting fell in, marked as ours.",
  "has_forms": false,
- "minutes_from": "2010-09-28",
- "minutes_read": 272,
+ "minutes_from": "2010-01-13",
+ "minutes_read": 288,
  "minutes_to": "2026-09-29",
  "slug": "sewer-commission",
  "sources": [
@@ -1968,20 +1968,13 @@
   },
   {
    "awaiting": [],
-   "counted": [],
-   "fy": 2017,
-   "meetings": 0,
-   "n": 0,
-   "n_fy_ours": 0,
-   "n_gold": 0,
-   "n_no_amount": 0,
-   "not_counted": [
+   "counted": [
     {
-     "amount": "",
-     "amount_as_printed": "",
-     "amount_basis": "no amount printed",
+     "amount": "614.00",
+     "amount_as_printed": "$614.00",
+     "amount_basis": "as printed",
      "crosses": [],
-     "description": "Transfer $614.00 from the Enterprise Fund to pay the SRF project. (the minutes record the vote, not the lines)",
+     "description": "Transfer from the Enterprise Fund to the SRF project fund to close out the SRF project, requested by the Town Accountant.",
      "evidence": {
       "form": false,
       "minutes": true,
@@ -1994,17 +1987,291 @@
      "meeting_date": "2017-05-30",
      "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05302017-5562",
      "our_copy": "/docs/meetings/sewer-commission/2017-05-30-minutes-5562.pdf",
-     "outcome": "passed",
+     "outcome": "passed, all voted in favor",
      "quote": "troy made a motion to transfer $614.00 from the enterprise fund to pay the srf project; john seconded; all voted in favor; motion approved.",
+     "running_total": "614.00",
+     "to_line": "SRF project fund to close out the SRF project",
+     "video_url": "",
+     "why_not": ""
+    }
+   ],
+   "fy": 2017,
+   "meetings": 1,
+   "n": 1,
+   "n_fy_ours": 1,
+   "n_gold": 0,
+   "n_no_amount": 0,
+   "not_counted": [
+    {
+     "amount": "",
+     "amount_as_printed": "not stated",
+     "amount_basis": "no amount printed",
+     "crosses": [],
+     "description": "I/l Stabilization transfer request.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "stabilization fund",
+     "meeting_date": "2017-04-04",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04042017-5559",
+     "our_copy": "/docs/meetings/sewer-commission/2017-04-04-minutes-5559.pdf",
+     "outcome": "Removed from the articles, as the funds are hoped to be used before year-end.",
+     "quote": "we have removed the i/l stabilization transfer request as we hope to have used these funds before year-end.",
      "to_line": "",
      "video_url": "",
-     "why_not": "a payment, refund or allocation, not a transfer between budget lines"
+     "why_not": "no vote to approve recorded"
+    },
+    {
+     "amount": "3.00",
+     "amount_as_printed": "a sum of money; for now 3% of revenue",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Transfer from Sewer Enterprise retained earnings into a new Capital Reserve Stabilization Fund (Capital Reserve Stabilization Fund Article).",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "stabilization fund",
+     "meeting_date": "2017-04-04",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04042017-5559",
+     "our_copy": "/docs/meetings/sewer-commission/2017-04-04-minutes-5559.pdf",
+     "outcome": "Article approved as written.",
+     "quote": "but for now it is for 3% of revenue.",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    },
+    {
+     "amount": "2879.80",
+     "amount_as_printed": "a sum of money; at a minimum $2,879.80",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Transfer from available funds into the Reserve Capacity Stabilization Fund (Reserve Capacity Article).",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "stabilization fund",
+     "meeting_date": "2017-04-04",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04042017-5559",
+     "our_copy": "/docs/meetings/sewer-commission/2017-04-04-minutes-5559.pdf",
+     "outcome": "Article accepted as written; amount left open until Town Meeting.",
+     "quote": "at a minimum it will be $2,879.80.",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    },
+    {
+     "amount": "24805.00",
+     "amount_as_printed": "I/l Stabilization $14,520 and Res Cap accounts $10,285",
+     "amount_basis": "sum of 2 figures printed",
+     "crosses": [],
+     "description": "Transfer of FY17 funds from the I/I stabilization and Reserve Capacity accounts for use in FY18 (proposed Town Meeting warrant article).",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "stabilization fund",
+     "meeting_date": "2017-02-28",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02282017-5583",
+     "our_copy": "/docs/meetings/sewer-commission/2017-02-28-minutes-5583.pdf",
+     "outcome": "Draft article sent to Town Counsel 2/23; no vote recorded at this meeting.",
+     "quote": "transfer of funds of fy17 from reserve capacity & i/l stabilization accounts for use in fy18: i/l stabilization $14,520 and res cap accounts $10,285.",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    },
+    {
+     "amount": "",
+     "amount_as_printed": "",
+     "amount_basis": "no amount printed",
+     "crosses": [],
+     "description": "Budget transfer to operate the Sewer Enterprise Fund for FY17, proposed as a Town Meeting warrant article.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "",
+     "fy_basis": "stated in the minutes for this transfer",
+     "fy_ours": false,
+     "kind": "other",
+     "meeting_date": "2016-03-08",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03082016-5540",
+     "our_copy": "/docs/meetings/sewer-commission/2016-03-08-minutes-5540.pdf",
+     "outcome": "not stated",
+     "quote": "the stabilization fund transfer, the budget transfer to operate the sewer enterprise fund for fy17",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    },
+    {
+     "amount": "",
+     "amount_as_printed": "",
+     "amount_basis": "no amount printed",
+     "crosses": [],
+     "description": "Stabilization fund transfer, proposed as a Town Meeting warrant article.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "",
+     "fy_basis": "stated in the minutes for this transfer",
+     "fy_ours": false,
+     "kind": "stabilization fund",
+     "meeting_date": "2016-03-08",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03082016-5540",
+     "our_copy": "/docs/meetings/sewer-commission/2016-03-08-minutes-5540.pdf",
+     "outcome": "not stated",
+     "quote": "the stabilization fund transfer, the budget transfer to operate the sewer enterprise fund for fy17",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    }
+   ],
+   "sheets": [],
+   "tentative": [],
+   "tentative_total": "0.00",
+   "total": "614.00"
+  },
+  {
+   "awaiting": [],
+   "counted": [],
+   "fy": 2016,
+   "meetings": 0,
+   "n": 0,
+   "n_fy_ours": 0,
+   "n_gold": 0,
+   "n_no_amount": 0,
+   "not_counted": [
+    {
+     "amount": "77000.00",
+     "amount_as_printed": "$77,000",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Transfer from the enterprise fund to cover the budget deficit, to be requested through the Town Meeting warrant.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": true
+     },
+     "from_line": "enterprise fund",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "other",
+     "meeting_date": "2016-02-23",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02232016-5537",
+     "our_copy": "/docs/meetings/sewer-commission/2016-02-23-minutes-5537.pdf",
+     "outcome": "proposed for Town Meeting warrant; not voted",
+     "quote": "for a transfer from the enterprise fund to cover the $77,000 in red from the budget",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
     }
    ],
    "sheets": [],
    "tentative": [],
    "tentative_total": "0.00",
    "total": "0.00"
+  },
+  {
+   "awaiting": [],
+   "counted": [],
+   "fy": 2014,
+   "meetings": 0,
+   "n": 0,
+   "n_fy_ours": 0,
+   "n_gold": 0,
+   "n_no_amount": 0,
+   "not_counted": [
+    {
+     "amount": "204943.66",
+     "amount_as_printed": "$204,943.66",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Proposed transfer to Retained Earnings in the FY14 budget, to be reduced by the Commission",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "",
+     "fy_basis": "stated in the minutes for this transfer",
+     "fy_ours": false,
+     "kind": "other",
+     "meeting_date": "2013-02-05",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02052013-5458",
+     "our_copy": "/docs/meetings/sewer-commission/2013-02-05-minutes-5458.pdf",
+     "outcome": "not stated",
+     "quote": "the proposed transfer to retained earnings was at $204,943.66.",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "no vote to approve recorded"
+    }
+   ],
+   "sheets": [],
+   "tentative": [],
+   "tentative_total": "0.00",
+   "total": "0.00"
+  },
+  {
+   "awaiting": [],
+   "counted": [
+    {
+     "amount": "75743.00",
+     "amount_as_printed": "$75,743",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Transfer from retained earnings to balance the FY 2011 sewer budget",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": false
+     },
+     "from_line": "retained earnings",
+     "fy_basis": "stated in the minutes for this transfer",
+     "fy_ours": false,
+     "kind": "other",
+     "meeting_date": "2010-04-14",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04142010-5366",
+     "our_copy": "/docs/meetings/sewer-commission/2010-04-14-minutes-5366.pdf",
+     "outcome": "passed (included in the budget vote, recorded as unanimous)",
+     "quote": "and to take $75,743 from retained earnings to balance the budget.",
+     "running_total": "75743.00",
+     "to_line": "balance the FY 2011 sewer budget",
+     "video_url": "",
+     "why_not": ""
+    }
+   ],
+   "fy": 2011,
+   "meetings": 1,
+   "n": 1,
+   "n_fy_ours": 0,
+   "n_gold": 0,
+   "n_no_amount": 0,
+   "not_counted": [],
+   "sheets": [],
+   "tentative": [],
+   "tentative_total": "0.00",
+   "total": "75743.00"
   }
  ]
 }

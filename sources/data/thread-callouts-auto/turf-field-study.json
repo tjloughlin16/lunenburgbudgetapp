@@ -1,56 +1,58 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "turf-field-study",
- "picked_at": "2026-11-11T12:28:58Z",
+ "picked_at": "2026-11-13T12:58:00Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.1055,
- "input_sha256": "634167b1607338923eb6486a3c84af8bc841ffd49933de393bd68fe6bebba6d1",
+ "cost_usd": 0.1068,
+ "input_sha256": "77bfc65317302345e25eea923c03f28f510dab4fad876f2892e1b420243c1d10",
  "callouts": [
   {
    "kind": "money",
    "value": "$195,830",
-   "label": "requested for engineering and design of the track and turf field, not construction",
-   "hook": "requested for track engineering",
-   "quote": "$195,830 article for professional engineering and related services",
+   "label": "requested for engineering and design of the track and field, not construction",
+   "hook": "requested for engineering study",
+   "quote": "article 9 (middle/high school track and field engineering and related services, $195,830)",
    "heard": [],
-   "item_date": "2026-10-20",
+   "item_date": "2026-10-27",
    "item_board": "select-board",
    "basis": "printed",
-   "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
-   "where": "Select Board minutes, 20 Oct 2026",
+   "doc": "meetings/select-board/2026-10-27-minutes-8097.pdf",
+   "text": "meetings/text/select-board/2026-10-27-minutes-8097.txt",
+   "where": "Select Board minutes, 27 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "Amount, engineering/design-only scope and 'requested' are in the minutes. The 27 Oct deferral doesn't change that it was requested, and the callout doesn't say it is on the warrant."
+    "why": "Article 9 engineering request of $195,830 is printed, and the label says it isn't construction. The later deferral doesn't change that it was requested."
    }
   },
   {
-   "kind": "warrant",
-   "value": "Nov 17",
-   "label": "Special Town Meeting takes up the track and field engineering article, last on the warrant",
+   "kind": "money",
+   "value": "~$3 million",
+   "label": "earlier estimate to replace the turf and track, listed in the school capital plan",
    "hook": "",
-   "quote": "The special town meeting is Tuesday, November 17th at 700 p.m. at the middle high school auditorium",
-   "heard": [],
+   "quote": "was approximately $3 million",
+   "heard": [
+    "$3 million"
+   ],
    "item_date": "2026-10-21",
    "item_board": "school-committee",
    "basis": "heard",
    "board": "school-committee",
    "date": "2026-10-21",
    "video_id": "2-Ax9zkA1NA",
-   "t": 271,
+   "t": 4459,
    "where": "School Committee, 21 Oct 2026",
    "verdict": {
-    "keep": false,
-    "why": "Overtaken: the Select Board deferred Article 9 on 27 Oct, so the engineering article is no longer set for Nov 17 and 'last on the warrant' is stale."
+    "keep": true,
+    "why": "About $3 million earlier estimate in the capital plan is stated and correctly called earlier."
    }
   },
   {
    "kind": "impact",
    "value": "Lanes 7 and 8",
-   "label": "of the track are closed off because the lower retaining wall is failing",
+   "label": "of the track closed off after the lower retaining wall was found failing",
    "hook": "",
-   "quote": "which renders lanes 7 and 8 of the track, um, not able to be used",
+   "quote": "renders lanes 7 and 8 of the track, um, not able to be used",
    "heard": [],
    "item_date": "2026-10-22",
    "item_board": "finance-committee",
@@ -62,7 +64,7 @@
    "where": "Finance Committee, 22 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "The superintendent said the wall failure leaves lanes 7 and 8 unusable. Nothing later contradicts it."
+    "why": "Lanes 7 and 8 unusable after the lower retaining wall failure is stated."
    }
   }
  ]

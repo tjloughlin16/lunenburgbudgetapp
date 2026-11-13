@@ -1,6 +1,34 @@
 {
  "active": [
   {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5990775?domainName=www.schoolspring.com",
+   "closes": "2027-01-11",
+   "displayed": "",
+   "first_seen": "2026-11-13",
+   "id": "5990775",
+   "job_type": "Full-time",
+   "page_url": "https://www.schoolspring.com/jobdetail?jobId=5990775",
+   "pay": "",
+   "positions": "2",
+   "posted": "2026-11-12",
+   "school": "Lunenburg Primary School",
+   "title": "Paraprofessional (Primary School - grades PreK-2nd) with great benefits LOOK"
+  },
+  {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5990217?domainName=www.schoolspring.com",
+   "closes": "2027-01-11",
+   "displayed": "",
+   "first_seen": "2026-11-13",
+   "id": "5990217",
+   "job_type": "Part-time",
+   "page_url": "https://www.schoolspring.com/jobdetail?jobId=5990217",
+   "pay": "",
+   "positions": "1",
+   "posted": "2026-11-12",
+   "school": "Lunenburg Public Schools",
+   "title": "Occupational Therapist (.5)"
+  },
+  {
    "api_url": "https://api.schoolspring.com/api/Jobs/5988547?domainName=www.schoolspring.com",
    "closes": "2027-01-09",
    "displayed": "",
@@ -55,34 +83,6 @@
    "posted": "2026-10-21",
    "school": "Turkey Hill Elementary School",
    "title": "Elementary School Long-term SUBSTITUTE  October 2026 - TBD"
-  },
-  {
-   "api_url": "https://api.schoolspring.com/api/Jobs/5965552?domainName=www.schoolspring.com",
-   "closes": "2026-12-19",
-   "displayed": "",
-   "first_seen": "2026-10-21",
-   "id": "5965552",
-   "job_type": "Full-time",
-   "page_url": "https://www.schoolspring.com/jobdetail?jobId=5965552",
-   "pay": "",
-   "positions": "2",
-   "posted": "2026-10-20",
-   "school": "Lunenburg Primary School",
-   "title": "Paraprofessional (Primary School - grades PreK-2nd) with great benefits LOOK"
-  },
-  {
-   "api_url": "https://api.schoolspring.com/api/Jobs/5959044?domainName=www.schoolspring.com",
-   "closes": "2026-11-12",
-   "displayed": "",
-   "first_seen": "2026-10-14",
-   "id": "5959044",
-   "job_type": "After school/Evening",
-   "page_url": "https://www.schoolspring.com/jobdetail?jobId=5959044",
-   "pay": "$80 per hour",
-   "positions": "1",
-   "posted": "2026-10-13",
-   "school": "Lunenburg Public Schools",
-   "title": "In-Home Special Education Tutor / ABA Specialist"
   },
   {
    "api_url": "https://api.schoolspring.com/api/Jobs/5958072?domainName=www.schoolspring.com",
@@ -225,9 +225,53 @@
    "title": "2026-2027 Substitute School Nurses - $200 daily rate"
   }
  ],
- "as_of": "2026-11-12",
+ "as_of": "2026-11-13",
  "grain": "Postings on SchoolSpring under the employer account “Lunenburg Public Schools” (SchoolSpring employer 11047), checked once a day. A posting is one advertisement, not one vacancy: “2026-2027 Substitutes, Teachers & Paraprofessionals at all schools” is a single posting listing 100 positions.",
  "history": [
+  {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5990217?domainName=www.schoolspring.com",
+   "date": "2026-11-13",
+   "event": "posted",
+   "id": "5990217",
+   "posted": "2026-11-12",
+   "prev_look": "2026-11-12",
+   "school": "Lunenburg Public Schools",
+   "source": "/docs/district-budget/docs/personnel/job-postings/2026-11-13/job-5990217.json",
+   "title": "Occupational Therapist (.5)"
+  },
+  {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5990775?domainName=www.schoolspring.com",
+   "date": "2026-11-13",
+   "event": "posted",
+   "id": "5990775",
+   "posted": "2026-11-12",
+   "prev_look": "2026-11-12",
+   "school": "Lunenburg Primary School",
+   "source": "/docs/district-budget/docs/personnel/job-postings/2026-11-13/job-5990775.json",
+   "title": "Paraprofessional (Primary School - grades PreK-2nd) with great benefits LOOK"
+  },
+  {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5959044?domainName=www.schoolspring.com",
+   "date": "2026-11-13",
+   "event": "removed",
+   "id": "5959044",
+   "posted": "2026-10-13",
+   "prev_look": "2026-11-12",
+   "school": "Lunenburg Public Schools",
+   "source": "/docs/district-budget/docs/personnel/job-postings/2026-11-13/listing.json",
+   "title": "In-Home Special Education Tutor / ABA Specialist"
+  },
+  {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5965552?domainName=www.schoolspring.com",
+   "date": "2026-11-13",
+   "event": "removed",
+   "id": "5965552",
+   "posted": "2026-10-20",
+   "prev_look": "2026-11-12",
+   "school": "Lunenburg Primary School",
+   "source": "/docs/district-budget/docs/personnel/job-postings/2026-11-13/listing.json",
+   "title": "Paraprofessional (Primary School - grades PreK-2nd) with great benefits LOOK"
+  },
   {
    "api_url": "https://api.schoolspring.com/api/Jobs/5988547?domainName=www.schoolspring.com",
    "date": "2026-11-11",
@@ -857,7 +901,7 @@
    "title": "Athletic Director (.5 Position)"
   }
  ],
- "looks": 36,
+ "looks": 37,
  "sources": [
   {
    "label": "SchoolSpring job search API, employer e-11047 (what is open)",
@@ -874,16 +918,16 @@
  ],
  "stats": [
   {
-   "label": "open postings under the district’s SchoolSpring account, at our last check (12 November 2026)",
+   "label": "open postings under the district’s SchoolSpring account, at our last check (13 November 2026)",
    "value": "16"
   },
   {
    "label": "postings seen in all since tracking began 5 October 2026",
-   "value": "26"
+   "value": "28"
   },
   {
    "label": "postings taken down since then",
-   "value": "10"
+   "value": "12"
   },
   {
    "label": "edits to an open posting seen since then",

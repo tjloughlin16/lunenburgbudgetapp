@@ -1,36 +1,36 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "brooks-house",
- "picked_at": "2026-11-02T12:27:38Z",
+ "picked_at": "2026-11-13T12:58:21Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0483,
- "input_sha256": "fd414e90587881b078a0c732c8f1472c52013af81e74052c7db65afb424a5192",
+ "cost_usd": 0.0484,
+ "input_sha256": "81f0073e5915f16462b45e3928d71921ab7f87ed03d78a62be418c55c5fb783e",
  "callouts": [
   {
    "kind": "service",
-   "value": "RFP next",
-   "label": "Select Board will schedule a request for proposals on the Brooks House after Special Town Meeting",
-   "hook": "next step for the building",
+   "value": "Sale/lease RFP",
+   "label": "Select Board agreed to schedule a discussion of seeking proposals, after Special Town Meeting",
+   "hook": "",
    "quote": "a future agenda item on an rfp, to follow the special town meeting, would be scheduled.",
    "heard": [],
    "item_date": "2026-10-20",
    "item_board": "select-board",
    "basis": "printed",
    "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.pdf",
+   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "Consensus to schedule a future RFP agenda item after Special Town Meeting is in the minutes."
+    "why": "Minutes state consensus to schedule a future RFP agenda item after Special Town Meeting; nothing later."
    }
   },
   {
    "kind": "impact",
-   "value": "Plan B",
-   "label": "demolition if the RFP fails, a preservation group member told the Select Board",
+   "value": "Plan B: demolish",
+   "label": "fallback a resident group member named if no buyer or tenant is found",
    "hook": "",
-   "quote": "Plan B, if the RFP is not successful, is demolition.",
+   "quote": "Plan B, if the RFP is not successful, is demolition",
    "heard": [],
    "item_date": "2026-10-20",
    "item_board": "select-board",
@@ -42,27 +42,27 @@
    "where": "Select Board, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "Quote supports Plan B being demolition if the RFP fails, and the speaker is attributed correctly."
+    "why": "Public commenter on the APDC side said Plan B if the RFP fails is demolition; label matches."
    }
   },
   {
    "kind": "impact",
-   "value": "No town use",
-   "label": "Municipal Building Design Committee voted that the town has no use for the building",
+   "value": "Oct 2025",
+   "label": "when the Town Meeting-requested Brooks House report was originally due",
    "hook": "",
-   "quote": "there's no municipal use for the Brooks House",
+   "quote": "October 2025 was when we were supposed to have it.",
    "heard": [],
-   "item_date": "2026-08-03",
-   "item_board": "lunenburg-municipal-building-design-committee",
+   "item_date": "2026-07-14",
+   "item_board": "select-board",
    "basis": "heard",
-   "board": "lunenburg-municipal-building-design-committee",
-   "date": "2026-08-03",
-   "video_id": "YJ8CLX_0gLA",
-   "t": 547,
-   "where": "Lunenburg Municipal Building Design Committee, 3 Aug 2026",
+   "board": "select-board",
+   "date": "2026-07-14",
+   "video_id": "tlJWseLMwCE",
+   "t": 4546,
+   "where": "Select Board, 14 Jul 2026",
    "verdict": {
     "keep": true,
-    "why": "Motion and roll call of no municipal use are in the record; later votes do not contradict it."
+    "why": "Board stated October 2025 was the original due date; later report presentation doesn't change that."
    }
   }
  ]
