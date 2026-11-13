@@ -35,6 +35,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import sys
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 import merge_recording_minutes as MRG  # noqa: E402
+import meeting_tags as MT  # noqa: E402  -- the safe per-meeting flags (13 Nov 2026)
 from budget_cycles import fy_of as cycle_fy_of   # noqa: E402
 import meeting_records as MR   # noqa: E402
 import topics as REG   # noqa: E402
@@ -585,7 +586,12 @@ def build(as_of=None):
                 hook=pv and pv.get('hook'), time=pv and pv.get('time'),
                 where=pv and pv.get('where'), attend=pv and pv.get('attend'),
                 important=pv and pv.get('important'), items=pv and pv.get('items'),
-                join=pv and pv.get('join')))
+                join=pv and pv.get('join'),
+                # TAGS FROM THE AGENDA ALONE (scripts/meeting_tags.py): amended, late addition,
+                # short notice, emergency, executive session, cancelled -- measured facts about
+                # the ONLINE record, never a finding. The after-meeting tags (minutes not
+                # posted, no recording) are judged by the page from `record`, on its clock.
+                tags=MT.agenda_tags(slug, d)))
         # --- every vote, from BOTH records, joined per meeting and deduplicated.
         #
         # TJ, 17 September 2026: "I assumed votes would be a combination of the transcript

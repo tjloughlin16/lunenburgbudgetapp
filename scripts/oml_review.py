@@ -369,15 +369,25 @@ def _lines(text):
 
 
 def version_diff(old, new):
-    """Lines in one version and not the other, compared as squashed text so a re-extraction's
-    spacing ('Tim Sa ntry') is not reported as a change -- and WITHOUT the item's letter or
-    number: removing one item re-letters the rest ("c. Facility Updates" becomes "b."), and that
-    is not a new topic (4 Mar 2026)."""
-    def key(x):
-        return L.squash(re.sub(r'^\s*(?:[a-z]|\d{1,2}|[ivx]+)[.)]\s+', '', x, flags=re.I))
-    a, b = _lines(old), _lines(new)
-    sa, sb = {key(x) for x in a}, {key(x) for x in b}
-    return ([x for x in a if key(x) not in sb], [x for x in b if key(x) not in sa])
+    """Lines in one version and not the other. A line counts as added only if its words appear
+    NOWHERE in the other version, compared as letters and digits alone: the same agenda read
+    twice differs in spacing ('Tim Sa ntry'), punctuation ('(3 min' against '(3 min)'), item
+    letters (removing one item re-letters the rest) and where lines break (two items run onto
+    one line). None of those is a change in what the public was told (13 Nov 2026: each produced
+    a false "late addition")."""
+    def items(text):
+        out = []
+        for ln in _lines(text):
+            out += [x for x in re.split(r'\s+(?=(?:\d{1,2}|[a-z])[.)]\s+[A-Z])', ln) if x.strip()]
+        return out
+
+    def norm(x):
+        x = re.sub(r'^\s*(?:[a-z]|\d{1,2}|[ivx]+)[.)]\s+', '', x, flags=re.I)
+        return re.sub(r'[^a-z0-9]', '', x.lower())
+    a, b = items(old), items(new)
+    wa, wb = norm(' '.join(a)), norm(' '.join(b))
+    return ([x for x in a if len(norm(x)) >= 8 and norm(x) not in wb],
+            [x for x in b if len(norm(x)) >= 8 and norm(x) not in wa])
 
 
 def agenda_versions(board, date):
@@ -396,11 +406,16 @@ def agenda_versions(board, date):
             continue
         st = stamps.get(r['path'])
         start, printed = meeting_start(txt, date)
+        nf = notice_facts(board, date, txt, st)
+        # A copy made AFTER the meeting began cannot be its notice -- 4 Feb 2026 holds the March
+        # agenda, made after the February meeting. Set aside, never read as a revision.
+        if (nf.get('clock_hours_file_to_meeting') or 0) < 0:
+            continue
         out.append({'file_id': r['file_id'], 'path': r['path'], 'url': r['url'], 'title': r.get('title', ''),
                     'text_path': tp, 'text': txt, 'created': (st or {}).get('created', ''),
                     'start_as_printed': printed, 'start': start.isoformat() if start else '',
                     'text_url': SITE + '/docs/minutes/text/' + os.path.splitext(r['path'])[0] + '.txt',
-                    'notice': notice_facts(board, date, txt, st)})
+                    'notice': nf})
     out.sort(key=lambda v: (v['created'] or '9', v['file_id']))
     return out
 

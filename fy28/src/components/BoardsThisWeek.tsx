@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useReport } from './report'
+import { MeetingTags, useMeetingRows } from './MeetingTags'
 import { AgendaThreadLinks, meetingFor, useAgendaThreads } from './AgendaThreads'
 
 /** THE THREE BOARDS, AT A GLANCE. Used on the front page and at the top of /this-week.
@@ -111,6 +112,7 @@ function LastTime({ slug, rec }: { slug: string; rec: Recorded | null }) {
  *  muted line together. The row is the link. */
 export function BoardsStrip({ days = 7 }: { days?: number }) {
   const feed = useReport<Feed>('meeting-feed.json')
+  const lookup = useMeetingRows()
   const notices = useReport<Notices>('notices.json')
   const f = feed.d
   if (!f) return null
@@ -151,6 +153,7 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
               {dayLabel(m.date, f.as_of)}{p?.time && p.time !== 'not stated' ? ` \u00b7 ${p.time}` : ''}
             </span>
             <span className="block text-[15px] font-bold leading-tight mt-0.5">{meetingTitle(name, m.body_as_printed)}</span>
+            {(() => { const row = lookup(m.board_slug, m.date); return row ? <MeetingTags row={row} className="mt-1" /> : null })()}
             {(p?.hook || p?.one_line) && (
               <span className="block text-[13px] mt-1 leading-snug" style={{ color: 'var(--text-secondary)' }}>
                 {p!.hook || p!.one_line}
@@ -174,6 +177,7 @@ export function BoardsStrip({ days = 7 }: { days?: number }) {
 
 export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; compact?: boolean }) {
   const feed = useReport<Feed>('meeting-feed.json')
+  const lookup = useMeetingRows()
   const notices = useReport<Notices>('notices.json')
   const recorded = useReport<Recorded>('recording-minutes.json')
   const agendaThreads = useAgendaThreads().d
@@ -221,6 +225,7 @@ export function BoardsThisWeek({ days = 14, compact = false }: { days?: number; 
                 {p?.time && p.time !== 'not stated' && <Chip tone="strong">{p.time}</Chip>}
                 {p?.where && p.where !== 'not stated' && <Chip>{p.where}</Chip>}
                 {p?.attend && p.attend !== 'not stated' && <Chip>{p.attend}</Chip>}
+                {(() => { const row = lookup(m.board_slug, m.date); return row ? <MeetingTags row={row} /> : null })()}
                 {!compact && <a className="text-[11.5px] underline ml-auto" style={{ color: 'var(--text-muted)' }}
                   href={m.agenda_url} target="_blank" rel="noreferrer">agenda</a>}
                 {!compact && m.via_note && <span className="text-[11px] italic" style={{ color: 'var(--text-muted)' }}>{m.via_note}</span>}

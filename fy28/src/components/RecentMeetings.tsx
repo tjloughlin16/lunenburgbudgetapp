@@ -1,4 +1,5 @@
 import { useReport } from './report'
+import { MeetingTags, type Tag } from './MeetingTags'
 import { splitMeetings, todayIso, meetingTitle } from '../lib/meetings'
 
 /** RECENT MEETINGS: what we have for each, whatever that is.
@@ -26,6 +27,7 @@ type Recent = {
   body_as_printed?: string | null
   record?: { video?: { likely_none?: boolean } } | null
   ours?: { slug: string; headline?: string; votes?: number } | null
+  tags?: Tag[] | null
 }
 type Board = { slug: string; name: string; the_three?: boolean; meetings: Recent[] }
 type Boards = { as_of: string; boards: Board[] }
@@ -109,6 +111,8 @@ export function RecentMeetings({ days = 7, min = 3, compact = false }: { days?: 
             {r.ours
               ? <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{meetingTitle(board, r.body_as_printed)}</a>
               : <a className={`text-[15px] font-bold leading-tight ${link}`} href={`/boards/${slug}`} style={{ color: 'var(--series-cost)' }}>{meetingTitle(board, r.body_as_printed)}</a>}
+            {/* Safe, measured flags -- see MeetingTags. Their own line, under the title. */}
+            <MeetingTags row={r as any} className="w-full mt-0.5" />
           </div>
           {/* WHAT WE HAVE, as links, IN THE ORDER WE WANT THEM USED. TJ, 17 September
               2026: "our meetings should be the most obvious clickable thing and come

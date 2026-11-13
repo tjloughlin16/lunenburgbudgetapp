@@ -1,6 +1,7 @@
 import { BoardNav } from '../components/BoardNav'
 import { VoteList, type VotePayload } from '../components/VoteList'
 import { RecordCell, type RecordStatus } from '../components/RecordCell'
+import { MeetingTags } from '../components/MeetingTags'
 import { boardSlugFromPath, boardSpokeFromPath, type BoardSpoke, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
 import { BoardGoals } from '../components/BoardGoals'
@@ -426,7 +427,9 @@ function RecentTable({ rows, board }: { rows: Meeting[]; board: string }) {
               {/* Which body met, where it is not the board itself -- a council or a
                 * sub-committee the town files under this board's agendas. */}
               {r.body_as_printed && meetingBody(board, r.body_as_printed) !== board &&
-                <span className="block text-xs font-normal whitespace-normal" style={{ ...kicker, maxWidth: 160 }}>{meetingBody(board, r.body_as_printed)}</span>}</td>
+                <span className="block text-xs font-normal whitespace-normal" style={{ ...kicker, maxWidth: 160 }}>{meetingBody(board, r.body_as_printed)}</span>}
+              {/* Agenda tags only: the record cells beside this already say MISSING. */}
+              {(r as any).tags?.length ? <MeetingTags row={{ date: r.date, tags: (r as any).tags }} className="mt-1 font-normal whitespace-normal" /> : null}</td>
             <td className="py-2 pr-3 align-top">
               {r.ours ? <><a className="font-semibold" href={`/meeting-minutes/${r.ours.slug}`} style={{ color: 'var(--series-cost)' }}>{r.ours.headline || 'our minutes'}</a><span className="text-xs" style={kicker}> · {r.ours.votes ?? 0} votes{r.ours.reconciled ? (r.ours.discrepancies ? ` · ${r.ours.discrepancies} difference${r.ours.discrepancies === 1 ? '' : 's'} from the official minutes` : ' · agrees with the official minutes') : ''}</span></>
                 : r.record?.our_minutes.state === 'pending' ? <span title="in our queue" style={kicker}>pending</span>
