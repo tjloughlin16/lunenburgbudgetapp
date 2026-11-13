@@ -912,33 +912,7 @@ def oml_chart(o):
     if not ys:
         out.append('</div>')
         return ''.join(out)
-    W2, H2, B2, T2 = 460, 170, 24, 14
-    mx = max(y['listed'] for y in ys) or 1
-    bw = min(40.0, (W2 - 10) / float(len(ys)) - 3)   # one open year must not be one 450px bar
-    svg = ['<svg viewBox="0 0 %d %d" width="%d" height="%d" style="max-width:100%%">' % (W2, H2, W2, H2)]
-    for i, y in enumerate(ys):
-        x = 5 + i * (bw + 3)
-        full = (H2 - T2 - B2) * y['listed'] / float(mx)
-        hh = full * y['held'] / float(y['listed'] or 1)
-        tip = '%s: %d of %d held, %d to fetch' % (y['year'], y['held'], y['listed'], y['listed'] - y['held'])
-        done = y['held'] >= y['listed']
-        svg.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="2" fill="#21262d"><title>%s</title></rect>'
-                   % (x, H2 - B2 - full, bw, full, tip))
-        if hh:
-            svg.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="2" fill="%s"><title>%s</title></rect>'
-                       % (x, H2 - B2 - hh, bw, hh, '#3fb950' if done else '#d29922', tip))
-        svg.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="9.5" text-anchor="middle">’%s</text>'
-                   % (x + bw / 2, H2 - B2 + 12, y['year'][-2:]))
-        # HELD OF LISTED, not the listed count alone: a bare `142` over a bar holding 140
-        # read as 142 held (TJ, 13 November 2026: "why are there 142 'held' but not complete?").
-        svg.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="9" text-anchor="middle">%d of %d</text>'
-                   % (x + bw / 2, H2 - B2 - full - 3, y['held'], y['listed']))
-    svg.append('</svg>')
-    out.append('<div style="width:%dpx;max-width:100%%"><div class="tiny" style="margin-bottom:2px"><b>By year of the letter</b> &mdash; '
-               '<span style="color:#3fb950">&#9632;</span> year complete '
-               '<span style="color:#d29922">&#9632;</span> held '
-               '<span style="color:#6e7681">&#9632;</span> still to fetch; on top, held of how many '
-               'the portal lists</div>%s</div>' % (W2, ''.join(svg)))
+    out.append(oml_year_chart(ys))
     out.append('</div>')
     return ''.join(out)
 
@@ -4413,6 +4387,64 @@ def docs_fy_chart(docs):
                % format(sum(undated.values()), ','))
     return ''.join(out)
 
+
+def oml_year_chart(ys, W2=460):
+    """The AG letters by year: held of what the portal lists. Drawn on the Backlog card for
+    the OPEN years only, and on the Documents tab for every year (TJ, 13 November 2026:
+    "i want the histogram of OML in the documents tab though")."""
+    if not ys:
+        return ''
+    H2, B2, T2 = 170, 24, 14
+    mx = max(y['listed'] for y in ys) or 1
+    bw = min(40.0, (W2 - 10) / float(len(ys)) - 3)   # one open year must not be one 450px bar
+    svg = ['<svg viewBox="0 0 %d %d" width="%d" height="%d" style="max-width:100%%">' % (W2, H2, W2, H2)]
+    for i, y in enumerate(ys):
+        x = 5 + i * (bw + 3)
+        full = (H2 - T2 - B2) * y['listed'] / float(mx)
+        hh = full * y['held'] / float(y['listed'] or 1)
+        tip = '%s: %d of %d held, %d to fetch' % (y['year'], y['held'], y['listed'], y['listed'] - y['held'])
+        done = y['held'] >= y['listed']
+        svg.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="2" fill="#21262d"><title>%s</title></rect>'
+                   % (x, H2 - B2 - full, bw, full, tip))
+        if hh:
+            svg.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="2" fill="%s"><title>%s</title></rect>'
+                       % (x, H2 - B2 - hh, bw, hh, '#3fb950' if done else '#d29922', tip))
+        svg.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="9.5" text-anchor="middle">’%s</text>'
+                   % (x + bw / 2, H2 - B2 + 12, y['year'][-2:]))
+        # HELD OF LISTED, not the listed count alone: a bare `142` over a bar holding 140
+        # read as 142 held (TJ, 13 November 2026: "why are there 142 'held' but not complete?").
+        # A complete year shows its count; an open one, held OF listed.
+        svg.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="9" text-anchor="middle">%s</text>'
+                   % (x + bw / 2, H2 - B2 - full - 3,
+                      y['listed'] if done else '%d of %d' % (y['held'], y['listed'])))
+    svg.append('</svg>')
+    return ('<div style="width:%dpx;max-width:100%%"><div class="tiny" style="margin-bottom:2px"><b>By year of the letter</b> &mdash; '
+               '<span style="color:#3fb950">&#9632;</span> year complete '
+               '<span style="color:#d29922">&#9632;</span> held '
+               '<span style="color:#6e7681">&#9632;</span> still to fetch; on top, how many the portal '
+               'lists (held of listed where some are still to fetch)</div>%s</div>' % (W2, ''.join(svg)))
+
+
+def oml_docs_section():
+    """The AG's Open Meeting Law letters, every year, on the Documents tab."""
+    try:
+        o = oml_progress()
+    except Exception:                                   # noqa: BLE001 -- a chart must never break the page
+        return ''
+    if not o:
+        return ''
+    # COMPLETED YEARS ONLY (TJ, 13 November 2026: "for completed only"). A year still being
+    # fetched is open work and stays on the Backlog card until its last letter lands.
+    done = [y for y in o['years'] if y['held'] >= y['listed']]
+    if not done:
+        return ''
+    return ('<div class="card" style="margin:10px 0"><div class="row"><b class="grow">The AG\u2019s Open '
+            'Meeting Law determinations, completed years</b><span class="tiny">%s letters, %s&ndash;%s'
+            '</span></div>%s</div>'
+            % ('{:,}'.format(sum(y['held'] for y in done)), done[0]['year'], done[-1]['year'],
+               oml_year_chart(done, W2=900)))
+
+
 def page_sources(st, n, counts, kinds, docs=()):
     def chips(group, items):
         return ''.join(
@@ -4440,7 +4472,7 @@ def page_sources(st, n, counts, kinds, docs=()):
             '<th>where it came from</th><th>sha256</th></tr><tbody id="t"></tbody></table>'
             '<p class="tiny" id="more"></p></div>'
             % ('{:,}'.format(n), st['generated'], tabs('sources.html', st.get('questions')),
-               docs_fy_chart(docs), origin, kind))
+               docs_fy_chart(docs) + oml_docs_section(), origin, kind))
 
 
 KEEP = """
