@@ -78,6 +78,9 @@ CHECKS = [
     # count, and /jobs, the town's two tables and every board's link reproduce from them.
     ('fetch_town_job_postings.py', ['--check']),
     ('build_job_postings.py', ['--check']),
+    # The leading OML rulings per issue, ranked by the AG's own later citations; every key
+    # passage re-checked verbatim against its letter. Offline, seconds.
+    ('build_oml_leading_rulings.py', ['--check']),
     # Every board's transfers, from the minutes the meeting process read, with the evidence.
     ('build_board_transfers.py', ['--check']),
     # The Early Learning Center report: every timeline quotation found in its document, the

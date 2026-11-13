@@ -1,0 +1,1052 @@
+{
+ "title": "Leading Open Meeting Law rulings, per issue",
+ "method": "OURS, model-free. Ranked by how many later AG determinations cite each one; per issue: the two most cited, the most cited against a school committee, the newest, the other outcome if missing, then by citations. Decided on the merits only; each key passage re-checked verbatim against the letter. See scripts/build_oml_leading_rulings.py.",
+ "caution": "A holding is the Attorney General’s reading of the law for ONE body on ONE set of facts. It is not a finding about any other board.",
+ "corpus": {
+  "determinations": 2909,
+  "passages_rechecked": 3593,
+  "passages_not_verbatim": 0
+ },
+ "issues": {
+  "notice timing": {
+   "candidates": 282,
+   "record": {
+    "ruled_against": 135,
+    "ruled_for": 184,
+    "against_school_committees": 14
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2018-22",
+     "number": "OML 2018-22",
+     "date": "2018-02-22",
+     "public_body": "Ashland Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complaint alleged the Board discussed topics added to the September 19 notice within 48 hours of the meeting, including the Pole Hearing and Hazard Mitigation Plan.",
+     "key_passage": "Accordingly, we find that the Board did not violate the Open Meeting Law by proceeding with a discussion of this unanticipated topic during its September 19 meeting.",
+     "cited_by": 97,
+     "text": "sources/state-law/text/oml-det-2018-22.txt",
+     "publisher_filename": "DETERMINATION - 2 22 2018 - OML 2018-22 - ASHLAND BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-87",
+     "number": "OML 2013-87",
+     "date": "2013-07-05",
+     "public_body": "Melrose School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complaint alleged the committee failed to timely list an executive session topic (principal contract negotiations) in the notice for its June 12, 2012 meeting.",
+     "key_passage": "Because Chair Thorp did not reasonably anticipate that the Committee would discuss the contract offers 48 hours before the June 12, 2012 meeting, the Committee did not violate the Open Meeting Law.",
+     "cited_by": 90,
+     "text": "sources/state-law/text/oml-det-2013-87.txt",
+     "publisher_filename": "DETERMINATION - 7 5 2013 - OML 2013-87 - MELROSE SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-163",
+     "number": "OML 2013-163",
+     "date": "2013-10-28",
+     "public_body": "Wakefield School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "No notice was posted for the Screening Committee's July 2, 2012 meeting or the Contract Subcommittee's July 23, 2012 meeting.",
+     "key_passage": "The failure to post any notice for the Screening Committee's July 2, 2012 meeting or the Contract Subcommittee's July 23, 2012 meeting violated the Open Meeting Law, and precluded the public from knowing about and attending these meetings.",
+     "cited_by": 36,
+     "text": "sources/state-law/text/oml-det-2013-163.txt",
+     "publisher_filename": "DETERMINATION - 10 28 2013 - OML 2013-163 - WAKEFIELD SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-136",
+     "number": "OML 2026-136",
+     "date": "2026-10-26",
+     "public_body": "Southborough Planning Board",
+     "body_type": "planning board",
+     "holding": "no violation",
+     "summary": "Complainant alleged the Board's December 4, 2025 meeting was non-emergency and was held without 48 hours' posted notice.",
+     "key_passage": "Because the Board learned of those negotiations on December 3, and because the Board was concerned that an agreement might be reached in the immediate future without its input, we find that the Board met its burden in justifying the need for an emergency meeting.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-136.txt",
+     "publisher_filename": "DETERMINATION - 10 26 2026 - OML 2026-136 - SOUTHBOROUGH PLANNING BOARD.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2014-38",
+     "number": "OML 2014-38",
+     "date": "2014-04-14",
+     "public_body": "Seekonk Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "Complainant alleged the Board amended its October 23, 2013 agenda fewer than 48 hours before the meeting to add a topic it should have anticipated earlier.",
+     "key_passage": "Given these facts, we find that the failure to post this agenda item 48 hours in advance was a violation of the Open Meeting Law.",
+     "cited_by": 82,
+     "text": "sources/state-law/text/oml-det-2014-38.txt",
+     "publisher_filename": "DETERMINATION - 4 14 2014 - OML 2014-38 - SEEKONK BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "notice content / topic specificity": {
+   "candidates": 901,
+   "record": {
+    "ruled_against": 504,
+    "ruled_for": 576,
+    "against_school_committees": 80
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2015-35",
+     "number": "OML 2015-35",
+     "date": "2015-03-12",
+     "public_body": "Chatham Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complaints alleged the December 16, 2014 notice listing 'Bridge Street Sidewalks' was not sufficiently specific.",
+     "key_passage": "Despite these expectations, because the notice informed the public that the Board would be considering a sidewalk along Bridge Street, and that is in fact what they discussed during the meeting, we find that it was sufficient to comply with the Open Meeting Law.",
+     "cited_by": 350,
+     "text": "sources/state-law/text/oml-det-2015-35.txt",
+     "publisher_filename": "DETERMINATION - 3 12 2015 - OML 2015-35 - CHATHAM BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2011-44",
+     "number": "OML 2011-44",
+     "date": "2011-10-31",
+     "public_body": "Stoughton School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Complaint alleged the Sept. 28, 2010 meeting notice did not list topics with sufficient specificity, since the executive session item omitted the superintendent contract negotiation.",
+     "key_passage": "We find that the Committee's September 24, 2010 meeting notice was not sufficiently specific to advise the public of the issues the Committee planned to discuss during its executive session.",
+     "cited_by": 118,
+     "text": "sources/state-law/text/oml-det-2011-44.txt",
+     "publisher_filename": "DETERMINATION - 10 31 2011 - OML 2011-44 - STOUGHTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2014-23",
+     "number": "OML 2014-23",
+     "date": "2014-03-03",
+     "public_body": "Granby School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complaint alleged the committee manipulated the November 4, 2013 notice, which listed a dinosaur-statue permission vote, to avoid public comment on the project.",
+     "key_passage": "we find that the description of this topic was sufficient for members of the public to understand that the Committee would be continuing its discussion of the Dinosaurs Make Cents project.",
+     "cited_by": 108,
+     "text": "sources/state-law/text/oml-det-2014-23.txt",
+     "publisher_filename": "DETERMINATION - 3 3 2014 - OML 2014-23 - GRANBY SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-143",
+     "number": "OML 2026-143",
+     "date": "2026-11-04",
+     "public_body": "Georgetown Select Board",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "Complaint alleged the Board discussed a Charter Commission topic at its March 26 meeting that was left off the notice posted 48 hours before.",
+     "key_passage": "By discussing a topic that was anticipated 48 hours or more prior to the March 26 meeting but that was not included on the notice posted 48 hours prior to the meeting, the Board violated the Open Meeting Law.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-143.txt",
+     "publisher_filename": "DETERMINATION - 11 4 2026 - OML 2026-143 - GEORGETOWN SELECT BOARD.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2014-155",
+     "number": "OML 2014-155",
+     "date": "2014-12-29",
+     "public_body": "Swansea Recreation Commission",
+     "body_type": "other municipal body",
+     "holding": "no violation",
+     "summary": "Complaint alleged the notice for an October 21, 2014 meeting failed to list the names and addresses of recreation coordinator candidates to be interviewed.",
+     "key_passage": "Here, we find that on its face, the notice for the October 21, 2014 meeting met the statutory requirements by providing the list of topics the chair reasonably anticipated the Commission would discuss.",
+     "cited_by": 116,
+     "text": "sources/state-law/text/oml-det-2014-155.txt",
+     "publisher_filename": "DETERMINATION - 12 29 2014 - OML 2014-155 - SWANSEA RECREATION COMMISSION.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "acronyms and jargon": {
+   "candidates": 27,
+   "record": {
+    "ruled_against": 13,
+    "ruled_for": 18,
+    "against_school_committees": 1
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2016-5",
+     "number": "OML 2016-5",
+     "date": "2016-01-19",
+     "public_body": "Carver Planning Board",
+     "body_type": "planning board",
+     "holding": "violation",
+     "summary": "The notice used the acronym 'PILOT' without explanation, which members of the public would likely not understand.",
+     "key_passage": "Here, we find that the acronym \"PILOT\" is not one that members of the public are likely to understand.",
+     "cited_by": 41,
+     "text": "sources/state-law/text/oml-det-2016-5.txt",
+     "publisher_filename": "DETERMINATION - 1 19 2016 - OML 2016-5 - CARVER PLANNING BOARD.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-55",
+     "number": "OML 2013-55",
+     "date": "2013-05-06",
+     "public_body": "Plainville Board Of Assessors",
+     "body_type": "other municipal body",
+     "holding": "violation",
+     "summary": "Notice topic 'FY 12 RE & PP abatement applications' used abbreviations (RE, PP) the public would not understand.",
+     "key_passage": "These abbreviations are not commonly used and understood by the public, however, thus the words should have been fully written out.",
+     "cited_by": 33,
+     "text": "sources/state-law/text/oml-det-2013-55.txt",
+     "publisher_filename": "DETERMINATION - 5 6 2013 - OML 2013-55 - PLAINVILLE BOARD OF ASSESSORS.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2023-83",
+     "number": "OML 2023-83",
+     "date": "2023-05-17",
+     "public_body": "Medfield School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Complainant alleged the acronyms MASC and the policy codes BEDH and BEDH-E were too obscure for the public to understand the anticipated discussion.",
+     "key_passage": "We recommend that the Board avoid abbreviations or acronyms on meeting notices in the future, particularly where the abbreviation or acronym is not likely widely understood by members of the public",
+     "cited_by": 7,
+     "text": "sources/state-law/text/oml-det-2023-83.txt",
+     "publisher_filename": "DETERMINATION - 5 17 2023 - OML 2023-83 - MEDFIELD SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-99",
+     "number": "OML 2026-99",
+     "date": "2026-08-10",
+     "public_body": "Medfield Housing Authority Board Of Commissioners",
+     "body_type": "housing authority",
+     "holding": "violation",
+     "summary": "Notice used the acronym 'PMR' without explanation, which the complaint said the public would not understand.",
+     "key_passage": "Because “PMR” is not widely understood by the public, its inclusion as a notice topic did not conform with the Open Meeting Law.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-99.txt",
+     "publisher_filename": "DETERMINATION - 8 10 2026 - OML 2026-99 - MEDFIELD HOUSING AUTHORITY BOARD OF COMMISSIONERS.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2015-172",
+     "number": "OML 2015-172",
+     "date": "2015-11-19",
+     "public_body": "Chatham Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complaint alleged the executive session topic improperly used the abbreviation \"FAA\" instead of spelling out the agency name.",
+     "key_passage": "\"FAA\" is commonly used to refer to the \"Federal Aviation Administration\" and is generally understood by the public.",
+     "cited_by": 22,
+     "text": "sources/state-law/text/oml-det-2015-172.txt",
+     "publisher_filename": "DETERMINATION - 11 19 2015 - OML 2015-172 - CHATHAM BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited with the other outcome"
+    }
+   ]
+  },
+  "discussion beyond the notice": {
+   "candidates": 151,
+   "record": {
+    "ruled_against": 25,
+    "ruled_for": 136,
+    "against_school_committees": 5
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2016-105",
+     "number": "OML 2016-105",
+     "date": "2016-08-11",
+     "public_body": "Weymouth Superintendent Search Committee",
+     "body_type": "other municipal body",
+     "holding": "no violation",
+     "summary": "Not raised in the complaint: April 7 executive session included discussion of allegations of a prior Open Meeting Law violation, which the notice did not announce.",
+     "key_passage": "we therefore do not fault the chair for failing to announce all topics that may be discussed.",
+     "cited_by": 112,
+     "text": "sources/state-law/text/oml-det-2016-105.txt",
+     "publisher_filename": "DETERMINATION - 8 11 2016 - OML 2016-105 - WEYMOUTH SUPERINTENDENT SEARCH COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-195",
+     "number": "OML 2013-195",
+     "date": "2013-12-30",
+     "public_body": "Sterling Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "A landscaping issue raised by the Town Administrator in open session was discussed and voted on although not on the notice.",
+     "key_passage": "Thus, the Board could properly discuss the topic even though it was not listed on the meeting notice.",
+     "cited_by": 89,
+     "text": "sources/state-law/text/oml-det-2013-195.txt",
+     "publisher_filename": "DETERMINATION - 12 30 2013 - OML 2013-195 - STERLING BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-163",
+     "number": "OML 2013-163",
+     "date": "2013-10-28",
+     "public_body": "Wakefield School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "The Committee allegedly discussed the interim assistant superintendent contract in executive session on July 24, 2012, a topic not listed on the notice.",
+     "key_passage": "Finally, the Committee violated the Open Meeting Law by discussing the Interim Assistant Superintendent contract during its July 24, 2012 executive session.",
+     "cited_by": 36,
+     "text": "sources/state-law/text/oml-det-2013-163.txt",
+     "publisher_filename": "DETERMINATION - 10 28 2013 - OML 2013-163 - WAKEFIELD SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-139",
+     "number": "OML 2026-139",
+     "date": "2026-10-27",
+     "public_body": "Townsend Selectboard",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complaint alleged the Board strayed far beyond the noticed topic 'Presentation of Public Records Portal by Town Clerk'.",
+     "key_passage": "We are satisfied that the topic as listed on the notice for the public records portal was sufficient to reasonably advise the public of the issues to be discussed at the meeting",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-139.txt",
+     "publisher_filename": "DETERMINATION - 10 27 2026 - OML 2026-139 - TOWNSEND SELECTBOARD.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2012-23",
+     "number": "OML 2012-23",
+     "date": "2012-03-26",
+     "public_body": "Foxborough Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complainant alleged the Board cancelled, without discussion, a listed agenda item on March 29, 2011, and did not let him speak as scheduled.",
+     "key_passage": "Thus, the Board was not required to discuss the items listed on the March 29, 2011 agenda or to reschedule the complainant's appointment to speak.",
+     "cited_by": 83,
+     "text": "sources/state-law/text/oml-det-2012-23.txt",
+     "publisher_filename": "DETERMINATION - 3 26 2012 - OML 2012-23 - FOXBOROUGH BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "votes and roll calls": {
+   "candidates": 92,
+   "record": {
+    "ruled_against": 63,
+    "ruled_for": 47,
+    "against_school_committees": 11
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2011-44",
+     "number": "OML 2011-44",
+     "date": "2011-10-31",
+     "public_body": "Stoughton School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Complaint alleged the committee voted to extend the superintendent's contract in executive session rather than in open session.",
+     "key_passage": "The law allows a public body to conduct contract negotiations with non-union personnel in executive session, but does not authorize a public body to approve a contract in executive session.",
+     "cited_by": 118,
+     "text": "sources/state-law/text/oml-det-2011-44.txt",
+     "publisher_filename": "DETERMINATION - 10 31 2011 - OML 2011-44 - STOUGHTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-195",
+     "number": "OML 2013-195",
+     "date": "2013-12-30",
+     "public_body": "Sterling Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "The Board voted in executive session to execute the Town Administrator and Police Chief contracts and signed them behind closed doors; ratification in open session was insufficient.",
+     "key_passage": "Although the Board had authority under Purpose 2 to strategize and negotiate with the Town Administrator and the Police Chief in executive session, the Board violated the law by voting to execute and signing these two contracts behind closed doors.",
+     "cited_by": 89,
+     "text": "sources/state-law/text/oml-det-2013-195.txt",
+     "publisher_filename": "DETERMINATION - 12 30 2013 - OML 2013-195 - STERLING BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2012-66",
+     "number": "OML 2012-66",
+     "date": "2012-07-26",
+     "public_body": "Lexington School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Complaints alleged the committee improperly voted to extend the Superintendent's contract in executive session; the June 7 open-session vote was argued as not curing it.",
+     "key_passage": "The Committee therefore violated the Open Meeting law by voting to extend the Superintendent's employment contract in executive session.",
+     "cited_by": 54,
+     "text": "sources/state-law/text/oml-det-2012-66.txt",
+     "publisher_filename": "DETERMINATION - 7 26 2012 - OML 2012-66 - LEXINGTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-125",
+     "number": "OML 2026-125",
+     "date": "2026-10-05",
+     "public_body": "Medfield School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Minutes of the March 5, 2026 meeting recorded a unanimous vote to approve prior minutes, though one member listed as present had left and did not vote.",
+     "key_passage": "For the reasons stated above, we find that the Committee violated the Open Meeting Law by creating inaccurate minutes of the March 5, 2026, meeting.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-125.txt",
+     "publisher_filename": "DETERMINATION - 10 5 2026 - OML 2026-125 - MEDFIELD SCHOOL COMMITTEE.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2019-95",
+     "number": "OML 2019-95",
+     "date": "2019-08-05",
+     "public_body": "Groton Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Each notice stated 'Votes and Action May Be Taken' for the whole recurring 'On-going Issues' list, though the Board does not actually vote on those topics unless separately listed.",
+     "key_passage": "We recommend that the Board cease its practice of stating “Votes and Action May Be Taken” for every single topic, and instead reserve that notation only for topics where a vote or action is anticipated.",
+     "cited_by": 77,
+     "text": "sources/state-law/text/oml-det-2019-95.txt",
+     "publisher_filename": "DETERMINATION - 8 5 2019 - OML 2019-95 - GROTON BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited with the other outcome"
+    }
+   ]
+  },
+  "executive session: purpose": {
+   "candidates": 476,
+   "record": {
+    "ruled_against": 236,
+    "ruled_for": 324,
+    "against_school_committees": 53
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2012-106",
+     "number": "OML 2012-106",
+     "date": "2012-10-31",
+     "public_body": "Becket Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complaints alleged the July 1, 2010 executive session was illegal because the Board entered to discuss the Town Administrator's contract.",
+     "key_passage": "Following our review, we find that the Board did not violate the Open Meeting Law by entering into executive session on July 1, 2010.",
+     "cited_by": 226,
+     "text": "sources/state-law/text/oml-det-2012-106.txt",
+     "publisher_filename": "DETERMINATION - 10 31 2012 - OML 2012-106 - BECKET BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2011-44",
+     "number": "OML 2011-44",
+     "date": "2011-10-31",
+     "public_body": "Stoughton School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Complaint alleged the chair did not state the executive session purpose with enough detail before the Sept. 28, 2010 executive session.",
+     "key_passage": "This statement failed to provide enough information so that a member of the public would understand the nature of the executive session.",
+     "cited_by": 118,
+     "text": "sources/state-law/text/oml-det-2011-44.txt",
+     "publisher_filename": "DETERMINATION - 10 31 2011 - OML 2011-44 - STOUGHTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-87",
+     "number": "OML 2013-87",
+     "date": "2013-07-05",
+     "public_body": "Melrose School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complaint alleged the committee's stated purpose for entering executive session on administrator contracts was not detailed enough to notify the public.",
+     "key_passage": "This level of detail was sufficient to notify the public as to why the Committee entered into executive session.",
+     "cited_by": 90,
+     "text": "sources/state-law/text/oml-det-2013-87.txt",
+     "publisher_filename": "DETERMINATION - 7 5 2013 - OML 2013-87 - MELROSE SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-142",
+     "number": "OML 2026-142",
+     "date": "2026-11-04",
+     "public_body": "Williamstown Select Board",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complaint alleged the Board convened in executive session on May 11 for an improper purpose, since negotiation strategy was premature for the 59 Water Street property.",
+     "key_passage": "We find that the Board did not violate the Open Meeting Law when it convened in executive session on May 11 to discuss matters related to the sale and value of 59 Water Street.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-142.txt",
+     "publisher_filename": "DETERMINATION - 11 4 2026 - OML 2026-142 - WILLIAMSTOWN SELECT BOARD.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2016-105",
+     "number": "OML 2016-105",
+     "date": "2016-08-11",
+     "public_body": "Weymouth Superintendent Search Committee",
+     "body_type": "other municipal body",
+     "holding": "violation",
+     "summary": "Committee met in executive session under Purpose 8 on March 3 and 8 to formulate a uniform set of questions to ask superintendent candidates.",
+     "key_passage": "Nor was it considering applicants, as the formulation of questions occurs before each individual applicant is being evaluated by the Committee.",
+     "cited_by": 112,
+     "text": "sources/state-law/text/oml-det-2016-105.txt",
+     "publisher_filename": "DETERMINATION - 8 11 2016 - OML 2016-105 - WEYMOUTH SUPERINTENDENT SEARCH COMMITTEE.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "executive session: procedure": {
+   "candidates": 207,
+   "record": {
+    "ruled_against": 115,
+    "ruled_for": 124,
+    "against_school_committees": 25
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2014-94",
+     "number": "OML 2014-94",
+     "date": "2014-08-08",
+     "public_body": "Uxbridge Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "Complaint alleged the Board entered executive session at its May 5 meeting without first taking a roll call vote of its members.",
+     "key_passage": "Therefore, we find that the Board violated the Open Meeting Law by failing to follow the required procedures for entering into executive session on May 5.",
+     "cited_by": 126,
+     "text": "sources/state-law/text/oml-det-2014-94.txt",
+     "publisher_filename": "DETERMINATION - 8 8 2014 - OML 2014-94 - UXBRIDGE BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2013-195",
+     "number": "OML 2013-195",
+     "date": "2013-12-30",
+     "public_body": "Sterling Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "The chair's verbal statement before entering executive session, 'regarding contract negotiations', was alleged to be too vague.",
+     "key_passage": "we also find its verbal statement that the Board would enter executive session \"regarding contract negotiations\" was not sufficiently detailed.",
+     "cited_by": 89,
+     "text": "sources/state-law/text/oml-det-2013-195.txt",
+     "publisher_filename": "DETERMINATION - 12 30 2013 - OML 2013-195 - STERLING BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2017-69",
+     "number": "OML 2017-69",
+     "date": "2017-05-02",
+     "public_body": "Amherst-Pelham Regional School Committee",
+     "body_type": "regional school committee",
+     "holding": "violation",
+     "summary": "Complaint alleged improper executive session procedure; the committee did not announce whether it would reconvene in open session on July 13 and August 1.",
+     "key_passage": "Second, prior to convening in executive session on July 13 and August 1, the Regional School Committee failed to announce whether it intended to reconvene in open session following the executive session.",
+     "cited_by": 71,
+     "text": "sources/state-law/text/oml-det-2017-69.txt",
+     "publisher_filename": "DETERMINATION - 5 2 2017 - OML 2017-69 - AMHERST-PELHAM REGIONAL SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-142",
+     "number": "OML 2026-142",
+     "date": "2026-11-04",
+     "public_body": "Williamstown Select Board",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "Complaint alleged the Board failed to vote by roll call to convene in executive session on May 11; the Board acknowledged no roll call vote was taken.",
+     "key_passage": "We find that the Board violated the Open Meeting Law when it failed to vote to convene in executive session on May 11.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-142.txt",
+     "publisher_filename": "DETERMINATION - 11 4 2026 - OML 2026-142 - WILLIAMSTOWN SELECT BOARD.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2012-66",
+     "number": "OML 2012-66",
+     "date": "2012-07-26",
+     "public_body": "Lexington School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complaint alleged the chair failed to declare that an open meeting would be detrimental to the committee's bargaining position before entering executive session.",
+     "key_passage": "Because the Committee's discussion of the Superintendent's employment contract was held in executive session pursuant to Purpose 2, the chair was not required to declare that",
+     "cited_by": 54,
+     "text": "sources/state-law/text/oml-det-2012-66.txt",
+     "publisher_filename": "DETERMINATION - 7 26 2012 - OML 2012-66 - LEXINGTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited with the other outcome"
+    }
+   ]
+  },
+  "executive session minutes": {
+   "candidates": 305,
+   "record": {
+    "ruled_against": 229,
+    "ruled_for": 139,
+    "against_school_committees": 56
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2011-55",
+     "number": "OML 2011-55",
+     "date": "2011-12-27",
+     "public_body": "Stoughton School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Complaint alleged the March 1, 2011 executive session minutes were inaccurate and insufficiently detailed for a discussion lasting about an hour and twenty-five minutes.",
+     "key_passage": "After reviewing the Committee's executive session minutes, however, we find that the Committee did not include the minimum detail required by the law.",
+     "cited_by": 149,
+     "text": "sources/state-law/text/oml-det-2011-55.txt",
+     "publisher_filename": "DETERMINATION - 12 27 2011 - OML 2011-55 - STOUGHTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2016-105",
+     "number": "OML 2016-105",
+     "date": "2016-08-11",
+     "public_body": "Weymouth Superintendent Search Committee",
+     "body_type": "other municipal body",
+     "holding": "no violation",
+     "summary": "Committee allegedly failed to provide minutes within the required timeframe and wrongly withheld draft March 28 and April 7 executive session minutes after the purpose expired.",
+     "key_passage": "We therefore find that the Committee reasonably concluded that the executive session purpose still applied with respect to the March 28 and April 7 draft executive session minutes, and we find no violation with respect to this allegation.",
+     "cited_by": 112,
+     "text": "sources/state-law/text/oml-det-2016-105.txt",
+     "publisher_filename": "DETERMINATION - 8 11 2016 - OML 2016-105 - WEYMOUTH SUPERINTENDENT SEARCH COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2018-8",
+     "number": "OML 2018-8",
+     "date": "2018-01-24",
+     "public_body": "Saugus School Committee",
+     "body_type": "school committee",
+     "holding": "violation",
+     "summary": "Complainant alleged the March 16, 2017 executive session minutes on a teachers' collective bargaining discussion were insufficiently detailed.",
+     "key_passage": "The minutes list the topics that were discussed— teaching time, insurance, etc.—but they do not provide a substantive summary of the Committee's conversations on these topics.",
+     "cited_by": 76,
+     "text": "sources/state-law/text/oml-det-2018-8.txt",
+     "publisher_filename": "DETERMINATION - 1 24 2018 - OML 2018-8 - SAUGUS SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-130",
+     "number": "OML 2026-130",
+     "date": "2026-10-09",
+     "public_body": "Whitman Hanson Regional School District",
+     "body_type": "regional school committee",
+     "holding": "violation",
+     "summary": "Complainant alleged the committee failed to review executive session minutes at reasonable intervals to determine whether continued nondisclosure was warranted.",
+     "key_passage": "we find that the Committee failed to review executive session minutes at reasonable intervals, and that in failing to conduct this periodic review, the Committee violated the Open Meeting Law.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-130.txt",
+     "publisher_filename": "DETERMINATION - 10 9 2026 - OML 2026-130 - WHITMAN HANSON REGIONAL SCHOOL DISTRICT.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2012-91",
+     "number": "OML 2012-91",
+     "date": "2012-09-12",
+     "public_body": "Carver Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complainant alleged the Board failed to respond within 10 days to a written request for executive session minutes made in an envelope handed to the Chair.",
+     "key_passage": "It appears that the Board acted quickly to provide a reply once they discovered her request for executive session minutes, therefore we find that any violation was de minimis.",
+     "cited_by": 110,
+     "text": "sources/state-law/text/oml-det-2012-91.txt",
+     "publisher_filename": "DETERMINATION - 9 12 2012 - OML 2012-91 - CARVER BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "open session minutes": {
+   "candidates": 563,
+   "record": {
+    "ruled_against": 388,
+    "ruled_for": 306,
+    "against_school_committees": 49
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2013-64",
+     "number": "OML 2013-64",
+     "date": "2013-05-20",
+     "public_body": "Concord Natural Resources Commission",
+     "body_type": "other municipal body",
+     "holding": "no violation",
+     "summary": "Complainant alleged the December 19, 2012 minutes omitted critical discussion of his request to add new conditions to the project order.",
+     "key_passage": "While the minutes may not reflect every detail regarding this discussion, we find the minutes were sufficiently accurate to be in substantial compliance with the requirements of the Open Meeting Law.",
+     "cited_by": 233,
+     "text": "sources/state-law/text/oml-det-2013-64.txt",
+     "publisher_filename": "DETERMINATION - 5 20 2013 - OML 2013-64 - CONCORD NATURAL RESOURCES COMMISSION.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2012-29",
+     "number": "OML 2012-29",
+     "date": "2012-04-09",
+     "public_body": "Charlemont Board Of Health",
+     "body_type": "board of health",
+     "holding": "no violation",
+     "summary": "Complainants said the March 9, 2011 hearing minutes omitted their proposed corrections to Items 13 and 14, so the summary of discussion was inadequate.",
+     "key_passage": "Following our review, we find that the Board substantially complied with the requirement that it provide an accurate and sufficiently detailed summary of the discussion that occurred.",
+     "cited_by": 195,
+     "text": "sources/state-law/text/oml-det-2012-29.txt",
+     "publisher_filename": "DETERMINATION - 4 9 2012 - OML 2012-29 - CHARLEMONT BOARD OF HEALTH.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2011-55",
+     "number": "OML 2011-55",
+     "date": "2011-12-27",
+     "public_body": "Stoughton School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complaint alleged the committee failed to create and maintain accurate minutes of its March 1, 2011 meeting, including a member's proposed edits that were not adopted.",
+     "key_passage": "we believe the Committee substantially complied with the requirement that it provide an accurate and sufficiently detailed summary of the discussion.",
+     "cited_by": 149,
+     "text": "sources/state-law/text/oml-det-2011-55.txt",
+     "publisher_filename": "DETERMINATION - 12 27 2011 - OML 2011-55 - STOUGHTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-142",
+     "number": "OML 2026-142",
+     "date": "2026-11-04",
+     "public_body": "Williamstown Select Board",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "Not alleged in the complaint: the May 11 open session minutes recorded a motion and roll call vote to convene in executive session that did not occur. The AG addressed it.",
+     "key_passage": "Meeting minutes must accurately reflect what actually occurred during a meeting; therefore, it is improper to include in the minutes of the May 11 open session a motion and vote that did not occur.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-142.txt",
+     "publisher_filename": "DETERMINATION - 11 4 2026 - OML 2026-142 - WILLIAMSTOWN SELECT BOARD.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2018-48",
+     "number": "OML 2018-48",
+     "date": "2018-04-05",
+     "public_body": "Swansea Waterfront Revitalization Committee",
+     "body_type": "other municipal body",
+     "holding": "violation",
+     "summary": "Complaint alleged the Committee failed to approve its April 18, 2017 minutes in a timely manner.",
+     "key_passage": "Therefore, the Committee's delay in approving the April 18 minutes did not comply with our standard of timely approval prior to October 6.",
+     "cited_by": 137,
+     "text": "sources/state-law/text/oml-det-2018-48.txt",
+     "publisher_filename": "DETERMINATION - 4 5 2018 - OML 2018-48 - SWANSEA WATERFRONT REVITALIZATION COMMITTEE.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "release of minutes": {
+   "candidates": 156,
+   "record": {
+    "ruled_against": 78,
+    "ruled_for": 97,
+    "against_school_committees": 14
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2012-106",
+     "number": "OML 2012-106",
+     "date": "2012-10-31",
+     "public_body": "Becket Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Complainants alleged the Board improperly delayed release of the July 1, 2010 executive session minutes after confidentiality purposes expired.",
+     "key_passage": "From our review of the facts, it appears that the Board provided meeting minutes to the complainants within the 10 days following their requests, as required by law.",
+     "cited_by": 226,
+     "text": "sources/state-law/text/oml-det-2012-106.txt",
+     "publisher_filename": "DETERMINATION - 10 31 2012 - OML 2012-106 - BECKET BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2017-133",
+     "number": "OML 2017-133",
+     "date": "2017-08-28",
+     "public_body": "Wayland Audit Committee",
+     "body_type": "other municipal body",
+     "holding": "violation",
+     "summary": "Complainant requested minutes on March 21 but they were not provided until around April 20, allegedly failing the 10-day requirement.",
+     "key_passage": "Accordingly, the Committee violated the Open Meeting Law by failing to timely respond to a request for minutes.",
+     "cited_by": 115,
+     "text": "sources/state-law/text/oml-det-2017-133.txt",
+     "publisher_filename": "DETERMINATION - 8 28 2017 - OML 2017-133 - WAYLAND AUDIT COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2019-126",
+     "number": "OML 2019-126",
+     "date": "2019-10-03",
+     "public_body": "Natick School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complainant alleged the committee failed to respond within 10 days to a June 6 request to inspect open and executive session minutes and notes since April 2.",
+     "key_passage": "We therefore find that the request for meeting minutes was not a request that fell under the Open Meeting Law, G.L. c. 30 A, § 22(c), (g)(2), and find no violation of the Open Meeting Law.",
+     "cited_by": 41,
+     "text": "sources/state-law/text/oml-det-2019-126.txt",
+     "publisher_filename": "DETERMINATION - 10 3 2019 - OML 2019-126 - NATICK SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-114",
+     "number": "OML 2026-114",
+     "date": "2026-08-25",
+     "public_body": "Medfield Housing Authority Board Of Commissioners",
+     "body_type": "housing authority",
+     "holding": "violation",
+     "summary": "Complaint alleged the Board failed to properly respond to the complainant's May 13 request for March 7 open session minutes, which did not yet exist.",
+     "key_passage": "Because the Board’s response to the May 13 request for minutes did not provide an explanation that the minutes did not yet exist in either draft or approved form, we find the response insufficient and that the Board violated the Open Meeting Law.",
+     "cited_by": 1,
+     "text": "sources/state-law/text/oml-det-2026-114.txt",
+     "publisher_filename": "DETERMINATION - 8 25 2026 - OML 2026-114 - MEDFIELD HOUSING AUTHORITY BOARD OF COMMISSIONERS.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2012-91",
+     "number": "OML 2012-91",
+     "date": "2012-09-12",
+     "public_body": "Carver Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "Complainant alleged the Board failed to release executive session minutes once the purpose for confidentiality expired after the Town Administrator contract was executed.",
+     "key_passage": "Accordingly, we find that the Board violated the Open Meeting Law by failing to release the executive session minutes once the purpose for confidentiality expired.",
+     "cited_by": 110,
+     "text": "sources/state-law/text/oml-det-2012-91.txt",
+     "publisher_filename": "DETERMINATION - 9 12 2012 - OML 2012-91 - CARVER BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "remote participation": {
+   "candidates": 58,
+   "record": {
+    "ruled_against": 25,
+    "ruled_for": 42,
+    "against_school_committees": 3
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2013-195",
+     "number": "OML 2013-195",
+     "date": "2013-12-30",
+     "public_body": "Sterling Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Alleged that the Board improperly adopted remote participation by voting to adopt only 940 CMR 29.10(5).",
+     "key_passage": "It is evident from the discussion that occurred prior to the Board's vote on February 13, 2013 that the Board's intent was to adopt the practice of remote participation as established by the whole of 940 CMR 29.10.",
+     "cited_by": 89,
+     "text": "sources/state-law/text/oml-det-2013-195.txt",
+     "publisher_filename": "DETERMINATION - 12 30 2013 - OML 2013-195 - STERLING BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2017-69",
+     "number": "OML 2017-69",
+     "date": "2017-05-02",
+     "public_body": "Amherst-Pelham Regional School Committee",
+     "body_type": "regional school committee",
+     "holding": "violation",
+     "summary": "Remote participants at several meetings were not announced as remote, and their alone-at-location status was not stated before executive session.",
+     "key_passage": "The Committee also failed to announce that members were participating remotely and for which permissible reason under the Open Meeting Law regulations.",
+     "cited_by": 71,
+     "text": "sources/state-law/text/oml-det-2017-69.txt",
+     "publisher_filename": "DETERMINATION - 5 2 2017 - OML 2017-69 - AMHERST-PELHAM REGIONAL SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2026-15",
+     "number": "OML 2026-15",
+     "date": "2026-01-22",
+     "public_body": "Wakefield Finance And Facilities Subcommittee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "The complaint alleged the Subcommittee had to provide remote access and that building security measures improperly restricted attendance.",
+     "key_passage": "However, a public body may hold in-person meetings without providing remote access to the public as long as the public may access the meeting in person.",
+     "cited_by": 5,
+     "text": "sources/state-law/text/oml-det-2026-15.txt",
+     "publisher_filename": "DETERMINATION - 1 22 2026 - OML 2026-15 - WAKEFIELD FINANCE AND FACILITIES SUBCOMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-129",
+     "number": "OML 2026-129",
+     "date": "2026-10-06",
+     "public_body": "Cape Cod Commission",
+     "body_type": "state or regional body",
+     "holding": "no violation",
+     "summary": "Commission's hybrid meeting setup was allegedly a potential violation given past technical problems and unconfirmed remote audio/video quality.",
+     "key_passage": "Because there is no assertion that the complainant or any other individual was in fact unable to access the August 14 meeting, we find no violation.",
+     "cited_by": 1,
+     "text": "sources/state-law/text/oml-det-2026-129.txt",
+     "publisher_filename": "DETERMINATION - 10 6 2026 - OML 2026-129 - CAPE COD COMMISSION.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2013-189",
+     "number": "OML 2013-189",
+     "date": "2013-12-20",
+     "public_body": "Sturbridge Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Board allegedly failed to follow proper remote participation procedures when taking questions from members of the public by telephone.",
+     "key_passage": "The procedures for remote participation outlined in the Attorney General's Regulations, 940 CMR 29.10, apply only to members of public bodies who wish to participate in meetings remotely.",
+     "cited_by": 70,
+     "text": "sources/state-law/text/oml-det-2013-189.txt",
+     "publisher_filename": "DETERMINATION - 12 20 2013 - OML 2013-189 - STURBRIDGE BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "public access and recording": {
+   "candidates": 242,
+   "record": {
+    "ruled_against": 109,
+    "ruled_for": 162,
+    "against_school_committees": 12
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2012-106",
+     "number": "OML 2012-106",
+     "date": "2012-10-31",
+     "public_body": "Becket Board Of Selectmen",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "Complainants alleged the Board unlawfully refused to publicly release the audio recording of its July 1, 2010 executive session.",
+     "key_passage": "Because it has been two years since the meeting, there is a new Town Administrator, and the contract negotiations have been resolved, the Board no longer has a purpose for withholding the recording under the Open Meeting Law.",
+     "cited_by": 226,
+     "text": "sources/state-law/text/oml-det-2012-106.txt",
+     "publisher_filename": "DETERMINATION - 10 31 2012 - OML 2012-106 - BECKET BOARD OF SELECTMEN.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2016-54",
+     "number": "OML 2016-54",
+     "date": "2016-04-19",
+     "public_body": "Brockton Planning Board",
+     "body_type": "planning board",
+     "holding": "no violation",
+     "summary": "Members of the public allegedly could not hear the Board's discussion at the Sept 16, 2015 meeting held in a substitute conference room.",
+     "key_passage": "Accordingly, absent any other evidence to the contrary, we credit the Board's assertion that the audience could hear its deliberations during this meeting.",
+     "cited_by": 94,
+     "text": "sources/state-law/text/oml-det-2016-54.txt",
+     "publisher_filename": "DETERMINATION - 4 19 2016 - OML 2016-54 - BROCKTON PLANNING BOARD.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2012-66",
+     "number": "OML 2012-66",
+     "date": "2012-07-26",
+     "public_body": "Lexington School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complaint alleged the public was denied full access to the June 7 open meeting because overflow attendees in the hallway could not see or hear the proceedings.",
+     "key_passage": "we find that the Committee made reasonable efforts to ensure that all members of the public had access to the meeting, and do not believe the Committee violated the Open Meeting Law in this regard.",
+     "cited_by": 54,
+     "text": "sources/state-law/text/oml-det-2012-66.txt",
+     "publisher_filename": "DETERMINATION - 7 26 2012 - OML 2012-66 - LEXINGTON SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-106",
+     "number": "OML 2026-106",
+     "date": "2026-08-11",
+     "public_body": "Hopedale Selectboard",
+     "body_type": "select board / board of selectmen",
+     "holding": "violation",
+     "summary": "First complaint: the Chair did not verbally announce at the April 13, 2026 meeting that the meeting was being recorded.",
+     "key_passage": "the Board acknowledges, and we find, that the Chair failed to make the required announcement and thus violated the Open Meeting Law.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-106.txt",
+     "publisher_filename": "DETERMINATION - 8 11 2026 - OML 2026-106 - HOPEDALE SELECTBOARD.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2012-90",
+     "number": "OML 2012-90",
+     "date": "2012-09-10",
+     "public_body": "Crocker Pond Recreation Area Committee",
+     "body_type": "other municipal body",
+     "holding": "no violation",
+     "summary": "Complainant alleged the Chair barred him from recording the May 3, 2011 meeting and from filming the Chair, after he gave notice he would record.",
+     "key_passage": "We find that the Committee did not violate the Open Meeting Law with respect to Mr. Goodwin's ability to record its May 3, 2011 meeting.",
+     "cited_by": 86,
+     "text": "sources/state-law/text/oml-det-2012-90.txt",
+     "publisher_filename": "DETERMINATION - 9 10 2012 - OML 2012-90 - CROCKER POND RECREATION AREA COMMITTEE.pdf",
+     "why_picked": "most cited"
+    }
+   ]
+  },
+  "public comment": {
+   "candidates": 133,
+   "record": {
+    "ruled_against": 2,
+    "ruled_for": 134,
+    "against_school_committees": 0
+   },
+   "rulings": [
+    {
+     "id": "oml-det-2013-64",
+     "number": "OML 2013-64",
+     "date": "2013-05-20",
+     "public_body": "Concord Natural Resources Commission",
+     "body_type": "other municipal body",
+     "holding": "no violation",
+     "summary": "Complainant alleged the chair limited his December 19, 2012 comments to existing draft order conditions and barred him from proposing new conditions.",
+     "key_passage": "The Commission Chair therefore had discretion to decide who could speak at the meeting and for how long.",
+     "cited_by": 233,
+     "text": "sources/state-law/text/oml-det-2013-64.txt",
+     "publisher_filename": "DETERMINATION - 5 20 2013 - OML 2013-64 - CONCORD NATURAL RESOURCES COMMISSION.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2012-59",
+     "number": "OML 2012-59",
+     "date": "2012-07-18",
+     "public_body": "Freetown Soil Conservation Board",
+     "body_type": "other municipal body",
+     "holding": "no violation",
+     "summary": "Complaint alleged the Board violated the OML by limiting public participation at its October 24, 2011 meeting to two speakers with one minute each.",
+     "key_passage": "The Chairman had discretion under the Open Meeting Law to decide who could speak at the meeting, and therefore did not violate that law by allowing only two members of the public to speak for one minute at a time.",
+     "cited_by": 110,
+     "text": "sources/state-law/text/oml-det-2012-59.txt",
+     "publisher_filename": "DETERMINATION - 7 18 2012 - OML 2012-59 - FREETOWN SOIL CONSERVATION BOARD.pdf",
+     "why_picked": "most cited"
+    },
+    {
+     "id": "oml-det-2014-23",
+     "number": "OML 2014-23",
+     "date": "2014-03-03",
+     "public_body": "Granby School Committee",
+     "body_type": "school committee",
+     "holding": "no violation",
+     "summary": "Complaint alleged the visitor comment policy, requiring requests one week before a meeting, violates the law because notice need only be posted 48 hours ahead.",
+     "key_passage": "Furthermore, public bodies have discretion to formulate policies regarding the administration of public comment periods.",
+     "cited_by": 108,
+     "text": "sources/state-law/text/oml-det-2014-23.txt",
+     "publisher_filename": "DETERMINATION - 3 3 2014 - OML 2014-23 - GRANBY SCHOOL COMMITTEE.pdf",
+     "why_picked": "most cited against a school committee"
+    },
+    {
+     "id": "oml-det-2026-127",
+     "number": "OML 2026-127",
+     "date": "2026-10-06",
+     "public_body": "North Reading Board Of Health",
+     "body_type": "select board / board of selectmen",
+     "holding": "no violation",
+     "summary": "Chair allowed public comment at the Feb 26, 2026 meeting although the notice said there would be no public comment.",
+     "key_passage": "We therefore find that the Board did not violate the Open Meeting Law when the Chair allowed members of the public to participate even though the notice indicated that there would be no public comment.",
+     "cited_by": 0,
+     "text": "sources/state-law/text/oml-det-2026-127.txt",
+     "publisher_filename": "DETERMINATION - 10 6 2026 - OML 2026-127 - NORTH READING BOARD OF HEALTH.pdf",
+     "why_picked": "newest on this issue"
+    },
+    {
+     "id": "oml-det-2024-180",
+     "number": "OML 2024-180",
+     "date": "2024-09-30",
+     "public_body": "Board Of Elementary And Secondary Education",
+     "body_type": "state or regional body",
+     "holding": "violation",
+     "summary": "The Board argued the antisemitism topics arose during public comment and so need not appear on the notice; the AG rejected this.",
+     "key_passage": "A public body may not shield a topic from inclusion on the notice by incorporating it into a public comment period.",
+     "cited_by": 14,
+     "text": "sources/state-law/text/oml-det-2024-180.txt",
+     "publisher_filename": "DETERMINATION - 9 30 2024 - OML 2024-180 - BOARD OF ELEMENTARY AND SECONDARY EDUCATION.pdf",
+     "why_picked": "most cited with the other outcome"
+    }
+   ]
+  }
+ }
+}

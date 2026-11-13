@@ -50,6 +50,7 @@ load limit; `CLAUDE.md` keeps a pointer here and the handful every session needs
                                                  #   recomputed from the database against a payload
                                                  #   built from DESE's workbooks
     python3 scripts/verify_free_cash_capital.py  # the capital section of the free cash analysis
+    python3 scripts/build_oml_leading_rulings.py  # the leading AG OML rulings per issue, by later citations; --check
     python3 scripts/build_show_your_work.py       # regenerate the method document
     python3 scripts/build_show_your_work.py --check   # fail if it is stale (audit_provenance runs this)
     python3 scripts/extract_munis_report.py --check   # every MUNIS glytdbud report, tied to its own GRAND TOTAL
