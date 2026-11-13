@@ -1008,6 +1008,63 @@ def rescore():
     return 0
 
 
+# THE BACKLOG (13 November 2026). TJ: "we need to do a full OML review against this year. i
+# want to start by adding a backlog view the same we had for MINUTES." What is owed is decided
+# HERE, once, so the dashboard card and whatever drains the queue cannot disagree about it.
+OML_SINCE = '2026-01-01'   # "this year" -- the calendar year, 13 Nov 2026
+
+
+def stage_now(r):
+    has_tr = bool(r['transcript_paths'] and (r['video_ids'] or '').split())
+    has_min = bool(r['minutes_path'])
+    return ('full record' if has_tr and has_min else 'agenda and recording' if has_tr
+            else 'agenda and minutes' if has_min else 'agenda only')
+
+
+def backlog(since=OML_SINCE, until=None):
+    """Every meeting a review is owed for, and why: one dict per meeting since `since`
+    (before today), with `state` one of
+      done      -- reviewed, at the stage of the record held now;
+      never     -- no review;
+      stale     -- reviewed at an earlier stage (the recording or the minutes arrived since),
+                   or in the format before stages existed: owed again;
+      blocked   -- the agenda names another body filed under this board (a council or a
+                   sub-committee): a review would describe the wrong body."""
+    until = until or dt.date.today().isoformat()
+    held = {}
+    for p in glob.glob(os.path.join(OUT, '*', '*.json')):
+        b = os.path.basename(os.path.dirname(p))
+        d = os.path.basename(p)[:10]
+        try:
+            held[(b, d)] = json.load(open(p, encoding='utf-8')).get('stage') or 'old format'
+        except ValueError:
+            held[(b, d)] = 'unreadable'
+    out = []
+    for r in csv.DictReader(open(REGISTER, encoding='utf-8')):
+        if not (since <= r['date'] < until) or not r['agenda_path']:
+            continue
+        now = stage_now(r)
+        had = held.get((r['board_slug'], r['date']))
+        state = ('blocked' if r.get('body_as_printed') else 'never' if not had
+                 else 'done' if had == now else 'stale')
+        out.append({'board_slug': r['board_slug'], 'board': r['board'], 'date': r['date'],
+                    'stage': now, 'reviewed_stage': had or '', 'state': state,
+                    'body_as_printed': r.get('body_as_printed') or ''})
+    out.sort(key=lambda x: x['date'], reverse=True)
+    return out
+
+
+def status(since=OML_SINCE):
+    import collections
+    b = backlog(since)
+    c = collections.Counter(x['state'] for x in b)
+    st = collections.Counter(x['stage'] for x in b if x['state'] in ('never', 'stale'))
+    print('OML reviews since %s: %d meetings with an agenda; %d done, %d never reviewed, %d stale, %d blocked'
+          % (since, len(b), c['done'], c['never'], c['stale'], c['blocked']))
+    print('  owed, by the record held now: %s' % ', '.join('%d %s' % (v, k) for k, v in st.most_common()))
+    return 0
+
+
 def check():
     """Every review: parses; every quote still verbatim; inputs unchanged; published copy identical."""
     files = sorted(glob.glob(os.path.join(OUT, '*', '*.json')))
@@ -1068,6 +1125,7 @@ def main():
     ap.add_argument('board', nargs='?')
     ap.add_argument('date', nargs='?')
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--status', action='store_true', help='the backlog since OML_SINCE: done, never, stale, blocked')
     ap.add_argument('--rescore', action='store_true', help='recompute precedent holdings and the standout block; no paid call')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--without-minutes', action='store_true',
@@ -1077,6 +1135,8 @@ def main():
     WITHOUT_MINUTES = a.without_minutes
     if a.check:
         return check()
+    if a.status:
+        return status()
     if a.rescore:
         return rescore()
     if not (a.board and a.date):

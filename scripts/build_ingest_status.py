@@ -1078,6 +1078,40 @@ def streams():
                                     dates=['%d' % n for n in y['missing']])
                                for y in reversed(o['years']) if y['missing']]))
 
+    # OPEN MEETING LAW REVIEWS, THIS YEAR. TJ, 13 November 2026: "we need to do a full OML
+    # review against this year. i want to start by adding a backlog view the same we had for
+    # MINUTES." What is owed comes from oml_review.backlog(), the one definition, so this card
+    # and the runner that drains it cannot disagree. A review is owed AGAIN when the record
+    # grows -- the recording or the minutes arriving -- because the review is redone per stage.
+    try:
+        import oml_review as OMLR
+        ob = OMLR.backlog()
+    except Exception:
+        ob = None
+    if ob is not None:
+        owed = [x for x in ob if x['state'] in ('never', 'stale')]
+        stages = collections.Counter(x['stage'] for x in owed)
+        s.append(dict(key='omlreview', unit=('meeting reviewed', 'meetings reviewed', 'meetings still to review'),
+                      name='Open Meeting Law reviews, %s' % OMLR.OML_SINCE[:4],
+                      io='in: each meeting’s agenda, recording and minutes &mdash; whichever are held '
+                         '&rarr; out: points to check against G.L. c.30A, with the AG’s leading rulings '
+                         'and what stands out',
+                      done=sum(1 for x in ob if x['state'] == 'done'), todo=len(owed),
+                      blocked=sum(1 for x in ob if x['state'] == 'blocked'),
+                      blocked_why='another body (a council or sub-committee) filed under the board',
+                      # html=False: this card escapes its text, so an entity would print literally.
+                      # And NOT "runs by itself" -- nothing drains this queue yet (13 Nov 2026).
+                      cost=COST.phrase('oml-reviews', '~$0.50 a meeting on sonnet (pilot, 13 Nov 2026), '
+                                       'about 0.1% of the week each', html=False).replace(', runs by itself', '')
+                           + ' \u00b7 one call per meeting; research by an agent only on flagged points'
+                           ' \u00b7 NOTHING RUNS THIS YET: started by hand, in batches',
+                      last=ago(newest([os.path.join(DATA, 'oml-reviews', '*', '*.json')])),
+                      note='meetings since %s with an agenda, before today \u00b7 owed again when the recording '
+                           'or the minutes arrive (%d of the owed are stale reviews) \u00b7 owed by the record '
+                           'held now: %s' % (OMLR.OML_SINCE, sum(1 for x in owed if x['state'] == 'stale'),
+                                             ', '.join('%d %s' % (v, k) for k, v in stages.most_common())),
+                      pending=group([(x['board_slug'], x['date']) for x in owed])))
+
     # THE ANNUAL REPORTS. Free, ours, and the biggest pile in the project.
     ex_done, ex_pend = extraction_pending()
     s.append(dict(key='extraction', unit=('row that ties to a printed total', 'rows that tie to a printed total', 'rows still to reconcile'), name='Reconciling the annual-report tables',
