@@ -899,11 +899,22 @@ def oml_chart(o):
                    'this run, since %s%s</div>%s</div>'
                    % (W, pts[0][0].strftime('%a %H:%M'),
                       ('; %d were held before it' % before) if before else '', ''.join(svg)))
-    # --- by year: held of the portal's list
-    ys = o['years']
+    # --- by year: held of the portal's list. OPEN YEARS ONLY (TJ, 13 November 2026: the
+    # backlog shows what is open; the finished years are on the Documents tab). Sixteen
+    # green bars beside one amber one read as sixteen things still on the list.
+    ys = [y for y in o['years'] if y['held'] < y['listed']]
+    full_years = [y['year'] for y in o['years'] if y['held'] >= y['listed']]
+    if full_years:
+        out.append('<div class="tiny" style="width:100%%">Every letter held for %s&ndash;%s; '
+                   'they are on the <a href="sources.html">Documents</a> tab.</div>'
+                   % (full_years[0], full_years[-1]) if len(full_years) > 1 else
+                   '<div class="tiny" style="width:100%%">Every letter held for %s.</div>' % full_years[0])
+    if not ys:
+        out.append('</div>')
+        return ''.join(out)
     W2, H2, B2, T2 = 460, 170, 24, 14
     mx = max(y['listed'] for y in ys) or 1
-    bw = (W2 - 10) / float(len(ys)) - 3
+    bw = min(40.0, (W2 - 10) / float(len(ys)) - 3)   # one open year must not be one 450px bar
     svg = ['<svg viewBox="0 0 %d %d" width="%d" height="%d" style="max-width:100%%">' % (W2, H2, W2, H2)]
     for i, y in enumerate(ys):
         x = 5 + i * (bw + 3)
@@ -918,14 +929,16 @@ def oml_chart(o):
                        % (x, H2 - B2 - hh, bw, hh, '#3fb950' if done else '#d29922', tip))
         svg.append('<text x="%.1f" y="%d" fill="#8b949e" font-size="9.5" text-anchor="middle">’%s</text>'
                    % (x + bw / 2, H2 - B2 + 12, y['year'][-2:]))
-        svg.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="9" text-anchor="middle">%d</text>'
-                   % (x + bw / 2, H2 - B2 - full - 3, y['listed']))
+        # HELD OF LISTED, not the listed count alone: a bare `142` over a bar holding 140
+        # read as 142 held (TJ, 13 November 2026: "why are there 142 'held' but not complete?").
+        svg.append('<text x="%.1f" y="%.1f" fill="#8b949e" font-size="9" text-anchor="middle">%d of %d</text>'
+                   % (x + bw / 2, H2 - B2 - full - 3, y['held'], y['listed']))
     svg.append('</svg>')
     out.append('<div style="width:%dpx;max-width:100%%"><div class="tiny" style="margin-bottom:2px"><b>By year of the letter</b> &mdash; '
                '<span style="color:#3fb950">&#9632;</span> year complete '
                '<span style="color:#d29922">&#9632;</span> held '
-               '<span style="color:#6e7681">&#9632;</span> still to fetch; the number on top is '
-               'how many the portal lists</div>%s</div>' % (W2, ''.join(svg)))
+               '<span style="color:#6e7681">&#9632;</span> still to fetch; on top, held of how many '
+               'the portal lists</div>%s</div>' % (W2, ''.join(svg)))
     out.append('</div>')
     return ''.join(out)
 
@@ -4183,8 +4196,23 @@ def page_backlog(st):
     if bd and bd.get('total_jobs'):
         h.append(backlog_chart(bd))
     h.append('<h2>Streams</h2>')
+    # OPEN WORK ONLY. TJ, 13 November 2026: "the backlog is supposed to show OPEN only, and
+    # when things are complete they move into DOCUMENTS." A finished stream's card -- green
+    # bar, `complete` pill -- read as one more thing owed among the open ones. What a
+    # finished stream produced is listed on the Documents tab; here it is one line.
+    # Blocked items are not open work (nothing anybody can do moves them), so a stream
+    # with only blocked items left is complete here, as its pill already said.
+    finished = [x for x in S if x['todo'] == 0]
+    if finished:
+        h.append('<div class="tiny" style="margin:0 0 10px">Complete, nothing owed: %s &middot; '
+                 'what they produced is on the <a href="sources.html">Documents</a> tab</div>'
+                 % '; '.join(html.escape(x['name']) +
+                             (' (%d blocked)' % x['blocked'] if x.get('blocked') else '')
+                             for x in finished))
     for s in S:
         todo = s['todo']
+        if todo == 0:
+            continue
         h.append('<div class="card"><div class="row"><b class="grow">%s</b>'
                  '<span class="tiny">%s</span>'
                  '<span class="num">%s</span>'
